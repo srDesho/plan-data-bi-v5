@@ -7,6 +7,7 @@ import json
 import logging
 import os
 import sqlite3
+from contextlib import closing
 import pandas as pd
 
 log=logging.getLogger('etl_nuevo')
@@ -73,7 +74,8 @@ def ejecutar(entrada,salida):
     tmp=salida/'resultado.tmp.db';dest=salida/'resultado.db'
     if tmp.exists():tmp.unlink()
     try:
-        with sqlite3.connect(tmp) as con:
+        # closing() cierra la conexión antes de os.replace; en Windows un archivo abierto no se puede reemplazar.
+        with closing(sqlite3.connect(tmp)) as con:
             for name,frame in [('bronze',raw),('silver',silver),('rechazos',reject),('gold',gold)]:frame.to_sql(name,con,index=False,if_exists='replace')
             total=con.execute("SELECT COALESCE(SUM(monto_centavos),0) FROM silver WHERE estado='entregado'").fetchone()[0]
             if total!=metrics['ventas_centavos']:raise ValueError('SQL no cuadra')

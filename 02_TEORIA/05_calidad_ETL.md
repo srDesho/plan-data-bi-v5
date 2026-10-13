@@ -26,7 +26,7 @@ Antes de eliminar exactos, detecta misma clave con contenido distinto: un confli
 
 ## Carga y reproducibilidad
 
-Una segunda ejecución debe producir iguales filas y totales, no duplicarlos. En la versión del curso se publica una base nueva en un archivo temporal y se reemplaza el destino solo después de pasar validaciones. Esa es una carga completa, no incremental. Si falla el catálogo o el parser, la salida anterior se mantiene.
+Una segunda ejecución debe producir iguales filas y totales, no duplicarlos. En la versión del curso se publica una base nueva en un archivo temporal y se reemplaza el destino solo después de pasar validaciones. Esa es una carga completa, no incremental. Si falla el catálogo o el parser, la salida anterior se mantiene. En Windows cierra la conexión SQLite antes de reemplazar el archivo: `with sqlite3.connect(...)` solo confirma la transacción y no la cierra, así que `os.replace` falla con `PermissionError`. Usa `contextlib.closing` (ver capítulo 19, §4).
 
 Cuadra dinero en centavos enteros para el caso final: suma detallada entregada = resumen Gold. Comprueba fechas y claves, también tablas con filas vacías. El número de filas correcto por sí solo no detecta importes multiplicados.
 

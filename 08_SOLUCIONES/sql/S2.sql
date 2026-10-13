@@ -1,1 +1,3 @@
-SELECT DISTINCT tipo FROM clientes;
+SELECT DISTINCT tipo
+FROM clientes
+ORDER BY tipo;

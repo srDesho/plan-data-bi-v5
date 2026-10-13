@@ -1,0 +1,1 @@
+SELECT COUNT(*) cantidad FROM clientes c;

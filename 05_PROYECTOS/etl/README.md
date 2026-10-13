@@ -1,18 +1,19 @@
 # Proyecto ETL de la distribuidora
 
-Construye tu propio script por fases en `mi_trabajo/etl/etl.py`.
+Antes de este proyecto haces el mini-ETL (ME01–ME04, `03_EJERCICIOS/Puente/`) con 24 filas: es la misma estructura en pequeño.
+Construye tu propio script por fases en `mi_trabajo/etl/etl.py`. Las fechas de la tabla son objetivos; avanzas con la Puerta 4 (mini-ETL) cumplida.
 Entrada: `04_DATASETS/distribuidora/etl/ventas_erp_raw.csv` y `vendedores_por_ruta.csv`.
 Lee primero `02_TEORIA/05_calidad_ETL.md` y `10_Pandas_transformaciones.md`.
 
-| Etapa | Trabajo autónomo | Control |
-|---|---|---|
-| 1 · Extraer | CSV como texto; perfil por columna; conserva raw |16378 filas|
-| 2 · Texto | espacios, estados, rutas, clientes |120 clientes normalizados|
-| 3 · Tipos | tres formatos fecha, cantidad entera, precio |sin conversiones silenciosas|
-| 4 · Claves | revisa duplicados y catálogo vendedor/ruta |200 duplicados, 301 vendedores recuperados|
-| 5 · Silver | valida tipos, estados y pedido/producto |16178 líneas, 3600 pedidos|
-| 6 · Gold | entregados por cliente/mes, pedidos distintos |581 filas; 1468924,50 Bs|
-| 7 · Cargar | SQLite: bronze_ventas_raw, silver_ventas, gold_ventas_cliente_mes |cuadre SQL, segunda ejecución sin duplicar|
+| Etapa | Jornada (objetivo) | Trabajo autónomo | Control |
+|---|---|---|---|
+| 1 · Extraer | D25 | CSV como texto; perfil por columna; conserva raw |16378 filas|
+| 2 · Texto | D25 | espacios, estados, rutas, clientes |120 clientes normalizados|
+| 3 · Tipos | D26 | tres formatos fecha, cantidad entera, precio |sin conversiones silenciosas|
+| 4 · Claves | D26 | revisa duplicados y catálogo vendedor/ruta |200 duplicados, 301 vendedores recuperados|
+| 5 · Silver | D29 | valida tipos, estados y pedido/producto |16178 líneas, 3600 pedidos|
+| 6 · Gold | D30 | entregados por cliente/mes, pedidos distintos |581 filas; 1468924,50 Bs|
+| 7 · Cargar | D30 | SQLite: bronze_ventas_raw, silver_ventas, gold_ventas_cliente_mes |cuadre SQL, segunda ejecución sin duplicar|
 
 No empieces por copiar `etl_distribuidora.py`. El esqueleto es intencionalmente incompleto,
 recuperado y simplificado a partir del repositorio plantilla original.

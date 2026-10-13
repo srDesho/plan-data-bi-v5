@@ -18,7 +18,7 @@ FROM v ORDER BY puesto,cliente_id;
 
 Para acumulados usa `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` y un orden completo. El marco por defecto puede tratar empates como un grupo y cambiar el acumulado. `LAG(ventas) OVER(ORDER BY mes)` recupera el mes anterior disponible; si hay meses ausentes debes construir un calendario y decidir si su valor es cero o desconocido. Crecimiento = (actual−anterior)/anterior; con anterior cero no inventes un porcentaje.
 
-ABC por ventas ordena clientes por aporte y usa participación acumulada. En V4 se evalúa el acumulado ANTES del cliente actual: el cliente que cruza 80% permanece en A. Es una convención explícita, no una ley universal. Da A=41, B=37, C=42. ABC por variedad de SKU responde otra pregunta; N10 cuenta variedad y cualquier umbral A/B/C requiere una regla acordada. No intercambies las clasificaciones.
+ABC por ventas ordena clientes por aporte y usa participación acumulada. En V4 se evalúa el acumulado ANTES del cliente actual: el cliente que cruza 80% permanece en A. Es una convención explícita, no una ley universal. ABC por variedad de SKU responde otra pregunta; N10 cuenta variedad y cualquier umbral A/B/C requiere una regla acordada. No intercambies las clasificaciones.
 
 ## Fechas y SQL Server
 

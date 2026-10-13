@@ -1,6 +1,7 @@
 # Ejercicios Python
 
-Copia plantilla.py; completa funciones por etapas y conserva las ya aprobadas.
+Cada ejercicio es una función con firma, entradas, salidas, reglas y errores esperados. Trabaja en `mi_trabajo/python/mis_funciones.py` y completa una función por vez; conserva las ya aprobadas.
+Copia `plantilla.py` como punto de partida. Cada enunciado trae tres pistas progresivas y un tiempo realista de primera vez.
 
 - [P01 · importe](P01.md)
 - [P02 · porcentaje](P02.md)

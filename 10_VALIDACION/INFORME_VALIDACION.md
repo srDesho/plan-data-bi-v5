@@ -93,3 +93,18 @@ Los esqueletos con NotImplementedError y las celdas de práctica son actividades
 no se presentan como programas completos. Versiones de prueba: `versiones.json`.
 
 El ZIP final se verifica con CRC y un manifiesto SHA256 de sus archivos. La evidencia de cierre está en `CIERRE_PAQUETE.json`. Para comenzar: README y Día1; no abrir el caso final antes del23 de noviembre.
+
+
+## Revisión 5.1 (rama `fix/auditoria-v5`)
+
+Las tablas anteriores describen el paquete v5 original. Esta revisión añade (detalle en `INFORME_CAMBIOS_AUDITORIA_V5.md` y `INFORME_CORRECCION_PEDAGOGICA_V5.md`, en la raíz, si se conservan):
+
+- **Conexiones SQLite cerradas** (`herramientas/prueba_sqlite_cierre.py`): el patrón `with sqlite3.connect()` dejaba archivos bloqueados en Windows (`WinError 32`); con el código original el script falla en 4 de 5 grupos y con la rama corregida pasa los 5.
+- **Mini-ETL, depuración y puente a ETL:** referencias y controles propios (`08_SOLUCIONES/mini_etl_referencia.py`, `controles_mini_etl.json`, `depuracion_referencia.py`) y correctores que indican la clave y la columna que fallan.
+- **Núcleo, puertas y carga estimada:** `01_PLAN_DIARIO/nucleo.json` es la fuente de las guías; una prueba regenera las guías en una copia y exige que coincidan.
+- **Enunciados específicos:** `herramientas/auditar_enunciados.py` detecta plantillas reutilizadas, pistas genéricas o repetidas, resultados publicados en enunciados, información que solo estaba en el corrector, ejercicios obligatorios que dependen de uno opcional, teoría no asignada y exámenes que evalúan algo no preparado. Incluye un control negativo con una plantilla masiva. `10_VALIDACION/COMPROBACION_81_SQL.md` resume la comprobación individual de los 81 ejercicios SQL.
+- **Resultados de esta revisión:** `10_VALIDACION/resultados_pruebas_5_1.json` (el conjunto de la evaluación final queda omitido a propósito). `evidencia_sql.json` se regeneró con los controles actuales y `MANIFIESTO_SHA256.json` se regeneró con `herramientas/regenerar_manifiesto.py`.
+
+**Cambios de contenido en referencias SQL, justificados por una regla de negocio y no por pasar pruebas:** ES1B (el filtro «al menos cinco productos» no filtraba nada: ahora «precio medio mayor a 9 Bs», 5 → 2 filas), ES3C (el examen evaluaba `RANK`, que ningún ejercicio obligatorio practica antes: ahora porcentaje sobre el total con función de ventana, como V3) y alias en N5 y ES3C. Las demás referencias solo ganaron un `ORDER BY` coherente con el enunciado. Los resultados numéricos de los 78 ejercicios restantes no cambiaron (comparación fila a fila contra los controles anteriores).
+
+**No verificado:** Power BI Desktop y Excel, el notebook de la Clase 2 de la UAGRM, tiempos reales de una persona con los ejercicios nuevos.

@@ -3,23 +3,23 @@
 Una clave primaria identifica una fila; una clave foránea apunta a otra tabla. `pedidos.cliente_id` conecta cada pedido con un cliente. `pedido_items.pedido_id` conecta varias líneas con una cabecera. El JOIN combina filas que satisfacen la condición; no sabe cuál era tu intención empresarial.
 
 ```sql
-SELECT p.pedido_id, c.nombre_negocio, p.estado
+SELECT p.pedido_id, v.nombre AS vendedor, p.estado
 FROM pedidos AS p
-INNER JOIN clientes AS c ON c.cliente_id = p.cliente_id;
+INNER JOIN vendedores AS v ON v.vendedor_id = p.vendedor_id;
 ```
 
-INNER JOIN conserva coincidencias. LEFT JOIN conserva todas las filas de la izquierda y coloca NULL cuando no encuentra una coincidencia a la derecha. Para listar clientes sin compras entregadas en septiembre, conserva todos los clientes y limita los pedidos en la condición ON:
+INNER JOIN conserva coincidencias. LEFT JOIN conserva todas las filas de la izquierda y coloca NULL cuando no encuentra una coincidencia a la derecha. Para listar los vendedores que no tuvieron pedidos anulados entre el 1 y el 3 de abril, conserva todos los vendedores y limita los pedidos en la condición ON:
 
 ```sql
-SELECT c.cliente_id
-FROM clientes c
-LEFT JOIN pedidos p ON p.cliente_id=c.cliente_id
-  AND p.estado='entregado'
-  AND p.fecha BETWEEN '2026-09-01' AND '2026-09-30'
+SELECT v.vendedor_id, v.nombre
+FROM vendedores v
+LEFT JOIN pedidos p ON p.vendedor_id=v.vendedor_id
+  AND p.estado='anulado'
+  AND p.fecha BETWEEN '2026-04-01' AND '2026-04-03'
 WHERE p.pedido_id IS NULL;
 ```
 
-Es un anti-join: busca ausencia. Si pasas `p.estado='entregado'` al WHERE, los clientes sin pedido quedan excluidos porque su estado es NULL. `NOT EXISTS` es otra manera útil de expresar ausencia y evita las sorpresas de `NOT IN` cuando la subconsulta contiene NULL.
+Es un anti-join: busca ausencia. Si pasas `p.estado='anulado'` al WHERE, los vendedores sin pedido quedan excluidos porque su estado es NULL. `NOT EXISTS` es otra manera útil de expresar ausencia y evita las sorpresas de `NOT IN` cuando la subconsulta contiene NULL.
 
 ## Uno a muchos y doble conteo
 

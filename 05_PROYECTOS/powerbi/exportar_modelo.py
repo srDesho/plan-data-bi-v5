@@ -3,13 +3,14 @@ from pathlib import Path
 import argparse
 import json
 import sqlite3
+from contextlib import closing
 import pandas as pd
 
 ROOT=Path(__file__).resolve().parents[2]
 
 def exportar(destino):
     destino=Path(destino);destino.mkdir(parents=True,exist_ok=True)
-    with sqlite3.connect(ROOT/'04_DATASETS/comercial.db') as con:
+    with closing(sqlite3.connect(ROOT/'04_DATASETS/comercial.db')) as con:
         frames={t:pd.read_sql(f'SELECT * FROM {t}',con) for t in ['clientes','productos','vendedores','pedidos','pedido_items','visitas','presupuesto']}
     c,p,v=frames['clientes'].copy(),frames['productos'].copy(),frames['vendedores'].copy()
     c['nombre_negocio']=c.nombre_negocio.str.strip();c['zona']=c.zona.fillna('Sin zona')

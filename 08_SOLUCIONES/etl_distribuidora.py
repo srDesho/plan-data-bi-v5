@@ -14,6 +14,7 @@ Uso desde la raíz: python 08_SOLUCIONES/etl_distribuidora.py
 import logging
 import re
 import sqlite3
+from contextlib import closing
 from pathlib import Path
 
 import pandas as pd
@@ -101,7 +102,8 @@ def cargar(raw: pd.DataFrame, silver: pd.DataFrame) -> None:
         .agg(pedidos=("nro_pedido", "nunique"), unidades=("cantidad", "sum"), ventas_bs=("monto", "sum"))
     )
     silver_out = silver.assign(fecha=silver["fecha"].dt.strftime("%Y-%m-%d"))
-    with sqlite3.connect(DB_OUT) as con:
+    # closing() cierra la conexión; "with sqlite3.connect()" solo confirma la transacción (ver 02_TEORIA/05_calidad_ETL.md).
+    with closing(sqlite3.connect(DB_OUT)) as con:
         raw.to_sql("bronze_ventas_raw", con, if_exists="replace", index=False)
         silver_out.to_sql("silver_ventas", con, if_exists="replace", index=False)
         gold.to_sql("gold_ventas_cliente_mes", con, if_exists="replace", index=False)

@@ -1,6 +1,6 @@
 """Repite pruebas del material en archivos temporales; no evalúa tus conocimientos."""
 from pathlib import Path
-import ast,contextlib,csv,datetime,hashlib,importlib,importlib.util,io,json,math,os,re,sqlite3,sys,tempfile,zipfile
+import ast,contextlib,csv,datetime,hashlib,importlib,importlib.util,io,json,math,os,re,sqlite3,subprocess,sys,tempfile,zipfile
 import pandas as pd
 import nbformat
 import matplotlib
@@ -65,7 +65,7 @@ def main():
             return {'ejercicios':len(records),'casos':sum(x['casos'] for x in records),'control_negativo':'función incorrecta rechazada'}
         add('Python contratos y casos límite',py)
         def data():
-            with sqlite3.connect(ROOT/'04_DATASETS/comercial.db') as c:
+            with contextlib.closing(sqlite3.connect(ROOT/'04_DATASETS/comercial.db')) as c:
                 assert c.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
                 counts={}
                 for table in ['clientes','vendedores','productos','pedidos','pedido_items']:
@@ -222,6 +222,98 @@ def main():
             assert len(list((ROOT/'01_PLAN_DIARIO/dias').glob('D*.md')))==42
             return {'enlaces_internos_comprobados':found,'markdown':len(markdowns),'archivos_no_vacios':len(files),'soluciones':'separadas en 08_SOLUCIONES','esqueletos':'intencionalmente sin resolver'}
         add('Rutas, Markdown, contratos y separación de soluciones',links)
+        def sqlite_cierre():
+            r=subprocess.run([sys.executable,str(ROOT/'herramientas/prueba_sqlite_cierre.py')],capture_output=True,text=True,encoding='utf-8',errors='replace')
+            assert r.returncode==0,(r.stdout+r.stderr)[-700:]
+            return {'grupos':'demostración, corregir_sql, ETL transferencia, ETL distribuidora, revisión estática','sistema':os.name}
+        add('Conexiones SQLite cerradas (sin WinError 32)',sqlite_cierre)
+        def mini_etl():
+            ce=module(ROOT/'herramientas/corregir_mini_etl.py','corregir_mini_etl')
+            ref=ROOT/'08_SOLUCIONES/mini_etl_referencia.py'
+            aprobados={id:fn(ce.cargar(ref)) for id,fn in ce.FUNCIONES.items()}
+            try:ce.FUNCIONES['ME01'](ce.cargar(ROOT/'05_PROYECTOS/etl/plantilla_mini_etl.py'))
+            except Exception:pass
+            else:raise AssertionError('La plantilla sin resolver no debe aprobar ME01')
+            texto=ref.read_text(encoding='utf-8')
+            variantes={'ME02':[('unidades truncadas',"if not x.is_finite() or x != x.to_integral_value() or x <= 0:","if not x.is_finite() or x <= 0:"),
+                               ('tienda sin normalizar',"' '.join(fila['tienda'].split()).title()","fila['tienda'].strip()")],
+                       'ME03':[('conflicto de clave ignorado',"    if len(conflictos):\n        raise ValueError","    if False:\n        raise ValueError")],
+                       'ME04':[('sin regla nueva',"    if x > MAX_UNIDADES:\n        raise ValueError('unidades')\n","")]}
+            if os.name=='nt':variantes['ME03'].append(('conexión SQLite abierta',"with closing(sqlite3.connect(tmp)) as con:","with sqlite3.connect(tmp) as con:"))
+            rechazadas=[]
+            for id,lista in variantes.items():
+                for nombre,a,b in lista:
+                    assert texto.count(a)==1,nombre
+                    p=tmp/f'variante_{id}_{len(rechazadas)}.py';p.write_text(texto.replace(a,b),encoding='utf-8')
+                    try:ce.FUNCIONES[id](ce.cargar(p))
+                    except Exception:rechazadas.append(f'{id}: {nombre}')
+                    else:raise AssertionError('El corrector aceptó una variante incorrecta: '+nombre)
+            return {'referencia_aprobada':aprobados,'variantes_rechazadas':rechazadas}
+        add('Mini-ETL: referencia aprobada y variantes incorrectas rechazadas',mini_etl)
+        def depuracion():
+            cd=module(ROOT/'herramientas/corregir_depuracion.py','corregir_depuracion')
+            resultado={}
+            for id,fn in {'DB01':cd.db01,'DB02':cd.db02,'DB03':cd.db03}.items():
+                resultado[id]=fn(cd.cargar(ROOT/'08_SOLUCIONES/depuracion_referencia.py'))
+                try:fn(cd.cargar(ROOT/f'03_EJERCICIOS/Depuracion/{id}_roto.py'))
+                except Exception:pass
+                else:raise AssertionError(f'{id}_roto.py no debe pasar el corrector')
+            return resultado
+        add('Depuración: referencia aprobada y scripts rotos rechazados',depuracion)
+        def nucleo():
+            an=module(ROOT/'herramientas/aplicar_nucleo.py','aplicar_nucleo_prueba')
+            ctx=an.Contexto(ROOT)
+            errores=an.validar_referencias(ctx);assert not errores,errores
+            filas=an.tabla_carga(ctx);peor=max(r for *_,r in filas);assert peor<=1.30,peor
+            for n in (1,2):
+                t=next((ROOT/'01_PLAN_DIARIO/dias').glob(f'D{n:02}_*.md')).read_text(encoding='utf-8')
+                assert 'OBLIGATORIO' not in t and 'Puerta de competencia' not in t,f'D{n:02} no debe modificarse'
+            comp=(ROOT/'01_PLAN_DIARIO/COMPETENCIAS.md').read_text(encoding='utf-8')
+            for dia,s in ctx.nucleo['dias'].items():
+                t=next((ROOT/'01_PLAN_DIARIO/dias').glob(f'D{int(dia):02}_*.md')).read_text(encoding='utf-8')
+                assert '### OBLIGATORIO' in t and 'Haz solo:' in t,f'D{dia}: guía sin clasificar'
+                if s.get('puerta'):
+                    assert '## Puerta de competencia' in t and f'**{s["puerta"]["id"]} ·' in comp,f'D{dia}: puerta {s["puerta"]["id"]}'
+            colocados=set()
+            for d in ctx.calendario:colocados|=set(d['sql'])|set(d['python'])|set(d['estadistica'])
+            banco={p.stem for p in (ROOT/'03_EJERCICIOS/SQL').glob('*.md')}-{'INDICE','CONTRATOS'}
+            banco={i for i in banco if not i.startswith('ES')}|{f'P{i:02}' for i in range(1,31)}|{f'ST0{i}' for i in range(1,8)}
+            assert not banco-colocados,sorted(banco-colocados)
+            return {'jornadas_clasificadas':len(ctx.nucleo['dias']),'razon_maxima_estimada':peor,'ejercicios_del_banco_ubicados':len(banco)}
+        add('Núcleo, puertas y carga estimada coherentes',nucleo)
+        def enunciados():
+            au=module(ROOT/'herramientas/auditar_enunciados.py','auditar_enunciados')
+            resumen={}
+            for nombre,(problemas,n) in au.ejecutar().items():
+                assert not problemas,(nombre,problemas[:8])
+                resumen[nombre]=n
+            # control negativo: una plantilla masiva (tres ejercicios con el mismo texto) debe detectarse
+            falso=tmp/'sql_plantilla';falso.mkdir()
+            base=(ROOT/'03_EJERCICIOS/SQL/S3.md').read_text(encoding='utf-8')
+            for k in ('X1a','X1b','X1c'):(falso/f'{k}.md').write_text(base.replace('# S3 ',f'# {k} '),encoding='utf-8')
+            problemas,_=au.auditar_sql(falso,{})
+            assert any('repetida' in p for p in problemas),'El auditor no detectó la plantilla masiva'
+            # el texto genérico del paquete original debe ser rechazado
+            assert au.FRASES_PROHIBIDAS and all(f not in (ROOT/'03_EJERCICIOS/SQL/G1.md').read_text(encoding='utf-8') for f in au.FRASES_PROHIBIDAS)
+            return {'revisado':resumen,'control_negativo':'plantilla masiva detectada'}
+        add('Enunciados específicos, sin plantillas ni fugas, y exámenes alineados',enunciados)
+        def sincronizacion():
+            an=module(ROOT/'herramientas/aplicar_nucleo.py','aplicar_nucleo_sync')
+            copia=tmp/'sync'
+            for carpeta in ('01_PLAN_DIARIO','02_TEORIA','03_EJERCICIOS'):
+                import shutil;shutil.copytree(ROOT/carpeta,copia/carpeta)
+            subprocess.run([sys.executable,str(ROOT/'herramientas/aplicar_nucleo.py'),'--raiz',str(copia)],check=True,capture_output=True)
+            distintos=[p.name for p in (ROOT/'01_PLAN_DIARIO/dias').glob('D*.md') if p.read_bytes().replace(b'\r\n',b'\n')!=(copia/'01_PLAN_DIARIO/dias'/p.name).read_bytes().replace(b'\r\n',b'\n')]
+            assert not distintos,('Guías no sincronizadas con nucleo.json',distintos)
+            for nombre in ('calendario.json','calendario.csv','CARGA_ESTIMADA.md'):
+                assert (ROOT/'01_PLAN_DIARIO'/nombre).read_bytes().replace(b'\r\n',b'\n')==(copia/'01_PLAN_DIARIO'/nombre).read_bytes().replace(b'\r\n',b'\n'),nombre
+            return {'guias_comparadas':len(list((ROOT/'01_PLAN_DIARIO/dias').glob('D*.md'))),'resultado':'nucleo.json, guías, calendario y carga estimada coinciden'}
+        add('Guías, calendario y carga sincronizados con nucleo.json',sincronizacion)
+        def manifiesto():
+            r=subprocess.run([sys.executable,str(ROOT/'herramientas/regenerar_manifiesto.py'),'--comprobar'],capture_output=True,text=True,encoding='utf-8',errors='replace')
+            assert r.returncode==0,(r.stdout+r.stderr)[-500:]
+            return {'resultado':r.stdout.strip()}
+        add('Manifiesto SHA256 vigente',manifiesto)
     os.chdir(cwd)
     report={'ejecutado_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'pruebas':tests,'fallos':sum(x['estado']!='OK' for x in tests),'pendientes':['Power BI Desktop: M,DAX,relaciones,filtros y actualización','Excel: importación,fórmulas ytablas dinámicas','Notion importación yGitHub publicación','Kernel Jupyter externo bloqueado en entorno: se ejecutaron celdas en proceso','Notebook UAGRM estadística detenido al conectar UCI;funciones avanzadas completas no probadas','Autonomía real del estudiante: evaluación futura ydefensa']}
     (ROOT/'10_VALIDACION/resultados_pruebas.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')

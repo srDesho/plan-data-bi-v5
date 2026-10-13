@@ -1,0 +1,281 @@
+{
+ "v1": {
+  "metricas": {
+   "bronze": 24,
+   "duplicados_exactos": 2,
+   "rechazados": 6,
+   "silver": 16,
+   "ventas_centavos": 28265
+  },
+  "silver_columnas": [
+   "ticket_id",
+   "fecha",
+   "tienda",
+   "producto",
+   "categoria",
+   "unidades",
+   "estado",
+   "precio_centavos",
+   "monto_centavos"
+  ],
+  "silver": [
+   [
+    "T001",
+    "2026-09-01",
+    "Tienda Sol",
+    "P-01",
+    "Abarrotes",
+    3,
+    "entregado",
+    1050,
+    3150
+   ],
+   [
+    "T002",
+    "2026-09-02",
+    "Tienda Luna",
+    "P-02",
+    "Abarrotes",
+    2,
+    "entregado",
+    800,
+    1600
+   ],
+   [
+    "T003",
+    "2026-09-02",
+    "Tienda Sol",
+    "P-03",
+    "Snacks",
+    4,
+    "entregado",
+    525,
+    2100
+   ],
+   [
+    "T004",
+    "2026-09-03",
+    "Kiosco Central",
+    "P-01",
+    "Abarrotes",
+    1,
+    "anulado",
+    1050,
+    1050
+   ],
+   [
+    "T005",
+    "2026-09-04",
+    "Tienda Luna",
+    "P-04",
+    "Bebidas",
+    6,
+    "entregado",
+    250,
+    1500
+   ],
+   [
+    "T006",
+    "2026-09-05",
+    "Tienda Sol",
+    "P-05",
+    "Limpieza",
+    5,
+    "entregado",
+    700,
+    3500
+   ],
+   [
+    "T007",
+    "2026-09-06",
+    "Kiosco Central",
+    "P-02",
+    "Abarrotes",
+    2,
+    "entregado",
+    800,
+    1600
+   ],
+   [
+    "T008",
+    "2026-09-07",
+    "Tienda Luna",
+    "P-06",
+    "Snacks",
+    10,
+    "entregado",
+    120,
+    1200
+   ],
+   [
+    "T009",
+    "2026-09-08",
+    "Tienda Sol",
+    "P-03",
+    "Snacks",
+    1,
+    "anulado",
+    525,
+    525
+   ],
+   [
+    "T010",
+    "2026-09-09",
+    "Kiosco Central",
+    "P-04",
+    "Bebidas",
+    3,
+    "entregado",
+    250,
+    750
+   ],
+   [
+    "T011",
+    "2026-09-10",
+    "Tienda Luna",
+    "P-01",
+    "Abarrotes",
+    2,
+    "entregado",
+    1050,
+    2100
+   ],
+   [
+    "T012",
+    "2026-10-01",
+    "Tienda Sol",
+    "P-02",
+    "Abarrotes",
+    4,
+    "entregado",
+    800,
+    3200
+   ],
+   [
+    "T013",
+    "2026-10-02",
+    "Kiosco Central",
+    "P-05",
+    "Limpieza",
+    2,
+    "entregado",
+    700,
+    1400
+   ],
+   [
+    "T014",
+    "2026-10-03",
+    "Tienda Luna",
+    "P-03",
+    "Snacks",
+    7,
+    "entregado",
+    525,
+    3675
+   ],
+   [
+    "T015",
+    "2026-10-04",
+    "Tienda Sol",
+    "P-06",
+    "Snacks",
+    12,
+    "entregado",
+    120,
+    1440
+   ],
+   [
+    "T016",
+    "2026-10-05",
+    "Kiosco Central",
+    "P-01",
+    "Abarrotes",
+    1,
+    "entregado",
+    1050,
+    1050
+   ]
+  ],
+  "rechazos": {
+   "T017": "fecha",
+   "T018": "unidades",
+   "T019": "producto",
+   "T020": "precio",
+   "T021": "unidades",
+   "T022": "estado"
+  },
+  "gold_columnas": [
+   "tienda",
+   "mes",
+   "ventas_centavos",
+   "tickets"
+  ],
+  "gold": [
+   [
+    "Kiosco Central",
+    "2026-09",
+    2350,
+    2
+   ],
+   [
+    "Kiosco Central",
+    "2026-10",
+    2450,
+    2
+   ],
+   [
+    "Tienda Luna",
+    "2026-09",
+    6400,
+    4
+   ],
+   [
+    "Tienda Luna",
+    "2026-10",
+    3675,
+    1
+   ],
+   [
+    "Tienda Sol",
+    "2026-09",
+    8750,
+    3
+   ],
+   [
+    "Tienda Sol",
+    "2026-10",
+    4640,
+    2
+   ]
+  ],
+  "filas_raw": 24,
+  "columnas_raw": [
+   "ticket_id",
+   "fecha",
+   "tienda",
+   "producto",
+   "unidades",
+   "estado",
+   "precio"
+  ]
+ },
+ "v2": {
+  "metricas": {
+   "bronze": 27,
+   "duplicados_exactos": 2,
+   "rechazados": 8,
+   "silver": 17,
+   "ventas_centavos": 30665
+  },
+  "rechazos": {
+   "T017": "fecha",
+   "T018": "unidades",
+   "T019": "producto",
+   "T020": "precio",
+   "T021": "unidades",
+   "T022": "estado",
+   "T024": "unidades",
+   "T026": "unidades"
+  }
+ }
+}

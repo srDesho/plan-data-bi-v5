@@ -4,4 +4,5 @@ FROM clientes c
 LEFT JOIN pedidos p       ON p.cliente_id = c.cliente_id AND p.estado = 'entregado'
 LEFT JOIN pedido_items i  ON i.pedido_id = p.pedido_id
 WHERE c.zona IS NULL
-GROUP BY c.cliente_id, c.nombre_negocio;
+GROUP BY c.cliente_id, c.nombre_negocio
+ORDER BY c.cliente_id;

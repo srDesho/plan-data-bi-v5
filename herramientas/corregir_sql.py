@@ -4,11 +4,12 @@ import collections
 import json
 import sqlite3
 import sys
+from contextlib import closing
 ROOT=Path(__file__).resolve().parents[1]
 
 def consulta(texto,db=None):
     db=Path(db or ROOT/'04_DATASETS/comercial.db').resolve()
-    with sqlite3.connect(db.as_uri()+'?mode=ro',uri=True) as con:
+    with closing(sqlite3.connect(db.as_uri()+'?mode=ro',uri=True)) as con:
         buf='';filas=[];columnas=[]
         for ch in texto:
             buf+=ch

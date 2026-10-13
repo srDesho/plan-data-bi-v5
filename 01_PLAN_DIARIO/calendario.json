@@ -106,7 +106,8 @@
     "sql": [
       "S3",
       "S5",
-      "S6"
+      "S6",
+      "S4"
     ],
     "python": [
       "P04",
@@ -143,7 +144,28 @@
         10
       ]
     ],
-    "objetivo": "Seleccionar clientes y evitar contar visitas repetidas como nuevos clientes."
+    "objetivo": "Seleccionar clientes y evitar contar visitas repetidas como nuevos clientes.",
+    "nucleo": {
+      "obligatorio": [
+        "S3",
+        "S5",
+        "S6",
+        "P04",
+        "P05"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "S4"
+      ],
+      "opcional": [
+        "C02"
+      ],
+      "reducido": [
+        "S3",
+        "P04"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 4,
@@ -192,7 +214,25 @@
         10
       ]
     ],
-    "objetivo": "Contar estados y explicar por qué anulados cambian las cifras. Primera postulación."
+    "objetivo": "Contar estados y explicar por qué anulados cambian las cifras. Primera postulación.",
+    "nucleo": {
+      "obligatorio": [
+        "G1",
+        "P06",
+        "ST01"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "G2",
+        "G3"
+      ],
+      "opcional": [],
+      "reducido": [
+        "G1",
+        "P06"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 5,
@@ -203,9 +243,9 @@
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "G4",
       "G5",
-      "G6"
+      "G6",
+      "G4"
     ],
     "python": [
       "P07",
@@ -242,7 +282,27 @@
         10
       ]
     ],
-    "objetivo": "Escribir un bucle propio y probar límites de categorías de ticket."
+    "objetivo": "Escribir un bucle propio y probar límites de categorías de ticket.",
+    "nucleo": {
+      "obligatorio": [
+        "G5",
+        "G6",
+        "P07",
+        "P08"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "G4"
+      ],
+      "opcional": [
+        "C01"
+      ],
+      "reducido": [
+        "G5",
+        "P07"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 6,
@@ -287,7 +347,23 @@
         10
       ]
     ],
-    "objetivo": "Resolver el examen S01 sin soluciones y explicar un KPI a gerencia."
+    "objetivo": "Resolver el examen S01 sin soluciones y explicar un KPI a gerencia.",
+    "nucleo": {
+      "obligatorio": [
+        "G7",
+        "G8",
+        "EXAMEN:S01"
+      ],
+      "repaso": [],
+      "refuerzo": [],
+      "opcional": [
+        "S8"
+      ],
+      "reducido": [
+        "EXAMEN:S01"
+      ],
+      "puerta": "P1"
+    }
   },
   {
     "dia": 7,
@@ -313,8 +389,10 @@
     "reducido": 45,
     "minimo": 20,
     "sql": [
+      "G6",
       "CL1",
-      "CL3"
+      "CL3",
+      "CL2"
     ],
     "python": [
       "P09"
@@ -323,7 +401,7 @@
     "otros": [],
     "teoria": [
       "08_Python_funciones_archivos",
-      "05_calidad_ETL"
+      "19_Puente_Python_a_ETL"
     ],
     "dataset": "clientes.csv",
     "bloques": [
@@ -348,7 +426,25 @@
         10
       ]
     ],
-    "objetivo": "Contrato de precio y pruebas de entrada inválida; preparar pregunta UAGRM."
+    "objetivo": "Contrato de precio y pruebas de entrada inválida; preparar pregunta UAGRM.",
+    "nucleo": {
+      "obligatorio": [
+        "P09"
+      ],
+      "repaso": [
+        "G6"
+      ],
+      "refuerzo": [
+        "CL1",
+        "CL3",
+        "CL2"
+      ],
+      "opcional": [],
+      "reducido": [
+        "P09"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 9,
@@ -363,8 +459,7 @@
       "J2"
     ],
     "python": [
-      "P10",
-      "P11"
+      "P10"
     ],
     "estadistica": [],
     "otros": [],
@@ -395,7 +490,22 @@
         10
       ]
     ],
-    "objetivo": "Unir cabecera/detalle y convertir cantidades sin truncar."
+    "objetivo": "Unir cabecera/detalle y convertir cantidades sin truncar.",
+    "nucleo": {
+      "obligatorio": [
+        "J1",
+        "J2",
+        "P10"
+      ],
+      "repaso": [],
+      "refuerzo": [],
+      "opcional": [],
+      "reducido": [
+        "J1",
+        "P10"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 10,
@@ -410,8 +520,8 @@
       "J4"
     ],
     "python": [
-      "P12",
-      "P13"
+      "P13",
+      "P12"
     ],
     "estadistica": [],
     "otros": [
@@ -444,7 +554,25 @@
         10
       ]
     ],
-    "objetivo": "Cuadrar totales por vendedor y leer clientes con csv estándar."
+    "objetivo": "Cuadrar totales por vendedor y leer clientes con csv estándar.",
+    "nucleo": {
+      "obligatorio": [
+        "J3",
+        "J4",
+        "P13"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "P12",
+        "C04"
+      ],
+      "opcional": [],
+      "reducido": [
+        "J3",
+        "P13"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 11,
@@ -459,8 +587,10 @@
       "J6"
     ],
     "python": [
+      "P11",
       "P14",
-      "P15"
+      "P15",
+      "P12"
     ],
     "estadistica": [],
     "otros": [],
@@ -491,7 +621,26 @@
         10
       ]
     ],
-    "objetivo": "Conservar clientes sin compra y no inventar un vendedor para ruta ausente."
+    "objetivo": "Conservar clientes sin compra y no inventar un vendedor para ruta ausente.",
+    "nucleo": {
+      "obligatorio": [
+        "J5",
+        "P11"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "J6",
+        "P14",
+        "P15",
+        "P12"
+      ],
+      "opcional": [],
+      "reducido": [
+        "J5",
+        "P11"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 12,
@@ -502,18 +651,20 @@
     "reducido": 60,
     "minimo": 20,
     "sql": [
+      "J2",
       "E1",
       "E2",
       "E3"
     ],
     "python": [
-      "P16",
-      "P17"
+      "P17",
+      "P16"
     ],
     "estadistica": [
       "ST02"
     ],
     "otros": [
+      "DB01",
       "N01"
     ],
     "teoria": [
@@ -543,7 +694,31 @@
         10
       ]
     ],
-    "objetivo": "Cargar Pandas después de dominar listas/funciones; comparar percentiles."
+    "objetivo": "Cargar Pandas después de dominar listas/funciones; comparar percentiles.",
+    "nucleo": {
+      "obligatorio": [
+        "P17",
+        "ST02",
+        "DB01",
+        "N01"
+      ],
+      "repaso": [
+        "J2"
+      ],
+      "refuerzo": [
+        "P16",
+        "E1",
+        "E2"
+      ],
+      "opcional": [
+        "E3"
+      ],
+      "reducido": [
+        "P17",
+        "DB01"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 13,
@@ -556,9 +731,9 @@
     "sql": [
       "E4",
       "E6",
+      "E5",
       "E7",
-      "E8",
-      "E5"
+      "E8"
     ],
     "python": [],
     "estadistica": [],
@@ -590,7 +765,26 @@
         10
       ]
     ],
-    "objetivo": "Resolver S02, corregir y publicar únicamente consultas propias verificadas."
+    "objetivo": "Resolver S02, corregir y publicar únicamente consultas propias verificadas.",
+    "nucleo": {
+      "obligatorio": [
+        "E4",
+        "EXAMEN:S02"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "E6",
+        "E5"
+      ],
+      "opcional": [
+        "E7",
+        "E8"
+      ],
+      "reducido": [
+        "EXAMEN:S02"
+      ],
+      "puerta": "P2"
+    }
   },
   {
     "dia": 14,
@@ -616,12 +810,12 @@
     "reducido": 45,
     "minimo": 20,
     "sql": [
-      "K1",
+      "J5",
       "K2a"
     ],
     "python": [
-      "P18",
-      "P19"
+      "P19",
+      "P18"
     ],
     "estadistica": [],
     "otros": [],
@@ -652,31 +846,46 @@
         10
       ]
     ],
-    "objetivo": "Definir ticket y distinguir valor de línea de entrega."
+    "objetivo": "Definir ticket y distinguir valor de línea de entrega.",
+    "nucleo": {
+      "obligatorio": [
+        "P19"
+      ],
+      "repaso": [
+        "J5"
+      ],
+      "refuerzo": [
+        "K2a",
+        "P18"
+      ],
+      "opcional": [],
+      "reducido": [
+        "P19"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 16,
     "fecha": "2026-10-27",
     "semana": 3,
-    "titulo": "CTE, ticket y merge validado",
+    "titulo": "Ticket y agrupación en Pandas",
     "completo": 160,
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "K2b",
-      "K3"
+      "K1",
+      "J2",
+      "K2b"
     ],
     "python": [
-      "P20",
-      "P21"
+      "P20"
     ],
     "estadistica": [],
-    "otros": [
-      "N02"
-    ],
+    "otros": [],
     "teoria": [
-      "04_SQL_CTE_ventanas",
-      "10_Pandas_transformaciones"
+      "09_Pandas_basico",
+      "06_KPIs"
     ],
     "dataset": "pedido_items.csv",
     "bloques": [
@@ -701,31 +910,49 @@
         10
       ]
     ],
-    "objetivo": "Controlar muchos a uno y huérfanos; cuadrar SQL/Pandas."
+    "objetivo": "Calcular el drop size por pedido en SQL y en Pandas y cuadrar ambos.",
+    "nucleo": {
+      "obligatorio": [
+        "K1",
+        "P20"
+      ],
+      "repaso": [
+        "J2"
+      ],
+      "refuerzo": [
+        "K2b"
+      ],
+      "opcional": [],
+      "reducido": [
+        "K1",
+        "P20"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 17,
     "fecha": "2026-10-28",
     "semana": 3,
-    "titulo": "Duplicados y perfilado",
+    "titulo": "Subconsultas y merge validado",
     "completo": 150,
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "K4",
-      "K5"
+      "K1",
+      "K4"
     ],
     "python": [
-      "P22",
-      "P23"
+      "P21",
+      "P22"
     ],
     "estadistica": [],
     "otros": [
-      "N03"
+      "N02"
     ],
     "teoria": [
-      "10_Pandas_transformaciones",
-      "04_SQL_CTE_ventanas"
+      "04_SQL_CTE_ventanas",
+      "10_Pandas_transformaciones"
     ],
     "dataset": "ventas_erp_raw.csv",
     "bloques": [
@@ -750,32 +977,52 @@
         10
       ]
     ],
-    "objetivo": "Distinguir duplicado exacto de conflicto de clave."
+    "objetivo": "Controlar muchos a uno y huérfanos con un merge validado; usar una subconsulta con sentido.",
+    "nucleo": {
+      "obligatorio": [
+        "P21",
+        "P22",
+        "N02"
+      ],
+      "repaso": [
+        "K1"
+      ],
+      "refuerzo": [
+        "K4"
+      ],
+      "opcional": [],
+      "reducido": [
+        "P21"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 18,
     "fecha": "2026-10-29",
     "semana": 3,
-    "titulo": "Fechas, Gold y recencia",
+    "titulo": "Subconsultas y perfilado de datos",
     "completo": 150,
     "reducido": 60,
     "minimo": 20,
     "sql": [
+      "K3",
+      "K5",
       "K6",
-      "V1",
-      "V2"
+      "V1"
     ],
     "python": [
-      "P24",
-      "P25"
+      "P23"
     ],
     "estadistica": [],
-    "otros": [],
-    "teoria": [
-      "10_Pandas_transformaciones",
-      "04_SQL_CTE_ventanas"
+    "otros": [
+      "N03"
     ],
-    "dataset": "pedidos.csv",
+    "teoria": [
+      "04_SQL_CTE_ventanas",
+      "10_Pandas_transformaciones"
+    ],
+    "dataset": "mini_etl",
     "bloques": [
       [
         "SQL",
@@ -798,35 +1045,55 @@
         10
       ]
     ],
-    "objetivo": "Crear una función de resumen y usar corte fijo para inactividad."
+    "objetivo": "Resolver una subconsulta con CTE y perfilar una tabla antes de limpiarla.",
+    "nucleo": {
+      "obligatorio": [
+        "P23",
+        "K3",
+        "N03"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "K5",
+        "K6",
+        "V1"
+      ],
+      "opcional": [],
+      "reducido": [
+        "P23",
+        "K3"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 19,
     "fecha": "2026-10-30",
     "semana": 3,
-    "titulo": "Ventanas, ABC y atípicos",
+    "titulo": "Ventanas y clientes inactivos",
     "completo": 150,
     "reducido": 60,
     "minimo": 20,
     "sql": [
       "V3",
-      "V4"
+      "V2"
     ],
     "python": [
       "P26",
       "P27"
     ],
     "estadistica": [
-      "ST03"
+      "ST03",
+      "ST04"
     ],
     "otros": [
       "N04"
     ],
     "teoria": [
       "04_SQL_CTE_ventanas",
-      "11_Estadistica_descriptiva"
+      "06_KPIs"
     ],
-    "dataset": "drop_por_pedido.csv",
+    "dataset": "comercial.db",
     "bloques": [
       [
         "SQL",
@@ -849,7 +1116,26 @@
         10
       ]
     ],
-    "objetivo": "Separar ABC por ventas de variedad y tratar atípicos con criterio."
+    "objetivo": "Usar funciones de ventana para participación y acumulado, y encontrar clientes inactivos con una fecha de corte fija.",
+    "nucleo": {
+      "obligatorio": [
+        "V3",
+        "V2"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "P26",
+        "P27",
+        "ST03",
+        "N04",
+        "ST04"
+      ],
+      "opcional": [],
+      "reducido": [
+        "V3"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 20,
@@ -860,13 +1146,13 @@
     "reducido": 60,
     "minimo": 20,
     "sql": [
+      "V4",
       "V5",
+      "V1",
       "X1",
       "X2"
     ],
-    "python": [
-      "P28"
-    ],
+    "python": [],
     "estadistica": [],
     "otros": [],
     "teoria": [
@@ -896,7 +1182,26 @@
         10
       ]
     ],
-    "objetivo": "Resolver S03 con controles de claves, tickets y ventanas."
+    "objetivo": "Resolver S03 con controles de claves, tickets y ventanas.",
+    "nucleo": {
+      "obligatorio": [
+        "V4",
+        "EXAMEN:S03"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "V5",
+        "V1"
+      ],
+      "opcional": [
+        "X1",
+        "X2"
+      ],
+      "reducido": [
+        "EXAMEN:S03"
+      ],
+      "puerta": "P3"
+    }
   },
   {
     "dia": 21,
@@ -917,25 +1222,24 @@
     "dia": 22,
     "fecha": "2026-11-02",
     "semana": 4,
-    "titulo": "Diseñar ETL y preservar Bronze",
+    "titulo": "Mini-ETL (1): extraer y perfilar",
     "completo": 90,
     "reducido": 45,
     "minimo": 20,
     "sql": [
-      "N8",
-      "CL4"
+      "CL4",
+      "N8"
     ],
-    "python": [
-      "P29",
-      "P30"
-    ],
+    "python": [],
     "estadistica": [],
-    "otros": [],
-    "teoria": [
-      "05_calidad_ETL",
-      "17_Transferencia_debug"
+    "otros": [
+      "ME01"
     ],
-    "dataset": "ventas_erp_raw.csv",
+    "teoria": [
+      "19_Puente_Python_a_ETL",
+      "10_Pandas_transformaciones"
+    ],
+    "dataset": "mini_etl",
     "bloques": [
       [
         "SQL",
@@ -958,30 +1262,47 @@
         10
       ]
     ],
-    "objetivo": "Contrato, perfilado y carga Bronze; primera etapa del proyecto ETL."
+    "objetivo": "Leer un archivo pequeño como texto sin tocarlo, quitar duplicados exactos y perfilarlo.",
+    "nucleo": {
+      "obligatorio": [
+        "ME01"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "CL4",
+        "N8"
+      ],
+      "opcional": [],
+      "reducido": [
+        "ME01"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 23,
     "fecha": "2026-11-03",
     "semana": 4,
-    "titulo": "ETL: texto, fechas y dinero",
+    "titulo": "Mini-ETL (2): transformar con reglas y rechazos",
     "completo": 160,
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "X3",
-      "X4"
+      "K3"
     ],
-    "python": [],
+    "python": [
+      "P29"
+    ],
     "estadistica": [],
     "otros": [
-      "C05"
+      "ME02",
+      "DB02"
     ],
     "teoria": [
-      "05_calidad_ETL",
+      "19_Puente_Python_a_ETL",
       "10_Pandas_transformaciones"
     ],
-    "dataset": "ventas_erp_raw.csv",
+    "dataset": "mini_etl",
     "bloques": [
       [
         "SQL",
@@ -1004,28 +1325,49 @@
         10
       ]
     ],
-    "objetivo": "Reutilizar funciones propias de conversión y registrar errores."
+    "objetivo": "Transformar el archivo de 24 filas con tus P09–P11: reglas, normalización y rechazos con causa.",
+    "nucleo": {
+      "obligatorio": [
+        "ME02"
+      ],
+      "repaso": [
+        "K3"
+      ],
+      "refuerzo": [
+        "DB02",
+        "P29"
+      ],
+      "opcional": [],
+      "reducido": [
+        "ME02"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 24,
     "fecha": "2026-11-04",
     "semana": 4,
-    "titulo": "ETL: duplicados y vendedores",
+    "titulo": "Mini-ETL (3): validar, cuadrar y cargar",
     "completo": 150,
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "X5",
-      "X6"
+      "V2"
     ],
-    "python": [],
+    "python": [
+      "P30"
+    ],
     "estadistica": [],
-    "otros": [],
+    "otros": [
+      "ME03",
+      "DB03"
+    ],
     "teoria": [
       "05_calidad_ETL",
-      "10_Pandas_transformaciones"
+      "19_Puente_Python_a_ETL"
     ],
-    "dataset": "vendedores_por_ruta.csv",
+    "dataset": "mini_etl",
     "bloques": [
       [
         "SQL",
@@ -1048,27 +1390,45 @@
         10
       ]
     ],
-    "objetivo": "Validar clave y catálogo; recuperar faltantes solo con regla inequívoca."
+    "objetivo": "Validar con la ecuación de conteos, cargar a SQLite sin dejar la conexión abierta y repetir sin duplicar.",
+    "nucleo": {
+      "obligatorio": [
+        "ME03"
+      ],
+      "repaso": [
+        "V2"
+      ],
+      "refuerzo": [
+        "P30",
+        "DB03"
+      ],
+      "opcional": [],
+      "reducido": [
+        "ME03"
+      ],
+      "puerta": "P4"
+    }
   },
   {
     "dia": 25,
     "fecha": "2026-11-05",
     "semana": 4,
-    "titulo": "Silver, Gold y presupuesto",
+    "titulo": "ETL guiado (1): contrato, Bronze y texto",
     "completo": 150,
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "X7",
-      "X8",
-      "N1"
+      "K3"
     ],
     "python": [],
     "estadistica": [],
-    "otros": [],
+    "otros": [
+      "ETL-1",
+      "C05"
+    ],
     "teoria": [
       "05_calidad_ETL",
-      "06_KPIs"
+      "10_Pandas_transformaciones"
     ],
     "dataset": "ventas_erp_raw.csv",
     "bloques": [
@@ -1093,34 +1453,52 @@
         10
       ]
     ],
-    "objetivo": "Cargar tres capas y conciliar ventas con SQL independiente."
+    "objetivo": "Escribir el contrato del ETL de la distribuidora, preservar Bronze y normalizar texto.",
+    "nucleo": {
+      "obligatorio": [
+        "ETL-1"
+      ],
+      "repaso": [
+        "K3"
+      ],
+      "refuerzo": [
+        "C05"
+      ],
+      "opcional": [],
+      "reducido": [
+        "ETL-1"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 26,
     "fecha": "2026-11-06",
     "semana": 4,
-    "titulo": "Muestreo, piloto y operación comercial",
+    "titulo": "ETL guiado (2): fechas, cantidad, claves y duplicados",
     "completo": 150,
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "N2",
-      "N3",
-      "N4"
+      "V3",
+      "X8",
+      "X3",
+      "X5",
+      "X6",
+      "X4"
     ],
     "python": [],
-    "estadistica": [
-      "ST04",
-      "ST05"
-    ],
+    "estadistica": [],
     "otros": [
-      "N05"
+      "ETL-2",
+      "ETL-3",
+      "DB03"
     ],
     "teoria": [
-      "12_Estadistica_inferencia",
-      "06_KPIs"
+      "05_calidad_ETL",
+      "10_Pandas_transformaciones"
     ],
-    "dataset": "experimento_piloto.csv",
+    "dataset": "ventas_erp_raw.csv",
     "bloques": [
       [
         "SQL",
@@ -1143,17 +1521,43 @@
         10
       ]
     ],
-    "objetivo": "Comprender independencia, incertidumbre y diferencia entre cobertura y efectividad."
+    "objetivo": "Convertir fechas, cantidades y dinero sin truncar; detectar conflictos de clave, quitar duplicados exactos y recuperar vendedores solo con una regla inequívoca.",
+    "nucleo": {
+      "obligatorio": [
+        "ETL-2",
+        "ETL-3"
+      ],
+      "repaso": [
+        "V3"
+      ],
+      "refuerzo": [
+        "X8",
+        "DB03"
+      ],
+      "opcional": [
+        "X3",
+        "X5",
+        "X6",
+        "X4"
+      ],
+      "reducido": [
+        "ETL-2"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 27,
     "fecha": "2026-11-07",
     "semana": 4,
-    "titulo": "Examen ETL y modelo estrella",
+    "titulo": "Examen S04: mini-ETL y ETL hasta claves",
     "completo": 200,
     "reducido": 60,
     "minimo": 20,
     "sql": [
+      "N2",
+      "N4",
+      "X7",
       "N10",
       "N11"
     ],
@@ -1161,8 +1565,8 @@
     "estadistica": [],
     "otros": [],
     "teoria": [
-      "13_Modelado",
-      "05_calidad_ETL"
+      "05_calidad_ETL",
+      "17_Transferencia_debug"
     ],
     "dataset": "comercial.db",
     "bloques": [
@@ -1187,7 +1591,26 @@
         10
       ]
     ],
-    "objetivo": "Resolver S04, repetir pipeline sin duplicar y definir hechos/dimensiones."
+    "objetivo": "Demostrar el mini-ETL y el ETL hasta claves y duplicados, y defender las decisiones sin leer el código.",
+    "nucleo": {
+      "obligatorio": [
+        "N2",
+        "EXAMEN:S04"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "N4",
+        "X7"
+      ],
+      "opcional": [
+        "N10",
+        "N11"
+      ],
+      "reducido": [
+        "EXAMEN:S04"
+      ],
+      "puerta": "P5a"
+    }
   },
   {
     "dia": 28,
@@ -1208,27 +1631,29 @@
     "dia": 29,
     "fecha": "2026-11-09",
     "semana": 5,
-    "titulo": "Inferencia y preparación de Power BI",
+    "titulo": "ETL guiado (3): Silver, validación y rechazos",
     "completo": 90,
     "reducido": 45,
     "minimo": 20,
     "sql": [
-      "N7",
-      "N12"
+      "K1",
+      "N7"
     ],
-    "python": [],
+    "python": [
+      "P28"
+    ],
     "estadistica": [
-      "ST06",
-      "ST07"
+      "ST05"
     ],
     "otros": [
-      "PB01"
+      "ETL-4",
+      "N05"
     ],
     "teoria": [
-      "12_Estadistica_inferencia",
-      "14_PowerBI_DAX"
+      "05_calidad_ETL",
+      "06_KPIs"
     ],
-    "dataset": "encuesta_canales.csv",
+    "dataset": "ventas_erp_raw.csv",
     "bloques": [
       [
         "SQL",
@@ -1251,31 +1676,57 @@
         10
       ]
     ],
-    "objetivo": "Corregir interpretación de p-valor e iniciar importación, dentro del bloque disponible."
+    "objetivo": "Construir Silver, validarla con la ecuación de conteos y conservar rechazos con causa.",
+    "nucleo": {
+      "obligatorio": [
+        "ETL-4"
+      ],
+      "repaso": [
+        "K1"
+      ],
+      "refuerzo": [
+        "P28",
+        "N7"
+      ],
+      "opcional": [
+        "ST05",
+        "N05"
+      ],
+      "reducido": [
+        "ETL-4"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 30,
     "fecha": "2026-11-10",
     "semana": 5,
-    "titulo": "Claves, relaciones y calendario",
+    "titulo": "ETL guiado (4): Gold, carga y cuadre SQL",
     "completo": 160,
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "N13",
-      "N14"
+      "V2",
+      "N9",
+      "N12"
     ],
-    "python": [],
-    "estadistica": [],
+    "python": [
+      "P24",
+      "P25"
+    ],
+    "estadistica": [
+      "ST06"
+    ],
     "otros": [
-      "PB02",
-      "N07"
+      "ETL-5",
+      "ETL-6"
     ],
     "teoria": [
-      "13_Modelado",
-      "14_PowerBI_DAX"
+      "05_calidad_ETL",
+      "17_Transferencia_debug"
     ],
-    "dataset": "datos_modelo",
+    "dataset": "ventas_erp_raw.csv",
     "bloques": [
       [
         "SQL",
@@ -1298,13 +1749,36 @@
         10
       ]
     ],
-    "objetivo": "Construir relaciones y verificar fecha/calendario; inspeccionar un índice en copia."
+    "objetivo": "Construir Gold, cargar las tres capas de forma repetible y cuadrar con un SQL independiente.",
+    "nucleo": {
+      "obligatorio": [
+        "ETL-5",
+        "ETL-6"
+      ],
+      "repaso": [
+        "V2"
+      ],
+      "refuerzo": [
+        "P24",
+        "P25",
+        "N9",
+        "N12"
+      ],
+      "opcional": [
+        "ST06"
+      ],
+      "reducido": [
+        "ETL-5",
+        "ETL-6"
+      ],
+      "puerta": "P5"
+    }
   },
   {
     "dia": 31,
     "fecha": "2026-11-11",
     "semana": 5,
-    "titulo": "Medidas básicas y Excel",
+    "titulo": "Excel y modificar tu mini-ETL",
     "completo": 150,
     "reducido": 60,
     "minimo": 20,
@@ -1315,106 +1789,14 @@
     "python": [],
     "estadistica": [],
     "otros": [
-      "PB03",
-      "EX01"
-    ],
-    "teoria": [
-      "14_PowerBI_DAX",
-      "15_Excel_cuadres"
-    ],
-    "dataset": "datos_modelo",
-    "bloques": [
-      [
-        "SQL",
-        20
-      ],
-      [
-        "Teoría",
-        30
-      ],
-      [
-        "Práctica",
-        80
-      ],
-      [
-        "LinkedIn",
-        10
-      ],
-      [
-        "Cierre",
-        10
-      ]
-    ],
-    "objetivo": "Reconciliar ventas, pedidos y ticket por un segundo camino."
-  },
-  {
-    "dia": 32,
-    "fecha": "2026-11-12",
-    "semana": 5,
-    "titulo": "Contexto, presupuesto y comparaciones",
-    "completo": 150,
-    "reducido": 60,
-    "minimo": 20,
-    "sql": [
-      "N15",
-      "N16"
-    ],
-    "python": [],
-    "estadistica": [],
-    "otros": [
-      "PB04",
-      "EX02"
-    ],
-    "teoria": [
-      "14_PowerBI_DAX",
-      "15_Excel_cuadres"
-    ],
-    "dataset": "datos_modelo",
-    "bloques": [
-      [
-        "SQL",
-        20
-      ],
-      [
-        "Teoría",
-        25
-      ],
-      [
-        "Práctica",
-        65
-      ],
-      [
-        "Postulación",
-        30
-      ],
-      [
-        "Cierre",
-        10
-      ]
-    ],
-    "objetivo": "Usar segmentos compatibles con el grano del presupuesto."
-  },
-  {
-    "dia": 33,
-    "fecha": "2026-11-13",
-    "semana": 5,
-    "titulo": "Visuales, percentiles y explicación",
-    "completo": 150,
-    "reducido": 60,
-    "minimo": 20,
-    "sql": [
-      "J2",
-      "N9"
-    ],
-    "python": [],
-    "estadistica": [],
-    "otros": [
-      "PB05",
+      "EX01",
+      "ME04",
+      "EX02",
       "EX03"
     ],
     "teoria": [
-      "14_PowerBI_DAX",
-      "16_Git_comunicacion"
+      "15_Excel_cuadres",
+      "05_calidad_ETL"
     ],
     "dataset": "drop_por_pedido.csv",
     "bloques": [
@@ -1439,24 +1821,190 @@
         10
       ]
     ],
-    "objetivo": "Construir dos páginas útiles y explicar límites de la información."
+    "objetivo": "Importar a Excel, crear una tabla dinámica y cuadrar contra SQL; modificar tu mini-ETL con una regla nueva.",
+    "nucleo": {
+      "obligatorio": [
+        "EX01",
+        "ME04"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "N5",
+        "N6",
+        "EX02"
+      ],
+      "opcional": [
+        "EX03"
+      ],
+      "reducido": [
+        "EX01"
+      ],
+      "puerta": null
+    }
+  },
+  {
+    "dia": 32,
+    "fecha": "2026-11-12",
+    "semana": 5,
+    "titulo": "Power BI (1): importar y relacionar",
+    "completo": 150,
+    "reducido": 60,
+    "minimo": 20,
+    "sql": [
+      "J2",
+      "N12",
+      "N14",
+      "N13",
+      "N15",
+      "N16"
+    ],
+    "python": [],
+    "estadistica": [],
+    "otros": [
+      "PB01",
+      "PB02",
+      "PB04",
+      "N07"
+    ],
+    "teoria": [
+      "14_PowerBI_DAX",
+      "13_Modelado"
+    ],
+    "dataset": "datos_modelo",
+    "bloques": [
+      [
+        "SQL",
+        20
+      ],
+      [
+        "Teoría",
+        25
+      ],
+      [
+        "Práctica",
+        65
+      ],
+      [
+        "Postulación",
+        30
+      ],
+      [
+        "Cierre",
+        10
+      ]
+    ],
+    "objetivo": "Importar el modelo en Power BI Desktop y revisar cada relación antes de aceptarla.",
+    "nucleo": {
+      "obligatorio": [
+        "PB01",
+        "PB02"
+      ],
+      "repaso": [
+        "J2"
+      ],
+      "refuerzo": [
+        "N12",
+        "N14",
+        "PB04",
+        "N07"
+      ],
+      "opcional": [
+        "N13",
+        "N15",
+        "N16"
+      ],
+      "reducido": [
+        "PB01"
+      ],
+      "puerta": null
+    }
+  },
+  {
+    "dia": 33,
+    "fecha": "2026-11-13",
+    "semana": 5,
+    "titulo": "Power BI (2): primeras medidas",
+    "completo": 150,
+    "reducido": 60,
+    "minimo": 20,
+    "sql": [
+      "N2",
+      "N1"
+    ],
+    "python": [],
+    "estadistica": [
+      "ST07"
+    ],
+    "otros": [
+      "PB03",
+      "PB05"
+    ],
+    "teoria": [
+      "14_PowerBI_DAX",
+      "06_KPIs"
+    ],
+    "dataset": "drop_por_pedido.csv",
+    "bloques": [
+      [
+        "SQL",
+        20
+      ],
+      [
+        "Teoría",
+        30
+      ],
+      [
+        "Práctica",
+        80
+      ],
+      [
+        "LinkedIn",
+        10
+      ],
+      [
+        "Cierre",
+        10
+      ]
+    ],
+    "objetivo": "Crear tres medidas núcleo (ventas, pedidos y ticket) y comprobar que coinciden con SQL.",
+    "nucleo": {
+      "obligatorio": [
+        "PB03"
+      ],
+      "repaso": [
+        "N2"
+      ],
+      "refuerzo": [
+        "PB05",
+        "N1"
+      ],
+      "opcional": [
+        "ST07"
+      ],
+      "reducido": [
+        "PB03"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 34,
     "fecha": "2026-11-14",
     "semana": 5,
-    "titulo": "Examen BI y actualización",
+    "titulo": "Examen S05: ETL guiado completo y BI mínimo",
     "completo": 200,
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "N1",
-      "N3"
+      "N3",
+      "N6",
+      "N15"
     ],
     "python": [],
     "estadistica": [],
     "otros": [
-      "PB06"
+      "PB06",
+      "EX03"
     ],
     "teoria": [
       "14_PowerBI_DAX",
@@ -1485,7 +2033,26 @@
         10
       ]
     ],
-    "objetivo": "Resolver S05 y completar comprobación manual real de Power BI."
+    "objetivo": "Defender el ETL guiado completo y registrar con honestidad el estado del BI mínimo.",
+    "nucleo": {
+      "obligatorio": [
+        "N3",
+        "EXAMEN:S05"
+      ],
+      "repaso": [],
+      "refuerzo": [
+        "PB06",
+        "EX03",
+        "N6"
+      ],
+      "opcional": [
+        "N15"
+      ],
+      "reducido": [
+        "EXAMEN:S05"
+      ],
+      "puerta": "P6"
+    }
   },
   {
     "dia": 35,
@@ -1506,20 +2073,19 @@
     "dia": 36,
     "fecha": "2026-11-16",
     "semana": 6,
-    "titulo": "Preparar un caso nuevo sin referencia",
+    "titulo": "Caso nuevo C06 (0): contrato y plan",
     "completo": 90,
     "reducido": 45,
     "minimo": 20,
     "sql": [
-      "V2",
-      "N7"
+      "V3",
+      "N7",
+      "N9"
     ],
-    "python": [
-      "P09",
-      "P11"
-    ],
+    "python": [],
     "estadistica": [],
     "otros": [
+      "C06-0",
       "N06"
     ],
     "teoria": [
@@ -1549,23 +2115,43 @@
         10
       ]
     ],
-    "objetivo": "Redactar contrato propio y plan de trabajo; identificar qué no está claro."
+    "objetivo": "Redactar el contrato propio de un caso nuevo e identificar qué no está claro.",
+    "nucleo": {
+      "obligatorio": [
+        "C06-0"
+      ],
+      "repaso": [
+        "V3"
+      ],
+      "refuerzo": [
+        "N7",
+        "N06"
+      ],
+      "opcional": [
+        "N9"
+      ],
+      "reducido": [
+        "C06-0"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 37,
     "fecha": "2026-11-17",
     "semana": 6,
-    "titulo": "Transferencia 1: perfilado y extracción",
+    "titulo": "C06 (1): extraer, Bronze y perfil",
     "completo": 160,
     "reducido": 60,
     "minimo": 20,
     "sql": [
+      "K3",
       "N8"
     ],
     "python": [],
     "estadistica": [],
     "otros": [
-      "C06"
+      "C06-1"
     ],
     "teoria": [
       "17_Transferencia_debug",
@@ -1594,23 +2180,41 @@
         10
       ]
     ],
-    "objetivo": "C06: 70 minutos para extraer, preservar Bronze, perfilar y probar el contrato."
+    "objetivo": "C06: extraer, preservar Bronze, perfilar y probar las conversiones.",
+    "nucleo": {
+      "obligatorio": [
+        "C06-1"
+      ],
+      "repaso": [
+        "K3"
+      ],
+      "refuerzo": [
+        "N8"
+      ],
+      "opcional": [],
+      "reducido": [
+        "C06-1"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 38,
     "fecha": "2026-11-18",
     "semana": 6,
-    "titulo": "Transferencia 2: Silver y rechazos",
+    "titulo": "C06 (2): Silver y rechazos",
     "completo": 150,
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "N9"
+      "V2"
     ],
     "python": [],
-    "estadistica": [],
+    "estadistica": [
+      "ST07"
+    ],
     "otros": [
-      "C06"
+      "C06-2"
     ],
     "teoria": [
       "17_Transferencia_debug",
@@ -1639,24 +2243,40 @@
         10
       ]
     ],
-    "objetivo": "C06: 80 minutos para convertir, construir Silver y registrar rechazos con código propio."
+    "objetivo": "C06: construir Silver con tu código y registrar rechazos con causa.",
+    "nucleo": {
+      "obligatorio": [
+        "C06-2"
+      ],
+      "repaso": [
+        "V2"
+      ],
+      "refuerzo": [
+        "ST07"
+      ],
+      "opcional": [],
+      "reducido": [
+        "C06-2"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 39,
     "fecha": "2026-11-19",
     "semana": 6,
-    "titulo": "Transferencia 3: Gold y cuadres",
+    "titulo": "C06 (3): Gold y cuadres",
     "completo": 150,
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "N5",
-      "V4"
+      "V4",
+      "N5"
     ],
     "python": [],
     "estadistica": [],
     "otros": [
-      "C06"
+      "C06-3"
     ],
     "teoria": [
       "17_Transferencia_debug",
@@ -1685,31 +2305,49 @@
         10
       ]
     ],
-    "objetivo": "C06: 65 minutos para cargar Gold, conciliar y repetir el proceso; corrector después del intento."
+    "objetivo": "C06: construir Gold y cuadrar todas las capas.",
+    "nucleo": {
+      "obligatorio": [
+        "C06-3"
+      ],
+      "repaso": [
+        "V4"
+      ],
+      "refuerzo": [
+        "N5"
+      ],
+      "opcional": [],
+      "reducido": [
+        "C06-3"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 40,
     "fecha": "2026-11-20",
     "semana": 6,
-    "titulo": "Comunicación y entrevista integral",
+    "titulo": "C06 (4): SQLite, repetición y README",
     "completo": 150,
     "reducido": 60,
     "minimo": 20,
     "sql": [
+      "N2",
       "J5",
-      "N3"
+      "N16"
     ],
     "python": [],
     "estadistica": [],
     "otros": [
-      "C01",
-      "C03"
+      "C06-4",
+      "C03",
+      "C01"
     ],
     "teoria": [
-      "18_Entrevistas",
+      "17_Transferencia_debug",
       "16_Git_comunicacion"
     ],
-    "dataset": "comercial.db",
+    "dataset": "transferencia",
     "bloques": [
       [
         "SQL",
@@ -1732,7 +2370,27 @@
         10
       ]
     ],
-    "objetivo": "Defender resultados, actualizar CV con proyectos realmente terminados."
+    "objetivo": "C06: cargar a SQLite, repetir, probar entradas adversas y documentar.",
+    "nucleo": {
+      "obligatorio": [
+        "C06-4"
+      ],
+      "repaso": [
+        "N2"
+      ],
+      "refuerzo": [
+        "C03",
+        "C01",
+        "J5"
+      ],
+      "opcional": [
+        "N16"
+      ],
+      "reducido": [
+        "C06-4"
+      ],
+      "puerta": null
+    }
   },
   {
     "dia": 41,
@@ -1744,7 +2402,8 @@
     "minimo": 20,
     "sql": [
       "V4",
-      "N1"
+      "N1",
+      "N5"
     ],
     "python": [],
     "estadistica": [],
@@ -1776,7 +2435,24 @@
         10
       ]
     ],
-    "objetivo": "Resolver S06, revisar autonomía y reservar examen del23–30 sin abrir sus soluciones."
+    "objetivo": "Resolver S06, revisar autonomía y reservar examen del23–30 sin abrir sus soluciones.",
+    "nucleo": {
+      "obligatorio": [
+        "EXAMEN:S06"
+      ],
+      "repaso": [
+        "V4"
+      ],
+      "refuerzo": [
+        "N1",
+        "N5"
+      ],
+      "opcional": [],
+      "reducido": [
+        "EXAMEN:S06"
+      ],
+      "puerta": "P7"
+    }
   },
   {
     "dia": 42,

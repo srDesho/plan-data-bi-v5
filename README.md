@@ -73,14 +73,25 @@ Método: intento propio diez minutos → ejecutar/comprobar → depurar diez min
 Los ejercicios SQL tienen contratos de columnas y comparación del resultado completo; algunos planes
 EXPLAIN varían según SQLite y se interpretan en lugar de exigir un texto idéntico.
 
+## Obligatorio, refuerzo y opcional (revisión 5.1)
+
+Desde la auditoría, cada guía diaria clasifica los ejercicios en **OBLIGATORIO** (núcleo y condición de la puerta), **REPASO**, **REFUERZO** y **OPCIONAL**. Avanzas por puertas de competencia, no por fecha: las fechas son objetivos. Lee [Competencias y puertas](01_PLAN_DIARIO/COMPETENCIAS.md) y la [carga estimada](01_PLAN_DIARIO/CARGA_ESTIMADA.md) (estimación, no medición). Los Días 1 y 2 no cambiaron.
+
+Antes del ETL de la distribuidora hay un puente: `19_Puente_Python_a_ETL.md`, tres ejercicios de depuración (`03_EJERCICIOS/Depuracion`) y un mini-ETL de 24 filas (`03_EJERCICIOS/Puente`).
+
+```powershell
+.\.venv\Scripts\python.exe herramientas/corregir_mini_etl.py ME01 mi_trabajo/mini_etl/mini_etl.py
+.\.venv\Scripts\python.exe herramientas/corregir_depuracion.py DB01 mi_trabajo/depuracion/DB01.py
+```
+
 ## Qué carpeta abrir
 
 | Carpeta | Uso |
 |---|---|
-|01_PLAN_DIARIO|Plan con casillas, 42 guías diarias y calendario CSV/JSON|
-|02_TEORIA|18 capítulos progresivos, glosario, fuentes y complemento UAGRM|
-|03_EJERCICIOS|81 SQL, 30 Python, 7 estadística, 7 notebooks, 15 casos y 6 exámenes|
-|04_DATASETS|Datos v 3 reutilizados, base comercial ampliada y caso de transferencia|
+|01_PLAN_DIARIO|Plan con casillas, 42 guías diarias (con núcleo/refuerzo/opcional), puertas de competencia y calendario CSV/JSON|
+|02_TEORIA|19 capítulos progresivos (el 19 es el puente a ETL), glosario, fuentes y complemento UAGRM|
+|03_EJERCICIOS|81 SQL, 30 Python, 4 de mini-ETL, 3 de depuración, 7 estadística, 7 notebooks, 15 casos y 6 exámenes|
+|04_DATASETS|Datos v 3 reutilizados, base comercial ampliada, mini-ETL de 24 filas y caso de transferencia|
 |05_PROYECTOS|Estructuras de SQL/ETL/BI, plantilla README, CSV de modelo, M y DAX|
 |06_ENTREVISTAS|24 preguntas y 6 simulacros con rúbrica|
 |07_LINKEDIN_EMPLEO|CV/perfil, seguimiento y 12 borradores para 2 publicaciones semanales|
@@ -107,6 +118,8 @@ de los materiales del estudiante. El corrector numérico no prueba por sí solo 
 .\.venv\Scripts\python.exe herramientas/validar_final.py mi_trabajo/final/salida
 ```
 
+Para comprobar que los enunciados son específicos (sin plantillas, pistas repetidas ni resultados publicados) y que los exámenes evalúan lo preparado: `python herramientas/auditar_enunciados.py`.
+Para comprobar que ninguna herramienta deja abierta una conexión SQLite (error `WinError 32` en Windows): `python herramientas/prueba_sqlite_cierre.py`.
 Para repetir las pruebas del material sin resolver ejercicios: `python herramientas/verificar_paquete.py`.
 Ese comando accede a referencias, genera salidas temporales y verifica contenido; úsalo como control del paquete,
 no como examen ni sustituto de tu implementación. Las evidencias obtenidas durante la construcción están incluidas.

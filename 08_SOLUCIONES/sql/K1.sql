@@ -4,4 +4,5 @@ SELECT p.pedido_id, p.fecha,
 FROM pedidos p
 INNER JOIN pedido_items i ON i.pedido_id = p.pedido_id
 WHERE p.estado = 'entregado'
-GROUP BY p.pedido_id, p.fecha;
+GROUP BY p.pedido_id, p.fecha
+ORDER BY p.pedido_id;

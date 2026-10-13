@@ -1,1 +1,5 @@
-SELECT categoria,COUNT(*) productos,ROUND(AVG(precio_unitario),2) precio_medio FROM productos GROUP BY categoria HAVING COUNT(*)>=5 ORDER BY categoria;
+SELECT categoria, COUNT(*) AS productos, ROUND(AVG(precio_unitario), 2) AS precio_medio
+FROM productos
+GROUP BY categoria
+HAVING AVG(precio_unitario) > 9
+ORDER BY categoria;

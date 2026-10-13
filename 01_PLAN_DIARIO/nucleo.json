@@ -1,0 +1,1055 @@
+{
+ "version": "5.1-auditoria",
+ "nota": "Fuente de OBLIGATORIO/REPASO/REFUERZO/OPCIONAL por jornada. D01 y D02 no se modifican. Lo aplica herramientas/aplicar_nucleo.py.",
+ "items_personalizados": {
+  "ETL-1": {
+   "titulo": "ETL distribuidora · etapas 1–2: contrato, Bronze, perfil y texto",
+   "est": 75,
+   "enlaces": [
+    [
+     "Proyecto ETL",
+     "../../05_PROYECTOS/etl/README.md"
+    ],
+    [
+     "datos",
+     "../../04_DATASETS/distribuidora/LEEME.txt"
+    ]
+   ],
+   "nota": "Escribe el contrato en `mi_trabajo/etl/contrato.md`. Bronze = el archivo tal cual (16.378 filas). Normaliza espacios, estados, rutas y clientes (120). Es la misma estructura del mini-ETL con más filas."
+  },
+  "ETL-2": {
+   "titulo": "ETL distribuidora · etapa 3: fechas, cantidad y dinero",
+   "est": 60,
+   "enlaces": [
+    [
+     "Proyecto ETL",
+     "../../05_PROYECTOS/etl/README.md"
+    ]
+   ],
+   "nota": "Reutiliza tus P09, P10 y P11. Tres formatos de fecha; cantidad entera sin truncar; precio con `Bs` y coma."
+  },
+  "ETL-3": {
+   "titulo": "ETL distribuidora · etapa 4: claves, duplicados y vendedores",
+   "est": 55,
+   "enlaces": [
+    [
+     "Proyecto ETL",
+     "../../05_PROYECTOS/etl/README.md"
+    ]
+   ],
+   "nota": "Detecta conflictos de clave antes de quitar exactos (200 duplicados). Recupera vendedores solo con la regla inequívoca por ruta (301)."
+  },
+  "ETL-4": {
+   "titulo": "ETL distribuidora · etapa 5: Silver, validación y rechazos",
+   "est": 50,
+   "enlaces": [
+    [
+     "Proyecto ETL",
+     "../../05_PROYECTOS/etl/README.md"
+    ]
+   ],
+   "nota": "Silver = 16.178 líneas y 3.600 pedidos. Valida claves y la ecuación de conteos con la misma idea de tu mini-ETL (P28 y P30 son REFUERZO si las quieres como práctica aparte). Cada rechazo con su causa."
+  },
+  "ETL-5": {
+   "titulo": "ETL distribuidora · etapa 6: Gold cliente/mes",
+   "est": 40,
+   "enlaces": [
+    [
+     "Proyecto ETL",
+     "../../05_PROYECTOS/etl/README.md"
+    ]
+   ],
+   "nota": "Solo entregados, pedidos distintos. Es el mismo resumen de tu mini-ETL por cliente y mes (P24 y P25 son su versión pequeña, REFUERZO). Control: 581 filas y 1.468.924,50 Bs."
+  },
+  "ETL-6": {
+   "titulo": "ETL distribuidora · etapa 7: carga SQLite, repetición y cuadre SQL",
+   "est": 70,
+   "enlaces": [
+    [
+     "Proyecto ETL",
+     "../../05_PROYECTOS/etl/README.md"
+    ]
+   ],
+   "nota": "Conexión dentro de `closing(...)`; segunda ejecución sin duplicar; cuadre con una consulta SQL independiente; README de reproducción. Corrector: `python herramientas/validar_etl_distribuidora.py mi_trabajo/etl/etl_salida.db`."
+  },
+  "C06-0": {
+   "titulo": "C06 · contrato y plan de trabajo",
+   "est": 40,
+   "enlaces": [
+    [
+     "C06",
+     "../../03_EJERCICIOS/Casos/C06.md"
+    ],
+    [
+     "datos",
+     "../../04_DATASETS/transferencia/DICCIONARIO.md"
+    ]
+   ],
+   "nota": "Sin mirar referencias: qué es una fila, la clave, formatos, reglas de rechazo y cuadres. Escríbelo en `mi_trabajo/transferencia/contrato.md`."
+  },
+  "C06-1": {
+   "titulo": "C06 · extracción, Bronze y perfilado",
+   "est": 100,
+   "enlaces": [
+    [
+     "C06",
+     "../../03_EJERCICIOS/Casos/C06.md"
+    ]
+   ],
+   "nota": "Bronze sin tocar, perfil de todas las columnas y funciones de conversión probadas con tres ejemplos cada una."
+  },
+  "C06-2": {
+   "titulo": "C06 · Silver, catálogo y rechazos",
+   "est": 110,
+   "enlaces": [
+    [
+     "C06",
+     "../../03_EJERCICIOS/Casos/C06.md"
+    ]
+   ],
+   "nota": "Conflictos de clave primero, luego duplicados exactos; catálogo único; SKU huérfano rechazado; todo rechazo con motivo."
+  },
+  "C06-3": {
+   "titulo": "C06 · Gold y cuadres",
+   "est": 90,
+   "enlaces": [
+    [
+     "C06",
+     "../../03_EJERCICIOS/Casos/C06.md"
+    ]
+   ],
+   "nota": "Gold cliente/mes en centavos enteros; cuadra Bronze = duplicados + rechazos + Silver y Silver = Gold."
+  },
+  "C06-4": {
+   "titulo": "C06 · SQLite, repetición, entradas adversas y README",
+   "est": 110,
+   "enlaces": [
+    [
+     "C06",
+     "../../03_EJERCICIOS/Casos/C06.md"
+    ]
+   ],
+   "nota": "Publicación con archivo temporal y conexión cerrada; segunda ejecución igual; prueba de columna ausente, catálogo duplicado, clave en conflicto y cantidad fraccionaria. Corrector: `validar_final.py --transferencia` después del intento."
+  }
+ },
+ "dias": {
+  "3": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "S3",
+    "S5",
+    "S6",
+    "P04",
+    "P05"
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "S4"
+   ],
+   "opcional": [
+    "C02"
+   ],
+   "reducido": [
+    "S3",
+    "P04"
+   ],
+   "prerreq": "Sabes decir qué representa una fila de `clientes` y por qué `= NULL` no encuentra faltantes (D02).",
+   "puerta": null
+  },
+  "4": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "G1",
+    "P06",
+    "ST01"
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "G2",
+    "G3"
+   ],
+   "opcional": [],
+   "reducido": [
+    "G1",
+    "P06"
+   ],
+   "prerreq": "Puedes escribir un `bucle for` con acumulador sobre tres registros (D03).",
+   "puerta": null
+  },
+  "5": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "G5",
+    "G6",
+    "P07",
+    "P08"
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "G4"
+   ],
+   "opcional": [
+    "C01"
+   ],
+   "reducido": [
+    "G5",
+    "P07"
+   ],
+   "prerreq": "Sabes la diferencia entre `WHERE` y `HAVING` y por qué un estado inválido no se convierte en entregado.",
+   "puerta": null
+  },
+  "6": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "G7",
+    "G8",
+    "EXAMEN:S01"
+   ],
+   "repaso": [],
+   "refuerzo": [],
+   "opcional": [
+    "S8"
+   ],
+   "reducido": [
+    "EXAMEN:S01"
+   ],
+   "prerreq": null,
+   "puerta": {
+    "id": "P1",
+    "texto": "Puerta 1 · Consultar y calcular. Evidencia: S01 con 70/100 o más, o dos consultas y un bucle rehechos sin mirar; explicas numerador y denominador de un KPI. Si no se cumple, el próximo bloque práctico es REFUERZO de D03–D05 (no se añade un día)."
+   }
+  },
+  "8": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": [
+    "08_Python_funciones_archivos",
+    "19_Puente_Python_a_ETL"
+   ],
+   "dataset": null,
+   "obligatorio": [
+    "P09"
+   ],
+   "repaso": [
+    "G6"
+   ],
+   "refuerzo": [
+    "CL1",
+    "CL3",
+    "CL2"
+   ],
+   "opcional": [],
+   "reducido": [
+    "P09"
+   ],
+   "prerreq": "Lee antes los apartados 1 y 2 de `19_Puente_Python_a_ETL.md` (leer un traceback; rechazar con ValueError). Sabes escribir una función con `return`.",
+   "puerta": null
+  },
+  "9": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "J1",
+    "J2",
+    "P10"
+   ],
+   "repaso": [],
+   "refuerzo": [],
+   "opcional": [],
+   "reducido": [
+    "J1",
+    "P10"
+   ],
+   "prerreq": "Puedes escribir una función corta que rechaza un dato inválido con `ValueError` (P09).",
+   "puerta": null
+  },
+  "10": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "J3",
+    "J4",
+    "P13"
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "P12",
+    "C04"
+   ],
+   "opcional": [],
+   "reducido": [
+    "J3",
+    "P13"
+   ],
+   "prerreq": "Explicas por qué un JOIN de cabecera con detalle cambia el número de filas (J1, J2).",
+   "puerta": null
+  },
+  "11": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "J5",
+    "P11"
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "J6",
+    "P14",
+    "P15",
+    "P12"
+   ],
+   "opcional": [],
+   "reducido": [
+    "J5",
+    "P11"
+   ],
+   "prerreq": "Sabes cuándo usar LEFT JOIN y qué significa que una fila \"no tenga pareja\".",
+   "puerta": null
+  },
+  "12": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "P17",
+    "ST02",
+    "DB01",
+    {
+     "id": "N01",
+     "est": 0,
+     "nota": "se lee y ejecuta dentro del bloque de teoría"
+    }
+   ],
+   "repaso": [
+    "J2"
+   ],
+   "refuerzo": [
+    "P16",
+    "E1",
+    "E2"
+   ],
+   "opcional": [
+    "E3"
+   ],
+   "reducido": [
+    "P17",
+    "DB01"
+   ],
+   "prerreq": "Tus P09–P11 y P13 pasan el corrector y leíste el capítulo 19, §1 (leer un error).",
+   "puerta": null
+  },
+  "13": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "E4",
+    "EXAMEN:S02"
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "E6",
+    "E5"
+   ],
+   "opcional": [
+    "E7",
+    "E8"
+   ],
+   "reducido": [
+    "EXAMEN:S02"
+   ],
+   "prerreq": null,
+   "puerta": {
+    "id": "P2",
+    "texto": "Puerta 2 · Funciones, errores y JOIN. Evidencia: P09–P11 aprobados; J1, J2 y J5 explicados (INNER frente a LEFT); lees un CSV con el módulo estándar; S02 con 70/100 o más. Si no se cumple: REFUERZO de D09–D11 antes de empezar Pandas en serio (D15)."
+   }
+  },
+  "15": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "P19"
+   ],
+   "repaso": [
+    "J5"
+   ],
+   "refuerzo": [
+    "K2a",
+    "P18"
+   ],
+   "opcional": [],
+   "reducido": [
+    "P19"
+   ],
+   "prerreq": "Tu P17 carga `pedidos.csv` y puedes decir cuántas filas y columnas tiene sin mirar.",
+   "puerta": null
+  },
+  "16": {
+   "titulo": "Ticket y agrupación en Pandas",
+   "objetivo": "Calcular el drop size por pedido en SQL y en Pandas y cuadrar ambos.",
+   "teoria": [
+    "09_Pandas_basico",
+    "06_KPIs"
+   ],
+   "dataset": null,
+   "obligatorio": [
+    "K1",
+    "P20"
+   ],
+   "repaso": [
+    "J2"
+   ],
+   "refuerzo": [
+    "K2b"
+   ],
+   "opcional": [],
+   "reducido": [
+    "K1",
+    "P20"
+   ],
+   "prerreq": "Tu P19 calcula `monto` sin modificar la tabla original.",
+   "puerta": null
+  },
+  "17": {
+   "titulo": "Subconsultas y merge validado",
+   "objetivo": "Controlar muchos a uno y huérfanos con un merge validado; usar una subconsulta con sentido.",
+   "teoria": [
+    "04_SQL_CTE_ventanas",
+    "10_Pandas_transformaciones"
+   ],
+   "dataset": null,
+   "obligatorio": [
+    "P21",
+    "P22",
+    {
+     "id": "N02",
+     "est": 0,
+     "nota": "se lee y ejecuta dentro del bloque de teoría"
+    }
+   ],
+   "repaso": [
+    "K1"
+   ],
+   "refuerzo": [
+    "K4"
+   ],
+   "opcional": [],
+   "reducido": [
+    "P21"
+   ],
+   "prerreq": "Explicas qué hace agrupar por pedido y por qué el drop size se calcula sobre pedidos, no sobre líneas (K1, P20).",
+   "puerta": null
+  },
+  "18": {
+   "titulo": "Subconsultas y perfilado de datos",
+   "objetivo": "Resolver una subconsulta con CTE y perfilar una tabla antes de limpiarla.",
+   "teoria": [
+    "04_SQL_CTE_ventanas",
+    "10_Pandas_transformaciones"
+   ],
+   "dataset": "mini_etl",
+   "obligatorio": [
+    "P23",
+    "K3",
+    {
+     "id": "N03",
+     "est": 0,
+     "nota": "se lee y ejecuta dentro del bloque de teoría"
+    }
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "K5",
+    "K6",
+    "V1"
+   ],
+   "opcional": [],
+   "reducido": [
+    "P23",
+    "K3"
+   ],
+   "prerreq": "Tus P21 y P22 pasan el corrector y puedes decir por qué P21 falla con un catálogo repetido.",
+   "puerta": null
+  },
+  "19": {
+   "titulo": "Ventanas y clientes inactivos",
+   "objetivo": "Usar funciones de ventana para participación y acumulado, y encontrar clientes inactivos con una fecha de corte fija.",
+   "teoria": [
+    "04_SQL_CTE_ventanas",
+    "06_KPIs"
+   ],
+   "dataset": "comercial.db",
+   "obligatorio": [
+    "V3",
+    "V2"
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "P26",
+    "P27",
+    "ST03",
+    "N04",
+    "ST04"
+   ],
+   "opcional": [],
+   "reducido": [
+    "V3"
+   ],
+   "prerreq": "Puedes explicar un CTE (K3) y una función de agregación sobre toda la tabla frente a una por grupo.",
+   "puerta": null
+  },
+  "20": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "V4",
+    "EXAMEN:S03"
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "V5",
+    "V1"
+   ],
+   "opcional": [
+    "X1",
+    "X2"
+   ],
+   "reducido": [
+    "EXAMEN:S03"
+   ],
+   "prerreq": null,
+   "puerta": {
+    "id": "P3",
+    "texto": "Puerta 3 · Pandas y calidad de datos. Evidencia: P17, P19–P23 aprobados; merge `many_to_one` con `validate` explicado; K1, K3, V3 y V4 correctos; S03 con 70/100 o más. Si no se cumple, el mini-ETL (D22) se reemplaza por REFUERZO de D16–D18."
+   }
+  },
+  "22": {
+   "titulo": "Mini-ETL (1): extraer y perfilar",
+   "objetivo": "Leer un archivo pequeño como texto sin tocarlo, quitar duplicados exactos y perfilarlo.",
+   "teoria": [
+    "19_Puente_Python_a_ETL",
+    "10_Pandas_transformaciones"
+   ],
+   "dataset": "mini_etl",
+   "obligatorio": [
+    "ME01"
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "CL4",
+    "N8"
+   ],
+   "opcional": [],
+   "reducido": [
+    "ME01"
+   ],
+   "prerreq": "P22 y P23 pasan el corrector (ME01 las reutiliza). Lee `19_Puente_Python_a_ETL.md` §3. Hoy no hay repaso de SQL: el lunes se dedica al ejercicio.",
+   "puerta": null
+  },
+  "23": {
+   "titulo": "Mini-ETL (2): transformar con reglas y rechazos",
+   "objetivo": "Transformar el archivo de 24 filas con tus P09–P11: reglas, normalización y rechazos con causa.",
+   "teoria": [
+    "19_Puente_Python_a_ETL",
+    "10_Pandas_transformaciones"
+   ],
+   "dataset": "mini_etl",
+   "obligatorio": [
+    "ME02"
+   ],
+   "repaso": [
+    "K3"
+   ],
+   "refuerzo": [
+    "DB02",
+    "P29"
+   ],
+   "opcional": [],
+   "reducido": [
+    "ME02"
+   ],
+   "prerreq": "ME01 aprobado con tu código y tus P09–P11 pasan el corrector.",
+   "puerta": null
+  },
+  "24": {
+   "titulo": "Mini-ETL (3): validar, cuadrar y cargar",
+   "objetivo": "Validar con la ecuación de conteos, cargar a SQLite sin dejar la conexión abierta y repetir sin duplicar.",
+   "teoria": [
+    "05_calidad_ETL",
+    "19_Puente_Python_a_ETL"
+   ],
+   "dataset": "mini_etl",
+   "obligatorio": [
+    "ME03"
+   ],
+   "repaso": [
+    "V2"
+   ],
+   "refuerzo": [
+    "P30",
+    "DB03"
+   ],
+   "opcional": [],
+   "reducido": [
+    "ME03"
+   ],
+   "prerreq": "ME02 aprobado. Lee `19_Puente_Python_a_ETL.md` §4 (conexión SQLite en Windows).",
+   "puerta": {
+    "id": "P4",
+    "texto": "Puerta 4 · Mini-ETL. Evidencia: ME01–ME03 aprobados con tu código; la segunda ejecución da lo mismo; el archivo SQLite se puede renombrar (conexión cerrada); explicas sin leer las cuatro funciones y la ecuación Bronze = duplicados + rechazos + Silver. Si no se cumple: ME01–ME03 pasan a REFUERZO y el ETL de la distribuidora no empieza."
+   }
+  },
+  "25": {
+   "titulo": "ETL guiado (1): contrato, Bronze y texto",
+   "objetivo": "Escribir el contrato del ETL de la distribuidora, preservar Bronze y normalizar texto.",
+   "teoria": [
+    "05_calidad_ETL",
+    "10_Pandas_transformaciones"
+   ],
+   "dataset": "ventas_erp_raw.csv",
+   "obligatorio": [
+    "ETL-1"
+   ],
+   "repaso": [
+    "K3"
+   ],
+   "refuerzo": [
+    "C05"
+   ],
+   "opcional": [],
+   "reducido": [
+    "ETL-1"
+   ],
+   "prerreq": "Puerta 4 cumplida. Puedes escribir la estructura extraer → transformar → validar → cargar sin mirar.",
+   "puerta": null
+  },
+  "26": {
+   "titulo": "ETL guiado (2): fechas, cantidad, claves y duplicados",
+   "objetivo": "Convertir fechas, cantidades y dinero sin truncar; detectar conflictos de clave, quitar duplicados exactos y recuperar vendedores solo con una regla inequívoca.",
+   "teoria": [
+    "05_calidad_ETL",
+    "10_Pandas_transformaciones"
+   ],
+   "dataset": "ventas_erp_raw.csv",
+   "obligatorio": [
+    "ETL-2",
+    "ETL-3"
+   ],
+   "repaso": [
+    "V3"
+   ],
+   "refuerzo": [
+    "X8",
+    "DB03"
+   ],
+   "opcional": [
+    "X3",
+    "X5",
+    "X6",
+    "X4"
+   ],
+   "reducido": [
+    "ETL-2"
+   ],
+   "prerreq": "Tu Bronze conserva exactamente las 16.378 filas del archivo y tus conversiones rechazan en lugar de truncar (C05, DB02).",
+   "puerta": null
+  },
+  "27": {
+   "titulo": "Examen S04: mini-ETL y ETL hasta claves",
+   "objetivo": "Demostrar el mini-ETL y el ETL hasta claves y duplicados, y defender las decisiones sin leer el código.",
+   "teoria": [
+    "05_calidad_ETL",
+    "17_Transferencia_debug"
+   ],
+   "dataset": null,
+   "obligatorio": [
+    "N2",
+    "EXAMEN:S04"
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "N4",
+    "X7"
+   ],
+   "opcional": [
+    "N10",
+    "N11"
+   ],
+   "reducido": [
+    "EXAMEN:S04"
+   ],
+   "prerreq": null,
+   "puerta": {
+    "id": "P5a",
+    "texto": "Puerta 5a · Checkpoint del ETL. Evidencia: mini-ETL defendido y ETL de la distribuidora hasta claves y duplicados (etapas 1–4 del README del proyecto) con los conteos de control (16.378 filas de origen, 200 duplicados exactos, 301 vendedores recuperados). Si falta una etapa, se registra y se completa en D29–D30; no se promueve el examen a aprobado."
+   }
+  },
+  "29": {
+   "titulo": "ETL guiado (3): Silver, validación y rechazos",
+   "objetivo": "Construir Silver, validarla con la ecuación de conteos y conservar rechazos con causa.",
+   "teoria": [
+    "05_calidad_ETL",
+    "06_KPIs"
+   ],
+   "dataset": "ventas_erp_raw.csv",
+   "obligatorio": [
+    "ETL-4"
+   ],
+   "repaso": [
+    "K1"
+   ],
+   "refuerzo": [
+    "P28",
+    "N7"
+   ],
+   "opcional": [
+    "ST05",
+    "N05"
+   ],
+   "reducido": [
+    "ETL-4"
+   ],
+   "prerreq": "Tu ETL llega hasta la etapa 4 con los conteos de control (Puerta 5a).",
+   "puerta": null
+  },
+  "30": {
+   "titulo": "ETL guiado (4): Gold, carga y cuadre SQL",
+   "objetivo": "Construir Gold, cargar las tres capas de forma repetible y cuadrar con un SQL independiente.",
+   "teoria": [
+    "05_calidad_ETL",
+    "17_Transferencia_debug"
+   ],
+   "dataset": "ventas_erp_raw.csv",
+   "obligatorio": [
+    "ETL-5",
+    "ETL-6"
+   ],
+   "repaso": [
+    "V2"
+   ],
+   "refuerzo": [
+    "P24",
+    "P25",
+    "N9",
+    "N12"
+   ],
+   "opcional": [
+    "ST06"
+   ],
+   "reducido": [
+    "ETL-5",
+    "ETL-6"
+   ],
+   "prerreq": "Tu Silver pasa la ecuación de conteos. Si hoy no cabe todo, haz ETL-5 y deja ETL-6 para el REFUERZO de mañana.",
+   "puerta": {
+    "id": "P5",
+    "texto": "Puerta 5 · ETL guiado completo. Evidencia: `validar_etl_distribuidora.py` correcto sobre tu salida, segunda ejecución igual, la prueba de cantidad fraccionaria rechaza, cuadre SQL independiente y cinco decisiones explicadas sin leer el código. Si no se cumple: la semana de Power BI/Excel se reemplaza por REFUERZO del ETL y las sesiones de BI pasan después."
+   }
+  },
+  "31": {
+   "titulo": "Excel y modificar tu mini-ETL",
+   "objetivo": "Importar a Excel, crear una tabla dinámica y cuadrar contra SQL; modificar tu mini-ETL con una regla nueva.",
+   "teoria": [
+    "15_Excel_cuadres",
+    "05_calidad_ETL"
+   ],
+   "dataset": "drop_por_pedido.csv",
+   "obligatorio": [
+    {
+     "id": "EX01",
+     "est": 80,
+     "nota": "alcance reducido: importa, crea una tabla dinámica de ventas por ruta y cuádrala contra E4"
+    },
+    "ME04"
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "N5",
+    "N6",
+    "EX02"
+   ],
+   "opcional": [
+    "EX03"
+   ],
+   "reducido": [
+    "EX01"
+   ],
+   "prerreq": "Puerta 5 cumplida o ETL en REFUERZO (Excel puede esperar). ME04 modifica tu mini-ETL: déjalo hecho antes de empezar C06.",
+   "puerta": null
+  },
+  "32": {
+   "titulo": "Power BI (1): importar y relacionar",
+   "objetivo": "Importar el modelo en Power BI Desktop y revisar cada relación antes de aceptarla.",
+   "teoria": [
+    "14_PowerBI_DAX",
+    "13_Modelado"
+   ],
+   "dataset": null,
+   "obligatorio": [
+    {
+     "id": "PB01",
+     "est": 50,
+     "nota": "alcance reducido: importa las 9 tablas y verifica tipos y conteos; no corrijas formatos regionales"
+    },
+    {
+     "id": "PB02",
+     "est": 45,
+     "nota": "alcance reducido: solo las relaciones del modelo y marcar `dim_fecha` como tabla de fechas"
+    }
+   ],
+   "repaso": [
+    "J2"
+   ],
+   "refuerzo": [
+    "N12",
+    "N14",
+    "PB04",
+    "N07"
+   ],
+   "opcional": [
+    "N13",
+    "N15",
+    "N16"
+   ],
+   "reducido": [
+    "PB01"
+   ],
+   "prerreq": "Power BI Desktop instalado y abierto una vez. Lectura: `13_Modelado.md` (modelo estrella).",
+   "puerta": null
+  },
+  "33": {
+   "titulo": "Power BI (2): primeras medidas",
+   "objetivo": "Crear tres medidas núcleo (ventas, pedidos y ticket) y comprobar que coinciden con SQL.",
+   "teoria": [
+    "14_PowerBI_DAX",
+    "06_KPIs"
+   ],
+   "dataset": null,
+   "obligatorio": [
+    {
+     "id": "PB03",
+     "est": 80,
+     "nota": "núcleo de la jornada reducida: `Ventas Bs`, `Pedidos Entregados` y `Ticket Bs` comprobadas contra J2, la cantidad de filas de K1 y el promedio de su `drop_bs`; `Clientes Compradores` y `Frecuencia` son REFUERZO"
+    }
+   ],
+   "repaso": [
+    "N2"
+   ],
+   "refuerzo": [
+    "PB05",
+    "N1"
+   ],
+   "opcional": [
+    "ST07"
+   ],
+   "reducido": [
+    "PB03"
+   ],
+   "prerreq": "Tus relaciones de PB02 filtran de dimensión a hecho y el conteo de líneas coincide con la base.",
+   "puerta": null
+  },
+  "34": {
+   "titulo": "Examen S05: ETL guiado completo y BI mínimo",
+   "objetivo": "Defender el ETL guiado completo y registrar con honestidad el estado del BI mínimo.",
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "N3",
+    "EXAMEN:S05"
+   ],
+   "repaso": [],
+   "refuerzo": [
+    "PB06",
+    "EX03",
+    "N6"
+   ],
+   "opcional": [
+    "N15"
+   ],
+   "reducido": [
+    "EXAMEN:S05"
+   ],
+   "prerreq": null,
+   "puerta": {
+    "id": "P6",
+    "texto": "Puerta 6 · BI mínimo. Evidencia: tabla dinámica de Excel que coincide con E4; en Power BI Desktop, las tablas importadas, las relaciones y las tres medidas núcleo de PB03 que coinciden con SQL (o la parte registrada como PENDIENTE si no hay Desktop; no se aprueba lo que no se ejecutó). Si no se cumple, el resto de BI pasa a REFUERZO después de la Puerta 7; no retrasa el caso de transferencia."
+   }
+  },
+  "36": {
+   "titulo": "Caso nuevo C06 (0): contrato y plan",
+   "objetivo": "Redactar el contrato propio de un caso nuevo e identificar qué no está claro.",
+   "teoria": [
+    "17_Transferencia_debug",
+    "05_calidad_ETL"
+   ],
+   "dataset": "transferencia",
+   "obligatorio": [
+    "C06-0"
+   ],
+   "repaso": [
+    "V3"
+   ],
+   "refuerzo": [
+    "N7",
+    "N06"
+   ],
+   "opcional": [
+    "N9"
+   ],
+   "reducido": [
+    "C06-0"
+   ],
+   "prerreq": "Puerta 5 cumplida y ME04 hecho. Para C06 no uses el ETL de la distribuidora como plantilla a copiar: reutiliza tus funciones, no su código.",
+   "puerta": null
+  },
+  "37": {
+   "titulo": "C06 (1): extraer, Bronze y perfil",
+   "objetivo": "C06: extraer, preservar Bronze, perfilar y probar las conversiones.",
+   "teoria": [
+    "17_Transferencia_debug",
+    "10_Pandas_transformaciones"
+   ],
+   "dataset": "transferencia",
+   "obligatorio": [
+    "C06-1"
+   ],
+   "repaso": [
+    "K3"
+   ],
+   "refuerzo": [
+    "N8"
+   ],
+   "opcional": [],
+   "reducido": [
+    "C06-1"
+   ],
+   "prerreq": "Tu contrato C06 está escrito y lo puedes explicar en voz alta.",
+   "puerta": null
+  },
+  "38": {
+   "titulo": "C06 (2): Silver y rechazos",
+   "objetivo": "C06: construir Silver con tu código y registrar rechazos con causa.",
+   "teoria": [
+    "17_Transferencia_debug",
+    "10_Pandas_transformaciones"
+   ],
+   "dataset": "transferencia",
+   "obligatorio": [
+    "C06-2"
+   ],
+   "repaso": [
+    "V2"
+   ],
+   "refuerzo": [
+    "ST07"
+   ],
+   "opcional": [],
+   "reducido": [
+    "C06-2"
+   ],
+   "prerreq": "Tu Bronze C06 conserva todas las filas y tu perfil lista los formatos de cada columna.",
+   "puerta": null
+  },
+  "39": {
+   "titulo": "C06 (3): Gold y cuadres",
+   "objetivo": "C06: construir Gold y cuadrar todas las capas.",
+   "teoria": [
+    "17_Transferencia_debug",
+    "05_calidad_ETL"
+   ],
+   "dataset": "transferencia",
+   "obligatorio": [
+    "C06-3"
+   ],
+   "repaso": [
+    "V4"
+   ],
+   "refuerzo": [
+    "N5"
+   ],
+   "opcional": [],
+   "reducido": [
+    "C06-3"
+   ],
+   "prerreq": "Tu Silver C06 cuadra Bronze = duplicados + rechazos + Silver.",
+   "puerta": null
+  },
+  "40": {
+   "titulo": "C06 (4): SQLite, repetición y README",
+   "objetivo": "C06: cargar a SQLite, repetir, probar entradas adversas y documentar.",
+   "teoria": [
+    "17_Transferencia_debug",
+    "16_Git_comunicacion"
+   ],
+   "dataset": "transferencia",
+   "obligatorio": [
+    "C06-4"
+   ],
+   "repaso": [
+    "N2"
+   ],
+   "refuerzo": [
+    "C03",
+    "C01",
+    "J5"
+   ],
+   "opcional": [
+    "N16"
+   ],
+   "reducido": [
+    "C06-4"
+   ],
+   "prerreq": "Tu Gold C06 cuadra contra Silver.",
+   "puerta": null
+  },
+  "41": {
+   "titulo": null,
+   "objetivo": null,
+   "teoria": null,
+   "dataset": null,
+   "obligatorio": [
+    "EXAMEN:S06"
+   ],
+   "repaso": [
+    "V4"
+   ],
+   "refuerzo": [
+    "N1",
+    "N5"
+   ],
+   "opcional": [],
+   "reducido": [
+    "EXAMEN:S06"
+   ],
+   "prerreq": null,
+   "puerta": {
+    "id": "P7",
+    "texto": "Puerta 7 · Transferencia C06. Evidencia: `validar_final.py --transferencia` correcto después de cerrar tu intento, segunda ejecución igual, prueba de columna ausente / catálogo duplicado / clave en conflicto / cantidad fraccionaria, y defensa de cinco decisiones sin leer. La evaluación final (objetivo 23–30 de noviembre) se toma cuando esta puerta esté cumplida; si no lo está, se registra la limitación y se refuerzan dos bases."
+   }
+  }
+ }
+}

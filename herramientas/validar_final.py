@@ -1,13 +1,14 @@
 """Corrige después del intento. No muestra código. Uso: validar_final.py salida [--transferencia]"""
 from pathlib import Path
 import json,sqlite3,sys
+from contextlib import closing
 import pandas as pd
 ROOT=Path(__file__).resolve().parents[1]
 
 def validar(salida,transferencia=False):
     salida=Path(salida).resolve()
     oracle=json.loads((ROOT/'08_SOLUCIONES'/('controles_transferencia.json' if transferencia else 'controles_final.json')).read_text(encoding='utf-8'))
-    with sqlite3.connect((salida/'resultado.db').as_uri()+'?mode=ro',uri=True) as c:
+    with closing(sqlite3.connect((salida/'resultado.db').as_uri()+'?mode=ro',uri=True)) as c:
         assert c.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
         for table,key in [('bronze','bronze'),('silver','silver'),('rechazos','rechazados'),('gold','gold_filas')]:
             actual=c.execute('SELECT COUNT(*) FROM '+table).fetchone()[0]

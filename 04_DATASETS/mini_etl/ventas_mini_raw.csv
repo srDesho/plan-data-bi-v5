@@ -1,0 +1,25 @@
+ticket_id;fecha;tienda;producto;unidades;estado;precio
+T001;2026-09-01; Tienda Sol ;P-01;3; ENTREGADO ;Bs 10,50
+T002;02/09/2026;tienda LUNA;P-02;2;entregado;8.00
+T003;2026-09-02;TIENDA SOL;P-03;4.0;Entregado;Bs 5,25
+T004;03/09/2026; kiosco  central ;P-01;1;anulado;10,50
+T005;2026-09-04;tienda luna;P-04;6;entregado;2.50
+T006;05/09/2026;Tienda Sol;P-05;5;ENTREGADO;Bs 7,00
+T007;2026-09-06;kiosco central;P-02;2;entregado;Bs 8,00
+T008;2026-09-07;tienda luna;P-06;10;entregado;1,20
+T009;08/09/2026;Tienda Sol;P-03;1;anulado;Bs 5,25
+T010;2026-09-09;kiosco central;P-04;3;entregado;2.50
+T011;10/09/2026;tienda luna;P-01;2;entregado;Bs 10,50
+T012;2026-10-01;Tienda Sol;P-02;4;entregado;8.00
+T013;02/10/2026;kiosco central;P-05;2;entregado;Bs 7,00
+T014;2026-10-03;tienda luna;P-03;7;ENTREGADO;5,25
+T015;04/10/2026;Tienda Sol;P-06;12;entregado;Bs 1,20
+T016;2026-10-05;kiosco central;P-01;1;entregado;10.50
+T001;2026-09-01; Tienda Sol ;P-01;3; ENTREGADO ;Bs 10,50
+T005;2026-09-04;tienda luna;P-04;6;entregado;2.50
+T017;31/02/2026;Tienda Sol;P-01;2;entregado;Bs 10,50
+T018;2026-10-06;tienda luna;P-02;2.5;entregado;8.00
+T019;2026-10-07;kiosco central;P-09;3;entregado;4.00
+T020;2026-10-08;Tienda Sol;P-03;2;entregado;-5,25
+T021;2026-10-09;tienda luna;P-04;abc;entregado;2.50
+T022;2026-10-10;kiosco central;P-05;1;perdido;7.00

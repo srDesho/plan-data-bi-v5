@@ -1,10 +1,11 @@
 """Uso: python herramientas/validar_etl_distribuidora.py ruta/etl_salida.db"""
 import sqlite3,sys
+from contextlib import closing
 from pathlib import Path
 
 def validar(path):
     p=Path(path).resolve()
-    with sqlite3.connect(p.as_uri()+'?mode=ro',uri=True) as con:
+    with closing(sqlite3.connect(p.as_uri()+'?mode=ro',uri=True)) as con:
         assert con.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
         counts={t:con.execute('SELECT COUNT(*) FROM '+t).fetchone()[0] for t in ['bronze_ventas_raw','silver_ventas','gold_ventas_cliente_mes']}
         assert list(counts.values())==[16378,16178,581],counts

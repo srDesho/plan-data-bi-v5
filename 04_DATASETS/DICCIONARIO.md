@@ -24,6 +24,8 @@ no es una FK a pedidos ni debe utilizarse como venta entregada. Presupuesto es u
 no se generó a partir de ventas. Inventario es un caso independiente y no cuadra movimientos
 de stock de la distribuidora histórica, que no tiene todas las entradas/salidas.
 
+Notas de calidad en `clientes`: la columna `zona` puede estar vacía y algunos `nombre_negocio` traen espacios al inicio o al final; los ejercicios indican cuándo hay que limpiarlos y cuándo se devuelven tal como están guardados.
+
 Los pedidos cubren 2026-04-01 a 2026-09-30. Un pedido es un drop en esta práctica;
 un producto puede aparecer en muchos pedidos. En otros sistemas debes revisar esa equivalencia.
 

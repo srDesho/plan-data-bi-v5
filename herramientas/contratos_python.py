@@ -36,7 +36,7 @@ def comprobar(id, modulo):
     elif id == 'P03':
         check('normalizar_nombre',('  TIENDA   el SOL  ',),'Tienda El Sol');check('normalizar_nombre',('josé',),'José')
     elif id == 'P04': check('cliente_diccionario',('001','R01'),{'cliente_id':'001','ruta':'R01'})
-    elif id == 'P05': check('clientes_unicos',([3,1,3,2],),[1,2,3]);check('clientes_unicos',([],),[])
+    elif id == 'P05': check('clientes_unicos',([3,1,3,2],),[1,2,3]);check('clientes_unicos',([31,7,18,7,25],),[7,18,25,31]);check('clientes_unicos',([],),[])
     elif id == 'P06': check('contar_estados',(['entregado','anulado','entregado'],),{'entregado':2,'anulado':1});check('contar_estados',([],),{})
     elif id == 'P07': check('ventas_entregadas',([{'estado':'entregado','cantidad':3,'precio':10},{'estado':'anulado','cantidad':99,'precio':10}],),30)
     elif id == 'P08':
