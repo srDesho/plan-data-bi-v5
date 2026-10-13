@@ -1,0 +1,1 @@
+SELECT 'items_sin_pedido' prueba,COUNT(*) fallos FROM pedido_items i LEFT JOIN pedidos p USING(pedido_id) WHERE p.pedido_id IS NULL UNION ALL SELECT 'pedidos_sin_cliente',COUNT(*) FROM pedidos p LEFT JOIN clientes c USING(cliente_id) WHERE c.cliente_id IS NULL;

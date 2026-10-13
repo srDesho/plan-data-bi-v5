@@ -1,0 +1,15 @@
+{
+  "filas": {
+    "fact_ventas": 16178,
+    "dim_cliente": 120,
+    "dim_producto": 40,
+    "dim_vendedor": 6,
+    "dim_fecha": 183,
+    "dim_mes": 6,
+    "dim_ruta": 6,
+    "fact_presupuesto": 36,
+    "fact_visitas": 480
+  },
+  "ventas_entregadas_centavos": 146892450,
+  "pedidos_entregados": 3442
+}

@@ -1,0 +1,6 @@
+{
+  "prueba": "cantidad_fraccionaria_ETL_v5_distribuidora",
+  "estado": "OK",
+  "entrada": "3.7",
+  "resultado": "cantidad debe ser entera positiva"
+}

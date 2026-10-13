@@ -1,0 +1,1 @@
+SELECT v.vendedor_id,v.nombre,COUNT(p.pedido_id) pedidos FROM vendedores v LEFT JOIN pedidos p ON p.vendedor_id=v.vendedor_id AND p.estado='entregado' GROUP BY v.vendedor_id,v.nombre ORDER BY v.vendedor_id;

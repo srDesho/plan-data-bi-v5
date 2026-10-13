@@ -1,0 +1,1 @@
+SELECT c.cliente_id,MAX(p.fecha) ultima,CAST(julianday('2026-09-30')-julianday(MAX(p.fecha)) AS INTEGER) recencia FROM clientes c LEFT JOIN pedidos p ON p.cliente_id=c.cliente_id AND p.estado='entregado' GROUP BY c.cliente_id ORDER BY c.cliente_id;

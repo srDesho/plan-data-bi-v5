@@ -1,0 +1,242 @@
+[
+  {
+    "id": "P01",
+    "funcion": "importe",
+    "firma": "cantidad, precio",
+    "enunciado": "Calcula importe de una línea; 3×10=30.",
+    "teoria": "07_Python_basico",
+    "nivel": 1
+  },
+  {
+    "id": "P02",
+    "funcion": "porcentaje",
+    "firma": "real, meta",
+    "enunciado": "Devuelve cumplimiento porcentual; meta cero o negativa devuelve None.",
+    "teoria": "07_Python_basico",
+    "nivel": 1
+  },
+  {
+    "id": "P03",
+    "funcion": "normalizar_nombre",
+    "firma": "texto",
+    "enunciado": "Elimina espacios repetidos y extremos; convierte a Title.",
+    "teoria": "07_Python_basico",
+    "nivel": 1
+  },
+  {
+    "id": "P04",
+    "funcion": "cliente_diccionario",
+    "firma": "codigo, ruta",
+    "enunciado": "Construye diccionario cliente_id/ruta conservando el código.",
+    "teoria": "07_Python_basico",
+    "nivel": 1
+  },
+  {
+    "id": "P05",
+    "funcion": "clientes_unicos",
+    "firma": "codigos",
+    "enunciado": "Devuelve lista de códigos únicos ordenada.",
+    "teoria": "07_Python_basico",
+    "nivel": 1
+  },
+  {
+    "id": "P06",
+    "funcion": "contar_estados",
+    "firma": "estados",
+    "enunciado": "Cuenta ocurrencias usando un bucle y un diccionario.",
+    "teoria": "07_Python_basico",
+    "nivel": 1
+  },
+  {
+    "id": "P07",
+    "funcion": "ventas_entregadas",
+    "firma": "lineas",
+    "enunciado": "Suma cantidad×precio solo en diccionarios con estado entregado.",
+    "teoria": "07_Python_basico",
+    "nivel": 1
+  },
+  {
+    "id": "P08",
+    "funcion": "clasificar_ticket",
+    "firma": "monto",
+    "enunciado": "Pequeño<200; Mediano 200–600 incluidos; Grande>600.",
+    "teoria": "07_Python_basico",
+    "nivel": 1
+  },
+  {
+    "id": "P09",
+    "funcion": "precio_centavos",
+    "firma": "texto",
+    "enunciado": "Admite Bs, coma o punto decimal sin miles. Devuelve centavos enteros; rechaza negativo/no finito/más de dos decimales.",
+    "teoria": "08_Python_funciones_archivos",
+    "nivel": 2
+  },
+  {
+    "id": "P10",
+    "funcion": "fecha_iso",
+    "firma": "texto",
+    "enunciado": "Convierte ISO, DD/MM/YYYY o DD-MM-YY a ISO; fecha imposible lanza ValueError.",
+    "teoria": "08_Python_funciones_archivos",
+    "nivel": 2
+  },
+  {
+    "id": "P11",
+    "funcion": "cantidad_entera",
+    "firma": "texto",
+    "enunciado": "Devuelve entero positivo; admite 3.0; rechaza 3.5, cero, infinito y texto inválido con ValueError.",
+    "teoria": "08_Python_funciones_archivos",
+    "nivel": 2
+  },
+  {
+    "id": "P12",
+    "funcion": "recencia",
+    "firma": "ultima, corte",
+    "enunciado": "Fechas ISO: devuelve días; compra posterior al corte lanza ValueError.",
+    "teoria": "08_Python_funciones_archivos",
+    "nivel": 2
+  },
+  {
+    "id": "P13",
+    "funcion": "leer_clientes",
+    "firma": "ruta",
+    "enunciado": "Lee CSV UTF-8 con cabecera y devuelve lista de diccionarios, usando csv estándar.",
+    "teoria": "08_Python_funciones_archivos",
+    "nivel": 2
+  },
+  {
+    "id": "P14",
+    "funcion": "resumir_montos",
+    "firma": "valores",
+    "enunciado": "Devuelve diccionario media/mediana. Lista vacía lanza ValueError.",
+    "teoria": "08_Python_funciones_archivos",
+    "nivel": 2
+  },
+  {
+    "id": "P15",
+    "funcion": "recuperar_vendedor",
+    "firma": "ruta, mapa",
+    "enunciado": "Busca una ruta en un mapa conocido; si falta, ValueError en lugar de inventar vendedor.",
+    "teoria": "08_Python_funciones_archivos",
+    "nivel": 2
+  },
+  {
+    "id": "P16",
+    "funcion": "filtrar_fecha",
+    "firma": "filas, inicio, fin",
+    "enunciado": "Lista de diccionarios con fecha ISO: conserva intervalo inclusivo.",
+    "teoria": "08_Python_funciones_archivos",
+    "nivel": 2
+  },
+  {
+    "id": "P17",
+    "funcion": "cargar_pedidos",
+    "firma": "ruta",
+    "enunciado": "Lee el CSV pedidos con Pandas y devuelve DataFrame.",
+    "teoria": "09_Pandas_basico",
+    "nivel": 2
+  },
+  {
+    "id": "P18",
+    "funcion": "contar_por_ruta",
+    "firma": "clientes",
+    "enunciado": "DataFrame→DataFrame columnas ruta/clientes, ordenado por ruta, índice desde cero.",
+    "teoria": "09_Pandas_basico",
+    "nivel": 2
+  },
+  {
+    "id": "P19",
+    "funcion": "monto_detalle",
+    "firma": "items",
+    "enunciado": "Devuelve copia con columna monto=cantidad×precio_unitario.",
+    "teoria": "09_Pandas_basico",
+    "nivel": 2
+  },
+  {
+    "id": "P20",
+    "funcion": "ticket_por_pedido",
+    "firma": "items",
+    "enunciado": "Agrupa y devuelve pedido_id/monto por pedido (todos los items recibidos).",
+    "teoria": "09_Pandas_basico",
+    "nivel": 2
+  },
+  {
+    "id": "P21",
+    "funcion": "unir_clientes",
+    "firma": "pedidos, clientes",
+    "enunciado": "Left merge cliente_id; devuelve columnas de pedidos más ruta. Valida muchos-a-uno, huérfanos→ValueError.",
+    "teoria": "10_Pandas_transformaciones",
+    "nivel": 3
+  },
+  {
+    "id": "P22",
+    "funcion": "quitar_exactos",
+    "firma": "df",
+    "enunciado": "Elimina solo filas idénticas, devuelve índice reiniciado.",
+    "teoria": "10_Pandas_transformaciones",
+    "nivel": 2
+  },
+  {
+    "id": "P23",
+    "funcion": "perfilar",
+    "firma": "df",
+    "enunciado": "Devuelve filas, nulos por columna y duplicados_exactos.",
+    "teoria": "10_Pandas_transformaciones",
+    "nivel": 2
+  },
+  {
+    "id": "P24",
+    "funcion": "mes_fechas",
+    "firma": "fechas",
+    "enunciado": "Series de fechas ISO→Series YYYY-MM, mismo índice.",
+    "teoria": "10_Pandas_transformaciones",
+    "nivel": 2
+  },
+  {
+    "id": "P25",
+    "funcion": "gold_cliente_mes",
+    "firma": "silver",
+    "enunciado": "Filtra entregado, agrupa por cliente_id/mes: ventas_bs y pedidos distintos.",
+    "teoria": "10_Pandas_transformaciones",
+    "nivel": 3
+  },
+  {
+    "id": "P26",
+    "funcion": "abc_ventas",
+    "firma": "df",
+    "enunciado": "Columnas cliente_id/ventas; orden por ventas descendentes, ID ascendente. ABC usa acumulado anterior. Total no positivo→ValueError.",
+    "teoria": "10_Pandas_transformaciones",
+    "nivel": 3
+  },
+  {
+    "id": "P27",
+    "funcion": "detectar_atipicos",
+    "firma": "valores",
+    "enunciado": "Lista de atípicos por cercas IQR, interpolación lineal, ambos extremos.",
+    "teoria": "11_Estadistica_descriptiva",
+    "nivel": 2
+  },
+  {
+    "id": "P28",
+    "funcion": "validar_claves",
+    "firma": "df, clave",
+    "enunciado": "Devuelve True si no hay nulos/vacíos/duplicados. Si hay, ValueError.",
+    "teoria": "10_Pandas_transformaciones",
+    "nivel": 3
+  },
+  {
+    "id": "P29",
+    "funcion": "escribir_resumen",
+    "firma": "ruta, datos",
+    "enunciado": "Escribe JSON UTF-8 creando carpeta padre; devuelve Path.",
+    "teoria": "08_Python_funciones_archivos",
+    "nivel": 2
+  },
+  {
+    "id": "P30",
+    "funcion": "auditoria_conteos",
+    "firma": "bronze, duplicados, rechazos, silver",
+    "enunciado": "Comprueba conteos no negativos y ecuación de filas; True o ValueError.",
+    "teoria": "05_calidad_ETL",
+    "nivel": 3
+  }
+]

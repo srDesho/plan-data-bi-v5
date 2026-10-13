@@ -1,0 +1,1 @@
+EXPLAIN QUERY PLAN SELECT * FROM pedidos WHERE cliente_id=83 AND fecha>='2026-09-01';

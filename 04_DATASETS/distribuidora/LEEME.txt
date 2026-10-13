@@ -1,0 +1,43 @@
+DATOS DE PRÁCTICA: DISTRIBUIDORA INVENTADA (Santa Cruz)
+=====================================================
+Todos los datos son inventados. Sirven para practicar SQL, Pandas y estadística con el
+mismo tipo de preguntas de una distribuidora: drop size, última compra, clasificación ABC, percentiles.
+
+CONTENIDO
+- distribuidora.db  Base SQLite lista para abrir con DBeaver o DB Browser for SQLite.
+- *.csv             Las mismas 5 tablas en CSV (clientes, vendedores, productos, pedidos, pedido_items).
+- drop_por_pedido.csv  Un renglón por pedido entregado (pedido_id, fecha, ruta, drop_bs, unidades). 3 442 filas.
+                    Sirve para la estadística de la semana 1, antes de aprender JOIN.
+- etl/ventas_erp_raw.csv        Exportación SUCIA de un ERP inventado (separador ;). Es el material del ETL de la semana 3.
+- etl/vendedores_por_ruta.csv   Tabla auxiliar para recuperar vendedores vacíos.
+
+CÓMO ABRIR distribuidora.db
+- DBeaver: Nueva conexión > SQLite > elige el archivo distribuidora.db > Finalizar.
+- Python / Colab:
+      import sqlite3, pandas as pd
+      con = sqlite3.connect("distribuidora.db")
+      pd.read_sql("SELECT * FROM clientes LIMIT 5", con)
+
+TABLAS
+- clientes      cliente_id, nombre_negocio, tipo, zona, ruta, fecha_alta
+- vendedores    vendedor_id, nombre, ruta
+- productos     producto_id, nombre, categoria, precio_unitario, costo_unitario
+- pedidos       pedido_id, cliente_id, vendedor_id, fecha, estado ('entregado' o 'anulado')
+- pedido_items  item_id, pedido_id, producto_id, cantidad, precio_unitario
+
+Una fila de pedidos es una entrega (un drop). Una fila de pedido_items es un producto dentro de un pedido.
+Periodo: 2026-04-01 al 2026-09-30. 120 clientes, 6 rutas, 3 600 pedidos.
+
+SUCIEDAD A PROPÓSITO (para practicar limpieza)
+- 6 clientes sin zona (NULL).
+- 8 nombres de negocio con espacios al inicio o al final y en mayúsculas.
+- 158 pedidos anulados que NO deben contarse como venta.
+
+
+ARCHIVO SUCIO DEL ETL (etl/ventas_erp_raw.csv)
+- 16 378 filas, 200 duplicadas exactas; 3 formatos de fecha; 6 variantes del campo estado; 12 variantes de ruta;
+  301 vendedores vacíos; precios como 'Bs 11,50' o '11.5'; cantidades como '3.0'; nombres de cliente con espacios y mayúsculas raras.
+- Al limpiar bien debes llegar a: 16 178 filas, 3 600 pedidos, 120 clientes y ventas entregadas = 1 468 924,50 Bs.
+
+CARPETAS
+- Pon la carpeta datos_practica/ dentro de tu repositorio de trabajo. Si tu ETL vive en la raíz del repo, las rutas relativas son datos_practica/etl/...

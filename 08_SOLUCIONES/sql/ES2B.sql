@@ -1,0 +1,1 @@
+SELECT c.cliente_id,c.nombre_negocio FROM clientes c LEFT JOIN pedidos p ON p.cliente_id=c.cliente_id AND p.estado='entregado' AND p.fecha BETWEEN '2026-08-01' AND '2026-08-31' WHERE p.pedido_id IS NULL ORDER BY c.cliente_id;

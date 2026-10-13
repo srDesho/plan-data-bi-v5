@@ -1,0 +1,1 @@
+SELECT COUNT(DISTINCT cliente_id) activos,COUNT(*) pedidos,ROUND(1.0*COUNT(*)/COUNT(DISTINCT cliente_id),2) frecuencia FROM pedidos WHERE estado='entregado' AND fecha BETWEEN '2026-09-01' AND '2026-09-30';

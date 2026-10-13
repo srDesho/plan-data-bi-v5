@@ -1,0 +1,569 @@
+[
+  {
+    "id": "S1",
+    "titulo": "Primeras 10 filas de clientes",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "S2",
+    "titulo": "Tipos de negocio distintos",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "S3",
+    "titulo": "Clientes de la ruta R03",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "S4",
+    "titulo": "Bebidas con precio > 10, de mayor a menor precio",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "S5",
+    "titulo": "Kioscos o farmacias",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "S6",
+    "titulo": "Nombre que contiene \"sol\"",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "S7",
+    "titulo": "Clientes sin zona. Con \"= NULL\" no funciona porque NULL no es un valor: es \"desconocido\", y nada es igual a desconocido.",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "S8",
+    "titulo": "Pedidos del 1 al 15 de septiembre",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "S9",
+    "titulo": "Precio entre 5 y 10 en Snacks o Lácteos",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "S10",
+    "titulo": "Cuántos clientes hay",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "G1",
+    "titulo": "Pedidos entregados y anulados",
+    "teoria": "02_SQL_agregados",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "G2",
+    "titulo": "Unidades vendidas en total",
+    "teoria": "02_SQL_agregados",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "G3",
+    "titulo": "Valor total de los ítems (incluye pedidos anulados: mañana lo corriges con un JOIN)",
+    "teoria": "02_SQL_agregados",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "G4",
+    "titulo": "Precio promedio, mínimo y máximo por categoría",
+    "teoria": "02_SQL_agregados",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "G5",
+    "titulo": "Clientes por ruta, de mayor a menor",
+    "teoria": "02_SQL_agregados",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "G6",
+    "titulo": "Rutas con más de 20 clientes (HAVING filtra grupos; WHERE filtra filas)",
+    "teoria": "02_SQL_agregados",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "G7",
+    "titulo": "Clientes por tipo y zona (los NULL aparecen como un grupo propio)",
+    "teoria": "02_SQL_agregados",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "G8",
+    "titulo": "Pedidos por mes",
+    "teoria": "02_SQL_agregados",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "J1",
+    "titulo": "Pedidos con el nombre del cliente",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "J2",
+    "titulo": "Ventas totales (Bs) de pedidos entregados",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "J3",
+    "titulo": "Ventas por categoría de producto",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "J4",
+    "titulo": "Ventas por vendedor",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "J5",
+    "titulo": "Clientes SIN pedidos entregados en septiembre.",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "J6",
+    "titulo": "Top 5 productos por unidades entregadas",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "K1",
+    "titulo": "Drop size (Bs) y unidades de cada pedido entregado",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "K2a",
+    "titulo": "Drop size promedio general",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "K2b",
+    "titulo": "Drop size promedio por ruta",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "K3",
+    "titulo": "Pedidos con drop size mayor al promedio general (subconsulta)",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "K4",
+    "titulo": "Clasificar pedidos en Pequeño (<200), Mediano (200 a 600) y Grande (>600) y contarlos",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "K5",
+    "titulo": "Top 10 pedidos por drop size, con cliente y vendedor",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "K6",
+    "titulo": "Con CTE: drop size promedio por cliente y los 5 mayores",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "V1",
+    "titulo": "Última compra (entregada) por cliente",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "V2",
+    "titulo": "Clientes que no compran hace más de 60 días (fecha de corte 2026-09-30)",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "V3",
+    "titulo": "Ventas por cliente, participación % y acumulado %",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "V4",
+    "titulo": "Clasificación ABC: A = hasta 80% de las ventas, B = hasta 95%, C = el resto.",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "V5",
+    "titulo": "Ranking de clientes por ventas dentro de cada ruta (los 3 mejores por ruta)",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "X1",
+    "titulo": "Ventas (Bs) por mes, solo entregados",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "X2",
+    "titulo": "Drop size promedio por mes",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "X3",
+    "titulo": "Top 10 clientes por ventas",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "X4",
+    "titulo": "Ventas por categoría y % del total",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "X5",
+    "titulo": "Porcentaje de pedidos anulados por ruta",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "X6",
+    "titulo": "Pedido con mayor drop size (con cliente y fecha)",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "X7",
+    "titulo": "Ranking de vendedores por ventas",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "X8",
+    "titulo": "Clientes con zona nula y cuánto compraron (revela datos que hay que corregir en origen)",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 15
+  },
+  {
+    "id": "E1",
+    "titulo": "Tipos de cliente con más de 10 clientes",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "E2",
+    "titulo": "Las 3 bebidas más caras",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "E3",
+    "titulo": "Pedidos anulados por mes",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "E4",
+    "titulo": "Ventas (Bs) por ruta, solo entregados",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "E5",
+    "titulo": "Clientes de la zona Centro con su cantidad de pedidos entregados (incluye los que tienen 0)",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "E6",
+    "titulo": "Unidades vendidas por tipo de cliente y categoría de producto (entregados)",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "E7",
+    "titulo": "Pedidos de septiembre con más de 10 ítems",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "E8",
+    "titulo": "Clientes que nunca tuvieron un pedido anulado",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "CL1",
+    "titulo": "Detectar nombres de negocio con espacios al inicio o al final (control: 8)",
+    "teoria": "05_calidad_ETL",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "CL2",
+    "titulo": "Nombres normalizados: sin espacios sobrantes y en mayúsculas",
+    "teoria": "05_calidad_ETL",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "CL3",
+    "titulo": "Clientes por zona, mostrando 'Sin zona' cuando es NULL (control: 'Sin zona' = 6)",
+    "teoria": "05_calidad_ETL",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "CL4",
+    "titulo": "Vista TEMPORAL con clientes limpios (no modifica el archivo .db) y consulta de prueba",
+    "teoria": "05_calidad_ETL",
+    "nivel": 2,
+    "minutos": 15
+  },
+  {
+    "id": "N1",
+    "titulo": "Cumplimiento mensual por ruta: ventas entregadas y presupuesto, sin multiplicar el presupuesto al unir detalles.",
+    "teoria": "06_KPIs",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N2",
+    "titulo": "Cobertura de ejecución: visitas realizadas/planificadas; no confundir con compras.",
+    "teoria": "06_KPIs",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N3",
+    "titulo": "Efectividad de visitas: pedidos tomados/visitas realizadas.",
+    "teoria": "06_KPIs",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N4",
+    "titulo": "Cobertura de clientes única en septiembre.",
+    "teoria": "06_KPIs",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N5",
+    "titulo": "Crecimiento mensual de ventas entregadas con LAG. Primer mes debe tener NULL.",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N6",
+    "titulo": "Ventas acumuladas por mes con marco ROWS explícito.",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N7",
+    "titulo": "Recencia de todos los clientes al 30/09/2026, incluso si alguno nunca compró.",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N8",
+    "titulo": "Validar que no haya ítems sin pedido ni pedido sin cliente.",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N9",
+    "titulo": "Cuadre de ticket medio por la razón total/pedidos distintos, excluyendo anulados.",
+    "teoria": "06_KPIs",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N10",
+    "titulo": "ABC por diversidad de SKU: contar SKU distintos por cliente (no ventas).",
+    "teoria": "06_KPIs",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N11",
+    "titulo": "Rotación de unidades en un periodo ficticio: salidas/stock promedio.",
+    "teoria": "06_KPIs",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N12",
+    "titulo": "Clientes activos en septiembre y frecuencia de pedidos por cliente activo.",
+    "teoria": "06_KPIs",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N13",
+    "titulo": "Inspeccionar el plan de una búsqueda por cliente y fecha. Interpretar SCAN frente a SEARCH.",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N14",
+    "titulo": "Devolver clientes por ruta con COALESCE para zona nula y CASE para revisión.",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N15",
+    "titulo": "DENSE_RANK de productos por unidades entregadas, conservando empates.",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "N16",
+    "titulo": "Clientes cuyo cumplimiento de datos es incompleto: código, nombre y motivo para gerencia.",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 20
+  },
+  {
+    "id": "ES1A",
+    "titulo": "Clientes de R06: código y nombre, ordenados por código.",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "ES1B",
+    "titulo": "Cantidad de productos y precio medio por categoría; solo categorías con al menos cinco productos.",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "ES1C",
+    "titulo": "Pedidos anulados durante septiembre: cantidad total.",
+    "teoria": "01_SQL_basico",
+    "nivel": 1,
+    "minutos": 10
+  },
+  {
+    "id": "ES2A",
+    "titulo": "Ventas entregadas de Snacks en todo el periodo.",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 10
+  },
+  {
+    "id": "ES2B",
+    "titulo": "Clientes sin compra entregada en agosto: código y nombre.",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 10
+  },
+  {
+    "id": "ES2C",
+    "titulo": "Cantidad de pedidos entregados por vendedor, incluyendo vendedores sin pedidos.",
+    "teoria": "03_SQL_joins",
+    "nivel": 2,
+    "minutos": 10
+  },
+  {
+    "id": "ES3A",
+    "titulo": "Ticket promedio de entregados en septiembre por ruta, calculado a nivel pedido.",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 10
+  },
+  {
+    "id": "ES3B",
+    "titulo": "Clientes cuyo último pedido entregado fue antes de 01/08/2026: código, última fecha.",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 10
+  },
+  {
+    "id": "ES3C",
+    "titulo": "RANK de rutas por ventas entregadas, con ruta,monto ypuesto.",
+    "teoria": "04_SQL_CTE_ventanas",
+    "nivel": 3,
+    "minutos": 10
+  }
+]

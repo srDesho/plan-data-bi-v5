@@ -1,0 +1,1 @@
+WITH d AS(SELECT p.pedido_id,p.cliente_id,SUM(i.cantidad*i.precio_unitario) monto FROM pedidos p JOIN pedido_items i USING(pedido_id) WHERE p.estado='entregado' AND p.fecha BETWEEN '2026-09-01' AND '2026-09-30' GROUP BY p.pedido_id,p.cliente_id) SELECT c.ruta,ROUND(AVG(d.monto),2) ticket FROM d JOIN clientes c USING(cliente_id) GROUP BY c.ruta ORDER BY c.ruta;

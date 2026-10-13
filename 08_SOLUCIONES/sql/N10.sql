@@ -1,0 +1,1 @@
+SELECT c.cliente_id,COUNT(DISTINCT i.producto_id) sku_distintos FROM clientes c LEFT JOIN pedidos p ON p.cliente_id=c.cliente_id AND p.estado='entregado' LEFT JOIN pedido_items i USING(pedido_id) GROUP BY c.cliente_id ORDER BY sku_distintos DESC,c.cliente_id;

@@ -1,0 +1,8 @@
+{
+  "modulo": "ml_eda_functions.py",
+  "importacion": "OK",
+  "funciones_ejecutadas": [
+    "cramers_v: asociación nula en tabla equilibrada, resultado0"
+  ],
+  "funciones_restantes_sin_prueba": 16
+}

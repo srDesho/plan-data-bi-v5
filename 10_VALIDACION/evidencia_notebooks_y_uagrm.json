@@ -1,0 +1,107 @@
+[
+  {
+    "archivo": "03_EJERCICIOS/Notebooks/N01.ipynb",
+    "esquema": true,
+    "metodo": "Celdas ejecutadas en orden mediante IPython en proceso, sin kernel TCP",
+    "celdas_codigo": 4,
+    "celdas_ejecutadas": 4,
+    "instalaciones_omitidas": [],
+    "errores": [],
+    "ejecucion": "OK"
+  },
+  {
+    "archivo": "03_EJERCICIOS/Notebooks/N02.ipynb",
+    "esquema": true,
+    "metodo": "Celdas ejecutadas en orden mediante IPython en proceso, sin kernel TCP",
+    "celdas_codigo": 4,
+    "celdas_ejecutadas": 4,
+    "instalaciones_omitidas": [],
+    "errores": [],
+    "ejecucion": "OK"
+  },
+  {
+    "archivo": "03_EJERCICIOS/Notebooks/N03.ipynb",
+    "esquema": true,
+    "metodo": "Celdas ejecutadas en orden mediante IPython en proceso, sin kernel TCP",
+    "celdas_codigo": 4,
+    "celdas_ejecutadas": 4,
+    "instalaciones_omitidas": [],
+    "errores": [],
+    "ejecucion": "OK"
+  },
+  {
+    "archivo": "03_EJERCICIOS/Notebooks/N04.ipynb",
+    "esquema": true,
+    "metodo": "Celdas ejecutadas en orden mediante IPython en proceso, sin kernel TCP",
+    "celdas_codigo": 4,
+    "celdas_ejecutadas": 4,
+    "instalaciones_omitidas": [],
+    "errores": [],
+    "ejecucion": "OK"
+  },
+  {
+    "archivo": "03_EJERCICIOS/Notebooks/N05.ipynb",
+    "esquema": true,
+    "metodo": "Celdas ejecutadas en orden mediante IPython en proceso, sin kernel TCP",
+    "celdas_codigo": 4,
+    "celdas_ejecutadas": 4,
+    "instalaciones_omitidas": [],
+    "errores": [],
+    "ejecucion": "OK"
+  },
+  {
+    "archivo": "03_EJERCICIOS/Notebooks/N06.ipynb",
+    "esquema": true,
+    "metodo": "Celdas ejecutadas en orden mediante IPython en proceso, sin kernel TCP",
+    "celdas_codigo": 4,
+    "celdas_ejecutadas": 4,
+    "instalaciones_omitidas": [],
+    "errores": [],
+    "ejecucion": "OK"
+  },
+  {
+    "archivo": "03_EJERCICIOS/Notebooks/N07.ipynb",
+    "esquema": true,
+    "metodo": "Celdas ejecutadas en orden mediante IPython en proceso, sin kernel TCP",
+    "celdas_codigo": 4,
+    "celdas_ejecutadas": 4,
+    "instalaciones_omitidas": [],
+    "errores": [],
+    "ejecucion": "OK"
+  },
+  {
+    "archivo": "02_TEORIA/UAGRM/01-Clase-1-Fundamentos-de-Python.ipynb",
+    "esquema": true,
+    "metodo": "Celdas ejecutadas en orden mediante IPython en proceso, sin kernel TCP",
+    "celdas_codigo": 58,
+    "celdas_ejecutadas": 58,
+    "instalaciones_omitidas": [],
+    "errores": [],
+    "ejecucion": "OK"
+  },
+  {
+    "archivo": "02_TEORIA/UAGRM/03-Clase_2_Introduccion_a_la_estadistica_UAGRM.ipynb",
+    "esquema": true,
+    "metodo": "Celdas ejecutadas en orden mediante IPython en proceso, sin kernel TCP",
+    "celdas_codigo": 90,
+    "celdas_ejecutadas": 1,
+    "instalaciones_omitidas": [
+      {
+        "celda": 12,
+        "motivo": "Instalación ya realizada previamente; se omite magia de pip"
+      },
+      {
+        "celda": 13,
+        "motivo": "Instalación ya realizada previamente; se omite magia de pip"
+      }
+    ],
+    "errores": [
+      {
+        "celda": 18,
+        "tipo": "ConnectionError",
+        "mensaje": "Error connecting to server"
+      }
+    ],
+    "ejecucion": "PARCIAL"
+  }
+]

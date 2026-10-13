@@ -1,0 +1,1 @@
+WITH m AS (SELECT strftime('%Y-%m',p.fecha) mes,SUM(i.cantidad*i.precio_unitario) ventas FROM pedidos p JOIN pedido_items i USING(pedido_id) WHERE p.estado='entregado' GROUP BY mes), a AS (SELECT *,LAG(ventas) OVER(ORDER BY mes) anterior FROM m) SELECT mes,ROUND(ventas,2),ROUND(100.0*(ventas-anterior)/NULLIF(anterior,0),2) crecimiento FROM a ORDER BY mes;

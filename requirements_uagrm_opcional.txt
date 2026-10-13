@@ -1,0 +1,6 @@
+# Solo para el complemento UAGRM; no forma parte del núcleo del Plan v5.
+summarytools==0.4.0
+ucimlrepo==0.0.7
+seaborn>=0.13,<0.14
+statsmodels>=0.14,<0.16
+scikit-learn>=1.5,<2

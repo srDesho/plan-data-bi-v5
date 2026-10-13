@@ -1,0 +1,1 @@
+WITH v AS (SELECT producto_id,SUM(cantidad) unidades FROM pedido_items i JOIN pedidos p USING(pedido_id) WHERE p.estado='entregado' GROUP BY producto_id) SELECT producto_id,unidades,DENSE_RANK() OVER(ORDER BY unidades DESC) puesto FROM v ORDER BY puesto,producto_id;

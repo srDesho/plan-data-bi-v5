@@ -1,0 +1,1 @@
+WITH m AS (SELECT strftime('%Y-%m',p.fecha) mes,SUM(i.cantidad*i.precio_unitario) ventas FROM pedidos p JOIN pedido_items i USING(pedido_id) WHERE p.estado='entregado' GROUP BY mes) SELECT mes,ROUND(SUM(ventas) OVER(ORDER BY mes ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW),2) acumulado FROM m ORDER BY mes;

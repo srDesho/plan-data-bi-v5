@@ -1,0 +1,1 @@
+WITH r AS(SELECT c.ruta,SUM(i.cantidad*i.precio_unitario) ventas FROM pedidos p JOIN pedido_items i USING(pedido_id) JOIN clientes c USING(cliente_id) WHERE p.estado='entregado' GROUP BY c.ruta) SELECT ruta,ROUND(ventas,2),RANK() OVER(ORDER BY ventas DESC) puesto FROM r ORDER BY puesto,ruta;

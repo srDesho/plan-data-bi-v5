@@ -1,0 +1,32 @@
+// Crea cada medida por separado en Desktop. Estado entregado y centavos son contractuales.
+Ventas Bs = DIVIDE(CALCULATE(SUM(fact_ventas[monto_centavos]),fact_ventas[estado]="entregado"),100)
+
+Pedidos Entregados = CALCULATE(DISTINCTCOUNT(fact_ventas[pedido_id]),fact_ventas[estado]="entregado")
+
+Ticket Bs = DIVIDE([Ventas Bs],[Pedidos Entregados])
+
+Presupuesto Bs = SUM(fact_presupuesto[presupuesto_bs])
+
+Cumplimiento = DIVIDE([Ventas Bs],[Presupuesto Bs])
+
+Brecha Bs = [Ventas Bs]-[Presupuesto Bs]
+
+Visitas Planificadas = SUM(fact_visitas[planificada])
+
+Visitas Realizadas = SUM(fact_visitas[realizada])
+
+Visitas con Pedido = SUM(fact_visitas[pedido_tomado])
+
+Cobertura = DIVIDE([Visitas Realizadas],[Visitas Planificadas])
+
+Efectividad = DIVIDE([Visitas con Pedido],[Visitas Realizadas])
+
+Clientes Compradores = CALCULATE(DISTINCTCOUNT(fact_ventas[cliente_id]),fact_ventas[estado]="entregado")
+
+Frecuencia = DIVIDE([Pedidos Entregados],[Clientes Compradores])
+
+Ventas Mes Anterior = CALCULATE([Ventas Bs],DATEADD(dim_fecha[fecha],-1,MONTH))
+
+Crecimiento = DIVIDE([Ventas Bs]-[Ventas Mes Anterior],[Ventas Mes Anterior])
+
+Participacion Ruta = DIVIDE([Ventas Bs],CALCULATE([Ventas Bs],ALLSELECTED(dim_ruta[ruta])))

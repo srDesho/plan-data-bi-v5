@@ -1,0 +1,228 @@
+{
+  "ejecutado_utc": "2026-10-13T00:05:56.957869+00:00",
+  "pruebas": [
+    {
+      "prueba": "SQL completo y corrector negativo",
+      "estado": "OK",
+      "evidencia": {
+        "actividades": 81,
+        "control_negativo": "monto incorrecto rechazado"
+      }
+    },
+    {
+      "prueba": "Python contratos y casos límite",
+      "estado": "OK",
+      "evidencia": {
+        "ejercicios": 30,
+        "casos": 68,
+        "control_negativo": "función incorrecta rechazada"
+      }
+    },
+    {
+      "prueba": "Datos íntegros y cuadres independientes CSV/SQL",
+      "estado": "OK",
+      "evidencia": {
+        "tablas_CSV_vs_SQLite": {
+          "clientes": 120,
+          "vendedores": 6,
+          "productos": 40,
+          "pedidos": 3600,
+          "pedido_items": 16178
+        },
+        "ventas_independientes_csv": 1468924.5,
+        "drop_completo_por_pedido": "igual a SQL",
+        "visitas": [
+          480,
+          384,
+          288
+        ]
+      }
+    },
+    {
+      "prueba": "ETL distribuidora dos ejecuciones",
+      "estado": "OK",
+      "evidencia": {
+        "repeticion": "mismos conteos e importe",
+        "capas": {
+          "bronze_ventas_raw": 16378,
+          "silver_ventas": 16178,
+          "gold_ventas_cliente_mes": 581
+        },
+        "ventas_bs": 1468924.5
+      }
+    },
+    {
+      "prueba": "ETL transferencia/final y oracle fila por fila",
+      "estado": "OK",
+      "evidencia": {
+        "transferencia": {
+          "bronze": 4048,
+          "duplicados_exactos": 40,
+          "rechazados": 8,
+          "silver": 4000,
+          "documentos": 1000,
+          "clientes": 400,
+          "ventas_centavos": 74019775,
+          "ventas_bs": 740197.75,
+          "gold_filas": 724
+        },
+        "final": {
+          "bronze": 12170,
+          "duplicados_exactos": 150,
+          "rechazados": 20,
+          "silver": 12000,
+          "documentos": 3000,
+          "clientes": 400,
+          "ventas_centavos": 218708102,
+          "ventas_bs": 2187081.02,
+          "gold_filas": 1128
+        }
+      }
+    },
+    {
+      "prueba": "Pruebas adversas y publicación segura",
+      "estado": "OK",
+      "evidencia": [
+        "columna_ausente",
+        "catalogo_duplicado",
+        "clave_en_conflicto",
+        "cantidad_fraccionaria_rechazada",
+        "salida_previa_preservada"
+      ]
+    },
+    {
+      "prueba": "Estadística con supuestos y controles",
+      "estado": "OK",
+      "evidencia": {
+        "controles": [
+          "ST01",
+          "ST02",
+          "ST03",
+          "ST05",
+          "ST06"
+        ],
+        "atipicos": 141,
+        "Welch_p": 0.0012052327265711352,
+        "chi2_p": 0.005992862170204807
+      }
+    },
+    {
+      "prueba": "Modelo estrella y CSV de BI",
+      "estado": "OK",
+      "evidencia": {
+        "filas": {
+          "fact_ventas": 16178,
+          "dim_cliente": 120,
+          "dim_producto": 40,
+          "dim_vendedor": 6,
+          "dim_fecha": 183,
+          "dim_mes": 6,
+          "dim_ruta": 6,
+          "fact_presupuesto": 36,
+          "fact_visitas": 480
+        },
+        "ventas_centavos": 146892450,
+        "Desktop_M_DAX": "pendiente manual"
+      }
+    },
+    {
+      "prueba": "Notebooks del núcleo estructurados y ejecutados",
+      "estado": "OK",
+      "evidencia": {
+        "metodo": "ejecución Python de celdas en orden, sin kernel TCP",
+        "notebooks": [
+          {
+            "archivo": "N01.ipynb",
+            "celdas_ejecutadas": 4,
+            "esquema": "OK"
+          },
+          {
+            "archivo": "N02.ipynb",
+            "celdas_ejecutadas": 4,
+            "esquema": "OK"
+          },
+          {
+            "archivo": "N03.ipynb",
+            "celdas_ejecutadas": 4,
+            "esquema": "OK"
+          },
+          {
+            "archivo": "N04.ipynb",
+            "celdas_ejecutadas": 4,
+            "esquema": "OK"
+          },
+          {
+            "archivo": "N05.ipynb",
+            "celdas_ejecutadas": 4,
+            "esquema": "OK"
+          },
+          {
+            "archivo": "N06.ipynb",
+            "celdas_ejecutadas": 4,
+            "esquema": "OK"
+          },
+          {
+            "archivo": "N07.ipynb",
+            "celdas_ejecutadas": 4,
+            "esquema": "OK"
+          }
+        ],
+        "ejercicios_del_estudiante": "celdas vacías intencionales, no se declaran resueltos"
+      }
+    },
+    {
+      "prueba": "Calendario fechas, horas y progresión",
+      "estado": "OK",
+      "evidencia": {
+        "dias": 42,
+        "minutos_semanales": {
+          "1": 900,
+          "2": 900,
+          "3": 900,
+          "4": 900,
+          "5": 900,
+          "6": 900
+        },
+        "domingo": "0 minutos",
+        "SQL_activo": "15–25 minutos en todas las jornadas"
+      }
+    },
+    {
+      "prueba": "Inicializador y registro de avance",
+      "estado": "OK",
+      "evidencia": {
+        "registro": 42,
+        "segunda_ejecucion": "no sobrescribe el aprendizaje del estudiante"
+      }
+    },
+    {
+      "prueba": "Ejemplos Python de los apuntes",
+      "estado": "OK",
+      "evidencia": {
+        "ejemplos_python_completos_ejecutados": 20,
+        "SQL": "las consultas docentes se desarrollan y corrigen además en el banco",
+        "DAX": "pendiente Desktop"
+      }
+    },
+    {
+      "prueba": "Rutas, Markdown, contratos y separación de soluciones",
+      "estado": "OK",
+      "evidencia": {
+        "enlaces_internos_comprobados": 389,
+        "markdown": 237,
+        "archivos_no_vacios": 401,
+        "soluciones": "separadas en 08_SOLUCIONES",
+        "esqueletos": "intencionalmente sin resolver"
+      }
+    }
+  ],
+  "fallos": 0,
+  "pendientes": [
+    "Power BI Desktop: M,DAX,relaciones,filtros y actualización",
+    "Excel: importación,fórmulas ytablas dinámicas",
+    "Notion importación yGitHub publicación",
+    "Kernel Jupyter externo bloqueado en entorno: se ejecutaron celdas en proceso",
+    "Notebook UAGRM estadística detenido al conectar UCI;funciones avanzadas completas no probadas",
+    "Autonomía real del estudiante: evaluación futura ydefensa"
+  ]
+}

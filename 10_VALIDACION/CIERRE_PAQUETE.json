@@ -1,0 +1,10 @@
+{
+  "pruebas_integracion": 13,
+  "fallos": 0,
+  "prueba_adicional_cantidad_fraccionaria": "OK",
+  "enlaces_internos": 389,
+  "CRC_ZIP": "OK",
+  "manifiesto_archivos": "SHA256 comprobados contra el ZIP",
+  "archivos_en_ZIP": 404,
+  "fecha_cierre_utc": "2026-10-13T00:09:53.748756+00:00"
+}

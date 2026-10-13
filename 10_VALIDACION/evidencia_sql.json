@@ -1,0 +1,326 @@
+[
+  {
+    "id": "S1",
+    "filas": 10
+  },
+  {
+    "id": "S2",
+    "filas": 5
+  },
+  {
+    "id": "S3",
+    "filas": 14
+  },
+  {
+    "id": "S4",
+    "filas": 3
+  },
+  {
+    "id": "S5",
+    "filas": 15
+  },
+  {
+    "id": "S6",
+    "filas": 12
+  },
+  {
+    "id": "S7",
+    "filas": 6
+  },
+  {
+    "id": "S8",
+    "filas": 399
+  },
+  {
+    "id": "S9",
+    "filas": 8
+  },
+  {
+    "id": "S10",
+    "filas": 1
+  },
+  {
+    "id": "G1",
+    "filas": 2
+  },
+  {
+    "id": "G2",
+    "filas": 1
+  },
+  {
+    "id": "G3",
+    "filas": 1
+  },
+  {
+    "id": "G4",
+    "filas": 5
+  },
+  {
+    "id": "G5",
+    "filas": 6
+  },
+  {
+    "id": "G6",
+    "filas": 3
+  },
+  {
+    "id": "G7",
+    "filas": 32
+  },
+  {
+    "id": "G8",
+    "filas": 6
+  },
+  {
+    "id": "J1",
+    "filas": 3600
+  },
+  {
+    "id": "J2",
+    "filas": 1
+  },
+  {
+    "id": "J3",
+    "filas": 5
+  },
+  {
+    "id": "J4",
+    "filas": 6
+  },
+  {
+    "id": "J5",
+    "filas": 19
+  },
+  {
+    "id": "J6",
+    "filas": 5
+  },
+  {
+    "id": "K1",
+    "filas": 3442
+  },
+  {
+    "id": "K2a",
+    "filas": 1
+  },
+  {
+    "id": "K2b",
+    "filas": 6
+  },
+  {
+    "id": "K3",
+    "filas": 1325
+  },
+  {
+    "id": "K4",
+    "filas": 3
+  },
+  {
+    "id": "K5",
+    "filas": 10
+  },
+  {
+    "id": "K6",
+    "filas": 5
+  },
+  {
+    "id": "V1",
+    "filas": 120
+  },
+  {
+    "id": "V2",
+    "filas": 11
+  },
+  {
+    "id": "V3",
+    "filas": 15
+  },
+  {
+    "id": "V4",
+    "filas": 3
+  },
+  {
+    "id": "V5",
+    "filas": 18
+  },
+  {
+    "id": "X1",
+    "filas": 6
+  },
+  {
+    "id": "X2",
+    "filas": 6
+  },
+  {
+    "id": "X3",
+    "filas": 10
+  },
+  {
+    "id": "X4",
+    "filas": 5
+  },
+  {
+    "id": "X5",
+    "filas": 6
+  },
+  {
+    "id": "X6",
+    "filas": 1
+  },
+  {
+    "id": "X7",
+    "filas": 6
+  },
+  {
+    "id": "X8",
+    "filas": 6
+  },
+  {
+    "id": "E1",
+    "filas": 4
+  },
+  {
+    "id": "E2",
+    "filas": 3
+  },
+  {
+    "id": "E3",
+    "filas": 6
+  },
+  {
+    "id": "E4",
+    "filas": 6
+  },
+  {
+    "id": "E5",
+    "filas": 17
+  },
+  {
+    "id": "E6",
+    "filas": 25
+  },
+  {
+    "id": "E7",
+    "filas": 3
+  },
+  {
+    "id": "E8",
+    "filas": 51
+  },
+  {
+    "id": "CL1",
+    "filas": 1
+  },
+  {
+    "id": "CL2",
+    "filas": 120
+  },
+  {
+    "id": "CL3",
+    "filas": 8
+  },
+  {
+    "id": "CL4",
+    "filas": 1
+  },
+  {
+    "id": "N1",
+    "filas": 36
+  },
+  {
+    "id": "N2",
+    "filas": 1
+  },
+  {
+    "id": "N3",
+    "filas": 1
+  },
+  {
+    "id": "N4",
+    "filas": 1
+  },
+  {
+    "id": "N5",
+    "filas": 6
+  },
+  {
+    "id": "N6",
+    "filas": 6
+  },
+  {
+    "id": "N7",
+    "filas": 120
+  },
+  {
+    "id": "N8",
+    "filas": 2
+  },
+  {
+    "id": "N9",
+    "filas": 1
+  },
+  {
+    "id": "N10",
+    "filas": 120
+  },
+  {
+    "id": "N11",
+    "filas": 40
+  },
+  {
+    "id": "N12",
+    "filas": 1
+  },
+  {
+    "id": "N13",
+    "filas": 1
+  },
+  {
+    "id": "N14",
+    "filas": 120
+  },
+  {
+    "id": "N15",
+    "filas": 40
+  },
+  {
+    "id": "N16",
+    "filas": 6
+  },
+  {
+    "id": "ES1A",
+    "filas": 25
+  },
+  {
+    "id": "ES1B",
+    "filas": 5
+  },
+  {
+    "id": "ES1C",
+    "filas": 1
+  },
+  {
+    "id": "ES2A",
+    "filas": 1
+  },
+  {
+    "id": "ES2B",
+    "filas": 30
+  },
+  {
+    "id": "ES2C",
+    "filas": 6
+  },
+  {
+    "id": "ES3A",
+    "filas": 6
+  },
+  {
+    "id": "ES3B",
+    "filas": 11
+  },
+  {
+    "id": "ES3C",
+    "filas": 6
+  }
+]

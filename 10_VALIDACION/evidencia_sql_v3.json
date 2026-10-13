@@ -1,0 +1,1007 @@
+[
+  {
+    "id": "S1",
+    "descripcion": "Primeras 10 filas de clientes",
+    "sentencias": 1,
+    "filas": 10,
+    "muestra": [
+      [
+        1,
+        "Tienda El Trébol 001",
+        "Tienda de barrio",
+        "Centro",
+        "R02",
+        "2025-11-22"
+      ],
+      [
+        2,
+        "Kiosco San José 002",
+        "Kiosco",
+        null,
+        "R01",
+        "2025-03-03"
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "S2",
+    "descripcion": "Tipos de negocio distintos",
+    "sentencias": 1,
+    "filas": 5,
+    "muestra": [
+      [
+        "Tienda de barrio"
+      ],
+      [
+        "Kiosco"
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "S3",
+    "descripcion": "Clientes de la ruta R03",
+    "sentencias": 1,
+    "filas": 14,
+    "muestra": [
+      [
+        12,
+        "Tienda Don Lucho 012",
+        "Tienda de barrio",
+        "Villa 1ro de Mayo",
+        "R03",
+        "2025-12-24"
+      ],
+      [
+        15,
+        "Restaurante El Ahorro 015",
+        "Restaurante",
+        "Plan 3000",
+        "R03",
+        "2025-02-10"
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "S4",
+    "descripcion": "Bebidas con precio > 10, de mayor a menor precio",
+    "sentencias": 1,
+    "filas": 3,
+    "muestra": [
+      [
+        "Energizante 250ml",
+        12.0
+      ],
+      [
+        "Gaseosa cola 2L",
+        11.5
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "S5",
+    "descripcion": "Kioscos o farmacias",
+    "sentencias": 1,
+    "filas": 15,
+    "muestra": [
+      [
+        2,
+        "Kiosco San José 002",
+        "Kiosco",
+        null,
+        "R01",
+        "2025-03-03"
+      ],
+      [
+        5,
+        "Kiosco Doña Rosa 005",
+        "Kiosco",
+        "Urbarí",
+        "R06",
+        "2025-03-18"
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "S6",
+    "descripcion": "Nombre que contiene \"sol\"",
+    "sentencias": 1,
+    "filas": 12,
+    "muestra": [
+      [
+        17,
+        "Minimarket El Sol 017",
+        "Minimarket",
+        "Urbarí",
+        "R06",
+        "2025-11-21"
+      ],
+      [
+        22,
+        "Minimarket El Sol 022",
+        "Minimarket",
+        "Los Lotes",
+        "R02",
+        "2025-10-05"
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "S7",
+    "descripcion": "Clientes sin zona. Con \"= NULL\" no funciona porque NULL no es un valor: es \"desconocido\", y nada es igual a desconocido.",
+    "sentencias": 1,
+    "filas": 6,
+    "muestra": [
+      [
+        2,
+        "Kiosco San José 002",
+        "Kiosco",
+        null,
+        "R01",
+        "2025-03-03"
+      ],
+      [
+        36,
+        "Tienda El Cruceño 036",
+        "Tienda de barrio",
+        null,
+        "R06",
+        "2025-12-26"
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "S8",
+    "descripcion": "Pedidos del 1 al 15 de septiembre",
+    "sentencias": 1,
+    "filas": 399,
+    "muestra": [
+      [
+        2846,
+        83,
+        2,
+        "2026-09-01",
+        "entregado"
+      ],
+      [
+        2847,
+        63,
+        6,
+        "2026-09-01",
+        "entregado"
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "S9",
+    "descripcion": "Precio entre 5 y 10 en Snacks o Lácteos",
+    "sentencias": 1,
+    "filas": 8,
+    "muestra": [
+      [
+        "Papas fritas 100g",
+        "Snacks",
+        7.5
+      ],
+      [
+        "Galletas de vainilla",
+        "Snacks",
+        5.0
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "S10",
+    "descripcion": "Cuántos clientes hay",
+    "sentencias": 1,
+    "filas": 1,
+    "muestra": [
+      [
+        120
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "G1",
+    "descripcion": "Pedidos entregados y anulados",
+    "sentencias": 1,
+    "filas": 2,
+    "muestra": [
+      [
+        "anulado",
+        158
+      ],
+      [
+        "entregado",
+        3442
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "G2",
+    "descripcion": "Unidades vendidas en total",
+    "sentencias": 1,
+    "filas": 1,
+    "muestra": [
+      [
+        164517
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "G3",
+    "descripcion": "Valor total de los ítems (incluye pedidos anulados: mañana lo corriges con un JOIN)",
+    "sentencias": 1,
+    "filas": 1,
+    "muestra": [
+      [
+        1534625.0
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "G4",
+    "descripcion": "Precio promedio, mínimo y máximo por categoría",
+    "sentencias": 1,
+    "filas": 5,
+    "muestra": [
+      [
+        "Abarrotes",
+        8.44,
+        3.0,
+        16.0
+      ],
+      [
+        "Bebidas",
+        8.63,
+        4.5,
+        12.0
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "G5",
+    "descripcion": "Clientes por ruta, de mayor a menor",
+    "sentencias": 1,
+    "filas": 6,
+    "muestra": [
+      [
+        "R01",
+        26
+      ],
+      [
+        "R06",
+        25
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "G6",
+    "descripcion": "Rutas con más de 20 clientes (HAVING filtra grupos; WHERE filtra filas)",
+    "sentencias": 1,
+    "filas": 3,
+    "muestra": [
+      [
+        "R01",
+        26
+      ],
+      [
+        "R02",
+        24
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "G7",
+    "descripcion": "Clientes por tipo y zona (los NULL aparecen como un grupo propio)",
+    "sentencias": 1,
+    "filas": 32,
+    "muestra": [
+      [
+        "Farmacia",
+        "Los Lotes",
+        1
+      ],
+      [
+        "Farmacia",
+        "Plan 3000",
+        1
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "G8",
+    "descripcion": "Pedidos por mes",
+    "sentencias": 1,
+    "filas": 6,
+    "muestra": [
+      [
+        "2026-04",
+        592
+      ],
+      [
+        "2026-05",
+        617
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "J1",
+    "descripcion": "Pedidos con el nombre del cliente",
+    "sentencias": 1,
+    "filas": 3600,
+    "muestra": [
+      [
+        18,
+        "2026-04-01",
+        "Tienda El Trébol 001"
+      ],
+      [
+        25,
+        "2026-04-02",
+        "Tienda El Trébol 001"
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "J2",
+    "descripcion": "Ventas totales (Bs) de pedidos entregados",
+    "sentencias": 1,
+    "filas": 1,
+    "muestra": [
+      [
+        1468924.5
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "J3",
+    "descripcion": "Ventas por categoría de producto",
+    "sentencias": 1,
+    "filas": 5,
+    "muestra": [
+      [
+        "Lácteos",
+        406249.0
+      ],
+      [
+        "Limpieza",
+        348948.5
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "J4",
+    "descripcion": "Ventas por vendedor",
+    "sentencias": 1,
+    "filas": 6,
+    "muestra": [
+      [
+        "María Flores",
+        396680.5
+      ],
+      [
+        "Jorge Vaca",
+        341538.5
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "J5",
+    "descripcion": "Clientes SIN pedidos entregados en septiembre.",
+    "sentencias": 1,
+    "filas": 19,
+    "muestra": [
+      [
+        12,
+        "Tienda Don Lucho 012"
+      ],
+      [
+        14,
+        "Restaurante Don Pepe 014"
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "J6",
+    "descripcion": "Top 5 productos por unidades entregadas",
+    "sentencias": 1,
+    "filas": 5,
+    "muestra": [
+      [
+        "Galletas de vainilla",
+        4531
+      ],
+      [
+        "Cerveza lata 354ml",
+        4514
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "K1",
+    "descripcion": "Drop size (Bs) y unidades de cada pedido entregado",
+    "sentencias": 1,
+    "filas": 3442,
+    "muestra": [
+      [
+        2,
+        "2026-04-01",
+        106.5,
+        18
+      ],
+      [
+        3,
+        "2026-04-01",
+        613.5,
+        58
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "K2a",
+    "descripcion": "Drop size promedio general",
+    "sentencias": 1,
+    "filas": 1,
+    "muestra": [
+      [
+        426.76
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "K2b",
+    "descripcion": "Drop size promedio por ruta",
+    "sentencias": 1,
+    "filas": 6,
+    "muestra": [
+      [
+        "R01",
+        365.93,
+        577
+      ],
+      [
+        "R02",
+        461.26,
+        860
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "K3",
+    "descripcion": "Pedidos con drop size mayor al promedio general (subconsulta)",
+    "sentencias": 1,
+    "filas": 1325,
+    "muestra": [
+      [
+        814,
+        2560.5
+      ],
+      [
+        3043,
+        2495.5
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "K4",
+    "descripcion": "Clasificar pedidos en Pequeño (<200), Mediano (200 a 600) y Grande (>600) y contarlos",
+    "sentencias": 1,
+    "filas": 3,
+    "muestra": [
+      [
+        "Mediano",
+        1911
+      ],
+      [
+        "Pequeño",
+        781
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "K5",
+    "descripcion": "Top 10 pedidos por drop size, con cliente y vendedor",
+    "sentencias": 1,
+    "filas": 10,
+    "muestra": [
+      [
+        814,
+        "Tienda Las Palmas 110",
+        "Jorge Vaca",
+        2560.5
+      ],
+      [
+        3043,
+        "Tienda El Sol 083",
+        "María Flores",
+        2495.5
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "K6",
+    "descripcion": "Con CTE: drop size promedio por cliente y los 5 mayores",
+    "sentencias": 1,
+    "filas": 5,
+    "muestra": [
+      [
+        "Tienda El Sol 083",
+        681.59,
+        229
+      ],
+      [
+        "Tienda Las Palmas 110",
+        631.65,
+        202
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "V1",
+    "descripcion": "Última compra (entregada) por cliente",
+    "sentencias": 1,
+    "filas": 120,
+    "muestra": [
+      [
+        103,
+        "Kiosco El Sol 103",
+        "2026-05-14"
+      ],
+      [
+        12,
+        "Tienda Don Lucho 012",
+        "2026-05-21"
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "V2",
+    "descripcion": "Clientes que no compran hace más de 60 días (fecha de corte 2026-09-30)",
+    "sentencias": 1,
+    "filas": 11,
+    "muestra": [
+      [
+        103,
+        "Kiosco El Sol 103",
+        "2026-05-14",
+        139
+      ],
+      [
+        12,
+        "Tienda Don Lucho 012",
+        "2026-05-21",
+        132
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "V3",
+    "descripcion": "Ventas por cliente, participación % y acumulado %",
+    "sentencias": 1,
+    "filas": 15,
+    "muestra": [
+      [
+        "Tienda El Sol 083",
+        156083.5,
+        10.63,
+        10.63
+      ],
+      [
+        "Tienda Las Palmas 110",
+        127593.0,
+        8.69,
+        19.31
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "V4",
+    "descripcion": "Clasificación ABC: A = hasta 80% de las ventas, B = hasta 95%, C = el resto.",
+    "sentencias": 1,
+    "filas": 3,
+    "muestra": [
+      [
+        "A",
+        41,
+        80.5
+      ],
+      [
+        "B",
+        37,
+        14.6
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "V5",
+    "descripcion": "Ranking de clientes por ventas dentro de cada ruta (los 3 mejores por ruta)",
+    "sentencias": 1,
+    "filas": 18,
+    "muestra": [
+      [
+        "R01",
+        1,
+        "Minimarket La Bendición 056",
+        64920.0
+      ],
+      [
+        "R01",
+        2,
+        "Tienda Don Lucho 030",
+        17821.0
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "X1",
+    "descripcion": "Ventas (Bs) por mes, solo entregados",
+    "sentencias": 1,
+    "filas": 6,
+    "muestra": [
+      [
+        "2026-04",
+        246380.0
+      ],
+      [
+        "2026-05",
+        246941.5
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "X2",
+    "descripcion": "Drop size promedio por mes",
+    "sentencias": 1,
+    "filas": 6,
+    "muestra": [
+      [
+        "2026-04",
+        433.77
+      ],
+      [
+        "2026-05",
+        419.26
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "X3",
+    "descripcion": "Top 10 clientes por ventas",
+    "sentencias": 1,
+    "filas": 10,
+    "muestra": [
+      [
+        "Tienda El Sol 083",
+        156083.5
+      ],
+      [
+        "Tienda Las Palmas 110",
+        127593.0
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "X4",
+    "descripcion": "Ventas por categoría y % del total",
+    "sentencias": 1,
+    "filas": 5,
+    "muestra": [
+      [
+        "Lácteos",
+        406249.0,
+        27.7
+      ],
+      [
+        "Limpieza",
+        348948.5,
+        23.8
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "X5",
+    "descripcion": "Porcentaje de pedidos anulados por ruta",
+    "sentencias": 1,
+    "filas": 6,
+    "muestra": [
+      [
+        "R06",
+        488,
+        32,
+        6.6
+      ],
+      [
+        "R05",
+        709,
+        37,
+        5.2
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "X6",
+    "descripcion": "Pedido con mayor drop size (con cliente y fecha)",
+    "sentencias": 1,
+    "filas": 1,
+    "muestra": [
+      [
+        814,
+        "2026-05-12",
+        "Tienda Las Palmas 110",
+        2560.5
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "X7",
+    "descripcion": "Ranking de vendedores por ventas",
+    "sentencias": 1,
+    "filas": 6,
+    "muestra": [
+      [
+        1,
+        "María Flores",
+        396680.5
+      ],
+      [
+        2,
+        "Jorge Vaca",
+        341538.5
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "X8",
+    "descripcion": "Clientes con zona nula y cuánto compraron (revela datos que hay que corregir en origen)",
+    "sentencias": 1,
+    "filas": 6,
+    "muestra": [
+      [
+        2,
+        "Kiosco San José 002",
+        7853.0
+      ],
+      [
+        36,
+        "Tienda El Cruceño 036",
+        4490.0
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "E1",
+    "descripcion": "Tipos de cliente con más de 10 clientes",
+    "sentencias": 1,
+    "filas": 4,
+    "muestra": [
+      [
+        "Kiosco",
+        12
+      ],
+      [
+        "Minimarket",
+        27
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "E2",
+    "descripcion": "Las 3 bebidas más caras",
+    "sentencias": 1,
+    "filas": 3,
+    "muestra": [
+      [
+        "Energizante 250ml",
+        12.0
+      ],
+      [
+        "Gaseosa cola 2L",
+        11.5
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "E3",
+    "descripcion": "Pedidos anulados por mes",
+    "sentencias": 1,
+    "filas": 6,
+    "muestra": [
+      [
+        "2026-04",
+        24
+      ],
+      [
+        "2026-05",
+        28
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "E4",
+    "descripcion": "Ventas (Bs) por ruta, solo entregados",
+    "sentencias": 1,
+    "filas": 6,
+    "muestra": [
+      [
+        "R01",
+        211141.5
+      ],
+      [
+        "R02",
+        396680.5
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "E5",
+    "descripcion": "Clientes de la zona Centro con su cantidad de pedidos entregados (incluye los que tienen 0)",
+    "sentencias": 1,
+    "filas": 17,
+    "muestra": [
+      [
+        "Restaurante Don Lucho 052",
+        56
+      ],
+      [
+        "  TIENDA EL AHORRO 091 ",
+        33
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "E6",
+    "descripcion": "Unidades vendidas por tipo de cliente y categoría de producto (entregados)",
+    "sentencias": 1,
+    "filas": 25,
+    "muestra": [
+      [
+        "Farmacia",
+        "Abarrotes",
+        1141
+      ],
+      [
+        "Farmacia",
+        "Bebidas",
+        904
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "E7",
+    "descripcion": "Pedidos de septiembre con más de 10 ítems",
+    "sentencias": 1,
+    "filas": 3,
+    "muestra": [
+      [
+        3007,
+        11
+      ],
+      [
+        3030,
+        11
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "E8",
+    "descripcion": "Clientes que nunca tuvieron un pedido anulado",
+    "sentencias": 1,
+    "filas": 51,
+    "muestra": [
+      [
+        2,
+        "Kiosco San José 002"
+      ],
+      [
+        8,
+        "Tienda El Trébol 008"
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "CL1",
+    "descripcion": "Detectar nombres de negocio con espacios al inicio o al final (control: 8)",
+    "sentencias": 1,
+    "filas": 1,
+    "muestra": [
+      [
+        8
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "CL2",
+    "descripcion": "Nombres normalizados: sin espacios sobrantes y en mayúsculas",
+    "sentencias": 1,
+    "filas": 120,
+    "muestra": [
+      [
+        1,
+        "TIENDA EL TRéBOL 001"
+      ],
+      [
+        2,
+        "KIOSCO SAN JOSé 002"
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "CL3",
+    "descripcion": "Clientes por zona, mostrando 'Sin zona' cuando es NULL (control: 'Sin zona' = 6)",
+    "sentencias": 1,
+    "filas": 8,
+    "muestra": [
+      [
+        "Norte",
+        19
+      ],
+      [
+        "Los Lotes",
+        18
+      ]
+    ],
+    "ok": true
+  },
+  {
+    "id": "CL4",
+    "descripcion": "Vista TEMPORAL con clientes limpios (no modifica el archivo .db) y consulta de prueba",
+    "sentencias": 1,
+    "filas": 0,
+    "muestra": [],
+    "ok": true
+  }
+]

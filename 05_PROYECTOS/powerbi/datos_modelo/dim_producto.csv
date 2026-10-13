@@ -1,0 +1,41 @@
+producto_id,nombre,categoria,precio_unitario,costo_unitario
+1,Gaseosa cola 2L,Bebidas,11.5,9.24
+2,Gaseosa naranja 2L,Bebidas,10.5,7.88
+3,Agua sin gas 2L,Bebidas,6.0,4.9
+4,Jugo de durazno 1L,Bebidas,9.0,7.12
+5,Cerveza lata 354ml,Bebidas,8.5,5.91
+6,Energizante 250ml,Bebidas,12.0,10.03
+7,Agua con gas 600ml,Bebidas,4.5,3.61
+8,Té helado 500ml,Bebidas,7.0,5.64
+9,Papas fritas 100g,Snacks,7.5,5.25
+10,Galletas de vainilla,Snacks,5.0,3.76
+11,Maní salado 80g,Snacks,4.0,2.96
+12,Chocolate barra 40g,Snacks,6.5,5.38
+13,Chizitos 120g,Snacks,6.0,4.7
+14,Barra de cereal,Snacks,3.5,2.84
+15,Caramelos bolsa,Snacks,8.0,6.01
+16,Alfajor,Snacks,4.5,3.22
+17,Leche entera 1L,Lácteos,8.0,6.15
+18,Yogurt frutilla 1L,Lácteos,14.0,9.66
+19,Queso fresco 500g,Lácteos,28.0,22.75
+20,Mantequilla 200g,Lácteos,15.0,11.72
+21,Leche deslactosada 1L,Lácteos,10.5,8.41
+22,Yogurt natural 1L,Lácteos,13.0,9.58
+23,Crema de leche 200g,Lácteos,9.5,7.94
+24,Flan listo,Lácteos,5.5,4.53
+25,Arroz 1kg,Abarrotes,9.0,7.24
+26,Azúcar 1kg,Abarrotes,7.5,5.33
+27,Aceite 1L,Abarrotes,16.0,12.07
+28,Fideo 400g,Abarrotes,5.5,3.78
+29,Harina 1kg,Abarrotes,6.5,4.58
+30,Sal 1kg,Abarrotes,3.0,2.37
+31,Atún lata 170g,Abarrotes,13.0,10.39
+32,Salsa de tomate 400g,Abarrotes,7.0,5.84
+33,Detergente 1kg,Limpieza,19.0,13.91
+34,Lavavajilla 500ml,Limpieza,11.0,8.13
+35,Lejía 1L,Limpieza,8.0,6.04
+36,Papel higiénico x4,Limpieza,12.0,8.52
+37,Jabón de tocador,Limpieza,4.0,2.8
+38,Shampoo 400ml,Limpieza,22.0,16.63
+39,Servilletas x100,Limpieza,6.5,4.66
+40,Esponja x3,Limpieza,5.0,3.94

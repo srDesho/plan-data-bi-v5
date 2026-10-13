@@ -1,0 +1,121 @@
+cliente_id,nombre_negocio,tipo,zona,ruta,fecha_alta
+1,Tienda El Trébol 001,Tienda de barrio,Centro,R02,2025-11-22
+2,Kiosco San José 002,Kiosco,,R01,2025-03-03
+3,Restaurante La Esquina 003,Restaurante,Centro,R04,2026-03-08
+4,Tienda Doña Rosa 004,Tienda de barrio,Equipetrol,R06,2026-03-08
+5,Kiosco Doña Rosa 005,Kiosco,Urbarí,R06,2025-03-18
+6,  KIOSCO MI BARRIO 006 ,Kiosco,Equipetrol,R02,2025-12-27
+7,Tienda San José 007,Tienda de barrio,Equipetrol,R02,2025-07-03
+8,Tienda El Trébol 008,Tienda de barrio,Equipetrol,R01,2025-09-25
+9,Restaurante Doña Rosa 009,Restaurante,Norte,R01,2025-07-20
+10,Tienda San José 010,Tienda de barrio,Centro,R04,2025-12-19
+11,Tienda El Trébol 011,Tienda de barrio,Urbarí,R04,2026-03-25
+12,Tienda Don Lucho 012,Tienda de barrio,Villa 1ro de Mayo,R03,2025-12-24
+13,  RESTAURANTE DOÑA ROSA 013 ,Restaurante,Equipetrol,R02,2026-02-24
+14,Restaurante Don Pepe 014,Restaurante,Plan 3000,R05,2026-03-02
+15,Restaurante El Ahorro 015,Restaurante,Plan 3000,R03,2025-02-10
+16,Restaurante El Ahorro 016,Restaurante,Villa 1ro de Mayo,R05,2025-04-25
+17,Minimarket El Sol 017,Minimarket,Urbarí,R06,2025-11-21
+18,Minimarket Mi Barrio 018,Minimarket,Centro,R02,2025-09-23
+19,Tienda La Económica 019,Tienda de barrio,Urbarí,R02,2025-01-23
+20,Tienda La Esquina 020,Tienda de barrio,Plan 3000,R06,2025-02-12
+21,Restaurante Las Palmas 021,Restaurante,Plan 3000,R04,2025-08-23
+22,Minimarket El Sol 022,Minimarket,Los Lotes,R02,2025-10-05
+23,Minimarket El Cruceño 023,Minimarket,Plan 3000,R04,2025-03-17
+24,Restaurante La Bendición 024,Restaurante,Plan 3000,R04,2025-03-19
+25,Minimarket Don Pepe 025,Minimarket,Villa 1ro de Mayo,R06,2025-02-28
+26,Minimarket El Trébol 026,Minimarket,Urbarí,R02,2025-09-12
+27,Minimarket El Sol 027,Minimarket,Norte,R06,2025-01-04
+28,Tienda El Ahorro 028,Tienda de barrio,Plan 3000,R06,2025-09-15
+29,Tienda El Sol 029,Tienda de barrio,Los Lotes,R02,2025-08-03
+30,Tienda Don Lucho 030,Tienda de barrio,Los Lotes,R01,2025-07-29
+31,Tienda El Cruceño 031,Tienda de barrio,Los Lotes,R04,2025-11-02
+32,Tienda La Económica 032,Tienda de barrio,Urbarí,R01,2025-08-24
+33,  KIOSCO LA BENDICIÓN 033 ,Kiosco,Equipetrol,R02,2025-11-24
+34,Tienda Doña Rosa 034,Tienda de barrio,Urbarí,R03,2025-12-10
+35,Tienda Mi Barrio 035,Tienda de barrio,Villa 1ro de Mayo,R06,2026-02-19
+36,Tienda El Cruceño 036,Tienda de barrio,,R06,2025-12-26
+37,Tienda La Económica 037,Tienda de barrio,Norte,R01,2025-08-21
+38,Restaurante Don Pepe 038,Restaurante,Los Lotes,R06,2025-08-10
+39,Minimarket Mi Barrio 039,Minimarket,Norte,R01,2025-04-17
+40,Restaurante La Esquina 040,Restaurante,Norte,R05,2025-09-27
+41,Restaurante San José 041,Restaurante,Norte,R06,2025-03-04
+42,Tienda La Económica 042,Tienda de barrio,Los Lotes,R06,2026-02-24
+43,Kiosco Santa Rita 043,Kiosco,Los Lotes,R02,2026-01-16
+44,Tienda El Cruceño 044,Tienda de barrio,Plan 3000,R06,2025-02-23
+45,Tienda La Bendición 045,Tienda de barrio,Los Lotes,R01,2025-12-20
+46,Tienda Santa Rita 046,Tienda de barrio,Centro,R04,2025-02-22
+47,Restaurante Los Amigos 047,Restaurante,Villa 1ro de Mayo,R03,2025-11-21
+48,Minimarket Doña Rosa 048,Minimarket,Centro,R02,2025-02-09
+49,Tienda El Cruceño 049,Tienda de barrio,Urbarí,R01,2025-08-08
+50,Minimarket Mi Barrio 050,Minimarket,Urbarí,R05,2025-10-24
+51,Tienda Don Lucho 051,Tienda de barrio,Los Lotes,R03,2025-11-24
+52,Restaurante Don Lucho 052,Restaurante,Centro,R04,2025-07-08
+53,Tienda El Cruceño 053,Tienda de barrio,Los Lotes,R03,2026-02-19
+54,Tienda Mi Barrio 054,Tienda de barrio,Villa 1ro de Mayo,R03,2025-12-15
+55,Tienda San José 055,Tienda de barrio,Norte,R06,2025-04-04
+56,Minimarket La Bendición 056,Minimarket,Norte,R01,2025-10-30
+57,Tienda La Esquina 057,Tienda de barrio,Equipetrol,R05,2025-11-25
+58,Tienda Los Amigos 058,Tienda de barrio,Equipetrol,R05,2025-05-31
+59,Tienda Don Lucho 059,Tienda de barrio,Plan 3000,R03,2025-11-29
+60,Farmacia La Bendición 060,Farmacia,Plan 3000,R02,2026-02-09
+61,Kiosco La Esquina 061,Kiosco,,R01,2026-01-03
+62,Restaurante Mi Barrio 062,Restaurante,Centro,R06,2025-12-10
+63,Tienda El Trébol 063,Tienda de barrio,Equipetrol,R06,2025-10-13
+64,Farmacia Don Lucho 064,Farmacia,Villa 1ro de Mayo,R02,2025-05-02
+65,Restaurante San José 065,Restaurante,Norte,R01,2025-12-24
+66,Restaurante La Bendición 066,Restaurante,Equipetrol,R01,2025-06-13
+67,Tienda Doña Rosa 067,Tienda de barrio,Villa 1ro de Mayo,R01,2025-08-28
+68,Tienda Santa Rita 068,Tienda de barrio,Villa 1ro de Mayo,R05,2025-05-22
+69,Tienda San José 069,Tienda de barrio,Centro,R06,2025-05-21
+70,Kiosco Santa Rita 070,Kiosco,Villa 1ro de Mayo,R01,2025-03-12
+71,Minimarket El Trébol 071,Minimarket,Los Lotes,R05,2026-03-09
+72,Tienda El Cruceño 072,Tienda de barrio,Villa 1ro de Mayo,R02,2025-03-08
+73,Tienda La Económica 073,Tienda de barrio,Centro,R03,2025-02-08
+74,Minimarket La Económica 074,Minimarket,Villa 1ro de Mayo,R04,2026-02-26
+75,Tienda El Trébol 075,Tienda de barrio,Equipetrol,R05,2025-09-07
+76,Kiosco La Esquina 076,Kiosco,Norte,R06,2025-07-17
+77,Restaurante Don Lucho 077,Restaurante,Equipetrol,R01,2025-11-28
+78,Restaurante Don Pepe 078,Restaurante,Villa 1ro de Mayo,R02,2025-06-22
+79,  TIENDA DOÑA ROSA 079 ,Tienda de barrio,Los Lotes,R02,2025-02-27
+80,  MINIMARKET EL AHORRO 080 ,Minimarket,Urbarí,R02,2025-11-25
+81,Minimarket Los Amigos 081,Minimarket,Norte,R06,2025-03-21
+82,Minimarket El Sol 082,Minimarket,Urbarí,R05,2025-09-06
+83,Tienda El Sol 083,Tienda de barrio,Los Lotes,R02,2026-03-04
+84,Tienda La Económica 084,Tienda de barrio,Centro,R06,2026-02-26
+85,Tienda San José 085,Tienda de barrio,Los Lotes,R03,2025-06-12
+86,Minimarket San José 086,Minimarket,Villa 1ro de Mayo,R04,2025-12-18
+87,Tienda Don Lucho 087,Tienda de barrio,Centro,R03,2025-10-03
+88,Tienda El Sol 088,Tienda de barrio,,R01,2025-08-04
+89,Tienda Don Lucho 089,Tienda de barrio,Urbarí,R06,2025-03-04
+90,Minimarket Don Lucho 090,Minimarket,Los Lotes,R01,2025-06-19
+91,  TIENDA EL AHORRO 091 ,Tienda de barrio,Centro,R02,2025-10-21
+92,Kiosco El Sol 092,Kiosco,Norte,R02,2026-03-20
+93,Minimarket El Sol 093,Minimarket,Equipetrol,R02,2025-01-03
+94,Tienda San José 094,Tienda de barrio,,R01,2025-11-19
+95,Minimarket El Ahorro 095,Minimarket,Centro,R01,2026-01-16
+96,Tienda El Sol 096,Tienda de barrio,Centro,R05,2026-03-05
+97,Farmacia La Bendición 097,Farmacia,Los Lotes,R06,2025-07-10
+98,  MINIMARKET LA ESQUINA 098 ,Minimarket,Norte,R01,2025-02-23
+99,Restaurante El Ahorro 099,Restaurante,Plan 3000,R02,2025-05-02
+100,  TIENDA DON PEPE 100 ,Tienda de barrio,Villa 1ro de Mayo,R04,2026-01-18
+101,Minimarket Las Palmas 101,Minimarket,Equipetrol,R06,2026-01-31
+102,Minimarket Don Pepe 102,Minimarket,Los Lotes,R05,2025-10-14
+103,Kiosco El Sol 103,Kiosco,Plan 3000,R05,2025-02-25
+104,Minimarket El Sol 104,Minimarket,Equipetrol,R04,2025-02-24
+105,Minimarket La Económica 105,Minimarket,Norte,R03,2025-08-04
+106,Tienda Don Pepe 106,Tienda de barrio,Norte,R02,2025-09-22
+107,Tienda La Bendición 107,Tienda de barrio,Centro,R06,2025-01-15
+108,Minimarket El Ahorro 108,Minimarket,Urbarí,R05,2025-11-05
+109,Tienda Doña Rosa 109,Tienda de barrio,,R01,2025-09-03
+110,Tienda Las Palmas 110,Tienda de barrio,Plan 3000,R05,2025-01-06
+111,Kiosco La Económica 111,Kiosco,Urbarí,R01,2025-02-13
+112,Kiosco Los Amigos 112,Kiosco,Norte,R05,2025-07-24
+113,Tienda La Económica 113,Tienda de barrio,Norte,R05,2025-11-22
+114,Minimarket San José 114,Minimarket,Plan 3000,R01,2026-01-07
+115,Tienda El Trébol 115,Tienda de barrio,Norte,R03,2025-07-14
+116,Restaurante Doña Rosa 116,Restaurante,Los Lotes,R01,2025-05-13
+117,Tienda El Cruceño 117,Tienda de barrio,Norte,R04,2026-03-12
+118,Restaurante Don Lucho 118,Restaurante,Plan 3000,R06,2025-07-26
+119,Restaurante El Cruceño 119,Restaurante,Centro,R01,2025-05-22
+120,Restaurante La Económica 120,Restaurante,Urbarí,R03,2025-07-19
