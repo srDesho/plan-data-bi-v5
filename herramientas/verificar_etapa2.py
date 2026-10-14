@@ -159,7 +159,7 @@ class Verificador:
                 assert f'/{s["criterio"]["id"]}.md' in t, f'D{n:02}: falta {s["criterio"]["id"]}'
             tabla = re.findall(r'^\|([^|\n]+)\|(\d+)\|', t, re.M)
             assert sum(int(m) for _, m in tabla) == d['completo'], f'D{n:02}: la tabla de la guía no suma {d["completo"]}'
-        return {'guías_revisadas': 42, 'D01': 'sin cambios', 'D02': 'solo bloque de lecciones', 'domingos': 'flexibles'}
+        return {'guías_revisadas': 42, 'D01': 'sin cambios', 'D02': 'bloques de lecciones y preparación', 'domingos': 'flexibles'}
 
     # ------------------------------------------------------------------ 4
     def prerrequisitos(self):
@@ -184,7 +184,97 @@ class Verificador:
         for i, c in L.items():
             for ej in (c.get('cobertura') or {}).get('por', []):
                 assert ej in self.ctx.lecciones['puente'] or self.an.dia_ejercicio(self.ctx, ej) is not None, f'{i}: cobertura por {ej}, que no es OBLIGATORIO'
-        return {'prerrequisitos_por_estado': conteo, 'recomendadas': recomendadas}
+        preparacion = self.preparacion_pandas()
+        secuencia = self.preparacion_secuencia()
+        return {'prerrequisitos_por_estado': conteo, 'recomendadas': recomendadas, 'preparacion_pandas': preparacion,
+                'preparacion_secuencia': secuencia}
+
+    def preparacion_secuencia(self):
+        """La preparación inicial no se acredita mediante pistas ni ejercicios aún no realizados."""
+        nucleo = self.ctx.nucleo
+        primeras = {}
+        for dia, ficha in {**nucleo.get('dias_iniciales', {}), **nucleo['dias']}.items():
+            ids = [self.an.norm(x)['id'] for x in ficha['obligatorio'] + ficha.get('repaso', [])]
+            if ficha.get('criterio'):
+                ids.append(ficha['criterio']['id'])
+            for i in ids:
+                primeras[i] = min(primeras.get(i, int(dia)), int(dia))
+        esperadas = {'S1', 'P01', 'S2', 'P02', 'P03', 'S4', 'AN07', 'PB02'}
+        preparaciones = nucleo.get('preparaciones', {})
+        assert esperadas <= set(preparaciones), 'falta preparación explícita antes de una actividad'
+        for i, p in preparaciones.items():
+            assert p['dia'] <= primeras[i], f'{i}: preparación posterior al primer intento obligatorio'
+            assert isinstance(p['min'], int) and p['min'] > 0, f'{i}: preparación sin minutos'
+            ruta = (self.raiz / p['archivo']).resolve()
+            assert ruta.is_relative_to((self.raiz / '03_EJERCICIOS').resolve()), f'{i}: preparación fuera de los enunciados'
+            texto = leer(ruta)
+            inicio = texto.index('<!-- SECUENCIA:PREPARACION:INICIO -->')
+            fin = texto.index('<!-- SECUENCIA:PREPARACION:FIN -->')
+            assert inicio < fin < texto.index('## Situación'), f'{i}: preparación posterior al problema'
+            bloque = texto[inicio:fin]
+            assert bloque.count(f'id="{p["ancla"]}"') == 1 and 'obligatoria' in bloque.lower(), f'{i}: ancla o carácter obligatorio'
+            assert re.search(rf'\b{p["min"]} min(?:utos)?\b', bloque), f'{i}: minutos del enunciado y fuente distintos'
+            assert 'predic' in bloque.casefold() or i == 'PB02', f'{i}: falta predicción independiente'
+        for i, tokens in {'S2': ['DISTINCT', 'muestrario', 'Una fila', 'combinación'],
+                          'P02': ['if unidades < 0:', 'return None', 'sangría'],
+                          'AN07': ['Cumplimiento', 'Cobertura', 'Efectividad', 'denominador']}.items():
+            texto = leer(self.raiz / preparaciones[i]['archivo']).split('<!-- SECUENCIA:PREPARACION:FIN -->')[0]
+            assert all(t in texto for t in tokens), f'{i}: puente sin explicación suficiente'
+        assert nucleo['dias']['10']['lecciones'].index('8.3') < nucleo['dias']['10']['lecciones'].index('8.4'), 'D10: archivos antes de módulos'
+        assert 'antes de 10.1/PD-BASE' in nucleo['dias']['15']['reducido_entrega'], 'D15: recuperación tardía de 9.3'
+        assert any('9.3' in e['texto'] for e in nucleo['dias']['16']['entra']), 'D16: falta recuperar inspección antes del puente'
+        inicial = nucleo['dias_iniciales']
+        assert 'S10' in inicial['1']['refuerzo'] and 'S10' not in inicial['1']['obligatorio'], 'S10: ampliación explícita'
+        assert 'S9' in inicial['2']['refuerzo'] and 'S9' not in inicial['2']['obligatorio'], 'S9: ampliación explícita'
+        return {'preparaciones': len(preparaciones), 'min_adicionales_base': sum(p['min'] for p in preparaciones.values() if p['dia'] != 1),
+                'D01': '16 min dentro de sus 20 originales', 'S9_S10': 'REFUERZO', 'orden_D10_y_recuperacion_D15': 'OK'}
+
+    def preparacion_pandas(self):
+        """La lectura no sustituye las dos demostraciones previas a transformar y agrupar."""
+        dias = self.ctx.nucleo['dias']
+        lecciones = self.ctx.lecciones['lecciones']
+
+        def posicion(actividad):
+            for numero, jornada in sorted(dias.items(), key=lambda x: int(x[0])):
+                obligatorios = [self.an.norm(x)['id'] for x in jornada['obligatorio']]
+                if actividad in obligatorios:
+                    return int(numero), obligatorios.index(actividad)
+                if (jornada.get('criterio') or {}).get('id') == actividad:
+                    return int(numero), len(obligatorios)
+            raise AssertionError(f'Pandas: falta la actividad OBLIGATORIA {actividad}')
+
+        def comprobar_preparacion(actividad, leccion, ancla):
+            dia, _ = posicion(actividad)
+            ficha = self.ctx.nucleo['items_personalizados'].get(actividad)
+            assert ficha and ficha.get('est', 0) >= 10, f'{actividad}: falta tiempo para demostrar la preparación'
+            fuente = lecciones[leccion]
+            assert fuente['tipo'] == 'NÚCLEO' and fuente['dia'] <= dia, f'{actividad}: su enseñanza llega después'
+            archivo = self.raiz / '02_TEORIA' / fuente['archivo']
+            enlaces = [enlace for _, enlace in ficha.get('enlaces', [])]
+            guias = self.raiz / '01_PLAN_DIARIO/dias'
+            assert any(enlace.endswith('#' + ancla) and
+                       (guias / enlace.split('#')[0]).resolve() == archivo.resolve()
+                       for enlace in enlaces), f'{actividad}: no enlaza su enseñanza y práctica'
+            assert re.search(r'id=[\"\']' + re.escape(ancla) + r'[\"\']', leer(archivo)), f'{actividad}: ancla de preparación inexistente'
+            return dia
+
+        base = comprobar_preparacion('PD-BASE', '10.1', 'puente-base-pandas')
+        agrupacion = comprobar_preparacion('PD-AGR', '10.2', 'agrupacion-base-sin-merge')
+        for actividad in ('P22', 'P21', 'PD-AGR'):
+            assert posicion('PD-BASE') < posicion(actividad), f'PD-BASE debe demostrarse antes de {actividad}'
+        assert posicion('PD-AGR') < posicion('P21'), 'PD-AGR debe demostrarse antes del merge de P21'
+        assert posicion('PD-AGR') < posicion('H03'), 'PD-AGR debe demostrarse antes de H03'
+        entrada = {fuente for punto in dias[str(agrupacion)].get('entra', []) for fuente in punto.get('por', [])}
+        assert 'PD-BASE' in entrada and base < agrupacion, 'La entrada de agrupación y merge debe exigir PD-BASE de una jornada anterior'
+        for actividad, dia in (('PD-BASE', base), ('PD-AGR', agrupacion)):
+            jornada = dias[str(dia)]
+            reducido = {self.an.norm(x)['id'] for x in jornada['reducido']}
+            if actividad not in reducido:
+                entrega = jornada['reducido_entrega']
+                assert actividad in entrega and 'recuper' in entrega.casefold() and 'H03' in entrega, f'REDUCIDO debe recuperar {actividad} antes de H03'
+        entrega = dias[str(agrupacion)]['reducido_entrega']
+        assert 'huérfan' in entrega.casefold() and 'recuper' in entrega.casefold() and 'H03' in entrega, 'REDUCIDO debe recuperar la detección de huérfanos antes de H03'
+        return {'fundamentos_demostrados': f'PD-BASE D{base:02}', 'agrupacion_demostrada': f'PD-AGR D{agrupacion:02}', 'recuperacion_antes_de': 'H03'}
 
     # ------------------------------------------------------------------ 5
     def ejercicios_y_lecciones(self):
@@ -223,15 +313,16 @@ class Verificador:
         assert 'capítulo 07, sumar solo entregados' not in p07 and 'lección 7.12' in p07, 'P07'
         for p in sorted((self.raiz / '03_EJERCICIOS/Estadistica').glob('ST0*.md')):
             assert not re.search(r"^\['- \[ \]", leer(p), re.M), f'{p.stem}: criterios impresos como lista de Python'
-        return {'citas_a_refuerzo_en_obligatorios': citadas['REFUERZO'], 'P02': 'lecciones 7.3 y 7.6', 'P07': 'lecciones 7.12 y 7.13'}
+        return {'citas_a_refuerzo_en_obligatorios': citadas['REFUERZO'], 'P02': '7.6 y puente obligatorio; 7.3 como consulta', 'P07': 'lecciones 7.12 y 7.13'}
 
     # ------------------------------------------------------------------ 6
     def ejecutar_control(self, chk):
         if chk['tipo'] == 'sql':
             with closing(sqlite3.connect(f'file:{self.raiz / chk["db"]}?mode=ro', uri=True)) as c:
                 return [list(f) for f in c.execute(chk['sql']).fetchall()]
-        r = subprocess.run([sys.executable, '-I', '-c', chk['codigo']], capture_output=True, text=True, encoding='utf-8', cwd=self.raiz,
-                           env={'PYTHONIOENCODING': 'utf-8', 'SYSTEMROOT': r'C:\Windows'})
+        r = subprocess.run([sys.executable, '-I', '-B', '-c', chk['codigo']], capture_output=True, text=True, encoding='utf-8', cwd=self.raiz,
+                           env={'PYTHONIOENCODING': 'utf-8', 'SYSTEMROOT': r'C:\Windows',
+                                'TEMP': tempfile.gettempdir(), 'TMP': tempfile.gettempdir()})
         assert r.returncode == 0, f'{chk["id"]}: {r.stderr[-400:]}'
         return r.stdout.rstrip('\n')
 

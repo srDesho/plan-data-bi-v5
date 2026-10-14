@@ -1,6 +1,8 @@
 # 15.3 Tablas dinámicas, estadística en Excel y el cuadre entre herramientas
 
-> Tiempo estimado: 65 min (lectura 30 + práctica 35). Prerrequisitos: [15.2 Funciones para cuadrar](02_funciones_para_cuadrar.md), [11.4 Dispersión](../11_Estadistica_descriptiva/04_dispersion.md) y [11.5 Percentiles](../11_Estadistica_descriptiva/05_percentiles_atipicos.md).
+> Tiempo estimado: 65 min (lectura 30 + práctica 35). Prerrequisitos: [11.4 Dispersión](../11_Estadistica_descriptiva/04_dispersion.md) y [11.5 Percentiles](../11_Estadistica_descriptiva/05_percentiles_atipicos.md).
+
+Para EX01 BASE bastan la tabla dinámica y el cuadre que se enseñan aquí. [15.2](02_funciones_para_cuadrar.md) amplía fórmulas como SUMAR.SI y BUSCARX; no se exigen para esa entrega.
 >
 > **Estado de verificación:** las acciones de interfaz de Excel y las fórmulas **no se ejecutaron automáticamente** en este paquete. Los valores esperados se calcularon con Python y sirven para que compares tu Excel.
 

@@ -34,5 +34,7 @@ Puedes cambiar ubicación de salida; debe incluir las tres tablas con los nombre
 **Dinero en este proyecto:** Bs con dos decimales (REAL), no centavos enteros. Para comparar sin errores de coma flotante, el corrector pasa cada importe a centavos redondeando al centavo más cercano (mitad hacia arriba) y exige igualdad exacta: `monto` = `cantidad` × `precio_unitario` y `ventas_bs` = suma de los `monto` entregados de ese cliente y mes (tolerancia de 0 centavos). Los proyectos C06 y la evaluación final sí usan centavos enteros.
 El corrector revisa filas y agrupaciones, no solo totales: Bronze idéntico al archivo, Silver fila por fila (pedido + producto), Gold recalculado desde tu propia Silver y comparado con el esperado. Una Gold con las ventas intercambiadas entre clientes, o con líneas contadas como pedidos, falla aunque el total sea 1.468.924,50 Bs.
 
-Aceptación: contrato escrito, logging, datos de origen preservados, claves válidas, cuadres
+Aceptación: contrato escrito, registro auditable de la ejecución (logging), datos de origen preservados, claves válidas, cuadres
 y README de reproducción. La adaptación v 5 evita truncar cantidades fraccionarias.
+
+Aquí **logging** significa dejar un rastro por ejecución de las etapas realizadas, sus conteos y las reglas aplicadas. Los registros de auditoría y conteos ya exigidos bastan si están documentados y permiten reconstruir qué ocurrió en cada ejecución. Usar el módulo Python `logging` es opcional; [5.4 Cargas, registro y reproducibilidad](../../02_TEORIA/05_calidad_ETL/04_cargas_registro_reproducibilidad.md) lo amplía como REFUERZO. Esta aclaración no añade otra entrega ni sustituye las validaciones, los cuadres o la segunda ejecución.

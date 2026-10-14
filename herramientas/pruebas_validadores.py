@@ -24,6 +24,7 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import validar_final as vf  # noqa: E402
 import validar_etl_distribuidora as ved  # noqa: E402
+from privacidad_final import ejecutar_privado  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -439,6 +440,22 @@ def probar_distribuidora(tmp):
             res.append({'prueba': nombre, 'resultado': 'rechazada'})
         else:
             raise AssertionError(f'FALSO POSITIVO: el validador del ETL guiado aprobó «{nombre}»')
+    # SQL sobre copias exactas: altera una sola celda sin cambiar los tipos
+    # ni las demás tablas, para aislar la omisión silenciosa de controles Gold.
+    for columna in ('cliente', 'mes', 'pedidos', 'unidades', 'ventas_bs'):
+        copia = Path(tmp) / f'dist_gold_null_{columna}.db'
+        shutil.copy(db, copia)
+        with closing(sqlite3.connect(copia)) as con:
+            cambiadas = con.execute(f'UPDATE gold_ventas_cliente_mes SET {columna} = NULL WHERE rowid = 1').rowcount
+            con.commit()
+        assert cambiadas == 1, 'la regresión debe alterar exactamente una fila'
+        try:
+            ved.validar(copia)
+        except AssertionError as ex:
+            assert 'Gold sin valores NULL' in str(ex) and columna in str(ex), 'falta el rechazo explícito de la columna Gold'
+            res.append({'prueba': f'Gold con NULL en {columna}', 'resultado': 'rechazada'})
+        else:
+            raise AssertionError(f'FALSO POSITIVO: Gold con NULL en {columna}')
     return res
 
 
@@ -452,10 +469,15 @@ def ejecutar(tmp, custodia=None):
     informe['ETL guiado'] = probar_distribuidora(tmp)
     custodia = custodia or os.environ.get('PLAN_V5_CUSTODIA')
     if custodia and (Path(custodia) / 'referencia_final.py').exists():
-        ref = cargar(Path(custodia) / 'referencia_final.py', 'referencia_final')
-        salida_final = Path(tmp) / 'final_ok'
-        ref.ejecutar(ROOT / vf.ESPEC['final']['datos'], salida_final)
-        informe['Evaluación final'] = probar_caso('final', salida_final, tmp, lambda d: vf.validar(d))
+        def probar_final_privado():
+            ref = cargar(Path(custodia) / 'referencia_final.py', 'referencia_final')
+            salida_final = Path(tmp) / 'final_ok'
+            ref.ejecutar(ROOT / vf.ESPEC['final']['datos'], salida_final)
+            resultados = probar_caso('final', salida_final, tmp, lambda d: vf.validar(d))
+            # Los errores de una mutación pueden contener cifras de una salida
+            # de referencia: solo se publican el nombre y el estado de la prueba.
+            return [{k: r[k] for k in ('prueba', 'resultado')} for r in resultados]
+        informe['Evaluación final'] = ejecutar_privado(probar_final_privado)
     else:
         informe['Evaluación final'] = [{'prueba': 'todas', 'resultado': 'OMITIDA: la referencia privada no está disponible (custodia)'}]
     return informe

@@ -4,7 +4,7 @@
 
 ## Para qué sirve
 
-Un archivo tiene miles de filas y quieres hacer lo mismo con cada una. Escribir la instrucción miles de veces es imposible. Un **bucle** repite un bloque de instrucciones, y es el mecanismo con el que todo programa de datos recorre filas. En esta lección solo aprendes a **repetir y a recorrer**; la técnica de ir acumulando resultados (sumar, contar) se enseña aparte, en la lección 7.12.
+Un archivo tiene miles de filas y quieres hacer lo mismo con cada una. Escribir la instrucción miles de veces es imposible. Un **bucle** repite un bloque de instrucciones, y es el mecanismo con el que todo programa de datos recorre filas. Aquí aprendes a **repetir y a recorrer**, y a actualizar un contador en cada vuelta. Combinando esa actualización con `get` y la asignación de claves de 7.9 puedes construir la cuenta por clave de P06. La lección 7.12 profundiza estos patrones de acumulación y otros como sumar, buscar máximos o reunir resultados.
 
 ## Términos nuevos
 

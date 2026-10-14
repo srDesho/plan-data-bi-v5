@@ -6,6 +6,7 @@ Cada mutación cambia un archivo de la copia (un umbral, un minuto, un prerrequi
 falle en el grupo esperado. Después restaura el archivo. Tarda unos minutos.
 """
 from pathlib import Path
+import json
 import shutil
 import subprocess
 import sys
@@ -28,6 +29,8 @@ MUTACIONES = [
     ('guía diaria editada a mano', '01_PLAN_DIARIO/dias/D10_2026-10-21.md', '**Antes de empezar**', '**Antes de empezar (editado)**', 'generador sincronizado'),
     ('CARGA_ESTIMADA editada a mano', '01_PLAN_DIARIO/CARGA_ESTIMADA.md', '| D17 |', '| D17x |', 'generador sincronizado'),
     ('lección con el día cambiado', '01_PLAN_DIARIO/lecciones.json', None, None, 'lecciones'),
+    ('fundamentos Pandas omitidos antes de transformar', '01_PLAN_DIARIO/nucleo.json', 'PD-BASE', None, 'prerrequisitos'),
+    ('agrupación Pandas omitida antes de H03', '01_PLAN_DIARIO/nucleo.json', 'PD-AGR', None, 'prerrequisitos'),
 ]
 
 
@@ -53,17 +56,30 @@ def main():
             texto = original.decode('utf-8')
             crlf = '\r\n' in texto
             t = texto.replace('\r\n', '\n')
-            if nombre.startswith('puntos de S02'):
+            if viejo in ('PD-BASE', 'PD-AGR'):
+                datos = json.loads(t)
+                borradas = 0
+                for jornada in datos['dias'].values():
+                    original_obligatorio = jornada['obligatorio']
+                    jornada['obligatorio'] = [x for x in original_obligatorio if (x['id'] if isinstance(x, dict) else x) != viejo]
+                    borradas += len(original_obligatorio) - len(jornada['obligatorio'])
+                assert borradas == 1, f'{nombre}: se esperaba una práctica obligatoria'
+                mutado = json.dumps(datos, ensure_ascii=False, indent=1)
+            elif nombre.startswith('puntos de S02'):
                 v, n = '| 65 |', '| 60 |'
             elif nombre.startswith('lección con el día'):
                 v, n = '02_group_by_having.md",\n   "tipo": "NÚCLEO",\n   "dia": 5', '02_group_by_having.md",\n   "tipo": "NÚCLEO",\n   "dia": 6'
             else:
                 v, n = viejo, nuevo
-            if t.count(v) < 1:
-                raise AssertionError(f'{nombre}: no se encuentra el texto a mutar en {archivo}')
-            ruta.write_bytes(t.replace(v, n, 1).replace('\n', '\r\n' if crlf else '\n').encode('utf-8'))
-            codigo, salida = ejecutar_verificador(copia)
-            ruta.write_bytes(original)
+            if viejo not in ('PD-BASE', 'PD-AGR'):
+                if t.count(v) < 1:
+                    raise AssertionError(f'{nombre}: no se encuentra el texto a mutar en {archivo}')
+                mutado = t.replace(v, n, 1)
+            ruta.write_bytes(mutado.replace('\n', '\r\n' if crlf else '\n').encode('utf-8'))
+            try:
+                codigo, salida = ejecutar_verificador(copia)
+            finally:
+                ruta.write_bytes(original)
             ok = codigo != 0 and any(l.startswith('ERROR') and esperado in l for l in salida.splitlines())
             print(('DETECTADA  ' if ok else 'NO DETECTADA ') + nombre + f' → {esperado}')
             detectadas += ok

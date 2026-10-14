@@ -52,7 +52,7 @@ def norm(item):
 def tipo(i):
     if i.startswith('EXAMEN:'):
         return 'EXAMEN'
-    if i in ('C06-0', 'C06-1', 'C06-2', 'C06-3', 'C06-4') or i.startswith('ETL-'):
+    if i in ('C06-0', 'C06-1', 'C06-2', 'C06-3', 'C06-4', 'PD-BASE', 'PD-AGR') or i.startswith('ETL-'):
         return 'CUSTOM'
     if re.fullmatch(r'P\d\d', i):
         return 'PY'
@@ -184,6 +184,9 @@ def info_leccion(ctx, i):
         m = re.search(r'lectura (\d+) \+ práctica (\d+)', texto)
         r = {'id': i, 'titulo': titulo, 'archivo': c['archivo'], 'lectura': int(m.group(1)), 'practica': int(m.group(2)), 'tipo': c['tipo'],
              'dia': c.get('dia'), 'dia_ext': c.get('dia_ext'), 'cuando': c.get('cuando', ''), 'puente': False}
+        r['practica_base'] = c.get('practica_base', 0)
+        if not 0 <= r['practica_base'] <= r['practica']:
+            raise ValueError(f'{i}: práctica BASE fuera del tiempo de práctica de la lección')
     ctx._cache[i] = r
     return r
 
@@ -323,11 +326,14 @@ ACCIONES = {
 }
 
 
-def tabla_bloques(bloques, filas_resto):
+def tabla_bloques(bloques, filas_resto, practica_base=False):
     lineas = ['|Bloque|Minutos|Acción|', '|---|---:|---|']
     for a, m in bloques:
         if a in ACCIONES:
-            lineas.append(f'|{a}|{m}|{ACCIONES[a]}|')
+            accion = ACCIONES[a]
+            if a == 'Lecciones' and practica_base:
+                accion = accion.replace('La micropráctica es REFUERZO.', 'El checkpoint BASE se cuenta en Práctica; solo el resto de la micropráctica es REFUERZO.')
+            lineas.append(f'|{a}|{m}|{accion}|')
         elif a == 'Examen y corrección':
             lineas.append(f'|{a}|{m}|{ACCION}|')
         else:
@@ -346,6 +352,9 @@ def seccion_estudiar(ctx, dia, s):
     for i in ids:
         d = info_leccion(ctx, i)
         extra = f' · micropráctica {d["practica"]} min (REFUERZO)' if d['practica'] else ''
+        if d.get('practica_base'):
+            extra = (f' · checkpoint BASE {d["practica_base"]} min (contado en OBLIGATORIO)'
+                     f' · resto de micropráctica {d["practica"] - d["practica_base"]} min (REFUERZO)')
         lineas.append(f'- [ ] {enlace_leccion(ctx, i)} · NÚCLEO · lectura {d["lectura"]} min{extra}.')
     lineas.append('- [ ] Predice el resultado de un ejemplo antes de ejecutarlo y declara qué representa una fila.')
     caps = capitulos_dia(ctx, s)
@@ -422,8 +431,9 @@ def seccion_extendida(ctx, dia, s):
     for i, c in ctx.lecciones['lecciones'].items():
         if c.get('dia_ext') == dia:
             d = info_leccion(ctx, i)
-            items.append((f'{enlace_leccion(ctx, i)} · {d["tipo"]} · lectura {d["lectura"]} + micropráctica {d["practica"]} = {d["lectura"] + d["practica"]} min'
-                          f' — {d["cuando"]}', d['lectura'] + d['practica']))
+            practica = d['practica'] - d.get('practica_base', 0)
+            items.append((f'{enlace_leccion(ctx, i)} · {d["tipo"]} · lectura {d["lectura"]} + micropráctica {practica} = {d["lectura"] + practica} min'
+                          f' — {d["cuando"]}', d['lectura'] + practica))
     for x in s['refuerzo'][:3]:
         items.append((f'{enlace(ctx, x)} · REFUERZO · ≈ {estimar(ctx, x)} min', estimar(ctx, x)))
     if not items:
@@ -509,6 +519,35 @@ def seccion_minimo(ctx, dia, cal, s):
     return '\n'.join(L)
 
 
+def preparaciones_dia(ctx, dia):
+    return [(i, p) for i, p in ctx.nucleo.get('preparaciones', {}).items() if p['dia'] == dia]
+
+
+def insertar_preparaciones(ctx, dia, texto):
+    """Añade solo un bloque previo; D01 se prepara desde sus enunciados y su guía se conserva."""
+    preparaciones = preparaciones_dia(ctx, dia)
+    if dia == 1 or not preparaciones:
+        return texto
+    lineas = ['<!-- SECUENCIA:GUIA:INICIO -->', '### Preparación obligatoria antes del intento', '']
+    for i, p in preparaciones:
+        lineas.append(f'- [{p["titulo"]}](../../{p["archivo"]}#{p["ancla"]}) · antes de {i} · {p["min"]} min adicionales de lectura y predicción.')
+    total = sum(p['min'] for _, p in preparaciones)
+    lineas += ['', f'Son {total} min adicionales a la estimación BASE, registrados en CARGA_ESTIMADA.md; no se recortan los tiempos de los ejercicios. '
+               'En REDUCIDO conserva la preparación de la actividad que hagas. Si pospones una actividad, recupera su preparación antes de intentarla '
+               'y antes de la puerta que la requiere; MÍNIMO solo repasa lo conocido.']
+    if dia == 2:
+        lineas += ['', 'Antes de P02 completa las comparaciones y None de 7.6, además de su puente de decisión: una lectura pendiente no se acredita '
+                   'como aprendida. Si no cabe, reduce la entrega y recupera la base antes de D03/H01/S01. La preparación de texto precede a P03 y '
+                   'a su uso en P09/D10. S9 es ampliación y C01 es opcional; las tareas BASE son S2, S7, P02 y P03.']
+    lineas += ['<!-- SECUENCIA:GUIA:FIN -->', '', '']
+    bloque = '\n'.join(lineas)
+    patron = r'<!-- SECUENCIA:GUIA:INICIO -->.*?<!-- SECUENCIA:GUIA:FIN -->\n\n'
+    if '<!-- SECUENCIA:GUIA:INICIO -->' in texto:
+        return re.sub(patron, lambda m: bloque, texto, count=1, flags=re.S)
+    pos = texto.index('## Distribución neta')
+    return texto[:pos] + bloque + texto[pos:]
+
+
 def aplicar_guia(ctx, dia, d, d_cal, nl='\n'):
     carpeta = ctx.raiz / '01_PLAN_DIARIO' / 'dias'
     ruta = next(carpeta.glob(f'D{dia:02}_*.md'))
@@ -536,7 +575,8 @@ def aplicar_guia(ctx, dia, d, d_cal, nl='\n'):
         if m:
             filas_resto[m.group(1).strip()] = m.group(3)
         k += 1
-    tabla = tabla_bloques(nuevos_bloques(ctx, d_cal, d), filas_resto)
+    tabla = tabla_bloques(nuevos_bloques(ctx, d_cal, d), filas_resto,
+                         any(info_leccion(ctx, i).get('practica_base') for i in d.get('lecciones') or []))
     t = t[:b] + '\n'.join(lineas[:j]) + '\n' + tabla + '\n' + '\n'.join(lineas[k:])
     # práctica, criterio y EXTENDIDA
     m = re.search(r'^## Práctica y archivos\n\nEntrada principal: \*\*([^*]+)\*\*', t, re.M)
@@ -553,6 +593,7 @@ def aplicar_guia(ctx, dia, d, d_cal, nl='\n'):
     inicio = t.index('## REDUCIDO')
     fin = t.index('## Empleo y clase')
     t = t[:inicio] + seccion_reducido(ctx, dia, d_cal, d) + '\n' + seccion_minimo(ctx, dia, d_cal, d) + '\n' + t[fin:]
+    t = insertar_preparaciones(ctx, dia, t)
     ruta.write_bytes(t.replace('\n', nl).encode('utf-8'))
 
 
@@ -575,7 +616,8 @@ def aplicar_d02(ctx):
     texto = ruta.read_bytes().decode('utf-8')
     nl = '\r\n' if '\r\n' in texto else '\n'
     t = texto.replace('\r\n', '\n')
-    lineas = '\n'.join(f'- [ ] {enlace_leccion(ctx, i)} · NÚCLEO · lectura {info_leccion(ctx, i)["lectura"]} min.' for i in d02)
+    estados = {m.group(2): m.group(1) for m in re.finditer(r'^- \[([ xX])\] \[(\d+\.\d+)\b', t, re.M)}
+    lineas = '\n'.join(f'- [{estados.get(i, " ")}] {enlace_leccion(ctx, i)} · NÚCLEO · lectura {info_leccion(ctx, i)["lectura"]} min.' for i in d02)
     total = sum(info_leccion(ctx, i)['lectura'] for i in d02)
     bloque = BLOQUE_D02.format(lineas=lineas, total=total)
     if '<!-- E2:LECCIONES:INICIO -->' in t:
@@ -583,6 +625,7 @@ def aplicar_d02(ctx):
     else:
         a = t.index('## Distribución neta')
         t = t[:a] + bloque + '\n' + t[a:]
+    t = insertar_preparaciones(ctx, 2, t)
     ruta.write_bytes(t.replace('\n', nl).encode('utf-8'))
 
 
@@ -639,6 +682,13 @@ def clasificar(ids):
 def actualizar_calendario(ctx):
     for d in ctx.calendario:
         n = d['dia']
+        prep = preparaciones_dia(ctx, n)
+        if prep:
+            d['preparaciones'] = [i for i, _ in prep]
+            d['preparacion_lectura_min'] = sum(p['min'] for _, p in prep)
+        inicial = ctx.nucleo.get('dias_iniciales', {}).get(str(n))
+        if inicial:
+            d['nucleo'] = inicial
         if n == 1:
             continue
         if n == 2:
@@ -672,10 +722,11 @@ def actualizar_calendario(ctx):
     (ctx.raiz / '01_PLAN_DIARIO' / 'calendario.json').write_text(json.dumps(ctx.calendario, ensure_ascii=False, indent=2), encoding='utf-8')
     with (ctx.raiz / '01_PLAN_DIARIO' / 'calendario.csv').open('w', encoding='utf-8-sig', newline='') as f:
         w = csv.writer(f)
-        w.writerow(['dia', 'fecha', 'semana', 'titulo', 'completo_min', 'reducido_min', 'minimo_min', 'sql', 'python', 'estadistica', 'otros', 'obligatorio'])
+        w.writerow(['dia', 'fecha', 'semana', 'titulo', 'completo_min', 'reducido_min', 'minimo_min', 'sql', 'python', 'estadistica', 'otros', 'obligatorio', 'preparaciones', 'preparacion_lectura_min'])
         for d in ctx.calendario:
             w.writerow([d['dia'], d['fecha'], d['semana'], d['titulo'], d['completo'], d['reducido'], d['minimo'], ';'.join(d['sql']),
-                        ';'.join(d['python']), ';'.join(d['estadistica']), ';'.join(d['otros']), ';'.join(d.get('nucleo', {}).get('obligatorio', []))])
+                        ';'.join(d['python']), ';'.join(d['estadistica']), ';'.join(d['otros']), ';'.join(d.get('nucleo', {}).get('obligatorio', [])),
+                        ';'.join(d.get('preparaciones', [])), d.get('preparacion_lectura_min', 0)])
 
 
 def etiqueta_tipo(ctx, i):
@@ -686,11 +737,12 @@ def etiqueta_tipo(ctx, i):
 
 
 def actualizar_indices_teoria(ctx):
-    """Escribe en la columna «Tipo» de cada capítulo la clasificación de lecciones.json (núcleo con su día, refuerzo o profundización)."""
+    """Sincroniza clasificación y minutos de los índices con las fuentes y los encabezados de lección."""
     for f in sorted((ctx.raiz / '02_TEORIA').glob('[0-9][0-9]_*.md')):
         b = f.read_bytes().decode('utf-8')
         nl = '\r\n' if '\r\n' in b else '\n'
         lineas = b.replace('\r\n', '\n').split('\n')
+        total = 0
         for k, linea in enumerate(lineas):
             m = re.match(r'^\| (\d+\.\d+) \|', linea)
             if not m or m.group(1) not in ctx.lecciones['lecciones']:
@@ -699,8 +751,15 @@ def actualizar_indices_teoria(ctx):
             if len(celdas) != 7:                     # | # | Lección | Qué aprendes / KPI | Tipo | Tiempo |
                 continue
             celdas[4] = f' {etiqueta_tipo(ctx, m.group(1))} '
+            info = info_leccion(ctx, m.group(1))
+            minutos = info['lectura'] + info['practica']
+            celdas[5] = f' {minutos} min '
+            total += minutos
             lineas[k] = '|'.join(celdas)
         nuevo_texto = '\n'.join(lineas)
+        declarado = re.search(r'unas (?:(\d+) h)? ?(?:(\d+) min)?', nuevo_texto)
+        if total and declarado and int(declarado.group(1) or 0) * 60 + int(declarado.group(2) or 0) != total:
+            nuevo_texto = nuevo_texto[:declarado.start()] + f'unas {total // 60} h {total % 60} min' + nuevo_texto[declarado.end():]
         if nuevo_texto != b.replace('\r\n', '\n'):
             f.write_bytes(nuevo_texto.replace('\n', nl).encode('utf-8'))
 
@@ -746,6 +805,12 @@ def metricas(ctx):
                 fila['lecciones'] = ids
                 fila['L'] = max(teoria, lec)
                 fila['estimado'] = d['completo'] + max(0, lec - teoria)
+            fila['obl'] = ctx.nucleo.get('dias_iniciales', {}).get(str(n), {}).get('obligatorio', [])
+        prep_min = sum(p['min'] for _, p in preparaciones_dia(ctx, n))
+        # D01 concreta 16 de sus 20 minutos de teoría existentes; los demás son adicionales.
+        adicional = max(0, prep_min - fila['L']) if n == 1 else prep_min
+        fila['L'] += adicional
+        fila['estimado'] += adicional
         bl = {a.strip(): m for a, m in d['bloques']}
         fila['X'] = sum(m for a, m in bl.items() if a.startswith('Examen'))
         fila['F'] = d['completo'] - sum(m for a, m in bl.items() if a in POOL) - fila['X'] if d['completo'] else 0
@@ -823,12 +888,12 @@ def escribir_carga(ctx, filas_ignoradas=None):
               '`mi_trabajo/progreso.csv` y corrige esta tabla con tus datos.', '',
               '## Qué cuenta cada columna (sin dobles conteos)', '',
               '| Columna | Qué incluye | Qué NO incluye |', '|---|---|---|',
-              '| **L** | Lectura de las lecciones NÚCLEO del día (minutos del encabezado de cada lección) | La micropráctica de las lecciones (REFUERZO/EXTENDIDA) |',
+              '| **L** | Lectura de las lecciones NÚCLEO y preparaciones obligatorias (lectura/predicción); en D01, 16 min de preparación ocupan sus 20 min de teoría originales | La micropráctica REFUERZO/EXTENDIDA y los checkpoints Pandas contabilizados en E |',
               '| **C** | Actividad de criterio analítico o hito de comprensión | Su revisión posterior con los controles (se hace dentro de la misma actividad) |',
-              '| **E** | Ejercicios OBLIGATORIOS y REPASO a tiempo de primera vez (incluye leer el enunciado, depurar y comprobar) | REFUERZO, OPCIONAL y notebooks; las tareas que son parte de un examen (N2, N3, V4…) no se suman otra vez |',
+              '| **E** | Ejercicios OBLIGATORIOS y REPASO a tiempo de primera vez (incluye leer el enunciado, depurar y comprobar); PD-BASE y PD-AGR cuentan aquí una sola vez | REFUERZO, OPCIONAL y notebooks; las tareas que son parte de un examen (N2, N3, V4…) no se suman otra vez |',
               '| **X** | Examen 60 + corrección 25 + simulacro 30 = 115 min en los sábados de examen (tiempo fijo) | — |',
               '| **F** | Empleo, postulaciones, LinkedIn y cierre (tiempo fijo del plan) | — |', '',
-              'Estimado = F + X + L + C + E. D01 conserva su diseño; D02 suma sus lecciones sugeridas sobre el bloque original. '
+              'Estimado = F + X + L + C + E. D01 conserva su diseño; D02 suma sus lecciones y preparaciones sobre el bloque original. '
               'La ruta EXTENDIDA (voluntaria) no está incluida.', '',
               '| Día | Fecha | Contenido | Plan (min) | L | C | E | X | F | Estimado (min) | Razón |', '|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|']
     for f in filas:
@@ -864,6 +929,7 @@ def escribir_rutas(ctx):
     filas = metricas(ctx)
     sem = resumen_semanal(ctx, filas)
     lec = ctx.lecciones['lecciones']
+    preparacion_extra = sum(p['min'] for p in ctx.nucleo.get('preparaciones', {}).values() if p['dia'] != 1)
     L = ['# Rutas de estudio: BASE y EXTENDIDA', '',
          'Este documento se genera con `herramientas/aplicar_nucleo.py` a partir de `nucleo.json` y `lecciones.json`; no lo edites a mano. '
          'Las **100 lecciones** de `02_TEORIA` (más el capítulo 19) suman unas 91 horas de primera vez: no caben en seis semanas junto con los ejercicios. '
@@ -874,7 +940,17 @@ def escribir_rutas(ctx):
          '| **REFUERZO** | Se lee cuando una competencia no está dominada o un ejercicio se atasca (cada lección dice cuándo). | EXTENDIDA y recuperación. |',
          '| **PROFUNDIZACIÓN** | Amplía más allá de la base (inferencia, BI avanzado, entrevistas, portafolio). | EXTENDIDA u otros periodos (después de la evaluación final). |', '',
          'La lectura de una lección NÚCLEO es lo que figura en su encabezado («lectura N min»). Su **micropráctica** es práctica guiada sin corrector: '
-         'en BASE la sustituyen los ejercicios del día; en EXTENDIDA se hace completa.', '']
+         'en BASE la sustituyen los ejercicios del día. Excepciones explícitas: los primeros 10 min de práctica de 10.1 (PD-BASE) y de 10.2 (PD-AGR) '
+         'son OBLIGATORIOS y se cuentan una sola vez en ejercicios; sus otros 25 y 30 min, respectivamente, son REFUERZO.', '']
+    L += ['## Preparación explícita antes de las actividades', '',
+          'Los bloques siguientes son obligatorios antes del intento; no promueven lecciones completas de REFUERZO. '
+          f'D01 concreta 16 de sus 20 min de teoría ya existentes. Los otros {preparacion_extra} min se añaden a la estimación BASE; '
+          'no se ocultan dentro del tiempo de práctica. REDUCIDO conserva la preparación de lo que intenta y recupera lo omitido antes de su puerta.', '',
+          '| Día | Antes de | Preparación | Minutos |', '|---|---|---|---:|']
+    for i, p in ctx.nucleo.get('preparaciones', {}).items():
+        L.append(f'| D{p["dia"]:02} | {i} | [{p["titulo"]}](../{p["archivo"]}#{p["ancla"]}) | {p["min"]} |')
+    L += ['', 'D01: S1 y P01 son BASE; S10 es REFUERZO con preparación propia. D02: S2, S7, P02 y P03 son BASE; '
+          'S9 es REFUERZO y C01, OPCIONAL. La guía original de D01 y los avances de D02 se conservan.', '']
     # horas por semana
     L += ['## Horas por semana', '',
           '| Semana | BASE plan (min) | BASE estimado (min / h) | Teoría y lecciones NÚCLEO | Criterio e hitos | Ejercicios OBLIGATORIOS | EXTENDIDA extra (L–S) | EXTENDIDA plan (h) | EXTENDIDA estimada (h) |',
@@ -942,7 +1018,10 @@ def escribir_rutas(ctx):
         else:
             donde = f'ext. D{c["dia_ext"]:02}' if c.get('dia_ext') else 'otros periodos'
             cuando = c['cuando']
-        L.append(f'| [{i} {d["titulo"]}](../02_TEORIA/{c["archivo"]}) | {c["tipo"]} | {donde} | {d["lectura"]} | {d["practica"]} | {cuando} |')
+        practica = str(d['practica'])
+        if d.get('practica_base'):
+            practica = f'{d["practica_base"]} BASE + {d["practica"] - d["practica_base"]} REFUERZO'
+        L.append(f'| [{i} {d["titulo"]}](../02_TEORIA/{c["archivo"]}) | {c["tipo"]} | {donde} | {d["lectura"]} | {practica} | {cuando} |')
     for i, p in ctx.lecciones['puente'].items():
         L.append(f'| [Cap. 19 {p["seccion"]} · {p["titulo"]}](../02_TEORIA/{PUENTE_ARCHIVO}) | NÚCLEO | D{p["dia"]:02} | {p["min"]} | 0 | |')
     # prerrequisitos
@@ -1041,7 +1120,9 @@ def dia_ejercicio(ctx, ej):
     """Día en que un ejercicio es OBLIGATORIO o REPASO por primera vez (D01 y D02 según el calendario original)."""
     for d in ctx.calendario:
         if d['dia'] in PROTEGIDOS:
-            if ej in d.get('sql', []) + d.get('python', []) + d.get('estadistica', []) + d.get('otros', []):
+            inicial = ctx.nucleo.get('dias_iniciales', {}).get(str(d['dia']))
+            ids = inicial['obligatorio'] if inicial else d.get('sql', []) + d.get('python', []) + d.get('estadistica', []) + d.get('otros', [])
+            if ej in ids:
                 return d['dia']
     for n in sorted(int(k) for k in ctx.nucleo['dias']):
         s = ctx.nucleo['dias'][str(n)]

@@ -1,6 +1,6 @@
 # 3.2 INNER JOIN: combinar tablas por coincidencia
 
-> Tiempo estimado: 55 min (lectura 20 + práctica 35). Prerrequisito: [3.1 Claves y relaciones](01_claves_relaciones.md).
+> Tiempo estimado: 60 min (lectura 25 + práctica 35). Prerrequisito: claves y cardinalidad, introducidas a continuación; [3.1 Claves y relaciones](01_claves_relaciones.md) queda como REFUERZO.
 
 ## Para qué sirve
 
@@ -8,6 +8,9 @@
 
 ## Términos nuevos
 
+- **Clave primaria**: identifica una sola fila; sus valores no se repiten ni están vacíos. En `tiendas` es `tienda_id`.
+- **Clave foránea**: referencia la clave de otra tabla. `ventas.tienda_id` indica a qué tienda pertenece cada venta; puede repetirse porque una tienda puede tener varias ventas.
+- **Cardinalidad**: cuántas filas de un lado corresponden a una del otro. Tienda → ventas es **1:N**; ventas → tienda es **N:1**. El sentido importa: al traer el nombre de la tienda, cada venta debe encontrar una sola fila.
 - **JOIN** (o **INNER JOIN**): une dos tablas y conserva solo las filas que tienen coincidencia en **ambas**.
 - **ON**: la cláusula que dice cuándo dos filas coinciden. Normalmente iguala una clave foránea con una clave primaria.
 - **Alias de tabla**: un nombre corto para la tabla dentro de la consulta: `FROM ventas AS v`.
@@ -15,6 +18,21 @@
 - **Producto cartesiano**: el resultado de combinar *cada* fila de una tabla con *cada* fila de la otra, sin condición. Con 12 y 16 filas da 192. Casi nunca es lo que quieres.
 
 ## Ejemplo paso a paso
+
+**Antes de unir: identificar las claves y comprobar el lado «uno».** Sin escribir todavía el JOIN, completa en voz alta: «una fila de `ventas` representa ___; su `tienda_id` puede repetirse porque ___; en `tiendas`, `tienda_id` debe ser ___». Comprueba esa última condición con la mini-base:
+
+```sql
+SELECT tienda_id, COUNT(*) AS veces
+FROM tiendas
+GROUP BY tienda_id
+HAVING COUNT(*) > 1;
+```
+
+```resultado
+tienda_id | veces
+```
+
+No devuelve filas: no hay claves repetidas. Si devolviera alguna, una venta podría encontrar varias tiendas y multiplicarse. Las claves vacías tampoco identifican una tienda. Antes de continuar, predice qué pasaría con una venta cuya tienda no existe: el INNER JOIN la descartaría. Por eso se revisan tanto la unicidad como las filas y totales después de unir.
 
 **1. La unión más simple.** Cada venta con el nombre de su tienda:
 
@@ -42,7 +60,7 @@ Línea por línea:
 3. `ON t.tienda_id = v.tienda_id` es la condición: «une cada venta con la tienda cuyo `tienda_id` es igual».
 4. En `SELECT` calificamos cada columna con su alias (`v.fecha`, `t.nombre`). `tienda_id` existe en las dos tablas: sin el alias SQL no sabría de cuál hablas.
 
-El control inmediato: la cantidad de filas. Como cada venta tiene una sola tienda (relación 1:N desde la venta hacia la tienda), el resultado debe tener **tantas filas como ventas**:
+El control inmediato: la cantidad de filas. Como en esta mini-base cada venta encuentra una sola tienda (relación N:1 desde ventas hacia tiendas), el resultado debe tener **tantas filas como ventas**:
 
 ```sql
 SELECT COUNT(*) AS filas_tras_unir

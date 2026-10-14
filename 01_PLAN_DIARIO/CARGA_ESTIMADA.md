@@ -6,31 +6,31 @@ Estimación de **primera vez** para una persona que todavía depende de ayuda ex
 
 | Columna | Qué incluye | Qué NO incluye |
 |---|---|---|
-| **L** | Lectura de las lecciones NÚCLEO del día (minutos del encabezado de cada lección) | La micropráctica de las lecciones (REFUERZO/EXTENDIDA) |
+| **L** | Lectura de las lecciones NÚCLEO y preparaciones obligatorias (lectura/predicción); en D01, 16 min de preparación ocupan sus 20 min de teoría originales | La micropráctica REFUERZO/EXTENDIDA y los checkpoints Pandas contabilizados en E |
 | **C** | Actividad de criterio analítico o hito de comprensión | Su revisión posterior con los controles (se hace dentro de la misma actividad) |
-| **E** | Ejercicios OBLIGATORIOS y REPASO a tiempo de primera vez (incluye leer el enunciado, depurar y comprobar) | REFUERZO, OPCIONAL y notebooks; las tareas que son parte de un examen (N2, N3, V4…) no se suman otra vez |
+| **E** | Ejercicios OBLIGATORIOS y REPASO a tiempo de primera vez (incluye leer el enunciado, depurar y comprobar); PD-BASE y PD-AGR cuentan aquí una sola vez | REFUERZO, OPCIONAL y notebooks; las tareas que son parte de un examen (N2, N3, V4…) no se suman otra vez |
 | **X** | Examen 60 + corrección 25 + simulacro 30 = 115 min en los sábados de examen (tiempo fijo) | — |
 | **F** | Empleo, postulaciones, LinkedIn y cierre (tiempo fijo del plan) | — |
 
-Estimado = F + X + L + C + E. D01 conserva su diseño; D02 suma sus lecciones sugeridas sobre el bloque original. La ruta EXTENDIDA (voluntaria) no está incluida.
+Estimado = F + X + L + C + E. D01 conserva su diseño; D02 suma sus lecciones y preparaciones sobre el bloque original. La ruta EXTENDIDA (voluntaria) no está incluida.
 
 | Día | Fecha | Contenido | Plan (min) | L | C | E | X | F | Estimado (min) | Razón |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
 | D01 | 2026-10-12 | Entorno, filas y variables | 90 | 20 | 0 | 50 | 0 | 20 | 90 | 1,00 |
-| D02 | 2026-10-13 | Filtros, NULL y texto | 160 | 35 | 0 | 95 | 0 | 35 | 165 | 1,03 |
-| D03 | 2026-10-14 | Listas, diccionarios y clientes únicos | 150 | 55 | 15 | 84 | 0 | 20 | 174 | 1,16 |
+| D02 | 2026-10-13 | Filtros, NULL y texto | 160 | 61 | 0 | 95 | 0 | 35 | 191 | 1,19 |
+| D03 | 2026-10-14 | Listas, diccionarios y clientes únicos | 150 | 61 | 15 | 84 | 0 | 20 | 180 | 1,20 |
 | D04 | 2026-10-15 | Agrupación, bucles y media/mediana | 150 | 60 | 15 | 48 | 0 | 40 | 163 | 1,09 |
 | D05 | 2026-10-16 | Condiciones, funciones cortas y KPIs | 150 | 73 | 15 | 56 | 0 | 20 | 164 | 1,09 |
 | D06 | 2026-10-17 | Primer examen y cierre de fundamentos | 200 | 25 | 20 | 0 | 115 | 40 | 200 | 1,00 |
 | D08 | 2026-10-19 | Funciones con contrato y condiciones | 90 | 45 | 0 | 28 | 0 | 20 | 93 | 1,03 |
-| D09 | 2026-10-20 | Primer JOIN y errores visibles | 160 | 55 | 15 | 55 | 0 | 35 | 160 | 1,00 |
+| D09 | 2026-10-20 | Primer JOIN y errores visibles | 160 | 60 | 15 | 55 | 0 | 35 | 165 | 1,03 |
 | D10 | 2026-10-21 | Funciones que convierten y archivos CSV | 150 | 47 | 15 | 97 | 0 | 20 | 179 | 1,19 |
 | D11 | 2026-10-22 | Ausencia con LEFT JOIN | 150 | 45 | 15 | 48 | 0 | 40 | 148 | 0,99 |
-| D12 | 2026-10-23 | Fechas, cantidades y leer un error | 150 | 25 | 15 | 103 | 0 | 20 | 163 | 1,09 |
+| D12 | 2026-10-23 | Fechas, cantidades y leer un error | 150 | 51 | 15 | 103 | 0 | 20 | 189 | 1,26 |
 | D13 | 2026-10-24 | Examen de JOIN y conciliación | 200 | 25 | 20 | 0 | 115 | 40 | 200 | 1,00 |
-| D15 | 2026-10-26 | Primer DataFrame y perfilado | 90 | 40 | 0 | 40 | 0 | 20 | 100 | 1,11 |
-| D16 | 2026-10-27 | Duplicados exactos y drop size | 160 | 42 | 15 | 83 | 0 | 35 | 175 | 1,09 |
-| D17 | 2026-10-28 | Agrupar y unir con validación | 150 | 65 | 15 | 70 | 0 | 20 | 170 | 1,13 |
+| D15 | 2026-10-26 | Primer DataFrame y perfilado | 90 | 20 | 0 | 40 | 0 | 20 | 80 | 0,89 |
+| D16 | 2026-10-27 | Duplicados exactos y drop size | 160 | 47 | 15 | 93 | 0 | 35 | 190 | 1,19 |
+| D17 | 2026-10-28 | Agrupar y unir con validación | 150 | 65 | 15 | 80 | 0 | 20 | 180 | 1,20 |
 | D18 | 2026-10-29 | CTE y concentración de ventas | 150 | 40 | 15 | 65 | 0 | 40 | 160 | 1,07 |
 | D19 | 2026-10-30 | ABC, perfilado y criterio | 150 | 25 | 15 | 107 | 0 | 20 | 167 | 1,11 |
 | D20 | 2026-10-31 | Examen Pandas y SQL intermedio | 200 | 25 | 20 | 0 | 115 | 40 | 200 | 1,00 |
@@ -41,9 +41,9 @@ Estimado = F + X + L + C + E. D01 conserva su diseño; D02 suma sus lecciones su
 | D26 | 2026-11-06 | ETL guiado (2): fechas, cantidad, claves y duplicados | 150 | 0 | 20 | 115 | 0 | 20 | 155 | 1,03 |
 | D27 | 2026-11-07 | Examen S04: mini-ETL y ETL hasta claves | 200 | 30 | 0 | 0 | 115 | 40 | 185 | 0,93 |
 | D29 | 2026-11-09 | ETL guiado (3): Silver, validación y rechazos | 90 | 30 | 0 | 50 | 0 | 20 | 100 | 1,11 |
-| D30 | 2026-11-10 | ETL guiado (4): Gold, carga y cuadre SQL | 160 | 25 | 20 | 110 | 0 | 35 | 190 | 1,19 |
+| D30 | 2026-11-10 | ETL guiado (4): Gold, carga y cuadre SQL | 160 | 30 | 20 | 110 | 0 | 35 | 195 | 1,22 |
 | D31 | 2026-11-11 | Excel: tabla dinámica y cuadre | 150 | 20 | 15 | 120 | 0 | 20 | 175 | 1,17 |
-| D32 | 2026-11-12 | Power BI (1): importar y relacionar | 150 | 30 | 15 | 95 | 0 | 40 | 180 | 1,20 |
+| D32 | 2026-11-12 | Power BI (1): importar y relacionar | 150 | 34 | 15 | 95 | 0 | 40 | 184 | 1,23 |
 | D33 | 2026-11-13 | Power BI (2): primeras medidas | 150 | 35 | 20 | 80 | 0 | 20 | 155 | 1,03 |
 | D34 | 2026-11-14 | Examen S05: ETL guiado completo y BI mínimo | 200 | 0 | 15 | 0 | 115 | 40 | 170 | 0,85 |
 | D36 | 2026-11-16 | Caso nuevo C06 (0): contrato y plan | 90 | 30 | 0 | 40 | 0 | 20 | 90 | 1,00 |
@@ -55,14 +55,14 @@ Estimado = F + X + L + C + E. D01 conserva su diseño; D02 suma sus lecciones su
 
 | Semana | Plan (min) | Estimado BASE (min) | Estimado BASE (h) | Razón | Jornadas AJUSTADAS (razón > 1,15, sin exámenes) |
 |---:|---:|---:|---:|---:|---|
-| 1 | 900 | 956 | 15,9 | 1,06 | D03 |
-| 2 | 900 | 943 | 15,7 | 1,05 | D10 |
-| 3 | 900 | 972 | 16,2 | 1,08 | — |
+| 1 | 900 | 988 | 16,5 | 1,10 | D02, D03 |
+| 2 | 900 | 974 | 16,2 | 1,08 | D10, D12 |
+| 3 | 900 | 977 | 16,3 | 1,09 | D16, D17 |
 | 4 | 900 | 960 | 16,0 | 1,07 | D24 |
-| 5 | 900 | 970 | 16,2 | 1,08 | D30, D31, D32 |
+| 5 | 900 | 979 | 16,3 | 1,09 | D30, D31, D32 |
 | 6 | 900 | 935 | 15,6 | 1,04 | D40 |
 
-**Total de las seis semanas (42 jornadas):** plan 5400 min (90,0 h); estimado BASE de primera vez 5736 min (95,6 h), razón 1,06. La diferencia de 336 min (5,6 h) es estimación, no medición: cabe dentro del margen de ±35 % y se absorbe con REDUCIDO en las jornadas AJUSTADAS; no se compensa con las horas voluntarias de EXTENDIDA.
+**Total de las seis semanas (42 jornadas):** plan 5400 min (90,0 h); estimado BASE de primera vez 5813 min (96,9 h), razón 1,08. La diferencia de 413 min (6,9 h) es estimación, no medición: cabe dentro del margen de ±35 % y se absorbe con REDUCIDO en las jornadas AJUSTADAS; no se compensa con las horas voluntarias de EXTENDIDA.
 
 Una razón por encima de 1,15 en una jornada la marca como AJUSTADA: usa el modo REDUCIDO (cada jornada define una entrega menor y realizable en `RUTAS.md`) y mueve el REFUERZO; no alargues el día. Si una semana queda por encima de 1,1, la puerta se corre sin acumular horas (ver `COMPETENCIAS.md`).
 
@@ -82,4 +82,4 @@ La evaluación final (23–30 de noviembre de 2026) ocurre **después** de las 4
 | 2026-11-30 | lunes | 90 | 90 | Defensa con observador (decisiones, predicción, reparación y modificación en vivo), corrector y rúbrica | Sin cambio: la defensa es la evidencia de autoría; la clase UAGRM va aparte. |
 | **Total** | | **750** (12,5 h) | **570** (9,5 h) | | |
 
-Total del programa: 90,0 h de plan en seis semanas (estimado 95,6 h) + 9,5 h de evaluación final = 99,5 h de plan (105,1 h estimadas). Si no puedes dedicar la evaluación final en esas fechas, no se declara autonomía: se reprograma sin acumular horas. La evaluación final solo se toma si la Puerta 7 está cumplida; si no, se reprograma sin acumular horas y no se declara autonomía.
+Total del programa: 90,0 h de plan en seis semanas (estimado 96,9 h) + 9,5 h de evaluación final = 99,5 h de plan (106,4 h estimadas). Si no puedes dedicar la evaluación final en esas fechas, no se declara autonomía: se reprograma sin acumular horas. La evaluación final solo se toma si la Puerta 7 está cumplida; si no, se reprograma sin acumular horas y no se declara autonomía.

@@ -63,3 +63,30 @@ Resultado, pruebas y límites: `INFORME_FASE2_FINAL.md`. Resumen de lo hecho:
 - El código DAX/M y los pasos de Power BI Desktop, de Excel y los ejemplos de SQL Server **no se ejecutaron**.
 - Los tiempos son estimaciones de primera vez (±35 %), no mediciones.
 - Usar siempre el intérprete del `.venv` (3.12.10, pandas 2.2.3) para verificar. Escribir scripts con barras invertidas en un archivo antes de ejecutarlos (los heredocs de esta máquina las alteran).
+
+## Estado vigente · cierre técnico Fase 1 (14 de octubre de 2026)
+
+**Fase 1 COMPLETA**, autorizada expresamente por el usuario. Este estado sustituye las próximas tareas históricas anteriores. Detalle y exposición histórica: `INFORME_CIERRE_FASE1.md`.
+
+- Reproducidos los cinco falsos positivos NULL en Gold; corregido el rechazo explícito de `cliente`, `mes`, `pedidos`, `unidades` y `ventas_bs`.
+- Ejecutadas tres referencias positivas y 50 alteraciones rechazadas (45 anteriores + cinco NULL), con custodia externa disponible y sin omisiones.
+- Evidencia final saneada: solo controles y estados; salidas, errores y diagnósticos privados protegidos. Trece regresiones ficticias de privacidad aprobadas.
+- `verificar_paquete.py --fase1`: ocho grupos técnicos aprobados, cero fallos y cero omisiones, en copia temporal sin calendario. La evidencia publicada refleja esta corrida, no una nueva ejecución del verificador completo.
+- Preservados por comprobación SHA256 la planificación, las lecciones, las jornadas, `mi_trabajo` y la custodia externa. No se regeneró el calendario ni se revisaron los prerrequisitos.
+- Manifiesto SHA256 actualizado al cerrar. Rama `main`, sin commits ni push; cambios locales pendientes de revisión del usuario.
+
+**Próxima tarea: detenerse y esperar autorización expresa para la Fase 2.** No iniciarla por las autorizaciones históricas de las etapas de Claude.
+
+## Estado vigente · cierre definitivo Fase 2 (14 de octubre de 2026)
+
+**CONSTRUCCIÓN TERMINADA — APROBADO CON OBSERVACIONES NO BLOQUEANTES.** Fase 2 autorizada y completada; este estado sustituye las próximas tareas anteriores. Informe completo: `INFORME_CIERRE_FASE2.md`, con exactamente 17 filas y evidencia de cada decisión.
+
+- 17 prerrequisitos revisados: dos cubiertos, once con aclaración y cuatro con integración, todas aplicadas. Se mantienen 47 lecciones NÚCLEO, 33 REFUERZO y 20 PROFUNDIZACIÓN.
+- Fundamentos SQL y de modelado integrados donde se usan. Pandas incorpora PD-BASE (D16) y PD-AGR (D17), con recuperación explícita en REDUCIDO antes de H03/S03. 9.2 pasa de D15 a D12 tras CSV, sin suprimir lectura.
+- BASE conserva 90 h planificadas; estimación final 5.771 min (96,2 h), +35 min respecto de 95,6 h. Evaluación final: 9,5 h posteriores; UAGRM aparte. No se redujeron tiempos de ejercicios para cuadrar las cifras.
+- Suite completa: 26/26 grupos, cero fallos y cero omisiones (24 anteriores + dos de privacidad), en temporal con custodia externa. Teoría: 621 bloques. Mutaciones pedagógicas: 14/14 detectadas. Fase 1 sigue aprobando tres referencias y rechazando 50 alteraciones, incluidos los cinco NULL.
+- El generador se probó en temporal y conserva las casillas de D02. D01, UAGRM y custodia no se modificaron. Cambios concurrentes en D02 y `mi_trabajo` se conservaron sin intervención; el control Git personal del original no se declara aprobado.
+- Permanecen pruebas manuales de Excel/Power BI/SQL Server/Notion y la exposición histórica conocida del final. No bloquean estudiar ni justifican otra fase. La autonomía personal se acreditará con entregas y defensa propias.
+- Rama `main`, sin commits ni push. Evidencia pública y manifiesto actualizados al cerrar.
+
+**No hay otra fase de construcción pendiente ni propuesta.** Corresponde estudiar el plan y avanzar por sus puertas.

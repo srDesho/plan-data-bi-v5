@@ -1,6 +1,8 @@
 # 10.3 merge: unir tablas y controlar la cardinalidad
 
-> Tiempo estimado: 65 min (lectura 25 + práctica 40). Prerrequisitos: [3.1 Claves y cardinalidad](../03_SQL_joins/01_claves_relaciones.md), [3.4 Cuando el JOIN duplica](../03_SQL_joins/04_duplicacion_por_join.md) y [10.2 groupby](02_groupby_agg.md).
+> Tiempo estimado: 65 min (lectura 25 + práctica 40). Prerrequisitos: [3.2 Claves y JOIN](../03_SQL_joins/02_inner_join.md), [3.4 Cuando el JOIN duplica](../03_SQL_joins/04_duplicacion_por_join.md) y [10.1 Selección, tipos y columnas](01_columnas_nuevas.md).
+
+Agrupar no es un requisito para unir: el REDUCIDO puede practicar este merge y recuperar después PD-AGR con 10.2, antes de H03/S03. Las claves se prepararon en 3.2 y J2; 3.1 queda como consulta adicional.
 
 ## Para qué sirve
 

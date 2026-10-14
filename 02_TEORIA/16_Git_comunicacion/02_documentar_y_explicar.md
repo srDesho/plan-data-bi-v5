@@ -1,6 +1,8 @@
 # 16.2 Documentar y explicar tu trabajo: README, errores y decisiones
 
-> Tiempo estimado: 45 min (lectura 25 + práctica 20). Prerrequisitos: [16.1 Git desde cero](01_git_desde_cero.md) y [6.6 Interpretar y recomendar](../06_KPIs/06_interpretar_y_recomendar.md).
+> Tiempo estimado: 45 min (lectura 25 + práctica 20). Prerrequisito: [6.6 Interpretar y recomendar](../06_KPIs/06_interpretar_y_recomendar.md).
+
+Escribir un README no necesita comandos Git. [16.1](01_git_desde_cero.md) es consulta para versionar o publicar; preparar un commit no demuestra por sí solo que hayas aprendido Git.
 
 ## Para qué sirve
 

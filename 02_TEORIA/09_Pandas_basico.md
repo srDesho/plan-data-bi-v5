@@ -11,7 +11,7 @@ Aquí pasas de recorrer listas con bucles a trabajar con **tablas** completas: a
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
 | 9.1 | [NumPy: de listas a arreglos](09_Pandas_basico/01_numpy_arrays.md) | vectorización, `shape`, `dtype`, máscaras, `NaN`, `ddof` | refuerzo | 50 min |
-| 9.2 | [Series, DataFrame y leer un CSV](09_Pandas_basico/02_series_dataframe_csv.md) | índice, columnas, `read_csv`, tipos inferidos, códigos como texto | núcleo · D15 | 55 min |
+| 9.2 | [Series, DataFrame y leer un CSV](09_Pandas_basico/02_series_dataframe_csv.md) | índice, columnas, `read_csv`, tipos inferidos, códigos como texto | núcleo · D12 | 55 min |
 | 9.3 | [Inspeccionar los datos (perfilado)](09_Pandas_basico/03_inspeccionar.md) | `info`, `describe`, `value_counts`, función de perfil, 8 preguntas | núcleo · D15 | 55 min |
 | 9.4 | [Seleccionar, filtrar y ordenar](09_Pandas_basico/04_seleccion_filtros.md) | `loc`/`iloc`, máscaras, `&` y `\|`, `isin`, `str.contains`, `sort_values` | refuerzo | 55 min |
 | 9.5 | [Vacíos y duplicados](09_Pandas_basico/05_nulos_duplicados.md) | política de faltantes, duplicados exactos y con conflicto | núcleo · D16 | 60 min |

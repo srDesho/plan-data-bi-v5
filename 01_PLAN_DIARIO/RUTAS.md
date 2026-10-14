@@ -10,20 +10,37 @@ Este documento se genera con `herramientas/aplicar_nucleo.py` a partir de `nucle
 | **REFUERZO** | Se lee cuando una competencia no está dominada o un ejercicio se atasca (cada lección dice cuándo). | EXTENDIDA y recuperación. |
 | **PROFUNDIZACIÓN** | Amplía más allá de la base (inferencia, BI avanzado, entrevistas, portafolio). | EXTENDIDA u otros periodos (después de la evaluación final). |
 
-La lectura de una lección NÚCLEO es lo que figura en su encabezado («lectura N min»). Su **micropráctica** es práctica guiada sin corrector: en BASE la sustituyen los ejercicios del día; en EXTENDIDA se hace completa.
+La lectura de una lección NÚCLEO es lo que figura en su encabezado («lectura N min»). Su **micropráctica** es práctica guiada sin corrector: en BASE la sustituyen los ejercicios del día. Excepciones explícitas: los primeros 10 min de práctica de 10.1 (PD-BASE) y de 10.2 (PD-AGR) son OBLIGATORIOS y se cuentan una sola vez en ejercicios; sus otros 25 y 30 min, respectivamente, son REFUERZO.
+
+## Preparación explícita antes de las actividades
+
+Los bloques siguientes son obligatorios antes del intento; no promueven lecciones completas de REFUERZO. D01 concreta 16 de sus 20 min de teoría ya existentes. Los otros 42 min se añaden a la estimación BASE; no se ocultan dentro del tiempo de práctica. REDUCIDO conserva la preparación de lo que intenta y recupera lo omitido antes de su puerta.
+
+| Día | Antes de | Preparación | Minutos |
+|---|---|---|---:|
+| D01 | S1 | [Tabla, selección, orden y límite](../03_EJERCICIOS/SQL/S1.md#preparacion-s1) | 8 |
+| D01 | P01 | [Variables, tipos y función corta](../03_EJERCICIOS/Python/P01.md#preparacion-p01) | 8 |
+| D02 | S2 | [Valores y combinaciones únicas](../03_EJERCICIOS/SQL/S2.md#preparacion-s2) | 7 |
+| D02 | P02 | [Decidir antes de operar](../03_EJERCICIOS/Python/P02.md#preparacion-p02) | 7 |
+| D02 | P03 | [Texto: limpieza, inmutabilidad y partir/unir](../03_EJERCICIOS/Python/P03.md#preparacion-p03) | 12 |
+| D03 | S4 | [Filtro combinado y sentido del orden](../03_EJERCICIOS/SQL/S4.md#preparacion-s4) | 6 |
+| D12 | AN07 | [Tres KPI y sus denominadores](../03_EJERCICIOS/Analitico/AN07.md#preparacion-an07) | 6 |
+| D32 | PB02 | [Marcar y comprobar la tabla de fechas](../03_EJERCICIOS/Casos/PB02.md#preparacion-pb02) | 4 |
+
+D01: S1 y P01 son BASE; S10 es REFUERZO con preparación propia. D02: S2, S7, P02 y P03 son BASE; S9 es REFUERZO y C01, OPCIONAL. La guía original de D01 y los avances de D02 se conservan.
 
 ## Horas por semana
 
 | Semana | BASE plan (min) | BASE estimado (min / h) | Teoría y lecciones NÚCLEO | Criterio e hitos | Ejercicios OBLIGATORIOS | EXTENDIDA extra (L–S) | EXTENDIDA plan (h) | EXTENDIDA estimada (h) |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 1 | 900 | 956 / 15,9 | 268 min (12 lecc.) | 65 min | 333 min (8 ej.) | 390 min | 21,5–23,5 | 22,4–24,4 |
-| 2 | 900 | 943 / 15,7 | 242 min (11 lecc.) | 80 min | 331 min (8 ej.) | 390 min | 21,5–23,5 | 22,2–24,2 |
-| 3 | 900 | 972 / 16,2 | 237 min (11 lecc.) | 80 min | 365 min (7 ej.) | 390 min | 21,5–23,5 | 22,7–24,7 |
+| 1 | 900 | 988 / 16,5 | 300 min (12 lecc.) | 65 min | 333 min (14 ej.) | 390 min | 21,5–23,5 | 23,0–25,0 |
+| 2 | 900 | 974 / 16,2 | 273 min (12 lecc.) | 80 min | 331 min (8 ej.) | 390 min | 21,5–23,5 | 22,7–24,7 |
+| 3 | 900 | 977 / 16,3 | 222 min (10 lecc.) | 80 min | 385 min (9 ej.) | 390 min | 21,5–23,5 | 22,8–24,8 |
 | 4 | 900 | 960 / 16,0 | 165 min (7 lecc.) | 60 min | 445 min (7 ej.) | 390 min | 21,5–23,5 | 22,5–24,5 |
-| 5 | 900 | 970 / 16,2 | 140 min (5 lecc.) | 85 min | 455 min (9 ej.) | 390 min | 21,5–23,5 | 22,7–24,7 |
+| 5 | 900 | 979 / 16,3 | 149 min (5 lecc.) | 85 min | 455 min (9 ej.) | 390 min | 21,5–23,5 | 22,8–24,8 |
 | 6 | 900 | 935 / 15,6 | 130 min (5 lecc.) | 65 min | 450 min (7 ej.) | 390 min | 21,5–23,5 | 22,1–24,1 |
 
-**BASE:** 15 h netas planificadas por semana (5400 min en seis semanas). La estimación de primera vez es de 5736 min (95,6 h), es decir 1,06 veces lo planificado: es una estimación conservadora de ±35 %, no una medición, y por eso existen REDUCIDO, MÍNIMO y el corrimiento de puertas sin acumular horas.
+**BASE:** 15 h netas planificadas por semana (5400 min en seis semanas). La estimación de primera vez es de 5813 min (96,9 h), es decir 1,08 veces lo planificado: es una estimación conservadora de ±35 %, no una medición, y por eso existen REDUCIDO, MÍNIMO y el corrimiento de puertas sin acumular horas.
 
 **EXTENDIDA:** BASE más hasta 30–75 min voluntarios por jornada (lunes a sábado) y un domingo opcional de 45–120 min: entre 20 y 25 horas por semana en el plan. Es voluntaria; el descanso y el cierre no se sacrifican. Si tu semana BASE ya consumió más de 16,5 horas reales, no uses EXTENDIDA esa semana: descansa.
 
@@ -31,14 +48,14 @@ La lectura de una lección NÚCLEO es lo que figura en su encabezado («lectura 
 
 | Semana | Teoría y lecciones NÚCLEO | Criterio e hitos | Ejercicios OBLIGATORIOS (estimado) | Teoría : práctica | Examen y corrección | Empleo y cierre |
 |---:|---:|---:|---:|---:|---:|---:|
-| 1 | 268 | 65 | 333 | 1 : 1,2 | 115 | 175 |
-| 2 | 242 | 80 | 331 | 1 : 1,4 | 115 | 175 |
-| 3 | 237 | 80 | 365 | 1 : 1,5 | 115 | 175 |
+| 1 | 300 | 65 | 333 | 1 : 1,1 | 115 | 175 |
+| 2 | 273 | 80 | 331 | 1 : 1,2 | 115 | 175 |
+| 3 | 222 | 80 | 385 | 1 : 1,7 | 115 | 175 |
 | 4 | 165 | 60 | 445 | 1 : 2,7 | 115 | 175 |
-| 5 | 140 | 85 | 455 | 1 : 3,2 | 115 | 175 |
+| 5 | 149 | 85 | 455 | 1 : 3,1 | 115 | 175 |
 | 6 | 130 | 65 | 450 | 1 : 3,5 | 115 | 175 |
 
-En total: **1182 min de teoría y lectura NÚCLEO** (19,7 h; incluye los 20 min de teoría originales de D01), **435 min de criterio e hitos** (7,2 h) y **2379 min de ejercicios** obligatorios (39,6 h). La columna «Empleo y cierre» incluye el bloque laboral y los 10 minutos diarios de cierre.
+En total: **1239 min de teoría y lectura NÚCLEO** (20,6 h; incluye los 20 min de teoría originales de D01), **435 min de criterio e hitos** (7,2 h) y **2399 min de ejercicios** obligatorios (40,0 h). La columna «Empleo y cierre» incluye el bloque laboral y los 10 minutos diarios de cierre.
 
 ## Clasificación de las 100 lecciones
 
@@ -46,23 +63,23 @@ En total: **1182 min de teoría y lectura NÚCLEO** (19,7 h; incluye los 20 min 
 |---:|---|---:|---:|---:|---:|---:|
 | 1 | SQL desde cero: una pregunta, una tabla y un resultado | 2 | 5 | 0 | 30 | 300 |
 | 2 | Agregar sin perder el significado | 4 | 1 | 0 | 85 | 260 |
-| 3 | JOIN: conectar tablas y controlar multiplicaciones | 3 | 1 | 0 | 65 | 210 |
+| 3 | JOIN: conectar tablas y controlar multiplicaciones | 3 | 1 | 0 | 70 | 215 |
 | 4 | Subconsultas, CTE, ventanas, fechas e índices | 2 | 2 | 0 | 40 | 215 |
 | 5 | Calidad de datos y ETL: un proceso que puedas defender | 2 | 3 | 0 | 50 | 275 |
 | 6 | KPIs empresariales: definición antes de fórmula | 5 | 1 | 0 | 120 | 340 |
 | 7 | Python: construir el razonamiento antes de Pandas | 8 | 5 | 0 | 178 | 715 |
 | 8 | Funciones, errores y archivos reproducibles | 4 | 3 | 0 | 87 | 370 |
 | 9 | NumPy y Pandas básico: tablas después de entender listas y funciones | 3 | 3 | 0 | 62 | 335 |
-| 10 | Pandas: transformar, unir y validar | 3 | 3 | 0 | 65 | 360 |
+| 10 | Pandas: transformar, unir y validar | 3 | 3 | 0 | 70 | 365 |
 | 11 | Estadística descriptiva: resumir antes de concluir | 3 | 2 | 4 | 85 | 515 |
 | 12 | Estadística inferencial: decidir con incertidumbre | 0 | 0 | 8 | 0 | 485 |
-| 13 | Modelado dimensional: hechos, dimensiones y modelo estrella | 1 | 1 | 1 | 25 | 160 |
+| 13 | Modelado dimensional: hechos, dimensiones y modelo estrella | 1 | 1 | 1 | 30 | 165 |
 | 14 | Power BI, Power Query y DAX: cargar, modelar, medir y comprobar | 2 | 0 | 3 | 65 | 285 |
 | 15 | Excel como segundo camino de validación | 1 | 2 | 0 | 30 | 170 |
 | 16 | Documentar y comunicar trabajo real: Git, README y empleo honesto | 1 | 1 | 1 | 25 | 140 |
 | 17 | Transferencia y autonomía: resolver datos que cambian | 2 | 0 | 1 | 55 | 175 |
 | 18 | Preparación técnica y conductual para entrevistas | 1 | 0 | 2 | 25 | 155 |
-| **Total** | | **47** | **33** | **20** | **1092** | **5465** |
+| **Total** | | **47** | **33** | **20** | **1107** | **5480** |
 
 El capítulo 19 (puente) es un archivo único: sus §1–§4 (70 min) son NÚCLEO y se leen junto a ME01–ME03 y DB01.
 
@@ -83,7 +100,7 @@ El capítulo 19 (puente) es un archivo único: sus §1–§4 (70 min) son NÚCLE
 | [2.4 Redondeo, texto y fechas: preparar los datos para el reporte](../02_TEORIA/02_SQL_agregados/04_redondeo_texto_fechas.md) | REFUERZO | ext. D06 | 20 | 30 | Antes de G7, G8 y CL1–CL4 (redondeo, texto y fechas en SQL). |
 | [2.5 CASE y COALESCE: condiciones dentro de la consulta y valores faltantes](../02_TEORIA/02_SQL_agregados/05_case_coalesce.md) | NÚCLEO | D17 | 20 | 30 |  |
 | [3.1 Claves, relaciones y cardinalidad](../02_TEORIA/03_SQL_joins/01_claves_relaciones.md) | REFUERZO | ext. D09 | 20 | 25 | Si no puedes decir cuál es la clave de cada tabla y cómo se relacionan (J1). |
-| [3.2 INNER JOIN: combinar tablas por coincidencia](../02_TEORIA/03_SQL_joins/02_inner_join.md) | NÚCLEO | D09 | 20 | 35 |  |
+| [3.2 INNER JOIN: combinar tablas por coincidencia](../02_TEORIA/03_SQL_joins/02_inner_join.md) | NÚCLEO | D09 | 25 | 35 |  |
 | [3.3 LEFT JOIN: conservar todo lo de la izquierda y encontrar a los que no aparecen](../02_TEORIA/03_SQL_joins/03_left_join_ausentes.md) | NÚCLEO | D11 | 20 | 35 |  |
 | [3.4 Cuando el JOIN duplica: el error silencioso más caro](../02_TEORIA/03_SQL_joins/04_duplicacion_por_join.md) | NÚCLEO | D11 | 25 | 30 |  |
 | [4.1 Subconsultas: una consulta dentro de otra](../02_TEORIA/04_SQL_CTE_ventanas/01_subconsultas.md) | REFUERZO | ext. D17 | 20 | 30 | Antes de la lección 4.2 si una subconsulta dentro de otra consulta te confunde (K3). |
@@ -122,13 +139,13 @@ El capítulo 19 (puente) es un archivo único: sus §1–§4 (70 min) son NÚCLE
 | [8.6 Leer un traceback](../02_TEORIA/08_Python_funciones_archivos/06_leer_tracebacks.md) | REFUERZO | ext. D12 | 20 | 25 | Si un traceback largo no te dice dónde mirar (se refuerza con el capítulo 19 §1 y DB01). |
 | [8.7 Pruebas con assert y depuración paso a paso](../02_TEORIA/08_Python_funciones_archivos/07_pruebas_y_depuracion.md) | REFUERZO | ext. D13 | 20 | 35 | Antes de C06: probar tus funciones con `assert` y depurar paso a paso. |
 | [9.1 NumPy: de listas a arreglos](../02_TEORIA/09_Pandas_basico/01_numpy_arrays.md) | REFUERZO | ext. D15 | 20 | 30 | Si no sabes qué es un arreglo (array) de NumPy antes de leer 9.2. |
-| [9.2 Series, DataFrame y leer un CSV](../02_TEORIA/09_Pandas_basico/02_series_dataframe_csv.md) | NÚCLEO | D15 | 20 | 35 |  |
+| [9.2 Series, DataFrame y leer un CSV](../02_TEORIA/09_Pandas_basico/02_series_dataframe_csv.md) | NÚCLEO | D12 | 20 | 35 |  |
 | [9.3 Inspeccionar los datos antes de usarlos (perfilado)](../02_TEORIA/09_Pandas_basico/03_inspeccionar.md) | NÚCLEO | D15 | 20 | 35 |  |
 | [9.4 Seleccionar, filtrar y ordenar](../02_TEORIA/09_Pandas_basico/04_seleccion_filtros.md) | REFUERZO | ext. D16 | 20 | 35 | Si filtrar un DataFrame con condiciones te da el resultado equivocado. |
 | [9.5 Valores vacíos y filas duplicadas](../02_TEORIA/09_Pandas_basico/05_nulos_duplicados.md) | NÚCLEO | D16 | 22 | 38 |  |
 | [9.6 Convertir tipos, limpiar texto y trabajar con fechas](../02_TEORIA/09_Pandas_basico/06_tipos_textos_fechas.md) | REFUERZO | ext. D17 | 25 | 35 | Antes de convertir fechas y textos con Pandas (P24, ETL-2). |
-| [10.1 Columnas nuevas y transformaciones](../02_TEORIA/10_Pandas_transformaciones/01_columnas_nuevas.md) | NÚCLEO | D16 | 20 | 35 |  |
-| [10.2 groupby y agregaciones](../02_TEORIA/10_Pandas_transformaciones/02_groupby_agg.md) | NÚCLEO | D17 | 20 | 40 |  |
+| [10.1 Columnas nuevas y transformaciones](../02_TEORIA/10_Pandas_transformaciones/01_columnas_nuevas.md) | NÚCLEO | D16 | 25 | 10 BASE + 25 REFUERZO |  |
+| [10.2 groupby y agregaciones](../02_TEORIA/10_Pandas_transformaciones/02_groupby_agg.md) | NÚCLEO | D17 | 20 | 10 BASE + 30 REFUERZO |  |
 | [10.3 merge: unir tablas y controlar la cardinalidad](../02_TEORIA/10_Pandas_transformaciones/03_merge_cardinalidad.md) | NÚCLEO | D17 | 25 | 40 |  |
 | [10.4 Tablas de resumen y exportación (CSV y SQLite)](../02_TEORIA/10_Pandas_transformaciones/04_resumen_y_exportacion.md) | REFUERZO | ext. D23 | 20 | 35 | Para exportar tablas a CSV y SQLite fuera de ME03. |
 | [10.5 Controles de calidad y reconciliación en Pandas](../02_TEORIA/10_Pandas_transformaciones/05_controles_calidad.md) | REFUERZO | ext. D24 | 25 | 40 | Antes de ME03 si no sabes comparar el total antes y después de una transformación. |
@@ -151,7 +168,7 @@ El capítulo 19 (puente) es un archivo único: sus §1–§4 (70 min) son NÚCLE
 | [12.7 Tamaño del efecto: significativo no es lo mismo que importante](../02_TEORIA/12_Estadistica_inferencia/07_tamano_del_efecto.md) | PROFUNDIZACIÓN | otros periodos | 25 | 30 | Otros periodos: tamaño del efecto. |
 | [12.8 Interpretar, comunicar y no equivocarse](../02_TEORIA/12_Estadistica_inferencia/08_interpretacion_limitaciones.md) | PROFUNDIZACIÓN | otros periodos | 30 | 25 | Otros periodos: interpretar y comunicar sin equivocarse. |
 | [13.1 Hechos, dimensiones y granularidad](../02_TEORIA/13_Modelado/01_hechos_dimensiones.md) | REFUERZO | ext. D30 | 25 | 30 | Antes de 13.2 si no distingues hecho de dimensión. |
-| [13.2 El modelo estrella: relaciones y varios hechos](../02_TEORIA/13_Modelado/02_modelo_estrella.md) | NÚCLEO | D30 | 25 | 35 |  |
+| [13.2 El modelo estrella: relaciones y varios hechos](../02_TEORIA/13_Modelado/02_modelo_estrella.md) | NÚCLEO | D30 | 30 | 35 |  |
 | [13.3 La tabla de fechas (calendario)](../02_TEORIA/13_Modelado/03_tabla_de_fechas.md) | PROFUNDIZACIÓN | ext. D34 | 20 | 25 | EXTENDIDA: la tabla de fechas del modelo. |
 | [14.1 Power BI desde cero: qué es, el flujo de trabajo y la configuración regional](../02_TEORIA/14_PowerBI_DAX/01_power_bi_desde_cero.md) | NÚCLEO | D32 | 30 | 20 |  |
 | [14.2 Power Query y el lenguaje M](../02_TEORIA/14_PowerBI_DAX/02_power_query.md) | PROFUNDIZACIÓN | ext. D32 | 25 | 30 | EXTENDIDA: Power Query y el lenguaje M. |
@@ -206,7 +223,7 @@ Cada lección declara sus prerrequisitos. Estado: **núcleo** = lección NÚCLEO
 | 7.7 | D08 | 7.6 | núcleo |
 | 8.1 | D08 | 7.4 | práctica: P01 |
 | 8.1 | D08 | 7.10 | núcleo |
-| 3.2 | D09 | 3.1 | recomendada (Claves y relaciones: J1 y 3.2 lo retoman; léela si no sabes cuál es la clave de cada tabla.) |
+| 3.2 | D09 | 3.1 | práctica: J2 |
 | 8.5 | D09 | 7.7 | núcleo |
 | 8.5 | D09 | 8.1 | núcleo |
 | 8.3 | D10 | 7.5 | práctica: P03 |
@@ -216,32 +233,27 @@ Cada lección declara sus prerrequisitos. Estado: **núcleo** = lección NÚCLEO
 | 8.4 | D10 | 8.1 | núcleo |
 | 8.4 | D10 | 8.3 | núcleo |
 | 3.3 | D11 | 3.2 | núcleo |
-| 3.4 | D11 | 3.1 | recomendada (Claves y relaciones: J1 y 3.2 lo retoman; léela si no sabes cuál es la clave de cada tabla.) |
+| 3.4 | D11 | 3.1 | práctica: J2 |
 | 3.4 | D11 | 3.2 | núcleo |
 | 3.4 | D11 | 3.3 | núcleo |
 | 6.1 | D12 | 2.3 | núcleo |
 | 6.1 | D12 | 3.2 | núcleo |
-| 11.3 | D13 | 11.1 | recomendada (Población, muestra y tipos de variable: AN01 (unidad de análisis) los usa sin nombrarlos; léela si dudas qué es una variable numérica o categórica.) |
+| 9.2 | D12 | 8.3 | núcleo |
 | 11.3 | D13 | 11.2 | práctica: G6 |
-| 9.2 | D15 | 9.1 | recomendada (NumPy: 9.2 reintroduce Series; léela si no sabes qué es un arreglo.) |
-| 9.2 | D15 | 8.3 | núcleo |
 | 9.3 | D15 | 9.2 | núcleo |
-| 10.1 | D16 | 9.1 | recomendada (NumPy: 9.2 reintroduce Series; léela si no sabes qué es un arreglo.) |
 | 10.1 | D16 | 9.2 | núcleo |
 | 10.1 | D16 | 9.3 | núcleo |
-| 10.1 | D16 | 9.4 | recomendada (Filtrar un DataFrame: P17–P23 lo usan en una línea; léela si un filtro te da el resultado equivocado.) |
-| 10.1 | D16 | 9.5 | núcleo |
-| 10.1 | D16 | 9.6 | recomendada (Tipos, texto y fechas en Pandas: P24 y ETL-2 los piden; léela antes de convertir fechas.) |
+| 10.1 | D16 | 7.7 | núcleo |
 | 9.5 | D16 | 9.3 | núcleo |
 | 9.5 | D16 | 1.4 | núcleo |
 | 10.2 | D17 | 10.1 | núcleo |
 | 10.2 | D17 | 2.2 | núcleo |
-| 10.3 | D17 | 3.1 | recomendada (Claves y relaciones: J1 y 3.2 lo retoman; léela si no sabes cuál es la clave de cada tabla.) |
+| 10.3 | D17 | 3.2 | núcleo |
 | 10.3 | D17 | 3.4 | núcleo |
-| 10.3 | D17 | 10.2 | núcleo |
+| 10.3 | D17 | 10.1 | núcleo |
 | 2.5 | D17 | 2.2 | núcleo |
 | 2.5 | D17 | 1.4 | núcleo |
-| 4.2 | D18 | 4.1 | recomendada (4.2 re-explica la idea de resultado con nombre; 4.1 se lee si una subconsulta anidada te confunde.) |
+| 4.2 | D18 | 4.1 | recomendada (4.2 enseña WITH y resultados intermedios con nombre antes de V3 (D18). Las subconsultas anidadas de 4.1 son consulta adicional, no requisito para el CTE de BASE.) |
 | 4.3 | D18 | 2.2 | núcleo |
 | 4.3 | D18 | 4.2 | núcleo |
 | 6.5 | D19 | 6.1 | núcleo |
@@ -251,16 +263,15 @@ Cada lección declara sus prerrequisitos. Estado: **núcleo** = lección NÚCLEO
 | 5.2 | D23 | 9.3 | núcleo |
 | 5.3 | D24 | 5.2 | núcleo |
 | 5.3 | D24 | 9.5 | núcleo |
-| 5.3 | D24 | 10.5 | recomendada (Controles en Pandas: ME02 y ME03 los piden paso a paso; léela si no sabes comparar antes y después.) |
+| 5.3 | D24 | 10.5 | práctica: 19.3, ME02 |
 | 11.4 | D25 | 11.3 | núcleo |
 | 6.2 | D25 | 6.1 | núcleo |
 | 6.2 | D25 | 3.4 | núcleo |
 | 11.5 | D27 | 11.3 | núcleo |
 | 11.5 | D27 | 11.4 | núcleo |
-| 15.3 | D29 | 15.2 | recomendada (Funciones de Excel: EX01 guía los pasos mínimos; léela si no sabes SUMAR.SI.) |
 | 15.3 | D29 | 11.4 | núcleo |
 | 15.3 | D29 | 11.5 | núcleo |
-| 13.2 | D30 | 13.1 | recomendada (Hechos y dimensiones: 13.2 los usa; léela si no distingues una tabla de hechos de una dimensión.) |
+| 13.2 | D30 | 13.1 | recomendada (13.2 (D30) incorpora hechos, dimensiones y grano antes de modelar; PB01/PB02 (D32) los practican con claves y relaciones. 13.1 es ampliación, no lectura adicional obligatoria.) |
 | 6.4 | D31 | 6.1 | núcleo |
 | 6.4 | D31 | 4.3 | núcleo |
 | 6.4 | D31 | 8.1 | núcleo |
@@ -269,21 +280,20 @@ Cada lección declara sus prerrequisitos. Estado: **núcleo** = lección NÚCLEO
 | 14.3 | D33 | 14.1 | núcleo |
 | 14.3 | D33 | 13.2 | núcleo |
 | 14.3 | D33 | 2.5 | núcleo |
-| 17.1 | D36 | 10.5 | recomendada (Controles en Pandas: ME02 y ME03 los piden paso a paso; léela si no sabes comparar antes y después.) |
+| 17.1 | D36 | 10.5 | práctica: 19.3, ME02 |
 | 17.1 | D36 | 5.1 | práctica: 19.3 |
 | 17.1 | D36 | 5.2 | núcleo |
 | 17.1 | D36 | 5.3 | núcleo |
 | 17.1 | D36 | 5.4 | práctica: ME03 |
 | 17.1 | D36 | 5.5 | práctica: ME03 |
-| 17.2 | D38 | 8.7 | recomendada (Pruebas con assert: léela antes de C06; DB01–DB03 ya practican depurar.) |
-| 17.2 | D38 | 10.6 | recomendada (Errores silenciosos: DB02, DB03 y C05 los practican; léela antes de C06.) |
+| 17.2 | D38 | 8.7 | práctica: P09, DB01, ME02 |
+| 17.2 | D38 | 10.6 | práctica: P21, P22, ME03, ETL-6 |
 | 17.2 | D38 | 17.1 | núcleo |
 | 6.6 | D39 | 6.1 | núcleo |
 | 6.6 | D39 | 6.2 | núcleo |
-| 6.6 | D39 | 6.3 | recomendada (Ticket y drop size: 6.6 los usa en sus ejemplos; K1 y AN08 los practican. Léela si no distingues ticket de drop size.) |
+| 6.6 | D39 | 6.3 | recomendada (K1 y AN08 (D16) practican importe por pedido y su interpretación; PB03 (D33) practica ticket. 6.6 enseña hechos, límites y recomendaciones. 6.3 amplía otros indicadores, sin ser lectura indispensable para AN18.) |
 | 6.6 | D39 | 6.4 | núcleo |
 | 6.6 | D39 | 6.5 | núcleo |
-| 16.2 | D40 | 16.1 | recomendada (Git: cada jornada pide preparar un commit; léela si no sabes qué guarda un commit.) |
 | 16.2 | D40 | 6.6 | núcleo |
 | 18.1 | D41 | 3.4 | núcleo |
 
@@ -313,17 +323,21 @@ Distingue lo que ya debes poder hacer al empezar (viene de una jornada ANTERIOR:
 | D13 | Llegas con los OBLIGATORIOS de la semana (J2, J5, DB01, P09–P11, P13); lo que falte lo medirá el examen y se recupera con su REFUERZO. | J2 (D09), J5 (D11), DB01 (D09), P09 (D10), P10 (D12), P11 (D12), P13 (D10) |
 | D15 | Cumpliste la Puerta 2 o hiciste su REFUERZO. | examen S02 (D13) |
 | D15 | Lees un CSV con el módulo estándar y devuelves sus filas. | P13 (D10) |
+| D15 | Leíste 9.2 y reconoces Series, DataFrame, columnas y tipos; si hiciste D12 reducido, recupera esa lectura antes de P17. | lección 9.2 (D12) |
 | D16 | Tu P17 carga `pedidos.csv` y puedes decir cuántas filas y columnas tiene sin mirar. | P17 (D15) |
 | D16 | Unes tablas con SQL, filtras por estado y agrupas. | J2 (D09), G6 (D05) |
+| D16 | Antes de AN08 recuperaste 11.3: calculas media, mediana y moda y dices qué representa una observación. D13 reducido no acreditaba esa lectura. | lección 11.3 (D13) |
+| D16 | Recuperaste 9.3 de D15 (inspección de columnas, tipos y nulos) antes de 10.1/PD-BASE, también si ayer elegiste REDUCIDO. | lección 9.3 (D15) |
 | D17 | Explicas qué hace agrupar por pedido y por qué el drop size se calcula sobre pedidos, no sobre líneas. | K1 (D16) |
 | D17 | Quitas duplicados exactos en Pandas y sabes por qué dos filas con la misma clave y distinto monto no lo son. | P22 (D16), lección 9.5 (D16) |
-| D17 | Creas una columna nueva calculada en un DataFrame. | lección 10.1 (D16) |
+| D17 | Demostraste en PD-BASE selección, filtros, conversiones y una columna nueva sin alterar el origen; la lectura sola no lo acredita. | PD-BASE (puente BASE de filtros, tipos y columnas) (D16) |
 | D18 | Tu P21 pasa el corrector y puedes decir por qué falla con un catálogo repetido. | P21 (D17) |
 | D18 | Sumas ventas por cliente con SQL y ordenas de mayor a menor. | K1 (D16), G6 (D05) |
 | D19 | Explicas un CTE y una función de ventana frente a una agregación por grupo. | V3 (D18), lección 4.2 (D18), lección 4.3 (D18) |
 | D19 | Sabes qué hace `CASE` dentro de una consulta (lección 2.5). | lección 2.5 (D17) |
 | D19 | Cargas una tabla con Pandas y cuentas duplicados exactos. | P22 (D16), lección 9.3 (D15), lección 9.5 (D16) |
 | D20 | Llegas con los OBLIGATORIOS de la semana (K1, P21–P23, V3, V4); lo que falte lo medirá el examen y se recupera con su REFUERZO. | K1 (D16), P21 (D17), P22 (D16), P23 (D19), V3 (D18), V4 (D19) |
+| D20 | PD-BASE y PD-AGR están resueltos y explicados, incluido el cuadre de groupby; si los omitiste en REDUCIDO, recupéralos antes de H03 y S03. | PD-BASE (puente BASE de filtros, tipos y columnas) (D16), PD-AGR (agrupación BASE antes de unir) (D17) |
 | D22 | Tus P22 y P23 pasan el corrector (ME01 las reutiliza). | P22 (D16), P23 (D19) |
 | D22 | Lees un CSV como texto con Python y conoces el esquema de §3 del capítulo 19 (de funciones a un programa). | P13 (D10), P17 (D15), lección 19.3 (D20) |
 | D23 | ME01 aprobado con tu código y tus P09–P11 pasan el corrector. | ME01 (D22), P09 (D10), P10 (D12), P11 (D12) |
@@ -335,6 +349,7 @@ Distingue lo que ya debes poder hacer al empezar (viene de una jornada ANTERIOR:
 | D30 | Tu Silver pasa la ecuación de conteos. Si hoy no cabe todo, haz ETL-5 y deja ETL-6 para el REFUERZO de mañana. | ETL-4 (etapa 5: Silver, validación y rechazos) (D29) |
 | D31 | Puerta 5 cumplida o ETL en REFUERZO (Excel puede esperar). | ETL-5 (etapa 6: Gold cliente/mes) (D30), ETL-6 (etapa 7: carga SQLite, repetición y cuadre SQL) (D30) |
 | D31 | Escribes una consulta que une líneas, pedidos y clientes y agrupa. | J2 (D09), K1 (D16) |
+| D31 | Para realizar EX01, recuperaste 15.3 de D29 (tabla dinámica y cuadre). Si hoy haces solo E4 en REDUCIDO, Excel y esa lectura pueden esperar; no se acredita P6. | lección 15.3 (D29) |
 | D32 | Power BI Desktop instalado y abierto una vez; si no lo tienes, las partes que lo usan quedan PENDIENTES y lo registras. | requisito externo (si falta, queda PENDIENTE) |
 | D32 | Sabes qué es un hecho, una dimensión y el modelo estrella (lección 13.2). | lección 13.2 (D30) |
 | D33 | Tus relaciones de PB02 filtran de dimensión a hecho y el conteo de líneas coincide con la base. | PB02 (D32) |
@@ -358,14 +373,14 @@ Cada jornada define una entrega menor y realizable con la preparación que neces
 | D05 | 60 | 2.2 (20 min) | Solo G6 (rutas con más de 20 clientes) con su corrector y la diferencia entre WHERE y HAVING dicha en voz alta. P07 pasa a REFUERZO: hazlo antes del hito H01 del sábado. | 53 | P07 |
 | D06 | 60 | — | La evaluación de 60 minutos, sin consultar nada. | 60 | — |
 | D08 | 45 | 8.1 (20 min) | Solo P08 (`clasificar_ticket`) con sus cuatro valores límite. La lección 7.7 y el resto quedan para REFUERZO: D10 las exige al entrar. | 53 | — |
-| D09 | 60 | 3.2 (20 min) | Solo J2 (ventas totales de pedidos entregados) con su corrector. DB01, la lección 8.5 y la 19.1 pasan a REFUERZO; D10 las exige al entrar. | 60 | DB01 |
+| D09 | 60 | 3.2 (25 min) | Solo J2 (ventas totales de pedidos entregados) con su corrector. DB01, la lección 8.5 y la 19.1 pasan a REFUERZO; D10 las exige al entrar. | 65 | DB01 |
 | D10 | 60 | — | Solo P09 (`precio_centavos`) con sus cuatro entradas inválidas. P13 pasa a REFUERZO (es requisito de la Puerta 2). | 60 | P13 |
 | D11 | 60 | 3.3 (20 min) | J5 en versión mínima: lista los clientes que no tienen ningún pedido (LEFT JOIN y `IS NULL`). El filtro de septiembre en el ON (la parte completa de J5) pasa a REFUERZO. | 55 | — |
-| D12 | 60 | — | Solo P10 (`fecha_iso`) con sus tres formatos y tres entradas inválidas. P11 pasa a REFUERZO (la necesita el examen S02). | 60 | P11 |
+| D12 | 60 | — | Solo P10 (`fecha_iso`) con sus tres formatos y tres entradas inválidas. P11 pasa a REFUERZO (la necesita el examen S02). Si omites 9.2, recupera esa lectura antes de P17 (D15). | 60 | P11 |
 | D13 | 60 | — | La evaluación de 60 minutos, sin consultar nada. | 60 | — |
-| D15 | 45 | 9.2 (20 min) | Solo P17 (`cargar_pedidos`) con su corrector. La lección 9.3 (perfilado) pasa a REFUERZO y se retoma en D19. | 55 | — |
-| D16 | 60 | — | Solo K1 (drop size de cada pedido entregado) con su control contra J2. P22 pasa a REFUERZO: la necesitan ME01 y el examen S03. | 53 | P22 |
-| D17 | 60 | 10.3 (25 min) | P21 con los dos primeros criterios: unir con `merge(validate="many_to_one")` conservando las filas de `pedidos` y detener el proceso con `ValueError` si el catálogo repite un cliente. El pedido huérfano (tercer criterio) y la lección 10.2 pasan a REFUERZO. | 70 | — |
+| D15 | 45 | — | Solo P17 (cargar_pedidos) con su corrector, tras recuperar 9.2 de D12 si falta. 9.3 (perfilado) pasa a REFUERZO y se necesita antes de 10.1/PD-BASE en D16 (y también de P23); no se da por leída con P17. | 35 | — |
+| D16 | 60 | — | Solo K1 (drop size de cada pedido entregado) con su control contra J2. P22 pasa a REFUERZO: la necesitan ME01 y el examen S03. PD-BASE y las lecturas 10.1/9.5 quedan pendientes: recupera PD-BASE antes de D17 y de H03; P22 y la agrupación también se recuperan antes de acreditar P3. | 53 | PD-BASE (puente BASE de filtros, tipos y columnas), P22 |
+| D17 | 60 | 10.3 (25 min) | P21 con los dos primeros criterios: unir con `merge(validate="many_to_one")` conservando las filas de `pedidos` y detener el proceso con `ValueError` si el catálogo repite un cliente. El pedido huérfano (tercer criterio) y la lección 10.2 pasan a REFUERZO. Recupera PD-AGR con 10.2 y el caso de huérfanos de P21 antes de H03 y S03; este REDUCIDO no acredita la Puerta 3. | 70 | PD-AGR (agrupación BASE antes de unir) |
 | D18 | 60 | 4.2 (15 min) | V3 parte 1: un CTE con las ventas por cliente y los 15 primeros. Los porcentajes con funciones de ventana (lección 4.3) pasan a REFUERZO. | 50 | — |
 | D19 | 60 | — | Solo P23 (`perfilar`) con su corrector. V4 pasa a REFUERZO. | 40 | V4 |
 | D20 | 60 | — | La evaluación de 60 minutos, sin consultar nada. | 60 | — |
@@ -377,7 +392,7 @@ Cada jornada define una entrega menor y realizable con la preparación que neces
 | D27 | 60 | — | La evaluación de 60 minutos, sin consultar nada. | 60 | — |
 | D29 | 45 | — | ETL-4 mínimo: Silver con la ecuación Bronze = duplicados + rechazos + Silver. Los rechazos con su causa pasan a REFUERZO. | 40 | — |
 | D30 | 60 | — | ETL-5: Gold por cliente y mes con sus controles. ETL-6 (carga SQLite, segunda ejecución y cuadre SQL) pasa a REFUERZO; sin ETL-6 no se cumple la Puerta 5. | 45 | ETL-6 (etapa 7: carga SQLite, repetición y cuadre SQL) |
-| D31 | 60 | — | E4, la consulta de cuadre por ruta. La tabla dinámica de Excel (EX01) pasa a REFUERZO, o queda PENDIENTE si no tienes Excel. | 45 | EX01 |
+| D31 | 60 | — | E4, la consulta de cuadre por ruta. La tabla dinámica de Excel (EX01) pasa a REFUERZO, o queda PENDIENTE si no tienes Excel. Recupera 15.3 antes de EX01; las fórmulas avanzadas de 15.2 son consulta. | 45 | EX01 |
 | D32 | 60 | 14.1 (30 min) | PB01 mínimo: importa las tablas que usarán las tres medidas y verifica tipos y conteos. PB02 (relaciones) pasa a REFUERZO. Sin Power BI Desktop: lee 14.1 y registra la parte práctica como PENDIENTE. | 60 | PB02 |
 | D33 | 60 | 14.3 (35 min) | PB03 mínimo: la medida `Ventas Bs` comprobada contra J2. `Pedidos Entregados` y `Ticket Bs` pasan a REFUERZO. Sin Desktop: registra PENDIENTE. | 60 | — |
 | D34 | 60 | — | La evaluación de 60 minutos, sin consultar nada. | 60 | — |
@@ -421,23 +436,23 @@ No forma parte de las seis semanas ni de las 90 horas. Son 9,5 h netas estimadas
 
 | Día | Fecha | Jornada | Plan | Lecciones NÚCLEO | Criterio / hito | Ejercicios OBLIGATORIOS | Estimado | Puerta |
 |---:|---|---|---:|---|---|---|---:|---|
-| D01 | 2026-10-12 | Entorno, filas y variables | 90 | — (20 min) | — | — | 90 |  |
-| D02 | 2026-10-13 | Filtros, NULL y texto | 160 | 1.4, 7.6 (35 min) | — | — | 165 |  |
-| D03 | 2026-10-14 | Listas, diccionarios y clientes únicos | 150 | 1.6, 7.8, 7.9 (55 min) | AN01 | S4, S6, P04, P05 | 174 |  |
+| D01 | 2026-10-12 | Entorno, filas y variables | 90 | — (20 min) | — | S1, P01 | 90 |  |
+| D02 | 2026-10-13 | Filtros, NULL y texto | 160 | 1.4, 7.6 (61 min) | — | S2, S7, P02, P03 | 191 |  |
+| D03 | 2026-10-14 | Listas, diccionarios y clientes únicos | 150 | 1.6, 7.8, 7.9 (61 min) | AN01 | S4, S6, P04, P05 | 180 |  |
 | D04 | 2026-10-15 | Agrupación, bucles y media/mediana | 150 | 2.1, 7.10, 7.11 (60 min) | AN02 | G3, P06 | 163 |  |
 | D05 | 2026-10-16 | Condiciones, funciones cortas y KPIs | 150 | 2.2, 7.12, 7.13 (73 min) | AN03 | G6, P07 | 164 |  |
 | D06 | 2026-10-17 | Primer examen y cierre de fundamentos | 200 | 2.3 (25 min) | H01 | EXAMEN:S01 | 200 | P1 |
 | D07 | 2026-10-18 | Domingo flexible: descanso o recuperación voluntaria (45–120 min) | 0 | — | — | — | 0 | |
 | D08 | 2026-10-19 | Funciones con contrato y condiciones | 90 | 7.7, 8.1 (45 min) | — | P08 | 93 |  |
-| D09 | 2026-10-20 | Primer JOIN y errores visibles | 160 | 8.5, 19.1, 3.2 (55 min) | AN04 | J2, DB01 | 160 |  |
-| D10 | 2026-10-21 | Funciones que convierten y archivos CSV | 150 | 8.4, 8.3 (47 min) | AN05 | P09, P13 | 179 |  |
+| D09 | 2026-10-20 | Primer JOIN y errores visibles | 160 | 8.5, 19.1, 3.2 (60 min) | AN04 | J2, DB01 | 165 |  |
+| D10 | 2026-10-21 | Funciones que convierten y archivos CSV | 150 | 8.3, 8.4 (47 min) | AN05 | P09, P13 | 179 |  |
 | D11 | 2026-10-22 | Ausencia con LEFT JOIN | 150 | 3.3, 3.4 (45 min) | AN06 | J5 | 148 |  |
-| D12 | 2026-10-23 | Fechas, cantidades y leer un error | 150 | 6.1 (25 min) | AN07 | P10, P11 | 163 |  |
+| D12 | 2026-10-23 | Fechas, cantidades y leer un error | 150 | 6.1, 9.2 (51 min) | AN07 | P10, P11 | 189 |  |
 | D13 | 2026-10-24 | Examen de JOIN y conciliación | 200 | 11.3 (25 min) | H02 | EXAMEN:S02 | 200 | P2 |
 | D14 | 2026-10-25 | Domingo flexible: descanso o recuperación voluntaria (45–120 min) | 0 | — | — | — | 0 | |
-| D15 | 2026-10-26 | Primer DataFrame y perfilado | 90 | 9.2, 9.3 (40 min) | — | P17 | 100 |  |
-| D16 | 2026-10-27 | Duplicados exactos y drop size | 160 | 9.5, 10.1 (42 min) | AN08 | P22, K1 | 175 |  |
-| D17 | 2026-10-28 | Agrupar y unir con validación | 150 | 10.2, 10.3, 2.5 (65 min) | AN09 | P21 | 170 |  |
+| D15 | 2026-10-26 | Primer DataFrame y perfilado | 90 | 9.3 (20 min) | — | P17 | 80 |  |
+| D16 | 2026-10-27 | Duplicados exactos y drop size | 160 | 10.1, 9.5 (47 min) | AN08 | PD-BASE, P22, K1 | 190 |  |
+| D17 | 2026-10-28 | Agrupar y unir con validación | 150 | 10.2, 10.3, 2.5 (65 min) | AN09 | PD-AGR, P21 | 180 |  |
 | D18 | 2026-10-29 | CTE y concentración de ventas | 150 | 4.2, 4.3 (40 min) | AN10 | V3 | 160 |  |
 | D19 | 2026-10-30 | ABC, perfilado y criterio | 150 | 6.5 (25 min) | AN11 | V4, P23 | 167 |  |
 | D20 | 2026-10-31 | Examen Pandas y SQL intermedio | 200 | 19.3 (25 min) | H03 | EXAMEN:S03 | 200 | P3 |
@@ -450,9 +465,9 @@ No forma parte de las seis semanas ni de las 90 horas. Son 9,5 h netas estimadas
 | D27 | 2026-11-07 | Examen S04: mini-ETL y ETL hasta claves | 200 | 11.5 (30 min) | — | N2, EXAMEN:S04 | 185 | P5a |
 | D28 | 2026-11-08 | Domingo flexible: descanso o recuperación voluntaria (45–120 min) | 0 | — | — | — | 0 | |
 | D29 | 2026-11-09 | ETL guiado (3): Silver, validación y rechazos | 90 | 15.3 (30 min) | — | ETL-4 | 100 |  |
-| D30 | 2026-11-10 | ETL guiado (4): Gold, carga y cuadre SQL | 160 | 13.2 (25 min) | H06 | ETL-5, ETL-6 | 190 | P5 |
+| D30 | 2026-11-10 | ETL guiado (4): Gold, carga y cuadre SQL | 160 | 13.2 (30 min) | H06 | ETL-5, ETL-6 | 195 | P5 |
 | D31 | 2026-11-11 | Excel: tabla dinámica y cuadre | 150 | 6.4 (20 min) | AN14 | E4, EX01 | 175 |  |
-| D32 | 2026-11-12 | Power BI (1): importar y relacionar | 150 | 14.1 (30 min) | AN15 | PB01, PB02 | 180 |  |
+| D32 | 2026-11-12 | Power BI (1): importar y relacionar | 150 | 14.1 (34 min) | AN15 | PB01, PB02 | 184 |  |
 | D33 | 2026-11-13 | Power BI (2): primeras medidas | 150 | 14.3 (35 min) | H07 | PB03 | 155 |  |
 | D34 | 2026-11-14 | Examen S05: ETL guiado completo y BI mínimo | 200 | — (0 min) | AN13 | N3, EXAMEN:S05 | 170 | P6 |
 | D35 | 2026-11-15 | Domingo flexible: descanso o recuperación voluntaria (45–120 min) | 0 | — | — | — | 0 | |

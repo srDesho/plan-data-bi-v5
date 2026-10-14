@@ -2,7 +2,7 @@
 
 Un modelo responde preguntas de negocio con una estructura explícita. Aquí aprendes a decidir **qué representa una fila** de cada tabla (granularidad), a separar los eventos medibles (hechos) de su contexto (dimensiones), a conectarlos en un modelo estrella sin multiplicar cifras y a construir la tabla de fechas que necesitan los reportes por período. Es la base del modelo de Power BI y de las tablas Gold del ETL. Todo se comprueba en Pandas con la mini-base inventada antes de pasar a cualquier herramienta de visualización.
 
-**Tiempo total estimado de primera vez:** unas 2 h 40 min (3 lecciones).
+**Tiempo total estimado de primera vez:** unas 2 h 45 min (3 lecciones).
 
 **Antes de empezar:** capítulo 3 (claves y JOIN), capítulo 10 (merge y controles) y la lección 9.6 (fechas).
 
@@ -11,7 +11,7 @@ Un modelo responde preguntas de negocio con una estructura explícita. Aquí apr
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
 | 13.1 | [Hechos, dimensiones y granularidad](13_Modelado/01_hechos_dimensiones.md) | tabla de hechos, dimensión, medidas aditivas y no aditivas, claves | refuerzo | 55 min |
-| 13.2 | [El modelo estrella](13_Modelado/02_modelo_estrella.md) | relaciones uno a muchos, dimensiones conformadas, caminos ambiguos, pruebas previas | núcleo · D30 | 60 min |
+| 13.2 | [El modelo estrella](13_Modelado/02_modelo_estrella.md) | relaciones uno a muchos, dimensiones conformadas, caminos ambiguos, pruebas previas | núcleo · D30 | 65 min |
 | 13.3 | [La tabla de fechas](13_Modelado/03_tabla_de_fechas.md) | calendario sin huecos, atributos, orden de meses, días sin ventas | profundización | 45 min |
 
 ## Ideas centrales

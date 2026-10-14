@@ -1,6 +1,8 @@
 # 11.3 Media, mediana y moda
 
-> Tiempo estimado: 55 min (lectura 25 + práctica 30). Prerrequisitos: [11.1](01_poblacion_muestra_variables.md) y [11.2](02_frecuencias.md).
+> Tiempo estimado: 55 min (lectura 25 + práctica 30). Prerrequisito: [11.2 Frecuencias](02_frecuencias.md), practicadas con G6.
+
+Antes de calcular, declara qué representa cada observación: AN01 prepara esa pregunta. AN08 describe los pedidos de K1, sin inferir resultados para otra población. [11.1](01_poblacion_muestra_variables.md) amplía población, muestra y tipos de variable; no sustituye los cálculos que se enseñan aquí.
 
 ## Para qué sirve
 

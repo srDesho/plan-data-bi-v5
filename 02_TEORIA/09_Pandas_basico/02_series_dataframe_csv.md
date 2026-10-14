@@ -1,10 +1,12 @@
 # 9.2 Series, DataFrame y leer un CSV
 
-> Tiempo estimado: 55 min (lectura 20 + práctica 35). Prerrequisitos: [9.1 NumPy](01_numpy_arrays.md) y [8.3 Archivos CSV](../08_Python_funciones_archivos/03_archivos_csv_json.md).
+> Tiempo estimado: 55 min (lectura 20 + práctica 35). Prerrequisito: [8.3 Archivos CSV](../08_Python_funciones_archivos/03_archivos_csv_json.md).
 
 ## Para qué sirve
 
 Una tabla de datos (filas y columnas con nombre) es lo que manejas casi siempre: ventas, clientes, visitas. Pandas la representa con un **DataFrame**, que combina la comodidad de una hoja de Excel con la potencia de Python. Con él lees un CSV en una línea, calculas sobre columnas enteras y filtras sin escribir bucles. Esta lección te enseña a reconocer sus partes y a leer un archivo con cuidado.
+
+Puedes empezar con tus listas y diccionarios de Python: aquí se presentan Series, índice, tipos y operaciones sobre columnas desde cero. No necesitas construir arreglos de NumPy para resolver P17. [9.1 NumPy](01_numpy_arrays.md) es una consulta opcional si quieres entender la biblioteca que sostiene esos cálculos.
 
 ## Términos nuevos
 

@@ -1,5 +1,5 @@
 {
-  "ejecutado_utc": "2026-10-14T06:31:28.036822+00:00",
+  "ejecutado_utc": "2026-10-14T09:51:54.199936+00:00",
   "pruebas": [
     {
       "prueba": "SQL completo y corrector negativo",
@@ -43,7 +43,7 @@
       "estado": "OK",
       "evidencia": {
         "repeticion": "mismos conteos e importe",
-        "capas": "36 comprobaciones correctas",
+        "capas": "37 comprobaciones correctas",
         "ventas_bs": 1468924.5
       }
     },
@@ -75,7 +75,7 @@
             "omitidas": 0
           },
           "ETL guiado": {
-            "aprobadas_o_rechazadas": 12,
+            "aprobadas_o_rechazadas": 17,
             "omitidas": 0
           },
           "Evaluación final": {
@@ -214,6 +214,26 @@
             {
               "prueba": "un importe corto por un centavo",
               "resultado": "rechazada"
+            },
+            {
+              "prueba": "Gold con NULL en cliente",
+              "resultado": "rechazada"
+            },
+            {
+              "prueba": "Gold con NULL en mes",
+              "resultado": "rechazada"
+            },
+            {
+              "prueba": "Gold con NULL en pedidos",
+              "resultado": "rechazada"
+            },
+            {
+              "prueba": "Gold con NULL en unidades",
+              "resultado": "rechazada"
+            },
+            {
+              "prueba": "Gold con NULL en ventas_bs",
+              "resultado": "rechazada"
             }
           ],
           "Evaluación final": [
@@ -223,73 +243,59 @@
             },
             {
               "prueba": "Gold con clientes inexistentes, meses inválidos y documentos alterados (misma cantidad de filas y mismo total)",
-              "resultado": "rechazada",
-              "detalle": "  - Gold sin claves repetidas ['sucursal', 'mes', 'linea']"
+              "resultado": "rechazada"
             },
             {
               "prueba": "dos importes de Silver alterados en sentidos opuestos (el total se conserva)",
-              "resultado": "rechazada",
-              "detalle": "  - Silver.monto_centavos = regla del contrato en cada fila: 2 filas con importe distinto, p. ej. ['D-001041|4', 'D-000305|2']"
+              "resultado": "rechazada"
             },
             {
               "prueba": "dos líneas intercambian precio y se recalcula el importe (total igual, fórmula cumplida)",
-              "resultado": "rechazada",
-              "detalle": "  - Silver coincide fila por fila con el resultado esperado: distintas 2 (p. ej. D-001024|1, D-001332|2)"
+              "resultado": "rechazada"
             },
             {
               "prueba": "ventas de Gold permutadas entre grupos (mismas claves, mismas filas, mismo total)",
-              "resultado": "rechazada",
-              "detalle": "  - Gold = agrupación de tu propia Silver (ventas, documentos distintos y demás medidas por grupo): distinta CBB|2026-07|Electricidad; distinta CBB|2026-07|Fija"
+              "resultado": "rechazada"
             },
             {
               "prueba": "Gold cuenta líneas en lugar de documentos distintos",
-              "resultado": "rechazada",
-              "detalle": "  - Gold = agrupación de tu propia Silver (ventas, documentos distintos y demás medidas por grupo): distinta CBB|2026-07|Electricidad; distinta CBB|2026-07|Fija"
+              "resultado": "rechazada"
             },
             {
               "prueba": "segunda carga que duplica todas las tablas",
-              "resultado": "rechazada",
-              "detalle": "  - Bronze tiene todas las filas del origen: 11110 filas en Bronze y 5555 en el archivo"
+              "resultado": "rechazada"
             },
             {
               "prueba": "Bronze limpiado (no es el archivo original)",
-              "resultado": "rechazada",
-              "detalle": "  - Bronze es idéntico al origen (texto exacto, sin limpiar): alguna fila de Bronze fue modificada respecto al archivo"
+              "resultado": "rechazada"
             },
             {
               "prueba": "línea válida movida a rechazos con un motivo inventado",
-              "resultado": "rechazada",
-              "detalle": "  - Silver coincide fila por fila con el resultado esperado: faltan 1 (p. ej. D-000542|2)"
+              "resultado": "rechazada"
             },
             {
               "prueba": "importes guardados como decimales en vez de centavos enteros",
-              "resultado": "rechazada",
-              "detalle": "  - Silver: cantidades y dinero son enteros (centavos): columnas con valores no enteros: {'monto_centavos': 5441}"
+              "resultado": "rechazada"
             },
             {
               "prueba": "fecha inexistente en Silver",
-              "resultado": "rechazada",
-              "detalle": "  - Silver.fecha es una fecha real: 1 fechas inexistentes"
+              "resultado": "rechazada"
             },
             {
               "prueba": "estado sin normalizar",
-              "resultado": "rechazada",
-              "detalle": "  - Silver.estado dentro del dominio ['anulado', 'devuelto', 'entregado']: 1 filas fuera del dominio"
+              "resultado": "rechazada"
             },
             {
               "prueba": "rechazo sin motivo",
-              "resultado": "rechazada",
-              "detalle": "  - todo rechazo tiene motivo"
+              "resultado": "rechazada"
             },
             {
               "prueba": "descuento aplicado con truncamiento en lugar de redondeo al centavo más cercano",
-              "resultado": "rechazada",
-              "detalle": "  - Silver.monto_centavos = regla del contrato en cada fila: 1217 filas con importe distinto, p. ej. ['D-000011|2', 'D-000853|5', 'D-000425|1']"
+              "resultado": "rechazada"
             },
             {
               "prueba": "Gold cuenta las líneas devueltas como venta",
-              "resultado": "rechazada",
-              "detalle": "  - Gold = agrupación de tu propia Silver (ventas, documentos distintos y demás medidas por grupo): distinta CBB|2026-07|Electricidad; distinta CBB|2026-07|Fija"
+              "resultado": "rechazada"
             },
             {
               "prueba": "gold.csv distinto de la tabla gold de SQLite",
@@ -315,16 +321,21 @@
       "prueba": "Evaluación final: referencia privada, segunda ejecución y validador",
       "estado": "OK",
       "evidencia": {
-        "final": {
-          "bronze": 5555,
-          "duplicados_exactos": 70,
-          "rechazados": 44,
-          "silver": 5441,
-          "ventas_centavos": 1835919128,
-          "documentos": 1650,
-          "gold_filas": 72
-        },
-        "validador": "57 comprobaciones correctas"
+        "estado": "OK",
+        "controles": [
+          {
+            "nombre": "referencia privada",
+            "estado": "OK"
+          },
+          {
+            "nombre": "segunda ejecución sin cambios",
+            "estado": "OK"
+          },
+          {
+            "nombre": "validador fila por fila",
+            "estado": "OK"
+          }
+        ]
       }
     },
     {
@@ -341,14 +352,35 @@
     {
       "prueba": "Pruebas adversas del final (referencia privada)",
       "estado": "OK",
-      "evidencia": [
-        "columna_ausente",
-        "catalogo_duplicado",
-        "clave_en_conflicto",
-        "duplicado_exacto_descartado",
-        "cantidad_fraccionaria_rechazada",
-        "salida_previa_preservada"
-      ]
+      "evidencia": {
+        "estado": "OK",
+        "controles": [
+          {
+            "nombre": "columna_ausente",
+            "estado": "OK"
+          },
+          {
+            "nombre": "catalogo_duplicado",
+            "estado": "OK"
+          },
+          {
+            "nombre": "clave_en_conflicto",
+            "estado": "OK"
+          },
+          {
+            "nombre": "duplicado_exacto_descartado",
+            "estado": "OK"
+          },
+          {
+            "nombre": "cantidad_fraccionaria_rechazada",
+            "estado": "OK"
+          },
+          {
+            "nombre": "salida_previa_preservada",
+            "estado": "OK"
+          }
+        ]
+      }
     },
     {
       "prueba": "Estadística con supuestos y controles",
@@ -460,7 +492,7 @@
       "estado": "OK",
       "evidencia": {
         "verificar_teoria": [
-          "OK    ejemplos ejecutados (620 bloques)",
+          "OK    ejemplos ejecutados (621 bloques)",
           "OK    formato de lecciones",
           "OK    enlaces internos",
           "OK    tiempos y lecciones de cada capítulo",
@@ -468,7 +500,7 @@
           "OK    glosario enlazado a su definición",
           "OK    fugas de ejercicios"
         ],
-        "resumen": "Archivos: 122 · palabras: 152138",
+        "resumen": "Archivos: 122 · palabras: 153877",
         "DAX_M_Excel": "no ejecutados en sus aplicaciones: comprobación manual"
       }
     },
@@ -476,9 +508,9 @@
       "prueba": "Rutas, Markdown, contratos y separación de soluciones",
       "estado": "OK",
       "evidencia": {
-        "enlaces_internos_comprobados": 1638,
-        "markdown": 383,
-        "archivos_no_vacios": 589,
+        "enlaces_internos_comprobados": 1770,
+        "markdown": 390,
+        "archivos_no_vacios": 599,
         "soluciones": "separadas en 08_SOLUCIONES",
         "esqueletos": "intencionalmente sin resolver"
       }
@@ -524,7 +556,7 @@
       "estado": "OK",
       "evidencia": {
         "jornadas_clasificadas": 34,
-        "razon_maxima_estimada": 1.2,
+        "razon_maxima_estimada": 1.22,
         "ejercicios_del_banco_ubicados": 109
       }
     },
@@ -537,7 +569,7 @@
           "Python": 30,
           "Otros (estadística, casos, puente, depuración)": 29,
           "Fugas de resultados": 4,
-          "Dependencias y exámenes": 60,
+          "Dependencias y exámenes": 62,
           "Custodia de la evaluación final": 7,
           "Índices y contratos": 81
         },
@@ -560,7 +592,7 @@
           "OK    lecciones clasificadas y sincronizadas con los capítulos: {\"lecciones\": 100, \"clasificación\": {\"REFUERZO\": 33, \"NÚCLEO\": 47, \"PROFUNDI",
           "OK    42 jornadas: bloques, horas y semanas: {\"jornadas\": 42, \"minutos_semanales\": {\"1\": 900, \"2\": 900, \"3\": 900, \"4\": 900, \"5\": 900, \"6\": 9",
           "OK    guías diarias sincronizadas con las lecciones: {\"guías_revisadas\": 42, \"D01\": \"sin cambios\", \"D02\": \"solo bloque de lecciones\", \"domin",
-          "OK    prerrequisitos de las lecciones NÚCLEO: {\"prerrequisitos_por_estado\": {\"núcleo\": 73, \"práctica\": 15, \"recomendada\": 17}, \"recomendadas",
+          "OK    prerrequisitos de las lecciones NÚCLEO: {\"prerrequisitos_por_estado\": {\"núcleo\": 74, \"práctica\": 21, \"recomendada\": 3}, \"recomendadas\"",
           "OK    ejercicios ↔ lecciones y punteros reparados: {\"citas_a_refuerzo_en_obligatorios\": 0, \"P02\": \"lecciones 7.3 y 7.6\", \"P07\": \"lecciones 7",
           "OK    criterio analítico y hitos de comprensión: {\"AN\": 18, \"H\": 8, \"cifras_de_control_recalculadas\": 42, \"puertas_con_hito\": [\"P1\", \"P2\", \"",
           "OK    documentos de la ruta: {\"COMPETENCIAS\": \"N1, hitos H01–H08 y domingo flexible\", \"PLAN_V5\": \"modalidades BASE y EXTENDIDA\", \"UAGRM\": \"m",
@@ -577,9 +609,45 @@
       "evidencia": {
         "resultado": "Manifiesto vigente"
       }
+    },
+    {
+      "prueba": "Privacidad: regresiones con datos ficticios",
+      "estado": "OK",
+      "evidencia": {
+        "estado": "OK",
+        "controles": [
+          {
+            "nombre": "salidas, errores, registros y artefactos ficticios",
+            "estado": "OK"
+          }
+        ]
+      }
+    },
+    {
+      "prueba": "Privacidad: artefactos públicos del final",
+      "estado": "OK",
+      "evidencia": {
+        "estado": "OK",
+        "controles": [
+          {
+            "nombre": "evidencia pública",
+            "estado": "OK"
+          },
+          {
+            "nombre": "archivos reservados",
+            "estado": "OK"
+          },
+          {
+            "nombre": "documentos finales",
+            "estado": "OK"
+          }
+        ]
+      }
     }
   ],
   "fallos": 0,
+  "omitidas": 0,
+  "alcance": "completo",
   "pendientes": [
     "Power BI Desktop: M,DAX,relaciones,filtros y actualización",
     "Excel: importación,fórmulas ytablas dinámicas",

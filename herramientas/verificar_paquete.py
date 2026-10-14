@@ -1,4 +1,4 @@
-"""Repite pruebas del material en archivos temporales; no evalúa tus conocimientos."""
+"""Repite pruebas del material en temporales. --fase1 limita la ejecución a ETL y privacidad."""
 from pathlib import Path
 import ast,contextlib,csv,datetime,hashlib,importlib,importlib.util,io,json,math,os,re,sqlite3,subprocess,sys,tempfile,zipfile
 import pandas as pd
@@ -10,6 +10,7 @@ from contratos_python import comprobar as comprobar_python
 from corregir_sql import comprobar as comprobar_sql,consulta
 from validar_etl_distribuidora import validar as validar_original
 from validar_final import validar as validar_nuevo
+from privacidad_final import auditar_artefactos, controles_publicos, problemas_evidencia_final, registrar_prueba
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.dont_write_bytecode=True
@@ -28,16 +29,24 @@ def numeric(actual,expected):
         assert math.isclose(actual,expected,rel_tol=1e-8,abs_tol=1e-8),(actual,expected)
     else:assert actual==expected,(actual,expected)
 
-def main():
+GRUPOS_FASE1 = {
+    'ETL distribuidora dos ejecuciones', 'ETL de C06 y validador fila por fila',
+    'Validadores: las referencias aprueban y las alteraciones conocidas se rechazan',
+    'Evaluación final: referencia privada, segunda ejecución y validador',
+    'Pruebas adversas y publicación segura', 'Pruebas adversas del final (referencia privada)',
+    'Privacidad: regresiones con datos ficticios', 'Privacidad: artefactos públicos del final',
+}
+
+
+def main(fase1=False):
     tests=[];cwd=Path.cwd()
     os.chdir(ROOT)
-    def add(name,fn):
-        try:
-            detail=fn();tests.append({'prueba':name,'estado':'OK','evidencia':detail})
-            print('OK',name,flush=True)
-        except Exception as e:
-            tests.append({'prueba':name,'estado':'ERROR','tipo':type(e).__name__,'detalle':str(e)})
-            print('ERROR',name,type(e).__name__,str(e),flush=True)
+    def add(name,fn,privado=False):
+        if fase1 and name not in GRUPOS_FASE1:
+            return
+        registro=registrar_prueba(name,fn,privado=privado)
+        tests.append(registro)
+        print(registro['estado'],name,registro.get('detalle',''),flush=True)
     with tempfile.TemporaryDirectory(prefix='plan_v5_') as td:
         tmp=Path(td)
         def sql():
@@ -112,21 +121,22 @@ def main():
             informe=pv.ejecutar(tmp/'validadores',custodia())
             resumen={caso:{'aprobadas_o_rechazadas':sum(x['resultado'] in ('aprobada','rechazada') for x in lista),'omitidas':sum(x['resultado'].startswith('OMITIDA') for x in lista)} for caso,lista in informe.items()}
             assert resumen['C06']['aprobadas_o_rechazadas']>=17 and resumen['ETL guiado']['aprobadas_o_rechazadas']>=12
+            informe['Evaluación final']=[{'prueba':x['prueba'],'resultado':x['resultado']} for x in informe['Evaluación final']]
             return {'resumen':resumen,'pruebas':informe}
         (tmp/'validadores').mkdir()
         def custodia():
             import os as _os
             ruta=_os.environ.get('PLAN_V5_CUSTODIA') or str(ROOT.parent/'Plan_Data_BI_v5_CUSTODIA_FINAL')
             return ruta if (Path(ruta)/'referencia_final.py').exists() else None
-        add('Validadores: las referencias aprueban y las alteraciones conocidas se rechazan',validadores)
+        add('Validadores: las referencias aprueban y las alteraciones conocidas se rechazan',validadores,privado=True)
         def final_con_custodia():
             ruta=custodia()
-            if not ruta:return {'estado':'OMITIDA: la referencia privada de la evaluación final no está disponible; la prueba no se declara ejecutada'}
+            if not ruta:return controles_publicos(['referencia privada no disponible'],estado='OMITIDA')
             ref=module(Path(ruta)/'referencia_final.py','referencia_final')
             salida=tmp/'final';first=ref.ejecutar(ROOT/'09_EVALUACION_FINAL/datos',salida);second=ref.ejecutar(ROOT/'09_EVALUACION_FINAL/datos',salida)
-            assert first==second;resumen=module(ROOT/'herramientas/validar_final.py','validar_final_final').validar(salida)
-            return {'final':first,'validador':resumen}
-        add('Evaluación final: referencia privada, segunda ejecución y validador',final_con_custodia)
+            assert first==second;module(ROOT/'herramientas/validar_final.py','validar_final_final').validar(salida)
+            return controles_publicos(['referencia privada', 'segunda ejecución sin cambios', 'validador fila por fila'])
+        add('Evaluación final: referencia privada, segunda ejecución y validador',final_con_custodia,privado=True)
         def adverse():
             m=module(ROOT/'08_SOLUCIONES/etl_nuevo_referencia.py','etl_adverso')
             raw=pd.read_csv(ROOT/'04_DATASETS/transferencia/transacciones_raw.csv',sep=';',dtype=str,keep_default_na=False)
@@ -155,7 +165,7 @@ def main():
         add('Pruebas adversas y publicación segura',adverse)
         def adverse_final():
             ruta=custodia()
-            if not ruta:return {'estado':'OMITIDA: sin la referencia privada no se declara ejecutada'}
+            if not ruta:return controles_publicos(['referencia privada no disponible'],estado='OMITIDA')
             m=module(Path(ruta)/'referencia_final.py','referencia_final_adversa')
             raw=pd.read_csv(ROOT/'09_EVALUACION_FINAL/datos/despachos_raw.csv',sep='|',dtype=str,keep_default_na=False)
             cat=pd.read_csv(ROOT/'09_EVALUACION_FINAL/datos/articulos.csv',dtype=str,keep_default_na=False)
@@ -166,7 +176,8 @@ def main():
                 except ValueError:casos.append(nombre)
                 else:raise AssertionError('No rechazó '+nombre)
             # un duplicado exacto NO es un conflicto: solo se descarta y se cuenta
-            _,_,_,met=m.transformar(pd.concat([raw,raw.iloc[:1]]),cat);assert met['duplicados_exactos']==70+1;casos.append('duplicado_exacto_descartado')
+            _,_,_,base=m.transformar(raw,cat)
+            _,_,_,met=m.transformar(pd.concat([raw,raw.iloc[:1]]),cat);assert met['duplicados_exactos']==base['duplicados_exactos']+1;casos.append('duplicado_exacto_descartado')
             valida=raw.iloc[:1].copy();valida['cantidad']='3.7';valida['item']='99'
             silver,reject,gold,met=m.transformar(valida,cat)
             assert len(silver)==0 and len(reject)==1 and 'cantidad' in reject.iloc[0].motivos;casos.append('cantidad_fraccionaria_rechazada')
@@ -178,8 +189,8 @@ def main():
             except ValueError:pass
             else:raise AssertionError('No detuvo el catálogo duplicado')
             assert hashlib.sha256((salida/'resultado.db').read_bytes()).hexdigest()==huella;casos.append('salida_previa_preservada')
-            return casos
-        add('Pruebas adversas del final (referencia privada)',adverse_final)
+            return controles_publicos(casos)
+        add('Pruebas adversas del final (referencia privada)',adverse_final,privado=True)
         def statistics():
             m=module(ROOT/'08_SOLUCIONES/estadistica_referencia.py','stats_ref')
             controls=json.loads((ROOT/'08_SOLUCIONES/controles_estadistica.json').read_text(encoding='utf-8'))
@@ -363,10 +374,27 @@ def main():
             assert r.returncode==0,(r.stdout+r.stderr)[-500:]
             return {'resultado':r.stdout.strip()}
         add('Manifiesto SHA256 vigente',manifiesto)
+        def privacidad_pruebas():
+            pruebas=module(ROOT/'herramientas/pruebas_privacidad_final.py','pruebas_privacidad_final')
+            pruebas.ejecutar()
+            return controles_publicos(['salidas, errores, registros y artefactos ficticios'])
+        add('Privacidad: regresiones con datos ficticios',privacidad_pruebas)
+        def privacidad_artefactos():
+            problemas=auditar_artefactos(ROOT,reporte={'pruebas':tests})
+            assert not problemas,problemas
+            return controles_publicos(['evidencia pública', 'archivos reservados', 'documentos finales'])
+        add('Privacidad: artefactos públicos del final',privacidad_artefactos)
     os.chdir(cwd)
-    report={'ejecutado_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'pruebas':tests,'fallos':sum(x['estado']!='OK' for x in tests),'pendientes':['Power BI Desktop: M,DAX,relaciones,filtros y actualización','Excel: importación,fórmulas ytablas dinámicas','Notion importación yGitHub publicación','Kernel Jupyter externo bloqueado en entorno: se ejecutaron celdas en proceso','Notebook UAGRM estadística detenido al conectar UCI;funciones avanzadas completas no probadas','Autonomía real del estudiante: evaluación futura ydefensa']}
+    report={'ejecutado_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'pruebas':tests,'fallos':sum(x['estado']=='ERROR' for x in tests),'omitidas':sum(x['estado']=='OMITIDA' for x in tests),'alcance':'Fase 1 técnica; sin calendario ni auditoría pedagógica' if fase1 else 'completo','pendientes':['Power BI Desktop: M,DAX,relaciones,filtros y actualización','Excel: importación,fórmulas ytablas dinámicas','Notion importación yGitHub publicación','Kernel Jupyter externo bloqueado en entorno: se ejecutaron celdas en proceso','Notebook UAGRM estadística detenido al conectar UCI;funciones avanzadas completas no probadas','Autonomía real del estudiante: evaluación futura ydefensa']}
+    if fase1:
+        report['pendientes']=['Fase 2 no iniciada: calendario y pedagogía no revisados ni regenerados',
+                              'Teoría, notebooks y UAGRM: no ejecutados en esta corrida técnica',
+                              'Excel, Power BI Desktop y SQL Server: comprobación manual pendiente',
+                              'Autonomía del estudiante: evaluaciones y defensa pendientes']
+    if problemas_evidencia_final(report):
+        raise AssertionError('No se publica el informe: evidencia reservada del final')
     (ROOT/'10_VALIDACION/resultados_pruebas.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({'pruebas':len(tests),'fallos':report['fallos']},ensure_ascii=False))
     if report['fallos']:raise SystemExit(1)
 
-if __name__=='__main__':main()
+if __name__=='__main__':main(fase1='--fase1' in sys.argv)

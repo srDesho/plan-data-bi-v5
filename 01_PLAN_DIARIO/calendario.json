@@ -43,7 +43,22 @@
         10
       ]
     ],
-    "objetivo": "Escribir una consulta y un cálculo propio; comprender cliente/pedido/línea."
+    "objetivo": "Escribir una consulta y un cálculo propio; comprender cliente/pedido/línea.",
+    "preparaciones": [
+      "S1",
+      "P01"
+    ],
+    "preparacion_lectura_min": 16,
+    "nucleo": {
+      "obligatorio": [
+        "S1",
+        "P01"
+      ],
+      "refuerzo": [
+        "S10"
+      ],
+      "opcional": []
+    }
   },
   {
     "dia": 2,
@@ -97,7 +112,27 @@
     "lecciones": [
       "1.4",
       "7.6"
-    ]
+    ],
+    "preparaciones": [
+      "S2",
+      "P02",
+      "P03"
+    ],
+    "preparacion_lectura_min": 26,
+    "nucleo": {
+      "obligatorio": [
+        "S2",
+        "S7",
+        "P02",
+        "P03"
+      ],
+      "refuerzo": [
+        "S9"
+      ],
+      "opcional": [
+        "C01"
+      ]
+    }
   },
   {
     "dia": 3,
@@ -191,7 +226,11 @@
       ],
       "min": 20,
       "entrega": "Solo P04 (`cliente_diccionario`) con su corrector y su explicación en tres líneas. S4, S6 y P05 pasan a REFUERZO; los necesita D04 al entrar."
-    }
+    },
+    "preparaciones": [
+      "S4"
+    ],
+    "preparacion_lectura_min": 6
   },
   {
     "dia": 4,
@@ -564,11 +603,11 @@
     "bloques": [
       [
         "Lecciones",
-        55
+        60
       ],
       [
         "SQL",
-        35
+        30
       ],
       [
         "Práctica",
@@ -688,8 +727,8 @@
       "puerta": null
     },
     "lecciones": [
-      "8.4",
-      "8.3"
+      "8.3",
+      "8.4"
     ],
     "criterio": "AN05",
     "extendida_min": 75,
@@ -806,17 +845,18 @@
       "N01"
     ],
     "teoria": [
-      "06_KPIs"
+      "06_KPIs",
+      "09_Pandas_basico"
     ],
     "dataset": "drop_por_pedido.csv",
     "bloques": [
       [
         "Lecciones",
-        25
+        45
       ],
       [
         "Práctica",
-        90
+        70
       ],
       [
         "Criterio",
@@ -854,7 +894,8 @@
       "puerta": null
     },
     "lecciones": [
-      "6.1"
+      "6.1",
+      "9.2"
     ],
     "criterio": "AN07",
     "extendida_min": 75,
@@ -864,8 +905,12 @@
     "reducido_detalle": {
       "lecciones": [],
       "min": 55,
-      "entrega": "Solo P10 (`fecha_iso`) con sus tres formatos y tres entradas inválidas. P11 pasa a REFUERZO (la necesita el examen S02)."
-    }
+      "entrega": "Solo P10 (`fecha_iso`) con sus tres formatos y tres entradas inválidas. P11 pasa a REFUERZO (la necesita el examen S02). Si omites 9.2, recupera esa lectura antes de P17 (D15)."
+    },
+    "preparaciones": [
+      "AN07"
+    ],
+    "preparacion_lectura_min": 6
   },
   {
     "dia": 13,
@@ -989,7 +1034,7 @@
     "bloques": [
       [
         "Lecciones",
-        40
+        20
       ],
       [
         "SQL",
@@ -997,7 +1042,7 @@
       ],
       [
         "Práctica",
-        20
+        40
       ],
       [
         "Empleo/UAGRM",
@@ -1026,21 +1071,19 @@
       "puerta": null
     },
     "lecciones": [
-      "9.2",
       "9.3"
     ],
     "criterio": null,
     "extendida_min": 30,
     "entra": [
       "Cumpliste la Puerta 2 o hiciste su REFUERZO.",
-      "Lees un CSV con el módulo estándar y devuelves sus filas."
+      "Lees un CSV con el módulo estándar y devuelves sus filas.",
+      "Leíste 9.2 y reconoces Series, DataFrame, columnas y tipos; si hiciste D12 reducido, recupera esa lectura antes de P17."
     ],
     "reducido_detalle": {
-      "lecciones": [
-        "9.2"
-      ],
+      "lecciones": [],
       "min": 30,
-      "entrega": "Solo P17 (`cargar_pedidos`) con su corrector. La lección 9.3 (perfilado) pasa a REFUERZO y se retoma en D19."
+      "entrega": "Solo P17 (cargar_pedidos) con su corrector, tras recuperar 9.2 de D12 si falta. 9.3 (perfilado) pasa a REFUERZO y se necesita antes de 10.1/PD-BASE en D16 (y también de P23); no se da por leída con P17."
     }
   },
   {
@@ -1060,20 +1103,22 @@
       "P19"
     ],
     "estadistica": [],
-    "otros": [],
+    "otros": [
+      "PD-BASE"
+    ],
     "teoria": [
-      "09_Pandas_basico",
-      "10_Pandas_transformaciones"
+      "10_Pandas_transformaciones",
+      "09_Pandas_basico"
     ],
     "dataset": "pedido_items.csv",
     "bloques": [
       [
         "Lecciones",
-        42
+        47
       ],
       [
         "SQL",
-        40
+        35
       ],
       [
         "Práctica",
@@ -1095,6 +1140,7 @@
     "objetivo": "Quitar duplicados exactos y calcular el drop size por pedido en SQL.",
     "nucleo": {
       "obligatorio": [
+        "PD-BASE",
         "P22",
         "K1"
       ],
@@ -1110,19 +1156,21 @@
       "puerta": null
     },
     "lecciones": [
-      "9.5",
-      "10.1"
+      "10.1",
+      "9.5"
     ],
     "criterio": "AN08",
     "extendida_min": 75,
     "entra": [
       "Tu P17 carga `pedidos.csv` y puedes decir cuántas filas y columnas tiene sin mirar.",
-      "Unes tablas con SQL, filtras por estado y agrupas."
+      "Unes tablas con SQL, filtras por estado y agrupas.",
+      "Antes de AN08 recuperaste 11.3: calculas media, mediana y moda y dices qué representa una observación. D13 reducido no acreditaba esa lectura.",
+      "Recuperaste 9.3 de D15 (inspección de columnas, tipos y nulos) antes de 10.1/PD-BASE, también si ayer elegiste REDUCIDO."
     ],
     "reducido_detalle": {
       "lecciones": [],
       "min": 48,
-      "entrega": "Solo K1 (drop size de cada pedido entregado) con su control contra J2. P22 pasa a REFUERZO: la necesitan ME01 y el examen S03."
+      "entrega": "Solo K1 (drop size de cada pedido entregado) con su control contra J2. P22 pasa a REFUERZO: la necesitan ME01 y el examen S03. PD-BASE y las lecturas 10.1/9.5 quedan pendientes: recupera PD-BASE antes de D17 y de H03; P22 y la agrupación también se recuperan antes de acreditar P3."
     }
   },
   {
@@ -1144,6 +1192,7 @@
     ],
     "estadistica": [],
     "otros": [
+      "PD-AGR",
       "N02"
     ],
     "teoria": [
@@ -1176,6 +1225,7 @@
     "objetivo": "Pasar de líneas a pedidos con groupby y unir con un merge validado.",
     "nucleo": {
       "obligatorio": [
+        "PD-AGR",
         "P21"
       ],
       "repaso": [],
@@ -1203,14 +1253,14 @@
     "entra": [
       "Explicas qué hace agrupar por pedido y por qué el drop size se calcula sobre pedidos, no sobre líneas.",
       "Quitas duplicados exactos en Pandas y sabes por qué dos filas con la misma clave y distinto monto no lo son.",
-      "Creas una columna nueva calculada en un DataFrame."
+      "Demostraste en PD-BASE selección, filtros, conversiones y una columna nueva sin alterar el origen; la lectura sola no lo acredita."
     ],
     "reducido_detalle": {
       "lecciones": [
         "10.3"
       ],
       "min": 40,
-      "entrega": "P21 con los dos primeros criterios: unir con `merge(validate=\"many_to_one\")` conservando las filas de `pedidos` y detener el proceso con `ValueError` si el catálogo repite un cliente. El pedido huérfano (tercer criterio) y la lección 10.2 pasan a REFUERZO."
+      "entrega": "P21 con los dos primeros criterios: unir con `merge(validate=\"many_to_one\")` conservando las filas de `pedidos` y detener el proceso con `ValueError` si el catálogo repite un cliente. El pedido huérfano (tercer criterio) y la lección 10.2 pasan a REFUERZO. Recupera PD-AGR con 10.2 y el caso de huérfanos de P21 antes de H03 y S03; este REDUCIDO no acredita la Puerta 3."
     }
   },
   {
@@ -1454,7 +1504,8 @@
     "criterio": "H03",
     "extendida_min": 75,
     "entra": [
-      "Llegas con los OBLIGATORIOS de la semana (K1, P21–P23, V3, V4); lo que falte lo medirá el examen y se recupera con su REFUERZO."
+      "Llegas con los OBLIGATORIOS de la semana (K1, P21–P23, V3, V4); lo que falte lo medirá el examen y se recupera con su REFUERZO.",
+      "PD-BASE y PD-AGR están resueltos y explicados, incluido el cuadre de groupby; si los omitiste en REDUCIDO, recupéralos antes de H03 y S03."
     ],
     "reducido_detalle": {
       "lecciones": [],
@@ -2053,11 +2104,11 @@
     "bloques": [
       [
         "Lecciones",
-        25
+        30
       ],
       [
         "Práctica",
-        80
+        75
       ],
       [
         "Criterio",
@@ -2183,12 +2234,13 @@
     "extendida_min": 75,
     "entra": [
       "Puerta 5 cumplida o ETL en REFUERZO (Excel puede esperar).",
-      "Escribes una consulta que une líneas, pedidos y clientes y agrupa."
+      "Escribes una consulta que une líneas, pedidos y clientes y agrupa.",
+      "Para realizar EX01, recuperaste 15.3 de D29 (tabla dinámica y cuadre). Si hoy haces solo E4 en REDUCIDO, Excel y esa lectura pueden esperar; no se acredita P6."
     ],
     "reducido_detalle": {
       "lecciones": [],
       "min": 40,
-      "entrega": "E4, la consulta de cuadre por ruta. La tabla dinámica de Excel (EX01) pasa a REFUERZO, o queda PENDIENTE si no tienes Excel."
+      "entrega": "E4, la consulta de cuadre por ruta. La tabla dinámica de Excel (EX01) pasa a REFUERZO, o queda PENDIENTE si no tienes Excel. Recupera 15.3 antes de EX01; las fórmulas avanzadas de 15.2 son consulta."
     }
   },
   {
@@ -2278,7 +2330,11 @@
       ],
       "min": 25,
       "entrega": "PB01 mínimo: importa las tablas que usarán las tres medidas y verifica tipos y conteos. PB02 (relaciones) pasa a REFUERZO. Sin Power BI Desktop: lee 14.1 y registra la parte práctica como PENDIENTE."
-    }
+    },
+    "preparaciones": [
+      "PB02"
+    ],
+    "preparacion_lectura_min": 4
   },
   {
     "dia": 33,

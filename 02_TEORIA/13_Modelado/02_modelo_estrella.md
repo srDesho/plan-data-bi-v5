@@ -1,6 +1,6 @@
 # 13.2 El modelo estrella: relaciones y varios hechos
 
-> Tiempo estimado: 60 min (lectura 25 + práctica 35). Prerrequisito: [13.1 Hechos y dimensiones](01_hechos_dimensiones.md).
+> Tiempo estimado: 65 min (lectura 30 + práctica 35). Prerrequisito: hechos, dimensiones y granularidad, introducidos a continuación; [13.1 Hechos y dimensiones](01_hechos_dimensiones.md) queda como REFUERZO.
 
 ## Para qué sirve
 
@@ -8,6 +8,9 @@ Cuando ya tienes hechos y dimensiones, hay que **conectarlos** de forma que filt
 
 ## Términos nuevos
 
+- **Tabla de hechos**: registra eventos medibles y las claves que permiten describirlos. En `fact_ventas`, una fila es una línea de venta; cantidad e importe son sus medidas.
+- **Tabla de dimensión**: describe el contexto de esos eventos. En `dim_tienda`, una fila es una tienda con clave única y atributos como nombre o zona; esa tienda puede aparecer en muchas líneas del hecho.
+- **Granularidad o grano**: qué representa exactamente una fila. Se decide antes de relacionar: una línea de venta, una visita o una meta por ruta y mes son granos distintos.
 - **Modelo estrella** (*star schema*): un diseño con una o más tablas de hechos en el centro y sus dimensiones alrededor, como los puntos de una estrella. Cada relación va de una dimensión (lado «uno») al hecho (lado «muchos»).
 - **Relación uno a muchos (1:*)**: una fila de la dimensión corresponde a muchas filas del hecho.
 - **Dirección del filtro**: el sentido en que un filtro viaja entre tablas. Lo normal es de la dimensión hacia el hecho (en un solo sentido).
@@ -17,6 +20,10 @@ Cuando ya tienes hechos y dimensiones, hay que **conectarlos** de forma que filt
 - **Copo de nieve** (*snowflake*): variante donde las dimensiones se dividen en subdimensiones. En este curso se usa el diseño estrella simple.
 
 ## Ejemplo paso a paso
+
+**Antes de dibujar relaciones: distinguir evento, contexto y grano.** Con las tablas de la mini-base, explica sin mirar el párrafo siguiente qué representa una fila de `venta_lineas`, de `tiendas` y de `metas`. ¿Cuál registra el evento que sumas, cuál lo describe y en cuál necesitas dos columnas para identificar una fila? Predice qué ocurriría si copiaras una meta mensual en cada línea de venta de su ruta.
+
+Comprobación: `venta_lineas` prepara el hecho de ventas con grano de línea; `tiendas` prepara una dimensión con una fila por tienda y clave `tienda_id`; `metas` prepara otro hecho con una cifra por pareja `(mes, ruta)`. La meta no pertenece a cada línea: repetirla allí inflaría su suma. Mantener los hechos separados y conectarlos por dimensiones compartidas conserva su significado.
 
 Modelo del curso (adaptado a la mini-base):
 

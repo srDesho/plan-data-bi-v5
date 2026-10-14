@@ -1,6 +1,6 @@
 # 10.1 Columnas nuevas y transformaciones
 
-> Tiempo estimado: 55 min (lectura 20 + práctica 35). Prerrequisitos: capítulo 9 completo (sobre todo 9.4 y 9.6).
+> Tiempo estimado: 60 min (lectura 25 + práctica 35). Prerrequisitos: [9.2 Series y DataFrame](../09_Pandas_basico/02_series_dataframe_csv.md), [9.3 Inspeccionar](../09_Pandas_basico/03_inspeccionar.md) y [7.7 Conversiones](../07_Python_basico/07_conversiones.md).
 
 ## Para qué sirve
 
@@ -16,6 +16,45 @@ Los datos crudos casi nunca traen lo que necesitas: el importe de cada línea, e
 - **`apply`**: ejecuta una función Python sobre cada elemento (o fila). Es flexible pero **lenta**; se usa solo si no hay una operación vectorizada.
 - **`assign`**: crea columnas nuevas y devuelve una tabla nueva, sin tocar la original.
 - **Alineación por índice**: cuando operas dos Series, Pandas empareja los valores por su **etiqueta de índice**, no por su posición.
+
+## Puente antes de transformar
+
+Este puente enseña lo necesario para seleccionar, filtrar y convertir antes de crear columnas. En D16 se lee antes de 9.5; las lecciones 9.4 y 9.6 siguen como REFUERZO para ampliar estas operaciones. NumPy no es un requisito: más abajo se explican las dos funciones que se usan en los ejemplos.
+
+1. **Seleccionar columnas.** `df["precio"]` devuelve una Series; `df[["id", "precio"]]` devuelve una tabla con esas dos columnas. Una lista dentro de los corchetes elige varias columnas.
+2. **Filtrar filas.** `df["estado"] == "entregado"` produce una máscara booleana: una respuesta `True` o `False` por fila. `df.loc[mascara, ["id", "precio"]]` conserva las filas verdaderas y las columnas elegidas. Para combinar condiciones usa `&` o `|`, con cada comparación entre paréntesis; no uses `and`/`or` con Series. `columna.isin(["A", "B"])` comprueba pertenencia a una lista.
+3. **Trabajar con una copia.** Añade `.copy()` al subconjunto antes de modificarlo. Así conservas la tabla cruda y puedes comparar sus columnas y valores al terminar.
+4. **Texto y tipos.** `.str.strip().str.lower()` quita espacios externos y normaliza mayúsculas de una columna de texto. `pd.to_numeric(columna, errors="coerce")` convierte texto a número; lo inválido pasa a `NaN`. `astype(tipo)` fuerza un tipo y falla si algún valor no encaja: no lo uses para ocultar un inválido ni para truncar cantidades.
+5. **Fechas y faltantes.** `pd.to_datetime(columna, format="%Y-%m-%d", errors="coerce")` interpreta año-mes-día; una fecha inválida pasa a `NaT`, el faltante de las fechas. `isna()` detecta tanto `NaN` como `NaT`; `notna()` marca los valores presentes. Cuenta y conserva las filas inválidas con su causa antes de apartarlas del cálculo. Con fechas válidas, `.dt.strftime("%Y-%m")` obtiene el mes como texto.
+
+Una conversión no demuestra que los datos cumplan todas las reglas del negocio. Antes de multiplicar, comprueba tipos y faltantes; no rellenes con cero, no adivines formatos ni trunques cantidades. Después contrasta una fila y el total con un cálculo a mano.
+
+## Puente BASE Pandas
+
+<a id="puente-base-pandas"></a>
+
+**Checkpoint obligatorio de D16 · 10 minutos de práctica, antes de P22 y de avanzar a D17.** Son los primeros 10 minutos de los 35 de práctica de esta lección; los otros 25 son REFUERZO. La guía los cuenta una sola vez como `PD-BASE`.
+
+Construye un DataFrame pequeño con estos datos inventados; `cantidad`, `precio` y `fecha` entran como texto:
+
+| id | estado | cantidad | precio | fecha |
+|---|---|---|---|---|
+| A | ` entregado ` | `2` | `4.50` | `2026-10-01` |
+| B | `anulado` | `3` | `5.00` | `2026-10-02` |
+| C | `entregado` | `x` | `7.00` | `no-fecha` |
+
+1. Antes de ejecutar, escribe qué IDs sobrevivirán al filtro de entregados y cuáles tendrán un número o una fecha inválidos.
+2. Normaliza el estado en una copia; selecciona las columnas necesarias y filtra entregados con una máscara. Explica la diferencia entre seleccionar columnas y filtrar filas.
+3. Convierte cantidad, precio y fecha con las reglas del puente. Cuenta los faltantes resultantes, conserva las filas inválidas y anota sus causas; no las pierdas ni las conviertas en cero.
+4. En las filas válidas crea `importe = cantidad × precio` y `mes`. Comprueba una fila a mano y que el DataFrame crudo conserva sus columnas y textos originales.
+
+<details><summary>Control, solo después de predecir y ejecutar</summary>
+
+El filtro conserva A y C. C tiene cantidad inválida y fecha inválida; esas dos causas corresponden a una sola fila apartada. Queda A para calcular: importe Bs 9,00 y mes `2026-10`. El estado crudo de A todavía tiene sus espacios y el precio sigue siendo el texto `4.50` en la tabla original.
+
+</details>
+
+Guarda tu predicción, las comprobaciones y una explicación breve junto al trabajo del día. Si hiciste D16 en REDUCIDO, este checkpoint queda pendiente: recupéralo con su lectura antes de usar filtros, conversiones o columnas en las tareas siguientes. Un OK de P22 no acredita este checkpoint.
 
 ## Ejemplo paso a paso
 
@@ -236,6 +275,8 @@ Ejemplo comercial: el reporte necesita `importe`, `mes`, `segmento_cliente` y `e
 </details>
 
 ## Micropráctica
+
+Los 35 minutos de práctica se reparten entre el checkpoint BASE anterior (10 min) y esta ampliación REFUERZO (25 min); no se suman dos veces. La ampliación no sustituye el checkpoint con datos nuevos.
 
 Con `venta_lineas.csv` y `articulos.csv`:
 

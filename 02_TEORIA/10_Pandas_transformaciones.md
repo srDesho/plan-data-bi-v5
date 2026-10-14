@@ -2,7 +2,7 @@
 
 Con las tablas ya leídas y perfiladas (capítulo 9), aquí las **transformas**: columnas derivadas, agregaciones por grupo, uniones con control de cardinalidad, tablas de resumen exportadas y, sobre todo, **controles de calidad y reconciliación**. El capítulo termina con un catálogo de errores silenciosos (un merge que duplica importes, un `groupby` que pierde filas con clave vacía) y la forma de detectarlos. Es la base del mini-ETL y del ETL final.
 
-**Tiempo total estimado de primera vez:** unas 6 h 0 min (6 lecciones). Se reparte con los ejercicios P21–P28.
+**Tiempo total estimado de primera vez:** unas 6 h 5 min (6 lecciones). Se reparte con los ejercicios P21–P28.
 
 **Antes de empezar:** el [capítulo 9](09_Pandas_basico.md) completo y la lección 3.4 de SQL (cuando el JOIN duplica).
 
@@ -10,7 +10,7 @@ Con las tablas ya leídas y perfiladas (capítulo 9), aquí las **transformas**:
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 10.1 | [Columnas nuevas y transformaciones](10_Pandas_transformaciones/01_columnas_nuevas.md) | vectorizar, `np.where`/`np.select`, `map`, `.str`, `.dt`, `assign`, alineación por índice | núcleo · D16 | 55 min |
+| 10.1 | [Columnas nuevas y transformaciones](10_Pandas_transformaciones/01_columnas_nuevas.md) | vectorizar, `np.where`/`np.select`, `map`, `.str`, `.dt`, `assign`, alineación por índice | núcleo · D16 | 60 min |
 | 10.2 | [groupby y agregaciones](10_Pandas_transformaciones/02_groupby_agg.md) | `size`/`count`/`nunique`, agregación con nombre, `transform`, `pivot_table`, `dropna` | núcleo · D17 | 60 min |
 | 10.3 | [merge y cardinalidad](10_Pandas_transformaciones/03_merge_cardinalidad.md) | `validate`, `indicator`, huérfanas, agregar antes de unir | núcleo · D17 | 65 min |
 | 10.4 | [Tablas de resumen y exportación](10_Pandas_transformaciones/04_resumen_y_exportacion.md) | `to_csv`, `to_sql`, idempotencia, orden determinista | refuerzo | 55 min |

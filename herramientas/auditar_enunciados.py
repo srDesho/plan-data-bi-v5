@@ -298,10 +298,8 @@ def auditar_final():
     h = json.loads(leer(carpeta / 'verificacion/huellas_final.json'))
     if 'valor' in json.dumps(h['escalares']).lower() or not all(len(v) == 16 for v in h['escalares'].values()):
         problemas.append('huellas_final.json publica valores en lugar de huellas')
-    datos = leer(carpeta / 'datos/DICCIONARIO.md') + leer(carpeta / 'RUBRICA.md') + enun
-    for etiqueta, v in (('conteo de Silver', '5441'), ('conteo de rechazos', '5555'), ('ventas esperadas', '1835919128'), ('ventas esperadas', '18359191')):
-        if v in datos:
-            problemas.append(f'los documentos del final publican un resultado esperado ({etiqueta}: {v})')
+    from privacidad_final import auditar_artefactos
+    problemas.extend(auditar_artefactos(ROOT))
     return problemas, len(prohibidos)
 
 

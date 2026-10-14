@@ -134,8 +134,13 @@ def validar(path, huellas=None, datos=None):
         inf.diferencias('Silver coincide fila por fila con el resultado esperado', oraculo.comparar('silver', silver[clave + e['silver']['columnas']]))
         # Gold
         g = e['gold']
-        f = tiene_columnas(gold_raw, ['cliente', 'mes', 'pedidos', 'unidades', 'ventas_bs'])
-        if inf.comprobar(not f, 'Gold tiene las columnas del contrato', f'faltan {f}') and not gold_raw[['cliente', 'mes', 'pedidos', 'unidades', 'ventas_bs']].isna().any().any():
+        obligatorias_gold = ['cliente', 'mes', 'pedidos', 'unidades', 'ventas_bs']
+        f = tiene_columnas(gold_raw, obligatorias_gold)
+        if inf.comprobar(not f, 'Gold tiene las columnas del contrato', f'faltan {f}'):
+            columnas_nulas = gold_raw[obligatorias_gold].isna().any()
+            con_nulos = columnas_nulas[columnas_nulas].index.tolist()
+            if not inf.comprobar(not con_nulos, 'Gold sin valores NULL en columnas obligatorias', f'columnas con NULL: {con_nulos}'):
+                return inf.cerrar()
             gold = preparar_gold(gold_raw)
             inf.comprobar(not gold.duplicated(g['clave']).any(), 'Gold sin cliente+mes repetidos')
             inf.comprobar(gold['mes'].astype(str).str.fullmatch(r'\d{4}-(0[1-9]|1[0-2])').all(), 'Gold.mes es AAAA-MM válido')

@@ -18,7 +18,38 @@
 - **`transform`**: calcula una agregación por grupo pero devuelve un resultado **del tamaño original** (una fila por fila de entrada); sirve para porcentajes del grupo.
 - **Tabla dinámica** (`pivot_table`): resumen con una variable en filas y otra en columnas.
 
+## Agrupación BASE sin merge
+
+<a id="agrupacion-base-sin-merge"></a>
+
+**Checkpoint obligatorio de D17 · 10 minutos de práctica, antes de P21 y del hito H03.** Son los primeros 10 minutos de los 40 de práctica de esta lección; los otros 30 son REFUERZO. La guía los cuenta una sola vez como `PD-AGR`.
+
+No necesitas unir tablas para aprender a agrupar. El patrón `tabla.groupby("grupo", as_index=False)["valor"].sum()` elige una columna que identifica los grupos, suma `valor` dentro de cada grupo y devuelve una fila por grupo. `as_index=False` mantiene la clave como columna del resultado. Antes de agrupar debes saber qué representa una fila y qué sumas.
+
+Construye una tabla con estas tres líneas inventadas:
+
+| pedido | cantidad | precio_unitario |
+|---|---:|---:|
+| A | 1 | 10 |
+| A | 2 | 5 |
+| B | 3 | 4 |
+
+1. Sin ejecutar, calcula el importe de cada línea, el de cada pedido, el total y cuántas filas tendrá el resumen.
+2. Crea la columna de importe con lo practicado en `PD-BASE`; agrupa por pedido y suma. No uses un bucle ni un merge para esta comprobación.
+3. Comprueba que hay una fila por pedido, que la clave sigue como columna y que la suma de los grupos coincide con la suma de las líneas.
+4. Explica qué cambiaría si añadieras otra línea al pedido A: ¿cambia el número de grupos o solo el importe de A?
+
+<details><summary>Control, solo después de predecir y ejecutar</summary>
+
+Los importes de las líneas son 10, 10 y 12. El resumen tiene dos filas: A suma 20 y B suma 12; ambos caminos dan total 32. Otra línea de A modifica su importe y conserva los dos grupos.
+
+</details>
+
+Registra la predicción, el resumen y el cuadre junto al trabajo del día. Si REDUCIDO deja 10.2 y este checkpoint pendientes, recupéralos antes de H03 y de las tareas Gold: la agrupación en SQL o una lectura sin ejecución no demuestra todavía que sabes escribirla en Pandas.
+
 ## Ejemplo paso a paso
+
+**Orden de lectura en BASE:** aprende primero el checkpoint sin uniones y los ejemplos 1 y 4–6. Después de leer 10.3, ese mismo día, retoma la preparación y los ejemplos integrados 2–3 que usan `merge`. Los bloques se conservan completos para que puedas ejecutarlos; no se exige conocer una unión de Pandas antes de estudiarla.
 
 Preparamos el importe por línea y traemos el estado y la fecha de la venta:
 
@@ -262,6 +293,8 @@ Ejemplo comercial: «ventas, ventas distintas y ticket por ruta» es el `agg` de
 </details>
 
 ## Micropráctica
+
+Los 40 minutos de práctica incluyen el checkpoint BASE anterior (10 min) y esta ampliación REFUERZO (30 min); no se suman dos veces. Esta ampliación integra agrupación y uniones, por lo que se hace después de 10.3.
 
 Con las líneas entregadas unidas a artículos (necesitas `articulos.csv`):
 

@@ -12,6 +12,7 @@ import json
 import sqlite3
 import subprocess
 import sys
+import tempfile
 from contextlib import closing
 
 RAIZ = Path(__file__).resolve().parents[1]
@@ -277,8 +278,11 @@ def ejecutar(raiz, tipo, contenido, id_):
     if tipo == 'sql':
         with closing(sqlite3.connect(f'file:{raiz / DB}?mode=ro', uri=True)) as c:
             return [list(f) for f in c.execute(contenido).fetchall()]
-    r = subprocess.run([sys.executable, '-I', '-X', 'utf8', '-c', contenido], capture_output=True, text=True, encoding='utf-8', cwd=raiz,
-                       env={'PYTHONIOENCODING': 'utf-8', 'SYSTEMROOT': r'C:\Windows'} if sys.platform == 'win32' else {'PYTHONIOENCODING': 'utf-8'})
+    entorno = {'PYTHONIOENCODING': 'utf-8', 'TEMP': tempfile.gettempdir(), 'TMP': tempfile.gettempdir()}
+    if sys.platform == 'win32':
+        entorno['SYSTEMROOT'] = r'C:\Windows'
+    r = subprocess.run([sys.executable, '-I', '-B', '-X', 'utf8', '-c', contenido], capture_output=True, text=True, encoding='utf-8', cwd=raiz,
+                       env=entorno)
     assert r.returncode == 0, f'{id_}: {r.stderr[-500:]}'
     return r.stdout.rstrip('\n')
 
