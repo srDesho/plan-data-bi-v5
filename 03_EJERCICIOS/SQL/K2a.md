@@ -37,7 +37,7 @@ Entrega: `mi_trabajo/sql/K2a.sql` y una interpretación de dos frases: qué mide
 ## Pistas (en este orden, solo cuando las necesites)
 
 1. **Orientación.** Hay dos niveles: primero el valor de cada pedido, después el promedio de esos valores.
-2. **Concepto SQL.** Una subconsulta en FROM (o un CTE) permite calcular primero el valor por pedido y promediar después (capítulo 02, «El denominador decide…»).
+2. **Concepto SQL.** Una subconsulta en FROM (o un CTE) permite calcular primero el valor por pedido y promediar después (lecciones 2.3 «Granularidad y denominadores» y 4.2 «CTE»).
 3. **Si no cuadra.** Si promedias directamente cantidad × precio sobre las líneas, mides el valor medio de una línea (unos 100 Bs), no de una entrega.
 
 Método: intenta 10 minutos antes de leer la primera pista y depura otros 10 antes de la tercera.

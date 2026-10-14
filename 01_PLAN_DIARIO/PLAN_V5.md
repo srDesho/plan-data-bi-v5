@@ -8,6 +8,8 @@ El programa no garantiza empleo ni autonomía profesional avanzada en seis seman
 
 **Revisión 5.1 (tras la auditoría):** cada jornada separa ejercicios OBLIGATORIOS, REFUERZO y OPCIONALES, el avance depende de puertas de competencia ([Competencias y puertas](COMPETENCIAS.md)) y se añadieron un mini-ETL y tres ejercicios de depuración antes del ETL grande. Las fechas son objetivos, no plazos. D01 y D02 no cambiaron.
 
+**Revisión 5.2 (Fase 2, Etapa 2):** las 100 lecciones de la teoría están clasificadas (NÚCLEO, REFUERZO y PROFUNDIZACIÓN) y las lecciones NÚCLEO tienen día; el bloque de aprendizaje de cada jornada se reparte entre lecciones, SQL, práctica y criterio analítico; cada puerta exige un hito de comprensión; la ruta EXTENDIDA es voluntaria y los domingos son flexibles. Siguen vigentes el Plan v5, sus 42 jornadas y sus fechas. D01 no cambió y D02 solo recibió un bloque de lecciones. Detalle: [Rutas BASE y EXTENDIDA](RUTAS.md).
+
 ## Carga y modalidades
 
 15 horas semanales netas: **900 minutos**, incluyendo empleo, entrevistas y documentación.
@@ -22,11 +24,23 @@ Añade descansos de diez minutos cada 45–50 minutos; son pausas, no actividade
 | Jueves |150 min|60 min|20 min|
 | Viernes |150 min|60 min|20 min|
 | Sábado |200 min|60 min|20 min|
-| Domingo |Descanso, 0 min|Descanso, 0 min|Descanso, 0 min|
+| Domingo |Descanso (0 min obligatorios)|Descanso|Descanso|
 
 Las modalidades son alternativas de la misma jornada. MÍNIMO: quince minutos de SQL conocido y cinco de
 validación/reflexión. No pretende cubrir contenidos nuevos. Si necesitas descansar, el descanso reemplaza la sesión.
-Un domingo no requiere consulta, publicación ni commit. No se genera una deuda de horas.
+Un domingo no requiere consulta, publicación ni commit. Si tienes energía puedes usar **45–120 minutos voluntarios** en una sola opción (recuperación de un REFUERZO o una lección de EXTENDIDA); si no, descansas. No se genera una deuda de horas.
+
+## Rutas BASE y EXTENDIDA
+
+Las 100 lecciones de `02_TEORIA` suman unas 91 horas y no caben en seis semanas junto con los ejercicios. Cada lección está clasificada como **NÚCLEO** (indispensable; su lectura cuenta dentro de las 15 horas y tiene día), **REFUERZO** (se lee si una competencia no está dominada) o **PROFUNDIZACIÓN** (EXTENDIDA u otros periodos); todas permanecen como material de consulta. La guía de cada día lista las lecciones NÚCLEO del día y los minutos de lectura; el bloque de aprendizaje se reparte entre **Lecciones**, **SQL**, **Práctica** y **Criterio**.
+
+- **BASE:** 900 minutos por semana (15 horas), con la estimación de primera vez en [Carga estimada](CARGA_ESTIMADA.md). Si una semana no cabe, usa REDUCIDO y mueve la puerta sin acumular horas.
+- **EXTENDIDA:** BASE más hasta 30–75 minutos voluntarios por jornada (lunes a sábado) y un domingo opcional de 45–120 minutos: entre 20 y 25 horas por semana. Nunca es obligatoria.
+- Detalle completo (42 jornadas, teoría obligatoria frente a práctica, horas por semana y prerrequisitos): [Rutas BASE y EXTENDIDA](RUTAS.md).
+
+## Criterio analítico y comprensión
+
+Calcular no basta: debes entender qué significa cada indicador y cuándo usarlo. De martes a viernes hay una actividad de **criterio analítico** de 15 minutos (`03_EJERCICIOS/Analitico/`): definir el problema de negocio, elegir el KPI, comparar resultados, analizar tendencias, reconocer datos insuficientes, separar hechos de hipótesis y redactar recomendaciones a gerencia; incluye media, mediana, moda, dispersión, percentiles, cuartiles, ABC, cumplimiento, cobertura, efectividad y productividad. Cada puerta exige además un **hito de comprensión** (`03_EJERCICIOS/Comprension/`): explicar, predecir un resultado, resolver una variante nueva y justificar una decisión, sin copiar soluciones.
 
 ## Método de estudio y prioridad
 
@@ -48,8 +62,8 @@ Lee [Hitos y recuperación](HITOS_Y_RECUPERACION.md) y [Competencias y puertas](
 | Semana | Fechas | Resultado verificable | Horas |
 |---|---|---|---:|
 |1|12–18 octubre|Filtros/agregación, Python básico, KPIs, CV inicial y S01 (Puerta 1)|15|
-|2|19–25 octubre|JOIN, funciones con errores, archivos, primer Pandas y S02 (Puerta 2)|15|
-|3|26 octubre–1 noviembre|Pandas con merge validado, duplicados y perfilado; subconsultas, ventanas/ABC y clientes inactivos; S03 (Puerta 3)|15|
+|2|19–25 octubre|JOIN, funciones con errores, archivos CSV, media/mediana/moda y S02 (Puerta 2)|15|
+|3|26 octubre–1 noviembre|Primer DataFrame, merge validado, duplicados y perfilado; CTE, ventanas y ABC; S03 (Puerta 3)|15|
 |4|2–8 noviembre|Mini-ETL (Puerta 4) y ETL guiado desde el contrato hasta claves y duplicados; checkpoint S04 (Puerta 5a)|15|
 |5|9–15 noviembre|ETL guiado completo (Puerta 5); Excel y Power BI en alcance mínimo (Puerta 6); S05|15|
 |6|16–22 noviembre|Caso nuevo C06 en cinco bloques, defensa y S06 (Puerta 7)|15|
@@ -91,15 +105,15 @@ Guarda consultas, scripts y explicaciones propios en GitHub; los borradores y re
 ### Semana 2
 
 
-- [ ] **D08 · 19/10 lunes:** [Funciones y formatos: errores visibles](dias/D08_2026-10-19.md) · C 90 / R 45 / M 20 min.
+- [ ] **D08 · 19/10 lunes:** [Funciones con contrato y condiciones](dias/D08_2026-10-19.md) · C 90 / R 45 / M 20 min.
 
-- [ ] **D09 · 20/10 martes:** [Fechas, cantidades y primer JOIN](dias/D09_2026-10-20.md) · C 160 / R 60 / M 20 min.
+- [ ] **D09 · 20/10 martes:** [Primer JOIN y errores visibles](dias/D09_2026-10-20.md) · C 160 / R 60 / M 20 min.
 
-- [ ] **D10 · 21/10 miércoles:** [Ventas agrupadas y archivos CSV](dias/D10_2026-10-21.md) · C 150 / R 60 / M 20 min.
+- [ ] **D10 · 21/10 miércoles:** [Funciones que convierten y archivos CSV](dias/D10_2026-10-21.md) · C 150 / R 60 / M 20 min.
 
-- [ ] **D11 · 22/10 jueves:** [Ausencia, errores y catálogo por ruta](dias/D11_2026-10-22.md) · C 150 / R 60 / M 20 min.
+- [ ] **D11 · 22/10 jueves:** [Ausencia con LEFT JOIN](dias/D11_2026-10-22.md) · C 150 / R 60 / M 20 min.
 
-- [ ] **D12 · 23/10 viernes:** [Primer DataFrame y estadística del drop](dias/D12_2026-10-23.md) · C 150 / R 60 / M 20 min.
+- [ ] **D12 · 23/10 viernes:** [Fechas, cantidades y leer un error](dias/D12_2026-10-23.md) · C 150 / R 60 / M 20 min.
 
 - [ ] **D13 · 24/10 sábado:** [Examen de JOIN y conciliación](dias/D13_2026-10-24.md) · C 200 / R 60 / M 20 min.
 
@@ -112,15 +126,15 @@ Guarda consultas, scripts y explicaciones propios en GitHub; los borradores y re
 ### Semana 3
 
 
-- [ ] **D15 · 26/10 lunes:** [Pandas y monto por línea](dias/D15_2026-10-26.md) · C 90 / R 45 / M 20 min.
+- [ ] **D15 · 26/10 lunes:** [Primer DataFrame y perfilado](dias/D15_2026-10-26.md) · C 90 / R 45 / M 20 min.
 
-- [ ] **D16 · 27/10 martes:** [Ticket y agrupación en Pandas](dias/D16_2026-10-27.md) · C 160 / R 60 / M 20 min.
+- [ ] **D16 · 27/10 martes:** [Duplicados exactos y drop size](dias/D16_2026-10-27.md) · C 160 / R 60 / M 20 min.
 
-- [ ] **D17 · 28/10 miércoles:** [Subconsultas y merge validado](dias/D17_2026-10-28.md) · C 150 / R 60 / M 20 min.
+- [ ] **D17 · 28/10 miércoles:** [Agrupar y unir con validación](dias/D17_2026-10-28.md) · C 150 / R 60 / M 20 min.
 
-- [ ] **D18 · 29/10 jueves:** [Subconsultas y perfilado de datos](dias/D18_2026-10-29.md) · C 150 / R 60 / M 20 min.
+- [ ] **D18 · 29/10 jueves:** [CTE y concentración de ventas](dias/D18_2026-10-29.md) · C 150 / R 60 / M 20 min.
 
-- [ ] **D19 · 30/10 viernes:** [Ventanas y clientes inactivos](dias/D19_2026-10-30.md) · C 150 / R 60 / M 20 min.
+- [ ] **D19 · 30/10 viernes:** [ABC, perfilado y criterio](dias/D19_2026-10-30.md) · C 150 / R 60 / M 20 min.
 
 - [ ] **D20 · 31/10 sábado:** [Examen Pandas y SQL intermedio](dias/D20_2026-10-31.md) · C 200 / R 60 / M 20 min.
 
@@ -158,7 +172,7 @@ Guarda consultas, scripts y explicaciones propios en GitHub; los borradores y re
 
 - [ ] **D30 · 10/11 martes:** [ETL guiado (4): Gold, carga y cuadre SQL](dias/D30_2026-11-10.md) · C 160 / R 60 / M 20 min.
 
-- [ ] **D31 · 11/11 miércoles:** [Excel y modificar tu mini-ETL](dias/D31_2026-11-11.md) · C 150 / R 60 / M 20 min.
+- [ ] **D31 · 11/11 miércoles:** [Excel: tabla dinámica y cuadre](dias/D31_2026-11-11.md) · C 150 / R 60 / M 20 min.
 
 - [ ] **D32 · 12/11 jueves:** [Power BI (1): importar y relacionar](dias/D32_2026-11-12.md) · C 150 / R 60 / M 20 min.
 

@@ -1,0 +1,13 @@
+tienda_id,nombre,tipo,zona,ruta,fecha_alta
+1,Tienda La Palma,Tienda de barrio,Norte,R01,2025-02-10
+2,Kiosco El Faro,Kiosco,Centro,R01,2025-03-01
+3,Farmacia Salud,Farmacia,Centro,R02,2025-03-15
+4,Minimarket Sol Naciente,Minimarket,Norte,R02,2025-05-20
+5,  Kiosco La Esquina ,Kiosco,,R03,2025-06-02
+6,Restaurante Sabor,Restaurante,Equipetrol,R03,2025-06-18
+7,Tienda Don Pepe,Tienda de barrio,Plan 3000,R01,2025-07-07
+8,Farmacia Vida,Farmacia,,R02,2025-08-11
+9,Minimarket Central,Minimarket,Centro,R03,2025-09-09
+10,Kiosco Luna,Kiosco,Norte,R01,2025-10-30
+11,Tienda Nueva Esperanza,Tienda de barrio,Plan 3000,R03,2026-01-15
+12,Restaurante El Buen Gusto,Restaurante,Centro,R02,2026-02-20

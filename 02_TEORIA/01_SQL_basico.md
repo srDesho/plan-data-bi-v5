@@ -1,29 +1,36 @@
-# SQL desde cero: una pregunta, una tabla y un resultado
+# Capítulo 1 — SQL desde cero: una pregunta, una tabla y un resultado
 
-Una base de datos guarda tablas. Una tabla tiene filas y columnas; una fila debe representar algo concreto. En `clientes`, una fila representa un cliente y `cliente_id` lo identifica. En `pedidos`, una fila es un pedido. En `pedido_items`, una fila es un producto dentro de un pedido. Antes de escribir SQL di en voz alta qué representa una fila de tu resultado.
+Este capítulo te enseña a leer una tabla y a pedirle datos con `SELECT`, `WHERE`, `ORDER BY`, `LIMIT`, `DISTINCT` y `LIKE`, sin saber nada de bases de datos. Todos los ejemplos usan la **mini-base inventada** de `04_DATASETS/mini_base/` ([README](../04_DATASETS/mini_base/README.md)), no los datos de los ejercicios.
 
-SQL describe el conjunto que quieres obtener. No necesitas recorrer filas con un bucle. `SELECT` elige columnas; `FROM` indica la tabla; `WHERE` conserva las filas cuya condición es verdadera. El resultado es otra tabla, incluso si tiene una sola fila. Leer datos no exige modificarlos.
+**Tiempo total estimado:** unos 5 h de primera vez (lectura y micropráctica de las 7 lecciones). No lo hagas de una sola vez: una o dos lecciones por sesión y después los ejercicios.
 
-```sql
-SELECT cliente_id, nombre_negocio, ruta
-FROM clientes
-WHERE ruta = 'R03'
-ORDER BY cliente_id
-LIMIT 5;
-```
+## Lecciones
 
-La consulta busca clientes de R03, ordena por código y muestra cinco. Los textos van entre comillas simples. Los nombres de columnas no son textos. `=` compara, no asigna. El punto y coma termina la sentencia. `ORDER BY` permite que el orden sea intencional; sin él no existe un orden garantizado. `LIMIT` recorta filas después del ordenamiento; no sirve para contar toda la población.
+| # | Lección | Qué aprendes | Tipo | Tiempo |
+|---|---|---|---|---|
+| 1.1 | [Tablas, filas, columnas y tipos](01_SQL_basico/01_tablas_filas_columnas.md) | base de datos, tabla, fila, columna, clave primaria, granularidad, NULL | refuerzo | 45 min |
+| 1.2 | [SELECT, FROM, alias](01_SQL_basico/02_select_from_alias.md) | elegir columnas, alias, columnas calculadas | refuerzo | 45 min |
+| 1.3 | [WHERE y operadores](01_SQL_basico/03_where_operadores.md) | condiciones, AND/OR/NOT, IN, BETWEEN, paréntesis | refuerzo | 50 min |
+| 1.4 | [NULL](01_SQL_basico/04_null.md) | IS NULL, lógica de tres valores, filas que se pierden | núcleo · D02 | 40 min |
+| 1.5 | [ORDER BY y LIMIT](01_SQL_basico/05_order_limit.md) | orden, desempates, Top N, OFFSET | refuerzo | 40 min |
+| 1.6 | [DISTINCT y LIKE](01_SQL_basico/06_distinct_like.md) | valores únicos, patrones, datos sucios | núcleo · D03 | 40 min |
+| 1.7 | [Del requerimiento a la consulta](01_SQL_basico/07_del_requerimiento_a_la_consulta.md) | método de cinco preguntas, verificación | refuerzo | 40 min |
 
-Combina condiciones con `AND` cuando ambas deban cumplirse y `OR` cuando baste una. Usa paréntesis: `ruta='R01' AND (tipo='Kiosco' OR tipo='Farmacia')`. `IN` simplifica alternativas de una misma columna. `BETWEEN` incluye ambos extremos. `LIKE '%sol%'` busca un patrón de texto, pero su comportamiento con acentos y mayúsculas depende del motor y la configuración.
+## Cómo estudiar este capítulo
 
-`NULL` indica información desconocida o ausente. No es cero ni cadena vacía. `zona = NULL` no identifica faltantes; usa `zona IS NULL`. Al comparar un nulo, el resultado puede ser desconocido y `WHERE` lo descarta. `COALESCE(zona,'Sin zona')` ofrece una etiqueta para un informe; no significa que hayas corregido el dato en origen. No reemplaces importes faltantes por cero sin una regla de negocio.
+1. Lee la lección con la mini-base a mano (`python herramientas/ejecutar_sql.py --db 04_DATASETS/mini_base/mini_base.db --consulta "SELECT * FROM tiendas LIMIT 3;"`).
+2. **Escribe** cada ejemplo tú mismo en lugar de copiarlo; cambia un valor y predice el resultado antes de ejecutar.
+3. Haz la micropráctica sin mirar la comprobación. Después compárala.
+4. Cuando termines la lección 1.2 ya puedes abrir los primeros ejercicios.
 
-`DISTINCT` elimina combinaciones repetidas de las columnas que seleccionas. `DISTINCT ruta,tipo` devuelve pares distintos; no una lista independiente de rutas y otra de tipos. `COUNT(*)` cuenta filas, mientras que `COUNT(zona)` excluye zonas nulas. `COUNT(DISTINCT cliente_id)` cuenta clientes únicos.
+## Ejercicios autónomos de este capítulo
 
-## Del requerimiento al código
+Serie S (S1–S10) en [`03_EJERCICIOS/SQL/`](../03_EJERCICIOS/SQL/INDICE.md). Las microprácticas de las lecciones **no** son ejercicios evaluables: no tienen corrector ni cuentan para el progreso; sirven para que llegues listo al ejercicio.
 
-Requerimiento: "Necesito negocios de R03 para revisar la ruta". Define población (clientes), filtro (R03), columnas necesarias (código, nombre, zona) y orden (código). Ejecuta primero cinco filas; luego quita LIMIT y cuenta. Si aparecen 14 clientes, explica que representan clientes asignados, no visitas realizadas ni compradores activos.
+## Si te trabas
 
-Errores frecuentes: usar nombres como claves, confundir clientes con pedidos, filtrar fechas escritas como DD/MM/YYYY en texto, y limitar antes de comprobar el total. Las fechas de esta base están en ISO YYYY-MM-DD: su orden textual coincide con el cronológico. Eso no se cumple para cualquier formato.
+- Un error de sintaxis casi siempre está en una coma, una comilla o un punto y coma. Lee el mensaje completo.
+- Si el resultado "parece bien" pero no cuadra, revisa primero filtros (¿estado? ¿NULL?) y luego granularidad.
+- Términos: [glosario](GLOSARIO.md). Fuentes oficiales: [FUENTES.md](FUENTES.md).
 
-Práctica: S1–S10. Al terminar escribe una nueva consulta para una ruta distinta y explica cada cláusula sin mirar el ejemplo. Fuente concreta: SQLite, SELECT, secciones WHERE, ORDER BY y LIMIT; enlaces en `FUENTES.md`.
+Siguiente capítulo: [Capítulo 2 — Agregar sin perder el significado](02_SQL_agregados.md).

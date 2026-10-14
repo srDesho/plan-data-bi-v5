@@ -35,7 +35,7 @@ Entrega: `mi_trabajo/sql/CL2.sql` y una interpretación de dos frases: qué mide
 ## Pistas (en este orden, solo cuando las necesites)
 
 1. **Orientación.** Hay dos transformaciones de texto que aplicar al mismo valor, una detrás de otra.
-2. **Concepto SQL.** TRIM y UPPER son funciones de texto; se pueden anidar: el resultado de una es la entrada de la otra (capítulo 02).
+2. **Concepto SQL.** TRIM y UPPER son funciones de texto; se pueden anidar: el resultado de una es la entrada de la otra (lección 2.4).
 3. **Si no cuadra.** Compara varios nombres a mano con los que devuelve tu consulta, especialmente los que tenían espacios (CL1).
 
 Método: intenta 10 minutos antes de leer la primera pista y depura otros 10 antes de la tercera.

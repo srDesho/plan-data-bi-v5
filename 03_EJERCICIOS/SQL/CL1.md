@@ -33,7 +33,7 @@ Entrega: `mi_trabajo/sql/CL1.sql` y una interpretación de dos frases: qué mide
 ## Pistas (en este orden, solo cuando las necesites)
 
 1. **Orientación.** Compara el texto original con una versión limpia de sí mismo; si difieren, tenía espacios sobrantes.
-2. **Concepto SQL.** TRIM quita los espacios de los extremos (capítulo 02, funciones de texto). Compara con `<>` dentro de WHERE y cuenta.
+2. **Concepto SQL.** TRIM quita los espacios de los extremos (lección 2.4 «Redondeo, texto y fechas»; TRIM también aparece en 1.6). Compara con `<>` dentro de WHERE y cuenta.
 3. **Si no cuadra.** Para ver ejemplos reales, selecciona `'[' || nombre_negocio || ']'` y mira cuáles muestran espacios dentro de los corchetes.
 
 Método: intenta 10 minutos antes de leer la primera pista y depura otros 10 antes de la tercera.

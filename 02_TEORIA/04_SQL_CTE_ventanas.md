@@ -1,31 +1,30 @@
-# Subconsultas, ventanas, fechas e índices
+# Capítulo 4 — Subconsultas, CTE, ventanas, fechas e índices
 
-Una subconsulta produce un resultado utilizado por otra consulta. Una CTE (`WITH nombre AS (...)`) le asigna un nombre temporal dentro de una sentencia. Sirve para separar pasos: primero ventas por pedido, luego ticket por ruta. No es automáticamente una tabla persistida ni una garantía de mayor rendimiento.
+Con los capítulos 1–3 ya puedes filtrar, agrupar y unir. Este capítulo te da las herramientas para cálculos de **varios pasos**: subconsultas y CTE, funciones de ventana (puestos, acumulados, mes anterior) y la construcción de indicadores con fecha de corte. Cierra con una primera mirada a cómo saber si una consulta es lenta. Todos los ejemplos usan la mini-base de `04_DATASETS/mini_base/` ([README](../04_DATASETS/mini_base/README.md)).
 
-Una ventana calcula sobre un conjunto relacionado de filas sin colapsarlas. `GROUP BY` da una fila por grupo; `SUM(ventas) OVER()` conserva cada cliente y añade el total general. `PARTITION BY ruta` reinicia el cálculo por ruta; `ORDER BY ventas DESC` define un orden analítico.
+**Tiempo total estimado:** unas 3 h 35 min de primera vez (4 lecciones). La lección 4.3 (ventanas) es la más exigente: léela en una sesión propia.
 
-```sql
-WITH v AS (
- SELECT cliente_id, COUNT(*) pedidos
- FROM pedidos WHERE estado='entregado' GROUP BY cliente_id
-)
-SELECT cliente_id, pedidos,
-       RANK() OVER (ORDER BY pedidos DESC) puesto
-FROM v ORDER BY puesto,cliente_id;
-```
+**Antes de empezar:** capítulos 1–3, sobre todo GROUP BY, LEFT JOIN y los controles de 3.4.
 
-`ROW_NUMBER` asigna números consecutivos; si hay empates necesitas un desempate determinista. `RANK` da el mismo puesto a empates y deja huecos; `DENSE_RANK` no deja huecos. Una condición sobre una ventana se aplica en una consulta exterior o CTE, porque WHERE se evalúa antes de la ventana.
+## Lecciones
 
-Para acumulados usa `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` y un orden completo. El marco por defecto puede tratar empates como un grupo y cambiar el acumulado. `LAG(ventas) OVER(ORDER BY mes)` recupera el mes anterior disponible; si hay meses ausentes debes construir un calendario y decidir si su valor es cero o desconocido. Crecimiento = (actual−anterior)/anterior; con anterior cero no inventes un porcentaje.
+| # | Lección | Qué aprendes | Tipo | Tiempo |
+|---|---|---|---|---|
+| 4.1 | [Subconsultas](04_SQL_CTE_ventanas/01_subconsultas.md) | escalar, de lista, en FROM, EXISTS, la trampa de NOT IN con NULL | refuerzo | 50 min |
+| 4.2 | [CTE con WITH](04_SQL_CTE_ventanas/02_cte.md) | dividir en pasos con nombre, depurar paso a paso | núcleo · D18 | 45 min |
+| 4.3 | [Funciones de ventana](04_SQL_CTE_ventanas/03_ventanas.md) | OVER, PARTITION BY, ROW_NUMBER/RANK/DENSE_RANK, acumulados, LAG | núcleo · D18 | 65 min |
+| 4.4 | [SQL para indicadores, fechas y rendimiento](04_SQL_CTE_ventanas/04_sql_kpis_fechas_rendimiento.md) | fecha de corte, activos/inactivos, crecimiento, EXPLAIN QUERY PLAN, notas de SQL Server | refuerzo | 55 min |
 
-ABC por ventas ordena clientes por aporte y usa participación acumulada. En V4 se evalúa el acumulado ANTES del cliente actual: el cliente que cruza 80% permanece en A. Es una convención explícita, no una ley universal. ABC por variedad de SKU responde otra pregunta; N10 cuenta variedad y cualquier umbral A/B/C requiere una regla acordada. No intercambies las clasificaciones.
+## Idea central del capítulo
 
-## Fechas y SQL Server
+Una subconsulta o una CTE no son magia: son pasos. Escribe cada paso con su granularidad («una fila por venta», «una fila por ruta») y verifícalo por separado. Una función de ventana **no colapsa** filas; una condición sobre una ventana se filtra en una consulta externa. Un indicador siempre lleva su definición escrita y su fecha de corte.
 
-SQLite: `strftime('%Y-%m',fecha)` extrae mes; `julianday(corte)-julianday(ultima)` calcula días. La recencia usa corte fijo 2026-09-30 para ser reproducible. SQL Server: TOP sustituye LIMIT; DATEFROMPARTS/YEAR/MONTH permiten trabajar meses; DATEDIFF(day, ultima, corte) cuenta límites diarios. CAST y tipos de fecha son más estrictos que en SQLite. La concatenación puede hacerse con CONCAT en SQL Server y `||` en SQLite. Los ejemplos T-SQL son de adaptación conceptual: no se ejecutaron en SQL Server.
+Una CTE no es una tabla guardada y no mejora el rendimiento por sí sola. Los ejemplos de SQL Server son referencia conceptual: en este curso no se ejecutaron en SQL Server.
 
-## Rendimiento sin adivinar
+## Ejercicios autónomos de este capítulo
 
-`EXPLAIN QUERY PLAN` muestra el plan SQLite. Compara SCAN (recorrido) con SEARCH (búsqueda) antes y después de crear un índice en una COPIA de la base: `CREATE INDEX idx_pedidos_cliente_fecha ON pedidos(cliente_id,fecha);`. No presupongas que más índices son mejores: ocupan espacio y encarecen escrituras. Filtrar por clave/fecha puede beneficiarse; envolver la columna en una función puede impedir aprovechar algunos índices. En este curso se interpreta el plan; no se exige una mejora de milisegundos en una base pequeña.
+K1–K6, V1–V5, X1–X8, N5–N7, N13 y N15 en [`03_EJERCICIOS/SQL/`](../03_EJERCICIOS/SQL/INDICE.md). Las microprácticas de las lecciones no son ejercicios evaluables.
 
-Práctica: K1–K6, V1–V5, X1–X8, N5–N7, N13 y N15. Fuente: SQLite ventanas, fechas y EXPLAIN QUERY PLAN; Microsoft Learn, DATEDIFF.
+Términos: [glosario](GLOSARIO.md). Fuentes: [FUENTES.md](FUENTES.md).
+
+Siguiente capítulo: [Capítulo 5 — Calidad de datos y ETL](05_calidad_ETL.md).

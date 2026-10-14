@@ -1,25 +1,31 @@
-# Documentar y comunicar trabajo real
+# Capítulo 16 — Documentar y comunicar trabajo real: Git, README y empleo honesto
 
-Un repositorio reproduce un proyecto: problema, fuente de datos, reglas, instalación, ejecución, controles y resultados. El README no debe prometer habilidades que aún no puedes demostrar. Publica datos sintéticos de este paquete y capturas sin información del empleador. No publiques credenciales ni bases privadas.
+Un repositorio reproduce un proyecto: problema, fuente de datos, reglas, instalación, ejecución, controles y resultados. Aquí aprendes lo mínimo de Git para guardar versiones de tu trabajo, a documentarlo (README, registro de errores y de decisiones), a explicar una transformación con un ejemplo concreto y a presentarte ante un empleador **sin prometer habilidades que aún no puedes demostrar**. El repositorio publica solo datos sintéticos y capturas sin información del empleador; nunca credenciales ni bases privadas.
 
-## Rutina de Git
+**Tiempo total estimado de primera vez:** unas 2 h 20 min (3 lecciones). Los ejemplos de Git se ejecutan en carpetas temporales y su salida está comprobada; nada se sube a ningún sitio.
 
-Después de una actividad verificable, guarda el script y una nota de aprendizaje. Ejecuta `git status`, añade archivos concretos y crea un commit que describa el cambio. Revisa qué se va a subir antes de `git push`. El repositorio de aprendizaje usa `.gitignore` para entorno virtual, cachés y salidas grandes; las evidencias numéricas pequeñas sí pueden versionarse.
+**Antes de empezar:** poder usar la terminal (lección 7.1).
 
-No necesitas un commit cada día si fue descanso. Un día mínimo puede guardar solo una consulta y una explicación. Evita medir el progreso únicamente por cantidad de commits: comprueba si puedes reconstruir una función o explicar un JOIN sin mirar.
+## Lecciones
 
-## README útil
+| # | Lección | Qué aprendes | Tipo | Tiempo |
+|---|---|---|---|---|
+| 16.1 | [Git desde cero](16_Git_comunicacion/01_git_desde_cero.md) | `init`, `status`, `add`, `commit`, `diff`, `log`, `.gitignore` | refuerzo | 50 min |
+| 16.2 | [Documentar y explicar tu trabajo](16_Git_comunicacion/02_documentar_y_explicar.md) | README, `errores.md`, decisiones, informe de cuatro frases | núcleo · D40 | 45 min |
+| 16.3 | [Portafolio y empleo honesto](16_Git_comunicacion/03_portafolio_y_empleo.md) | tres niveles de experiencia, presentación veraz, postulaciones, publicación | profundización | 45 min |
 
-Escribe: "Una distribuidora ficticia quiere identificar rutas con menor cumplimiento". Indica fuentes sintéticas, periodo, granularidad y KPIs. Incluye comando para reproducir y controles exactos. Luego dos hallazgos apoyados en cifras y una limitación, por ejemplo ruta actual sin historia. Separa análisis de recomendaciones y no atribuyas causalidad a una correlación.
+## Ideas centrales
 
-Informe de cuatro frases: resultado → comparación → explicación comprobada o hipótesis → acción para investigar. Ejemplo: "Septiembre tuvo 300.922 Bs de ventas entregadas. Compararemos con el presupuesto de la misma ruta y mes. Esta base no registra campañas ni stock histórico, por lo que no atribuyo el cambio a una causa. Sugiero revisar visitas y disponibilidad con el supervisor".
+- Después de una actividad verificable, guarda el script y una nota de aprendizaje: `git status`, añade archivos concretos y crea un commit que describa el cambio. Revisa qué se va a subir **antes** de `git push`.
+- No necesitas un commit cada día; un día de descanso no se mide con commits. Comprueba si puedes reconstruir una función o explicar un JOIN sin mirar.
+- Un README útil tiene problema, datos, cómo reproducir, controles, resultados y limitaciones; separa el análisis de las recomendaciones y no atribuye causalidad a una correlación.
+- CV honesto: la experiencia laboral se describe como fue (incluido el apoyo de IA, si lo hubo); los proyectos de formación se describen aparte cuando estén terminados y puedas defenderlos.
+- Publicar en GitHub es de **ejecución manual**; este paquete no sube ni envía nada automáticamente.
 
-## Empleo honesto desde la semana 1
+## Ejercicios autónomos de este capítulo
 
-CV: Técnico Superior en Sistemas Informáticos; pasantía BI Cruzimex durante seis meses, finalizada el 8 de octubre de 2026; reportes Excel/ERP y automatizaciones con apoyo de IA según lo realizado. No inventes SQL avanzado ni programación autónoma en la pasantía. Los proyectos de formación se describen aparte, cuando estén terminados y puedas defenderlos.
+Proyecto SQL, plantilla README ([`05_PROYECTOS/README_PLANTILLA.md`](../05_PROYECTOS/README_PLANTILLA.md)), CV y tabla de postulaciones ([`07_LINKEDIN_EMPLEO/`](../07_LINKEDIN_EMPLEO/)). Las microprácticas de las lecciones no son evaluables.
 
-Busca puestos junior de BI, reportes, información, auxiliar/asistente de datos en Santa Cruz. Revisa requisitos, adapta dos líneas del CV y registra fecha/cargo/enlace/estado/próximo paso. No se incluyen vacantes inventadas ni garantías de contratación.
+Términos: [glosario](GLOSARIO.md). Fuentes: [FUENTES.md](FUENTES.md).
 
-LinkedIn: dos publicaciones por semana sobre un resultado ya completado; tercera opcional si existe evidencia y cabe en el tiempo. Un borrador no es una publicación realizada. Comparte la regla aprendida y un ejemplo sin exagerar. Interacciones y contactos son tareas breves, no reemplazan la práctica técnica.
-
-Práctica: proyecto SQL, plantilla README, CV y tabla de postulaciones. La guía de GitHub es de ejecución manual: no se subirá ni enviará nada automáticamente desde este paquete.
+Siguiente capítulo: [Capítulo 17 — Transferencia y autonomía](17_Transferencia_debug.md).

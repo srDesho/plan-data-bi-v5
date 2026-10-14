@@ -194,13 +194,11 @@ def main():
             return {'registro':42,'segunda_ejecucion':'no sobrescribe el aprendizaje del estudiante'}
         add('Inicializador y registro de avance',init_space)
         def theory_examples():
-            count=0
-            for p in (ROOT/'02_TEORIA').glob('*.md'):
-                for code in re.findall(r'```python\n([\s\S]*?)```',p.read_text(encoding='utf-8')):
-                    with contextlib.redirect_stdout(io.StringIO()):exec(compile(code,str(p),'exec'),{'__name__':'__main__'})
-                    count+=1
-            return {'ejemplos_python_completos_ejecutados':count,'SQL':'las consultas docentes se desarrollan y corrigen además en el banco','DAX':'pendiente Desktop'}
-        add('Ejemplos Python de los apuntes',theory_examples)
+            r=subprocess.run([sys.executable,str(ROOT/'herramientas/verificar_teoria.py')],capture_output=True,text=True,encoding='utf-8',errors='replace')
+            assert r.returncode==0,(r.stdout+r.stderr)[-1500:]
+            lineas=r.stdout.strip().splitlines()
+            return {'verificar_teoria':[l for l in lineas if l.startswith(('OK','ERROR'))],'resumen':lineas[-1] if lineas else '','DAX_M_Excel':'no ejecutados en sus aplicaciones: comprobación manual'}
+        add('Ejemplos Python de los apuntes',theory_examples)  # incluye SQL, formato, enlaces, tiempos, términos, glosario y fugas de la teoría
         def links():
             found=0;markdowns=list(ROOT.rglob('*.md'));broken=[]
             for p in markdowns:
@@ -305,10 +303,16 @@ def main():
             subprocess.run([sys.executable,str(ROOT/'herramientas/aplicar_nucleo.py'),'--raiz',str(copia)],check=True,capture_output=True)
             distintos=[p.name for p in (ROOT/'01_PLAN_DIARIO/dias').glob('D*.md') if p.read_bytes().replace(b'\r\n',b'\n')!=(copia/'01_PLAN_DIARIO/dias'/p.name).read_bytes().replace(b'\r\n',b'\n')]
             assert not distintos,('Guías no sincronizadas con nucleo.json',distintos)
-            for nombre in ('calendario.json','calendario.csv','CARGA_ESTIMADA.md'):
+            for nombre in ('calendario.json','calendario.csv','CARGA_ESTIMADA.md','RUTAS.md'):
                 assert (ROOT/'01_PLAN_DIARIO'/nombre).read_bytes().replace(b'\r\n',b'\n')==(copia/'01_PLAN_DIARIO'/nombre).read_bytes().replace(b'\r\n',b'\n'),nombre
             return {'guias_comparadas':len(list((ROOT/'01_PLAN_DIARIO/dias').glob('D*.md'))),'resultado':'nucleo.json, guías, calendario y carga estimada coinciden'}
         add('Guías, calendario y carga sincronizados con nucleo.json',sincronizacion)
+        def etapa2():
+            r=subprocess.run([sys.executable,str(ROOT/'herramientas/verificar_etapa2.py')],capture_output=True,text=True,encoding='utf-8',errors='replace')
+            assert r.returncode==0,(r.stdout+r.stderr)[-1800:]
+            lineas=r.stdout.strip().splitlines()
+            return {'verificar_etapa2':[l[:140] for l in lineas if l.startswith(('OK','ERROR','AVISO'))],'resumen':lineas[-1] if lineas else ''}
+        add('Etapa 2: lecciones, jornadas, prerrequisitos, criterio analítico y hitos',etapa2)
         def manifiesto():
             r=subprocess.run([sys.executable,str(ROOT/'herramientas/regenerar_manifiesto.py'),'--comprobar'],capture_output=True,text=True,encoding='utf-8',errors='replace')
             assert r.returncode==0,(r.stdout+r.stderr)[-500:]

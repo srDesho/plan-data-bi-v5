@@ -1,25 +1,38 @@
-# Estadística empresarial: describir la población correcta
+# Capítulo 11 — Estadística descriptiva: resumir antes de concluir
 
-Empieza por la unidad observada: ¿pedido, cliente, visita o vendedor? Luego especifica periodo, filtro y variable. El drop del dataset es una entrega expresada en Bs; no mide rentabilidad ni litros. Mezclar unidades produce estadísticas inútiles aunque la fórmula sea correcta.
+Este capítulo te enseña a **describir datos** con honestidad: de quién son (población y muestra), de qué tipo son, cuál es su centro, cuánto se dispersan, qué forma tienen, cuáles son atípicos, si dos variables se mueven juntas y cómo escoger una muestra que sirva. Cada medida se calcula **primero a mano** con pocos datos y después con Python y Pandas, y cada lección dice qué puedes y qué no puedes concluir. Todos los datos de los ejemplos son inventados y distintos de los de los ejercicios.
 
-La media suma valores y divide por cantidad. La mediana divide los valores ordenados en dos mitades; con cantidad par promedia los dos centrales. La moda es el valor más frecuente y puede haber varias o ninguna relevante. En `[120,80,450,60,230,90,1100,75,320,180,90,95,210,85,90]`: media 218,33, mediana 95 y moda 90. Un pedido de 1.100 eleva la media; no demuestra por sí mismo un error.
+**Tiempo total estimado de primera vez:** unas 8 h 35 min (9 lecciones). Recomendado: una lección por sesión, con la tabla a mano en papel antes de abrir Python.
 
-Rango = máximo−mínimo. Varianza expresa dispersión cuadrática; desviación estándar vuelve a las unidades originales. Para describir toda una población divide por n; para estimar varianza poblacional a partir de una muestra usa n−1. En Python `statistics.stdev` es muestral y `pstdev` poblacional. No mezcles resultados de Excel `DESVEST.M` y `DESVEST.P` sin explicar la elección.
+**Antes de empezar:** leer un CSV con Pandas (capítulo 9) o, como mínimo, las listas de diccionarios de 7.13. El módulo estándar `statistics` y NumPy se usan para verificar lo calculado a mano.
 
-En 3.442 pedidos entregados: media 426,7648, mediana 354 y desviación muestral 307,7396 Bs. La media responde "venta total por entrega"; la mediana describe una entrega central. Puedes reportar ambas. Ninguna es automáticamente la mejor para todas las decisiones.
+## Lecciones
 
-## Percentiles e IQR
+| # | Lección | Qué aprendes | Tipo | Tiempo |
+|---|---|---|---|---|
+| 11.1 | [Población, muestra y tipos de variables](11_Estadistica_descriptiva/01_poblacion_muestra_variables.md) | unidad de análisis, parámetro y estadístico, tipos de variable | refuerzo | 50 min |
+| 11.2 | [Frecuencias](11_Estadistica_descriptiva/02_frecuencias.md) | absolutas, relativas, porcentajes, acumuladas, intervalos | refuerzo | 45 min |
+| 11.3 | [Media, mediana y moda](11_Estadistica_descriptiva/03_media_mediana_moda.md) | cuándo usar cada una, efecto de los extremos | núcleo · D13 | 55 min |
+| 11.4 | [Dispersión](11_Estadistica_descriptiva/04_dispersion.md) | rango, varianza poblacional y muestral, desviación estándar, `n − 1` | núcleo · D25 | 65 min |
+| 11.5 | [Percentiles, cuartiles y atípicos](11_Estadistica_descriptiva/05_percentiles_atipicos.md) | IQR, regla de Tukey, métodos de percentil | núcleo · D25 | 65 min |
+| 11.6 | [Distribuciones, histogramas y puntaje z](11_Estadistica_descriptiva/06_distribuciones_histograma_z.md) | forma, asimetría, regla 68-95-99,7, z | profundización | 65 min |
+| 11.7 | [Correlación y causalidad](11_Estadistica_descriptiva/07_correlacion_causalidad.md) | Pearson a mano, confusores, límites | profundización | 55 min |
+| 11.8 | [Muestreo](11_Estadistica_descriptiva/08_muestreo.md) | aleatorio simple, estratificado, sesgo, tamaño | profundización | 55 min |
+| 11.9 | [Descriptiva con Pandas y un informe completo](11_Estadistica_descriptiva/09_descriptiva_con_pandas.md) | `describe`, resumen por grupo, trampas, plantilla de informe | profundización | 60 min |
 
-Un percentil indica el umbral bajo el cual se sitúa un porcentaje de observaciones según una convención de cálculo. Pandas utiliza aquí interpolación lineal; usa la misma convención al comparar herramientas. Q1=214,125 y Q3=555,75; IQR=341,625. Cercas de Tukey: Q1−1,5×IQR y Q3+1,5×IQR. Hay 141 observaciones fuera de esas cercas.
+## Ideas centrales
 
-Un atípico es una señal para investigar. No se elimina automáticamente: una venta mayorista puede ser válida. Revisa cantidad, precio, cliente y tipo de canal. Documenta si tu informe incluye o excluye el valor y muestra el efecto de la decisión.
+- Antes de calcular: **¿de quién son los datos y qué tipo de variable es?**
+- Centro y dispersión van **juntos**; con cola larga, la mediana y el IQR cuentan mejor la historia.
+- La desviación estándar muestral divide entre `n − 1`; Pandas lo hace por defecto, NumPy no. Escribe cuál usaste.
+- Un atípico se **investiga**, no se borra.
+- Correlación no es causalidad; una muestra sesgada no se arregla con más datos.
+- Todo informe termina con una **limitación**.
 
-## Distribución y normalidad
+## Ejercicios autónomos de este capítulo
 
-El histograma depende de los intervalos; el diagrama de caja destaca posición y atípicos. La asimetría positiva 1,7697 indica cola hacia valores altos. Una distribución normal es simétrica y queda descrita por media y desviación; no asumas normalidad de ventas solo porque conoces ambas. El z-score `(x−media)/desviación` estandariza distancia; 64 pedidos tienen |z|>3 usando desviación poblacional, pero eso no es una probabilidad normal exacta para una distribución asimétrica.
+ST01–ST04 y el caso C03 en [`03_EJERCICIOS/Estadistica/`](../03_EJERCICIOS/Estadistica/). Entrega para cada uno: la tabla de resultados, el método usado (divisor, método de percentil), un gráfico con título que describa un hallazgo (con unidad, período y recomendación) y una limitación. Las microprácticas de las lecciones no son evaluables. El notebook N04 y la clase UAGRM 2 ([`UAGRM/`](UAGRM/LEEME.md)) complementan este capítulo.
 
-## Muestreo y correlación
+Términos: [glosario](GLOSARIO.md). Fuentes: [FUENTES.md](FUENTES.md).
 
-Una muestra de clientes convenientes puede excluir rutas difíciles. Define población, marco muestral y método (por ejemplo aleatorio estratificado por ruta). Si tomas varios pedidos del mismo cliente, no tienes igual cantidad de clientes independientes. Correlación describe asociación; campañas, estacionalidad o tamaño del cliente pueden explicar dos variables sin que una cause la otra.
-
-Práctica ST01–ST04, notebook N04 y caso C03. Entrega gráfico con título que describa un hallazgo, unidad, periodo y recomendación. Fuente: SciPy stats; la interpretación y los ejemplos de negocio están desarrollados aquí para estudiar sin depender de búsquedas.
+Siguiente capítulo: [Capítulo 12 — Estadística inferencial](12_Estadistica_inferencia.md).

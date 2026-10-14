@@ -35,7 +35,7 @@ Entrega: `mi_trabajo/sql/CL3.sql` y una interpretación de dos frases: qué mide
 ## Pistas (en este orden, solo cuando las necesites)
 
 1. **Orientación.** Necesitas reemplazar el valor ausente por un texto, y agrupar por ese texto resultante.
-2. **Concepto SQL.** COALESCE devuelve el primer valor que no es NULL (capítulo 01). Puedes agrupar por la misma expresión que muestras.
+2. **Concepto SQL.** COALESCE devuelve el primer valor que no es NULL (lecciones 1.4 y 2.5). Puedes agrupar por la misma expresión que muestras.
 3. **Si no cuadra.** El grupo «Sin zona» debe sumar 6. Si ves una fila con zona vacía, no aplicaste la etiqueta antes de agrupar.
 
 Método: intenta 10 minutos antes de leer la primera pista y depura otros 10 antes de la tercera.

@@ -1,49 +1,41 @@
-# Python: construir el razonamiento antes de Pandas
+# Capítulo 7 — Python: construir el razonamiento antes de Pandas
 
-Un programa transforma entradas en salidas mediante pasos explícitos. Escribe primero un ejemplo a mano: dos líneas de 3×10 y 2×20 suman 70 Bs. Después traduce los pasos. La computadora ejecuta lo escrito, no la intención. Predecir el resultado antes de ejecutar es parte de la práctica.
+Este capítulo parte de cero: qué es un programa, qué es una variable y cómo se ejecuta una línea. Avanza pieza por pieza (texto, números, listas, diccionarios, condiciones, bucles) y solo al final junta todo en la tarea típica de un ETL: **recorrer registros, acumular y separar lo inválido**. Cada lección tiene ejemplos que se ejecutan con Python 3.12 y cuya salida está comprobada.
 
-Una variable enlaza un nombre con un valor. `cantidad=3` no crea una fórmula que cambie sola como en Excel. `int` representa enteros, `float` aproximaciones decimales, `str` texto, `bool` verdadero/falso y `None` ausencia. `"3"*2` produce `"33"`; `3*2` produce 6. Convertir texto con `int()` exige un formato válido.
+**Tiempo total estimado de primera vez:** unas 11 h 55 min si lees y practicas todas las lecciones (13). No se hace de una vez: la carga se reparte con los ejercicios P01–P08. La columna «Tipo» dice cuáles son **núcleo** (con el día en que se leen en la ruta BASE), cuáles son **refuerzo** (se leen si la competencia no está dominada) y cuáles **profundización**; el detalle está en [`RUTAS.md`](../01_PLAN_DIARIO/RUTAS.md).
 
-```python
-cantidad = 3
-precio = 10.0
-total = cantidad * precio
-print(f"Venta: {total:.2f} Bs")
-```
+**Antes de empezar:** nada de Python. Necesitas el entorno del curso (`.venv` con Python 3.12) y VS Code.
 
-Los textos tienen métodos: `strip()` elimina espacios en extremos, `upper()` cambia mayúsculas y `replace()` sustituye contenido. No son operaciones mágicas de limpieza: quitar comas de `11,50` da `1150`, no `11.50`. Conoce el formato antes de convertir.
+## Lecciones
 
-Una lista es una secuencia mutable: `ventas=[100,200,300]`. Se indexa desde cero. Una tupla agrupa valores y no permite reasignar sus posiciones. Un diccionario relaciona claves y valores: `cliente={'id':1,'ruta':'R01'}`. Un set conserva elementos únicos y permite comprobar pertenencia. El orden de un set no debe utilizarse como orden del informe.
+| # | Lección | Qué aprendes | Tipo | Tiempo |
+|---|---|---|---|---|
+| 7.1 | [Qué es un programa](07_Python_basico/01_que_es_un_programa.md) | instrucciones, `print`, ejecutar un archivo, leer un error | refuerzo | 45 min |
+| 7.2 | [Variables y asignación](07_Python_basico/02_variables_asignacion.md) | nombres, `=`, reasignar, tabla de seguimiento | refuerzo | 45 min |
+| 7.3 | [Tipos de datos y aritmética](07_Python_basico/03_tipos_aritmetica.md) | int, float, str, bool, None; `//`, `%`; decimales y redondeo | refuerzo | 50 min |
+| 7.4 | [Tu primera función corta](07_Python_basico/04_primera_funcion.md) | `def`, parámetros, argumentos, `return`, `assert` | refuerzo | 55 min |
+| 7.5 | [Texto](07_Python_basico/05_texto.md) | índices, rebanadas, métodos, f-strings, montos como texto | refuerzo | 60 min |
+| 7.6 | [Booleanos, comparaciones y None](07_Python_basico/06_booleanos_comparaciones_none.md) | `==` frente a `=`, `and/or/not`, `None` | núcleo · D02 | 50 min |
+| 7.7 | [Conversiones y primeros errores de valor](07_Python_basico/07_conversiones.md) | `int()`, `float()`, `ValueError`, validar | núcleo · D08 | 60 min |
+| 7.8 | [Listas y tuplas](07_Python_basico/08_listas_tuplas.md) | índices, rebanadas, mutabilidad, alias | núcleo · D03 | 55 min |
+| 7.9 | [Diccionarios y conjuntos](07_Python_basico/09_diccionarios_sets.md) | claves, `get`, `KeyError`, sets | núcleo · D03 | 55 min |
+| 7.10 | [Condicionales](07_Python_basico/10_condicionales.md) | `if/elif/else`, casos límite, el caso desconocido | núcleo · D04 | 50 min |
+| 7.11 | [Repetir: for y while](07_Python_basico/11_for_while.md) | iteración, `range`, `enumerate`, `break` | núcleo · D04 | 55 min |
+| 7.12 | [Acumuladores y patrones de recorrido](07_Python_basico/12_acumuladores.md) | sumar, contar, máximo, filtrar, caso vacío, lista por comprensión | núcleo · D05 | 70 min |
+| 7.13 | [Recorrer registros](07_Python_basico/13_registros_listas_de_diccionarios.md) | lista de diccionarios, agrupar, válidos y rechazados | núcleo · D05 | 65 min |
 
-```python
-lineas = [{'cantidad':3,'precio':10}, {'cantidad':2,'precio':20}]
-total = 0
-for linea in lineas:
-    total += linea['cantidad'] * linea['precio']
-assert total == 70
-```
+## Cómo estudiar este capítulo
 
-`for` recorre elementos; no necesita inventar índices si solo quieres sus valores. La sangría define qué instrucciones pertenecen al bloque. `if/elif/else` selecciona una rama. Usa `==` para comparar y `=` para asignar. `and`, `or` y `not` combinan condiciones; distingue `None` de cero, porque ambos pueden evaluarse como falsos en un if.
+1. **Predice antes de ejecutar**: escribe en papel qué mostrará el código; después ejecútalo.
+2. **Escribe tú el código**, no lo copies. Cambia un valor y vuelve a predecir.
+3. Para cada bucle, haz la **tabla de seguimiento** de tres iteraciones.
+4. Haz la micropráctica sin mirar la comprobación; después compara.
+5. Cuando algo falle, lee la **última línea** del error primero.
 
-Para sumar solo entregados comprueba `linea['estado']=='entregado'` dentro del bucle. Haz tres casos: entregado, anulado y estado inválido. El tercero debe provocar revisión; no lo conviertas silenciosamente en entregado.
+## Ejercicios autónomos de este capítulo
 
-## Tu primera función corta
+P01–P08 en [`03_EJERCICIOS/Python/`](../03_EJERCICIOS/Python/). Las microprácticas de las lecciones son **práctica guiada**: no tienen corrector ni cuentan en el progreso. Los ejercicios P01–P30 son los evaluables, con corrector. La clase UAGRM 1 ([`UAGRM/`](UAGRM/LEEME.md)) complementa estos apuntes; las soluciones no se abren durante el intento. Guarda un script propio y explica por qué escogiste lista, diccionario o set en cada caso.
 
-Una función agrupa pasos bajo un nombre. `def` la define; los parámetros reciben las entradas y `return` devuelve el resultado.
+Términos: [glosario](GLOSARIO.md). Fuentes: [FUENTES.md](FUENTES.md).
 
-```python
-def importe(cantidad, precio):
-    return cantidad * precio
-
-assert importe(3, 10) == 30
-```
-
-Puedes empezar P01 como un script de variables y después envolver el cálculo en esta firma. No copies el ejemplo para todas las tareas: explica qué entra, qué sale y prueba un precio distinto. El capítulo 08 desarrolla contratos, errores y archivos.
-
-## Depuración de principiante
-
-Lee la última línea del traceback: tipo de error y mensaje. Luego encuentra la línea de tu archivo. `NameError` suele indicar un nombre no definido; `TypeError`, tipos incompatibles; `KeyError`, clave ausente; `ValueError`, conversión inválida. Imprime una variable pequeña y su `type()`. No imprimas miles de filas esperando descubrir algo.
-
-Cuando un bucle suma de más, escribe el acumulador después de cada iteración en un ejemplo de tres filas. Cuando una condición filtra de menos, prueba sus límites. No cambies cinco cosas al mismo tiempo.
-
-Práctica P01–P08. Guarda un script propio y explica por qué escogiste lista, diccionario o set. La clase UAGRM 1 complementa estos apuntes; las soluciones no se abren durante el intento. Fuente: tutorial oficial Python, tipos, control de flujo y estructuras de datos.
+Siguiente capítulo: [Capítulo 8 — Funciones, errores y archivos](08_Python_funciones_archivos.md).

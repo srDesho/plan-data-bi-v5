@@ -11,7 +11,8 @@ la ejecución de las referencias del paquete no demuestra que tú ya adquiriste 
 2. Abre esa carpeta en VS Code; no abras únicamente un archivo suelto.
 3. Lee [el Plan v5](01_PLAN_DIARIO/PLAN_V5.md) y después [el Día 1](01_PLAN_DIARIO/dias/D01_2026-10-12.md).
 4. Elige COMPLETO, REDUCIDO o MÍNIMO antes de empezar. Hay 15 horas semanales netas,
-   empleo incluido, y domingos de descanso. La clase UAGRM del lunes 19:30–22:00 va aparte.
+   empleo incluido, y domingos flexibles (descanso por defecto; 45–120 min voluntarios). La clase UAGRM del lunes 19:30–22:00 va aparte.
+   Las lecciones de teoría están clasificadas: la ruta BASE (15 h) y la EXTENDIDA (20–25 h voluntarias) están en [`RUTAS.md`](01_PLAN_DIARIO/RUTAS.md).
 
 5. Trabaja en `mi_trabajo`, creada con el comando indicado abajo. Las referencias están separadas
    en `08_SOLUCIONES`; consulta después de intentar y depurar, nunca durante los exámenes.
@@ -77,6 +78,12 @@ EXPLAIN varían según SQLite y se interpretan en lugar de exigir un texto idén
 
 Desde la auditoría, cada guía diaria clasifica los ejercicios en **OBLIGATORIO** (núcleo y condición de la puerta), **REPASO**, **REFUERZO** y **OPCIONAL**. Avanzas por puertas de competencia, no por fecha: las fechas son objetivos. Lee [Competencias y puertas](01_PLAN_DIARIO/COMPETENCIAS.md) y la [carga estimada](01_PLAN_DIARIO/CARGA_ESTIMADA.md) (estimación, no medición). Los Días 1 y 2 no cambiaron.
 
+## Rutas BASE y EXTENDIDA, criterio analítico y hitos de comprensión (Fase 2, Etapa 2)
+
+Las 100 lecciones de `02_TEORIA` no son todas obligatorias en las seis semanas. Cada una está clasificada como **NÚCLEO** (indispensable, con día asignado), **REFUERZO** (si una competencia no está dominada) o **PROFUNDIZACIÓN** (EXTENDIDA u otros periodos), y todas siguen disponibles para consultar. La **ruta BASE** son 15 horas netas por semana (900 min); la **EXTENDIDA** añade tiempo voluntario hasta 20–25 horas. El detalle de las 42 jornadas, las horas por semana, la tabla de teoría obligatoria frente a práctica y la revisión de prerrequisitos están en [`RUTAS.md`](01_PLAN_DIARIO/RUTAS.md).
+
+Además de calcular, debes **entender y poder decidir**: cada jornada de martes a viernes incluye una actividad de criterio analítico (`03_EJERCICIOS/Analitico/AN01…AN18`: definir el problema, elegir el KPI, comparar, separar hechos de hipótesis, reconocer datos insuficientes y recomendar) y cada puerta exige un hito de comprensión (`03_EJERCICIOS/Comprension/H01…H08`: explicar, predecir, resolver una variante nueva y justificar). Un OK del corrector no basta.
+
 Antes del ETL de la distribuidora hay un puente: `19_Puente_Python_a_ETL.md`, tres ejercicios de depuración (`03_EJERCICIOS/Depuracion`) y un mini-ETL de 24 filas (`03_EJERCICIOS/Puente`).
 
 ```powershell
@@ -88,10 +95,10 @@ Antes del ETL de la distribuidora hay un puente: `19_Puente_Python_a_ETL.md`, tr
 
 | Carpeta | Uso |
 |---|---|
-|01_PLAN_DIARIO|Plan con casillas, 42 guías diarias (con núcleo/refuerzo/opcional), puertas de competencia y calendario CSV/JSON|
-|02_TEORIA|19 capítulos progresivos (el 19 es el puente a ETL), glosario, fuentes y complemento UAGRM|
-|03_EJERCICIOS|81 SQL, 30 Python, 4 de mini-ETL, 3 de depuración, 7 estadística, 7 notebooks, 15 casos y 6 exámenes|
-|04_DATASETS|Datos v 3 reutilizados, base comercial ampliada, mini-ETL de 24 filas y caso de transferencia|
+|01_PLAN_DIARIO|Plan con casillas, 42 guías diarias (lecciones núcleo, ejercicios, criterio analítico y EXTENDIDA), puertas de competencia, [rutas BASE y EXTENDIDA](01_PLAN_DIARIO/RUTAS.md), clasificación de lecciones y calendario CSV/JSON|
+|02_TEORIA|19 capítulos con 100 lecciones (cada una con ejemplos ejecutados, errores comunes y micropráctica), el puente a ETL (cap. 19), [índice](02_TEORIA/INDICE.md), glosario, fuentes y complemento UAGRM|
+|03_EJERCICIOS|81 SQL, 30 Python, 4 de mini-ETL, 3 de depuración, 7 estadística, 7 notebooks, 15 casos, 6 exámenes, 18 actividades de criterio analítico (`Analitico/`) y 8 hitos de comprensión (`Comprension/`)|
+|04_DATASETS|Datos v 3 reutilizados, base comercial ampliada, mini-ETL de 24 filas, caso de transferencia y `mini_base/` (datos inventados solo para los ejemplos de la teoría)|
 |05_PROYECTOS|Estructuras de SQL/ETL/BI, plantilla README, CSV de modelo, M y DAX|
 |06_ENTREVISTAS|24 preguntas y 6 simulacros con rúbrica|
 |07_LINKEDIN_EMPLEO|CV/perfil, seguimiento y 12 borradores para 2 publicaciones semanales|
@@ -120,6 +127,8 @@ de los materiales del estudiante. El corrector numérico no prueba por sí solo 
 
 Para comprobar que los enunciados son específicos (sin plantillas, pistas repetidas ni resultados publicados) y que los exámenes evalúan lo preparado: `python herramientas/auditar_enunciados.py`.
 Para comprobar que ninguna herramienta deja abierta una conexión SQLite (error `WinError 32` en Windows): `python herramientas/prueba_sqlite_cierre.py`.
+Para comprobar la teoría (ejecuta los ejemplos SQL y Python de las lecciones y compara con la salida mostrada; revisa enlaces, tiempos, términos, glosario y que ningún ejemplo coincida con una solución): `python herramientas/verificar_teoria.py`.
+Para comprobar la integración de la Etapa 2 (lecciones, jornadas, prerrequisitos, criterio analítico, hitos y horas; vuelve a calcular las cifras de control): `python herramientas/verificar_etapa2.py`.
 Para repetir las pruebas del material sin resolver ejercicios: `python herramientas/verificar_paquete.py`.
 Ese comando accede a referencias, genera salidas temporales y verifica contenido; úsalo como control del paquete,
 no como examen ni sustituto de tu implementación. Las evidencias obtenidas durante la construcción están incluidas.

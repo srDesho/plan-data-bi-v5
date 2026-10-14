@@ -42,7 +42,7 @@ def pistas(texto):
 
 
 def criterios(texto):
-    return [l[6:].strip() for l in seccion(texto, 'Criterios de aceptación').splitlines() if l.startswith('- [ ]')]
+    return [l[6:].strip() for l in seccion(texto, 'Criterios de aceptación').splitlines() if l.startswith(('- [ ]', '- [x]', '- [X]'))]
 
 
 def numeros_largos(valor):

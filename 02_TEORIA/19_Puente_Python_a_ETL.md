@@ -2,6 +2,10 @@
 
 Hasta ahora escribiste funciones pequeñas que un corrector probaba. Un ETL es lo mismo en grande: varias funciones pequeñas, en orden, con un cuadre al final. Este capítulo muestra lo que cambia, con ejemplos que puedes ejecutar. Úsalo junto a ME01–ME04 y DB01–DB03. Las secciones 1 y 2 sirven desde la semana 2; la 3 y la 4, desde que empieces el mini-ETL.
 
+**Tiempo estimado de primera vez:** unos 75 min si ejecutas cada ejemplo (§1: 15 min, §2: 15 min, §3: 25 min, §4: 15 min, §5 y §6: 5 min).
+
+**Cómo se relaciona con el resto de la teoría.** Este capítulo es un puente corto con ejemplos ejecutables. Cada idea se desarrolla con más detalle en otras lecciones: leer un traceback ([8.6](08_Python_funciones_archivos/06_leer_tracebacks.md)), rechazar con `ValueError` ([8.5](08_Python_funciones_archivos/05_excepciones.md)), las cuatro funciones de un ETL ([5.5](05_calidad_ETL/05_estructura_etl_funciones.md)), el cierre de conexiones SQLite ([5.4](05_calidad_ETL/04_cargas_registro_reproducibilidad.md)) y los errores silenciosos ([10.6](10_Pandas_transformaciones/06_errores_silenciosos.md)).
+
 ## 1. Leer un error en lugar de temerle
 
 Un error no es un fracaso: es la computadora diciéndote dónde dejó de entender. Lee en este orden: primero la **última línea** (tipo de error y mensaje), después la **línea de tu archivo** que aparece justo encima.
@@ -144,3 +148,21 @@ Salida: `filas publicadas: 1`. Regla práctica: **toda conexión SQLite va dentr
 | ME04 | Modificar un ETL existente con una regla nueva | Antes del caso de transferencia |
 
 Después viene el ETL de la distribuidora (guiado) y el caso de transferencia (C06, sin plantilla). La puerta para avanzar a cada uno está en `01_PLAN_DIARIO/COMPETENCIAS.md`. Fuente: tutorial oficial de Python (errores y excepciones), documentación de `contextlib` y de `sqlite3`.
+
+## 6. Para comprobar que entendiste
+
+1. En un traceback, ¿qué línea lees primero y por qué?
+2. ¿Qué diferencia hay entre devolver `None` y lanzar un `ValueError` ante un dato inválido, y cuándo usas cada una?
+3. En el ejemplo de la §3, ¿qué dice la ecuación `4 = 1 + 1 + 2` y qué ocurre si no se cumple?
+4. ¿Por qué `with sqlite3.connect(...)` no basta en Windows antes de `os.replace`?
+
+<details><summary>Respuestas</summary>
+
+1. La última: dice el tipo de error y el mensaje; después buscas la línea de tu archivo que aparece justo encima.
+2. `None` indica «no se puede calcular» y deja decidir a quien llama; `ValueError` detiene la función con un mensaje y obliga a quien llama a tratar el caso. Depende del contrato de la función.
+3. Que cada fila de Bronze terminó en un solo lugar (duplicado, rechazo o Silver); si no se cumple, se perdió o se inventó una fila y el proceso debe detenerse.
+4. Porque solo confirma la transacción pero no cierra la conexión; el archivo sigue abierto y Windows no permite reemplazarlo.
+
+</details>
+
+Siguiente: los ejercicios ME01–ME04 en [`03_EJERCICIOS/Puente/`](../03_EJERCICIOS/Puente/). Términos: [glosario](GLOSARIO.md). Fuentes: [FUENTES.md](FUENTES.md).

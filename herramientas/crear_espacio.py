@@ -4,7 +4,7 @@ import csv,json
 ROOT=Path(__file__).resolve().parents[1]
 def crear():
     base=ROOT/'mi_trabajo'
-    for name in ['sql','python','notebooks','estadistica','casos','etl','mini_etl','depuracion','powerbi','dias','examenes','transferencia','final']:(base/name).mkdir(parents=True,exist_ok=True)
+    for name in ['sql','python','notebooks','estadistica','casos','etl','mini_etl','depuracion','powerbi','dias','examenes','transferencia','final','analitico','hitos']:(base/name).mkdir(parents=True,exist_ok=True)
     errors=base/'errores.md'
     if not errors.exists():errors.write_text('# Errores y aprendizajes\n\n|Fecha|Ejercicio|Qué falló|Cómo lo detecté|Regla próxima vez|\n|---|---|---|---|---|\n',encoding='utf-8')
     p=base/'progreso.csv'

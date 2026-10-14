@@ -1,23 +1,33 @@
-# Hechos, dimensiones y modelo estrella
+# Capítulo 13 — Modelado dimensional: hechos, dimensiones y modelo estrella
 
-El modelo responde a preguntas empresariales con una estructura explícita. Una tabla de hechos almacena eventos medibles; una dimensión los describe. En este proyecto, una fila de `fact_ventas` es una línea de producto en un pedido. La clave es `item_id`; `pedido_id` se repite y permite contar pedidos distintos. El monto es cantidad×precio y el estado evita perder anulaciones.
+Un modelo responde preguntas de negocio con una estructura explícita. Aquí aprendes a decidir **qué representa una fila** de cada tabla (granularidad), a separar los eventos medibles (hechos) de su contexto (dimensiones), a conectarlos en un modelo estrella sin multiplicar cifras y a construir la tabla de fechas que necesitan los reportes por período. Es la base del modelo de Power BI y de las tablas Gold del ETL. Todo se comprueba en Pandas con la mini-base inventada antes de pasar a cualquier herramienta de visualización.
 
-Dimensiones: cliente (código, nombre, tipo, zona, ruta), producto (SKU, categoría), vendedor y fecha. Cada clave de dimensión es única y aparece en muchas filas del hecho. Las relaciones deben ser 1:* y normalmente con filtro en un sentido desde dimensión a hecho. Una relación muchos a muchos puede ocultar un defecto de claves.
+**Tiempo total estimado de primera vez:** unas 2 h 40 min (3 lecciones).
 
-## Datos que no comparten granularidad
+**Antes de empezar:** capítulo 3 (claves y JOIN), capítulo 10 (merge y controles) y la lección 9.6 (fechas).
 
-Presupuesto tiene una fila por mes y ruta; visitas tienen una fila por visita planificada. No añadas un presupuesto a cada línea de venta. El modelo del curso exporta `fact_presupuesto` y `fact_visitas` separados, más `dim_mes` y `dim_ruta`. Así puedes filtrar ventas y presupuesto con las mismas dimensiones conformadas sin multiplicarlos.
+## Lecciones
 
-Relaciones propuestas: dim_cliente→fact_ventas, dim_producto→fact_ventas, dim_vendedor→fact_ventas, dim_fecha→fact_ventas; dim_mes→fact_ventas y fact_presupuesto; dim_ruta→fact_ventas, fact_presupuesto y fact_visitas. dim_fecha→fact_visitas. No conectes dim_ruta a dim_cliente en este diseño porque añadirías un camino alternativo hacia ventas.
+| # | Lección | Qué aprendes | Tipo | Tiempo |
+|---|---|---|---|---|
+| 13.1 | [Hechos, dimensiones y granularidad](13_Modelado/01_hechos_dimensiones.md) | tabla de hechos, dimensión, medidas aditivas y no aditivas, claves | refuerzo | 55 min |
+| 13.2 | [El modelo estrella](13_Modelado/02_modelo_estrella.md) | relaciones uno a muchos, dimensiones conformadas, caminos ambiguos, pruebas previas | núcleo · D30 | 60 min |
+| 13.3 | [La tabla de fechas](13_Modelado/03_tabla_de_fechas.md) | calendario sin huecos, atributos, orden de meses, días sin ventas | profundización | 45 min |
 
-## Calendario
+## Ideas centrales
 
-La tabla fecha incluye TODOS los días del periodo, aunque no haya ventas. Debe tener una fecha única por fila, sin nulos ni huecos. Añade año, mes, mes_numero, mes_id y fecha_id. En Power BI marca la columna fecha como tabla de fechas, usa tipos Date y ordena etiquetas de mes por mes_numero o año/mes. Una fecha con hora debe convertirse al mismo nivel diario antes de relacionar.
+- La primera decisión del modelo es la **granularidad** de cada hecho.
+- Presupuesto y visitas tienen otra granularidad que las ventas: van en **hechos separados** unidos por dimensiones conformadas; añadir un presupuesto a cada línea de venta lo multiplica.
+- Las relaciones deben ser 1:* y normalmente con filtro en un sentido, de la dimensión al hecho. Una relación muchos a muchos puede ocultar un defecto de claves.
+- El importe es aditivo; ticket, recencia y porcentajes **no se suman**: se recalculan en cada contexto.
+- La tabla de fechas incluye **todos** los días del período, sin huecos ni duplicados.
+- Este modelo usa la ruta actual del cliente; no modela cambios históricos de asignación. No presentes como histórico un atributo maestro actual.
+- Antes de abrir Power BI prueba claves únicas, huérfanos, filas del hecho y total de ventas. Las relaciones dentro de Power BI se comprueban manualmente.
 
-La medida de ventas suma importes entregados; pedidos usa DISTINCTCOUNT. El importe es aditivo por cliente y producto, pero recencia, ticket y porcentajes no se suman. Recalcula razones en cada contexto en vez de sumar tickets.
+## Ejercicios autónomos de este capítulo
 
-## Límites
+El exportador de modelo y el proyecto de Power BI en [`05_PROYECTOS/`](../05_PROYECTOS/). Las microprácticas de las lecciones no son evaluables.
 
-Este modelo usa la ruta actual del cliente del dataset; no modela cambios históricos de asignación. En un sistema real necesitarías fecha de vigencia o ruta del evento para comparar periodos históricos. No presentes como histórico un atributo maestro actual. La plantilla es deliberadamente básica y documenta ese límite.
+Términos: [glosario](GLOSARIO.md). Fuentes: [FUENTES.md](FUENTES.md).
 
-Práctica: exportador de modelo y proyecto Power BI. Antes de abrir Power BI prueba claves únicas, huérfanos, filas del hecho y total de ventas. El diseño y CSV se comprueban automáticamente; las relaciones dentro de Power BI deben comprobarse manualmente.
+Siguiente capítulo: [Capítulo 14 — Power BI, Power Query y DAX](14_PowerBI_DAX.md).

@@ -1,34 +1,36 @@
-# Pandas: limpiar, unir y validar
+# Capítulo 10 — Pandas: transformar, unir y validar
 
-Limpieza no significa eliminar todo lo extraño. Significa convertir representaciones conocidas en una forma acordada y registrar lo que no se puede interpretar. Bronze conserva la entrada original; Silver conserva registros válidos con tipos y claves; rechazos permiten explicar diferencias.
+Con las tablas ya leídas y perfiladas (capítulo 9), aquí las **transformas**: columnas derivadas, agregaciones por grupo, uniones con control de cardinalidad, tablas de resumen exportadas y, sobre todo, **controles de calidad y reconciliación**. El capítulo termina con un catálogo de errores silenciosos (un merge que duplica importes, un `groupby` que pierde filas con clave vacía) y la forma de detectarlos. Es la base del mini-ETL y del ETL final.
 
-## Fechas y dinero
+**Tiempo total estimado de primera vez:** unas 6 h 0 min (6 lecciones). Se reparte con los ejercicios P21–P28.
 
-No adivines el formato de `01/02/2026`. En estos ejercicios significa 1 de febrero porque el contrato dice DD/MM/YYYY. Un parser debe admitir únicamente los formatos del diccionario. Puedes usar `pd.to_datetime(...,format='%d/%m/%Y',errors='coerce')` y separar NaT; para mezclar ISO y DD/MM/YYYY aplica una máscara de formato antes de convertir cada grupo.
+**Antes de empezar:** el [capítulo 9](09_Pandas_basico.md) completo y la lección 3.4 de SQL (cuando el JOIN duplica).
 
-Dinero puede contener `Bs`, coma decimal y espacios. Primero normaliza las representaciones admitidas, luego convierte. Para el proyecto final usa `Decimal` y almacena centavos enteros: evita errores acumulados de flotantes. Dos decimales y moneda Bs son una regla explícita. No elimines separadores de miles que el contrato nunca definió.
+## Lecciones
 
-## JOIN de Pandas
+| # | Lección | Qué aprendes | Tipo | Tiempo |
+|---|---|---|---|---|
+| 10.1 | [Columnas nuevas y transformaciones](10_Pandas_transformaciones/01_columnas_nuevas.md) | vectorizar, `np.where`/`np.select`, `map`, `.str`, `.dt`, `assign`, alineación por índice | núcleo · D16 | 55 min |
+| 10.2 | [groupby y agregaciones](10_Pandas_transformaciones/02_groupby_agg.md) | `size`/`count`/`nunique`, agregación con nombre, `transform`, `pivot_table`, `dropna` | núcleo · D17 | 60 min |
+| 10.3 | [merge y cardinalidad](10_Pandas_transformaciones/03_merge_cardinalidad.md) | `validate`, `indicator`, huérfanas, agregar antes de unir | núcleo · D17 | 65 min |
+| 10.4 | [Tablas de resumen y exportación](10_Pandas_transformaciones/04_resumen_y_exportacion.md) | `to_csv`, `to_sql`, idempotencia, orden determinista | refuerzo | 55 min |
+| 10.5 | [Controles de calidad y reconciliación](10_Pandas_transformaciones/05_controles_calidad.md) | estructura frente a fila, Bronze/Silver/Gold, cuadre de filas y de valor | refuerzo | 65 min |
+| 10.6 | [Errores silenciosos](10_Pandas_transformaciones/06_errores_silenciosos.md) | catálogo de 10 errores que no avisan y su control | refuerzo | 60 min |
 
-```python
-import pandas as pd
-pedidos=pd.read_csv('04_DATASETS/distribuidora/pedidos.csv')
-clientes=pd.read_csv('04_DATASETS/distribuidora/clientes.csv')
-unido=pedidos.merge(clientes,on='cliente_id',how='left',validate='many_to_one',indicator=True)
-assert len(unido)==len(pedidos)
-assert unido['_merge'].eq('both').all()
-```
+## Ideas centrales
 
-`validate` comprueba cardinalidad; falla si el catálogo duplica claves. `indicator` muestra left_only/both/right_only. Usa primero un LEFT JOIN para identificar huérfanos. INNER JOIN los descartaría. Una columna sufijada `_x/_y` indica nombres repetidos; selecciona columnas del catálogo y renombra intencionalmente.
+- Limpiar no es eliminar todo lo extraño: es convertir representaciones conocidas a una forma acordada y **registrar lo que no se puede interpretar**.
+- Todo `merge` lleva `validate` y se revisa `indicator`; después se comparan filas y totales.
+- Sumar una columna de un nivel superior (meta, saldo) tras unir con un nivel más detallado multiplica el valor: agrega primero al mismo nivel.
+- `groupby` descarta las claves vacías salvo `dropna=False`: los grupos deben sumar el total.
+- Bronze conserva la entrada; Silver, los registros válidos con tipos y claves; los rechazos explican las diferencias; Gold alimenta el reporte.
+- Cuadre de filas: Bronze = duplicados + rechazadas + Silver. Cuadre de valor: Silver = Gold.
+- `assert` ayuda en ejercicios; en producción usa excepciones explícitas.
 
-## Duplicados y claves
+## Ejercicios autónomos de este capítulo
 
-`duplicated()` sobre todas las columnas detecta duplicados exactos. `duplicated(subset=['linea_id'])` detecta claves repetidas, que pueden contener importes distintos. No conserves la primera arbitrariamente: detecta conflictos y detén o envía a revisión. La clave `[nro_pedido,producto]` del ETL original es válida solo porque ese dataset tiene una línea por producto/pedido. En una exportación nueva puede repetirse el producto legítimamente. El caso final trae `linea_id`.
+P21–P28, los notebooks N02/N03 y el proyecto ETL en [`03_EJERCICIOS/Python/`](../03_EJERCICIOS/Python/), [`03_EJERCICIOS/Notebooks/`](../03_EJERCICIOS/Notebooks/) y [`05_PROYECTOS/`](../05_PROYECTOS/). Las microprácticas de las lecciones no son evaluables. Dinero y fechas: usa `Decimal` y centavos enteros en el proyecto final (lección 9.6).
 
-## Validaciones que cambian decisiones
+Términos: [glosario](GLOSARIO.md). Fuentes: [FUENTES.md](FUENTES.md).
 
-Verifica columnas requeridas, claves únicas, cantidades enteras positivas, catálogo completo, estados permitidos y nulos en campos obligatorios. Separa validación de estructura (detiene carga) y de fila (rechazo con motivo). Después verifica el cuadre: Bronze = duplicados eliminados + rechazados + Silver; venta Silver entregada = Gold; filas antes/después de merge iguales cuando es muchos a uno.
-
-`assert` ayuda en ejercicios; para contratos de producción usa excepciones explícitas porque Python puede desactivar asserts con optimización. Reejecutar el pipeline no debe duplicar datos: reemplaza el conjunto completo en esta práctica y documenta esa estrategia. Carga incremental queda para después.
-
-Práctica P21–P28, notebooks N02/N03 y proyecto ETL. Fuente: Pandas merge, missing data y to_datetime; Python Decimal.
+Siguiente capítulo: [Capítulo 11 — Estadística descriptiva](11_Estadistica_descriptiva.md) (o, en el orden del plan, [Capítulo 6 — KPIs](06_KPIs.md)).

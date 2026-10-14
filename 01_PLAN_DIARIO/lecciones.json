@@ -1,0 +1,708 @@
+{
+ "version": "5.2-fase2-etapa2",
+ "nota": "Clasificación individual de las 100 lecciones. NÚCLEO: indispensable para los fundamentos y avanzar; tiene día asignado en la ruta BASE. REFUERZO: se lee cuando una competencia no está dominada (cuándo) y sirve de material EXTENDIDA. PROFUNDIZACIÓN: EXTENDIDA u otros periodos. Todas las lecciones permanecen disponibles como material de consulta. cobertura: cómo se cubre, en la ruta BASE, un prerrequisito que no es NÚCLEO anterior (ejercicio previo, sección del capítulo 19 o lectura recomendada).",
+ "lecciones": {
+  "1.1": {
+   "archivo": "01_SQL_basico/01_tablas_filas_columnas.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 3,
+   "cuando": "Si dudas qué representa una fila, una columna o un tipo (D01–D03); S1 ya lo practicó.",
+   "cobertura": {
+    "por": [
+     "S1"
+    ],
+    "nota": "S1 (D01) ya obliga a nombrar tabla, fila y columna."
+   }
+  },
+  "1.2": {
+   "archivo": "01_SQL_basico/02_select_from_alias.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 3,
+   "cuando": "Si un alias o una columna calculada no te sale en S3–S6."
+  },
+  "1.3": {
+   "archivo": "01_SQL_basico/03_where_operadores.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 4,
+   "cuando": "Si WHERE con AND/OR/IN/BETWEEN te da filas que no esperas (S3, S5, S7).",
+   "cobertura": {
+    "por": [
+     "S7"
+    ],
+    "nota": "S7 (D02) usa WHERE con una condición sobre NULL."
+   }
+  },
+  "1.4": {
+   "archivo": "01_SQL_basico/04_null.md",
+   "tipo": "NÚCLEO",
+   "dia": 2
+  },
+  "1.5": {
+   "archivo": "01_SQL_basico/05_order_limit.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 4,
+   "cuando": "Si ORDER BY o LIMIT te cortan un resultado distinto del que querías."
+  },
+  "1.6": {
+   "archivo": "01_SQL_basico/06_distinct_like.md",
+   "tipo": "NÚCLEO",
+   "dia": 3
+  },
+  "1.7": {
+   "archivo": "01_SQL_basico/07_del_requerimiento_a_la_consulta.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 5,
+   "cuando": "Cuando una consulta nueva no sabes por dónde empezar: método de las cinco preguntas."
+  },
+  "2.1": {
+   "archivo": "02_SQL_agregados/01_funciones_agregadas.md",
+   "tipo": "NÚCLEO",
+   "dia": 4
+  },
+  "2.2": {
+   "archivo": "02_SQL_agregados/02_group_by_having.md",
+   "tipo": "NÚCLEO",
+   "dia": 5
+  },
+  "2.3": {
+   "archivo": "02_SQL_agregados/03_granularidad_denominadores.md",
+   "tipo": "NÚCLEO",
+   "dia": 6
+  },
+  "2.4": {
+   "archivo": "02_SQL_agregados/04_redondeo_texto_fechas.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 6,
+   "cuando": "Antes de G7, G8 y CL1–CL4 (redondeo, texto y fechas en SQL).",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "Redondeo/texto/fechas SQL: 2.5 y 14.3 lo usan poco; léela antes de G8 y CL."
+   }
+  },
+  "2.5": {
+   "archivo": "02_SQL_agregados/05_case_coalesce.md",
+   "tipo": "NÚCLEO",
+   "dia": 19
+  },
+  "3.1": {
+   "archivo": "03_SQL_joins/01_claves_relaciones.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 9,
+   "cuando": "Si no puedes decir cuál es la clave de cada tabla y cómo se relacionan (J1).",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "Claves y relaciones: J1 y 3.2 lo retoman; léela si no sabes cuál es la clave de cada tabla."
+   }
+  },
+  "3.2": {
+   "archivo": "03_SQL_joins/02_inner_join.md",
+   "tipo": "NÚCLEO",
+   "dia": 9
+  },
+  "3.3": {
+   "archivo": "03_SQL_joins/03_left_join_ausentes.md",
+   "tipo": "NÚCLEO",
+   "dia": 11
+  },
+  "3.4": {
+   "archivo": "03_SQL_joins/04_duplicacion_por_join.md",
+   "tipo": "NÚCLEO",
+   "dia": 11
+  },
+  "4.1": {
+   "archivo": "04_SQL_CTE_ventanas/01_subconsultas.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 17,
+   "cuando": "Antes de la lección 4.2 si una subconsulta dentro de otra consulta te confunde (K3).",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "4.2 re-explica la idea de resultado con nombre; 4.1 se lee si una subconsulta anidada te confunde."
+   }
+  },
+  "4.2": {
+   "archivo": "04_SQL_CTE_ventanas/02_cte.md",
+   "tipo": "NÚCLEO",
+   "dia": 18
+  },
+  "4.3": {
+   "archivo": "04_SQL_CTE_ventanas/03_ventanas.md",
+   "tipo": "NÚCLEO",
+   "dia": 18
+  },
+  "4.4": {
+   "archivo": "04_SQL_CTE_ventanas/04_sql_kpis_fechas_rendimiento.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 19,
+   "cuando": "Antes de V2, N5 y N7 (fechas de corte, activos y crecimiento)."
+  },
+  "5.1": {
+   "archivo": "05_calidad_ETL/01_etl_elt_medallon.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 20,
+   "cuando": "Si Bronze, Silver y Gold no te quedaron claros con el capítulo 19 §3.",
+   "cobertura": {
+    "por": [
+     "19.3"
+    ],
+    "nota": "El capítulo 19 §3 presenta Bronze, Silver y Gold con el mini-ETL."
+   }
+  },
+  "5.2": {
+   "archivo": "05_calidad_ETL/02_contrato_de_datos.md",
+   "tipo": "NÚCLEO",
+   "dia": 23
+  },
+  "5.3": {
+   "archivo": "05_calidad_ETL/03_rechazos_y_reconciliacion.md",
+   "tipo": "NÚCLEO",
+   "dia": 24
+  },
+  "5.4": {
+   "archivo": "05_calidad_ETL/04_cargas_registro_reproducibilidad.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 24,
+   "cuando": "Si la segunda ejecución de tu ETL duplica filas (ME03, ETL-6).",
+   "cobertura": {
+    "por": [
+     "ME03"
+    ],
+    "nota": "ME03 y ETL-6 practican la carga repetible y el cierre de la conexión."
+   }
+  },
+  "5.5": {
+   "archivo": "05_calidad_ETL/05_estructura_etl_funciones.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 26,
+   "cuando": "Si tus funciones del ETL no se separan en extraer, transformar, validar y cargar.",
+   "cobertura": {
+    "por": [
+     "ME03"
+    ],
+    "nota": "ME01–ME03 y ETL-1 a ETL-6 practican la estructura extraer-transformar-validar-cargar."
+   }
+  },
+  "6.1": {
+   "archivo": "06_KPIs/01_que_es_un_kpi.md",
+   "tipo": "NÚCLEO",
+   "dia": 12
+  },
+  "6.2": {
+   "archivo": "06_KPIs/02_cumplimiento_cobertura_efectividad.md",
+   "tipo": "NÚCLEO",
+   "dia": 26
+  },
+  "6.3": {
+   "archivo": "06_KPIs/03_ticket_frecuencia_activos.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 16,
+   "cuando": "Para entender el ticket, el drop size, la frecuencia y los clientes activos más allá de K1.",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "Ticket y drop size: 6.6 los usa en sus ejemplos; K1 y AN08 los practican. Léela si no distingues ticket de drop size."
+   }
+  },
+  "6.4": {
+   "archivo": "06_KPIs/04_productividad_variaciones.md",
+   "tipo": "NÚCLEO",
+   "dia": 31
+  },
+  "6.5": {
+   "archivo": "06_KPIs/05_abc_pareto_rotacion.md",
+   "tipo": "NÚCLEO",
+   "dia": 19
+  },
+  "6.6": {
+   "archivo": "06_KPIs/06_interpretar_y_recomendar.md",
+   "tipo": "NÚCLEO",
+   "dia": 39
+  },
+  "7.1": {
+   "archivo": "07_Python_basico/01_que_es_un_programa.md",
+   "tipo": "REFUERZO",
+   "dia_ext": null,
+   "cuando": "Solo si D01 no quedó claro; P01 ya lo practicó."
+  },
+  "7.2": {
+   "archivo": "07_Python_basico/02_variables_asignacion.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 6,
+   "cuando": "Si una variable cambia de valor y no entiendes por qué (P01–P03).",
+   "cobertura": {
+    "por": [
+     "P01"
+    ],
+    "nota": "P01 (D01) usa variables y parámetros."
+   }
+  },
+  "7.3": {
+   "archivo": "07_Python_basico/03_tipos_aritmetica.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 5,
+   "cuando": "Si P02 o P07 dan decimales inesperados o divisiones raras.",
+   "cobertura": {
+    "por": [
+     "P02"
+    ],
+    "nota": "P02 (D02) hace una división y la protege."
+   }
+  },
+  "7.4": {
+   "archivo": "07_Python_basico/04_primera_funcion.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 4,
+   "cuando": "Si no puedes escribir una función con `def` y `return` sin copiar (P01).",
+   "cobertura": {
+    "por": [
+     "P01"
+    ],
+    "nota": "P01 (D01) es una función con return."
+   }
+  },
+  "7.5": {
+   "archivo": "07_Python_basico/05_texto.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 8,
+   "cuando": "Antes de P09 y de normalizar texto en el ETL (strip, split, replace, f-strings).",
+   "cobertura": {
+    "por": [
+     "P03"
+    ],
+    "nota": "P03 (D02) usa strip, split, title y join."
+   }
+  },
+  "7.6": {
+   "archivo": "07_Python_basico/06_booleanos_comparaciones_none.md",
+   "tipo": "NÚCLEO",
+   "dia": 2
+  },
+  "7.7": {
+   "archivo": "07_Python_basico/07_conversiones.md",
+   "tipo": "NÚCLEO",
+   "dia": 8
+  },
+  "7.8": {
+   "archivo": "07_Python_basico/08_listas_tuplas.md",
+   "tipo": "NÚCLEO",
+   "dia": 3
+  },
+  "7.9": {
+   "archivo": "07_Python_basico/09_diccionarios_sets.md",
+   "tipo": "NÚCLEO",
+   "dia": 3
+  },
+  "7.10": {
+   "archivo": "07_Python_basico/10_condicionales.md",
+   "tipo": "NÚCLEO",
+   "dia": 4
+  },
+  "7.11": {
+   "archivo": "07_Python_basico/11_for_while.md",
+   "tipo": "NÚCLEO",
+   "dia": 4
+  },
+  "7.12": {
+   "archivo": "07_Python_basico/12_acumuladores.md",
+   "tipo": "NÚCLEO",
+   "dia": 5
+  },
+  "7.13": {
+   "archivo": "07_Python_basico/13_registros_listas_de_diccionarios.md",
+   "tipo": "NÚCLEO",
+   "dia": 5
+  },
+  "8.1": {
+   "archivo": "08_Python_funciones_archivos/01_funciones_con_contrato.md",
+   "tipo": "NÚCLEO",
+   "dia": 8
+  },
+  "8.2": {
+   "archivo": "08_Python_funciones_archivos/02_ambito_efectos.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 11,
+   "cuando": "Si una función cambia una lista o variable de afuera y no sabes por qué."
+  },
+  "8.3": {
+   "archivo": "08_Python_funciones_archivos/03_archivos_csv_json.md",
+   "tipo": "NÚCLEO",
+   "dia": 10
+  },
+  "8.4": {
+   "archivo": "08_Python_funciones_archivos/04_modulos_imports.md",
+   "tipo": "NÚCLEO",
+   "dia": 10
+  },
+  "8.5": {
+   "archivo": "08_Python_funciones_archivos/05_excepciones.md",
+   "tipo": "NÚCLEO",
+   "dia": 9
+  },
+  "8.6": {
+   "archivo": "08_Python_funciones_archivos/06_leer_tracebacks.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 12,
+   "cuando": "Si un traceback largo no te dice dónde mirar (se refuerza con el capítulo 19 §1 y DB01).",
+   "cobertura": {
+    "por": [
+     "DB01",
+     "19.1"
+    ],
+    "nota": "DB01 y el capítulo 19 §1 enseñan a leer un traceback."
+   }
+  },
+  "8.7": {
+   "archivo": "08_Python_funciones_archivos/07_pruebas_y_depuracion.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 13,
+   "cuando": "Antes de C06: probar tus funciones con `assert` y depurar paso a paso.",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "Pruebas con assert: léela antes de C06; DB01–DB03 ya practican depurar."
+   }
+  },
+  "9.1": {
+   "archivo": "09_Pandas_basico/01_numpy_arrays.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 15,
+   "cuando": "Si no sabes qué es un arreglo (array) de NumPy antes de leer 9.2.",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "NumPy: 9.2 reintroduce Series; léela si no sabes qué es un arreglo."
+   }
+  },
+  "9.2": {
+   "archivo": "09_Pandas_basico/02_series_dataframe_csv.md",
+   "tipo": "NÚCLEO",
+   "dia": 15
+  },
+  "9.3": {
+   "archivo": "09_Pandas_basico/03_inspeccionar.md",
+   "tipo": "NÚCLEO",
+   "dia": 15
+  },
+  "9.4": {
+   "archivo": "09_Pandas_basico/04_seleccion_filtros.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 16,
+   "cuando": "Si filtrar un DataFrame con condiciones te da el resultado equivocado.",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "Filtrar un DataFrame: P17–P23 lo usan en una línea; léela si un filtro te da el resultado equivocado."
+   }
+  },
+  "9.5": {
+   "archivo": "09_Pandas_basico/05_nulos_duplicados.md",
+   "tipo": "NÚCLEO",
+   "dia": 16
+  },
+  "9.6": {
+   "archivo": "09_Pandas_basico/06_tipos_textos_fechas.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 17,
+   "cuando": "Antes de convertir fechas y textos con Pandas (P24, ETL-2).",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "Tipos, texto y fechas en Pandas: P24 y ETL-2 los piden; léela antes de convertir fechas."
+   }
+  },
+  "10.1": {
+   "archivo": "10_Pandas_transformaciones/01_columnas_nuevas.md",
+   "tipo": "NÚCLEO",
+   "dia": 16
+  },
+  "10.2": {
+   "archivo": "10_Pandas_transformaciones/02_groupby_agg.md",
+   "tipo": "NÚCLEO",
+   "dia": 17
+  },
+  "10.3": {
+   "archivo": "10_Pandas_transformaciones/03_merge_cardinalidad.md",
+   "tipo": "NÚCLEO",
+   "dia": 17
+  },
+  "10.4": {
+   "archivo": "10_Pandas_transformaciones/04_resumen_y_exportacion.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 23,
+   "cuando": "Para exportar tablas a CSV y SQLite fuera de ME03."
+  },
+  "10.5": {
+   "archivo": "10_Pandas_transformaciones/05_controles_calidad.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 24,
+   "cuando": "Antes de ME03 si no sabes comparar el total antes y después de una transformación.",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "Controles en Pandas: ME02 y ME03 los piden paso a paso; léela si no sabes comparar antes y después."
+   }
+  },
+  "10.6": {
+   "archivo": "10_Pandas_transformaciones/06_errores_silenciosos.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 37,
+   "cuando": "Antes de C06 o si un resultado de Pandas parece bien y no cuadra (errores silenciosos).",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "Errores silenciosos: DB02, DB03 y C05 los practican; léela antes de C06."
+   }
+  },
+  "11.1": {
+   "archivo": "11_Estadistica_descriptiva/01_poblacion_muestra_variables.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 13,
+   "cuando": "Si no distingues población de muestra ni los tipos de variable.",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "Población, muestra y tipos de variable: AN01 (unidad de análisis) los usa sin nombrarlos; léela si dudas qué es una variable numérica o categórica."
+   }
+  },
+  "11.2": {
+   "archivo": "11_Estadistica_descriptiva/02_frecuencias.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 15,
+   "cuando": "Si no sabes expresar una frecuencia como conteo y como porcentaje.",
+   "cobertura": {
+    "por": [
+     "G5"
+    ],
+    "nota": "G5 y G6 ya cuentan por grupo."
+   }
+  },
+  "11.3": {
+   "archivo": "11_Estadistica_descriptiva/03_media_mediana_moda.md",
+   "tipo": "NÚCLEO",
+   "dia": 13
+  },
+  "11.4": {
+   "archivo": "11_Estadistica_descriptiva/04_dispersion.md",
+   "tipo": "NÚCLEO",
+   "dia": 25
+  },
+  "11.5": {
+   "archivo": "11_Estadistica_descriptiva/05_percentiles_atipicos.md",
+   "tipo": "NÚCLEO",
+   "dia": 25
+  },
+  "11.6": {
+   "archivo": "11_Estadistica_descriptiva/06_distribuciones_histograma_z.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": 21,
+   "cuando": "EXTENDIDA: distribuciones, histogramas y puntaje z."
+  },
+  "11.7": {
+   "archivo": "11_Estadistica_descriptiva/07_correlacion_causalidad.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": 28,
+   "cuando": "EXTENDIDA: correlación y causalidad."
+  },
+  "11.8": {
+   "archivo": "11_Estadistica_descriptiva/08_muestreo.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": 35,
+   "cuando": "EXTENDIDA: cómo escoger una muestra que sirva."
+  },
+  "11.9": {
+   "archivo": "11_Estadistica_descriptiva/09_descriptiva_con_pandas.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": 27,
+   "cuando": "EXTENDIDA: un informe descriptivo completo con Pandas."
+  },
+  "12.1": {
+   "archivo": "12_Estadistica_inferencia/01_por_que_inferencia.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": null,
+   "cuando": "Otros periodos: inferencia estadística (tras la evaluación final)."
+  },
+  "12.2": {
+   "archivo": "12_Estadistica_inferencia/02_estimacion_intervalo_confianza.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": null,
+   "cuando": "Otros periodos: intervalos de confianza."
+  },
+  "12.3": {
+   "archivo": "12_Estadistica_inferencia/03_hipotesis.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": null,
+   "cuando": "Otros periodos: hipótesis y errores."
+  },
+  "12.4": {
+   "archivo": "12_Estadistica_inferencia/04_pvalor.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": null,
+   "cuando": "Otros periodos: el p-valor."
+  },
+  "12.5": {
+   "archivo": "12_Estadistica_inferencia/05_prueba_t_welch.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": null,
+   "cuando": "Otros periodos: comparar dos promedios."
+  },
+  "12.6": {
+   "archivo": "12_Estadistica_inferencia/06_chi_cuadrado.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": null,
+   "cuando": "Otros periodos: chi-cuadrado."
+  },
+  "12.7": {
+   "archivo": "12_Estadistica_inferencia/07_tamano_del_efecto.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": null,
+   "cuando": "Otros periodos: tamaño del efecto."
+  },
+  "12.8": {
+   "archivo": "12_Estadistica_inferencia/08_interpretacion_limitaciones.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": null,
+   "cuando": "Otros periodos: interpretar y comunicar sin equivocarse."
+  },
+  "13.1": {
+   "archivo": "13_Modelado/01_hechos_dimensiones.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 30,
+   "cuando": "Antes de 13.2 si no distingues hecho de dimensión.",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "Hechos y dimensiones: 13.2 los usa; léela si no distingues una tabla de hechos de una dimensión."
+   }
+  },
+  "13.2": {
+   "archivo": "13_Modelado/02_modelo_estrella.md",
+   "tipo": "NÚCLEO",
+   "dia": 30
+  },
+  "13.3": {
+   "archivo": "13_Modelado/03_tabla_de_fechas.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": 34,
+   "cuando": "EXTENDIDA: la tabla de fechas del modelo."
+  },
+  "14.1": {
+   "archivo": "14_PowerBI_DAX/01_power_bi_desde_cero.md",
+   "tipo": "NÚCLEO",
+   "dia": 32
+  },
+  "14.2": {
+   "archivo": "14_PowerBI_DAX/02_power_query.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": 32,
+   "cuando": "EXTENDIDA: Power Query y el lenguaje M."
+  },
+  "14.3": {
+   "archivo": "14_PowerBI_DAX/03_dax_contexto.md",
+   "tipo": "NÚCLEO",
+   "dia": 33
+  },
+  "14.4": {
+   "archivo": "14_PowerBI_DAX/04_medidas_utiles.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": 33,
+   "cuando": "EXTENDIDA: medidas útiles de un tablero comercial."
+  },
+  "14.5": {
+   "archivo": "14_PowerBI_DAX/05_diseno_y_comprobacion.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": 34,
+   "cuando": "EXTENDIDA: diseño del tablero y lista de comprobación."
+  },
+  "15.1": {
+   "archivo": "15_Excel_cuadres/01_excel_desde_cero.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 30,
+   "cuando": "Si Excel te cambia coma y punto o los tipos al importar."
+  },
+  "15.2": {
+   "archivo": "15_Excel_cuadres/02_funciones_para_cuadrar.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 30,
+   "cuando": "Si no manejas SUMAR.SI, CONTAR.SI y BUSCARV/BUSCARX para cuadrar.",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "Funciones de Excel: EX01 guía los pasos mínimos; léela si no sabes SUMAR.SI."
+   }
+  },
+  "15.3": {
+   "archivo": "15_Excel_cuadres/03_tablas_dinamicas_cuadre.md",
+   "tipo": "NÚCLEO",
+   "dia": 29
+  },
+  "16.1": {
+   "archivo": "16_Git_comunicacion/01_git_desde_cero.md",
+   "tipo": "REFUERZO",
+   "dia_ext": 39,
+   "cuando": "Si tus commits no registran el trabajo terminado o no sabes ver la diferencia entre versiones.",
+   "cobertura": {
+    "recomendada": true,
+    "nota": "Git: cada jornada pide preparar un commit; léela si no sabes qué guarda un commit."
+   }
+  },
+  "16.2": {
+   "archivo": "16_Git_comunicacion/02_documentar_y_explicar.md",
+   "tipo": "NÚCLEO",
+   "dia": 40
+  },
+  "16.3": {
+   "archivo": "16_Git_comunicacion/03_portafolio_y_empleo.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": 38,
+   "cuando": "EXTENDIDA: portafolio y búsqueda de empleo honesta."
+  },
+  "17.1": {
+   "archivo": "17_Transferencia_debug/01_ocho_pasos_caso_nuevo.md",
+   "tipo": "NÚCLEO",
+   "dia": 36
+  },
+  "17.2": {
+   "archivo": "17_Transferencia_debug/02_cuando_no_cuadra.md",
+   "tipo": "NÚCLEO",
+   "dia": 38
+  },
+  "17.3": {
+   "archivo": "17_Transferencia_debug/03_resolver_sin_ia.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": 40,
+   "cuando": "EXTENDIDA: resolver sin ayuda externa, con evidencia y honestidad."
+  },
+  "18.1": {
+   "archivo": "18_Entrevistas/01_responder_pregunta_tecnica.md",
+   "tipo": "NÚCLEO",
+   "dia": 41
+  },
+  "18.2": {
+   "archivo": "18_Entrevistas/02_banco_de_preguntas.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": 40,
+   "cuando": "EXTENDIDA: banco de preguntas frecuentes y respuestas modelo."
+  },
+  "18.3": {
+   "archivo": "18_Entrevistas/03_conductuales_y_honestidad.md",
+   "tipo": "PROFUNDIZACIÓN",
+   "dia_ext": 41,
+   "cuando": "EXTENDIDA: preguntas de comportamiento y apoyo de IA."
+  }
+ },
+ "puente": {
+  "19.1": {
+   "seccion": "§1",
+   "titulo": "Leer un error en lugar de temerle",
+   "min": 15,
+   "dia": 11
+  },
+  "19.2": {
+   "seccion": "§2",
+   "titulo": "Rechazar con ValueError y dejar rastro",
+   "min": 15,
+   "dia": 23
+  },
+  "19.3": {
+   "seccion": "§3",
+   "titulo": "De funciones a un programa: extraer, transformar, validar, cargar",
+   "min": 25,
+   "dia": 20
+  },
+  "19.4": {
+   "seccion": "§4",
+   "titulo": "Cargar a SQLite en Windows: cierra la conexión",
+   "min": 15,
+   "dia": 24
+  }
+ }
+}

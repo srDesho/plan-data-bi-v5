@@ -35,7 +35,7 @@ Entrega: `mi_trabajo/sql/CL4.sql` y una interpretación de dos frases: qué mide
 ## Pistas (en este orden, solo cuando las necesites)
 
 1. **Orientación.** Son dos pasos en el mismo archivo: definir la vista y luego consultarla.
-2. **Concepto SQL.** CREATE TEMP VIEW nombre AS SELECT … crea una vista que desaparece al cerrar la conexión (capítulo 02). Separa las dos sentencias con punto y coma.
+2. **Concepto SQL.** CREATE TEMP VIEW nombre AS SELECT … crea una vista que desaparece al cerrar la conexión (esta sintaxis no está en las lecciones: consulta la documentación de SQLite sobre vistas temporales). Separa las dos sentencias con punto y coma.
 3. **Si no cuadra.** Si el corrector indica un error de sintaxis, ejecuta cada sentencia por separado con `ejecutar_sql.py` para ubicar cuál falla.
 
 Método: intenta 10 minutos antes de leer la primera pista y depura otros 10 antes de la tercera.

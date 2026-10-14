@@ -1,29 +1,36 @@
-# Pandas: tablas después de entender listas y funciones
+# Capítulo 9 — NumPy y Pandas básico: tablas después de entender listas y funciones
 
-Una Series es una columna con índice; un DataFrame es una tabla de columnas. Pandas aplica operaciones a columnas completas. No necesitas recorrer cada fila para sumar ventas o normalizar textos. Primero entiende la operación en una lista de tres filas; luego usa la versión vectorizada.
+Aquí pasas de recorrer listas con bucles a trabajar con **tablas** completas: arreglos de NumPy, Series y DataFrames de Pandas. Aprendes a leer un CSV, a **perfilar** los datos antes de usarlos, a filtrar y ordenar, a tratar vacíos y duplicados sin destruir información y a convertir tipos y fechas. Cada operación se compara con su equivalente en SQL o con un cálculo hecho a mano.
 
-```python
-import pandas as pd
-pedidos = pd.read_csv('04_DATASETS/distribuidora/pedidos.csv')
-entregados = pedidos.loc[pedidos['estado'].eq('entregado')].copy()
-resumen = entregados.groupby('vendedor_id').size()
-assert len(entregados) == 3442
-```
+**Tiempo total estimado de primera vez:** unas 5 h 35 min (6 lecciones). Se reparte con los ejercicios P17–P20 y el notebook N01.
 
-`head()` muestra una muestra, `shape` da filas/columnas, `dtypes` tipos y `isna().sum()` faltantes. No concluyas que todo está limpio porque cinco filas se ven bien. Describe cada columna y prueba valores permitidos con `value_counts(dropna=False)`. Un código cliente debe tratarse como texto si sus ceros iniciales importan.
+**Antes de empezar:** el [capítulo 7](07_Python_basico.md) (listas, diccionarios, bucles) y la lección 8.3 (CSV).
 
-`loc` selecciona por etiquetas y máscaras; `iloc` por posición. Para combinar condiciones usa paréntesis y `&`/`|`, no `and`/`or`: `(df['cantidad']>0) & df['estado'].eq('entregado')`. Selecciona columnas con una lista. `.copy()` hace explícito que trabajarás con una tabla independiente antes de modificarla.
+## Lecciones
 
-`groupby` define la granularidad del resumen igual que GROUP BY. `.agg(ventas=('monto','sum'),pedidos=('pedido_id','nunique'))` conserva numeradores y denominadores. `size()` cuenta filas; `count()` excluye nulos por columna. `nunique()` cuenta distintos y normalmente excluye nulos. Define si ese comportamiento responde tu pregunta.
+| # | Lección | Qué aprendes | Tipo | Tiempo |
+|---|---|---|---|---|
+| 9.1 | [NumPy: de listas a arreglos](09_Pandas_basico/01_numpy_arrays.md) | vectorización, `shape`, `dtype`, máscaras, `NaN`, `ddof` | refuerzo | 50 min |
+| 9.2 | [Series, DataFrame y leer un CSV](09_Pandas_basico/02_series_dataframe_csv.md) | índice, columnas, `read_csv`, tipos inferidos, códigos como texto | núcleo · D15 | 55 min |
+| 9.3 | [Inspeccionar los datos (perfilado)](09_Pandas_basico/03_inspeccionar.md) | `info`, `describe`, `value_counts`, función de perfil, 8 preguntas | núcleo · D15 | 55 min |
+| 9.4 | [Seleccionar, filtrar y ordenar](09_Pandas_basico/04_seleccion_filtros.md) | `loc`/`iloc`, máscaras, `&` y `\|`, `isin`, `str.contains`, `sort_values` | refuerzo | 55 min |
+| 9.5 | [Vacíos y duplicados](09_Pandas_basico/05_nulos_duplicados.md) | política de faltantes, duplicados exactos y con conflicto | núcleo · D16 | 60 min |
+| 9.6 | [Tipos, textos y fechas](09_Pandas_basico/06_tipos_textos_fechas.md) | `to_numeric`, `to_datetime(format=)`, `.str`, `.dt`, centavos | refuerzo | 60 min |
 
-Una columna calculada `monto = cantidad*precio_unitario` requiere tipos numéricos. Si el precio es texto, perfila y convierte. `pd.to_numeric(errors='coerce')` coloca NaN para inválidos, pero todavía debes contar y separar esas filas. `.fillna(0)` no sustituye una política de calidad.
+## Ideas centrales
 
-## NumPy suficiente para este curso
+- Una operación primero se entiende en una lista de tres filas; después se usa la versión vectorizada.
+- **Perfila antes de calcular**: las primeras cinco filas no demuestran que el resto esté limpio.
+- `&` y `|` con paréntesis; `loc` por etiqueta, `iloc` por posición; `.copy()` antes de modificar un subconjunto.
+- `errors="coerce"` convierte lo inválido en vacío: **cuenta y aparta** esas filas, no las pierdas.
+- Una limpieza se cierra con el cuadre: entrada = válidas + rechazadas + duplicados eliminados.
+- Los códigos con ceros iniciales se leen como texto; las fechas con `format=` explícito.
+- NumPy usa `ddof=0` por defecto; Pandas, `ddof=1`.
 
-Un array permite cálculo numérico vectorizado: `np.array([10,20,30]).mean()` produce 20. Distingue desviación poblacional (`ddof=0`) de muestral (`ddof=1`). El índice de Pandas puede alinear Series al operar: si sus etiquetas difieren aparecen nulos inesperados. Multiplica columnas de la misma tabla o alinea claves explícitamente.
+## Ejercicios autónomos de este capítulo
 
-## Puente con SQL
+P17–P20 y el notebook N01 en [`03_EJERCICIOS/Python/`](../03_EJERCICIOS/Python/) (enunciados) y [`03_EJERCICIOS/Notebooks/`](../03_EJERCICIOS/Notebooks/). Como puente con SQL, reproduce con CSV una consulta que ya resolviste en SQL y compara fila por fila (ordena ambos por su clave). Las microprácticas de las lecciones no son evaluables.
 
-Reproduce G1 y G5 usando CSV. Compara fila por fila, no solo el tamaño. Ordena ambos resultados por su clave para el cuadre. En Python revisa `reset_index()` para convertir claves agrupadas en columnas. Un dataframe de tres rutas no demuestra que sus cifras sean correctas.
+Términos: [glosario](GLOSARIO.md). Fuentes: [FUENTES.md](FUENTES.md).
 
-Práctica P17–P20 y notebook N01. El ejemplo está resuelto; la sección autónoma contiene únicamente el enunciado. Fuente: Pandas introductory tutorials, selección y agregación; NumPy absolute beginners.
+Siguiente capítulo: [Capítulo 10 — Pandas: transformar, unir y validar](10_Pandas_transformaciones.md).

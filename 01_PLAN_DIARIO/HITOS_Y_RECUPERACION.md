@@ -1,6 +1,6 @@
 # Hitos, puertas y recuperación
 
-Una entrega debe cumplir el control y poder explicarse. Haber abierto el archivo no equivale a completar la actividad.
+Una entrega debe cumplir el control y poder explicarse. Haber abierto el archivo no equivale a completar la actividad. Cada puerta exige además un **hito de comprensión** (explicar, predecir, resolver una variante nueva y justificar): un OK del corrector no basta.
 Los hitos son **puertas de competencia**: avanzas cuando demuestras la base, no cuando llega la fecha.
 Las fechas del plan son objetivos. Detalle de cada puerta, evidencia y reglas: [Competencias y puertas](COMPETENCIAS.md).
 
@@ -15,7 +15,7 @@ Las fechas del plan son objetivos. Detalle de cada puerta, evidencia y reglas: [
 
 La recuperación reemplaza el siguiente bloque práctico; no se añade al final del día. Recorta el REFUERZO, el OPCIONAL, la tercera
 publicación y la presentación estética antes de recortar el OBLIGATORIO. Las postulaciones se adaptan a vacantes
-pertinentes y entrevistas reales. Un día mínimo no pretende cubrir contenidos nuevos. Un domingo es descanso.
+pertinentes y entrevistas reales. Un día mínimo no pretende cubrir contenidos nuevos. Un domingo es descanso por defecto; la recuperación voluntaria (45–120 min) nunca es obligatoria.
 El calendario contempla concentración, sueño y flexibilidad; no se utiliza para diagnosticar ni prometer curación.
 
 Cuando una puerta se retrasa, se mueve toda la secuencia y no se acumulan horas. El plan no garantiza que todas las puertas se cumplan

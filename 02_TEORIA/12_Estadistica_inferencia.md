@@ -1,27 +1,38 @@
-# Inferencia: incertidumbre antes de afirmar diferencias
+# Capítulo 12 — Estadística inferencial: decidir con incertidumbre
 
-La inferencia usa una muestra para razonar sobre una población bajo supuestos. Un p-valor no es la probabilidad de que la hipótesis nula sea verdadera. Es la probabilidad, suponiendo la hipótesis y el modelo, de obtener un estadístico tan extremo o más que el observado.
+Aquí das el salto de **describir** los datos a **concluir** algo sobre una población más grande a partir de una muestra, midiendo la incertidumbre en lugar de ignorarla. El orden es deliberado: primero entiendes de dónde sale la variabilidad (con una simulación), luego estimas (intervalos), luego decides (hipótesis, p-valor), luego aplicas dos pruebas (t y chi-cuadrado) y por último aprendes a medir el tamaño del efecto y a comunicar con límites. **No se empieza con funciones de SciPy**: cada cálculo se hace antes a mano, con datos pequeños e inventados, y SciPy solo se usa para verificarlo.
 
-## Intervalo de confianza para una media
+**Tiempo total estimado de primera vez:** unas 8 h 5 min (8 lecciones). Recomendado: una lección por sesión; la 12.4 (p-valor por permutación) merece repetirse con calma.
 
-Con n observaciones independientes, media m y desviación muestral s, error estándar = s/√n. Si el modelo t resulta adecuado, IC 95% = `m ± t(0,975,n−1)×s/√n`. La desviación describe variabilidad individual; el error estándar describe incertidumbre de la media. Un intervalo del 95% se refiere a la cobertura del procedimiento en repeticiones, no a una probabilidad del 95% de que una media fija esté dentro del intervalo calculado.
+**Antes de empezar:** el [capítulo 11](11_Estadistica_descriptiva.md) completo (sobre todo desviación estándar con `n − 1`, y muestreo). Se usa `scipy` 1.17 y `numpy`; las versiones están en `requirements.txt`.
 
-El archivo `experimento_piloto.csv` tiene una tienda ficticia por fila y etiquetas A/B construidas para ilustrar un diseño de dos grupos independientes. No se realizó un experimento real ni se verificó aleatorización empírica. Es un caso didáctico, no evidencia del desempeño de Cruzimex. Primero revisa tamaño de muestra, distribución y extremos. Si se repiten tiendas o hay selección sesgada, el cálculo simple requiere reconsideración.
+## Lecciones
 
-## Welch t de Student, dos grupos
+| # | Lección | Qué aprendes | Tipo | Tiempo |
+|---|---|---|---|---|
+| 12.1 | [Por qué hace falta la inferencia](12_Estadistica_inferencia/01_por_que_inferencia.md) | variabilidad entre muestras, error estándar, simulación | profundización | 55 min |
+| 12.2 | [Estimación e intervalos de confianza](12_Estadistica_inferencia/02_estimacion_intervalo_confianza.md) | `x̄ ± t*·s/√n`, qué significa el 95 %, cobertura | profundización | 65 min |
+| 12.3 | [Hipótesis nula y alternativa](12_Estadistica_inferencia/03_hipotesis.md) | `H0`, `H1`, `α`, errores tipo I y II, potencia | profundización | 60 min |
+| 12.4 | [El p-valor, calculado de verdad](12_Estadistica_inferencia/04_pvalor.md) | permutación a mano, qué es y qué no es | profundización | 65 min |
+| 12.5 | [Prueba t: Student y Welch](12_Estadistica_inferencia/05_prueba_t_welch.md) | estadístico, grados de libertad, supuestos | profundización | 70 min |
+| 12.6 | [Chi-cuadrado](12_Estadistica_inferencia/06_chi_cuadrado.md) | tablas de contingencia, esperados, Yates | profundización | 60 min |
+| 12.7 | [Tamaño del efecto](12_Estadistica_inferencia/07_tamano_del_efecto.md) | d de Cohen, puntos porcentuales, V de Cramér, significancia práctica | profundización | 55 min |
+| 12.8 | [Interpretar, comunicar y no equivocarse](12_Estadistica_inferencia/08_interpretacion_limitaciones.md) | comparaciones múltiples, lenguaje correcto, plantilla de informe | profundización | 55 min |
 
-H0: ambas medias poblacionales son iguales; H1: difieren. Elige alfa=0,05 antes de ver datos. Usa `scipy.stats.ttest_ind(a,b,equal_var=False)` para la prueba de Welch: admite varianzas distintas, pero sigue requiriendo independencia y condiciones adecuadas del modelo. Reporta diferencia de medias en Bs, tamaños de muestra, p-valor y límites del diseño. Un efecto diminuto puede ser significativo con n grande y poco útil económicamente.
+## Ideas centrales
 
-No reutilices automáticamente el t=8,81 de rutas R05/R06 como evidencia causal: aquellos datos repiten pedidos de clientes y no constituyen asignación aleatoria. Puedes reproducir el número como demostración computacional, pero no interpretar sus supuestos como comprobados. El caso piloto evita esa confusión en el ejercicio central.
+- Una estimación sin su incertidumbre es incompleta.
+- El p-valor mide qué tan raros serían los datos **si `H0` fuera cierta**; no es la probabilidad de que `H0` sea cierta.
+- «No rechazar `H0`» no es «`H0` es cierta»: con pocos datos, la prueba tiene poca potencia.
+- Significativo no es lo mismo que importante: reporta siempre el tamaño del efecto y el intervalo.
+- Cada comparación adicional aumenta el riesgo de falsas alarmas.
+- Sin asignación aleatoria no hay conclusión causal; toda conclusión termina con una limitación.
+- Las pruebas se calculan **a mano** antes de verificarlas con Python; si el resultado de la herramienta no coincide, revisa primero los supuestos y las opciones por defecto (corrección de Yates, `equal_var`).
 
-## Chi-cuadrado de independencia
+## Ejercicios autónomos de este capítulo
 
-Compara dos variables categóricas mediante una tabla de conteos. H0: son independientes. El ejemplo `encuesta_canales.csv` tiene una respuesta por tienda, grupo A/B y compra sí/no. La tabla es `[[40,20],[25,35]]`; los esperados son suficientes para la demostración. Calcula `chi2_contingency(tabla,correction=False)`. La decisión de aplicar corrección de continuidad en una tabla 2×2 cambia el resultado; aquí la convención está declarada.
+ST05–ST07, el caso C03 y el notebook N05 en [`03_EJERCICIOS/Estadistica/`](../03_EJERCICIOS/Estadistica/). Cada entrega lleva: hipótesis y `α`, prueba usada y por qué, resultado, tamaño del efecto, interpretación de negocio y limitaciones. Las microprácticas de las lecciones no son evaluables.
 
-Revisa esperados antes de confiar en la aproximación. Una celda pequeña puede requerir otro método, como Fisher para 2×2. No uses valores monetarios como conteos de chi-cuadrado ni cada ítem de un mismo pedido como observación independiente. V de Cramér = √(chi²/[n×min(filas−1, columnas−1)]) añade magnitud de asociación.
+Términos: [glosario](GLOSARIO.md). Fuentes: [FUENTES.md](FUENTES.md).
 
-## Correlación y decisión gerencial
-
-`pearsonr` resume asociación lineal; outliers y relaciones curvas pueden ocultar estructura. Dibuja primero. Para recomendar una campaña, considera coste, tamaño del efecto, incertidumbre, posibles variables confundentes y diseño. "p<0,05" por sí solo no justifica contratar, reducir visitas ni eliminar un canal.
-
-Práctica ST05–ST07 y notebook N05. La solución muestra cálculo e interpretación, incluida una conclusión prudente. Fuentes: SciPy ttest_ind, chi 2_contingency y t.
+Siguiente capítulo: [Capítulo 13 — Modelado dimensional](13_Modelado.md).

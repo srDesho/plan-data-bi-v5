@@ -1,0 +1,11 @@
+articulo_id,nombre,categoria,precio
+1,Agua 2L,Bebidas,6.0
+2,Jugo 1L,Bebidas,9.0
+3,Gaseosa 2L,Bebidas,11.5
+4,Papas 100g,Snacks,7.5
+5,Galletas,Snacks,4.5
+6,Maní 80g,Snacks,5.0
+7,Detergente 1kg,Limpieza,14.0
+8,Jabón,Limpieza,3.5
+9,Leche 1L,Lácteos,8.0
+10,Yogurt 1L,Lácteos,12.0

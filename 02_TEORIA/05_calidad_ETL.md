@@ -1,33 +1,35 @@
-# ETL y Medallion: un proceso que puedas defender
+# Capítulo 5 — Calidad de datos y ETL: un proceso que puedas defender
 
-ETL significa extraer, transformar y cargar. ELT carga primero y transforma dentro del destino. Son órdenes de trabajo; ninguno garantiza calidad por sí mismo. Para esta práctica extraemos CSV, transformamos con Python y cargamos SQLite. Bronze, Silver y Gold describen estados de calidad y uso; no obligan a usar cloud ni productos específicos.
+ETL significa extraer, transformar y cargar. Este capítulo te enseña a diseñar un proceso de datos **que puedas explicar y repetir**: las capas Bronze, Silver y Gold, el contrato de datos que se escribe antes de programar, el tratamiento de duplicados y rechazos con su ecuación de auditoría, las cargas repetibles con registro y la organización del código en cuatro funciones. Los ejemplos usan datos inventados y no revelan las soluciones de los ejercicios ni de la evaluación final.
 
-Bronze conserva filas y valores como llegaron y registra la fuente. No sobrescribas el archivo original. Silver contiene claves, tipos, fechas y estados normalizados; conserva también anulados porque son hechos operativos. Gold reúne cifras útiles, por ejemplo cliente/mes con ventas entregadas y pedidos distintos. Los rechazos son una salida auditada, no una papelera oculta.
+**Tiempo total estimado de primera vez:** unas 4 h 35 min (5 lecciones). Se lee mejor después del capítulo 10 (Pandas): allí se implementan los controles que aquí se diseñan.
 
-## Un diseño de cuatro funciones
+**Antes de empezar:** capítulos 8, 9 y 10; en especial 8.5 (excepciones), 9.5 (nulos y duplicados), 10.3 (merge) y 10.5 (controles).
 
-`extraer(ruta)` lee con separador y codificación conocidos. `transformar(raw,catalogo)` normaliza y separa filas. `validar(silver)` verifica reglas. `cargar(...)` publica una versión coherente. Mantén la lógica en funciones importables y un `main` pequeño que configure rutas y logging. Escribe mensajes con etapa, conteos y motivos; nunca claves secretas ni datos privados.
+## Lecciones
 
-Antes de programar redacta el contrato: columnas requeridas, qué es una fila, clave única, formatos admitidos, estados permitidos, cuándo rechazar y qué cuadres deben cumplirse. Si no puedes definirlo para tres filas a mano, todavía no estás listo para escribir un pipeline de 12.000 filas.
+| # | Lección | Qué aprendes | Tipo | Tiempo |
+|---|---|---|---|---|
+| 5.1 | [ETL, ELT y capas Bronze, Silver y Gold](05_calidad_ETL/01_etl_elt_medallon.md) | el mapa de un proyecto de datos; la ecuación de auditoría | refuerzo | 50 min |
+| 5.2 | [El contrato de datos](05_calidad_ETL/02_contrato_de_datos.md) | escribir las reglas antes de programar; detener frente a rechazar | núcleo · D23 | 50 min |
+| 5.3 | [Rechazos, duplicados y reconciliación](05_calidad_ETL/03_rechazos_y_reconciliacion.md) | exactos frente a conflictos, imputación con condición, centavos, cuadre de valor | núcleo · D24 | 55 min |
+| 5.4 | [Cargas repetibles, registro y reproducibilidad](05_calidad_ETL/04_cargas_registro_reproducibilidad.md) | idempotencia, carga atómica, `logging`, parámetros | refuerzo | 55 min |
+| 5.5 | [Estructura de un ETL en funciones](05_calidad_ETL/05_estructura_etl_funciones.md) | extraer, transformar, validar, cargar y un `main` corto | refuerzo | 65 min |
 
-## Caso distribuidora existente
+## Ideas centrales
 
-Entrada: 16.378 líneas, tres formatos de fecha, precios con Bs/coma y vendedores vacíos. Debe producir 16.178 líneas Silver después de quitar 200 duplicados, recuperar 301 vendedores por una ruta inequívoca y mantener 3.600 pedidos. Gold cliente/mes tiene 581 filas y suma 1.468.924,50 Bs.
+- Bronze conserva lo que llegó; Silver, lo válido con tipos y claves; los rechazos explican lo que no pasó; Gold alimenta el reporte.
+- Si no puedes decidir, para tres filas escritas a mano, cuáles pasan y cuáles se rechazan, todavía no estás listo para programar el pipeline.
+- Error de **estructura** → detener; error de **fila** → rechazar con motivo.
+- `filas Bronze = duplicados exactos + rechazados + filas Silver`, y además se cuadra el **valor** entre capas: el número de filas correcto por sí solo no detecta importes multiplicados.
+- Ante un conflicto de clave no se conserva «la primera»: se detiene o se envía a revisión.
+- Una segunda ejecución debe producir iguales filas y totales, no duplicarlos. Publica en un archivo temporal y reemplaza el destino solo si todo pasó; en Windows cierra la conexión SQLite antes (`closing`).
+- Un registro (log) con etapa, conteos y motivos; nunca claves ni datos privados.
 
-La recuperación por ruta solo es válida porque el catálogo tiene un vendedor por ruta en este escenario. Si varios vendedores se turnan o cambia la asignación, necesitas vigencia temporal u otra clave; no uses esa imputación por costumbre. Normalizar nombres no sustituye un ID estable.
+## Ejercicios autónomos de este capítulo
 
-## Caso nuevo y rechazos
+El proyecto ETL en etapas ([`05_PROYECTOS/`](../05_PROYECTOS/)), el mini-ETL ME01–ME04 ([`03_EJERCICIOS/Puente/`](../03_EJERCICIOS/Puente/)), P21–P30 y los casos C04 y C06. La referencia validada de los ejercicios está separada de las actividades: no la abras antes de terminar tu intento. Las microprácticas de las lecciones no son evaluables.
 
-El caso final usa línea_id estable y un catálogo de SKU. Una cantidad 1.5 es inválida cuando el contrato exige unidades enteras. Truncarla cambia el monto. Una fecha imposible o un SKU huérfano debe aparecer con su causa en `rechazos.csv`. La ecuación de auditoría es:
+Términos: [glosario](GLOSARIO.md). Fuentes: [FUENTES.md](FUENTES.md).
 
-`filas Bronze = duplicados exactos + rechazados + filas Silver`.
-
-Antes de eliminar exactos, detecta misma clave con contenido distinto: un conflicto debe detener esta práctica. Cada fila rechazada puede tener más de una causa; conserva una lista o un texto separado por `;`. Preserva suficiente identificación para revisión.
-
-## Carga y reproducibilidad
-
-Una segunda ejecución debe producir iguales filas y totales, no duplicarlos. En la versión del curso se publica una base nueva en un archivo temporal y se reemplaza el destino solo después de pasar validaciones. Esa es una carga completa, no incremental. Si falla el catálogo o el parser, la salida anterior se mantiene. En Windows cierra la conexión SQLite antes de reemplazar el archivo: `with sqlite3.connect(...)` solo confirma la transacción y no la cierra, así que `os.replace` falla con `PermissionError`. Usa `contextlib.closing` (ver capítulo 19, §4).
-
-Cuadra dinero en centavos enteros para el caso final: suma detallada entregada = resumen Gold. Comprueba fechas y claves, también tablas con filas vacías. El número de filas correcto por sí solo no detecta importes multiplicados.
-
-Práctica: proyecto ETL en etapas, P21–P30 y casos C04/C06. Fuente: Databricks Medallion, Python logging y sqlite 3. El ETL original validado está separado de las actividades para evitar copiarlo antes del intento.
+Siguiente capítulo: [Capítulo 6 — KPIs](06_KPIs.md).
