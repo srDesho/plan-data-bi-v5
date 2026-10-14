@@ -115,8 +115,7 @@ No avances a un ETL completo si todavía no puedes explicar una función o un JO
 
 Tu SQL utiliza `04_DATASETS/comercial.db`; la base original permanece intacta en `04_DATASETS/distribuidora`.
 El ETL original se reutiliza con rutas adaptadas y comprobaciones más claras; no se reemplazaron los datos.
-La transferencia se resuelve con código propio durante la semana 6. Los controles finales permanecen separados
-de los materiales del estudiante. El corrector numérico no prueba por sí solo la autonomía.
+La transferencia C06 se resuelve con código propio durante la semana 6 y la evaluación final (contrato distinto) en un bloque posterior. La referencia de la evaluación final no está en este paquete (custodia aparte); el validador compara con huellas. Los correctores comprueban filas, claves y agrupaciones, no solo totales, y el corrector numérico no prueba por sí solo la autonomía.
 
 ```powershell
 .\.venv\Scripts\python.exe herramientas/validar_etl_distribuidora.py mi_trabajo/etl/etl_salida.db
@@ -128,7 +127,8 @@ de los materiales del estudiante. El corrector numérico no prueba por sí solo 
 Para comprobar que los enunciados son específicos (sin plantillas, pistas repetidas ni resultados publicados) y que los exámenes evalúan lo preparado: `python herramientas/auditar_enunciados.py`.
 Para comprobar que ninguna herramienta deja abierta una conexión SQLite (error `WinError 32` en Windows): `python herramientas/prueba_sqlite_cierre.py`.
 Para comprobar la teoría (ejecuta los ejemplos SQL y Python de las lecciones y compara con la salida mostrada; revisa enlaces, tiempos, términos, glosario y que ningún ejemplo coincida con una solución): `python herramientas/verificar_teoria.py`.
-Para comprobar la integración de la Etapa 2 (lecciones, jornadas, prerrequisitos, criterio analítico, hitos y horas; vuelve a calcular las cifras de control): `python herramientas/verificar_etapa2.py`.
+Para comprobar la integración de la ruta (lecciones, jornadas, prerrequisitos de entrada, modo REDUCIDO, criterio analítico, hitos, exámenes y horas; vuelve a calcular las cifras de control): `python herramientas/verificar_etapa2.py`.
+Para comprobar que los validadores rechazan resultados incorrectos conocidos (alteraciones en copias temporales): `python herramientas/pruebas_validadores.py` (la evaluación final solo se prueba si indicas `--custodia`).
 Para repetir las pruebas del material sin resolver ejercicios: `python herramientas/verificar_paquete.py`.
 Ese comando accede a referencias, genera salidas temporales y verifica contenido; úsalo como control del paquete,
 no como examen ni sustituto de tu implementación. Las evidencias obtenidas durante la construcción están incluidas.

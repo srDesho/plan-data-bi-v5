@@ -1,8 +1,8 @@
 # Simulacro semana 5
 
 30 minutos:presentación 3, SQL 12, conceptos 8, caso 5, retro 2.
-Consultas sin soluciones:N5, N9. Conceptos del banco:I19, I20, I21.
-Reformulación del caso:PB04, sin resolverlo completo durante los 5 minutos.
+Consultas sin soluciones:N3, E4. Conceptos del banco:I19, I20, I21.
+Reformulación del caso:AN14 (cobertura frente a efectividad), sin resolverlo completo durante los 5 minutos.
 
 - [ ] Formula población, grano y denominador antes de escribir.
 - [ ] Resuelve SQL y enuncia un cuadre.

@@ -1,23 +1,23 @@
 ﻿dia,fecha,semana,titulo,completo_min,reducido_min,minimo_min,sql,python,estadistica,otros,obligatorio
 1,2026-10-12,1,"Entorno, filas y variables",90,45,20,S1;S10,P01,,,
 2,2026-10-13,1,"Filtros, NULL y texto",160,60,20,S2;S7;S9,P02;P03,,C01,
-3,2026-10-14,1,"Listas, diccionarios y clientes únicos",150,60,20,S3;S6;S5;S4,P04;P05,,C02,S3;S6;P04;P05
-4,2026-10-15,1,"Agrupación, bucles y media/mediana",150,60,20,G1;G2;G3,P06,ST01,,G1;P06
-5,2026-10-16,1,"Condiciones, funciones cortas y KPIs",150,60,20,G5;G6;G4,P07,,C01,G5;G6;P07
+3,2026-10-14,1,"Listas, diccionarios y clientes únicos",150,60,20,S4;S6;S5;S3,P04;P05,,C02,S4;S6;P04;P05
+4,2026-10-15,1,"Agrupación, bucles y media/mediana",150,60,20,G3;G2,P06,ST01,,G3;P06
+5,2026-10-16,1,"Condiciones, funciones cortas y KPIs",150,60,20,G6;G5;G4;G1,P07,,C01,G6;P07
 6,2026-10-17,1,Primer examen y cierre de fundamentos,200,60,20,G7;G8;S8,,,,EXAMEN:S01
 7,2026-10-18,1,Descanso real,0,0,0,,,,,
-8,2026-10-19,2,Funciones con contrato y condiciones,90,45,20,CL1;CL3;CL2,P08,,,P08
-9,2026-10-20,2,Primer JOIN y errores visibles,160,60,20,J1;J2;J3,,,,J1;J2
+8,2026-10-19,2,Funciones con contrato y condiciones,90,45,20,CL1;CL2,P08,,,P08
+9,2026-10-20,2,Primer JOIN y errores visibles,160,60,20,J2;J1;J3,,,DB01,J2;DB01
 10,2026-10-21,2,Funciones que convierten y archivos CSV,150,60,20,J4,P09;P13;P12,,C04,P09;P13
-11,2026-10-22,2,Ausencia con LEFT JOIN,150,60,20,J5;J6,P14;P15,,DB01,J5;DB01
+11,2026-10-22,2,Ausencia con LEFT JOIN,150,60,20,J5;J6,P15,,,J5
 12,2026-10-23,2,"Fechas, cantidades y leer un error",150,60,20,E1;E2;E3,P10;P11;P16,ST02,N01,P10;P11
-13,2026-10-24,2,Examen de JOIN y conciliación,200,60,20,E6;E5;E7;E8,,,,EXAMEN:S02
+13,2026-10-24,2,Examen de JOIN y conciliación,200,60,20,E6;E5;E7;E8,P14,,,EXAMEN:S02
 14,2026-10-25,2,Descanso real,0,0,0,,,,,
-15,2026-10-26,3,Primer DataFrame y perfilado,90,45,20,J2;K2a,P17;P18,,,P17
+15,2026-10-26,3,Primer DataFrame y perfilado,90,45,20,J2;K2a,P17,,,P17
 16,2026-10-27,3,Duplicados exactos y drop size,160,60,20,K1;K2b,P22;P19,,,P22;K1
-17,2026-10-28,3,Agrupar y unir con validación,150,60,20,K4,P20;P21,,N02,P20;P21
+17,2026-10-28,3,Agrupar y unir con validación,150,60,20,K4;CL3,P21;P20;P18,,N02,P21
 18,2026-10-29,3,CTE y concentración de ventas,150,60,20,V3;K3;K5;K6;V1,,,N03,V3
-19,2026-10-30,3,"ABC, perfilado y criterio",150,60,20,V4;V2,P23;P26;P27,ST03;ST04,N04,V4;P23
+19,2026-10-30,3,"ABC, perfilado y criterio",150,60,20,V4;V2,P23;P26,ST03;ST04,N04,V4;P23
 20,2026-10-31,3,Examen Pandas y SQL intermedio,200,60,20,V5;V1;X1;X2,,,,EXAMEN:S03
 21,2026-11-01,3,Descanso real,0,0,0,,,,,
 22,2026-11-02,4,Mini-ETL (1): extraer y perfilar,90,45,20,CL4;N8,,,ME01,ME01
@@ -29,15 +29,15 @@
 28,2026-11-08,4,Descanso real,0,0,0,,,,,
 29,2026-11-09,5,"ETL guiado (3): Silver, validación y rechazos",90,45,20,N7,P28,ST05,ETL-4;N05,ETL-4
 30,2026-11-10,5,"ETL guiado (4): Gold, carga y cuadre SQL",160,60,20,N9;N12,P24;P25,ST06,ETL-5;ETL-6,ETL-5;ETL-6
-31,2026-11-11,5,Excel: tabla dinámica y cuadre,150,60,20,E4;N5;N6,,,EX01;ME04;EX02;EX03,E4;EX01
+31,2026-11-11,5,Excel: tabla dinámica y cuadre,150,60,20,E4;N5;N6,,,EX01;ME04;EX02,E4;EX01
 32,2026-11-12,5,Power BI (1): importar y relacionar,150,60,20,N12;N14;N13;N15;N16,,,PB01;PB02;PB04;N07,PB01;PB02
 33,2026-11-13,5,Power BI (2): primeras medidas,150,60,20,N1,,ST07,PB03;PB05,PB03
-34,2026-11-14,5,Examen S05: ETL guiado completo y BI mínimo,200,60,20,N3;N6;N15,,,PB06;EX03,N3;EXAMEN:S05
+34,2026-11-14,5,Examen S05: ETL guiado completo y BI mínimo,200,60,20,N3;N6;N15,P27,,PB06;EX03,N3;EXAMEN:S05
 35,2026-11-15,5,Descanso real,0,0,0,,,,,
 36,2026-11-16,6,Caso nuevo C06 (0): contrato y plan,90,45,20,N7;N9,,,C06-0;N06,C06-0
 37,2026-11-17,6,"C06 (1): extraer, Bronze y perfil",160,60,20,N8,,,C06-1,C06-1
 38,2026-11-18,6,C06 (2): Silver y rechazos,150,60,20,V3,,ST07,C06-2,C06-2
 39,2026-11-19,6,C06 (3): Gold y cuadres,150,60,20,N5,,,C06-3,C06-3
 40,2026-11-20,6,"C06 (4): SQLite, repetición y README",150,60,20,J5;N16,,,C06-4;C03;C01,C06-4
-41,2026-11-21,6,Último examen y preparación del final,200,60,20,V4;N3;N1;N5,,,,EXAMEN:S06
+41,2026-11-21,6,Examen S06: transferencia C06 y defensa,200,60,20,N3;V4;N1;N5,,,,N3;V4;EXAMEN:S06
 42,2026-11-22,6,Descanso real,0,0,0,,,,,

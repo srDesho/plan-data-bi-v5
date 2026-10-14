@@ -342,4 +342,4 @@ Empieza por el diccionario con tres filas escritas a mano. Cada regla del contra
 
 ## Después, en los ejercicios
 
-El caso de transferencia **C06** y la evaluación final siguen estos pasos. No abras `08_SOLUCIONES/controles_final.json` ni la referencia hasta terminar el intento integral ([`03_EJERCICIOS/Casos/`](../../03_EJERCICIOS/Casos/)). Siguiente: [17.2 Cuando no cuadra](02_cuando_no_cuadra.md).
+El caso de transferencia **C06** y la evaluación final siguen estos pasos. No abras `08_SOLUCIONES/etl_nuevo_referencia.py` ni los controles de C06 hasta terminar el intento (la evaluación final no tiene referencia en el paquete: ver su enunciado) integral ([`03_EJERCICIOS/Casos/`](../../03_EJERCICIOS/Casos/)). Siguiente: [17.2 Cuando no cuadra](02_cuando_no_cuadra.md).

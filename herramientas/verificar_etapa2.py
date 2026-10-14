@@ -294,6 +294,49 @@ class Verificador:
         assert [list(f) for f in sql_ctrl['V4']['filas']] == next(c for c in ctrl['AN11']['checks'])['esperado']
         return {'AN': len(an), 'H': len(hs), 'cifras_de_control_recalculadas': comprobadas, 'puertas_con_hito': sorted(puertas)}
 
+    # ------------------------------------------------------------------ 10
+    def examenes_y_final(self):
+        """S01–S06: trazabilidad, umbrales unificados, puntos que suman 100, controles recalculados; hitos con A y B necesarias; evaluación final conciliada."""
+        cargar_modulo(self.raiz / 'herramientas/controles_examenes.py', 'controles_examenes_v').comprobar(self.raiz)
+        umbrales = {'S01': ('70/100', 6), 'S02': ('70/100', 13), 'S03': ('75/100', 20), 'S04': ('75/100', 27), 'S05': ('56/75', 34), 'S06': ('80/100', 41)}
+        comp = leer(self.raiz / '01_PLAN_DIARIO/COMPETENCIAS.md')
+        nuc = self.ctx.nucleo['dias']
+        for ex, (u, dia) in umbrales.items():
+            t = leer(self.raiz / f'03_EJERCICIOS/EXAMENES/{ex}.md')
+            for sec in ('## Qué se evalúa y por qué está preparado', '## Corregir', '## Si no apruebas: qué recuperar y con qué variante', '## Reglas del intento'):
+                assert sec in t, f'{ex}: falta «{sec}»'
+            assert u in t, f'{ex}: no declara su umbral {u}'
+            assert u in nuc[str(dia)]['puerta']['texto'] or ex == 'S05' and '56/75' in nuc[str(dia)]['puerta']['texto'], f'{ex}: la ficha de la puerta no coincide con el umbral'
+            assert 'Mínimos' in t and ('Fallos críticos' in t or 'Puertas críticas' in t), f'{ex}: sin mínimos o fallos críticos'
+            assert 'Competencia' in t and 'Evidencia observable' in t, f'{ex}: sin tabla competencia → preparación → evidencia'
+            assert 'declarar' in t.lower() or 'declarada' in t.lower(), f'{ex}: sin regla de ayuda declarada'
+            tabla = t.split('## Qué se evalúa y por qué está preparado')[1].split('\n## ')[0]
+            puntos = [int(f.split('|')[-2].strip()) for f in tabla.splitlines() if f.startswith('| N1') and f.split('|')[-2].strip().isdigit()]
+            assert sum(puntos) == 100, f'{ex}: los puntos de la tabla suman {sum(puntos)}'
+        comp = comp.replace('**', '')
+        assert 'S03 con 75/100' in comp and 'S03 con 70' not in comp, 'COMPETENCIAS.md: umbral de S03 distinto del examen'
+        assert '80/100' in comp and 'N1.1' in comp and 'N1.9' in comp, 'COMPETENCIAS.md: IDs N1.x o umbral de S06'
+        for i in range(1, 9):
+            h = leer(self.raiz / f'03_EJERCICIOS/Comprension/H0{i}.md')
+            assert h.count('**Necesaria**') == 2 and '**A y B**' in h and 'Autoría y ayuda' in h, f'H0{i}: la variante y la explicación deben ser condiciones necesarias'
+            assert 'tres de los cuatro' not in h, f'H0{i}: conserva la regla antigua de tres de cuatro'
+        h6 = leer(self.raiz / '03_EJERCICIOS/Comprension/H06.md')
+        assert 'ventas_centavos` del Gold' not in h6 and '`ventas_bs`' in h6 and '`monto`' in h6, 'H06: debe usar el esquema real del ETL guiado'
+        ef = self.ctx.nucleo['evaluacion_final']
+        enun = leer(self.raiz / '09_EVALUACION_FINAL/ENUNCIADO.md')
+        filas = {int(m.group(1)): (int(m.group(2)), int(m.group(3))) for m in re.finditer(r'^\| (\d+) \w+ \| (\d+) \| (\d+) \|', enun, re.M)}
+        for b in ef['bloques']:
+            d = int(b['fecha'][-2:])
+            assert filas.get(d) == (b['min_previo'], b['min']), f'ENUNCIADO.md: el bloque del {d} no coincide con nucleo.json'
+        assert ef['total_min'] == 570 and '**570**' in enun and 'no está incluido en las 90 horas' in enun
+        for doc in ('01_PLAN_DIARIO/CARGA_ESTIMADA.md', '01_PLAN_DIARIO/RUTAS.md', '01_PLAN_DIARIO/PLAN_V5.md'):
+            assert '9,5' in leer(self.raiz / doc), f'{doc}: no declara el bloque de 9,5 h de la evaluación final'
+        rub = leer(self.raiz / '09_EVALUACION_FINAL/RUBRICA.md')
+        for puerta in ('Dinero incorrecto', 'Filas perdidas', 'segunda carga que duplica', 'explicar el código'):
+            assert puerta in rub, f'RUBRICA.md: falta la puerta crítica «{puerta}»'
+        return {'exámenes': 6, 'controles_recalculados': len(cargar_modulo(self.raiz / 'herramientas/controles_examenes.py', 'ce2').CONTROLES),
+                'hitos_con_A_y_B': 8, 'evaluación_final_min': ef['total_min']}
+
     # ------------------------------------------------------------------ 7
     def documentos(self):
         comp = leer(self.raiz / '01_PLAN_DIARIO/COMPETENCIAS.md')
@@ -340,9 +383,12 @@ class Verificador:
             return {'git': 'sin repositorio en esta copia: comparación omitida'}
         r = subprocess.run(['git', 'status', '--porcelain', '--', 'mi_trabajo'], capture_output=True, text=True, encoding='utf-8', cwd=self.raiz)
         assert not r.stdout.strip(), f'mi_trabajo tiene cambios: {r.stdout[:200]}'
-        r = subprocess.run(['git', 'diff', '--name-only', '--', '01_PLAN_DIARIO/dias/D01_2026-10-12.md'], capture_output=True, text=True, encoding='utf-8', cwd=self.raiz)
-        assert not r.stdout.strip(), 'D01 fue modificado'
-        return {'mi_trabajo': 'sin cambios', 'D01': 'sin cambios'}
+        # D01 conserva su contenido; solo puede cambiar el estado de las casillas (progreso propio del estudiante: [ ] → [x])
+        base = subprocess.run(['git', 'show', 'HEAD:01_PLAN_DIARIO/dias/D01_2026-10-12.md'], capture_output=True, encoding='utf-8', cwd=self.raiz).stdout
+        actual = next((self.raiz / '01_PLAN_DIARIO/dias').glob('D01_*.md')).read_bytes().decode('utf-8')
+        norm = lambda t: t.replace('\r\n', '\n').replace('- [x]', '- [ ]').replace('- [X]', '- [ ]')
+        assert norm(base) == norm(actual), 'D01 fue modificado (más allá de marcar casillas)'
+        return {'mi_trabajo': 'sin cambios', 'D01': 'sin cambios de contenido (las casillas marcadas son progreso del estudiante)'}
 
 
 def main():
@@ -354,7 +400,7 @@ def main():
               ('guías diarias sincronizadas con las lecciones', v.guias), ('prerrequisitos de las lecciones NÚCLEO', v.prerrequisitos),
               ('ejercicios ↔ lecciones y punteros reparados', v.ejercicios_y_lecciones), ('criterio analítico y hitos de comprensión', v.actividades),
               ('documentos de la ruta', v.documentos), ('generador sincronizado (copia temporal)', v.sincronizacion),
-              ('D01 y mi_trabajo intactos', v.sin_cambios_en_mi_trabajo)]
+              ('exámenes S01–S06, hitos y evaluación final', v.examenes_y_final), ('D01 y mi_trabajo intactos', v.sin_cambios_en_mi_trabajo)]
     fallos = 0
     for nombre, fn in grupos:
         try:

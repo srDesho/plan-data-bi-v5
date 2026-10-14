@@ -7,7 +7,7 @@
 |C03|Media 426,76; mediana 354; P90=819;141 atípicos. Grandes entregas pueden ser válidas; investigar cliente/producto.|
 |C04|Diferencia 65700,50 Bs corresponde a ítems de pedidos anulados. Cuadrar G3 contra J2 con el mismo periodo.|
 |C05|3.7 se rechaza, precio ilegible no es 0; catálogo duplicado detiene carga. Esperar error en tests P09/P11/P21.|
-|C06|Usa controles_transferencia.json y validar_final.py --transferencia; exige lógica propia, cuadres y segunda ejecución.|
+|C06|Usa huellas_c06.json (vía validar_final.py --transferencia) y la referencia etl_nuevo_referencia.py solo después del intento; exige lógica propia, cuadres y segunda ejecución.|
 |EX01|Suma 1468924,50;3442 pedidos; R01=211141,50 y R02=396680,50. Tabla por ruta contra E4.|
 |EX02|Comparar tabla N1 completa; cumplimiento global=sumaVentas/sumaPresupuesto. No promedio de tasas.|
 |EX03|Media 426,7648; mediana 354; desv 307,7396; Q1=214,125; Q3=555,75; P90=819.|

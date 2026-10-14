@@ -23,5 +23,16 @@ Después de la entrega consulta `08_SOLUCIONES/etl_distribuidora.py` y revisa ca
 Corrección: `python herramientas/validar_etl_distribuidora.py mi_trabajo/etl/etl_salida.db`.
 Puedes cambiar ubicación de salida; debe incluir las tres tablas con los nombres del contrato.
 
+## Contrato de salida y qué revisa el corrector
+
+| Tabla | Columnas |
+|---|---|
+| `bronze_ventas_raw` | `nro_pedido`, `fecha`, `cliente`, `ruta`, `vendedor`, `estado`, `producto`, `categoria`, `cantidad`, `precio_unitario`: el archivo tal cual, como texto, con sus 16.378 filas |
+| `silver_ventas` | las mismas columnas ya limpias más `monto` (`fecha` AAAA-MM-DD, `cantidad` entera, `precio_unitario` y `monto` en Bs con dos decimales) |
+| `gold_ventas_cliente_mes` | `cliente`, `mes` (AAAA-MM), `pedidos` (pedidos distintos), `unidades`, `ventas_bs` |
+
+**Dinero en este proyecto:** Bs con dos decimales (REAL), no centavos enteros. Para comparar sin errores de coma flotante, el corrector pasa cada importe a centavos redondeando al centavo más cercano (mitad hacia arriba) y exige igualdad exacta: `monto` = `cantidad` × `precio_unitario` y `ventas_bs` = suma de los `monto` entregados de ese cliente y mes (tolerancia de 0 centavos). Los proyectos C06 y la evaluación final sí usan centavos enteros.
+El corrector revisa filas y agrupaciones, no solo totales: Bronze idéntico al archivo, Silver fila por fila (pedido + producto), Gold recalculado desde tu propia Silver y comparado con el esperado. Una Gold con las ventas intercambiadas entre clientes, o con líneas contadas como pedidos, falla aunque el total sea 1.468.924,50 Bs.
+
 Aceptación: contrato escrito, logging, datos de origen preservados, claves válidas, cuadres
 y README de reproducción. La adaptación v 5 evita truncar cantidades fraccionarias.

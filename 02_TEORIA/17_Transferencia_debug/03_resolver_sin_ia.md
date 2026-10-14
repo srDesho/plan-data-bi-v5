@@ -157,4 +157,4 @@ Explicación: «`es_valida` recibe una cantidad y devuelve `True` solo si es may
 
 ## Después, en los ejercicios
 
-La práctica de este capítulo es el caso de transferencia **C06** y la evaluación final. No abras `08_SOLUCIONES/controles_final.json` ni la referencia hasta terminar el intento integral ([`03_EJERCICIOS/Casos/`](../../03_EJERCICIOS/Casos/)). Siguiente capítulo: [Capítulo 18 — Entrevistas](../18_Entrevistas.md).
+La práctica de este capítulo es el caso de transferencia **C06** y la evaluación final. No abras `08_SOLUCIONES/etl_nuevo_referencia.py` ni los controles de C06 hasta terminar el intento (la evaluación final no tiene referencia en el paquete: ver su enunciado) integral ([`03_EJERCICIOS/Casos/`](../../03_EJERCICIOS/Casos/)). Siguiente capítulo: [Capítulo 18 — Entrevistas](../18_Entrevistas.md).

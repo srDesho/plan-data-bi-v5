@@ -1,8 +1,8 @@
 # Simulacro semana 4
 
 30 minutos:presentación 3, SQL 12, conceptos 8, caso 5, retro 2.
-Consultas sin soluciones:N1, N8. Conceptos del banco:I14, I16, I17.
-Reformulación del caso:C05, sin resolverlo completo durante los 5 minutos.
+Consultas sin soluciones:N2, J5. Conceptos del banco:I14, I16, I17.
+Reformulación del caso:AN12 (rechazos), sin resolverlo completo durante los 5 minutos.
 
 - [ ] Formula población, grano y denominador antes de escribir.
 - [ ] Resuelve SQL y enuncia un cuadre.

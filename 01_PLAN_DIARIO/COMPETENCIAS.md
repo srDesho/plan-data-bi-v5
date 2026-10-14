@@ -21,16 +21,16 @@ Cada puerta describe lo que debes poder demostrar, con evidencia, antes de pasar
 
 | Puerta | Fecha objetivo | Qué demuestras | Evidencia | Si no se cumple |
 |---|---|---|---|---|
-| **P1 · Consultar y calcular** | D06 | SELECT/WHERE/GROUP BY/HAVING con el filtro correcto; un bucle con acumulador; numerador y denominador de un KPI | Examen S01 con 70/100 o más, o dos consultas y un bucle rehechos sin mirar; hito H01 | REFUERZO de D03–D05 en el próximo bloque práctico |
-| **P2 · Funciones, errores y JOIN** | D13 | P09–P11 con `ValueError`; JOIN y LEFT JOIN explicados; leer CSV con el módulo estándar | P09–P11 y P13 aprobados; J1, J2 y J5 explicados; S02 con 70/100 o más; hito H02 | REFUERZO de D09–D11 antes de Pandas |
-| **P3 · Pandas y calidad de datos** | D20 | DataFrame, `groupby`, merge `many_to_one` con `validate`, duplicados exactos frente a conflictos, perfilado | P17 y P20–P23 aprobados; K1, V3, V4; S03 con 70/100 o más; hito H03 | REFUERZO de D16–D19; el mini-ETL espera |
-| **P4 · Mini-ETL** | D24 | Un ETL de cuatro funciones con rechazos, ecuación de conteos, carga repetible y conexión cerrada | ME01–ME03 aprobados con tu código; segunda ejecución igual; archivo SQLite renombrable (conexión cerrada); hito H04 | ME01–ME03 pasan a REFUERZO; el ETL grande no empieza |
-| **P5a · Checkpoint ETL guiado** | D27 | El ETL de la distribuidora hasta claves y duplicados | Conteos de control (filas de origen, duplicados, vendedores recuperados); S04; hito H05 | Se completa en D29–D30; no se promueve a aprobado |
-| **P5 · ETL guiado completo** | D30 (defensa en D34) | Gold, carga SQLite repetible, cuadre SQL independiente | `validar_etl_distribuidora.py` correcto; segunda ejecución; prueba de cantidad fraccionaria; cinco decisiones explicadas; hito H06 | Excel y Power BI se posponen; REFUERZO del ETL |
-| **P6 · BI mínimo** | D34 | Tabla dinámica de Excel contra SQL; tablas, relaciones y tres medidas de Power BI contra SQL | Excel coincide con E4; las medidas coinciden con J2 y K1, o la parte que no ejecutaste queda registrada como PENDIENTE; hito H07 | El resto de BI pasa a REFUERZO después de P7; no retrasa C06 |
-| **P7 · Transferencia C06** | D41 | Un ETL nuevo con tu código, validado y defendido | `validar_final.py --transferencia` correcto; repetición; pruebas adversas; defensa de cinco decisiones; hito H08 | Se registra la limitación y se refuerzan dos bases antes de cualquier variante |
+| **P1 · Consultar y calcular** | D06 | SELECT/WHERE/GROUP BY/HAVING con el filtro correcto; un bucle con acumulador; numerador y denominador de un KPI | Examen S01 con 70/100 o más, el 60 % de cada competencia y sin fallo crítico; hito H01 (variante resuelta y explicada) | REFUERZO de D03–D05 y la variante de recuperación de S01 en el próximo bloque práctico |
+| **P2 · Funciones, errores y JOIN** | D13 | P09–P11 con `ValueError`; JOIN y LEFT JOIN explicados; leer CSV con el módulo estándar | P09–P11 y P13 aprobados; J2 y J5 explicados; S02 con 70/100 o más, el 60 % de cada competencia y sin fallo crítico; hito H02 | REFUERZO de D09–D11 antes de Pandas |
+| **P3 · Pandas y calidad de datos** | D20 | DataFrame, `groupby`, merge `many_to_one` con `validate`, duplicados exactos frente a conflictos, perfilado | P17 y P21–P23 aprobados; la agrupación por pedido (P20 o su variante en H03); K1, V3, V4; S03 con **75/100** o más, el 60 % de cada competencia y sin fallo crítico; hito H03 | REFUERZO de D16–D19; el mini-ETL espera |
+| **P4 · Mini-ETL** | D24 | Un ETL de cuatro funciones con rechazos, ecuación de conteos, carga repetible y conexión cerrada | ME01–ME03 aprobados con tu código; segunda ejecución igual; archivo SQLite renombrable (conexión cerrada); hito H04; en S04 (D27) T1 ≥ 60 % | ME01–ME03 pasan a REFUERZO; el ETL grande no empieza |
+| **P5a · Checkpoint ETL guiado** | D27 | El ETL de la distribuidora hasta claves y duplicados | Conteos de control (filas de origen, duplicados, vendedores recuperados); S04 con 75/100 o más y sin fallo crítico; hito H05 | Se completa en D29–D30; no se promueve a aprobado |
+| **P5 · ETL guiado completo** | D30 (defensa en D34) | Gold, carga SQLite repetible, cuadre SQL independiente | `validar_etl_distribuidora.py` correcto (Bronze, Silver y Gold fila por fila); segunda ejecución; prueba de cantidad fraccionaria; cinco decisiones explicadas; hito H06; S05 Parte A con 56/75 | Excel y Power BI se posponen; REFUERZO del ETL |
+| **P6 · BI mínimo** | D34 | Tabla dinámica de Excel contra SQL; tablas, relaciones y tres medidas de Power BI contra SQL | Excel coincide con E4; las medidas coinciden con J2 y K1 (S05 Parte B con 19/25); lo que no ejecutaste queda PENDIENTE y puntúa 0; hito H07 | El resto de BI pasa a REFUERZO después de P7; no retrasa C06 |
+| **P7 · Transferencia C06** | D41 | Un ETL nuevo con tu código, validado y defendido | `validar_final.py --transferencia` correcto; repetición; pruebas adversas; defensa de cinco decisiones; S06 con 80/100 y sin puerta crítica; hito H08 | Se registra la limitación y se refuerzan dos bases antes de cualquier variante |
 
-La **evaluación final** (objetivo 23–30 de noviembre) se toma cuando P7 esté cumplida. Si en esa fecha no lo está, no se declara aprobación: se registra la limitación y se trabaja el refuerzo. Una prueba aprobada con ayuda no acredita autonomía.
+La **evaluación final** (objetivo 23–30 de noviembre, 9,5 h netas, **posterior a las 42 jornadas y no incluida en las 90 horas**) se toma cuando P7 esté cumplida. Usa un contrato distinto al de C06 y se corrige con huellas, no con una tabla esperada publicada. Si en esa fecha P7 no está cumplida, no se declara aprobación: se registra la limitación y se trabaja el refuerzo. Una prueba aprobada con ayuda no acredita autonomía: la autoría se respalda con una defensa (explicar, anticipar, reparar y modificar en vivo). Detalle: `09_EVALUACION_FINAL/ENUNCIADO.md`.
 
 ## Qué hacer si una puerta no se cumple en su fecha
 
@@ -51,7 +51,7 @@ La **evaluación final** (objetivo 23–30 de noviembre) se toma cuando P7 esté
 
 ## Estimaciones de carga (supuestos)
 
-`CARGA_ESTIMADA.md` muestra el tiempo estimado por jornada: lectura de las lecciones NÚCLEO, criterio analítico y ejercicios OBLIGATORIOS, más empleo, examen y cierre. **No es una medición.** Cada enunciado declara un tiempo objetivo (para quien ya domina el tema) y un tiempo de **primera vez** realista para un principiante, con margen para leer, depurar y equivocarse; la estimación usa el punto medio de ese rango. Las tareas de proyecto (ETL guiado, C06) y las versiones reducidas de Excel y Power BI se estimaron a mano. El error razonable es de ±35 %.
+`CARGA_ESTIMADA.md` muestra el tiempo estimado por jornada: lectura de las lecciones NÚCLEO, criterio analítico y ejercicios OBLIGATORIOS, más empleo, examen y cierre (sin contar dos veces las tareas que son parte de un examen). **No es una medición.** Cada enunciado declara un tiempo objetivo (para quien ya domina el tema) y un tiempo de **primera vez** realista para un principiante, con margen para leer, depurar y equivocarse; la estimación usa el punto medio de ese rango. Las tareas de proyecto (ETL guiado, C06) y las versiones reducidas de Excel y Power BI se estimaron a mano. El error razonable es de ±35 %.
 Registra tus minutos reales en `mi_trabajo/progreso.csv`; después de dos semanas, ajusta el plan con tus propios datos. Un día con razón por encima de 1,2 es AJUSTADO: usa el modo REDUCIDO. Las semanas estimadas por encima de 1,1 del plan (15 h) corren la puerta sin acumular horas: el plan no promete que el estimado de primera vez quepa en 15 horas; promete que las 15 horas netas se dedican primero a lo NÚCLEO.
 
 ## Alcance reducido de Excel y Power BI
@@ -67,7 +67,7 @@ Obtener un OK del corrector no demuestra que entiendes. Cada puerta tiene un **h
 3. **Resolver una variante nueva**, distinta de los ejercicios que ya resolviste.
 4. **Justificar** una decisión comparando alternativas.
 
-El hito se da por cumplido con tres de los cuatro criterios sostenidos oralmente. Si falla, la puerta pasa a REFUERZO de lo que faltó, igual que un examen por debajo del umbral. Las cifras de control de cada hito están en `08_SOLUCIONES/controles_analitico.md` y se recalculan con `herramientas/verificar_etapa2.py`.
+El hito se da por cumplido si logras la **variante resuelta y comprobada (A)** y la **explicación de tu solución (B)** —condiciones necesarias— y al menos dos de las tres valoraciones restantes (explicar los conceptos, predecir antes de ejecutar, justificar). Si falla, la puerta pasa a REFUERZO de lo que faltó y repites el hito con otra variante, igual que un examen por debajo del umbral. Documentación oficial y consultas de sintaxis están permitidas; copiar una solución o usar código generado por IA no acredita un intento autónomo, y ningún corrector certifica la autoría por sí solo. Las cifras de control de cada hito están en `08_SOLUCIONES/controles_analitico.md` y se recalculan con `herramientas/verificar_etapa2.py`.
 
 | Hito | Puerta | Jornada | Qué comprueba |
 |---|---|---|---|
@@ -98,18 +98,30 @@ No quiero solamente calcular indicadores: quiero comprender qué significan y cu
 ## Perfil N1 (analista junior de datos)
 
 N1 es el nivel de quien puede resolver, **sin copiar y con ayuda mínima**, tareas acotadas y repetibles de datos y explicar qué hizo. No es empleo asegurado ni autonomía profesional avanzada: es la base que este programa se propone demostrar con evidencia.
+Cada examen evalúa solo competencias cuya preparación fue OBLIGATORIA antes (no REFUERZO ni PROFUNDIZACIÓN) y su documento trae la tabla competencia → preparación → tarea → evidencia → puntos.
 
-| Competencia N1 | Evidencia en el plan |
-|---|---|
-| Consultar datos con SQL (filtros, agregación, JOIN, CTE, ventanas) con el denominador correcto | P1–P3; S01–S03; AN03–AN05, AN10–AN11 |
-| Escribir funciones Python con contrato y leer un error | P1–P2; P09–P13; H02; DB01 |
-| Manipular tablas con Pandas y validar uniones y duplicados | P3; P17, P20–P23; H03 |
-| Construir un ETL pequeño (Bronze, Silver, Gold) repetible, con rechazos y cuadres | P4–P5; ME01–ME03; ETL-1 a ETL-6; H04–H06 |
-| Elegir y calcular KPIs y saber qué significan (cumplimiento, cobertura, efectividad, productividad, ABC) | AN04, AN07, AN11, AN14, AN15 |
-| Describir datos con media, mediana, moda, dispersión y percentiles y elegir la medida adecuada | AN08, AN13; 11.3–11.5 |
-| Cuadrar el mismo resultado entre herramientas (SQL, Python, Excel, BI) | P6; E4; PB03; H07 |
-| Comunicar con hechos, hipótesis, límites y una acción | AN06, AN18; 6.6 |
-| Transferir el método a un caso nuevo y defender las decisiones | P7; C06; H08 |
+| ID | Competencia N1 | Evidencia en el plan | Se evalúa en |
+|---|---|---|---|
+| N1.1 | Consultar datos con SQL (filtros, agregación, JOIN, CTE, ventanas) con el denominador correcto | P1–P3; AN03–AN05, AN10–AN11 | S01, S02, S03 (y N2, N3, V4 dentro de S04–S06) |
+| N1.2 | Escribir funciones Python con contrato, convertir y rechazar, y leer un error | P1–P2; P04–P13; H02; DB01 | S01, S02 |
+| N1.3 | Manipular tablas con Pandas y validar uniones y duplicados | P3; P17, P21–P23; H03 | S03 |
+| N1.4 | Construir un ETL (Bronze, Silver, Gold) repetible, con rechazos y cuadres | P4–P5; ME01–ME03; ETL-1 a ETL-6; H04–H06 | S04, S05 (Parte A), S06 y la evaluación final |
+| N1.5 | Elegir y calcular KPIs y saber qué significan (cumplimiento, cobertura, efectividad, productividad, ABC) | AN04, AN07, AN11, AN14, AN15 | S01 (cumplimiento), S05 (N3 efectividad) |
+| N1.6 | Describir datos con media, mediana, moda, dispersión y percentiles y elegir la medida adecuada | AN08, AN13; lecciones 11.3–11.5 | AN08 y AN13 (con cifras de control); no hay examen de estadística en la ruta BASE |
+| N1.7 | Cuadrar el mismo resultado entre herramientas (SQL, Python, Excel, BI) | P6; E4; PB03; H07 | S05 (Parte B) y la validación SQL independiente de S06 y la final |
+| N1.8 | Comunicar con hechos, hipótesis, límites y una acción | AN06, AN18; lección 6.6 | S01 (KPI), la analítica de la evaluación final |
+| N1.9 | Transferir el método a un caso nuevo y defender las decisiones | P7; C06; H08 | S06 y la evaluación final |
+
+### Lo practicado, lo disponible y lo evaluado
+
+- **Disponible:** las 100 lecciones (consulta).
+- **Practicado en BASE:** NÚCLEO y los ejercicios OBLIGATORIOS (`RUTAS.md`).
+- **Evaluado:** solo lo practicado. Inferencia estadística, DAX avanzado, Excel más allá de la tabla dinámica y SQL Server son disponibles y opcionales; no hay examen sobre ellos.
+- **Excel y Power BI:** el alcance BASE es conciliar y tres medidas fundamentales. Si no tienes la herramienta, la parte queda PENDIENTE y puntúa 0; una simulación en Python o la lectura del código no equivalen a una ejecución.
+
+### SQL: práctica frecuente y progresiva, no obligación diaria
+
+El plan no promete SQL todos los días. En las semanas 1–3 hay SQL exigible casi cada jornada; en las de Python, ETL y BI, el SQL aparece dentro de un examen o de un proyecto (cuadre SQL independiente de ETL-6 y C06-4, N2, N3, V4) y como **repaso opcional** de diez minutos que no suma a la carga. La tabla por semana está en `RUTAS.md` y la genera `aplicar_nucleo.py`.
 
 ## Rutas de estudio
 

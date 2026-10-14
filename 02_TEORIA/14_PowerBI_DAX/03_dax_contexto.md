@@ -38,7 +38,7 @@ DIVIDE(
 Lectura de adentro hacia afuera:
 
 1. `SUM(fact_ventas[monto_centavos])` suma la columna **en el contexto de filtro actual**.
-2. `CALCULATE(..., fact_ventas[estado] = "entregado")` **agrega** el filtro «solo entregadas» a ese contexto.
+2. `CALCULATE(..., fact_ventas[estado] = "entregado")` **modifica** ese contexto con el filtro «solo entregadas»: si el contexto no filtra `estado`, el filtro se **agrega**; si ya había un filtro sobre `estado` (por ejemplo, un segmentador), el filtro de `CALCULATE` lo **sobrescribe** (ver el recuadro de alcance más abajo).
 3. `DIVIDE(..., 100)` convierte centavos en bolivianos, con protección ante un divisor vacío.
 
 **2. Qué valor debería mostrar según el filtro.** Para entender el contexto, simulamos en Python lo que hace DAX: una función que calcula la medida **bajo un filtro** (las filas que el contexto deja pasar):
@@ -76,6 +76,8 @@ ruta R01:          1265.0
 mes 2026-09:       1339.0
 R01 y 2026-09:     800.0
 ```
+
+**Alcance de esta simulación.** La función de Python aplica los filtros del contexto (ruta, mes) y después el de `CALCULATE` (estado): para estas combinaciones coincide con lo que haría DAX, porque el contexto nunca filtra `estado`. **No reproduce todos los comportamientos de `CALCULATE`.** Según la documentación de Microsoft (función CALCULATE), cuando una columna ya está filtrada en el contexto, el filtro nuevo **sobrescribe** el existente (no se intersectan); solo `KEEPFILTERS` añade el filtro sin quitar los previos de la misma columna, y `ALL`/`REMOVEFILTERS` los quitan. Ejemplo: si un segmentador selecciona `estado = "anulado"`, `Ventas Bs` igualmente devuelve las ventas *entregadas* (el filtro `"entregado"` reemplaza al del segmentador), mientras que una intersección como la de la simulación daría vacío. La simulación sirve para entender el contexto de ruta y mes; los detalles de `CALCULATE` hay que comprobarlos en Power BI Desktop, donde en este paquete **no se ejecutaron**.
 
 Esto es lo que verías en una tarjeta de Power BI: sin segmentadores, 2 332,5; con la ruta R01 seleccionada, 1 265; con septiembre, 1 339; con ambos, 800. **La misma medida, cuatro resultados**: cada uno depende del contexto de filtro. No hay cuatro fórmulas; hay una, evaluada en cuatro contextos. En una matriz con ruta en las filas y mes en las columnas, **cada celda** es un contexto distinto.
 

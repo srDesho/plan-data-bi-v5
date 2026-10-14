@@ -24,12 +24,12 @@
    "archivo": "01_SQL_basico/03_where_operadores.md",
    "tipo": "REFUERZO",
    "dia_ext": 4,
-   "cuando": "Si WHERE con AND/OR/IN/BETWEEN te da filas que no esperas (S3, S5, S7).",
+   "cuando": "Si WHERE con AND/OR/IN/BETWEEN te da filas que no esperas (S4 lo practica en D03; S5 y S9 son refuerzo).",
    "cobertura": {
     "por": [
      "S7"
     ],
-    "nota": "S7 (D02) usa WHERE con una condición sobre NULL."
+    "nota": "S7 (D02) usa WHERE; S4 (D03) añade AND con una comparación, que es lo que usa el examen S01."
    }
   },
   "1.4": {
@@ -82,7 +82,7 @@
   "2.5": {
    "archivo": "02_SQL_agregados/05_case_coalesce.md",
    "tipo": "NÚCLEO",
-   "dia": 19
+   "dia": 17
   },
   "3.1": {
    "archivo": "03_SQL_joins/01_claves_relaciones.md",
@@ -189,7 +189,7 @@
   "6.2": {
    "archivo": "06_KPIs/02_cumplimiento_cobertura_efectividad.md",
    "tipo": "NÚCLEO",
-   "dia": 26
+   "dia": 25
   },
   "6.3": {
    "archivo": "06_KPIs/03_ticket_frecuencia_activos.md",
@@ -462,9 +462,9 @@
    "cuando": "Si no sabes expresar una frecuencia como conteo y como porcentaje.",
    "cobertura": {
     "por": [
-     "G5"
+     "G6"
     ],
-    "nota": "G5 y G6 ya cuentan por grupo."
+    "nota": "G6 (D05) cuenta clientes por ruta con GROUP BY: es una tabla de frecuencias."
    }
   },
   "11.3": {
@@ -480,7 +480,7 @@
   "11.5": {
    "archivo": "11_Estadistica_descriptiva/05_percentiles_atipicos.md",
    "tipo": "NÚCLEO",
-   "dia": 25
+   "dia": 27
   },
   "11.6": {
    "archivo": "11_Estadistica_descriptiva/06_distribuciones_histograma_z.md",
@@ -684,7 +684,7 @@
    "seccion": "§1",
    "titulo": "Leer un error en lugar de temerle",
    "min": 15,
-   "dia": 11
+   "dia": 9
   },
   "19.2": {
    "seccion": "§2",

@@ -1,6 +1,6 @@
 # PROGRESO FASE 2 — Plan Data & BI v5
 
-Última actualización: 2026-10-13 (cierre de la Etapa 2).
+Última actualización: 2026-10-14 (cierre de la Etapa 3).
 
 ## Estado de las etapas
 
@@ -8,7 +8,7 @@
 |---|---|
 | Etapa 1 — Reconstrucción de la teoría (`02_TEORIA`) | **COMPLETA** (informe: `INFORME_FASE2_ETAPA1_TEORIA.md`) |
 | Etapa 2 — Integración pedagógica, calendario y modalidades de estudio | **COMPLETA, pendiente de revisión del usuario** (informe: `INFORME_FASE2_ETAPA2_CALENDARIO.md`) |
-| Etapa 3 — Exámenes, evaluación final y validación completa | **PENDIENTE** (no autorizada; requiere la frase exacta «AUTORIZO ETAPA 3») |
+| Etapa 3 — Exámenes, evaluación final y validación completa | **COMPLETA, pendiente de revisión del usuario** (informe: `INFORME_FASE2_FINAL.md`) |
 
 ## Última tarea completada
 
@@ -37,3 +37,29 @@ Cuando se autorice la Etapa 3: mejorar S01–S06 (alinear con hitos H01–H08 y 
 - Usar siempre el intérprete del `.venv` (3.12.10, pandas 2.2.3) para verificar: el `python` del sistema es 3.14 con pandas 3.0.3 y da resultados distintos.
 - Escribir guías o documentos con Python desde Bash en Windows: los heredocs alteran las barras invertidas; guardar el script en un archivo antes de ejecutarlo.
 - Etapa 3 (no autorizada): mejorar exámenes S01–S06, rediseñar la evaluación final, validación completa, sincronización final e `INFORME_FASE2_FINAL.md`.
+
+## Etapa 3: cierre
+
+Autorizada con «AUTORIZO ETAPA 3». Sin commits ni push; `mi_trabajo`, D02 y el contenido de D01 sin tocar (las casillas marcadas de D01 son progreso del estudiante).
+Resultado, pruebas y límites: `INFORME_FASE2_FINAL.md`. Resumen de lo hecho:
+
+- **Validadores** (`validacion_comun.py`, `validar_final.py`, `validar_etl_distribuidora.py`, `construir_huellas.py`): filas, claves y agrupaciones en vez de totales; huellas en `08_SOLUCIONES/huellas_*.json` y `09_EVALUACION_FINAL/verificacion/`. Pruebas adversas en copias: `pruebas_validadores.py`.
+- **Prerrequisitos, REDUCIDO y carga**: campos `entra`, `reducido_*` y `evaluacion_final` en `nucleo.json`; guías regeneradas con `aplicar_nucleo.py`; estimado 95,6 h frente a 90 h; evaluación final 9,5 h fuera de las 90 h.
+- **Exámenes S01–S06** y controles (`controles_examenes.py`), **hitos H01–H08** con variante y explicación necesarias (H06 con el esquema real).
+- **Evaluación final nueva** (contrato de despachos de ferretería) con la referencia fuera del paquete: `D:\Course Python\Claude\GPT\Plan_Data_BI_v5_CUSTODIA_FINAL\`.
+- **Correcciones técnicas**: `==` en SQLite, alcance de la simulación de `CALCULATE` (verificado con la documentación de Microsoft).
+- **Verificación**: `verificar_etapa2.py` 10 grupos, `pruebas_mutaciones_ruta.py` 12/12, `auditar_enunciados.py` 7 grupos, `verificar_teoria.py`, `pruebas_validadores.py` y `verificar_paquete.py` (ver el informe para las cifras exactas).
+
+## Próxima tarea exacta
+
+**Detenerse y esperar la revisión del usuario.** No hay Etapa 4. Lo único pendiente no depende de este paquete: guardar la carpeta de custodia con otra persona, ejecutar Excel y Power BI Desktop (`05_PROYECTOS/powerbi/VALIDACION_MANUAL.md`) y registrar tiempos reales en `mi_trabajo/progreso.csv`.
+
+## Restricciones y decisiones vigentes
+
+- Rama única `main`. Sin commits, merges, rebase, reset destructivo ni push. Sin ramas nuevas.
+- No tocar `mi_trabajo` ni D02; D01 solo conserva sus casillas marcadas.
+- Fuente única de la ruta: `01_PLAN_DIARIO/nucleo.json` + `lecciones.json`; todo lo derivado (guías, calendario, carga, rutas) se regenera con `python herramientas/aplicar_nucleo.py`.
+- Los ejemplos de las lecciones usan `04_DATASETS/mini_base/`; la teoría no publica resultados de ejercicios.
+- El código DAX/M y los pasos de Power BI Desktop, de Excel y los ejemplos de SQL Server **no se ejecutaron**.
+- Los tiempos son estimaciones de primera vez (±35 %), no mediciones.
+- Usar siempre el intérprete del `.venv` (3.12.10, pandas 2.2.3) para verificar. Escribir scripts con barras invertidas en un archivo antes de ejecutarlos (los heredocs de esta máquina las alteran).

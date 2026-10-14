@@ -1,8 +1,8 @@
 # Simulacro semana 3
 
 30 minutos:presentación 3, SQL 12, conceptos 8, caso 5, retro 2.
-Consultas sin soluciones:K2 b, V2. Conceptos del banco:I09, I10, I11.
-Reformulación del caso:C03, sin resolverlo completo durante los 5 minutos.
+Consultas sin soluciones:K1, V4. Conceptos del banco:I09, I10, I11.
+Reformulación del caso:AN11 (clases ABC), sin resolverlo completo durante los 5 minutos.
 
 - [ ] Formula población, grano y denominador antes de escribir.
 - [ ] Resuelve SQL y enuncia un cuadre.

@@ -1,8 +1,8 @@
 # Simulacro semana 1
 
 30 minutos:presentación 3, SQL 12, conceptos 8, caso 5, retro 2.
-Consultas sin soluciones:S7, G1. Conceptos del banco:I01, I02, I05.
-Reformulación del caso:C01, sin resolverlo completo durante los 5 minutos.
+Consultas sin soluciones:S7, G6. Conceptos del banco:I01, I02, I05.
+Reformulación del caso:AN03 (rutas «grandes»), sin resolverlo completo durante los 5 minutos.
 
 - [ ] Formula población, grano y denominador antes de escribir.
 - [ ] Resuelve SQL y enuncia un cuadre.

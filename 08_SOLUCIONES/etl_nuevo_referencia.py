@@ -1,4 +1,4 @@
-"""ETL independiente para transferencia/final. Consultar solo después de entregar el intento."""
+"""ETL de referencia del caso de transferencia C06. Consultar solo después de entregar el intento. (La evaluación final tiene otro contrato y su referencia no está en el paquete.)"""
 from pathlib import Path
 from datetime import datetime
 from decimal import Decimal, InvalidOperation

@@ -2,7 +2,7 @@
 
 30 minutos:presentación 3, SQL 12, conceptos 8, caso 5, retro 2.
 Consultas sin soluciones:J2, J5. Conceptos del banco:I07, I08, I13.
-Reformulación del caso:C04, sin resolverlo completo durante los 5 minutos.
+Reformulación del caso:AN06 (clientes sin compra), sin resolverlo completo durante los 5 minutos.
 
 - [ ] Formula población, grano y denominador antes de escribir.
 - [ ] Resuelve SQL y enuncia un cuadre.

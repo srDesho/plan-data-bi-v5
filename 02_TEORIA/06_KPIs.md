@@ -11,7 +11,7 @@ Una **métrica** es una medida; un **KPI** es una medida elegida para seguir un 
 | # | Lección | KPI que cubre | Tipo | Tiempo |
 |---|---|---|---|---|
 | 6.1 | [Qué es un KPI y la ficha de definición](06_KPIs/01_que_es_un_kpi.md) | KPI 01 · ventas entregadas frente a netas | núcleo · D12 | 50 min |
-| 6.2 | [Cumplimiento, cobertura y efectividad](06_KPIs/02_cumplimiento_cobertura_efectividad.md) | KPI 03–06 | núcleo · D26 | 60 min |
+| 6.2 | [Cumplimiento, cobertura y efectividad](06_KPIs/02_cumplimiento_cobertura_efectividad.md) | KPI 03–06 | núcleo · D25 | 60 min |
 | 6.3 | [Ticket, drop size, frecuencia y activos](06_KPIs/03_ticket_frecuencia_activos.md) | KPI 08–10 | refuerzo | 60 min |
 | 6.4 | [Productividad, crecimiento y variaciones](06_KPIs/04_productividad_variaciones.md) | KPI 02, 07 y 13 | núcleo · D31 | 55 min |
 | 6.5 | [ABC, Pareto y rotación](06_KPIs/05_abc_pareto_rotacion.md) | KPI 11–12 | núcleo · D19 | 60 min |

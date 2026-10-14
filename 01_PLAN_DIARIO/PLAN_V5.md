@@ -1,6 +1,6 @@
 # Plan Data & BI v 5
 
-**Formación: 12 de octubre–22 de noviembre de 2026. Evaluación final: 23–30 de noviembre.**
+**Formación: 12 de octubre–22 de noviembre de 2026 (42 jornadas, 90 horas de plan). Evaluación final: 23–30 de noviembre, un bloque posterior de 9,5 horas que no está incluido en las 90.**
 
 El punto de partida es una pasantía de BI con fuerte apoyo de IA y bases técnicas todavía en construcción.
 El objetivo es resolver SQL, programar Python y construir un ETL junior propio, comprobado y explicable.
@@ -9,6 +9,8 @@ El programa no garantiza empleo ni autonomía profesional avanzada en seis seman
 **Revisión 5.1 (tras la auditoría):** cada jornada separa ejercicios OBLIGATORIOS, REFUERZO y OPCIONALES, el avance depende de puertas de competencia ([Competencias y puertas](COMPETENCIAS.md)) y se añadieron un mini-ETL y tres ejercicios de depuración antes del ETL grande. Las fechas son objetivos, no plazos. D01 y D02 no cambiaron.
 
 **Revisión 5.2 (Fase 2, Etapa 2):** las 100 lecciones de la teoría están clasificadas (NÚCLEO, REFUERZO y PROFUNDIZACIÓN) y las lecciones NÚCLEO tienen día; el bloque de aprendizaje de cada jornada se reparte entre lecciones, SQL, práctica y criterio analítico; cada puerta exige un hito de comprensión; la ruta EXTENDIDA es voluntaria y los domingos son flexibles. Siguen vigentes el Plan v5, sus 42 jornadas y sus fechas. D01 no cambió y D02 solo recibió un bloque de lecciones. Detalle: [Rutas BASE y EXTENDIDA](RUTAS.md).
+
+**Revisión 5.3 (Fase 2, Etapa 3):** los validadores revisan filas, claves y agrupaciones (no solo totales); cada jornada declara qué se exige al entrar y define su modo REDUCIDO como una entrega menor; los exámenes S01–S06 muestran competencia → preparación → evidencia → puntos, con variantes y diagnósticos; los hitos exigen la variante y la explicación; la evaluación final usa un contrato nuevo y es un bloque posterior de 9,5 h fuera de las 90 horas. Siguen vigentes el Plan v5, sus 42 jornadas y sus fechas.
 
 ## Carga y modalidades
 
@@ -26,8 +28,8 @@ Añade descansos de diez minutos cada 45–50 minutos; son pausas, no actividade
 | Sábado |200 min|60 min|20 min|
 | Domingo |Descanso (0 min obligatorios)|Descanso|Descanso|
 
-Las modalidades son alternativas de la misma jornada. MÍNIMO: quince minutos de SQL conocido y cinco de
-validación/reflexión. No pretende cubrir contenidos nuevos. Si necesitas descansar, el descanso reemplaza la sesión.
+Las modalidades son alternativas de la misma jornada. REDUCIDO no es el mismo ejercicio con menos minutos: cada guía define una lectura mínima y una **entrega menor y realizable** con la preparación que necesita, y dice qué pasa a REFUERZO. MÍNIMO: quince minutos de práctica ya conocida (una consulta o una función que ya resolviste) y cinco de
+validación/reflexión. No acredita contenidos nuevos ni cumple puertas. Si necesitas descansar, el descanso reemplaza la sesión.
 Un domingo no requiere consulta, publicación ni commit. Si tienes energía puedes usar **45–120 minutos voluntarios** en una sola opción (recuperación de un REFUERZO o una lección de EXTENDIDA); si no, descansas. No se genera una deuda de horas.
 
 ## Rutas BASE y EXTENDIDA
@@ -199,7 +201,7 @@ Guarda consultas, scripts y explicaciones propios en GitHub; los borradores y re
 
 - [ ] **D40 · 20/11 viernes:** [C06 (4): SQLite, repetición y README](dias/D40_2026-11-20.md) · C 150 / R 60 / M 20 min.
 
-- [ ] **D41 · 21/11 sábado:** [Último examen y preparación del final](dias/D41_2026-11-21.md) · C 200 / R 60 / M 20 min.
+- [ ] **D41 · 21/11 sábado:** [Examen S06: transferencia C06 y defensa](dias/D41_2026-11-21.md) · C 200 / R 60 / M 20 min.
 
 - [ ] **D42 · 22/11 domingo:** [Descanso real](dias/D42_2026-11-22.md) · C 0 / R 0 / M 0 min.
 
@@ -211,10 +213,13 @@ Guarda consultas, scripts y explicaciones propios en GitHub; los borradores y re
 ## Evaluación final
 
 - [ ] 23 de noviembre: abrir enunciado y datos nuevos; contrato y perfilado.
-- [ ] 24–27: construir, cargar y conciliar ETL propio, sin código de IA ni referencias resueltas.
-- [ ] 28: repetir, probar entradas adversas, documentar e interpretar.
+- [ ] 24–26: adaptar tus funciones de C06, construir, cargar y conciliar un ETL propio con el contrato nuevo, sin código de IA ni referencias resueltas.
+- [ ] 27: SQL independiente, segunda ejecución y entradas adversas.
+- [ ] 28: README, informe e interpretación; ensayo de la defensa.
 - [ ] 29: descanso.
-- [ ] 30: defensa, corrector después de cerrar la entrega y rúbrica de autonomía.
+- [ ] 30: defensa con observador (explicar, anticipar, reparar y modificar en vivo), corrector después de cerrar la entrega y rúbrica de autonomía.
+
+**Carga:** 570 minutos netos (9,5 h), antes 750 (12,5 h); es un bloque posterior y explícito, no parte de las seis semanas ni de las 90 horas (detalle en [Carga estimada](CARGA_ESTIMADA.md)).
 
 Guía completa: [Evaluación final](../09_EVALUACION_FINAL/ENUNCIADO.md). Estas fechas son objetivos: la evaluación final se toma cuando la Puerta 7 está cumplida; si no lo está, se registra la limitación y se refuerzan dos bases, sin declarar autonomía.
 La habilidad se acredita con trabajo propio, cuadres y explicación. Si falta una puerta crítica, registra la limitación

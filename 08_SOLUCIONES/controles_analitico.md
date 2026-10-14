@@ -17,7 +17,7 @@ Cada cifra se vuelve a calcular con `python herramientas/verificar_etapa2.py`, a
 
 **Qué debería aparecer en una buena respuesta**
 
-- Los hechos válidos salen de G1: pedidos entregados, pedidos anulados y su porcentaje sobre los registrados. «Los vendedores nuevos» es una **hipótesis**: la tabla no tiene motivo de anulación ni antigüedad del vendedor.
+- Los hechos válidos salen de tus conteos de `pedidos` y de G3: pedidos entregados, pedidos anulados y su porcentaje sobre los registrados. «Los vendedores nuevos» es una **hipótesis**: la tabla no tiene motivo de anulación ni antigüedad del vendedor.
 
 **Cifras de control**
 

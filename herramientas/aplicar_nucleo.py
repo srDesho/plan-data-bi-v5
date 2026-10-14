@@ -198,6 +198,61 @@ def lectura_dia(ctx, s):
     return sum(info_leccion(ctx, i)['lectura'] for i in s.get('lecciones') or [])
 
 
+def lectura_ids(ctx, ids):
+    return sum(info_leccion(ctx, i)['lectura'] for i in ids or [])
+
+
+def citas_lecciones(ctx, i, completo=False):
+    """Lecciones que cita un ejercicio: en sus primeras líneas («Lee la lección 7.9», «Lee las lecciones 7.8 y 7.9») o, con ``completo``, en todo el enunciado."""
+    if tipo(i) in ('EXAMEN', 'CUSTOM'):
+        return []
+    p = ctx.ejercicios / ruta_ejercicio(i)
+    if not p.exists() or p.suffix != '.md':
+        return []
+    lineas = p.read_text(encoding='utf-8').split('Solución separada')[0].splitlines()
+    texto = '\n'.join(lineas if completo else lineas[:6])
+    ids = []
+    for m in re.finditer(r'[Ll]ecci[oó]n(?:es)? ([\d.]+(?:(?:, | y | e )[\d.]+)*)', texto):
+        ids += re.findall(r'\d+\.\d+', m.group(1))
+    return [x for x in dict.fromkeys(ids) if x in ctx.lecciones['lecciones']]
+
+
+def dia_entrada(ctx, p):
+    """Día en que algo queda demostrado: «L:7.9» = lección NÚCLEO leída ese día; un ID = ejercicio OBLIGATORIO/REPASO resuelto ese día."""
+    if p.startswith('L:'):
+        i = p[2:]
+        if i in ctx.lecciones['puente']:
+            return ctx.lecciones['puente'][i]['dia']
+        c = ctx.lecciones['lecciones'].get(i)
+        return c['dia'] if c and c['tipo'] == 'NÚCLEO' else None
+    return dia_ejercicio(ctx, p)
+
+
+def fuente_entrada(ctx, p):
+    if p.startswith('L:'):
+        return f'lección {p[2:]} (D{dia_entrada(ctx, p):02})'
+    return f'{nombre_corto(ctx, p)} (D{dia_entrada(ctx, p):02})'
+
+
+def antes_de_empezar(ctx, s):
+    """«Antes de empezar»: lo que ya se debe poder hacer (demostrado en jornadas anteriores) frente a lo que se aprende hoy."""
+    entra = s.get('entra') or []
+    lineas = []
+    if entra:
+        lineas += ['**Antes de empezar** (lo que ya debes poder hacer; cada punto viene de una jornada anterior):', '']
+        for e in entra:
+            if e.get('por'):
+                lineas.append(f'- {e["texto"]} · viene de {", ".join(fuente_entrada(ctx, p) for p in e["por"])}.')
+            else:
+                lineas.append(f'- {e["texto"]} · requisito externo: si falta, la parte que lo necesita queda PENDIENTE y se registra.')
+        lineas += ['', 'Si algún punto no se cumple, haz primero el REFUERZO de esa jornada anterior en lugar del OBLIGATORIO de hoy. '
+                   'Lo que aparece en el bloque «Lecciones» y en los ejercicios de hoy se aprende hoy: no se exige al entrar.', '']
+    nuevo = [f'{info_leccion(ctx, i)["titulo"]}' for i in s.get('lecciones') or []]
+    if nuevo:
+        lineas += [f'**Se aprende hoy** (no se exige al entrar): {"; ".join(nuevo)}.', '']
+    return lineas
+
+
 def capitulos_dia(ctx, s):
     caps = []
     for i in s.get('lecciones') or []:
@@ -224,7 +279,7 @@ def redondear5(x):
 def reparto(ctx, d, s):
     """Reparte el tiempo de aprendizaje de la jornada (SQL + teoría + práctica) entre lecciones, SQL, práctica y criterio."""
     bl = [(a.strip(), b) for a, b in d['bloques']]
-    pool = sum(b for a, b in bl if a in POOL)
+    pool = d['completo'] - sum(b for a, b in bl if a not in POOL)     # los bloques fijos no cambian: el bloque de aprendizaje es el resto
     L = lectura_dia(ctx, s)
     C = (s.get('criterio') or {}).get('min', 0)
     E = pool - L - C
@@ -310,8 +365,7 @@ def bloque_practica(ctx, dia, d, original_dataset):
                   'de memoria), **REFUERZO** (si la puerta falló o sobra tiempo) u **OPCIONAL** (no desplaza lo obligatorio).')
     lineas.append('Un notebook es un ejemplo guiado, no una jornada adicional. El sábado prioriza examen y corrección.')
     lineas.append('')
-    if d.get('prerreq'):
-        lineas += [f'**Antes de empezar:** {d["prerreq"]} Si no se cumple, haz REFUERZO del día anterior en lugar del OBLIGATORIO de hoy.', '']
+    lineas += antes_de_empezar(ctx, d)
     if obl:
         aviso = ' (sin contar el examen, que ocupa su propio bloque)' if any(x['id'].startswith('EXAMEN:') for x in obl) else ''
         lineas += [f'### OBLIGATORIO · estimación con margen ≈ {est} min{aviso} (supuestos en `01_PLAN_DIARIO/COMPETENCIAS.md`)', '']
@@ -380,6 +434,81 @@ def seccion_extendida(ctx, dia, s):
     return lineas
 
 
+def conocidos_antes(ctx, dia):
+    """Últimos ejercicios de SQL y de Python resueltos (OBLIGATORIO/REPASO con tiempo propio) antes de la jornada: material del modo MÍNIMO."""
+    sql, py = [], []
+    for d in ctx.calendario:
+        if d['dia'] >= dia:
+            break
+        if d['dia'] in PROTEGIDOS:
+            sql += [i for i in d.get('sql', []) if i not in sql]
+            py += [i for i in d.get('python', []) if i not in py]
+            continue
+        s = ctx.nucleo['dias'].get(str(d['dia']))
+        if not s:
+            continue
+        for x in s['obligatorio'] + s['repaso']:
+            it = norm(x)
+            if it.get('est') == 0 or it['id'].startswith('EXAMEN:'):
+                continue
+            if tipo(it['id']) == 'SQL' and it['id'] not in sql:
+                sql.append(it['id'])
+            elif tipo(it['id']) == 'PY' and it['id'] not in py:
+                py.append(it['id'])
+    return sql[-2:], py[-2:]
+
+
+def seccion_reducido(ctx, dia, cal, s):
+    examen = [norm(x)['id'] for x in s['obligatorio'] if norm(x)['id'].startswith('EXAMEN:')]
+    nombres = ', '.join(nombre_corto(ctx, x) for x in s['reducido'])
+    pendientes = [nombre_corto(ctx, x) for x in s['obligatorio'] if norm(x)['id'] not in {norm(y)['id'] for y in s['reducido']}
+                  and not norm(x).get('est') == 0]
+    L = ['## REDUCIDO', '']
+    if examen:
+        L += [f'{cal["reducido"]} minutos: haz solo la evaluación del examen ({examen[0].split(":")[1]}), de 60 minutos, sin consultar nada. '
+              'La corrección (25 min) y el simulacro (30 min) se hacen en el siguiente bloque disponible, sin sumar horas.',
+              f'Haz solo: {nombres}.', '',
+              'Qué no acredita: una evaluación sin corrección no cierra la puerta; la puerta se evalúa cuando se corrige y se completa el hito de comprensión.',
+              'Empleo: si no cabe una postulación completa, registra el siguiente paso y retómalo en el siguiente bloque laboral.',
+              'No agregues las horas omitidas al día siguiente.', '']
+        return '\n'.join(L)
+    lecs = s.get('reducido_lecciones') or []
+    Lm = lectura_ids(ctx, lecs)
+    Em = s['reducido_min']
+    total = Lm + Em + 5
+    L.append(f'Plan: {cal["reducido"]} minutos. Uso previsto de primera vez: lectura mínima {Lm} + entrega reducida {Em} + cierre 5 = {total} min; '
+             f'el resto, si lo hay, es empleo o holgura (las estimaciones tienen un margen de ±35 %).')
+    if lecs:
+        L.append(f'- **Lectura mínima ({Lm} min):** ' + '; '.join(enlace_leccion(ctx, i) for i in lecs) +
+                 '. Sin micropráctica; las demás lecciones del día quedan como consulta.')
+    else:
+        L.append('- **Lectura:** hoy no hay lectura en este modo (la preparación de la entrega reducida viene de jornadas anteriores).')
+    L.append(f'- **Haz solo: {nombres}.** Entrega reducida ({Em} min): {s["reducido_entrega"]}')
+    L.append('- **Pasa a REFUERZO (no se suma a otro día):** ' + (', '.join(pendientes) if pendientes else 'nada del OBLIGATORIO') +
+             ('; la actividad de criterio del día se hace en el siguiente bloque disponible.' if s.get('criterio') else '.'))
+    if s.get('puerta'):
+        L.append(f'- **Qué no acredita:** este modo no cumple la {s["puerta"]["id"]}; mantiene la continuidad y la jornada siguiente comprueba su entrada.')
+    else:
+        L.append('- **Qué no acredita:** mantiene la continuidad, pero no acredita lo que dejaste en REFUERZO; la jornada siguiente comprueba su entrada.')
+    L += ['- Empleo: si no cabe una postulación completa, registra el siguiente paso y retómalo en el siguiente bloque laboral. '
+          'No agregues las horas omitidas al día siguiente.', '']
+    return '\n'.join(L)
+
+
+def seccion_minimo(ctx, dia, cal, s):
+    sql, py = conocidos_antes(ctx, dia)
+    ejemplo = []
+    if sql:
+        ejemplo.append('una consulta SQL que ya resolviste (p. ej. ' + ' o '.join(sql) + ')')
+    if py:
+        ejemplo.append('una función de Python que ya resolviste (p. ej. ' + ' o '.join(py) + ')')
+    L = ['## MÍNIMO', '',
+         f'{cal["minimo"]} minutos = 15 de práctica ya conocida + 5 de cierre. Rehaz sin mirar ' + ' o '.join(ejemplo) + ' y explica una decisión.',
+         'No acredita contenidos: no avanza ninguna puerta, no sustituye el OBLIGATORIO de hoy (que pasa a REFUERZO) y solo sirve para mantener la continuidad. '
+         'Si necesitas descansar, el descanso reemplaza la sesión.', '']
+    return '\n'.join(L)
+
+
 def aplicar_guia(ctx, dia, d, d_cal, nl='\n'):
     carpeta = ctx.raiz / '01_PLAN_DIARIO' / 'dias'
     ruta = next(carpeta.glob(f'D{dia:02}_*.md'))
@@ -421,20 +550,9 @@ def aplicar_guia(ctx, dia, d, d_cal, nl='\n'):
     t = re.sub(r'^Python usa el corrector por ID\.[^\n]*',
                'Python, mini-ETL y depuración usan su corrector por ID (`corregir_python.py`, `corregir_mini_etl.py`, `corregir_depuracion.py`). '
                'Estadística/casos utilizan controles y rúbricas después del intento.', t, count=1, flags=re.M)
-    red = ', '.join(nombre_corto(ctx, x) for x in d['reducido'])
-    nuevo = f'Haz solo: {red}. El resto del OBLIGATORIO pasa a REFUERZO y no se suma a otro día.'
-    t = re.sub(r'(Resuelve una consulta y un ejercicio esencial\.|Haz solo: .*? El resto del OBLIGATORIO pasa a REFUERZO y no se suma a otro día\.)',
-               lambda m: nuevo, t, count=1)
-    # lecciones y criterio en REDUCIDO (una línea con marca)
-    ids = d.get('lecciones') or []
-    if ids:
-        l_red = f'Lecciones en REDUCIDO: lee solo {ids[0]} (sin micropráctica) y deja las demás como consulta. Criterio: responde solo la primera pregunta.'
-    else:
-        l_red = 'Lecciones en REDUCIDO: hoy no hay lectura nueva. Criterio: responde solo la primera pregunta, si hay actividad.'
-    if 'Lecciones en REDUCIDO:' in t:
-        t = re.sub(r'^Lecciones en REDUCIDO:[^\n]*', lambda m: l_red, t, count=1, flags=re.M)
-    else:
-        t = re.sub(r'(^## REDUCIDO\n\n[^\n]*\n)', lambda m: m.group(1) + l_red + '\n', t, count=1, flags=re.M)
+    inicio = t.index('## REDUCIDO')
+    fin = t.index('## Empleo y clase')
+    t = t[:inicio] + seccion_reducido(ctx, dia, d_cal, d) + '\n' + seccion_minimo(ctx, dia, d_cal, d) + '\n' + t[fin:]
     ruta.write_bytes(t.replace('\n', nl).encode('utf-8'))
 
 
@@ -547,6 +665,8 @@ def actualizar_calendario(ctx):
                        'reducido': [norm(x)['id'] for x in s['reducido']], 'puerta': (s.get('puerta') or {}).get('id')}
         d['lecciones'] = s.get('lecciones') or []
         d['criterio'] = (s.get('criterio') or {}).get('id')
+        d['entra'] = [e['texto'] for e in s.get('entra') or []]
+        d['reducido_detalle'] = {'lecciones': s.get('reducido_lecciones') or [], 'min': s.get('reducido_min'), 'entrega': s.get('reducido_entrega')}
         d['bloques'] = nuevos_bloques(ctx, d, s)
         d['extendida_min'] = EXTRA_MIN[(n - 1) % 7]
     (ctx.raiz / '01_PLAN_DIARIO' / 'calendario.json').write_text(json.dumps(ctx.calendario, ensure_ascii=False, indent=2), encoding='utf-8')
@@ -626,6 +746,9 @@ def metricas(ctx):
                 fila['lecciones'] = ids
                 fila['L'] = max(teoria, lec)
                 fila['estimado'] = d['completo'] + max(0, lec - teoria)
+        bl = {a.strip(): m for a, m in d['bloques']}
+        fila['X'] = sum(m for a, m in bl.items() if a.startswith('Examen'))
+        fila['F'] = d['completo'] - sum(m for a, m in bl.items() if a in POOL) - fila['X'] if d['completo'] else 0
         filas.append(fila)
     return filas
 
@@ -662,7 +785,11 @@ def resumen_semanal(ctx, filas=None):
     sem = {}
     for f in filas:
         w = f['semana']
-        x = sem.setdefault(w, {'plan': 0, 'est': 0, 'L': 0, 'C': 0, 'E': 0, 'ext': 0, 'n_lec': 0, 'n_obl': 0, 'examen': 0, 'fijo': 0})
+        x = sem.setdefault(w, {'plan': 0, 'est': 0, 'L': 0, 'C': 0, 'E': 0, 'ext': 0, 'n_lec': 0, 'n_obl': 0, 'examen': 0, 'fijo': 0, 'X': 0, 'F': 0, 'ajustadas': []})
+        x['X'] += f.get('X', 0)
+        x['F'] += f.get('F', 0)
+        if f['completo'] and f['estimado'] / f['completo'] > 1.15 and not f['examen']:
+            x['ajustadas'].append(f'D{f["dia"]:02}')
         x['plan'] += f['completo']
         x['est'] += f['estimado']
         x['L'] += f['L']
@@ -675,31 +802,61 @@ def resumen_semanal(ctx, filas=None):
     return sem
 
 
+def tabla_evaluacion_final(ctx):
+    ef = ctx.nucleo['evaluacion_final']
+    L = ['| Fecha | Día | Antes (min) | Ahora (min) | Entrega comprobable | Qué se sustituyó |', '|---|---|---:|---:|---|---|']
+    for b in ef['bloques']:
+        L.append(f'| {b["fecha"]} | {b["dia"]} | {b["min_previo"]} | {b["min"]} | {b["entrega"]} | {b["cambio"]} |')
+    L.append(f'| **Total** | | **{ef["total_previo_min"]}** ({horas(ef["total_previo_min"])} h) | **{ef["total_min"]}** ({horas(ef["total_min"])} h) | | |')
+    return L
+
+
 def escribir_carga(ctx, filas_ignoradas=None):
     filas = metricas(ctx)
     sem = resumen_semanal(ctx, filas)
+    ef = ctx.nucleo['evaluacion_final']
     lineas = ['# Carga estimada por jornada (ruta BASE)', '',
-              'Estimación con margen para una persona que todavía depende de ayuda externa. **No es una medición**: '
-              'los multiplicadores (SQL ×1,5–2,25; Python ×2–3,25; estadística ×2–2,5; casos ×1,75; Excel/Power BI ×2; tareas de proyecto estimadas a mano) '
-              'son supuestos con error razonable de ±35 %. Registra tus minutos reales en `mi_trabajo/progreso.csv` y corrige esta tabla con tus datos.', '',
-              'Incluye, además de empleo y cierre (sin cambios), la **lectura de las lecciones NÚCLEO** (L), las actividades de **criterio analítico y '
-              'hitos de comprensión** (C) y los ejercicios OBLIGATORIOS y REPASO (E, tiempo de «primera vez»). La micropráctica de las lecciones, el REFUERZO '
-              'y el OPCIONAL no están incluidos: son EXTENDIDA o recuperación. D01 conserva su diseño; D02 suma sus lecciones sugeridas sobre el bloque original. '
-              'En días de examen, el bloque de examen, corrección y simulacro tiene tiempo fijo.', '',
-              '| Día | Fecha | Contenido | Plan (min) | L | C | E | Estimado (min) | Razón |', '|---:|---|---|---:|---:|---:|---:|---:|---:|']
+              'Estimación de **primera vez** para una persona que todavía depende de ayuda externa. **No es una medición**: los tiempos de cada ejercicio '
+              'son los que declara su propio enunciado (punto medio del rango «Primera vez», que ya incluye leer el enunciado, equivocarse, depurar y '
+              'verificar), y los multiplicadores de respaldo (SQL ×1,5–2,25; Python ×2–3,25; estadística ×2–2,5; casos ×1,75; Excel/Power BI ×2) y las tareas de '
+              'proyecto estimadas a mano son supuestos con un error razonable de ±35 %. Todavía no existen mediciones reales: registra tus minutos en '
+              '`mi_trabajo/progreso.csv` y corrige esta tabla con tus datos.', '',
+              '## Qué cuenta cada columna (sin dobles conteos)', '',
+              '| Columna | Qué incluye | Qué NO incluye |', '|---|---|---|',
+              '| **L** | Lectura de las lecciones NÚCLEO del día (minutos del encabezado de cada lección) | La micropráctica de las lecciones (REFUERZO/EXTENDIDA) |',
+              '| **C** | Actividad de criterio analítico o hito de comprensión | Su revisión posterior con los controles (se hace dentro de la misma actividad) |',
+              '| **E** | Ejercicios OBLIGATORIOS y REPASO a tiempo de primera vez (incluye leer el enunciado, depurar y comprobar) | REFUERZO, OPCIONAL y notebooks; las tareas que son parte de un examen (N2, N3, V4…) no se suman otra vez |',
+              '| **X** | Examen 60 + corrección 25 + simulacro 30 = 115 min en los sábados de examen (tiempo fijo) | — |',
+              '| **F** | Empleo, postulaciones, LinkedIn y cierre (tiempo fijo del plan) | — |', '',
+              'Estimado = F + X + L + C + E. D01 conserva su diseño; D02 suma sus lecciones sugeridas sobre el bloque original. '
+              'La ruta EXTENDIDA (voluntaria) no está incluida.', '',
+              '| Día | Fecha | Contenido | Plan (min) | L | C | E | X | F | Estimado (min) | Razón |', '|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|']
     for f in filas:
         if not f['completo']:
             continue
-        lin = f'| D{f["dia"]:02} | {f["fecha"]} | {f["titulo"]} | {f["completo"]} | {f["L"]} | {f["C"]} | {f["E"]} | {f["estimado"]} | {r2(f["estimado"] / f["completo"])} |'
-        lineas.append(lin)
-    lineas += ['', '| Semana | Plan (min) | Estimado BASE (min) | Estimado BASE (h) | Razón |', '|---:|---:|---:|---:|---:|']
+        lineas.append(f'| D{f["dia"]:02} | {f["fecha"]} | {f["titulo"]} | {f["completo"]} | {f["L"]} | {f["C"]} | {f["E"]} | {f["X"]} | {f["F"]} | '
+                      f'{f["estimado"]} | {r2(f["estimado"] / f["completo"])} |')
+    lineas += ['', '| Semana | Plan (min) | Estimado BASE (min) | Estimado BASE (h) | Razón | Jornadas AJUSTADAS (razón > 1,15, sin exámenes) |', '|---:|---:|---:|---:|---:|---|']
     for w, x in sorted(sem.items()):
-        lineas.append(f'| {w} | {x["plan"]} | {x["est"]} | {horas(x["est"])} | {r2(x["est"] / x["plan"])} |')
+        lineas.append(f'| {w} | {x["plan"]} | {x["est"]} | {horas(x["est"])} | {r2(x["est"] / x["plan"])} | {", ".join(x["ajustadas"]) or "—"} |')
     tot_p = sum(x['plan'] for x in sem.values())
     tot_e = sum(x['est'] for x in sem.values())
-    lineas += ['', f'**Total de las seis semanas:** plan {tot_p} min ({horas(tot_p)} h); estimado BASE {tot_e} min ({horas(tot_e)} h), razón {r2(tot_e / tot_p)}.', '',
-               'Una razón por encima de 1,2 en una jornada significa jornada AJUSTADA: usa el modo REDUCIDO y mueve el REFUERZO; no alargues el día. '
-               'Si una semana queda por encima de 1,1, la puerta se corre sin acumular horas (ver `COMPETENCIAS.md`).', '']
+    lineas += ['', f'**Total de las seis semanas (42 jornadas):** plan {tot_p} min ({horas(tot_p)} h); estimado BASE de primera vez {tot_e} min ({horas(tot_e)} h), '
+               f'razón {r2(tot_e / tot_p)}. La diferencia de {tot_e - tot_p} min ({horas(tot_e - tot_p)} h) es estimación, no medición: '
+               'cabe dentro del margen de ±35 % y se absorbe con REDUCIDO en las jornadas AJUSTADAS; no se compensa con las horas voluntarias de EXTENDIDA.', '',
+               'Una razón por encima de 1,15 en una jornada la marca como AJUSTADA: usa el modo REDUCIDO (cada jornada define una entrega menor y '
+               'realizable en `RUTAS.md`) y mueve el REFUERZO; no alargues el día. Si una semana queda por encima de 1,1, la puerta se corre sin acumular '
+               'horas (ver `COMPETENCIAS.md`).', '',
+               '## Evaluación final: bloque posterior, NO incluido en las 90 horas', '',
+               f'La evaluación final ({ef["ventana"]}) ocurre **después** de las 42 jornadas y es una séptima semana de evaluación, no parte de las seis semanas. '
+               f'Antes reservaba {horas(ef["total_previo_min"])} h; ahora reserva **{horas(ef["total_min"])} h netas** ({ef["total_min"]} min), estimadas de primera vez '
+               f'y no medidas. La reducción de {horas(ef["total_previo_min"] - ef["total_min"])} h sale de sustituir trabajo que ya se hizo en C06 (D36–D40) y que '
+               'el alumno puede reutilizar con su propio código: no se acorta la evidencia que se exige, se evita construirla dos veces desde cero.', '']
+    lineas += tabla_evaluacion_final(ctx)
+    lineas += ['', f'Total del programa: {horas(tot_p)} h de plan en seis semanas (estimado {horas(tot_e)} h) + {horas(ef["total_min"])} h de evaluación final '
+               f'= {horas(tot_p + ef["total_min"])} h de plan ({horas(tot_e + ef["total_min"])} h estimadas). '
+               'Si no puedes dedicar la evaluación final en esas fechas, no se declara autonomía: se reprograma sin acumular horas. '
+               + ef['nota'], '']
     (ctx.raiz / '01_PLAN_DIARIO' / 'CARGA_ESTIMADA.md').write_text('\n'.join(lineas), encoding='utf-8')
 
 
@@ -799,6 +956,72 @@ def escribir_rutas(ctx):
         for p in prerrequisitos(ctx, i):
             L.append(f'| {i} | D{c["dia"]:02} | {p} | {estado_prerreq(ctx, i, p)} |')
     L.append('')
+    # entrada a cada jornada
+    L += ['## Qué se exige al entrar a cada jornada', '',
+          'Distingue lo que ya debes poder hacer al empezar (viene de una jornada ANTERIOR: una lección NÚCLEO leída o un ejercicio OBLIGATORIO resuelto) '
+          'de lo que se aprende durante la jornada. Un requisito no queda demostrado porque su nombre aparezca en un ejercicio del mismo día. '
+          'Si un punto no se cumple, se hace el REFUERZO de la jornada indicada antes del OBLIGATORIO de hoy.', '',
+          '| Día | Se exige al entrar | Viene de |', '|---:|---|---|']
+    for n, s in sorted(ctx.nucleo['dias'].items(), key=lambda kv: int(kv[0])):
+        for e in s.get('entra') or []:
+            fuentes = ', '.join(fuente_entrada(ctx, p) for p in e.get('por') or []) or 'requisito externo (si falta, queda PENDIENTE)'
+            L.append(f'| D{int(n):02} | {e["texto"]} | {fuentes} |')
+    L.append('')
+    # modo REDUCIDO
+    L += ['## Modo REDUCIDO de cada jornada', '',
+          'Cada jornada define una entrega menor y realizable con la preparación que necesita, no el mismo ejercicio con menos minutos. '
+          'Lo que queda fuera pasa a REFUERZO y no se suma a otro día. El modo REDUCIDO mantiene la continuidad pero no cumple puertas ni acredita lo omitido; '
+          'el modo MÍNIMO (20 min) rehace algo ya resuelto y tampoco acredita nada nuevo.', '',
+          '| Día | Plan | Lectura mínima | Entrega reducida | Min. (lectura + entrega + cierre) | Pasa a REFUERZO |', '|---:|---:|---|---|---:|---|']
+    for n, s in sorted(ctx.nucleo['dias'].items(), key=lambda kv: int(kv[0])):
+        cal = next(d for d in ctx.calendario if d['dia'] == int(n))
+        ex = any(norm(x)['id'].startswith('EXAMEN:') for x in s['obligatorio'])
+        lecs = s.get('reducido_lecciones') or []
+        Lm = lectura_ids(ctx, lecs)
+        total = Lm + s['reducido_min'] + (0 if ex else 5)
+        reducidos = {norm(y)['id'] for y in s['reducido']}
+        pend = ', '.join(nombre_corto(ctx, x) for x in s['obligatorio'] if norm(x)['id'] not in reducidos and norm(x).get('est') != 0) or '—'
+        L.append(f'| D{int(n):02} | {cal["reducido"]} | {", ".join(lecs) + f" ({Lm} min)" if lecs else "—"} | {s["reducido_entrega"]} | {total} | {pend} |')
+    L.append('')
+    # SQL por semana
+    L += ['## SQL por semana: exigible, dentro de un examen o proyecto, y repaso opcional', '',
+          'La práctica de SQL debe ser frecuente y progresiva, no una obligación diaria artificial. Cuenta como **exigible** un ejercicio SQL OBLIGATORIO o REPASO; '
+          'como **integrada** la que forma parte de un examen o de un proyecto con cuadre SQL (ETL-6, C06-4); el **repaso opcional** nunca suma a la carga.', '',
+          '| Semana | Jornadas con SQL exigible | Jornadas con SQL integrado en examen o proyecto | Jornadas con repaso SQL opcional | Jornadas sin SQL (Python, ETL, BI) |',
+          '|---:|---|---|---|---|']
+    por_semana = {}
+    for d in ctx.calendario:
+        if d['completo'] == 0:
+            continue
+        w = d['semana']
+        x = por_semana.setdefault(w, {'exig': [], 'integ': [], 'opc': [], 'sin': []})
+        s = ctx.nucleo['dias'].get(str(d['dia']))
+        etq = f'D{d["dia"]:02}'
+        if s is None:
+            x['exig'].append(etq)
+            continue
+        items = [norm(y) for y in s['obligatorio'] + s['repaso']]
+        exigible = any(tipo(y['id']) == 'SQL' and y.get('est') != 0 for y in items)
+        integrado = any(y['id'].startswith('EXAMEN:') or ctx.nucleo['items_personalizados'].get(y['id'], {}).get('sql') or
+                        (tipo(y['id']) == 'SQL' and y.get('est') == 0) for y in items)
+        if exigible:
+            x['exig'].append(etq)
+        if integrado:
+            x['integ'].append(etq)
+        if s.get('sql_opcional'):
+            x['opc'].append(etq)
+        if not exigible and not integrado:
+            x['sin'].append(etq)
+    for w, x in sorted(por_semana.items()):
+        L.append(f'| {w} | {", ".join(x["exig"]) or "—"} | {", ".join(x["integ"]) or "—"} | {", ".join(x["opc"]) or "—"} | {", ".join(x["sin"]) or "—"} |')
+    L.append('')
+    # evaluación final
+    ef = ctx.nucleo['evaluacion_final']
+    L += ['## Evaluación final: bloque posterior a las 42 jornadas', '',
+          f'No forma parte de las seis semanas ni de las 90 horas. Son {horas(ef["total_min"])} h netas estimadas ({ef["ventana"]}), antes {horas(ef["total_previo_min"])} h. '
+          'Detalle y sustituciones en `CARGA_ESTIMADA.md` y en `09_EVALUACION_FINAL/ENUNCIADO.md`.', '']
+    L += tabla_evaluacion_final(ctx)
+    L.append('')
     # 42 jornadas
     L += ['## Las 42 jornadas', '',
           '| Día | Fecha | Jornada | Plan | Lecciones NÚCLEO | Criterio / hito | Ejercicios OBLIGATORIOS | Estimado | Puerta |',
@@ -880,6 +1103,60 @@ def validar_referencias(ctx):
             carpeta = 'Analitico' if c['id'].startswith('AN') else 'Comprension'
             if not (ctx.ejercicios / carpeta / f'{c["id"]}.md').exists():
                 errores.append(f'D{dia}: falta la actividad {c["id"]}')
+        n = int(dia)
+        cal = next(d for d in ctx.calendario if d['dia'] == n)
+        examen = any(norm(x)['id'].startswith('EXAMEN:') for x in s['obligatorio'])
+        # lo que se exige al entrar debe haber sido demostrado en una jornada anterior (no en la misma)
+        if not s.get('entra'):
+            errores.append(f'D{dia}: falta «entra» (qué se exige al entrar a la jornada)')
+        for e in s.get('entra') or []:
+            if not e.get('texto'):
+                errores.append(f'D{dia}: un punto de «entra» sin texto')
+            if not e.get('por') and not e.get('externo'):
+                errores.append(f'D{dia}: «entra» sin fuente: {e.get("texto", "")[:60]}')
+            for p in e.get('por') or []:
+                dd = dia_entrada(ctx, p)
+                if dd is None:
+                    errores.append(f'D{dia}: «entra» cita {p}, que no es un OBLIGATORIO/REPASO ni una lección NÚCLEO')
+                elif dd >= n:
+                    errores.append(f'D{dia}: «entra» cita {p} (D{dd:02}), que no es anterior a la jornada')
+        # modo REDUCIDO: una entrega menor y realizable, con la preparación que necesita
+        for k in ('reducido_lecciones', 'reducido_min', 'reducido_entrega'):
+            if k not in s:
+                errores.append(f'D{dia}: falta «{k}»')
+        if all(k in s for k in ('reducido_lecciones', 'reducido_min', 'reducido_entrega')):
+            rl = s['reducido_lecciones']
+            if not set(rl) <= set(s.get('lecciones') or []):
+                errores.append(f'D{dia}: reducido_lecciones debe ser un subconjunto de las lecciones del día')
+            total = lectura_ids(ctx, rl) + s['reducido_min'] + (0 if examen else 5)
+            if total > cal['reducido'] + 10:
+                errores.append(f'D{dia}: el modo REDUCIDO suma {total} min y el plan es {cal["reducido"]} (+10 de margen)')
+            for x in s['reducido']:
+                i = norm(x)['id']
+                for c2 in citas_lecciones(ctx, i):
+                    L = ctx.lecciones['lecciones'][c2]
+                    if L['tipo'] == 'NÚCLEO' and L['dia'] == n and c2 not in rl:
+                        errores.append(f'D{dia}: REDUCIDO conserva {i}, que cita la lección {c2} (NÚCLEO de hoy), y la omite')
+        # un ejercicio no puede citar una lección que se enseña después
+        for cat in ('obligatorio', 'repaso', 'refuerzo', 'opcional'):
+            for x in s[cat]:
+                i = norm(x)['id']
+                for c2 in citas_lecciones(ctx, i, completo=True):
+                    L = ctx.lecciones['lecciones'][c2]
+                    if L['tipo'] == 'NÚCLEO' and L['dia'] > n:
+                        errores.append(f'D{dia}/{cat}: {i} cita la lección {c2}, que se enseña en D{L["dia"]:02} (después)')
+                if cat in ('obligatorio', 'repaso'):
+                    for c2 in citas_lecciones(ctx, i):
+                        if ctx.lecciones['lecciones'][c2]['tipo'] != 'NÚCLEO':
+                            errores.append(f'D{dia}: {i} (OBLIGATORIO) cita la lección {c2}, que no es NÚCLEO')
+    ef = ctx.nucleo.get('evaluacion_final')
+    if not ef:
+        errores.append('falta «evaluacion_final» en nucleo.json')
+    else:
+        if sum(b['min'] for b in ef['bloques']) != ef['total_min']:
+            errores.append('evaluacion_final: los bloques no suman total_min')
+        if sum(b['min_previo'] for b in ef['bloques']) != ef['total_previo_min']:
+            errores.append('evaluacion_final: los minutos previos no suman total_previo_min')
     for i, c in ctx.lecciones['lecciones'].items():
         if c['tipo'] == 'NÚCLEO':
             s = ctx.nucleo['dias'].get(str(c['dia']))

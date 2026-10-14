@@ -108,10 +108,10 @@
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "S3",
+      "S4",
       "S6",
       "S5",
-      "S4"
+      "S3"
     ],
     "python": [
       "P04",
@@ -155,7 +155,7 @@
     "objetivo": "Seleccionar clientes y evitar contar visitas repetidas como nuevos clientes.",
     "nucleo": {
       "obligatorio": [
-        "S3",
+        "S4",
         "S6",
         "P04",
         "P05"
@@ -163,13 +163,12 @@
       "repaso": [],
       "refuerzo": [
         "S5",
-        "S4"
+        "S3"
       ],
       "opcional": [
         "C02"
       ],
       "reducido": [
-        "S3",
         "P04"
       ],
       "puerta": null
@@ -180,7 +179,19 @@
       "7.9"
     ],
     "criterio": "AN01",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Sabes decir qué representa una fila de `clientes` y por qué `= NULL` no encuentra faltantes.",
+      "Escribes una función corta con `def` y `return` y distingues `None` de 0."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "7.8",
+        "7.9"
+      ],
+      "min": 20,
+      "entrega": "Solo P04 (`cliente_diccionario`) con su corrector y su explicación en tres líneas. S4, S6 y P05 pasan a REFUERZO; los necesita D04 al entrar."
+    }
   },
   {
     "dia": 4,
@@ -191,9 +202,8 @@
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "G1",
-      "G2",
-      "G3"
+      "G3",
+      "G2"
     ],
     "python": [
       "P06"
@@ -236,18 +246,16 @@
     "objetivo": "Contar estados y explicar por qué anulados cambian las cifras. Primera postulación.",
     "nucleo": {
       "obligatorio": [
-        "G1",
+        "G3",
         "P06"
       ],
       "repaso": [],
       "refuerzo": [
         "G2",
-        "G3",
         "ST01"
       ],
       "opcional": [],
       "reducido": [
-        "G1",
         "P06"
       ],
       "puerta": null
@@ -258,7 +266,18 @@
       "7.11"
     ],
     "criterio": "AN02",
-    "extendida_min": 60
+    "extendida_min": 60,
+    "entra": [
+      "Creas un diccionario con claves de texto, lees o asignas una clave y sabes qué es una lista y un conjunto.",
+      "Escribes una consulta `SELECT … FROM … WHERE` con dos condiciones y la ejecutas en la base."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "7.11"
+      ],
+      "min": 28,
+      "entrega": "Solo P06 (`contar_estados`) con su corrector. G3 (SQL) y el resto pasan a REFUERZO; D05 pide G3 al entrar."
+    }
   },
   {
     "dia": 5,
@@ -269,9 +288,10 @@
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "G5",
       "G6",
-      "G4"
+      "G5",
+      "G4",
+      "G1"
     ],
     "python": [
       "P07"
@@ -292,11 +312,11 @@
       ],
       [
         "SQL",
-        25
+        20
       ],
       [
         "Práctica",
-        17
+        22
       ],
       [
         "Criterio",
@@ -314,20 +334,20 @@
     "objetivo": "Escribir un bucle propio y probar límites de categorías de ticket.",
     "nucleo": {
       "obligatorio": [
-        "G5",
         "G6",
         "P07"
       ],
       "repaso": [],
       "refuerzo": [
-        "G4"
+        "G5",
+        "G4",
+        "G1"
       ],
       "opcional": [
         "C01"
       ],
       "reducido": [
-        "G5",
-        "P07"
+        "G6"
       ],
       "puerta": null
     },
@@ -337,7 +357,18 @@
       "7.13"
     ],
     "criterio": "AN03",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Cuentas y sumas con SQL (`COUNT`, `SUM`) y sabes que una función de agregación devuelve una sola fila.",
+      "Escribes un `for` que recorre una lista y un `if`/`elif`/`else`, y sabes por qué una cuenta empieza en cero."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "2.2"
+      ],
+      "min": 28,
+      "entrega": "Solo G6 (rutas con más de 20 clientes) con su corrector y la diferencia entre WHERE y HAVING dicha en voz alta. P07 pasa a REFUERZO: hazlo antes del hito H01 del sábado."
+    }
   },
   {
     "dia": 6,
@@ -403,7 +434,15 @@
       "2.3"
     ],
     "criterio": "H01",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Llegas con los OBLIGATORIOS de la semana (G3, G6, P06, P07); lo que falte lo medirá el examen y se recupera con su REFUERZO."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 60,
+      "entrega": "La evaluación de 60 minutos, sin consultar nada."
+    }
   },
   {
     "dia": 7,
@@ -434,7 +473,6 @@
     "minimo": 20,
     "sql": [
       "CL1",
-      "CL3",
       "CL2"
     ],
     "python": [
@@ -473,7 +511,6 @@
       "repaso": [],
       "refuerzo": [
         "CL1",
-        "CL3",
         "CL2"
       ],
       "opcional": [],
@@ -487,7 +524,18 @@
       "8.1"
     ],
     "criterio": null,
-    "extendida_min": 30
+    "extendida_min": 30,
+    "entra": [
+      "Escribes una función con `def` y `return` y distingues `None` de 0.",
+      "Recorres una lista de diccionarios con un `if` dentro del bucle."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "8.1"
+      ],
+      "min": 28,
+      "entrega": "Solo P08 (`clasificar_ticket`) con sus cuatro valores límite. La lección 7.7 y el resto quedan para REFUERZO: D10 las exige al entrar."
+    }
   },
   {
     "dia": 9,
@@ -498,26 +546,33 @@
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "J1",
       "J2",
+      "J1",
       "J3"
     ],
     "python": [],
     "estadistica": [],
-    "otros": [],
+    "otros": [
+      "DB01"
+    ],
     "teoria": [
       "08_Python_funciones_archivos",
+      "19_Puente_Python_a_ETL",
       "03_SQL_joins"
     ],
     "dataset": "pedidos.csv",
     "bloques": [
       [
         "Lecciones",
-        40
+        55
       ],
       [
         "SQL",
-        70
+        35
+      ],
+      [
+        "Práctica",
+        20
       ],
       [
         "Criterio",
@@ -535,25 +590,38 @@
     "objetivo": "Unir cabecera y detalle sin duplicar y rechazar un dato inválido con ValueError.",
     "nucleo": {
       "obligatorio": [
-        "J1",
-        "J2"
+        "J2",
+        "DB01"
       ],
       "repaso": [],
       "refuerzo": [
+        "J1",
         "J3"
       ],
       "opcional": [],
       "reducido": [
-        "J1"
+        "J2"
       ],
       "puerta": null
     },
     "lecciones": [
       "8.5",
+      "19.1",
       "3.2"
     ],
     "criterio": "AN04",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Escribes y llamas una función con `return` y varias condiciones.",
+      "Filtras y sumas con SQL y unes lo que ves en una tabla con una clave."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "3.2"
+      ],
+      "min": 35,
+      "entrega": "Solo J2 (ventas totales de pedidos entregados) con su corrector. DB01, la lección 8.5 y la 19.1 pasan a REFUERZO; D10 las exige al entrar."
+    }
   },
   {
     "dia": 10,
@@ -624,7 +692,17 @@
       "8.3"
     ],
     "criterio": "AN05",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Explicas por qué un JOIN de cabecera con detalle cambia el número de filas.",
+      "Sabes qué hace `raise ValueError` y lees un traceback de abajo hacia arriba.",
+      "Conviertes un texto a número en una función con contrato y sabes qué error produce una conversión imposible."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 55,
+      "entrega": "Solo P09 (`precio_centavos`) con sus cuatro entradas inválidas. P13 pasa a REFUERZO (es requisito de la Puerta 2)."
+    }
   },
   {
     "dia": 11,
@@ -639,30 +717,22 @@
       "J6"
     ],
     "python": [
-      "P14",
       "P15"
     ],
     "estadistica": [],
-    "otros": [
-      "DB01"
-    ],
+    "otros": [],
     "teoria": [
-      "03_SQL_joins",
-      "19_Puente_Python_a_ETL"
+      "03_SQL_joins"
     ],
     "dataset": "pedidos.csv",
     "bloques": [
       [
         "Lecciones",
-        60
+        45
       ],
       [
         "SQL",
-        25
-      ],
-      [
-        "Práctica",
-        10
+        50
       ],
       [
         "Criterio",
@@ -680,29 +750,36 @@
     "objetivo": "Conservar clientes sin compra, no inventar un vendedor y explicar qué significa «sin pareja».",
     "nucleo": {
       "obligatorio": [
-        "J5",
-        "DB01"
+        "J5"
       ],
       "repaso": [],
       "refuerzo": [
         "J6",
-        "P14",
         "P15"
       ],
       "opcional": [],
       "reducido": [
-        "J5",
-        "DB01"
+        "J5"
       ],
       "puerta": null
     },
     "lecciones": [
       "3.3",
-      "3.4",
-      "19.1"
+      "3.4"
     ],
     "criterio": "AN06",
-    "extendida_min": 60
+    "extendida_min": 60,
+    "entra": [
+      "Explicas cómo un INNER JOIN descarta las filas sin pareja.",
+      "Escribes una función que lanza `ValueError` ante una entrada inválida."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "3.3"
+      ],
+      "min": 30,
+      "entrega": "J5 en versión mínima: lista los clientes que no tienen ningún pedido (LEFT JOIN y `IS NULL`). El filtro de septiembre en el ON (la parte completa de J5) pasa a REFUERZO."
+    }
   },
   {
     "dia": 12,
@@ -780,7 +857,15 @@
       "6.1"
     ],
     "criterio": "AN07",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Tus P09 y P13 pasan el corrector y sabes leer un `import` y un `try/except`."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 55,
+      "entrega": "Solo P10 (`fecha_iso`) con sus tres formatos y tres entradas inválidas. P11 pasa a REFUERZO (la necesita el examen S02)."
+    }
   },
   {
     "dia": 13,
@@ -796,7 +881,9 @@
       "E7",
       "E8"
     ],
-    "python": [],
+    "python": [
+      "P14"
+    ],
     "estadistica": [],
     "otros": [],
     "teoria": [
@@ -833,7 +920,8 @@
       "repaso": [],
       "refuerzo": [
         "E6",
-        "E5"
+        "E5",
+        "P14"
       ],
       "opcional": [
         "E7",
@@ -848,7 +936,15 @@
       "11.3"
     ],
     "criterio": "H02",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Llegas con los OBLIGATORIOS de la semana (J2, J5, DB01, P09–P11, P13); lo que falte lo medirá el examen y se recupera con su REFUERZO."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 60,
+      "entrega": "La evaluación de 60 minutos, sin consultar nada."
+    }
   },
   {
     "dia": 14,
@@ -882,8 +978,7 @@
       "K2a"
     ],
     "python": [
-      "P17",
-      "P18"
+      "P17"
     ],
     "estadistica": [],
     "otros": [],
@@ -922,7 +1017,6 @@
         "J2"
       ],
       "refuerzo": [
-        "P18",
         "K2a"
       ],
       "opcional": [],
@@ -936,7 +1030,18 @@
       "9.3"
     ],
     "criterio": null,
-    "extendida_min": 30
+    "extendida_min": 30,
+    "entra": [
+      "Cumpliste la Puerta 2 o hiciste su REFUERZO.",
+      "Lees un CSV con el módulo estándar y devuelves sus filas."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "9.2"
+      ],
+      "min": 30,
+      "entrega": "Solo P17 (`cargar_pedidos`) con su corrector. La lección 9.3 (perfilado) pasa a REFUERZO y se retoma en D19."
+    }
   },
   {
     "dia": 16,
@@ -1009,7 +1114,16 @@
       "10.1"
     ],
     "criterio": "AN08",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Tu P17 carga `pedidos.csv` y puedes decir cuántas filas y columnas tiene sin mirar.",
+      "Unes tablas con SQL, filtras por estado y agrupas."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 48,
+      "entrega": "Solo K1 (drop size de cada pedido entregado) con su control contra J2. P22 pasa a REFUERZO: la necesitan ME01 y el examen S03."
+    }
   },
   {
     "dia": 17,
@@ -1020,28 +1134,31 @@
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "K4"
+      "K4",
+      "CL3"
     ],
     "python": [
+      "P21",
       "P20",
-      "P21"
+      "P18"
     ],
     "estadistica": [],
     "otros": [
       "N02"
     ],
     "teoria": [
-      "10_Pandas_transformaciones"
+      "10_Pandas_transformaciones",
+      "02_SQL_agregados"
     ],
     "dataset": "ventas_erp_raw.csv",
     "bloques": [
       [
         "Lecciones",
-        45
+        65
       ],
       [
         "Práctica",
-        70
+        50
       ],
       [
         "Criterio",
@@ -1059,12 +1176,14 @@
     "objetivo": "Pasar de líneas a pedidos con groupby y unir con un merge validado.",
     "nucleo": {
       "obligatorio": [
-        "P20",
         "P21"
       ],
       "repaso": [],
       "refuerzo": [
-        "K4"
+        "K4",
+        "P20",
+        "P18",
+        "CL3"
       ],
       "opcional": [
         "N02"
@@ -1076,10 +1195,23 @@
     },
     "lecciones": [
       "10.2",
-      "10.3"
+      "10.3",
+      "2.5"
     ],
     "criterio": "AN09",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Explicas qué hace agrupar por pedido y por qué el drop size se calcula sobre pedidos, no sobre líneas.",
+      "Quitas duplicados exactos en Pandas y sabes por qué dos filas con la misma clave y distinto monto no lo son.",
+      "Creas una columna nueva calculada en un DataFrame."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "10.3"
+      ],
+      "min": 40,
+      "entrega": "P21 con los dos primeros criterios: unir con `merge(validate=\"many_to_one\")` conservando las filas de `pedidos` y detener el proceso con `ValueError` si el catálogo repite un cliente. El pedido huérfano (tercer criterio) y la lección 10.2 pasan a REFUERZO."
+    }
   },
   {
     "dia": 18,
@@ -1152,7 +1284,18 @@
       "4.3"
     ],
     "criterio": "AN10",
-    "extendida_min": 60
+    "extendida_min": 60,
+    "entra": [
+      "Tu P21 pasa el corrector y puedes decir por qué falla con un catálogo repetido.",
+      "Sumas ventas por cliente con SQL y ordenas de mayor a menor."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "4.2"
+      ],
+      "min": 30,
+      "entrega": "V3 parte 1: un CTE con las ventas por cliente y los 15 primeros. Los porcentajes con funciones de ventana (lección 4.3) pasan a REFUERZO."
+    }
   },
   {
     "dia": 19,
@@ -1168,8 +1311,7 @@
     ],
     "python": [
       "P23",
-      "P26",
-      "P27"
+      "P26"
     ],
     "estadistica": [
       "ST03",
@@ -1179,22 +1321,21 @@
       "N04"
     ],
     "teoria": [
-      "02_SQL_agregados",
       "06_KPIs"
     ],
     "dataset": "comercial.db",
     "bloques": [
       [
         "Lecciones",
-        45
+        25
       ],
       [
         "SQL",
-        45
+        60
       ],
       [
         "Práctica",
-        25
+        30
       ],
       [
         "Criterio",
@@ -1219,23 +1360,31 @@
       "refuerzo": [
         "V2",
         "P26",
-        "P27",
         "ST03",
         "N04",
         "ST04"
       ],
       "opcional": [],
       "reducido": [
-        "V4"
+        "P23"
       ],
       "puerta": null
     },
     "lecciones": [
-      "2.5",
       "6.5"
     ],
     "criterio": "AN11",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Explicas un CTE y una función de ventana frente a una agregación por grupo.",
+      "Sabes qué hace `CASE` dentro de una consulta (lección 2.5).",
+      "Cargas una tabla con Pandas y cuentas duplicados exactos."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 35,
+      "entrega": "Solo P23 (`perfilar`) con su corrector. V4 pasa a REFUERZO."
+    }
   },
   {
     "dia": 20,
@@ -1303,7 +1452,15 @@
       "19.3"
     ],
     "criterio": "H03",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Llegas con los OBLIGATORIOS de la semana (K1, P21–P23, V3, V4); lo que falte lo medirá el examen y se recupera con su REFUERZO."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 60,
+      "entrega": "La evaluación de 60 minutos, sin consultar nada."
+    }
   },
   {
     "dia": 21,
@@ -1375,7 +1532,16 @@
     },
     "lecciones": [],
     "criterio": null,
-    "extendida_min": 30
+    "extendida_min": 30,
+    "entra": [
+      "Tus P22 y P23 pasan el corrector (ME01 las reutiliza).",
+      "Lees un CSV como texto con Python y conoces el esquema de §3 del capítulo 19 (de funciones a un programa)."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 40,
+      "entrega": "ME01 parte 1: `extraer` que lee el CSV todo como texto (Bronze idéntico al origen, 24 filas). `quitar_exactos`, `perfilar` y el `perfil.md` pasan a REFUERZO."
+    }
   },
   {
     "dia": 23,
@@ -1445,7 +1611,17 @@
       "19.2"
     ],
     "criterio": "AN12",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "ME01 aprobado con tu código y tus P09–P11 pasan el corrector."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "19.2"
+      ],
+      "min": 40,
+      "entrega": "ME02 mínimo: aplica a las 24 filas tus P09, P10 y P11 y separa Silver de rechazos con su motivo. La normalización de tienda y de estado y el catálogo pasan a REFUERZO."
+    }
   },
   {
     "dia": 24,
@@ -1515,7 +1691,17 @@
       "19.4"
     ],
     "criterio": "H04",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "ME02 aprobado con tu código: rechazos con causa y Silver separada."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "19.4"
+      ],
+      "min": 45,
+      "entrega": "ME03 mínimo: carga tus tablas a SQLite con la conexión cerrada (`closing`), repite la ejecución sin duplicar y compara el total con un `SELECT SUM`. El Gold por tienda y mes y `validar` pasan a REFUERZO; no se cumple la Puerta 4."
+    }
   },
   {
     "dia": 25,
@@ -1535,21 +1721,18 @@
       "C05"
     ],
     "teoria": [
+      "06_KPIs",
       "11_Estadistica_descriptiva"
     ],
     "dataset": "ventas_erp_raw.csv",
     "bloques": [
       [
         "Lecciones",
-        60
+        55
       ],
       [
         "Práctica",
-        35
-      ],
-      [
-        "Criterio",
-        15
+        55
       ],
       [
         "Postulación",
@@ -1577,11 +1760,19 @@
       "puerta": null
     },
     "lecciones": [
-      "11.4",
-      "11.5"
+      "6.2",
+      "11.4"
     ],
-    "criterio": "AN13",
-    "extendida_min": 60
+    "criterio": null,
+    "extendida_min": 60,
+    "entra": [
+      "Puerta 4 cumplida (ME01–ME03 y H04) y puedes escribir la estructura extraer → transformar → validar → cargar sin mirar."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 45,
+      "entrega": "ETL-1 mínimo: `contrato.md` de una página y Bronze con las 16.378 filas sin tocar. La normalización de espacios, estados, rutas y clientes pasa a REFUERZO."
+    }
   },
   {
     "dia": 26,
@@ -1605,18 +1796,12 @@
       "ETL-3",
       "DB03"
     ],
-    "teoria": [
-      "06_KPIs"
-    ],
+    "teoria": [],
     "dataset": "ventas_erp_raw.csv",
     "bloques": [
       [
-        "Lecciones",
-        25
-      ],
-      [
         "Práctica",
-        85
+        110
       ],
       [
         "Criterio",
@@ -1653,11 +1838,17 @@
       ],
       "puerta": null
     },
-    "lecciones": [
-      "6.2"
-    ],
+    "lecciones": [],
     "criterio": "H05",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Tu Bronze conserva exactamente las 16.378 filas del archivo y tus conversiones rechazan en lugar de truncar."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 60,
+      "entrega": "ETL-2 completo (fechas, cantidad entera sin truncar y dinero en centavos, reutilizando P09–P11). ETL-3 (claves, duplicados y vendedores) pasa a REFUERZO y se retoma en D29."
+    }
   },
   {
     "dia": 27,
@@ -1677,12 +1868,18 @@
     "python": [],
     "estadistica": [],
     "otros": [],
-    "teoria": [],
+    "teoria": [
+      "11_Estadistica_descriptiva"
+    ],
     "dataset": "comercial.db",
     "bloques": [
       [
+        "Lecciones",
+        30
+      ],
+      [
         "SQL",
-        45
+        15
       ],
       [
         "Examen y corrección",
@@ -1717,9 +1914,19 @@
       ],
       "puerta": "P5a"
     },
-    "lecciones": [],
+    "lecciones": [
+      "11.5"
+    ],
     "criterio": null,
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Llegas con ME01–ME03 y las etapas ETL-1 a ETL-3 de la distribuidora; lo que falte lo medirá el examen y se recupera con su REFUERZO."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 60,
+      "entrega": "La evaluación de 60 minutos, sin consultar nada."
+    }
   },
   {
     "dia": 28,
@@ -1806,7 +2013,15 @@
       "15.3"
     ],
     "criterio": null,
-    "extendida_min": 30
+    "extendida_min": 30,
+    "entra": [
+      "Tu ETL llega hasta la etapa 4 con los conteos de control (Puerta 5a)."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 35,
+      "entrega": "ETL-4 mínimo: Silver con la ecuación Bronze = duplicados + rechazos + Silver. Los rechazos con su causa pasan a REFUERZO."
+    }
   },
   {
     "dia": 30,
@@ -1882,7 +2097,15 @@
       "13.2"
     ],
     "criterio": "H06",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Tu Silver pasa la ecuación de conteos. Si hoy no cabe todo, haz ETL-5 y deja ETL-6 para el REFUERZO de mañana."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 40,
+      "entrega": "ETL-5: Gold por cliente y mes con sus controles. ETL-6 (carga SQLite, segunda ejecución y cuadre SQL) pasa a REFUERZO; sin ETL-6 no se cumple la Puerta 5."
+    }
   },
   {
     "dia": 31,
@@ -1902,8 +2125,7 @@
     "otros": [
       "EX01",
       "ME04",
-      "EX02",
-      "EX03"
+      "EX02"
     ],
     "teoria": [
       "06_KPIs"
@@ -1948,11 +2170,9 @@
         "N6",
         "EX02"
       ],
-      "opcional": [
-        "EX03"
-      ],
+      "opcional": [],
       "reducido": [
-        "EX01"
+        "E4"
       ],
       "puerta": null
     },
@@ -1960,7 +2180,16 @@
       "6.4"
     ],
     "criterio": "AN14",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Puerta 5 cumplida o ETL en REFUERZO (Excel puede esperar).",
+      "Escribes una consulta que une líneas, pedidos y clientes y agrupa."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 40,
+      "entrega": "E4, la consulta de cuadre por ruta. La tabla dinámica de Excel (EX01) pasa a REFUERZO, o queda PENDIENTE si no tienes Excel."
+    }
   },
   {
     "dia": 32,
@@ -2038,7 +2267,18 @@
       "14.1"
     ],
     "criterio": "AN15",
-    "extendida_min": 60
+    "extendida_min": 60,
+    "entra": [
+      "Power BI Desktop instalado y abierto una vez; si no lo tienes, las partes que lo usan quedan PENDIENTES y lo registras.",
+      "Sabes qué es un hecho, una dimensión y el modelo estrella (lección 13.2)."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "14.1"
+      ],
+      "min": 25,
+      "entrega": "PB01 mínimo: importa las tablas que usarán las tres medidas y verifica tipos y conteos. PB02 (relaciones) pasa a REFUERZO. Sin Power BI Desktop: lee 14.1 y registra la parte práctica como PENDIENTE."
+    }
   },
   {
     "dia": 33,
@@ -2107,7 +2347,18 @@
       "14.3"
     ],
     "criterio": "H07",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Tus relaciones de PB02 filtran de dimensión a hecho y el conteo de líneas coincide con la base.",
+      "Tienes a mano el cuadre SQL (J2 y K1) con el que compararás tus medidas."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "14.3"
+      ],
+      "min": 20,
+      "entrega": "PB03 mínimo: la medida `Ventas Bs` comprobada contra J2. `Pedidos Entregados` y `Ticket Bs` pasan a REFUERZO. Sin Desktop: registra PENDIENTE."
+    }
   },
   {
     "dia": 34,
@@ -2122,7 +2373,9 @@
       "N6",
       "N15"
     ],
-    "python": [],
+    "python": [
+      "P27"
+    ],
     "estadistica": [],
     "otros": [
       "PB06",
@@ -2133,7 +2386,11 @@
     "bloques": [
       [
         "SQL",
-        45
+        30
+      ],
+      [
+        "Criterio",
+        15
       ],
       [
         "Examen y corrección",
@@ -2158,7 +2415,8 @@
       "refuerzo": [
         "PB06",
         "EX03",
-        "N6"
+        "N6",
+        "P27"
       ],
       "opcional": [
         "N15"
@@ -2169,8 +2427,16 @@
       "puerta": "P6"
     },
     "lecciones": [],
-    "criterio": null,
-    "extendida_min": 75
+    "criterio": "AN13",
+    "extendida_min": 75,
+    "entra": [
+      "Llegas con ETL-6 (ETL guiado completo), E4 y las partes de BI que hayas podido ejecutar; lo que no ejecutaste queda PENDIENTE."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 60,
+      "entrega": "La evaluación de 60 minutos, sin consultar nada."
+    }
   },
   {
     "dia": 35,
@@ -2253,7 +2519,17 @@
       "17.1"
     ],
     "criterio": null,
-    "extendida_min": 30
+    "extendida_min": 30,
+    "entra": [
+      "Puerta 5 cumplida y hito H06 hecho. Para C06 reutilizas tus funciones, no copias el código del ETL de la distribuidora."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "17.1"
+      ],
+      "min": 20,
+      "entrega": "C06-0 mínimo: `contrato.md` de una página con qué es una fila, la clave y los formatos; las reglas de rechazo y los cuadres pasan a REFUERZO."
+    }
   },
   {
     "dia": 37,
@@ -2308,7 +2584,15 @@
     },
     "lecciones": [],
     "criterio": "AN16",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Tu contrato C06 está escrito y lo puedes explicar en voz alta."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 45,
+      "entrega": "C06-1 mínimo: Bronze sin tocar y perfil de tres columnas (fecha, precio y cantidad) con tres ejemplos probados por función. El perfil completo pasa a REFUERZO."
+    }
   },
   {
     "dia": 38,
@@ -2374,7 +2658,17 @@
       "17.2"
     ],
     "criterio": "AN17",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Tu Bronze C06 conserva todas las filas y tu perfil lista los formatos de cada columna."
+    ],
+    "reducido_detalle": {
+      "lecciones": [
+        "17.2"
+      ],
+      "min": 30,
+      "entrega": "C06-2 mínimo: conflictos de clave, duplicados exactos y Silver con fecha, cantidad y precio válidos. El catálogo y los rechazos con causa pasan a REFUERZO."
+    }
   },
   {
     "dia": 39,
@@ -2437,7 +2731,15 @@
       "6.6"
     ],
     "criterio": "AN18",
-    "extendida_min": 60
+    "extendida_min": 60,
+    "entra": [
+      "Tu Silver C06 cuadra Bronze = duplicados + rechazos + Silver."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 45,
+      "entrega": "C06-3 mínimo: Gold por cliente y mes en centavos y cuadre Silver = Gold. El cuadre completo con Bronze y la lección 6.6 pasan a REFUERZO."
+    }
   },
   {
     "dia": 40,
@@ -2507,19 +2809,27 @@
       "16.2"
     ],
     "criterio": "H08",
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Tu Gold C06 cuadra contra Silver."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 45,
+      "entrega": "C06-4 mínimo: carga a SQLite con archivo temporal y conexión cerrada, segunda ejecución igual y README de reproducción. Las entradas adversas, `validacion.sql` y el hito H08 pasan a REFUERZO; no se cumple la Puerta 7."
+    }
   },
   {
     "dia": 41,
     "fecha": "2026-11-21",
     "semana": 6,
-    "titulo": "Último examen y preparación del final",
+    "titulo": "Examen S06: transferencia C06 y defensa",
     "completo": 200,
     "reducido": 60,
     "minimo": 20,
     "sql": [
-      "V4",
       "N3",
+      "V4",
       "N1",
       "N5"
     ],
@@ -2552,15 +2862,14 @@
         10
       ]
     ],
-    "objetivo": "Resolver S06, revisar autonomía y reservar examen del23–30 sin abrir sus soluciones.",
+    "objetivo": "Demostrar que el ETL de C06 es tuyo: validarlo, repetirlo, cambiar una regla en vivo y explicar cinco decisiones.",
     "nucleo": {
       "obligatorio": [
+        "N3",
+        "V4",
         "EXAMEN:S06"
       ],
-      "repaso": [
-        "V4",
-        "N3"
-      ],
+      "repaso": [],
       "refuerzo": [
         "N1",
         "N5"
@@ -2575,7 +2884,15 @@
       "18.1"
     ],
     "criterio": null,
-    "extendida_min": 75
+    "extendida_min": 75,
+    "entra": [
+      "Llegas con C06 entregado (o con lo que existe, y la limitación registrada)."
+    ],
+    "reducido_detalle": {
+      "lecciones": [],
+      "min": 60,
+      "entrega": "La evaluación de 60 minutos, sin consultar nada."
+    }
   },
   {
     "dia": 42,

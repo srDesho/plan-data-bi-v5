@@ -35,7 +35,7 @@ Aprender un ETL de memoria no demuestra que puedas construir otro. La práctica 
 
 ## Ejercicios autónomos de este capítulo
 
-El caso **C06** y la evaluación final. No abras `08_SOLUCIONES/controles_final.json` ni la referencia hasta terminar el intento integral. Las microprácticas de las lecciones no son evaluables.
+El caso **C06** y la evaluación final. No abras `08_SOLUCIONES/etl_nuevo_referencia.py` ni los controles de C06 hasta terminar el intento (la evaluación final no tiene referencia en el paquete: ver su enunciado) integral. Las microprácticas de las lecciones no son evaluables.
 
 Términos: [glosario](GLOSARIO.md). Fuentes: [FUENTES.md](FUENTES.md).
 

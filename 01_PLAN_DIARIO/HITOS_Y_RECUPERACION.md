@@ -13,6 +13,7 @@ Las fechas del plan son objetivos. Detalle de cada puerta, evidencia y reglas: [
 |5|P5 · ETL guiado completo y P6 · BI mínimo comprobado contra SQL|Completar el ETL antes que Excel/Power BI; documentar lo pendiente real|
 |6|P7 · Transferencia C06 propia y defensa|Elegir dos bases débiles para refuerzo antes del final|
 
+Si un examen o un hito no se aprueba, cada documento de examen indica **qué base concreta recuperar y qué variante nueva la demuestra** (S01–S06 y `08_SOLUCIONES/controles_examenes.md`): no se repite la semana por defecto. La variante resuelta y la explicación de la solución son condiciones necesarias de cualquier hito.
 La recuperación reemplaza el siguiente bloque práctico; no se añade al final del día. Recorta el REFUERZO, el OPCIONAL, la tercera
 publicación y la presentación estética antes de recortar el OBLIGATORIO. Las postulaciones se adaptan a vacantes
 pertinentes y entrevistas reales. Un día mínimo no pretende cubrir contenidos nuevos. Un domingo es descanso por defecto; la recuperación voluntaria (45–120 min) nunca es obligatoria.

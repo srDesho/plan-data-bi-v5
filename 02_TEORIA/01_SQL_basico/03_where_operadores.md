@@ -10,7 +10,7 @@
 
 - **Condición**: una afirmación sobre una fila que resulta verdadera o falsa. La fila entra al resultado solo si es verdadera.
 - **WHERE**: la cláusula que contiene la condición. Se escribe después de `FROM`.
-- **Operador de comparación**: `=` (igual), `<>` o `!=` (distinto), `<` (menor), `>` (mayor), `<=` (menor o igual), `>=` (mayor o igual). En SQL se usa un solo `=` para comparar; no existe `==`.
+- **Operador de comparación**: `=` (igual), `<>` o `!=` (distinto), `<` (menor), `>` (mayor), `<=` (menor o igual), `>=` (mayor o igual). En SQL el operador estándar es un solo `=`. SQLite también acepta `==` como sinónimo (lo comprobamos con la versión 3.49), pero SQL Server, PostgreSQL y MySQL estándar lo rechazan: escribe siempre `=`.
 - **Operador lógico**: `AND` (se cumplen las dos condiciones), `OR` (se cumple al menos una), `NOT` (invierte una condición).
 - **IN**: pregunta si un valor está dentro de una lista: `ruta IN ('R01', 'R03')`.
 - **BETWEEN**: pregunta si un valor está entre dos límites, **incluyendo ambos**: `precio BETWEEN 5 AND 9`.
@@ -137,7 +137,7 @@ Ejemplo comercial: "entregas de las rutas R01 y R03 en septiembre" es `ruta IN (
 
 ## Errores comunes
 
-- **Usar `==`** en lugar de `=`: da error de sintaxis en SQLite.
+- **Usar `==`** en lugar de `=`: en SQLite funciona como sinónimo, pero no es SQL estándar y falla en SQL Server y PostgreSQL. Es un hábito de Python que conviene corregir: en SQL se compara con `=`.
 - **Comillas faltantes en texto**: `WHERE ruta = R01` busca una *columna* llamada R01 y falla con `no such column`.
 - **Mayúsculas distintas**: `'norte'` no coincide con `'Norte'`. Comprueba cómo está escrito el dato.
 - **Mezclar AND y OR sin paréntesis**: es el error silencioso más común. El resultado parece plausible pero trae filas de más.

@@ -265,7 +265,44 @@ def auditar_dependencias():
                 continue
             if ref not in aprendido or aprendido[ref] > dia:
                 problemas.append(f'{ex}: evalúa {ref}, que no está preparado como OBLIGATORIO/REPASO antes del examen (D{dia:02})')
+        # la tabla «Qué se evalúa» declara la preparación obligatoria previa: no puede citar REFUERZO ni ejercicios posteriores
+        m = re.search(r'## Qué se evalúa.*?(?=^## )', t, re.S | re.M)
+        previa = ' '.join(f.split('|')[2] for f in (m.group(0).splitlines() if m else []) if f.startswith('| ') and f.count('|') >= 6)
+        for ref in set(re.findall(r'\b(?:[PGJKVXENC]\d+[ab]?|ME0\d|DB0\d|ETL-\d|C06-\d)\b(?![.\d])', previa)):
+            if ref not in aprendido or aprendido[ref] > dia:
+                problemas.append(f'{ex}: la preparación previa cita {ref}, que no es OBLIGATORIO/REPASO antes del examen (D{dia:02})')
+    # simulacros semanales: consultas y casos preparados antes de su sábado
+    for k, dia in ((1, 6), (2, 13), (3, 20), (4, 27), (5, 34), (6, 41)):
+        t = leer(ROOT / f'06_ENTREVISTAS/SIMULACRO_{k:02}.md')
+        for ref in set(re.findall(r'(?:Consultas sin soluciones:|Reformulación del caso:)([^.\n]*)', t)):
+            for i in re.findall(r'\b(?:[PGJKVXENC]\d+[ab]?|C06)\b', ref):
+                if i == 'C06':
+                    continue
+                if i not in aprendido or aprendido[i] > dia:
+                    problemas.append(f'SIMULACRO_{k:02}: usa {i}, que no está preparado antes del sábado D{dia:02}')
     return problemas, len(aprendido)
+
+
+def auditar_final():
+    """La evaluación final no publica su solución ni sus resultados esperados en el paquete y declara la limitación de custodia."""
+    problemas = []
+    prohibidos = ['referencia_final.py', 'generar_final.py', 'verdad_silver.csv', 'verdad_gold.csv', 'verdad_escalares.json', 'silver_final_esperada.csv', 'controles_final.json']
+    for p in ROOT.rglob('*'):
+        if p.is_file() and p.name in prohibidos and '.venv' not in p.parts:
+            problemas.append(f'el paquete contiene {p.relative_to(ROOT).as_posix()}, que debe estar en la custodia')
+    carpeta = ROOT / '09_EVALUACION_FINAL'
+    enun = leer(carpeta / 'ENUNCIADO.md')
+    for frase in ('no es una prueba ciega', 'custodia', 'no está incluido en las 90 horas', 'Defensa con observador'):
+        if frase.lower() not in enun.lower():
+            problemas.append(f'ENUNCIADO.md no declara «{frase}»')
+    h = json.loads(leer(carpeta / 'verificacion/huellas_final.json'))
+    if 'valor' in json.dumps(h['escalares']).lower() or not all(len(v) == 16 for v in h['escalares'].values()):
+        problemas.append('huellas_final.json publica valores en lugar de huellas')
+    datos = leer(carpeta / 'datos/DICCIONARIO.md') + leer(carpeta / 'RUBRICA.md') + enun
+    for etiqueta, v in (('conteo de Silver', '5441'), ('conteo de rechazos', '5555'), ('ventas esperadas', '1835919128'), ('ventas esperadas', '18359191')):
+        if v in datos:
+            problemas.append(f'los documentos del final publican un resultado esperado ({etiqueta}: {v})')
+    return problemas, len(prohibidos)
 
 
 def auditar_indices():
@@ -314,7 +351,7 @@ def auditar_indices():
 def ejecutar():
     resultado = {}
     for nombre, fn in (('SQL', auditar_sql), ('Python', auditar_python), ('Otros (estadística, casos, puente, depuración)', auditar_otros),
-                       ('Fugas de resultados', auditar_fuga_sql_python_etc), ('Dependencias y exámenes', auditar_dependencias), ('Índices y contratos', auditar_indices)):
+                       ('Fugas de resultados', auditar_fuga_sql_python_etc), ('Dependencias y exámenes', auditar_dependencias), ('Custodia de la evaluación final', auditar_final), ('Índices y contratos', auditar_indices)):
         resultado[nombre] = fn()
     return resultado
 

@@ -102,14 +102,31 @@ def main():
         add('ETL distribuidora dos ejecuciones',original)
         def nuevo():
             m=module(ROOT/'08_SOLUCIONES/etl_nuevo_referencia.py','etl_nuevo')
-            results={}
-            for transfer,folder in [(True,'04_DATASETS/transferencia'),(False,'09_EVALUACION_FINAL/datos')]:
-                output=tmp/('transferencia' if transfer else 'final')
-                first=m.ejecutar(ROOT/folder,output);second=m.ejecutar(ROOT/folder,output)
-                assert first==second;validar_nuevo(output,transfer)
-                results['transferencia' if transfer else 'final']=first
-            return results
-        add('ETL transferencia/final y oracle fila por fila',nuevo)
+            output=tmp/'transferencia'
+            first=m.ejecutar(ROOT/'04_DATASETS/transferencia',output);second=m.ejecutar(ROOT/'04_DATASETS/transferencia',output)
+            assert first==second;resumen=validar_nuevo(output,True)
+            return {'transferencia':first,'validador':resumen}
+        add('ETL de C06 y validador fila por fila',nuevo)
+        def validadores():
+            pv=module(ROOT/'herramientas/pruebas_validadores.py','pruebas_validadores')
+            informe=pv.ejecutar(tmp/'validadores',custodia())
+            resumen={caso:{'aprobadas_o_rechazadas':sum(x['resultado'] in ('aprobada','rechazada') for x in lista),'omitidas':sum(x['resultado'].startswith('OMITIDA') for x in lista)} for caso,lista in informe.items()}
+            assert resumen['C06']['aprobadas_o_rechazadas']>=17 and resumen['ETL guiado']['aprobadas_o_rechazadas']>=12
+            return {'resumen':resumen,'pruebas':informe}
+        (tmp/'validadores').mkdir()
+        def custodia():
+            import os as _os
+            ruta=_os.environ.get('PLAN_V5_CUSTODIA') or str(ROOT.parent/'Plan_Data_BI_v5_CUSTODIA_FINAL')
+            return ruta if (Path(ruta)/'referencia_final.py').exists() else None
+        add('Validadores: las referencias aprueban y las alteraciones conocidas se rechazan',validadores)
+        def final_con_custodia():
+            ruta=custodia()
+            if not ruta:return {'estado':'OMITIDA: la referencia privada de la evaluación final no está disponible; la prueba no se declara ejecutada'}
+            ref=module(Path(ruta)/'referencia_final.py','referencia_final')
+            salida=tmp/'final';first=ref.ejecutar(ROOT/'09_EVALUACION_FINAL/datos',salida);second=ref.ejecutar(ROOT/'09_EVALUACION_FINAL/datos',salida)
+            assert first==second;resumen=module(ROOT/'herramientas/validar_final.py','validar_final_final').validar(salida)
+            return {'final':first,'validador':resumen}
+        add('Evaluación final: referencia privada, segunda ejecución y validador',final_con_custodia)
         def adverse():
             m=module(ROOT/'08_SOLUCIONES/etl_nuevo_referencia.py','etl_adverso')
             raw=pd.read_csv(ROOT/'04_DATASETS/transferencia/transacciones_raw.csv',sep=';',dtype=str,keep_default_na=False)
@@ -136,6 +153,33 @@ def main():
             cases.append('salida_previa_preservada')
             return cases
         add('Pruebas adversas y publicación segura',adverse)
+        def adverse_final():
+            ruta=custodia()
+            if not ruta:return {'estado':'OMITIDA: sin la referencia privada no se declara ejecutada'}
+            m=module(Path(ruta)/'referencia_final.py','referencia_final_adversa')
+            raw=pd.read_csv(ROOT/'09_EVALUACION_FINAL/datos/despachos_raw.csv',sep='|',dtype=str,keep_default_na=False)
+            cat=pd.read_csv(ROOT/'09_EVALUACION_FINAL/datos/articulos.csv',dtype=str,keep_default_na=False)
+            casos=[]
+            for nombre,r,c in [('columna_ausente',raw.drop(columns='cod_art'),cat),('catalogo_duplicado',raw,pd.concat([cat,cat.iloc[:1]])),
+                               ('clave_en_conflicto',pd.concat([raw,raw.iloc[:1].assign(precio_unitario='Bs 999,99')]),cat)]:
+                try:m.transformar(r,c)
+                except ValueError:casos.append(nombre)
+                else:raise AssertionError('No rechazó '+nombre)
+            # un duplicado exacto NO es un conflicto: solo se descarta y se cuenta
+            _,_,_,met=m.transformar(pd.concat([raw,raw.iloc[:1]]),cat);assert met['duplicados_exactos']==70+1;casos.append('duplicado_exacto_descartado')
+            valida=raw.iloc[:1].copy();valida['cantidad']='3.7';valida['item']='99'
+            silver,reject,gold,met=m.transformar(valida,cat)
+            assert len(silver)==0 and len(reject)==1 and 'cantidad' in reject.iloc[0].motivos;casos.append('cantidad_fraccionaria_rechazada')
+            entrada=tmp/'final_adverso_entrada';entrada.mkdir();raw.to_csv(entrada/'despachos_raw.csv',sep='|',index=False);cat.to_csv(entrada/'articulos.csv',index=False)
+            salida=tmp/'final_adverso_salida';m.ejecutar(entrada,salida)
+            huella=hashlib.sha256((salida/'resultado.db').read_bytes()).hexdigest()
+            pd.concat([cat,cat.iloc[:1]]).to_csv(entrada/'articulos.csv',index=False)
+            try:m.ejecutar(entrada,salida)
+            except ValueError:pass
+            else:raise AssertionError('No detuvo el catálogo duplicado')
+            assert hashlib.sha256((salida/'resultado.db').read_bytes()).hexdigest()==huella;casos.append('salida_previa_preservada')
+            return casos
+        add('Pruebas adversas del final (referencia privada)',adverse_final)
         def statistics():
             m=module(ROOT/'08_SOLUCIONES/estadistica_referencia.py','stats_ref')
             controls=json.loads((ROOT/'08_SOLUCIONES/controles_estadistica.json').read_text(encoding='utf-8'))
@@ -171,14 +215,14 @@ def main():
                 assert sum(x[1] for x in d['bloques'])==d['completo']
                 assert 0<=d['minimo']<=d['reducido']<=d['completo']
                 if i%7==6:assert d['completo']==0 and not d['sql']
-                else:assert d['sql'] and d['bloques'][0][1]>=15
+                else:assert d['completo']>0
                 weeks[d['semana']]=weeks.get(d['semana'],0)+d['completo']
                 for id in d['sql']:assert (ROOT/f'03_EJERCICIOS/SQL/{id}.md').exists()
                 for id in d['python']:assert (ROOT/f'03_EJERCICIOS/Python/{id}.md').exists()
                 for id in d['estadistica']:assert (ROOT/f'03_EJERCICIOS/Estadistica/{id}.md').exists()
                 for t in d['teoria']:assert (ROOT/f'02_TEORIA/{t}.md').exists()
             assert set(weeks.values())=={900}
-            return {'dias':42,'minutos_semanales':weeks,'domingo':'0 minutos','SQL_activo':'15–25 minutos en todas las jornadas'}
+            return {'dias':42,'minutos_semanales':weeks,'domingo':'0 minutos','SQL':'práctica frecuente y progresiva, no diaria obligatoria (tabla por semana en RUTAS.md)'}
         add('Calendario fechas, horas y progresión',calendar)
         def init_space():
             m=module(ROOT/'herramientas/crear_espacio.py','crear_espacio_prueba')
@@ -262,7 +306,8 @@ def main():
             an=module(ROOT/'herramientas/aplicar_nucleo.py','aplicar_nucleo_prueba')
             ctx=an.Contexto(ROOT)
             errores=an.validar_referencias(ctx);assert not errores,errores
-            filas=an.tabla_carga(ctx);peor=max(r for *_,r in filas);assert peor<=1.30,peor
+            filas=an.tabla_carga(ctx);peor=max(r for *_,r in filas);assert peor<=1.25,peor
+            sem=an.resumen_semanal(ctx);assert all(x['est']/x['plan']<=1.10 for x in sem.values()),{w:round(x['est']/x['plan'],2) for w,x in sem.items()}
             for n in (1,2):
                 t=next((ROOT/'01_PLAN_DIARIO/dias').glob(f'D{n:02}_*.md')).read_text(encoding='utf-8')
                 assert 'OBLIGATORIO' not in t and 'Puerta de competencia' not in t,f'D{n:02} no debe modificarse'
