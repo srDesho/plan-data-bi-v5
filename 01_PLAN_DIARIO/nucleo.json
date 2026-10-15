@@ -1,6 +1,6 @@
 {
   "version": "5.3-fase2-etapa3",
-  "nota": "Fuente de OBLIGATORIO/REPASO/REFUERZO/OPCIONAL, lecciones núcleo y criterio por jornada. D01 no se modifica; en D02 solo se añade el bloque de lecciones. Lo aplica herramientas/aplicar_nucleo.py. Las lecciones se clasifican en lecciones.json. Cierre de secuencia: dias_iniciales explicita prioridades de D01/D02; preparaciones registra lectura y predicción indispensables antes de la actividad, sin promover lecciones completas. D01 conserva su guía; en D02 solo se añade preparación.",
+  "nota": "Fuente de OBLIGATORIO/REPASO/REFUERZO/OPCIONAL, lecciones núcleo y criterio por jornada. D01/D02 conservan su progreso y solo se actualiza la orientación de estudio. Lo aplica herramientas/aplicar_nucleo.py. Las lecciones se clasifican en lecciones.json. Cierre de secuencia: dias_iniciales explicita prioridades de D01/D02; preparaciones registra lectura y predicción indispensables antes de la actividad, sin promover lecciones completas. Las preparaciones residen en 02_TEORIA; las guías las asignan antes de abrir los ejercicios. Sus minutos ya están incluidos y se descuentan de la lectura posterior de la lección completa.",
   "items_personalizados": {
     "ETL-1": {
       "titulo": "ETL distribuidora · etapas 1–2: contrato, Bronze, perfil y texto",
@@ -1979,57 +1979,90 @@
       "dia": 1,
       "min": 8,
       "titulo": "Tabla, selección, orden y límite",
-      "archivo": "03_EJERCICIOS/SQL/S1.md",
-      "ancla": "preparacion-s1"
+      "archivo": "02_TEORIA/01_SQL_basico/02_select_from_alias.md",
+      "ancla": "preparacion-s1",
+      "ejercicio": "03_EJERCICIOS/SQL/S1.md",
+      "leccion": "1.2",
+      "orden": 1
     },
     "P01": {
       "dia": 1,
       "min": 8,
       "titulo": "Variables, tipos y función corta",
-      "archivo": "03_EJERCICIOS/Python/P01.md",
-      "ancla": "preparacion-p01"
+      "archivo": "02_TEORIA/07_Python_basico/04_primera_funcion.md",
+      "ancla": "preparacion-p01",
+      "ejercicio": "03_EJERCICIOS/Python/P01.md",
+      "leccion": "7.4",
+      "orden": 2
     },
     "S2": {
       "dia": 2,
       "min": 7,
       "titulo": "Valores y combinaciones únicas",
-      "archivo": "03_EJERCICIOS/SQL/S2.md",
-      "ancla": "preparacion-s2"
+      "archivo": "02_TEORIA/01_SQL_basico/06_distinct_like.md",
+      "ancla": "preparacion-s2",
+      "ejercicio": "03_EJERCICIOS/SQL/S2.md",
+      "leccion": "1.6",
+      "orden": 1
     },
     "P02": {
       "dia": 2,
       "min": 7,
       "titulo": "Decidir antes de operar",
-      "archivo": "03_EJERCICIOS/Python/P02.md",
-      "ancla": "preparacion-p02"
+      "archivo": "02_TEORIA/07_Python_basico/10_condicionales.md",
+      "ancla": "preparacion-p02",
+      "ejercicio": "03_EJERCICIOS/Python/P02.md",
+      "leccion": "7.10",
+      "orden": 3,
+      "despues_de": [
+        "7.6"
+      ]
     },
     "P03": {
       "dia": 2,
       "min": 12,
       "titulo": "Texto: limpieza, inmutabilidad y partir/unir",
-      "archivo": "03_EJERCICIOS/Python/P03.md",
-      "ancla": "preparacion-p03"
+      "archivo": "02_TEORIA/07_Python_basico/05_texto.md",
+      "ancla": "preparacion-p03",
+      "ejercicio": "03_EJERCICIOS/Python/P03.md",
+      "leccion": "7.5",
+      "orden": 2,
+      "antes_de": [
+        "7.6"
+      ]
     },
     "S4": {
       "dia": 3,
       "min": 6,
       "titulo": "Filtro combinado y sentido del orden",
-      "archivo": "03_EJERCICIOS/SQL/S4.md",
-      "ancla": "preparacion-s4"
+      "archivo": "02_TEORIA/01_SQL_basico/03_where_operadores.md",
+      "ancla": "preparacion-s4",
+      "ejercicio": "03_EJERCICIOS/SQL/S4.md",
+      "leccion": "1.3",
+      "orden": 1
     },
     "AN07": {
       "dia": 12,
       "min": 6,
       "titulo": "Tres KPI y sus denominadores",
-      "archivo": "03_EJERCICIOS/Analitico/AN07.md",
-      "ancla": "preparacion-an07"
+      "archivo": "02_TEORIA/06_KPIs/01_que_es_un_kpi.md",
+      "ancla": "preparacion-an07",
+      "ejercicio": "03_EJERCICIOS/Analitico/AN07.md",
+      "leccion": "6.1",
+      "orden": 1
     },
     "PB02": {
       "dia": 32,
       "min": 4,
       "titulo": "Marcar y comprobar la tabla de fechas",
-      "archivo": "03_EJERCICIOS/Casos/PB02.md",
-      "ancla": "preparacion-pb02"
+      "archivo": "02_TEORIA/14_PowerBI_DAX/01_power_bi_desde_cero.md",
+      "ancla": "preparacion-pb02",
+      "ejercicio": "03_EJERCICIOS/Casos/PB02.md",
+      "leccion": "14.1",
+      "orden": 1,
+      "despues_de": [
+        "14.1"
+      ]
     }
   }
 }

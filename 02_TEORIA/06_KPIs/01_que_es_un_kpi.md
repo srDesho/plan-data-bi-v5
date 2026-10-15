@@ -1,6 +1,30 @@
 # 6.1 Qué es un KPI: la ficha de definición y las ventas entregadas
 
-> Tiempo estimado: 50 min (lectura 25 + práctica 25). Prerrequisitos: [2.3 Granularidad y denominadores](../02_SQL_agregados/03_granularidad_denominadores.md) y [3.2 INNER JOIN](../03_SQL_joins/02_inner_join.md).
+> Tiempo estimado: 56 min (lectura 31 + práctica 25). Prerrequisitos: [2.3 Granularidad y denominadores](../02_SQL_agregados/03_granularidad_denominadores.md) y [3.2 INNER JOIN](../03_SQL_joins/02_inner_join.md).
+
+<!-- TEORIA:PREPARACION:INICIO -->
+<a id="preparacion-an07"></a>
+
+## Base inicial de KPI · 6 min
+
+Antes de AN07, lee estas definiciones y escribe una predicción. Esta base forma parte de la lectura de 6.1; el desarrollo completo de [6.2 Cumplimiento, cobertura y efectividad](02_cumplimiento_cobertura_efectividad.md) sigue en D25.
+
+| KPI | Qué compara | Fracción para el mismo periodo |
+|---|---|---|
+| Cumplimiento de ventas | lo vendido frente a la meta de ventas | ventas / meta × 100 |
+| Cobertura de ejecución | las visitas realizadas dentro de la agenda planificada frente a las que estaban planificadas | visitas planificadas que se realizaron / visitas planificadas × 100 |
+| Efectividad | las visitas realizadas que terminaron con pedido frente a todas las realizadas | visitas realizadas con pedido / visitas realizadas × 100 |
+
+Un pedido tomado no demuestra que la venta se haya entregado; declara qué estado cuenta como venta. Si el denominador es cero, el porcentaje no es calculable: no lo conviertas en 0 %.
+
+**Ejemplo guiado independiente.** Una agenda de prueba tiene 6 visitas planificadas; se realizan 3 de ellas y 2 de esas 3 terminan con pedido. Su cobertura es 3/6 = 50 % y su efectividad es 2/3 ≈ 66,7 %. Esas cifras no dicen cuánto dinero se vendió. Para medir cumplimiento se necesitan las ventas y su meta: Bs 90 de ventas frente a una meta de Bs 100 representan 90 %.
+
+**Predice antes de pasar a AN07.** Si esa agenda cambia a 8 visitas planificadas, pero siguen realizándose 3 y tomando pedido en 2, ¿cuál de los dos indicadores de visitas cambia y cuál permanece igual? Escribe qué denominador justifica tu predicción; no necesitas calcular otro porcentaje.
+
+El encabezado de esta lección incluye esta sección de 6 min. Si ya la estudiaste en D12, quedan 25 min de lectura del desarrollo; no vuelvas a sumar esta sección. La práctica de 25 min se contabiliza por separado según la guía.
+<!-- TEORIA:PREPARACION:FIN -->
+
+<a id="desarrollo"></a>
 
 ## Para qué sirve
 

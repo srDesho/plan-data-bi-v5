@@ -1,6 +1,28 @@
 # 1.3 WHERE: filtrar filas con operadores
 
-> Tiempo estimado: 50 min (lectura 20 + práctica 30). Prerrequisito: [1.2 SELECT, FROM y alias](02_select_from_alias.md).
+> Tiempo estimado: 56 min (lectura 26 + práctica 30). Prerrequisito: [1.2 SELECT, FROM y alias](02_select_from_alias.md).
+
+<!-- TEORIA:PREPARACION:INICIO -->
+<a id="preparacion-s4"></a>
+
+Esta sección es autocontenida. Sus 6 min están incluidos en los 26 min de lectura del encabezado; tras estudiarla, quedan 20 min de lectura del desarrollo restante. La guía asigna cada parte y evita contarla dos veces.
+
+## Base inicial: filtros combinados y orden · 6 min
+
+Después de elegir la tabla, `WHERE` conserva las filas cuya condición es verdadera. Dos condiciones con `AND` deben cumplirse ambas; `OR` admite cualquiera. Usa paréntesis si las combinas. Las comparaciones numéricas distinguen `>` (sin incluir el límite) y `>=` (incluyéndolo). Interpreta en papel el ejemplo de `muestras`, una tabla inventada independiente de los archivos del curso:
+
+```sqlplantilla
+SELECT codigo, piezas FROM muestras
+WHERE tono = 'Verde' AND piezas <= 3
+ORDER BY piezas ASC, codigo DESC;
+```
+
+En esta tabla ficticia, una muestra Verde con 2 piezas entra; una Verde con 4 y una Roja con 2 quedan fuera. Primero se filtra; después se ordena. `ASC` ordena de menor a mayor; `DESC`, al revés. La segunda columna rompe empates: con igual número de piezas, el código mayor aparece primero. Predice qué ocurre con una Verde de exactamente 3 piezas: entra por el `<=`.
+
+El ejemplo es independiente del catálogo de los ejercicios. Para ampliar el orden consulta [1.5](05_order_limit.md); el desarrollo restante de esta lección explica los operadores y sus combinaciones.
+<!-- TEORIA:PREPARACION:FIN -->
+
+<a id="desarrollo"></a>
 
 ## Para qué sirve
 

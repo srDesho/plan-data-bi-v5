@@ -9,11 +9,11 @@ Este capítulo te enseña a leer una tabla y a pedirle datos con `SELECT`, `WHER
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
 | 1.1 | [Tablas, filas, columnas y tipos](01_SQL_basico/01_tablas_filas_columnas.md) | base de datos, tabla, fila, columna, clave primaria, granularidad, NULL | refuerzo | 45 min |
-| 1.2 | [SELECT, FROM, alias](01_SQL_basico/02_select_from_alias.md) | elegir columnas, alias, columnas calculadas | refuerzo | 45 min |
-| 1.3 | [WHERE y operadores](01_SQL_basico/03_where_operadores.md) | condiciones, AND/OR/NOT, IN, BETWEEN, paréntesis | refuerzo | 50 min |
+| 1.2 | [SELECT, FROM, alias](01_SQL_basico/02_select_from_alias.md) | elegir columnas, alias, columnas calculadas | refuerzo | 53 min |
+| 1.3 | [WHERE y operadores](01_SQL_basico/03_where_operadores.md) | condiciones, AND/OR/NOT, IN, BETWEEN, paréntesis | refuerzo | 56 min |
 | 1.4 | [NULL](01_SQL_basico/04_null.md) | IS NULL, lógica de tres valores, filas que se pierden | núcleo · D02 | 40 min |
 | 1.5 | [ORDER BY y LIMIT](01_SQL_basico/05_order_limit.md) | orden, desempates, Top N, OFFSET | refuerzo | 40 min |
-| 1.6 | [DISTINCT y LIKE](01_SQL_basico/06_distinct_like.md) | valores únicos, patrones, datos sucios | núcleo · D03 | 40 min |
+| 1.6 | [DISTINCT y LIKE](01_SQL_basico/06_distinct_like.md) | valores únicos, patrones, datos sucios | núcleo · D03 | 47 min |
 | 1.7 | [Del requerimiento a la consulta](01_SQL_basico/07_del_requerimiento_a_la_consulta.md) | método de cinco preguntas, verificación | refuerzo | 40 min |
 
 ## Cómo estudiar este capítulo

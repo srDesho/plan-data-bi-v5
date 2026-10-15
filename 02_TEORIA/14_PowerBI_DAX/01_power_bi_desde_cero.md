@@ -1,8 +1,27 @@
 # 14.1 Power BI desde cero: qué es, el flujo de trabajo y la configuración regional
 
-> Tiempo estimado: 50 min (lectura 30 + práctica 20). Prerrequisitos: [13.2 El modelo estrella](../13_Modelado/02_modelo_estrella.md) y [9.2 Leer un CSV](../09_Pandas_basico/02_series_dataframe_csv.md).
+> Tiempo estimado: 54 min (lectura 34 + práctica 20). Prerrequisitos: [13.2 El modelo estrella](../13_Modelado/02_modelo_estrella.md) y [9.2 Leer un CSV](../09_Pandas_basico/02_series_dataframe_csv.md).
 >
 > **Estado de verificación de este capítulo:** las cifras de control se calculan con Python sobre la mini-base y se comprueban automáticamente. Los pasos de la interfaz de Power BI Desktop, el código M y el código DAX **no se ejecutaron en Power BI Desktop** al escribir este material: son guía de referencia que tú debes probar en tu equipo (hay una lista de comprobación manual al final del capítulo). Los nombres de menús pueden variar según la versión.
+
+<!-- TEORIA:PREPARACION:INICIO -->
+<a id="preparacion-pb02"></a>
+
+## Base inicial de tabla de fechas · 4 min
+
+Lee esta base antes de realizar PB02 en Desktop. Sus 4 minutos forman parte de la lectura de esta lección. La tabla `dim_fecha` ya está incluida entre los CSV del modelo; aquí aprendes a reconocerla como calendario del modelo.
+
+1. Selecciona `dim_fecha` y comprueba que su columna `fecha` tiene tipo **Fecha**. La tabla debe tener una fila por día, fechas únicas y ningún vacío.
+2. Comprueba que cubre todos los días entre la primera y la última fecha: ordenar las fechas no basta si falta un día intermedio. Contrasta el número de filas con el número de días de ese intervalo, incluidos ambos extremos, y verifica también duplicados y vacíos.
+3. Con `dim_fecha` seleccionada, busca **Marcar como tabla de fechas** entre las opciones de tabla o modelado; activa la opción, elige `fecha` como columna y confirma. El nombre y la ubicación del menú pueden variar según la versión de Desktop. Si la validación rechaza el calendario, revisa tipo, vacíos, duplicados y continuidad antes de continuar.
+4. Comprueba que la marca quedó aplicada y que las relaciones usan la fecha y dirección indicadas en [MODELO.md](../../05_PROYECTOS/powerbi/MODELO.md). Conserva una captura o una nota de esas comprobaciones como evidencia de PB02.
+
+Esta preparación explica el procedimiento; la evidencia se obtiene al ejecutarlo en Desktop dentro de la práctica.
+
+El encabezado de esta lección incluye esta sección de 4 min. Si ya la estudiaste en D32, quedan 30 min de lectura del desarrollo; no vuelvas a sumar esta sección. La práctica de 20 min se contabiliza por separado según la guía.
+<!-- TEORIA:PREPARACION:FIN -->
+
+<a id="desarrollo"></a>
 
 ## Para qué sirve
 

@@ -1,6 +1,31 @@
 # 7.4 Tu primera función corta
 
-> Tiempo estimado: 55 min (lectura 20 + práctica 35). Prerrequisitos: [7.2 Variables](02_variables_asignacion.md) y [7.3 Tipos y aritmética](03_tipos_aritmetica.md).
+> Tiempo estimado: 63 min (lectura 28 + práctica 35). Prerrequisitos: [7.2 Variables](02_variables_asignacion.md) y [7.3 Tipos y aritmética](03_tipos_aritmetica.md).
+
+<!-- TEORIA:PREPARACION:INICIO -->
+<a id="preparacion-p01"></a>
+## Base inicial de funciones · 8 min
+
+En D01, esta base comparte los 20 min de teoría con la preparación de S1: 16 min entre ambas y 4 para situarte en el entorno. Guarda instrucciones en un archivo `.py` y ejecútalo con el Python de `.venv`. Una variable guarda un valor: `saldo = 12` asigna el número entero 12; `2.5` es decimal y `"12"` es texto, no un número. `+`, `-`, `*` y `/` hacen operaciones; los paréntesis fijan su orden.
+
+```python
+def saldo_tras_pago(saldo, pago):
+    return saldo - pago
+
+pendiente = saldo_tras_pago(12, 5)
+print(pendiente)
+```
+
+La primera línea **define** una función; sus parámetros reciben los datos de cada llamada. Los dos puntos y los cuatro espacios de sangría delimitan su bloque. `return` entrega el resultado y termina la llamada; `print` solo lo muestra. La definición no ejecuta la resta: la llamada con 12 y 5 devuelve 7, que se guarda en `pendiente`. Cambiar después `saldo` no recalcula un resultado anterior.
+
+Predice y comprueba una llamada con 8 y 2.5: devuelve 5.5. Luego cambia tú ambos valores. El ejemplo es de saldo, no resuelve el ejercicio de importe.
+
+El desarrollo de esta lección y [7.1–7.3](../07_Python_basico.md) amplían ejecución, variables, tipos y funciones. Este bloque es obligatorio aunque el desarrollo completo figure como REFUERZO. En REDUCIDO se conserva antes de P01; si falta, prepara primero y pospón la entrega. P01 puede empezar como script, pero se necesita la función antes de D03.
+
+El encabezado de esta lección incluye esta sección de 8 min. Si ya la estudiaste en D01, quedan 20 min de lectura del desarrollo; no vuelvas a sumar esta sección. La práctica de 35 min se contabiliza por separado según la guía.
+<!-- TEORIA:PREPARACION:FIN -->
+
+<a id="desarrollo"></a>
 
 ## Para qué sirve
 

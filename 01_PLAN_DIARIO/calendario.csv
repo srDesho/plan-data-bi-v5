@@ -1,6 +1,6 @@
 ﻿dia,fecha,semana,titulo,completo_min,reducido_min,minimo_min,sql,python,estadistica,otros,obligatorio,preparaciones,preparacion_lectura_min
 1,2026-10-12,1,"Entorno, filas y variables",90,45,20,S1;S10,P01,,,S1;P01,S1;P01,16
-2,2026-10-13,1,"Filtros, NULL y texto",160,60,20,S2;S7;S9,P02;P03,,C01,S2;S7;P02;P03,S2;P02;P03,26
+2,2026-10-13,1,"Filtros, NULL y texto",160,60,20,S2;S7;S9,P02;P03,,C01,S2;S7;P02;P03,S2;P03;P02,26
 3,2026-10-14,1,"Listas, diccionarios y clientes únicos",150,60,20,S4;S6;S5;S3,P04;P05,,C02,S4;S6;P04;P05,S4,6
 4,2026-10-15,1,"Agrupación, bucles y media/mediana",150,60,20,G3;G2,P06,ST01,,G3;P06,,0
 5,2026-10-16,1,"Condiciones, funciones cortas y KPIs",150,60,20,G6;G5;G4;G1,P07,,C01,G6;P07,,0

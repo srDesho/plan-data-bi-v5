@@ -2,7 +2,7 @@
 
 Una **métrica** es una medida; un **KPI** es una medida elegida para seguir un objetivo y orientar una decisión. Este capítulo conserva los 13 indicadores del curso (ventas, crecimiento, cumplimiento, cobertura, efectividad, productividad, ticket y drop size, frecuencia, recencia y activos, ABC/Pareto, rotación, variaciones) pero los explica **de cero**: cada uno con su ficha (población, período, unidad, granularidad, numerador, denominador y criterio de acción), su cálculo en Python y en SQL, su interpretación, sus errores comunes y lo que **no** se puede concluir. Todos los datos son inventados (la mini-base de `04_DATASETS/mini_base/`) y distintos de los de los ejercicios.
 
-**Tiempo total estimado de primera vez:** unas 5 h 40 min (6 lecciones). El capítulo se puede leer después de SQL (capítulos 1–4) y se aplica en SQL, Pandas, Excel y Power BI.
+**Tiempo total estimado de primera vez:** unas 5 h 46 min (6 lecciones). El capítulo se puede leer después de SQL (capítulos 1–4) y se aplica en SQL, Pandas, Excel y Power BI.
 
 **Antes de empezar:** capítulos 1 a 4 (sobre todo 2.3 y 4.4). Para los ejemplos en Python hacen falta los capítulos 9 y 10; si todavía no los has estudiado, usa los de SQL.
 
@@ -10,7 +10,7 @@ Una **métrica** es una medida; un **KPI** es una medida elegida para seguir un 
 
 | # | Lección | KPI que cubre | Tipo | Tiempo |
 |---|---|---|---|---|
-| 6.1 | [Qué es un KPI y la ficha de definición](06_KPIs/01_que_es_un_kpi.md) | KPI 01 · ventas entregadas frente a netas | núcleo · D12 | 50 min |
+| 6.1 | [Qué es un KPI y la ficha de definición](06_KPIs/01_que_es_un_kpi.md) | KPI 01 · ventas entregadas frente a netas | núcleo · D12 | 56 min |
 | 6.2 | [Cumplimiento, cobertura y efectividad](06_KPIs/02_cumplimiento_cobertura_efectividad.md) | KPI 03–06 | núcleo · D25 | 60 min |
 | 6.3 | [Ticket, drop size, frecuencia y activos](06_KPIs/03_ticket_frecuencia_activos.md) | KPI 08–10 | refuerzo | 60 min |
 | 6.4 | [Productividad, crecimiento y variaciones](06_KPIs/04_productividad_variaciones.md) | KPI 02, 07 y 13 | núcleo · D31 | 55 min |

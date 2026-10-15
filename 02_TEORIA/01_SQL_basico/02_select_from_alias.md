@@ -1,6 +1,34 @@
 # 1.2 SELECT, FROM, alias y columnas calculadas
 
-> Tiempo estimado: 45 min (lectura 15 + práctica 30). Prerrequisito: [1.1 Tablas, filas y columnas](01_tablas_filas_columnas.md).
+> Tiempo estimado: 53 min (lectura 23 + práctica 30). Prerrequisito: [1.1 Tablas, filas y columnas](01_tablas_filas_columnas.md).
+
+<!-- TEORIA:PREPARACION:INICIO -->
+<a id="preparacion-s1"></a>
+
+Esta sección es autocontenida. Sus 8 min están incluidos en los 23 min de lectura del encabezado; tras estudiarla, quedan 15 min de lectura del desarrollo restante. La guía asigna cada parte y evita contarla dos veces.
+
+## Base inicial: de la tabla a una consulta · 8 min
+
+Una tabla agrupa registros; una fila representa un registro y una columna, una propiedad. Interpreta este ejemplo en papel: la tabla inventada `muestrario` tiene tres filas y es independiente de los archivos del curso.
+
+|codigo|tono|
+|---:|---|
+|30|Azul|
+|10|Rojo|
+|20|Azul|
+
+```sqlplantilla
+SELECT codigo, tono FROM muestrario ORDER BY codigo DESC LIMIT 2;
+```
+
+`SELECT` elige columnas, separadas por comas; `FROM` indica la tabla. `*` puede sustituir la lista para pedir todas las columnas. `ORDER BY` ordena el resultado: `ASC` es de menor a mayor y `DESC`, al revés. `LIMIT` recorta **después** de ordenar. El ejemplo devuelve los códigos 30 y 20, en ese orden; una fila sigue representando una muestra. Sin orden explícito, «las primeras» no tiene significado estable. `AS` cambia solo el título de una columna, por ejemplo `SELECT tono AS color FROM muestrario;`.
+
+Antes de pasar al ejercicio, predice qué códigos verías con orden ascendente y límite 1. Debe aparecer 10. La consulta no cambia la tabla. No confundas elegir columnas con limitar filas.
+
+Para ampliar filas y columnas consulta [1.1](01_tablas_filas_columnas.md), y para orden y recorte [1.5](05_order_limit.md). El desarrollo restante de esta lección profundiza en selección, alias y cálculos.
+<!-- TEORIA:PREPARACION:FIN -->
+
+<a id="desarrollo"></a>
 
 ## Para qué sirve
 

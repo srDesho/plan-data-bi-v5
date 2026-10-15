@@ -1,6 +1,30 @@
 # 7.10 Condicionales: if, elif y else
 
-> Tiempo estimado: 50 min (lectura 20 + práctica 30). Prerrequisito: [7.6 Booleanos y comparaciones](06_booleanos_comparaciones_none.md).
+> Tiempo estimado: 57 min (lectura 27 + práctica 30). Prerrequisito: [7.6 Booleanos y comparaciones](06_booleanos_comparaciones_none.md).
+
+<!-- TEORIA:PREPARACION:INICIO -->
+<a id="preparacion-p02"></a>
+## Base inicial de condicionales · 7 min
+
+Una comparación produce `True` o `False`; `if` usa ese resultado para decidir **qué instrucciones ejecutar**. No basta con calcular una comparación si después ejecutas siempre la misma operación.
+
+```python
+def aviso_stock(unidades):
+    if unidades < 0:
+        return None
+    return unidades + 2
+```
+
+Los dos puntos abren el bloque de la condición y su sangría indica qué pertenece a él. Con -1, la condición es verdadera: se devuelve `None` y termina la función. Con 3, se salta ese bloque y se devuelve 5. La última línea tiene la sangría de la función, no la del `if`: se alcanza únicamente si la llamada no terminó antes. `None` significa que no se publica un valor calculable; no equivale a 0.
+
+Predice las llamadas con 0 y -2: devuelven 2 y `None`. Comprueba el recorrido, no solo la salida. Es un ejemplo de stock; decide tú qué condición y operación corresponden al ejercicio. En aritmética, `/` produce un decimal y no admite denominador cero: la decisión que impida una operación inválida debe ocurrir **antes** de realizarla.
+
+Se conserva antes de P02 en BASE y REDUCIDO. Completa primero las comparaciones y `None` de 7.6; si no cabe, pospón la entrega y recupera la base antes de D03/H01/S01. El desarrollo completo de esta lección permanece en D04 para ampliar `if/elif/else`.
+
+El encabezado de esta lección incluye esta sección de 7 min. Si ya la estudiaste en D02, quedan 20 min de lectura del desarrollo; no vuelvas a sumar esta sección. La práctica de 30 min se contabiliza por separado según la guía.
+<!-- TEORIA:PREPARACION:FIN -->
+
+<a id="desarrollo"></a>
 
 ## Para qué sirve
 

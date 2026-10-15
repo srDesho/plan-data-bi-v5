@@ -1,6 +1,6 @@
 {
   "version": "5.2-fase2-etapa2",
-  "nota": "Clasificación individual de las 100 lecciones. NÚCLEO: indispensable para los fundamentos y avanzar; tiene día asignado en la ruta BASE. REFUERZO: se lee cuando una competencia no está dominada (cuándo) y sirve de material EXTENDIDA. PROFUNDIZACIÓN: EXTENDIDA u otros periodos. Todas las lecciones permanecen disponibles como material de consulta. cobertura: cómo se cubre, en la ruta BASE, un prerrequisito que no es NÚCLEO anterior (ejercicio previo, sección del capítulo 19 o lectura recomendada).",
+  "nota": "Clasificación individual de las 100 lecciones. NÚCLEO: indispensable para los fundamentos y avanzar; tiene día asignado en la ruta BASE. REFUERZO: se lee cuando una competencia no está dominada (cuándo) y sirve de material EXTENDIDA. PROFUNDIZACIÓN: EXTENDIDA u otros periodos. Todas las lecciones permanecen disponibles como material de consulta. cobertura: cómo se cubre, en la ruta BASE, un prerrequisito que no es NÚCLEO anterior (ejercicio previo, sección del capítulo 19 o lectura recomendada). secciones_previas identifica apartados teóricos ya contabilizados en preparaciones de nucleo.json; la lectura programada restante descuenta esos minutos del encabezado completo sin doble conteo.",
   "lecciones": {
     "1.1": {
       "archivo": "01_SQL_basico/01_tablas_filas_columnas.md",
@@ -20,7 +20,10 @@
       "tipo": "REFUERZO",
       "dia_ext": 3,
       "cuando": "Si un alias o una columna calculada no te sale en S3–S6.",
-      "preparacion_obligatoria": "S1"
+      "preparacion_obligatoria": "S1",
+      "secciones_previas": [
+        "S1"
+      ]
     },
     "1.3": {
       "archivo": "01_SQL_basico/03_where_operadores.md",
@@ -33,7 +36,10 @@
         ],
         "nota": "Preparación explícita anterior al intento de S4; el ejercicio demuestra la aplicación, no sustituye la explicación. S7 (D02) usa WHERE; S4 (D03) añade AND con una comparación, que es lo que usa el examen S01."
       },
-      "preparacion_obligatoria": "S4"
+      "preparacion_obligatoria": "S4",
+      "secciones_previas": [
+        "S4"
+      ]
     },
     "1.4": {
       "archivo": "01_SQL_basico/04_null.md",
@@ -50,7 +56,10 @@
     "1.6": {
       "archivo": "01_SQL_basico/06_distinct_like.md",
       "tipo": "NÚCLEO",
-      "dia": 3
+      "dia": 3,
+      "secciones_previas": [
+        "S2"
+      ]
     },
     "1.7": {
       "archivo": "01_SQL_basico/07_del_requerimiento_a_la_consulta.md",
@@ -190,7 +199,10 @@
     "6.1": {
       "archivo": "06_KPIs/01_que_es_un_kpi.md",
       "tipo": "NÚCLEO",
-      "dia": 12
+      "dia": 12,
+      "secciones_previas": [
+        "AN07"
+      ]
     },
     "6.2": {
       "archivo": "06_KPIs/02_cumplimiento_cobertura_efectividad.md",
@@ -266,7 +278,10 @@
         ],
         "nota": "Preparación explícita anterior al intento de P01; el ejercicio demuestra la aplicación, no sustituye la explicación. P01 (D01) es una función con return."
       },
-      "preparacion_obligatoria": "P01"
+      "preparacion_obligatoria": "P01",
+      "secciones_previas": [
+        "P01"
+      ]
     },
     "7.5": {
       "archivo": "07_Python_basico/05_texto.md",
@@ -279,7 +294,10 @@
         ],
         "nota": "Preparación explícita anterior al intento de P03; el ejercicio demuestra la aplicación, no sustituye la explicación. P03 (D02) usa strip, split, title y join."
       },
-      "preparacion_obligatoria": "P03"
+      "preparacion_obligatoria": "P03",
+      "secciones_previas": [
+        "P03"
+      ]
     },
     "7.6": {
       "archivo": "07_Python_basico/06_booleanos_comparaciones_none.md",
@@ -304,7 +322,10 @@
     "7.10": {
       "archivo": "07_Python_basico/10_condicionales.md",
       "tipo": "NÚCLEO",
-      "dia": 4
+      "dia": 4,
+      "secciones_previas": [
+        "P02"
+      ]
     },
     "7.11": {
       "archivo": "07_Python_basico/11_for_while.md",
@@ -607,7 +628,10 @@
     "14.1": {
       "archivo": "14_PowerBI_DAX/01_power_bi_desde_cero.md",
       "tipo": "NÚCLEO",
-      "dia": 32
+      "dia": 32,
+      "secciones_previas": [
+        "PB02"
+      ]
     },
     "14.2": {
       "archivo": "14_PowerBI_DAX/02_power_query.md",

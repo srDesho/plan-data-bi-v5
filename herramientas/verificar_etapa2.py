@@ -133,7 +133,7 @@ class Verificador:
             n = d['dia']
             t = leer(next(carpeta.glob(f'D{n:02}_*.md')))
             if n == 1:
-                assert 'E2:' not in t and 'Criterio analítico' not in t, 'D01 no debe modificarse'
+                assert 'E2:' not in t and 'Criterio analítico' not in t, 'D01 conserva su estructura original'
                 continue
             if d['completo'] == 0:
                 assert '## Domingo flexible: descanso o recuperación voluntaria' in t and '**0 minutos obligatorios**' in t, f'D{n:02}: domingo'
@@ -159,7 +159,7 @@ class Verificador:
                 assert f'/{s["criterio"]["id"]}.md' in t, f'D{n:02}: falta {s["criterio"]["id"]}'
             tabla = re.findall(r'^\|([^|\n]+)\|(\d+)\|', t, re.M)
             assert sum(int(m) for _, m in tabla) == d['completo'], f'D{n:02}: la tabla de la guía no suma {d["completo"]}'
-        return {'guías_revisadas': 42, 'D01': 'sin cambios', 'D02': 'bloques de lecciones y preparación', 'domingos': 'flexibles'}
+        return {'guías_revisadas': 42, 'D01_D02': 'solo orientación de estudio actualizada', 'domingos': 'flexibles'}
 
     # ------------------------------------------------------------------ 4
     def prerrequisitos(self):
@@ -190,7 +190,7 @@ class Verificador:
                 'preparacion_secuencia': secuencia}
 
     def preparacion_secuencia(self):
-        """La preparación inicial no se acredita mediante pistas ni ejercicios aún no realizados."""
+        """La guía asigna teoría antes del intento; las pistas no sustituyen esa enseñanza."""
         nucleo = self.ctx.nucleo
         primeras = {}
         for dia, ficha in {**nucleo.get('dias_iniciales', {}), **nucleo['dias']}.items():
@@ -206,19 +206,31 @@ class Verificador:
             assert p['dia'] <= primeras[i], f'{i}: preparación posterior al primer intento obligatorio'
             assert isinstance(p['min'], int) and p['min'] > 0, f'{i}: preparación sin minutos'
             ruta = (self.raiz / p['archivo']).resolve()
-            assert ruta.is_relative_to((self.raiz / '03_EJERCICIOS').resolve()), f'{i}: preparación fuera de los enunciados'
+            assert ruta.is_relative_to((self.raiz / '02_TEORIA').resolve()), f'{i}: enseñanza fuera de teoría'
+            leccion = self.ctx.lecciones['lecciones'][p['leccion']]
+            assert p['archivo'] == '02_TEORIA/' + leccion['archivo'], f'{i}: ubicación y lección discordantes'
+            assert i in leccion.get('secciones_previas', []), f'{i}: sección previa sin crédito de lectura'
+            info = self.an.info_leccion(self.ctx, p['leccion'])
+            assert info['lectura_total'] == info['lectura'] + info['lectura_previa'], f'{i}: doble conteo de lectura'
             texto = leer(ruta)
-            inicio = texto.index('<!-- SECUENCIA:PREPARACION:INICIO -->')
-            fin = texto.index('<!-- SECUENCIA:PREPARACION:FIN -->')
-            assert inicio < fin < texto.index('## Situación'), f'{i}: preparación posterior al problema'
+            inicio = texto.index('<!-- TEORIA:PREPARACION:INICIO -->')
+            fin = texto.index('<!-- TEORIA:PREPARACION:FIN -->')
+            assert inicio < fin < texto.index('id="desarrollo"'), f'{i}: sección inicial y desarrollo mal delimitados'
             bloque = texto[inicio:fin]
-            assert bloque.count(f'id="{p["ancla"]}"') == 1 and 'obligatoria' in bloque.lower(), f'{i}: ancla o carácter obligatorio'
-            assert re.search(rf'\b{p["min"]} min(?:utos)?\b', bloque), f'{i}: minutos del enunciado y fuente distintos'
+            assert bloque.count(f'id="{p["ancla"]}"') == 1, f'{i}: ancla teórica no única'
+            assert re.search(rf'\b{p["min"]} min(?:utos)?\b', bloque), f'{i}: minutos de teoría y fuente distintos'
             assert 'predic' in bloque.casefold() or i == 'PB02', f'{i}: falta predicción independiente'
+            guia = leer(next((self.raiz / '01_PLAN_DIARIO/dias').glob(f'D{p["dia"]:02}_*.md')))
+            enlace = f'{p["archivo"]}#{p["ancla"]}'
+            assert enlace in guia.split('## Distribución neta')[0], f'{i}: la guía no asigna teoría antes de la práctica'
+            assert 'antes de abrir los ejercicios' in guia, f'{i}: falta orden explícito de estudio'
+            ejercicio = leer(self.raiz / p['ejercicio'])
+            assert enlace in ejercicio.split('## Situación')[0], f'{i}: requisito breve no enlaza la teoría'
+            assert 'recupera' in guia.lower() and 'REDUCIDO' in guia, f'{i}: falta recuperación de la base'
         for i, tokens in {'S2': ['DISTINCT', 'muestrario', 'Una fila', 'combinación'],
                           'P02': ['if unidades < 0:', 'return None', 'sangría'],
                           'AN07': ['Cumplimiento', 'Cobertura', 'Efectividad', 'denominador']}.items():
-            texto = leer(self.raiz / preparaciones[i]['archivo']).split('<!-- SECUENCIA:PREPARACION:FIN -->')[0]
+            texto = leer(self.raiz / preparaciones[i]['archivo']).split('<!-- TEORIA:PREPARACION:FIN -->')[0]
             assert all(t in texto for t in tokens), f'{i}: puente sin explicación suficiente'
         assert nucleo['dias']['10']['lecciones'].index('8.3') < nucleo['dias']['10']['lecciones'].index('8.4'), 'D10: archivos antes de módulos'
         assert 'antes de 10.1/PD-BASE' in nucleo['dias']['15']['reducido_entrega'], 'D15: recuperación tardía de 9.3'
@@ -226,8 +238,24 @@ class Verificador:
         inicial = nucleo['dias_iniciales']
         assert 'S10' in inicial['1']['refuerzo'] and 'S10' not in inicial['1']['obligatorio'], 'S10: ampliación explícita'
         assert 'S9' in inicial['2']['refuerzo'] and 'S9' not in inicial['2']['obligatorio'], 'S9: ampliación explícita'
+        organizacion = self.organizacion_enunciados()
         return {'preparaciones': len(preparaciones), 'min_adicionales_base': sum(p['min'] for p in preparaciones.values() if p['dia'] != 1),
-                'D01': '16 min dentro de sus 20 originales', 'S9_S10': 'REFUERZO', 'orden_D10_y_recuperacion_D15': 'OK'}
+                'D01': '16 min dentro de sus 20 originales', 'S9_S10': 'REFUERZO', 'orden_D10_y_recuperacion_D15': 'OK',
+                'organizacion': organizacion}
+
+    def organizacion_enunciados(self):
+        """Regresión ligera: detecta clases incrustadas sin prohibir datos, ejemplos o pistas legítimos."""
+        revisados = 0
+        patron = (r'^#{1,6}\s+(?:Preparaci[oó]n obligatoria(?: antes del intento)?|Microlecci[oó]n(?: previa)?|'
+                  r'Lecci[oó]n previa|Clase te[oó]rica|Teor[ií]a previa|Base inicial|Fundamentos previos)[^\n]*\n(.*?)(?=^#{1,6}\s|\Z)')
+        for ruta in (self.raiz / '03_EJERCICIOS').rglob('*.md'):
+            texto = leer(ruta)
+            revisados += 1
+            assert not re.search(r'<!--\s*(?:SECUENCIA|TEORIA):PREPARACION:', texto), f'{ruta.name}: preparación teórica incrustada'
+            for m in re.finditer(patron, texto, re.M | re.S | re.I):
+                contenido = m.group(1)
+                assert len(contenido.split()) < 60 and '```' not in contenido, f'{ruta.name}: encabezado de enseñanza extensa'
+        return {'enunciados_markdown': revisados, 'clases_incrustadas': 0}
 
     def preparacion_pandas(self):
         """La lectura no sustituye las dos demostraciones previas a transformar y agrupar."""
@@ -472,14 +500,19 @@ class Verificador:
     def sin_cambios_en_mi_trabajo(self):
         if not (self.raiz / '.git').exists():
             return {'git': 'sin repositorio en esta copia: comparación omitida'}
-        r = subprocess.run(['git', 'status', '--porcelain', '--', 'mi_trabajo'], capture_output=True, text=True, encoding='utf-8', cwd=self.raiz)
+        r = subprocess.run(['git', '--no-optional-locks', 'status', '--porcelain', '--', 'mi_trabajo'], capture_output=True, text=True, encoding='utf-8', cwd=self.raiz)
+        assert r.returncode == 0, 'No se pudo comprobar el estado Git personal'
         assert not r.stdout.strip(), f'mi_trabajo tiene cambios: {r.stdout[:200]}'
-        # D01 conserva su contenido; solo puede cambiar el estado de las casillas (progreso propio del estudiante: [ ] → [x])
-        base = subprocess.run(['git', 'show', 'HEAD:01_PLAN_DIARIO/dias/D01_2026-10-12.md'], capture_output=True, encoding='utf-8', cwd=self.raiz).stdout
-        actual = next((self.raiz / '01_PLAN_DIARIO/dias').glob('D01_*.md')).read_bytes().decode('utf-8')
         norm = lambda t: t.replace('\r\n', '\n').replace('- [x]', '- [ ]').replace('- [X]', '- [ ]')
-        assert norm(base) == norm(actual), 'D01 fue modificado (más allá de marcar casillas)'
-        return {'mi_trabajo': 'sin cambios', 'D01': 'sin cambios de contenido (las casillas marcadas son progreso del estudiante)'}
+        for dia in (1, 2):
+            ruta = next((self.raiz / '01_PLAN_DIARIO/dias').glob(f'D{dia:02}_*.md'))
+            lectura = subprocess.run(['git', '--no-optional-locks', 'show', 'HEAD:' + ruta.relative_to(self.raiz).as_posix()],
+                                     capture_output=True, encoding='utf-8', cwd=self.raiz)
+            assert lectura.returncode == 0, f'D{dia:02}: no se pudo leer la referencia Git'
+            base, actual = norm(lectura.stdout), norm(ruta.read_bytes().decode('utf-8'))
+            patron = r'## Qué estudiar.*?(?=## Distribución neta)'
+            assert re.sub(patron, '', base, count=1, flags=re.S) == re.sub(patron, '', actual, count=1, flags=re.S), f'D{dia:02}: cambio fuera de orientación'
+        return {'mi_trabajo': 'sin cambios', 'D01_D02': 'solo orientación; el estado personal de casillas se verifica con la instantánea de sesión'}
 
 
 def main():

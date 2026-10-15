@@ -1,6 +1,30 @@
 # 1.6 DISTINCT y LIKE: valores únicos y búsquedas por patrón
 
-> Tiempo estimado: 40 min (lectura 15 + práctica 25). Prerrequisito: [1.3 WHERE y operadores](03_where_operadores.md).
+> Tiempo estimado: 47 min (lectura 22 + práctica 25). Prerrequisito: [1.3 WHERE y operadores](03_where_operadores.md).
+
+<!-- TEORIA:PREPARACION:INICIO -->
+<a id="preparacion-s2"></a>
+
+Esta sección es autocontenida. Sus 7 min están incluidos en los 22 min de lectura del encabezado; tras estudiarla, quedan 15 min de lectura del desarrollo restante. La guía asigna cada parte y evita contarla dos veces.
+
+## Base inicial: valores únicos y unidad del resultado · 7 min
+
+Interpreta este ejemplo en papel, con datos independientes de los archivos del curso. En un muestrario ficticio, la columna `tono` contiene `Azul`, `Rojo`, `Azul`. Listar todas las filas muestra tres muestras. Para conocer los valores diferentes:
+
+```sqlplantilla
+SELECT DISTINCT tono FROM muestrario;
+```
+
+`DISTINCT`, después de `SELECT`, conserva una fila por valor diferente de lo seleccionado: aquí, Azul y Rojo, sin un orden garantizado. **Una fila del resultado representa un tono**, no una muestra; no permite saber cuántas muestras tiene cada tono. No elimina datos de la tabla ni los ordena. Para ordenar ya tienes la preparación de S1.
+
+Con varias columnas considera la **combinación completa**: si seleccionas también un código distinto en cada fila, pueden mantenerse las tres filas. No añadas columnas que cambien la unidad que quieres describir. Tampoco confundas diferencias de espacios o mayúsculas con duplicados idénticos.
+
+Predice sin consultar los datos del ejercicio: ¿añadir otra muestra Azul cambia la lista de tonos? No. ¿Añadir Verde? Sí, aparece un tercer tono. Compruébalo en papel. Después resuelve el requerimiento empresarial por tu cuenta: el ejemplo no usa sus tablas ni sus columnas.
+
+El desarrollo restante profundiza en combinaciones y búsquedas por patrón. Para este apartado basta la base inicial de [1.2](02_select_from_alias.md#preparacion-s1); el prerrequisito del encabezado corresponde al desarrollo completo.
+<!-- TEORIA:PREPARACION:FIN -->
+
+<a id="desarrollo"></a>
 
 ## Para qué sirve
 

@@ -4,7 +4,7 @@ Este capítulo te lleva de cero a un tablero comercial **comprobable**: cargar t
 
 > **Qué está verificado y qué no.** Las cifras de control de todo el capítulo se calcularon con Python sobre la mini-base inventada y se comprueban automáticamente. Los pasos de interfaz de Power BI Desktop, el código M y el código DAX **no se ejecutaron en Power BI Desktop** al escribir este material (no se afirma que hayan sido probados allí): son guía de referencia que tú pruebas en tu equipo con la lista de comprobación manual de la lección 14.5. Este paquete no contiene un `.pbix` fabricado.
 
-**Tiempo total estimado de primera vez:** unas 4 h 45 min de lectura y práctica (5 lecciones), sin contar el tiempo de construir tu propio tablero en Desktop.
+**Tiempo total estimado de primera vez:** unas 4 h 49 min de lectura y práctica (5 lecciones), sin contar el tiempo de construir tu propio tablero en Desktop.
 
 **Antes de empezar:** capítulos 10 (Pandas), 13 (modelado) y 6 (KPIs). Se necesita Windows y Power BI Desktop (gratuito) para la parte práctica en interfaz.
 
@@ -12,7 +12,7 @@ Este capítulo te lleva de cero a un tablero comercial **comprobable**: cargar t
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 14.1 | [Power BI desde cero](14_PowerBI_DAX/01_power_bi_desde_cero.md) | flujo de cuatro etapas, configuración regional, cifras de control | núcleo · D32 | 50 min |
+| 14.1 | [Power BI desde cero](14_PowerBI_DAX/01_power_bi_desde_cero.md) | flujo de cuatro etapas, configuración regional, cifras de control | núcleo · D32 | 54 min |
 | 14.2 | [Power Query y M](14_PowerBI_DAX/02_power_query.md) | pasos aplicados, equivalencias con Pandas, combinar, actualización | profundización | 55 min |
 | 14.3 | [DAX: medidas y contexto de filtro](14_PowerBI_DAX/03_dax_contexto.md) | medida frente a columna, contexto, `CALCULATE`, `DIVIDE`, `BLANK` | núcleo · D33 | 70 min |
 | 14.4 | [Medidas útiles y su control](14_PowerBI_DAX/04_medidas_utiles.md) | ventas, pedidos, ticket, meta, cumplimiento, % del total, mes anterior | profundización | 65 min |

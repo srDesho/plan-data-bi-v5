@@ -1,6 +1,32 @@
 # 7.5 Texto: cadenas, métodos y f-strings
 
-> Tiempo estimado: 60 min (lectura 22 + práctica 38). Prerrequisitos: [7.2 Variables](02_variables_asignacion.md) y [7.3 Tipos de datos](03_tipos_aritmetica.md).
+> Tiempo estimado: 72 min (lectura 34 + práctica 38). Prerrequisitos: [7.2 Variables](02_variables_asignacion.md) y [7.3 Tipos de datos](03_tipos_aritmetica.md).
+
+<!-- TEORIA:PREPARACION:INICIO -->
+<a id="preparacion-p03"></a>
+## Base inicial de texto · 12 min
+
+Esta base reúne limpieza, inmutabilidad y partir/unir antes de P03; el desarrollo posterior permanece como REFUERZO. Un método se llama con un punto después del texto: `texto.strip()` quita espacios externos; `lower()`, `upper()` y `title()` cambian a minúsculas, mayúsculas o iniciales mayúsculas. Se pueden encadenar. Cada método devuelve un texto nuevo: si quieres conservarlo, asígnalo a una variable; el texto original no cambia.
+
+`split(separador)` divide un texto en partes y `separador.join(partes)` las reúne en un texto nuevo. Sin separador, `split()` divide por espacios en blanco y omite partes vacías. Predice este ejemplo independiente antes de ejecutarlo:
+
+```python
+etiqueta = "  uno   DOS  "
+partes = etiqueta.split()
+print(partes)
+print(" | ".join(partes))
+print("tres CUATRO".title())
+print(etiqueta)
+```
+
+`split()` **sin separador** divide por espacios en blanco y omite los trozos vacíos: produce `['uno', 'DOS']`. `join` construye un texto nuevo con el separador elegido: `uno | DOS`. `title` produce `Tres Cuatro`. La última línea conserva los espacios y mayúsculas originales: los métodos no modifican un `str`. `strip` quita los espacios de los extremos, no los repetidos en el interior.
+
+Ahora cambia el separador y predice el resultado. Resuelve el ejercicio escogiendo y combinando tú las herramientas; aquí no se da la función pedida. Si REDUCIDO omite P03, recupera esta base inicial antes de normalizar texto en P09/D10; no se da por aprendido por haber visto una pista.
+
+El encabezado de esta lección incluye esta sección de 12 min. Si ya la estudiaste en D02, quedan 22 min de lectura del desarrollo; no vuelvas a sumar esta sección. La práctica de 38 min se contabiliza por separado según la guía.
+<!-- TEORIA:PREPARACION:FIN -->
+
+<a id="desarrollo"></a>
 
 ## Para qué sirve
 

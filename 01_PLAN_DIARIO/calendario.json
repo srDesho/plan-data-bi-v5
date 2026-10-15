@@ -115,8 +115,8 @@
     ],
     "preparaciones": [
       "S2",
-      "P02",
-      "P03"
+      "P03",
+      "P02"
     ],
     "preparacion_lectura_min": 26,
     "nucleo": {

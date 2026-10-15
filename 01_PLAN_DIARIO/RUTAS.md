@@ -1,6 +1,6 @@
 # Rutas de estudio: BASE y EXTENDIDA
 
-Este documento se genera con `herramientas/aplicar_nucleo.py` a partir de `nucleo.json` y `lecciones.json`; no lo edites a mano. Las **100 lecciones** de `02_TEORIA` (más el capítulo 19) suman unas 91 horas de primera vez: no caben en seis semanas junto con los ejercicios. Por eso cada lección está clasificada una a una y **todas siguen disponibles como material de consulta**.
+Este documento se genera con `herramientas/aplicar_nucleo.py` a partir de `nucleo.json` y `lecciones.json`; no lo edites a mano. Las **100 lecciones** de `02_TEORIA` (más el capítulo 19) superan las 92 horas de primera vez: no caben en seis semanas junto con los ejercicios. Por eso cada lección está clasificada una a una y **todas siguen disponibles como material de consulta**.
 
 ## Qué significa cada clase de lección
 
@@ -10,24 +10,24 @@ Este documento se genera con `herramientas/aplicar_nucleo.py` a partir de `nucle
 | **REFUERZO** | Se lee cuando una competencia no está dominada o un ejercicio se atasca (cada lección dice cuándo). | EXTENDIDA y recuperación. |
 | **PROFUNDIZACIÓN** | Amplía más allá de la base (inferencia, BI avanzado, entrevistas, portafolio). | EXTENDIDA u otros periodos (después de la evaluación final). |
 
-La lectura de una lección NÚCLEO es lo que figura en su encabezado («lectura N min»). Su **micropráctica** es práctica guiada sin corrector: en BASE la sustituyen los ejercicios del día. Excepciones explícitas: los primeros 10 min de práctica de 10.1 (PD-BASE) y de 10.2 (PD-AGR) son OBLIGATORIOS y se cuentan una sola vez en ejercicios; sus otros 25 y 30 min, respectivamente, son REFUERZO.
+El encabezado expresa la lectura completa. Las guías descuentan las secciones previas ya asignadas y cuentan cada minuto una sola vez. Su **micropráctica** es práctica guiada sin corrector: en BASE la sustituyen los ejercicios del día. Excepciones explícitas: los primeros 10 min de práctica de 10.1 (PD-BASE) y de 10.2 (PD-AGR) son OBLIGATORIOS y se cuentan una sola vez en ejercicios; sus otros 25 y 30 min, respectivamente, son REFUERZO.
 
 ## Preparación explícita antes de las actividades
 
-Los bloques siguientes son obligatorios antes del intento; no promueven lecciones completas de REFUERZO. D01 concreta 16 de sus 20 min de teoría ya existentes. Los otros 42 min se añaden a la estimación BASE; no se ocultan dentro del tiempo de práctica. REDUCIDO conserva la preparación de lo que intenta y recupera lo omitido antes de su puerta.
+Las secciones teóricas siguientes son obligatorias antes de abrir el ejercicio; no promueven lecciones completas de REFUERZO. D01 conserva 16 de sus 20 min de teoría. Los otros 42 min ya están incluidos en la estimación BASE; no se ocultan dentro del tiempo de práctica. REDUCIDO conserva la preparación de lo que intenta y recupera lo omitido antes de su puerta.
 
 | Día | Antes de | Preparación | Minutos |
 |---|---|---|---:|
-| D01 | S1 | [Tabla, selección, orden y límite](../03_EJERCICIOS/SQL/S1.md#preparacion-s1) | 8 |
-| D01 | P01 | [Variables, tipos y función corta](../03_EJERCICIOS/Python/P01.md#preparacion-p01) | 8 |
-| D02 | S2 | [Valores y combinaciones únicas](../03_EJERCICIOS/SQL/S2.md#preparacion-s2) | 7 |
-| D02 | P02 | [Decidir antes de operar](../03_EJERCICIOS/Python/P02.md#preparacion-p02) | 7 |
-| D02 | P03 | [Texto: limpieza, inmutabilidad y partir/unir](../03_EJERCICIOS/Python/P03.md#preparacion-p03) | 12 |
-| D03 | S4 | [Filtro combinado y sentido del orden](../03_EJERCICIOS/SQL/S4.md#preparacion-s4) | 6 |
-| D12 | AN07 | [Tres KPI y sus denominadores](../03_EJERCICIOS/Analitico/AN07.md#preparacion-an07) | 6 |
-| D32 | PB02 | [Marcar y comprobar la tabla de fechas](../03_EJERCICIOS/Casos/PB02.md#preparacion-pb02) | 4 |
+| D01 | S1 | [Tabla, selección, orden y límite](../02_TEORIA/01_SQL_basico/02_select_from_alias.md#preparacion-s1) | 8 |
+| D01 | P01 | [Variables, tipos y función corta](../02_TEORIA/07_Python_basico/04_primera_funcion.md#preparacion-p01) | 8 |
+| D02 | S2 | [Valores y combinaciones únicas](../02_TEORIA/01_SQL_basico/06_distinct_like.md#preparacion-s2) | 7 |
+| D02 | P02 | [Decidir antes de operar](../02_TEORIA/07_Python_basico/10_condicionales.md#preparacion-p02) | 7 |
+| D02 | P03 | [Texto: limpieza, inmutabilidad y partir/unir](../02_TEORIA/07_Python_basico/05_texto.md#preparacion-p03) | 12 |
+| D03 | S4 | [Filtro combinado y sentido del orden](../02_TEORIA/01_SQL_basico/03_where_operadores.md#preparacion-s4) | 6 |
+| D12 | AN07 | [Tres KPI y sus denominadores](../02_TEORIA/06_KPIs/01_que_es_un_kpi.md#preparacion-an07) | 6 |
+| D32 | PB02 | [Marcar y comprobar la tabla de fechas](../02_TEORIA/14_PowerBI_DAX/01_power_bi_desde_cero.md#preparacion-pb02) | 4 |
 
-D01: S1 y P01 son BASE; S10 es REFUERZO con preparación propia. D02: S2, S7, P02 y P03 son BASE; S9 es REFUERZO y C01, OPCIONAL. La guía original de D01 y los avances de D02 se conservan.
+D01: S1 y P01 son BASE; S10 es REFUERZO con preparación propia. D02: S2, S7, P02 y P03 son BASE; S9 es REFUERZO y C01, OPCIONAL. D01/D02 solo actualizan orientación de estudio; sus avances se conservan.
 
 ## Horas por semana
 
@@ -61,38 +61,38 @@ En total: **1239 min de teoría y lectura NÚCLEO** (20,6 h; incluye los 20 min 
 
 | Cap. | Tema | NÚCLEO | REFUERZO | PROFUNDIZACIÓN | Lectura NÚCLEO (min) | Total de primera vez (min) |
 |---:|---|---:|---:|---:|---:|---:|
-| 1 | SQL desde cero: una pregunta, una tabla y un resultado | 2 | 5 | 0 | 30 | 300 |
+| 1 | SQL desde cero: una pregunta, una tabla y un resultado | 2 | 5 | 0 | 30 | 321 |
 | 2 | Agregar sin perder el significado | 4 | 1 | 0 | 85 | 260 |
 | 3 | JOIN: conectar tablas y controlar multiplicaciones | 3 | 1 | 0 | 70 | 215 |
 | 4 | Subconsultas, CTE, ventanas, fechas e índices | 2 | 2 | 0 | 40 | 215 |
 | 5 | Calidad de datos y ETL: un proceso que puedas defender | 2 | 3 | 0 | 50 | 275 |
-| 6 | KPIs empresariales: definición antes de fórmula | 5 | 1 | 0 | 120 | 340 |
-| 7 | Python: construir el razonamiento antes de Pandas | 8 | 5 | 0 | 178 | 715 |
+| 6 | KPIs empresariales: definición antes de fórmula | 5 | 1 | 0 | 120 | 346 |
+| 7 | Python: construir el razonamiento antes de Pandas | 8 | 5 | 0 | 178 | 742 |
 | 8 | Funciones, errores y archivos reproducibles | 4 | 3 | 0 | 87 | 370 |
 | 9 | NumPy y Pandas básico: tablas después de entender listas y funciones | 3 | 3 | 0 | 62 | 335 |
 | 10 | Pandas: transformar, unir y validar | 3 | 3 | 0 | 70 | 365 |
 | 11 | Estadística descriptiva: resumir antes de concluir | 3 | 2 | 4 | 85 | 515 |
 | 12 | Estadística inferencial: decidir con incertidumbre | 0 | 0 | 8 | 0 | 485 |
 | 13 | Modelado dimensional: hechos, dimensiones y modelo estrella | 1 | 1 | 1 | 30 | 165 |
-| 14 | Power BI, Power Query y DAX: cargar, modelar, medir y comprobar | 2 | 0 | 3 | 65 | 285 |
+| 14 | Power BI, Power Query y DAX: cargar, modelar, medir y comprobar | 2 | 0 | 3 | 65 | 289 |
 | 15 | Excel como segundo camino de validación | 1 | 2 | 0 | 30 | 170 |
 | 16 | Documentar y comunicar trabajo real: Git, README y empleo honesto | 1 | 1 | 1 | 25 | 140 |
 | 17 | Transferencia y autonomía: resolver datos que cambian | 2 | 0 | 1 | 55 | 175 |
 | 18 | Preparación técnica y conductual para entrevistas | 1 | 0 | 2 | 25 | 155 |
-| **Total** | | **47** | **33** | **20** | **1107** | **5480** |
+| **Total** | | **47** | **33** | **20** | **1107** | **5538** |
 
 El capítulo 19 (puente) es un archivo único: sus §1–§4 (70 min) son NÚCLEO y se leen junto a ME01–ME03 y DB01.
 
 ## Lección por lección
 
-| Lección | Clase | Día / EXTENDIDA | Lectura | Micropráctica | Cuándo leerla si no es NÚCLEO |
+| Lección | Clase | Día / EXTENDIDA | Lectura restante / total | Micropráctica | Cuándo leerla si no es NÚCLEO |
 |---|---|---|---:|---:|---|
 | [1.1 Tablas, filas, columnas y tipos de datos](../02_TEORIA/01_SQL_basico/01_tablas_filas_columnas.md) | REFUERZO | ext. D03 | 20 | 25 | Si dudas qué representa una fila, una columna o un tipo (D01–D03); S1 ya lo practicó. |
-| [1.2 SELECT, FROM, alias y columnas calculadas](../02_TEORIA/01_SQL_basico/02_select_from_alias.md) | REFUERZO | ext. D03 | 15 | 30 | Si un alias o una columna calculada no te sale en S3–S6. |
-| [1.3 WHERE: filtrar filas con operadores](../02_TEORIA/01_SQL_basico/03_where_operadores.md) | REFUERZO | ext. D04 | 20 | 30 | Si WHERE con AND/OR/IN/BETWEEN te da filas que no esperas (S4 lo practica en D03; S5 y S9 son refuerzo). |
+| [1.2 SELECT, FROM, alias y columnas calculadas](../02_TEORIA/01_SQL_basico/02_select_from_alias.md) | REFUERZO | ext. D03 | 15 / 23 total (8 previos) | 30 | Si un alias o una columna calculada no te sale en S3–S6. |
+| [1.3 WHERE: filtrar filas con operadores](../02_TEORIA/01_SQL_basico/03_where_operadores.md) | REFUERZO | ext. D04 | 20 / 26 total (6 previos) | 30 | Si WHERE con AND/OR/IN/BETWEEN te da filas que no esperas (S4 lo practica en D03; S5 y S9 son refuerzo). |
 | [1.4 NULL: cuando falta el dato](../02_TEORIA/01_SQL_basico/04_null.md) | NÚCLEO | D02 | 15 | 25 |  |
 | [1.5 ORDER BY y LIMIT: ordenar y recortar](../02_TEORIA/01_SQL_basico/05_order_limit.md) | REFUERZO | ext. D04 | 15 | 25 | Si ORDER BY o LIMIT te cortan un resultado distinto del que querías. |
-| [1.6 DISTINCT y LIKE: valores únicos y búsquedas por patrón](../02_TEORIA/01_SQL_basico/06_distinct_like.md) | NÚCLEO | D03 | 15 | 25 |  |
+| [1.6 DISTINCT y LIKE: valores únicos y búsquedas por patrón](../02_TEORIA/01_SQL_basico/06_distinct_like.md) | NÚCLEO | D03 | 15 / 22 total (7 previos) | 25 |  |
 | [1.7 Del requerimiento a la consulta: un método de cinco preguntas](../02_TEORIA/01_SQL_basico/07_del_requerimiento_a_la_consulta.md) | REFUERZO | ext. D05 | 15 | 25 | Cuando una consulta nueva no sabes por dónde empezar: método de las cinco preguntas. |
 | [2.1 Funciones de agregación: contar, sumar, promediar](../02_TEORIA/02_SQL_agregados/01_funciones_agregadas.md) | NÚCLEO | D04 | 20 | 30 |  |
 | [2.2 GROUP BY y HAVING: una cifra por grupo](../02_TEORIA/02_SQL_agregados/02_group_by_having.md) | NÚCLEO | D05 | 20 | 35 |  |
@@ -112,7 +112,7 @@ El capítulo 19 (puente) es un archivo único: sus §1–§4 (70 min) son NÚCLE
 | [5.3 Rechazos, duplicados y reconciliación](../02_TEORIA/05_calidad_ETL/03_rechazos_y_reconciliacion.md) | NÚCLEO | D24 | 25 | 30 |  |
 | [5.4 Cargas repetibles, registro (logging) y reproducibilidad](../02_TEORIA/05_calidad_ETL/04_cargas_registro_reproducibilidad.md) | REFUERZO | ext. D24 | 25 | 30 | Si la segunda ejecución de tu ETL duplica filas (ME03, ETL-6). |
 | [5.5 Estructura de un ETL: cuatro funciones y un `main` pequeño](../02_TEORIA/05_calidad_ETL/05_estructura_etl_funciones.md) | REFUERZO | ext. D26 | 25 | 40 | Si tus funciones del ETL no se separan en extraer, transformar, validar y cargar. |
-| [6.1 Qué es un KPI: la ficha de definición y las ventas entregadas](../02_TEORIA/06_KPIs/01_que_es_un_kpi.md) | NÚCLEO | D12 | 25 | 25 |  |
+| [6.1 Qué es un KPI: la ficha de definición y las ventas entregadas](../02_TEORIA/06_KPIs/01_que_es_un_kpi.md) | NÚCLEO | D12 | 25 / 31 total (6 previos) | 25 |  |
 | [6.2 Cumplimiento, cobertura y efectividad](../02_TEORIA/06_KPIs/02_cumplimiento_cobertura_efectividad.md) | NÚCLEO | D25 | 25 | 35 |  |
 | [6.3 Ticket medio, drop size, frecuencia y clientes activos](../02_TEORIA/06_KPIs/03_ticket_frecuencia_activos.md) | REFUERZO | ext. D16 | 25 | 35 | Para entender el ticket, el drop size, la frecuencia y los clientes activos más allá de K1. |
 | [6.4 Productividad, crecimiento y variaciones](../02_TEORIA/06_KPIs/04_productividad_variaciones.md) | NÚCLEO | D31 | 20 | 35 |  |
@@ -121,13 +121,13 @@ El capítulo 19 (puente) es un archivo único: sus §1–§4 (70 min) son NÚCLE
 | [7.1 Qué es un programa y cómo se ejecuta](../02_TEORIA/07_Python_basico/01_que_es_un_programa.md) | REFUERZO | otros periodos | 15 | 30 | Solo si D01 no quedó claro; P01 ya lo practicó. |
 | [7.2 Variables y asignación](../02_TEORIA/07_Python_basico/02_variables_asignacion.md) | REFUERZO | ext. D06 | 15 | 30 | Si una variable cambia de valor y no entiendes por qué (P01–P03). |
 | [7.3 Tipos de datos y aritmética](../02_TEORIA/07_Python_basico/03_tipos_aritmetica.md) | REFUERZO | ext. D05 | 20 | 30 | Si P02 o P07 dan decimales inesperados o divisiones raras. |
-| [7.4 Tu primera función corta](../02_TEORIA/07_Python_basico/04_primera_funcion.md) | REFUERZO | ext. D04 | 20 | 35 | Si no puedes escribir una función con `def` y `return` sin copiar (P01). |
-| [7.5 Texto: cadenas, métodos y f-strings](../02_TEORIA/07_Python_basico/05_texto.md) | REFUERZO | ext. D08 | 22 | 38 | Antes de P09 y de normalizar texto en el ETL (strip, split, replace, f-strings). |
+| [7.4 Tu primera función corta](../02_TEORIA/07_Python_basico/04_primera_funcion.md) | REFUERZO | ext. D04 | 20 / 28 total (8 previos) | 35 | Si no puedes escribir una función con `def` y `return` sin copiar (P01). |
+| [7.5 Texto: cadenas, métodos y f-strings](../02_TEORIA/07_Python_basico/05_texto.md) | REFUERZO | ext. D08 | 22 / 34 total (12 previos) | 38 | Antes de P09 y de normalizar texto en el ETL (strip, split, replace, f-strings). |
 | [7.6 Booleanos, comparaciones y None](../02_TEORIA/07_Python_basico/06_booleanos_comparaciones_none.md) | NÚCLEO | D02 | 20 | 30 |  |
 | [7.7 Conversiones de tipo y los primeros errores de valor](../02_TEORIA/07_Python_basico/07_conversiones.md) | NÚCLEO | D08 | 25 | 35 |  |
 | [7.8 Listas y tuplas: guardar varios valores](../02_TEORIA/07_Python_basico/08_listas_tuplas.md) | NÚCLEO | D03 | 20 | 35 |  |
 | [7.9 Diccionarios y conjuntos](../02_TEORIA/07_Python_basico/09_diccionarios_sets.md) | NÚCLEO | D03 | 20 | 35 |  |
-| [7.10 Condicionales: if, elif y else](../02_TEORIA/07_Python_basico/10_condicionales.md) | NÚCLEO | D04 | 20 | 30 |  |
+| [7.10 Condicionales: if, elif y else](../02_TEORIA/07_Python_basico/10_condicionales.md) | NÚCLEO | D04 | 20 / 27 total (7 previos) | 30 |  |
 | [7.11 Repetir: for y while](../02_TEORIA/07_Python_basico/11_for_while.md) | NÚCLEO | D04 | 20 | 35 |  |
 | [7.12 Acumuladores y patrones de recorrido](../02_TEORIA/07_Python_basico/12_acumuladores.md) | NÚCLEO | D05 | 28 | 42 |  |
 | [7.13 Recorrer registros: listas de diccionarios](../02_TEORIA/07_Python_basico/13_registros_listas_de_diccionarios.md) | NÚCLEO | D05 | 25 | 40 |  |
@@ -170,7 +170,7 @@ El capítulo 19 (puente) es un archivo único: sus §1–§4 (70 min) son NÚCLE
 | [13.1 Hechos, dimensiones y granularidad](../02_TEORIA/13_Modelado/01_hechos_dimensiones.md) | REFUERZO | ext. D30 | 25 | 30 | Antes de 13.2 si no distingues hecho de dimensión. |
 | [13.2 El modelo estrella: relaciones y varios hechos](../02_TEORIA/13_Modelado/02_modelo_estrella.md) | NÚCLEO | D30 | 30 | 35 |  |
 | [13.3 La tabla de fechas (calendario)](../02_TEORIA/13_Modelado/03_tabla_de_fechas.md) | PROFUNDIZACIÓN | ext. D34 | 20 | 25 | EXTENDIDA: la tabla de fechas del modelo. |
-| [14.1 Power BI desde cero: qué es, el flujo de trabajo y la configuración regional](../02_TEORIA/14_PowerBI_DAX/01_power_bi_desde_cero.md) | NÚCLEO | D32 | 30 | 20 |  |
+| [14.1 Power BI desde cero: qué es, el flujo de trabajo y la configuración regional](../02_TEORIA/14_PowerBI_DAX/01_power_bi_desde_cero.md) | NÚCLEO | D32 | 30 / 34 total (4 previos) | 20 |  |
 | [14.2 Power Query y el lenguaje M](../02_TEORIA/14_PowerBI_DAX/02_power_query.md) | PROFUNDIZACIÓN | ext. D32 | 25 | 30 | EXTENDIDA: Power Query y el lenguaje M. |
 | [14.3 DAX: medidas y contexto de filtro](../02_TEORIA/14_PowerBI_DAX/03_dax_contexto.md) | NÚCLEO | D33 | 35 | 35 |  |
 | [14.4 Medidas útiles de un tablero comercial y cómo controlarlas](../02_TEORIA/14_PowerBI_DAX/04_medidas_utiles.md) | PROFUNDIZACIÓN | ext. D33 | 30 | 35 | EXTENDIDA: medidas útiles de un tablero comercial. |
