@@ -27,7 +27,7 @@ Las secciones teóricas siguientes son obligatorias antes de abrir el ejercicio;
 | D12 | AN07 | [Tres KPI y sus denominadores](../02_TEORIA/06_KPIs/01_que_es_un_kpi.md#preparacion-an07) | 6 |
 | D32 | PB02 | [Marcar y comprobar la tabla de fechas](../02_TEORIA/14_PowerBI_DAX/01_power_bi_desde_cero.md#preparacion-pb02) | 4 |
 
-D01: S1 y P01 son BASE; S10 es REFUERZO con preparación propia. D02: S2, S7, P02 y P03 son BASE; S9 es REFUERZO y C01, OPCIONAL. D01/D02 solo actualizan orientación de estudio; sus avances se conservan.
+D01: S1 y P01 son BASE; S10 es REFUERZO con preparación propia. D02: S2, S7, P02 y P03 son BASE; S9 es REFUERZO y C01, OPCIONAL. D01/D02 organizan teoría y práctica por prioridad; conservan avances, notas, objetivos y tiempos.
 
 ## Horas por semana
 

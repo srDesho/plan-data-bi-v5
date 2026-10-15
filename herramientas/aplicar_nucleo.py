@@ -2,7 +2,7 @@
 
 Cada jornada queda con: lecciones NÚCLEO del día (lectura), ejercicios OBLIGATORIO / REPASO / REFUERZO / OPCIONAL, actividad de criterio
 analítico o hito de comprensión, bloque EXTENDIDA voluntario, prerrequisito y, si corresponde, su puerta de competencia. Los domingos son
-descanso por defecto con recuperación voluntaria de 45–120 minutos. D01 no se toca; D02 solo recibe un bloque informativo de lecciones.
+descanso por defecto con recuperación voluntaria de 45–120 minutos. D01 y D02 conservan su avance y contenido; se organiza su presentación.
 Los minutos de cada jornada (900 por semana) no cambian: el bloque de aprendizaje (SQL + teoría + práctica) se reparte entre lecciones, SQL,
 práctica y criterio.
 
@@ -18,7 +18,7 @@ import json
 import re
 import sys
 
-PROTEGIDOS = {1, 2}                       # D01 y D02 no se reescriben (D02 recibe solo un bloque informativo de lecciones)
+PROTEGIDOS = {1, 2}                       # D01/D02 usan un adaptador editorial que conserva casillas y notas.
 MULT = {('SQL', 1): 1.5, ('SQL', 2): 1.75, ('SQL', 3): 2.25, ('PY', 1): 2.0, ('PY', 2): 2.5, ('PY', 3): 3.25,
         ('ST', 1): 2.0, ('ST', 2): 2.0, ('ST', 3): 2.5}
 CASO_MIN = {'C01': 30, 'C02': 25, 'C03': 35, 'C04': 40, 'C05': 45}
@@ -628,7 +628,8 @@ def aplicar_guia(ctx, dia, d, d_cal, nl='\n'):
     ruta.write_bytes(t.replace('\n', nl).encode('utf-8'))
 
 
-BLOQUE_D02 = ('<!-- E2:LECCIONES:INICIO -->\n'
+# Solo reconoce el bloque heredado durante la migración; nunca se vuelve a publicar.
+BLOQUE_D02_ANTERIOR = ('<!-- E2:LECCIONES:INICIO -->\n'
               '### Lecciones de hoy (Etapa 2 · bloque añadido; el objetivo, los ejercicios y los tiempos de D02 no cambian)\n\n'
               '{lineas}\n\n'
               'Son {total} min de lectura frente a los 30 min del bloque «Teoría»: completa la base antes del ejercicio que la requiere; si no cabe, '
@@ -638,41 +639,153 @@ BLOQUE_D02 = ('<!-- E2:LECCIONES:INICIO -->\n'
               '<!-- E2:LECCIONES:FIN -->\n')
 
 
-def aplicar_d02(ctx):
-    ids = ctx.lecciones['lecciones']
-    d02 = [i for i, c in ids.items() if c.get('dia') == 2]
-    if not d02:
-        return
-    carpeta = ctx.raiz / '01_PLAN_DIARIO' / 'dias'
-    ruta = next(carpeta.glob('D02_*.md'))
+def organizar_inicial(ctx, dia, t):
+    """Migra la presentación heredada una vez; después respeta la edición personal.
+
+    Solo retira líneas generadas conocidas. Conserva literalmente las casillas y
+    cualquier nota distinta de esas líneas, incluso dentro de los antiguos bloques.
+    """
+    marca = '<!-- PRESENTACION:INICIAL:UNIFORME -->'
+    if marca in t:
+        # La edición personal se respeta, pero una fuente nueva no puede quedar
+        # silenciosamente desincronizada con esta presentación conservada.
+        estudio = t[t.index('## Qué estudiar'):t.index('## Distribución neta')]
+        publicadas = re.findall(r'^- \[(\d+\.\d+) · [^\n]*\]\(../../([^\n)]+#preparacion-[^\n)]+)\)', estudio, re.M)
+        esperadas = [(p['leccion'], f'{p["archivo"]}#{p["ancla"]}') for _, p in preparaciones_dia(ctx, dia)]
+        if publicadas != esperadas:
+            raise ValueError(f'D{dia:02}: revisar preparaciones y su orden con la fuente actual; conservar avance y notas')
+        for i, p in preparaciones_dia(ctx, dia):
+            esperado = (f'[{p["leccion"]} · {p["titulo"]}](../../{p["archivo"]}#{p["ancla"]}) '
+                        f'· lee solo esa sección antes de {i} · {p["min"]} min')
+            if esperado not in estudio:
+                raise ValueError(f'D{dia:02}: revisar preparación de {i} con la fuente actual; conservar avance y notas')
+        if dia == 2:
+            esperadas = {i for i, c in ctx.lecciones['lecciones'].items() if c.get('dia') == 2}
+            actuales = set(re.findall(r'^- \[[ xX]\] \[(\d+\.\d+)\b', estudio, re.M))
+            if actuales != esperadas:
+                raise ValueError('D02: revisar lecciones NÚCLEO con la fuente actual; conservar avance y notas')
+            for i in esperadas:
+                patron = rf'^- \[[ xX]\] {re.escape(enlace_leccion(ctx, i))} · NÚCLEO · lectura {info_leccion(ctx, i)["lectura"]} min\.'
+                if not re.search(patron, estudio, re.M):
+                    raise ValueError(f'D02: revisar lectura de {i} con la fuente actual; conservar avance y notas')
+        practica = t[t.index('## Práctica y archivos'):t.index('## Comprobar y entregar')]
+        grupos = re.split(r'^### ', practica, flags=re.M)[1:]
+        actuales = {}
+        for grupo in grupos:
+            etiqueta = grupo.split(' · ', 1)[0]
+            actuales[etiqueta] = re.findall(r'^- \[[ xX]\] \[[^\n]*\]\(../../03_EJERCICIOS/[^)\n]*/([^/]+)\.md\)', grupo, re.M)
+        ficha = ctx.nucleo['dias_iniciales'][str(dia)]
+        for clave, etiqueta in [('obligatorio', 'OBLIGATORIO'), ('refuerzo', 'REFUERZO'), ('opcional', 'OPCIONAL')]:
+            if actuales.get(etiqueta, []) != ficha[clave]:
+                raise ValueError(f'D{dia:02}: revisar categoría {etiqueta} con la fuente actual; conservar avance y notas')
+        return t
+    a, b = t.index('## Qué estudiar'), t.index('## Distribución neta')
+    estudio = t[a:b]
+    anteriores = insertar_preparaciones(ctx, dia, '## Qué estudiar\n\n')
+    lecciones = {}
+    if dia == 2:
+        for i, c in ctx.lecciones['lecciones'].items():
+            if c.get('dia') == 2:
+                m = re.search(rf'^- \[[ xX]\] \[{re.escape(i)}\b[^\n]*', estudio, re.M)
+                if not m:
+                    raise ValueError(f'D02: falta la casilla existente de {i}')
+                lecciones[i] = m.group()
+        total = sum(info_leccion(ctx, i)['lectura'] for i in lecciones)
+        anteriores += BLOQUE_D02_ANTERIOR.format(lineas='\n'.join(lecciones.values()), total=total)
+    conocidas = set(anteriores.splitlines()) | set(lecciones.values())
+    consulta = '\n'.join(linea for linea in estudio.splitlines() if linea not in conocidas).strip()
+    predicciones = re.findall(r'^- \[[ xX]\] Predice[^\n]*', consulta, re.M)
+    for linea in predicciones:
+        consulta = consulta.replace(linea, '', 1)
+    consulta = consulta.strip()
+    titulo = 'preparación BASE' if dia == 1 else 'lecciones NÚCLEO y preparación BASE'
+    lineas = [f'## Qué estudiar · {titulo}', '', marca]
+    if dia == 2:
+        lineas.append('<!-- E2:LECCIONES:INICIO -->')
+    lineas += ['<!-- SECUENCIA:GUIA:INICIO -->',
+               'Estudia en este orden antes de abrir los ejercicios. Los enlaces a secciones asignan solo esa lectura; no la lección completa.', '']
+    for i, p in preparaciones_dia(ctx, dia):
+        if dia == 2 and i == 'P02':
+            lineas += [lecciones['1.4'], lecciones['7.6']]
+        lineas.append(f'- [{p["leccion"]} · {p["titulo"]}](../../{p["archivo"]}#{p["ancla"]}) · lee solo esa sección antes de {i} · {p["min"]} min de lectura y predicción.')
+    if dia == 1:
+        lineas += ['', 'Estas dos secciones ocupan 16 de los 20 min de teoría originales; quedan 4 min para situarte en el entorno. '
+                   'Orden: sección inicial 1.2 → sección inicial 7.4 → S1 y P01. El desarrollo completo de esas lecciones y de los índices '
+                   'de consulta sigue como REFUERZO. Antes de D03 debes haber escrito y explicado tu función.']
+    else:
+        lineas += ['', f'Las lecciones NÚCLEO suman {total} min de lectura frente a los 30 min del bloque «Teoría»: completa la base antes '
+                   'del ejercicio que la requiere; si no cabe, reduce la entrega y recupera la lectura antes de avanzar. La micropráctica '
+                   'de ambas es REFUERZO. Los 26 min de las secciones iniciales ya están incluidos en la estimación BASE.', '',
+                   'Antes de S7 completa 1.4; antes de P02 completa las comparaciones y None de 7.6 y la sección de decisiones de 7.10. '
+                   'Una lectura pendiente no se acredita como aprendida: si no cabe, reduce la entrega y recupera la base antes de D03/H01/S01. '
+                   'La preparación de texto precede a P03 y a su uso en P09/D10. Solo los apartados enlazados de 1.6/7.5/7.10 son obligatorios '
+                   'hoy; sus desarrollos completos conservan su clasificación y día.']
+    lineas += ['', 'Cuando vuelvas a una lección con una sección previa ya leída, continúa por el desarrollo restante: '
+               'sus minutos ya están descontados en la jornada correspondiente. En REDUCIDO conserva la preparación de la actividad '
+               'que hagas. Si pospones una actividad, recupera su preparación antes de intentarla y antes de la puerta que la requiere; '
+               'MÍNIMO solo repasa lo conocido.', '<!-- SECUENCIA:GUIA:FIN -->']
+    if dia == 2:
+        lineas.append('<!-- E2:LECCIONES:FIN -->')
+    lineas += ['', *predicciones, '', '### Consulta · REFUERZO', '', consulta, '',
+               'Los índices sirven para consultar los apartados relacionados con el objetivo. Las demás lecciones conservan su clasificación '
+               'en [`RUTAS.md`](../RUTAS.md).', '', '']
+    t = t[:a] + '\n'.join(lineas) + t[b:]
+
+    a, b = t.index('## Práctica y archivos'), t.index('## Comprobar y entregar')
+    practica = t[a:b]
+    ficha = ctx.nucleo['dias_iniciales'][str(dia)]
+    actividades = {}
+    for i in ficha['obligatorio'] + ficha['refuerzo'] + ficha['opcional']:
+        patron = (rf'^- \[[ xX]\] \[[^\n]*\]\(../../03_EJERCICIOS/[^)\n]*/{re.escape(i)}\.md\)[^\n]*'
+                  r'.*?(?=\n- \[[ xX]\] |\Z)')
+        m = re.search(patron, practica, re.M | re.S)
+        if not m:
+            raise ValueError(f'D{dia:02}: falta la casilla existente de {i}')
+        actividades[i] = m.group().rstrip()
+        practica = practica[:m.start()] + practica[m.end():]
+    practica = practica.replace('Los primeros ejercicios son prioritarios; el resto es banco de ampliación en el mismo bloque.',
+        'Cada ejercicio está clasificado: **OBLIGATORIO · BASE**, **REFUERZO** (si necesitas consolidar o sobra tiempo) u '
+        '**OPCIONAL** (nunca desplaza lo obligatorio). Las casillas registran avance, no obligatoriedad.')
+    practica = practica.rstrip() + '\n\n'
+    if dia == 1:
+        practica += ('**Antes de empezar** (entorno): no se exige conocimiento previo de SQL o Python. La instalación y comprobación '
+                     'del entorno utilizan parte de práctica/empleo, como indica la distribución.\n\n'
+                     '**Se aprende hoy** (no se exige al entrar): qué representa una fila, seleccionar columnas y limitar resultados; '
+                     'variables, tipos y un cálculo propio en script o función.\n\n')
+    else:
+        practica += ('**Antes de empezar** (del D01): abrir los datos y ejecutar una consulta propia de S1 y un cálculo de P01 '
+                     '(script o función). Si quedaron pendientes, recupera su preparación antes de la actividad que los necesita.\n\n'
+                     '**Se aprende hoy** (no se exige al entrar): valores y combinaciones únicas; limpieza de texto; NULL frente a cero; '
+                     'booleanos, comparaciones y None; decisiones antes de operar.\n\n')
+    for clave, titulo in [('obligatorio', 'OBLIGATORIO · BASE'), ('refuerzo', 'REFUERZO · si necesitas consolidar o sobra tiempo'),
+                          ('opcional', 'OPCIONAL · nunca desplaza lo obligatorio')]:
+        if ficha[clave]:
+            practica += f'### {titulo}\n\n' + '\n'.join(actividades[i] for i in ficha[clave]) + '\n\n'
+    return t[:a] + practica + t[b:]
+
+
+def aplicar_inicial(ctx, dia):
+    ruta = next((ctx.raiz / '01_PLAN_DIARIO/dias').glob(f'D{dia:02}_*.md'))
     original = ruta.read_bytes()
     texto = original.decode('utf-8')
     nl = '\r\n' if '\r\n' in texto else '\n'
     t = texto.replace('\r\n', '\n')
-    estados = {m.group(2): m.group(1) for m in re.finditer(r'^- \[([ xX])\] \[(\d+\.\d+)\b', t, re.M)}
-    lineas = '\n'.join(f'- [{estados.get(i, " ")}] {enlace_leccion(ctx, i)} · NÚCLEO · lectura {info_leccion(ctx, i)["lectura"]} min.' for i in d02)
-    total = sum(info_leccion(ctx, i)['lectura'] for i in d02)
-    bloque = BLOQUE_D02.format(lineas=lineas, total=total)
-    if '<!-- E2:LECCIONES:INICIO -->' in t:
-        t = re.sub(r'<!-- E2:LECCIONES:INICIO -->.*?<!-- E2:LECCIONES:FIN -->\n', lambda m: bloque, t, flags=re.S)
-    else:
-        a = t.index('## Distribución neta')
-        t = t[:a] + bloque + '\n' + t[a:]
-    t = insertar_preparaciones(ctx, 2, t)
+    nuevo = organizar_inicial(ctx, dia, t)
+    casillas = lambda s: sorted(re.findall(r'^- \[[ xX]\].*$', s, re.M))
+    if casillas(t) != casillas(nuevo):
+        raise ValueError(f'D{dia:02}: la presentación alteraría casillas o estados')
     if ruta.read_bytes() != original:
-        raise RuntimeError('D02 cambió concurrentemente: orientación no trasladada')
-    ruta.write_bytes(t.replace('\n', nl).encode('utf-8'))
+        raise RuntimeError(f'D{dia:02} cambió concurrentemente: presentación no trasladada')
+    if nuevo != t:
+        ruta.write_bytes(nuevo.replace('\n', nl).encode('utf-8'))
 
 
 def aplicar_d01(ctx):
-    ruta = next((ctx.raiz / '01_PLAN_DIARIO/dias').glob('D01_*.md'))
-    original = ruta.read_bytes()
-    texto = original.decode('utf-8')
-    nl = '\r\n' if '\r\n' in texto else '\n'
-    nuevo = insertar_preparaciones(ctx, 1, texto.replace('\r\n', '\n')).replace('\n', nl).encode('utf-8')
-    if ruta.read_bytes() != original:
-        raise RuntimeError('D01 cambió concurrentemente: orientación no trasladada')
-    ruta.write_bytes(nuevo)
+    aplicar_inicial(ctx, 1)
+
+
+def aplicar_d02(ctx):
+    aplicar_inicial(ctx, 2)
 
 
 def aplicar_domingo(ctx, dia, d_cal):
@@ -997,7 +1110,7 @@ def escribir_rutas(ctx):
     for i, p in ctx.nucleo.get('preparaciones', {}).items():
         L.append(f'| D{p["dia"]:02} | {i} | [{p["titulo"]}](../{p["archivo"]}#{p["ancla"]}) | {p["min"]} |')
     L += ['', 'D01: S1 y P01 son BASE; S10 es REFUERZO con preparación propia. D02: S2, S7, P02 y P03 son BASE; '
-          'S9 es REFUERZO y C01, OPCIONAL. D01/D02 solo actualizan orientación de estudio; sus avances se conservan.', '']
+          'S9 es REFUERZO y C01, OPCIONAL. D01/D02 organizan teoría y práctica por prioridad; conservan avances, notas, objetivos y tiempos.', '']
     # horas por semana
     L += ['## Horas por semana', '',
           '| Semana | BASE plan (min) | BASE estimado (min / h) | Teoría y lecciones NÚCLEO | Criterio e hitos | Ejercicios OBLIGATORIOS | EXTENDIDA extra (L–S) | EXTENDIDA plan (h) | EXTENDIDA estimada (h) |',

@@ -11,3 +11,8 @@ def porcentaje(real, meta):
         return  None
     else:
         return result
+
+def normalizar_nombre(texto):
+     partes = texto.split()
+     result = " ".join(partes).title()
+     return result
