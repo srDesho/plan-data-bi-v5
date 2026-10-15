@@ -499,8 +499,11 @@ def seccion_reducido(ctx, dia, cal, s):
     L.append(f'Plan: {cal["reducido"]} minutos. Uso previsto de primera vez: lectura mínima {Lm} + entrega reducida {Em} + cierre 5 = {total} min; '
              f'el resto, si lo hay, es empleo o holgura (las estimaciones tienen un margen de ±35 %).')
     if lecs:
-        L.append(f'- **Lectura mínima ({Lm} min):** ' + '; '.join(enlace_leccion(ctx, i) for i in lecs) +
+        L.append(f'- **Lectura mínima ({Lm} min):** ' + '; '.join(enlace_leccion(ctx, i, restante=True) for i in lecs) +
                  '. Sin micropráctica; las demás lecciones del día quedan como consulta.')
+        if dia == 32:
+            L.append('- **Lectura parcial:** son 30 min de desarrollo restante. Si omites PB02, su sección de calendario (4 min) '
+                     'queda pendiente: recupérala antes de PB02; leer el desarrollo no la acredita.')
     else:
         L.append('- **Lectura:** hoy no hay lectura en este modo (la preparación de la entrega reducida viene de jornadas anteriores).')
     L.append(f'- **Haz solo: {nombres}.** Entrega reducida ({Em} min): {s["reducido_entrega"]}')
@@ -565,7 +568,10 @@ def insertar_preparaciones(ctx, dia, texto):
         lineas += ['', 'Lee primero la sección de filtros de 1.3; después el desarrollo restante de 1.6 y las demás lecturas de hoy. '
                    'Los 7 min iniciales de 1.6 ya se estudiaron en D02; recupera esa base si falta antes de continuar.']
     elif dia == 12:
-        lineas += ['', 'Lee la sección inicial de 6.1 y luego sus 25 min restantes, además de 9.2. Después resuelve AN07; '
+        lineas += ['', 'Lectura de 6.1: 6 min de sección inicial + 25 min de desarrollo restante = 31 min, una sola vez. '
+                   'El enlace de abajo abre directamente el desarrollo; no repitas la sección inicial. Con los 20 min de 9.2 son 51 min '
+                   'de lectura asignada: los 45 min del bloque «Lecciones» corresponden a 25 + 20; los 6 previos ya están incluidos '
+                   'en la estimación BASE. Después resuelve AN07; '
                    'la ampliación completa de 6.2 sigue en D25.']
     elif dia == 32:
         lineas += ['', 'Orden: desarrollo de 14.1 (30 min de lectura restante) → sección de calendario (4 min) → PB01 y PB02, en ese orden. '

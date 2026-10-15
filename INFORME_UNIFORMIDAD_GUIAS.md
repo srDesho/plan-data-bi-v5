@@ -1,73 +1,94 @@
-# Uniformidad de las guías diarias
+# Cierre editorial de las guías · Plan Data & BI v5
 
-Fecha: 2026-10-14. Repositorio original, rama `main`; referencia inicial `4909893`.
-Al iniciar no había cambios pendientes. Ajuste exclusivamente editorial, tomando D05 como referencia.
+2026-10-15 · repositorio original · rama `main` · referencia inicial `00b6f1c`, limpia.
+Corrección editorial localizada y comprobación de dependencias; sin reconstrucción curricular.
+La uniformidad del 14 de octubre ya estaba incorporada. Este informe registra las comprobaciones
+nuevas; las pruebas históricas de fases anteriores no se cuentan como ejecutadas ahora.
 
-## Organización resultante
+## Referencias y correcciones
 
-D01/D02 combinaban índices genéricos, lecturas previas y práctica sin separación visual de prioridades.
-D02 además repetía los enlaces a 1.4 y 7.6 en un bloque añadido de lecciones.
+Se leyeron D01, D02, D05, D12 y D18; los informes de organización didáctica y uniformidad;
+`nucleo.json`, `lecciones.json` y el generador. Se contrastaron nueve ejercicios con su teoría,
+RUTAS y clasificación; las otras 40 jornadas recibieron una comprobación automática ligera.
 
-- **D01:** preparación BASE de 1.2 y 7.4 antes de S1/P01; consulta como REFUERZO; distribución original;
-  «Antes de empezar» y «Se aprende hoy»; S1/P01 OBLIGATORIOS y S10 REFUERZO, aunque esté realizado.
-- **D02:** una sola secuencia de teoría: sección de DISTINCT → texto → 1.4 NULL → 7.6 booleanos,
-  comparaciones y None → sección de condicionales. S2/S7/P02/P03 son BASE, S9 REFUERZO y C01 OPCIONAL.
-  Cada lectura precede a su ejercicio; se conservan recuperación y descuentos por lectura parcial.
-- En ambos se conservaron comprobación, entrega, REDUCIDO, MÍNIMO, empleo y las indicaciones de UAGRM.
-  No se añadieron tareas, puertas ni modalidades inexistentes para imitar D05.
+D01/D02 conservan su estructura organizada: objetivo/modalidades → teoría → distribución →
+prerrequisitos y competencias → práctica por prioridad → comprobación → REDUCIDO/MÍNIMO → empleo.
+No se inventaron actividades de criterio ni EXTENDIDA para esas jornadas.
 
-**D03–D42: ninguna modificación.** La revisión ligera comprobó sus 40 guías, incluidas seis de examen
-y seis domingos flexibles: encabezados y orden, fechas/nombres, lecciones, prioridades, modalidades,
-asignaciones contra `nucleo.json`, recuperaciones y particularidades. No aparecieron defectos verificables.
+- Preparaciones de S1/S2/P01/P02/P03: ahora utilizan el mismo nombre y destino que la guía.
+  Los índices quedan como consulta; las secciones iniciales no obligan a adelantar lecciones completas.
+- P03 identifica explícitamente que «7.5 · Texto: limpieza, inmutabilidad y partir/unir» abre la sección
+  «Base inicial de texto»: **una sola lectura de 12 min**, dentro de los 34 de 7.5; quedan 22 de desarrollo.
+- S7 enlaza directamente 1.4. P02 enlaza 7.6 antes de su sección de decisiones de 7.10.
+- C01 atribuía sus definiciones a un índice. Ahora apunta a **6.2 → Términos nuevos** y ofrece como
+  consulta voluntaria el primer mini-informe de 6.6, sin exigir sus ejemplos SQL/Pandas.
+- D01/D02 señalan la preparación de S10, S9 y C01 dentro de REFUERZO/OPCIONAL; no se añade a BASE.
+  S10 abre directamente los ejemplos 1 y 2 de 2.1, conservando sus aproximadamente 4 min voluntarios.
+- D02 distingue **61 min de lectura asignada** (35 NÚCLEO + 26 de secciones previas) del bloque
+  planificado de teoría de 30 min. Mantiene reducción de entrega y recuperación antes del ejercicio.
 
-## Conservación y generación
+| Actividad | Clasificación conservada | Teoría antes del intento |
+|---|---|---|
+| S1 | D01 · BASE | 1.2, preparación de tabla/selección/orden/límite, 8 min |
+| P01 | D01 · BASE | 7.4, variables/tipos/función/retorno, 8 min |
+| S10 | D01 · REFUERZO | 2.1, solo ejemplos 1–2 |
+| S2 | D02 · BASE | 1.6, introducción de DISTINCT, 7 min |
+| S7 | D02 · BASE | 1.4, NULL, 15 min |
+| P02 | D02 · BASE | 7.6, 20 min; después introducción de decisiones de 7.10, 7 min |
+| P03 | D02 · BASE | 7.5, sección inicial de texto, 12 min |
+| S9 | D02 · REFUERZO | 1.3, condiciones y operadores |
+| C01 | D02 · OPCIONAL | Definiciones de 6.2; mini-informe de 6.6 como consulta voluntaria |
 
-Se conservaron literalmente las **10 casillas de D01 y las 15 de D02**, con sus estados asociados a cada
-actividad. Los 42 objetivos permanecen iguales; en D01/D02 también son idénticos los bloques de tiempo
-y todo el contenido desde «Comprobar y entregar» hasta el cierre.
+Las seis actividades BASE tenían enseñanza suficiente: no fue necesario añadir ni reescribir teoría.
+Las pistas conservan su función posterior al intento; soluciones y comprobaciones siguen separadas.
 
-El generador migra la presentación heredada sin reconstruir las guías personales. Mueve cada actividad
-con sus notas, mantiene las notas de estudio y respeta las ediciones posteriores. Al regenerar valida
-lecturas y categorías contra las fuentes; una discordancia se detiene explícitamente para evitar borrar
-avance personal o aparentar sincronización. No vuelve a publicar el bloque antiguo de D02.
+## D12, D32 y alcance conservado
 
-La generación se probó primero en una copia temporal: solo difirieron D01, D02 y una frase de `RUTAS.md`.
-Se trasladaron únicamente esas diferencias al original. Dos pasadas consecutivas fueron idénticas en
-los **368 archivos** de la copia, incluidos calendario, fuentes e índices.
+**D12:** división intencional de 6.1: 6 min iniciales + 25 restantes = 31. Con 9.2 son 51 min de lectura
+asignada; el bloque de 45 corresponde a 25 + 20, y los 6 iniciales ya estaban en la estimación BASE.
+Se aclara esa diferencia y el uso de `#desarrollo`, antes de AN07; no cambian competencia ni jornada.
 
-Sin cambios en `nucleo.json`, `lecciones.json`, calendario JSON/CSV ni `CARGA_ESTIMADA.md`:
-**5400 min / 90 h BASE**, estimación **5813 min / 96,9 h**, 42 min adicionales ya contabilizados y
-evaluación final separada de **570 min / 9,5 h**. Ningún cambio en obligaciones o prerrequisitos corregidos.
+**D32:** REDUCIDO anunciaba 30 min restantes de 14.1 pero abría la lectura completa de 34.
+Ahora enlaza `#desarrollo` y recuerda recuperar los 4 min de calendario antes de PB02 si se aplazó.
+Es el único enlace de lectura reducida con este defecto entre las 40 jornadas revisadas.
 
-## Comprobaciones ejecutadas ahora
+Las **38 guías fuera de D01/D02/D12/D32**, incluidas D05 y D18, permanecen idénticas.
+Se conservan domingos, exámenes, proyectos, hitos, UAGRM y las recuperaciones anteriores.
+Fuentes, calendarios, índices, RUTAS, carga y las 100 lecciones no requieren cambios.
+Permanecen **5400 min / 90 h planificadas**, **5813 min / 96,9 h estimadas** y **570 min / 9,5 h** de
+evaluación posterior; los 42 min de preparaciones adicionales anteriores no se duplican.
 
-Con `.venv`, Python **3.12.10**, sin generar resultados de pruebas en el repositorio:
+## Comprobaciones ejecutadas en este cierre
 
-- 42 guías: **524 enlaces locales**, **15 con anclas**, todos válidos. No fue necesario corregir rutas
-  ni anclas; se eliminó la duplicación editorial de las lecturas 1.4/7.6 en D02.
-- **18 regresiones editoriales** en memoria: notas dentro de los bloques heredados, notas asociadas a
-  ejercicios, notas junto a casillas NÚCLEO, estado `X`, avance posterior e idempotencia; rechazo de
-  cambios discordantes de minutos, categorías, asignación NÚCLEO, eliminación, traslado u orden de preparaciones.
-- **7/7 grupos pertinentes** del verificador existente: `lecciones`, `jornadas`, `guias`,
-  `preparacion_secuencia`, `ejercicios_y_lecciones`, `documentos` y `sincronizacion`.
-  Incluyen las ocho preparaciones conservadas en teoría y 179 enunciados Markdown sin clases reintroducidas.
-- Comparación SHA256 con la instantánea inicial: intactos D03–D42, los siete archivos de `mi_trabajo`,
-  teoría, ejercicios, soluciones, evaluaciones, proyectos, validadores, datasets y materiales UAGRM.
-- Manifiesto SHA256 regenerado y comprobado: **590 archivos**. `git diff --check`: sin errores.
+Entorno `.venv`, Python **3.12.10**, sin bytecode ni resultados de pruebas escritos en el repositorio.
+Instantánea y respaldos anteriores a la edición guardados fuera del repositorio.
 
-**Limitación del control heredado:** se ejecutó por separado `sin_cambios_en_mi_trabajo` como diagnóstico.
-Detecta «D01: cambio fuera de orientación» porque aún prohíbe modificar la presentación de «Práctica».
-Se mantuvo el validador intacto, conforme al alcance autorizado. Para esta tarea se comprobó conservación
-contra la instantánea de sesión, incluyendo casillas, actividades, tiempos, entrega y trabajo personal.
-No se declara aprobada la suite completa. No se repitieron pruebas ETL, privadas, de exámenes ni la suite
-completa de teoría; los resultados históricos de fases anteriores no se cuentan como pruebas de este ajuste.
+- **705 enlaces locales válidos, 36 con fragmento:** 528/19 en las 42 guías; 13/8 en nueve ejercicios;
+  52/1 en 13 archivos teóricos relacionados; 112/8 en RUTAS. No se comprobaron páginas externas.
+- **7/7 grupos dirigidos** existentes: lecciones, jornadas, guías, preparación/secuencia,
+  ejercicios/lecciones, documentos y sincronización. Ocho preparaciones conservadas en teoría;
+  179 enunciados Markdown sin clases reintroducidas. No se ejecutó la suite general.
+- Dos pasadas completas en copia temporal: **368 archivos, cero diferencias** en la segunda pasada.
+  Se trasladaron solo 12 diferencias editoriales revisadas; no se regeneraron las 42 guías originales.
+- **571 casillas de las 42 guías**, incluidas las 10 de D01 y las 15 de D02, con líneas, orden y estados
+  idénticos a la instantánea actual. También se conservaron las casillas de los nueve ejercicios.
+- Cuerpos de los nueve problemas intactos desde «Situación», salvo la corrección del puntero documental
+  de C01. Reglas, datos, ejemplos, pistas, aceptación y entrega conservados; sin soluciones modificadas.
+- SHA256 confirma intactos los ocho archivos personales, toda la teoría, soluciones, datos,
+  evaluaciones, fuentes y carga. Objetivos/fechas intactos; sin acceso a custodia privada.
+- Manifiesto SHA256 regenerado y vigente (**590 archivos**); `git diff --check`, salida 0.
 
-## Archivos y estado final
+No se repitieron las regresiones históricas, suites técnicas ETL, exámenes ni toda la teoría.
+El control heredado que limita D01/D02 a cambios dentro de «Qué estudiar» conserva su restricción
+anterior; no se modificó ni se volvió a ejecutar. La conservación se comprobó contra la instantánea
+actual, incluyendo las secciones de práctica autorizadas. Los validadores permanecen intactos.
 
-Modificados: `herramientas/aplicar_nucleo.py`, `01_PLAN_DIARIO/dias/D01_2026-10-12.md`,
-`01_PLAN_DIARIO/dias/D02_2026-10-13.md`, `01_PLAN_DIARIO/RUTAS.md` y
-`10_VALIDACION/MANIFIESTO_SHA256.json`. Nuevo: este informe.
+## Archivos realmente modificados y Git
 
-Git permanece en `main`, commit `4909893`: **cinco archivos modificados y un informe nuevo**, sin preparar
-para commit. No se hicieron commits, push, ramas ni operaciones destructivas de Git. Se detiene el trabajo
-para revisión del usuario.
+**15 archivos existentes modificados; ninguno nuevo:** cuatro guías (D01, D02, D12, D32), ocho
+enunciados (S1, S2, S7, S10, P01, P02, P03, C01), `herramientas/aplicar_nucleo.py`,
+`10_VALIDACION/MANIFIESTO_SHA256.json` y este informe. S9 se revisó y quedó intacto.
+El generador solo necesita aclarar D12 y dirigir la lectura parcial de REDUCIDO al desarrollo.
+
+Git permanece en `main`, HEAD `00b6f1c`, con esas 15 modificaciones sin preparar para commit.
+Sin commits, push, ramas ni operaciones destructivas. Trabajo detenido para revisión del usuario.
