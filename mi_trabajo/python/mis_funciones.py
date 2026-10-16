@@ -16,3 +16,9 @@ def normalizar_nombre(texto):
      partes = texto.split()
      result = " ".join(partes).title()
      return result
+
+def cliente_diccionario(codigo, ruta):
+    return {"cliente_id" : codigo, "ruta" : ruta}
+
+def clientes_unicos(codigos):
+    return sorted(set(codigos))
