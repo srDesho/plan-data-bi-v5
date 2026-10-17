@@ -22,3 +22,12 @@ def cliente_diccionario(codigo, ruta):
 
 def clientes_unicos(codigos):
     return sorted(set(codigos))
+
+def contar_estados(lista_tipo):
+    cantitades = {}
+    for tipo in lista_tipo:
+        if (tipo in cantitades):
+            cantitades[tipo] += 1
+        else:
+            cantitades[tipo] = 1
+    return cantitades
