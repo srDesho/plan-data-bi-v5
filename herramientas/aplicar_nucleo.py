@@ -318,10 +318,12 @@ def render_normal(ctx, n):
     teoria = 0
     for e in ordenar_lecciones(ctx, d["lecciones"]):
         i = e["id"]
-        anc ={"completa": "", "sec.": {"1.2": "preparacion-s1", "7.4": "preparacion-p01", "1.6": "preparacion-s2", "7.5": "preparacion-p03", "7.10": "preparacion-p02", "14.5": "seccion-inicial"}.get(i, ""), "resto": "desarrollo"}[e["parte"]]
+        anc ={"completa": "", "sec.": {"1.2": "preparacion-s1", "7.4": "preparacion-p01", "1.6": "preparacion-s2", "7.5": "preparacion-p03", "7.10": "preparacion-p02", "2.4": "preparacion-redondeo", "14.5": "seccion-inicial"}.get(i, ""), "resto": "desarrollo"}[e["parte"]]
         rot = {"completa": "", "sec.": " · solo la sección inicial", "resto": " · resto de la lección (el desarrollo)"}[e["parte"]]
         if i == "14.5":
             rot = " · solo los pasos 1, 2 y 6 del ejemplo"
+        if i == "2.4" and e["parte"] == "sec.":
+            rot = " · solo la sección inicial (ROUND)"
         comp = COMP_CAP[int(i.split(".")[0])]
         prep = preparacion(ctx, i)
         clave = f"lec:{i}|{e['parte']}"
@@ -385,7 +387,9 @@ def render_normal(ctx, n):
         L += [f"### {g}", ""]
         for kind, e in grupos[g]["micro"]:
             i = e["id"]
-            clave = f"mic:{i}"
+            # otras jornadas donde se hacen apartados obligatorios de la misma micropráctica (lección dividida en partes)
+            otros = {m: x["micro_apartados_obligatorios"] for m, dm in sorted(ctx.dias.items()) if m != n for x in dm.get("lecciones", []) if x["id"] == i and x["micro_min"] and x["micro_apartados_obligatorios"]}
+            clave = f"mic:{i}" if not otros else f"mic:{i}|{dd}"
             ap = e["micro_apartados_obligatorios"]
             lm = ctx.lec["lecciones"][i]["micropractica"]
             cuerpo = f"[Micropráctica {i} · {tit_leccion(ctx, i)}]({enlace(ruta_leccion(ctx, i), 'micropractica')}) · MICROPRÁCTICA ESENCIAL · {e['micro_min']} min · obligatorio{'s' if len(ap) > 1 else ''}: apartado{'s' if len(ap) > 1 else ''} {', '.join(map(str, ap))} (la micropráctica tiene {lm['apartados']})"
@@ -395,6 +399,8 @@ def render_normal(ctx, n):
             L.append(caja(ctx, hechas, clave, cuerpo))
             for a, txt in apartados_micro(ctx, i, ap):
                 L.append(f"  - Apartado {a}: {txt}")
+            for m, aps in otros.items():
+                L.append(f"  - {'Los apartados' if len(aps) > 1 else 'El apartado'} {', '.join(map(str, aps))} de esta micropráctica {'se hacen' if len(aps) > 1 else 'se hace'} en D{m:02d}, con el resto de la lección.")
             cubre = {a: b for a, b in lm["integrado_en"].items() if not b.startswith(("autocomprobación", "(ampliación"))}
             auto = [a for a, b in lm["integrado_en"].items() if b.startswith(("autocomprobación", "(ampliación"))]
             if cubre:

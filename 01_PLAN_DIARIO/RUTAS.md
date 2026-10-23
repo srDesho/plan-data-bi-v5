@@ -19,12 +19,12 @@ Una lección puede leerse en partes: «solo la sección inicial» (la parte mín
 | D01 | 2026-10-12 | 7.1, 1.1, 7.2, 1.2 (sec.), 7.4 (sec.) | 66 |
 | D02 | 2026-10-13 | 1.2 (resto), 1.3, 1.4, 1.6 (sec.), 7.3, 7.4 (resto), 7.5 (sec.), 7.5 (resto), 7.6, 7.10 (sec.) | 164 |
 | D03 | 2026-10-14 | 1.5, 1.6 (resto), 7.8, 7.9 | 70 |
-| D04 | 2026-10-15 | 2.1, 7.10 (resto), 7.11, 7.12 | 88 |
+| D04 | 2026-10-15 | 2.1, 2.4 (sec.), 7.10 (resto), 7.11, 7.12 | 94 |
 | D05 | 2026-10-16 | 2.2, 2.3, 7.13, 16.1 | 90 |
 | D08 | 2026-10-19 | 7.7, 8.1 | 50 |
 | D09 | 2026-10-20 | 3.1, 3.2, 8.5, 19.1, 11.1 | 110 |
 | D10 | 2026-10-21 | 8.3, 8.4 | 55 |
-| D11 | 2026-10-22 | 3.3, 3.4, 2.4, 11.2, 11.3 | 110 |
+| D11 | 2026-10-22 | 3.3, 3.4, 2.4 (resto), 11.2, 11.3 | 104 |
 | D12 | 2026-10-23 | 6.1, 8.6, 8.7 | 81 |
 | D15 | 2026-10-26 | 9.2, 9.3 | 45 |
 | D16 | 2026-10-27 | 10.1, 9.5, 6.3 | 72 |
@@ -61,7 +61,7 @@ Una lección puede leerse en partes: «solo la sección inicial» (la parte mín
 | 2.1 | 2.1 Funciones de agregación: contar, sumar, promediar | NÚCLEO | D04 | 20 | obligatorios 3 de 4 |
 | 2.2 | 2.2 GROUP BY y HAVING: una cifra por grupo | NÚCLEO | D05 | 20 | obligatorios 3 de 3 |
 | 2.3 | 2.3 Granularidad y denominadores: el número correcto para la pregunta correcta | NÚCLEO | D05 | 25 | obligatorios 1, 2, 3 de 3 |
-| 2.4 | 2.4 Redondeo, texto y fechas: preparar los datos para el reporte | NÚCLEO | D11 | 20 | obligatorios 2, 3, 4 de 4 |
+| 2.4 | 2.4 Redondeo, texto y fechas: preparar los datos para el reporte | NÚCLEO | D04 (sec.), D11 (resto) | 20 | obligatorios 1, 2, 3, 4 de 4 |
 | 2.5 | 2.5 CASE y COALESCE: condiciones dentro de la consulta y valores faltantes | NÚCLEO | D17 | 20 | obligatorios 1, 3 de 3 |
 | 3.1 | 3.1 Claves, relaciones y cardinalidad | NÚCLEO | D09 | 20 | obligatorios 1, 3 de 3 |
 | 3.2 | 3.2 INNER JOIN: combinar tablas por coincidencia | NÚCLEO | D09 | 25 | obligatorios 2, 3 de 3 |

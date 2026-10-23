@@ -1,6 +1,6 @@
 # Estado de la implementación (punto de recuperación)
 
-Última actualización: 2026-10-18 · **Fase 3 terminada, Fase 5 ejecutada y ajustes finales de cierre aplicados** (aprobación provisional del usuario). Las 42 jornadas, los 44 ejercicios nuevos y los documentos derivados están generados y verificados. Total BASE: **9.452 min = 157 h 32 min**. Pendiente: preparar el commit final (propuesta; sin commits ni push hasta nueva orden). Las enmiendas de cierre están en [ENMIENDAS_FASE3.md](ENMIENDAS_FASE3.md).
+Última actualización: 2026-10-23 · Plan Data BI v5 con todos los ajustes aprobados aplicados (commit `6ad8c38` en `main` + modificaciones locales de la enmienda 4 sin commit). Las 42 jornadas, los 44 ejercicios nuevos y los documentos derivados están generados y verificados. Total BASE: **9.457 min = 157 h 37 min**. Las enmiendas están en [ENMIENDAS_FASE3.md](ENMIENDAS_FASE3.md); la 4 (G1 en D05 y ROUND en D04) está pendiente de commit.
 Reglas vigentes: sin commits ni push; rama `correccion-pedagogica-definitiva`; no tocar `mi_trabajo/`, exámenes S01–S06 (enunciados ni contratos), hitos, proyectos C06, datasets ni evaluación final; las 34 realizaciones y las 42 fechas se conservan; respaldo externo en `D:\Course Python\Claude\GPT\Respaldos_Plan_Data_BI_v5\8168909_arbol_codex_sin_commit_20261017_2101` (no sobrescribir).
 
 ## Tablero
@@ -21,7 +21,7 @@ Reglas vigentes: sin commits ni push; rama `correccion-pedagogica-definitiva`; n
 |---|---|
 | `herramientas/aplicar_nucleo.py --todos --comprobar` | 0 cambios (42 guías + calendario, CARGA_ESTIMADA, RUTAS, COMPETENCIAS, HITOS, PLAN_V5, índices de capítulo y mapa UAGRM idempotentes) |
 | `herramientas/verificar_diseno_v6.py diseno` | 1169 pruebas, 0 fallos, 1 aviso (D39: sesión de 195 min, dentro del máximo de 215 pero sobre 185) |
-| `herramientas/verificar_diseno_v6.py guias --dias 1-42` | 1060 pruebas, 0 fallos |
+| `herramientas/verificar_diseno_v6.py guias --dias 1-42` | 1065 pruebas, 0 fallos |
 | `herramientas/verificar_diseno_v6.py ejercicios --todos` | 44/44 enunciados, 710 pruebas, 0 fallos (formato, pistas, controles, contratos, referencias, correctores citados y lecciones citadas ya enseñadas) |
 | `herramientas/verificar_diseno_v6.py correctores` | 115 correctores ejecutados contra su referencia, 0 fallos |
 | `herramientas/verificar_diseno_v6.py progreso` | 34 casillas `[x]`, 0 fallos |
@@ -61,6 +61,13 @@ Obsoletas (pertenecen al diseño anterior de 15 h semanales y no se ejecutan): `
 3. **SQ13 a** se verifica además con filas de prueba añadidas en memoria (`LTRIM`/`RTRIM` rechazados). **SQ09 c**: `NULLIF` no cambia el resultado en SQLite (dividir entre 0 da NULL), por eso el corrector exige su uso por texto; no se afirma que se detecte por comportamiento.
 4. Cierre técnico: verificaciones repetidas (ver tabla), 34 actividades acreditadas conservadas, 42 fechas y exámenes intactos, enlaces e idempotencia correctos.
 
+## Enmienda 4 (2026-10-23): G1 y ROUND antes de S01
+
+Diagnóstico independiente confirmó dos defectos de secuencia, corregidos con el cambio mínimo (detalle en [ENMIENDAS_FASE3.md](ENMIENDAS_FASE3.md), sección 4):
+- **G1** pasa de D04 a D05 (BASE obligatorio), después de 2.2; D04 ya no lo exige ni D05 lo pide para entrar; el apartado 4 de la micropráctica 2.1 deja de apuntar a G1.
+- **ROUND**: la base de la lección 2.4 (6 min, sin `GROUP BY`) y el apartado 1 de su micropráctica (5 min) se estudian en D04; el desarrollo restante (14 min y apartados 2–4) sigue en D11.
+- Horas: D04 312, D05 316, D11 302; total 9.457 min = 157 h 37 min. `09_EVALUACION_FINAL/ENUNCIADO.md` (líneas 5 y 7) y el hash autorizado del verificador se actualizaron con autorización expresa. La comprobación de protección ahora tolera diferencias de saltos de línea (git `autocrlf`).
+
 ## Desviaciones respecto a la especificación
 
 - RS04 y RS05 son BASE (ver «Ajustes de cierre»).
@@ -74,7 +81,7 @@ Obsoletas (pertenecen al diseño anterior de 15 h semanales y no se ejecutan): `
 
 ## Advertencias y limitaciones conocidas
 
-1. **Carga:** 9.452 min BASE (157 h 32 min); promedio martes–viernes 310 min; 25 jornadas superan su máximo y se dividen en sesiones retomables (la mayor, D39-S1, 195 min). Es una excepción aceptada del diseño, no una promesa de 240 min diarios.
+1. **Carga:** 9.457 min BASE (157 h 37 min); promedio martes–viernes 311 min; 25 jornadas superan su máximo y se dividen en sesiones retomables (la mayor, D39-S1, 195 min). Es una excepción aceptada del diseño, no una promesa de 240 min diarios.
 2. **Ejercicios sin corrector automático:** Excel, Power Query, Power BI/DAX, GIT01 (tiene lista de verificación) y la parte interpretativa de RS/KP/SQ se evalúan con rúbrica y cifras de `08_SOLUCIONES/controles_manuales_v6.md`; este paquete no ejecuta esas aplicaciones.
 3. **Comprobaciones por texto:** quitar `NULLIF` en SQ09 c es indistinguible por resultado en SQLite (dividir entre 0 devuelve NULL); el corrector lo exige por texto. `LTRIM`/`RTRIM` en SQ13 a sí se detectan con las filas de prueba en memoria.
 4. **Estadística inferencial:** BASE = RS04 (D37), RS05 (D38), ST05 (D39) y ST07 (D40) más las microprácticas; RS06 es voluntario. No hay práctica BASE de chi-cuadrado ni tamaño del efecto (12.6–12.7 son complementarias).

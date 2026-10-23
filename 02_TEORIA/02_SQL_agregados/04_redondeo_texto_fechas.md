@@ -2,6 +2,30 @@
 
 > Tiempo estimado: 50 min (lectura 20 + práctica 30). Prerrequisitos: [2.1](01_funciones_agregadas.md) y [1.6 DISTINCT y LIKE](../01_SQL_basico/06_distinct_like.md).
 
+<!-- TEORIA:PREPARACION:INICIO -->
+<a id="preparacion-redondeo"></a>
+
+Esta sección es autocontenida. Sus 6 min están incluidos en los 20 min de lectura del encabezado; tras estudiarla, quedan 14 min de lectura del desarrollo restante. La guía asigna cada parte y evita contarla dos veces.
+
+## Base inicial: redondear un promedio al presentarlo · 6 min
+
+Interpreta este ejemplo en papel, con datos independientes de los archivos del curso. En un muestrario ficticio, la tabla `lotes` guarda el peso en kilos de tres lotes: `3.2`, `4.1` y `5.5`. Quieres presentar el peso promedio con 2 decimales.
+
+```sqlplantilla
+SELECT AVG(peso) AS crudo, ROUND(AVG(peso), 2) AS dos_decimales FROM lotes;
+```
+
+Paso a paso: 1) la suma de los pesos es 12.8; 2) el promedio crudo es 12.8 / 3 = 4.266666…, con todos los decimales que SQLite guarda; 3) `ROUND(valor, decimales)` recibe el valor, aquí `AVG(peso)`, y cuántos decimales conservar, aquí 2, y devuelve `4.27`. Por eso la consulta muestra dos columnas: `4.266666…` y `4.27`.
+
+Reglas para usarla bien: el **primer argumento** es el valor o la expresión (`AVG(peso)`, `SUM(a * b)`…) y el **segundo** son los decimales; `ROUND(x, 0)` redondea al entero. Se redondea en la **última operación**, al presentar: calcula el promedio con todos los decimales y redondea ese resultado, no cada peso antes de promediar. `ROUND` cambia lo que ves en el resultado, no los datos de la tabla. Si un requerimiento pide un valor «con 2 decimales», la columna entregada debe ser el valor redondeado: `4.266666…` no es lo mismo que `4.27` para quien lee el reporte ni para un control que compara valores. Es la misma idea que `round(valor, n)` de Python (lección 7.3), con otro nombre de función en SQL.
+
+Predice sin consultar los datos del ejercicio: ¿qué devuelve `ROUND(AVG(peso), 1)`? `4.3`. ¿Cambia `AVG(peso)` si usas `ROUND` en otra columna de la consulta? No. Compruébalo en papel; después aplica la regla en la micropráctica de esta lección (apartado 1).
+
+El desarrollo restante añade el redondeo dentro de consultas agrupadas, la limpieza de texto y las fechas. Para esta base basta [2.1](01_funciones_agregadas.md); el prerrequisito [1.6](../01_SQL_basico/06_distinct_like.md) del encabezado corresponde al desarrollo completo.
+<!-- TEORIA:PREPARACION:FIN -->
+
+<a id="desarrollo"></a>
+
 ## Para qué sirve
 
 Los datos reales no vienen listos: los nombres traen espacios, las fechas son texto, los promedios tienen diez decimales. Tres familias de funciones lo arreglan: **redondeo** (presentar números), **texto** (limpiar y unir nombres) y **fecha** (sacar el mes, medir días entre dos fechas). Las vas a usar en casi todo ejercicio de SQL y de ETL.

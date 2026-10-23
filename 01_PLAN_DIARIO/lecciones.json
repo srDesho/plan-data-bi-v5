@@ -234,7 +234,7 @@
     "integrado_en": {
      "1": "G3",
      "2": "G3",
-     "4": "G1"
+     "4": "autocomprobación"
     },
     "minutos_obligatorios": 10
    }
@@ -307,26 +307,33 @@
    "practica_min": 30,
    "partes": [
     {
-     "parte": "completa",
+     "parte": "sec.",
+     "dia": 4,
+     "lectura_min": 6,
+     "micro_min": 5
+    },
+    {
+     "parte": "resto",
      "dia": 11,
-     "lectura_min": 20,
+     "lectura_min": 14,
      "micro_min": 20
     }
    ],
    "anclas": [
+    "preparacion-redondeo",
+    "desarrollo",
     "micropractica"
    ],
    "micropractica": {
     "apartados": 4,
     "obligatorios": [
+     1,
      2,
      3,
      4
     ],
-    "integrado_en": {
-     "1": "SQ04"
-    },
-    "minutos_obligatorios": 20
+    "integrado_en": {},
+    "minutos_obligatorios": 25
    }
   },
   "2.5": {

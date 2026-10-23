@@ -7,11 +7,11 @@
   "clases_uagrm": "lunes 19:30–22:00 (aparte del tiempo autónomo)"
  },
  "resumen": {
-  "total_min": 9452,
-  "horas": 157.53,
+  "total_min": 9457,
+  "horas": 157.62,
   "jornadas_sobre_techo": 27,
-  "exceso_total_min": 1033,
-  "promedio_martes_viernes": 310,
+  "exceso_total_min": 1038,
+  "promedio_martes_viernes": 311,
   "maximo_normal": 340
  },
  "dias": {
@@ -543,6 +543,18 @@
      "competencia": "Agregados · bucles · acumuladores"
     },
     {
+     "id": "2.4",
+     "titulo": "2.4 Redondeo, texto y fechas: preparar los datos para el reporte",
+     "parte": "sec.",
+     "archivo": "02_TEORIA/02_SQL_agregados/04_redondeo_texto_fechas.md",
+     "lectura_min": 6,
+     "micro_min": 5,
+     "micro_apartados_obligatorios": [
+      1
+     ],
+     "competencia": "Agregados · bucles · acumuladores"
+    },
+    {
      "id": "7.10",
      "titulo": "7.10 Condicionales: if, elif y else",
      "parte": "resto",
@@ -597,12 +609,6 @@
      "grupo": "SQL",
      "ejercicios": [
       {
-       "id": "G1",
-       "min": 20,
-       "nivel": 1,
-       "origen": "promovido"
-      },
-      {
        "id": "G3",
        "min": 20,
        "nivel": 1,
@@ -635,18 +641,18 @@
    "cierre_min": 10,
    "examen": null,
    "totales": {
-    "teoria": 88,
-    "micropractica": 125,
-    "ejercicios": 68,
+    "teoria": 94,
+    "micropractica": 130,
+    "ejercicios": 48,
     "criterio_hitos": 15,
     "sql_recuperacion": 0,
     "empleo": 15,
     "cierre": 10,
     "examen": 0,
-    "total": 321
+    "total": 312
    },
    "techo_min": 270,
-   "exceso_min": 51,
+   "exceso_min": 42,
    "refuerzo": {
     "ids": [
      "S10",
@@ -658,7 +664,7 @@
    "sesiones": [
     {
      "sesion": "D04-S1",
-     "min": 153,
+     "min": 164,
      "actividades": [
       {
        "tipo": "lectura",
@@ -669,6 +675,16 @@
        "tipo": "micro",
        "texto": "Micropráctica obligatoria 2.1 (apartados 3)",
        "min": 10
+      },
+      {
+       "tipo": "lectura",
+       "texto": "Leer 2.4 2.4 Redondeo, texto y fechas: preparar los datos para el reporte (sec.)",
+       "min": 6
+      },
+      {
+       "tipo": "micro",
+       "texto": "Micropráctica obligatoria 2.4 (apartados 1)",
+       "min": 5
       },
       {
        "tipo": "lectura",
@@ -701,7 +717,7 @@
     },
     {
      "sesion": "D04-S2",
-     "min": 168,
+     "min": 148,
      "actividades": [
       {
        "tipo": "micro",
@@ -712,11 +728,6 @@
        "tipo": "micro",
        "texto": "micro 7.1,7.2,7.3",
        "min": 35
-      },
-      {
-       "tipo": "ejercicio",
-       "texto": "G1 (SQL)",
-       "min": 20
       },
       {
        "tipo": "ejercicio",
@@ -744,7 +755,7 @@
        "min": 10
       }
      ],
-     "entregable": "notas de lectura y micropráctica resuelta en mi_trabajo/dias/D04.md; ejercicios G1, G3, P06 con su corrector; respuesta de criterio/hito; registro en progreso.csv y errores.md",
+     "entregable": "notas de lectura y micropráctica resuelta en mi_trabajo/dias/D04.md; ejercicios G3, P06 con su corrector; respuesta de criterio/hito; registro en progreso.csv y errores.md",
      "punto_de_interrupcion": "fin de la jornada"
     }
    ],
@@ -818,6 +829,12 @@
      "grupo": "SQL",
      "ejercicios": [
       {
+       "id": "G1",
+       "min": 20,
+       "nivel": 1,
+       "origen": "promovido"
+      },
+      {
        "id": "G5",
        "min": 20,
        "nivel": 1,
@@ -858,16 +875,16 @@
    "totales": {
     "teoria": 90,
     "micropractica": 90,
-    "ejercicios": 76,
+    "ejercicios": 96,
     "criterio_hitos": 15,
     "sql_recuperacion": 0,
     "empleo": 15,
     "cierre": 10,
     "examen": 0,
-    "total": 296
+    "total": 316
    },
    "techo_min": 270,
-   "exceso_min": 26,
+   "exceso_min": 46,
    "refuerzo": {
     "ids": [
      "RP04"
@@ -915,7 +932,7 @@
     },
     {
      "sesion": "D05-S2",
-     "min": 156,
+     "min": 176,
      "actividades": [
       {
        "tipo": "lectura",
@@ -925,6 +942,11 @@
       {
        "tipo": "micro",
        "texto": "Micropráctica obligatoria 16.1 (apartados 1,2,3)",
+       "min": 20
+      },
+      {
+       "tipo": "ejercicio",
+       "texto": "G1 (SQL)",
        "min": 20
       },
       {
@@ -958,7 +980,7 @@
        "min": 10
       }
      ],
-     "entregable": "notas de lectura y micropráctica resuelta en mi_trabajo/dias/D05.md; ejercicios G5, G6, P07 con su corrector; respuesta de criterio/hito; registro en progreso.csv y errores.md",
+     "entregable": "notas de lectura y micropráctica resuelta en mi_trabajo/dias/D05.md; ejercicios G1, G5, G6, P07 con su corrector; respuesta de criterio/hito; registro en progreso.csv y errores.md",
      "punto_de_interrupcion": "fin de la jornada"
     }
    ],
@@ -1563,9 +1585,9 @@
     {
      "id": "2.4",
      "titulo": "2.4 Redondeo, texto y fechas: preparar los datos para el reporte",
-     "parte": "completa",
+     "parte": "resto",
      "archivo": "02_TEORIA/02_SQL_agregados/04_redondeo_texto_fechas.md",
-     "lectura_min": 20,
+     "lectura_min": 14,
      "micro_min": 20,
      "micro_apartados_obligatorios": [
       2,
@@ -1629,7 +1651,7 @@
    "cierre_min": 10,
    "examen": null,
    "totales": {
-    "teoria": 110,
+    "teoria": 104,
     "micropractica": 95,
     "ejercicios": 48,
     "criterio_hitos": 15,
@@ -1637,10 +1659,10 @@
     "empleo": 30,
     "cierre": 10,
     "examen": 0,
-    "total": 308
+    "total": 302
    },
    "techo_min": 270,
-   "exceso_min": 38,
+   "exceso_min": 32,
    "refuerzo": {
     "ids": [
      "J3",
@@ -1651,7 +1673,7 @@
    "sesiones": [
     {
      "sesion": "D11-S1",
-     "min": 160,
+     "min": 154,
      "actividades": [
       {
        "tipo": "lectura",
@@ -1675,8 +1697,8 @@
       },
       {
        "tipo": "lectura",
-       "texto": "Leer 2.4 2.4 Redondeo, texto y fechas: preparar los datos para el reporte (completa)",
-       "min": 20
+       "texto": "Leer 2.4 2.4 Redondeo, texto y fechas: preparar los datos para el reporte (resto)",
+       "min": 14
       },
       {
        "tipo": "micro",

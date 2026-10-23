@@ -2,7 +2,7 @@
 
 Este documento se genera con `herramientas/aplicar_nucleo.py` a partir de `nucleo.json`, salvo las casillas, que son tuyas y se conservan.
 
-**Formación: 12 de octubre–22 de noviembre de 2026 (42 jornadas). Evaluación final: 23–30 de noviembre, un bloque posterior de 9,5 horas que no forma parte de las 42 jornadas.** Las 42 jornadas suman **157 h 32 min de trabajo BASE** (promedio de martes a viernes: 310 min); no son 90 horas ni 15 horas semanales. Detalle en [Carga estimada](CARGA_ESTIMADA.md).
+**Formación: 12 de octubre–22 de noviembre de 2026 (42 jornadas). Evaluación final: 23–30 de noviembre, un bloque posterior de 9,5 horas que no forma parte de las 42 jornadas.** Las 42 jornadas suman **157 h 37 min de trabajo BASE** (promedio de martes a viernes: 311 min); no son 90 horas ni 15 horas semanales. Detalle en [Carga estimada](CARGA_ESTIMADA.md).
 
 El punto de partida es una pasantía de BI con fuerte apoyo de IA y bases técnicas todavía en construcción. El objetivo es resolver SQL, programar Python y construir un ETL junior propio, comprobado y explicable, y llegar preparado para postular a puestos de Analista de Datos, BI y Data Engineering. El programa no garantiza empleo ni autonomía profesional avanzada en seis semanas.
 
@@ -37,8 +37,8 @@ D01–D05: CV y GitHub (sin postulaciones obligatorias). D08–D10: CV final, va
 
 | Semana | Fechas | Resultado verificable | BASE |
 |---:|---|---|---:|
-| 1 | 12–18 octubre | Filtros, agregación, Python básico, KPIs y S01 (Puerta 1) | 24 h 40 min |
-| 2 | 19–25 octubre | JOIN, funciones con errores, archivos CSV, estadística descriptiva inicial y S02 (Puerta 2) | 27 h 04 min |
+| 1 | 12–18 octubre | Filtros, agregación, Python básico, KPIs y S01 (Puerta 1) | 24 h 51 min |
+| 2 | 19–25 octubre | JOIN, funciones con errores, archivos CSV, estadística descriptiva inicial y S02 (Puerta 2) | 26 h 58 min |
 | 3 | 26 octubre–1 noviembre | Pandas, merge validado, duplicados, CTE, ventanas, ABC y S03 (Puerta 3) | 25 h 42 min |
 | 4 | 2–8 noviembre | Mini-ETL y ETL guiado hasta claves y duplicados; S04 (Puerta 5a) | 26 h 35 min |
 | 5 | 9–15 noviembre | ETL guiado completo, modelo estrella, Excel y Power BI mínimo; S05 (Puerta 6) | 26 h 46 min |
@@ -55,8 +55,8 @@ Marca el día cuando completaste su objetivo y puedes explicar el control. Regis
 - [ ] **D01 · 12/10 lunes:** [Entorno · filas/columnas · variables · función](dias/D01_2026-10-12.md) · BASE 151 min.
 - [ ] **D02 · 13/10 martes:** [WHERE/NULL/DISTINCT · texto · booleanos y decisiones](dias/D02_2026-10-13.md) · BASE 278 min en 2 sesiones · REFUERZO ≤ 43 min.
 - [ ] **D03 · 14/10 miércoles:** [Listas · diccionarios · ORDER/LIMIT](dias/D03_2026-10-14.md) · BASE 249 min · REFUERZO ≤ 60 min.
-- [ ] **D04 · 15/10 jueves:** [Agregados · bucles · acumuladores](dias/D04_2026-10-15.md) · BASE 321 min en 2 sesiones · REFUERZO ≤ 50 min.
-- [ ] **D05 · 16/10 viernes:** [GROUP BY/HAVING · denominadores · registros · Git](dias/D05_2026-10-16.md) · BASE 296 min en 2 sesiones · REFUERZO ≤ 25 min.
+- [ ] **D04 · 15/10 jueves:** [Agregados · bucles · acumuladores](dias/D04_2026-10-15.md) · BASE 312 min en 2 sesiones · REFUERZO ≤ 50 min.
+- [ ] **D05 · 16/10 viernes:** [GROUP BY/HAVING · denominadores · registros · Git](dias/D05_2026-10-16.md) · BASE 316 min en 2 sesiones · REFUERZO ≤ 25 min.
 - [ ] **D06 · 17/10 sábado:** [EXAMEN S01](dias/D06_2026-10-17.md) · BASE 185 min.
 - [ ] **D07 · 18/10 domingo:** [Descanso (0 min obligatorios)](dias/D07_2026-10-18.md) · descanso (0 min obligatorios).
 - [ ] Hito semana 1: examen S01 corregido y Puerta 1 evaluada (decisión de continuidad registrada).
@@ -66,7 +66,7 @@ Marca el día cuando completaste su objetivo y puedes explicar el control. Regis
 - [ ] **D08 · 19/10 lunes:** [Conversiones · errores de valor · contratos](dias/D08_2026-10-19.md) · BASE 153 min · REFUERZO ≤ 50 min.
 - [ ] **D09 · 20/10 martes:** [Claves · INNER JOIN · excepciones · traceback](dias/D09_2026-10-20.md) · BASE 327 min en 2 sesiones · REFUERZO ≤ 60 min.
 - [ ] **D10 · 21/10 miércoles:** [CSV · módulos · portafolio GitHub](dias/D10_2026-10-21.md) · BASE 327 min en 2 sesiones · REFUERZO ≤ 73 min.
-- [ ] **D11 · 22/10 jueves:** [LEFT JOIN · JOIN que duplica · fechas · variables · depuración](dias/D11_2026-10-22.md) · BASE 308 min en 2 sesiones · REFUERZO ≤ 75 min.
+- [ ] **D11 · 22/10 jueves:** [LEFT JOIN · JOIN que duplica · fechas · variables · depuración](dias/D11_2026-10-22.md) · BASE 302 min en 2 sesiones · REFUERZO ≤ 75 min.
 - [ ] **D12 · 23/10 viernes:** [KPI · frecuencias · pruebas · fechas y cantidades](dias/D12_2026-10-23.md) · BASE 324 min en 2 sesiones · REFUERZO ≤ 100 min.
 - [ ] **D13 · 24/10 sábado:** [EXAMEN S02](dias/D13_2026-10-24.md) · BASE 185 min.
 - [ ] **D14 · 25/10 domingo:** [Descanso (0 min obligatorios)](dias/D14_2026-10-25.md) · descanso (0 min obligatorios).

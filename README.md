@@ -10,7 +10,7 @@ la ejecución de las referencias del paquete no demuestra que tú ya adquiriste 
 1. Extrae todo el ZIP a una carpeta, por ejemplo `C:\Plan_Data_BI_v5_Completo`.
 2. Abre esa carpeta en VS Code; no abras únicamente un archivo suelto.
 3. Lee [el Plan v5](01_PLAN_DIARIO/PLAN_V5.md) y después [el Día 1](01_PLAN_DIARIO/dias/D01_2026-10-12.md).
-4. Elige COMPLETO, REDUCIDO o MÍNIMO antes de empezar. Cada guía diaria calcula su carga desde sus actividades: las 42 jornadas suman **157 h 32 min de trabajo BASE** (ver [`CARGA_ESTIMADA.md`](01_PLAN_DIARIO/CARGA_ESTIMADA.md)); las jornadas que superan su máximo se dividen en **sesiones retomables** que puedes repartir en más de un día real sin cambiar la fecha académica, y los domingos son descanso (0 min obligatorios). La clase UAGRM del lunes 19:30–22:00 va aparte. Una obligación omitida en REDUCIDO o MÍNIMO permanece **OBLIGATORIO PENDIENTE** hasta recuperarla.
+4. Elige COMPLETO, REDUCIDO o MÍNIMO antes de empezar. Cada guía diaria calcula su carga desde sus actividades: las 42 jornadas suman **157 h 37 min de trabajo BASE** (ver [`CARGA_ESTIMADA.md`](01_PLAN_DIARIO/CARGA_ESTIMADA.md)); las jornadas que superan su máximo se dividen en **sesiones retomables** que puedes repartir en más de un día real sin cambiar la fecha académica, y los domingos son descanso (0 min obligatorios). La clase UAGRM del lunes 19:30–22:00 va aparte. Una obligación omitida en REDUCIDO o MÍNIMO permanece **OBLIGATORIO PENDIENTE** hasta recuperarla.
 
 5. Trabaja en `mi_trabajo`, creada con el comando indicado abajo. Las referencias están separadas
    en `08_SOLUCIONES`; consulta después de intentar y depurar, nunca durante los exámenes.

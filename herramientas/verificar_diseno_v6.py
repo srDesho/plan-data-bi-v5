@@ -544,8 +544,9 @@ def hash_archivo(p):
 # cualquier otro cambio en ese archivo sigue contando como CAMBIADO.
 EXCEPCIONES_AUTORIZADAS = {
     "09_EVALUACION_FINAL/ENUNCIADO.md": {
-        "sha256_autorizado": "d953f1d80896998bca29b9cea589bc2a3f8757b92ea656be02e46378835b65cc",
-        "alcance": "solo las líneas 5 y 7: la duración informativa «90 horas» pasa a «157 h 32 min» (duración BASE definitiva de las 42 jornadas); sin tocar preguntas, puntuaciones, rúbricas ni custodia",
+        # SHA-256 del contenido con saltos de línea LF (la comprobación acepta también el archivo con CRLF de git autocrlf)
+        "sha256_autorizado": "847dda8e939e96277f4f88b4e4f59c33603234a1a12850130d0ce3da36ed1a7f",
+        "alcance": "solo las líneas 5 y 7: la duración informativa «90 horas» pasa a «157 h 37 min» (duración BASE definitiva de las 42 jornadas, tras las enmiendas 1 y 3); sin tocar preguntas, puntuaciones, rúbricas ni custodia",
     },
 }
 
@@ -555,11 +556,15 @@ def verificar_proteccion(escribir=False):
     patrones = ["01_PLAN_DIARIO/dias/*.md", "01_PLAN_DIARIO/*.json", "01_PLAN_DIARIO/*.csv", "02_TEORIA/**/*.md", "03_EJERCICIOS/**/*", "04_DATASETS/**/*", "05_PROYECTOS/**/*",
                 "06_ENTREVISTAS/**/*", "07_LINKEDIN_EMPLEO/**/*", "08_SOLUCIONES/**/*", "09_EVALUACION_FINAL/**/*", "mi_trabajo/**/*", "herramientas/*.py"]
     excluir = ("__pycache__", ".pyc", "verificar_diseno_v6.py")
-    actual = {}
+    actual, actual_lf = {}, {}
     for pat in patrones:
         for p in sorted(RAIZ.glob(pat)):
             if p.is_file() and not any(x in str(p) for x in excluir):
                 actual[p.relative_to(RAIZ).as_posix()] = hash_archivo(p)
+                actual_lf[p.relative_to(RAIZ).as_posix()] = hashlib.sha256(p.read_bytes().replace(b"\r\n", b"\n")).hexdigest()  # git con autocrlf cambia solo los saltos de línea
+
+    def coincide(k, esperado):
+        return esperado is not None and esperado in (actual.get(k), actual_lf.get(k))
     if escribir:
         ruta.write_text(json.dumps(dict(archivos=len(actual), hashes=actual), ensure_ascii=False, indent=0), encoding="utf-8")
         print(f"Escrito {ruta.name}: {len(actual)} archivos")
@@ -568,9 +573,9 @@ def verificar_proteccion(escribir=False):
     # Archivos que la implementación debe modificar por diseño (guías, fuentes, teoría, índices y el generador); el resto es inmutable.
     evolutivos = lambda k: k.startswith(("01_PLAN_DIARIO/", "02_TEORIA/", "herramientas/aplicar_nucleo.py", "herramientas/auditar_enunciados.py")) or k.endswith(("/INDICE.md", "/CONTRATOS.md")) or k == "03_EJERCICIOS/CASOS.md"
     base = {k: v for k, v in base_total.items() if not evolutivos(k)}
-    evol_cambiados = sorted(k for k in base_total if evolutivos(k) and k in actual and actual[k] != base_total[k])
-    cambiados = sorted(k for k in base if k in actual and actual[k] != base[k] and actual[k] != EXCEPCIONES_AUTORIZADAS.get(k, {}).get("sha256_autorizado"))
-    aplicadas = sorted(k for k in EXCEPCIONES_AUTORIZADAS if k in actual and actual[k] == EXCEPCIONES_AUTORIZADAS[k]["sha256_autorizado"] and actual[k] != base_total.get(k))
+    evol_cambiados = sorted(k for k in base_total if evolutivos(k) and k in actual and not coincide(k, base_total[k]))
+    cambiados = sorted(k for k in base if k in actual and not coincide(k, base[k]) and not coincide(k, EXCEPCIONES_AUTORIZADAS.get(k, {}).get("sha256_autorizado")))
+    aplicadas = sorted(k for k in EXCEPCIONES_AUTORIZADAS if k in actual and coincide(k, EXCEPCIONES_AUTORIZADAS[k]["sha256_autorizado"]) and not coincide(k, base_total.get(k)))
     for k in aplicadas:
         print(f"  EXCEPCIÓN AUTORIZADA aplicada: {k} ({EXCEPCIONES_AUTORIZADAS[k]['alcance']})")
     ausentes = sorted(k for k in base if k not in actual)

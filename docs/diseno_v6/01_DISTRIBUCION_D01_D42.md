@@ -1,6 +1,6 @@
 # 01 · Distribución D01–D42 (especificación, Fase 2)
 
-> **Enmienda:** D37 pasa a 330 min y D38 a 335 min (RS04 y RS05 pasan a BASE); total 9.452 min = 157 h 32 min. Ver [ENMIENDAS_FASE3.md](ENMIENDAS_FASE3.md); esta tabla es el registro histórico de la Fase 2.
+> **Enmiendas:** D37 pasa a 330 min y D38 a 335 min (RS04 y RS05 pasan a BASE); G1 se traslada de D04 a D05 y la base de ROUND se enseña en D04 (D04 312, D05 316, D11 302 min); total 9.457 min = 157 h 37 min. Ver [ENMIENDAS_FASE3.md](ENMIENDAS_FASE3.md); esta tabla es el registro histórico de la Fase 2.
 
 Total BASE: **9392 min = 156 h 32 min**. Martes–viernes: promedio 308 min, máximo 340 min. 27 jornadas superan su techo (270 min; 150 en lunes) por un total de 973 min. Las jornadas de más de 270 min se dividen en **sesiones retomables** (sección siguiente); ninguna se presenta como cuatro horas.
 

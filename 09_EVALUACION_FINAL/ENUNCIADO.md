@@ -2,9 +2,9 @@
 
 Abre los datos el 23 de noviembre, **solo si cumpliste la Puerta 7** (S06 y H08). Una distribuidora ferretera ficticia envía una exportación de despachos con un contrato que **no es el de C06**: otra clave, otras fechas y precios, un descuento con una regla de redondeo, un tercer estado y otro grano de Gold. El objetivo es leer un contrato nuevo, **adaptar** tu método y defender tus decisiones.
 
-## Este bloque no está incluido en las 157 h 32 min de las 42 jornadas
+## Este bloque no está incluido en las 157 h 37 min de las 42 jornadas
 
-Las 42 jornadas suman 157 h 32 min de trabajo BASE (seis semanas). La evaluación final es una **séptima semana de evaluación, posterior y explícita**: 570 minutos netos (9,5 h) estimados de primera vez, no medidos. Antes reservaba 750 minutos (12,5 h); se redujo en 180 minutos porque reutilizas tus funciones y estructura de C06 en vez de construirlas dos veces desde cero (detalle en [`CARGA_ESTIMADA.md`](../01_PLAN_DIARIO/CARGA_ESTIMADA.md)). No se suman horas voluntarias ni se añade otra semana. Si no puedes dedicar este bloque en esas fechas, se reprograma sin acumular horas y no se declara autonomía.
+Las 42 jornadas suman 157 h 37 min de trabajo BASE (seis semanas). La evaluación final es una **séptima semana de evaluación, posterior y explícita**: 570 minutos netos (9,5 h) estimados de primera vez, no medidos. Antes reservaba 750 minutos (12,5 h); se redujo en 180 minutos porque reutilizas tus funciones y estructura de C06 en vez de construirlas dos veces desde cero (detalle en [`CARGA_ESTIMADA.md`](../01_PLAN_DIARIO/CARGA_ESTIMADA.md)). No se suman horas voluntarias ni se añade otra semana. Si no puedes dedicar este bloque en esas fechas, se reprograma sin acumular horas y no se declara autonomía.
 
 ## Regla de autonomía
 

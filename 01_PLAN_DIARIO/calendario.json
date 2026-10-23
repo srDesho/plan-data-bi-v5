@@ -175,25 +175,29 @@
     "semana": 1,
     "titulo": "Agregados · bucles · acumuladores",
     "tipo": "normal",
-    "base_min": 321,
+    "base_min": 312,
     "techo_min": 270,
-    "exceso_min": 51,
+    "exceso_min": 42,
     "sesiones": [
       {
         "sesion": "D04-S1",
-        "min": 153
+        "min": 164
       },
       {
         "sesion": "D04-S2",
-        "min": 168
+        "min": 148
       }
     ],
-    "reducido_min": 70,
+    "reducido_min": 61,
     "minimo_min": 20,
     "lecciones": [
       {
         "id": "2.1",
         "parte": "completa"
+      },
+      {
+        "id": "2.4",
+        "parte": "sec."
       },
       {
         "id": "7.10",
@@ -209,7 +213,6 @@
       }
     ],
     "ejercicios_base": [
-      "G1",
       "G3",
       "P06"
     ],
@@ -231,9 +234,9 @@
     "semana": 1,
     "titulo": "GROUP BY/HAVING · denominadores · registros · Git",
     "tipo": "normal",
-    "base_min": 296,
+    "base_min": 316,
     "techo_min": 270,
-    "exceso_min": 26,
+    "exceso_min": 46,
     "sesiones": [
       {
         "sesion": "D05-S1",
@@ -241,7 +244,7 @@
       },
       {
         "sesion": "D05-S2",
-        "min": 156
+        "min": 176
       }
     ],
     "reducido_min": 85,
@@ -265,6 +268,7 @@
       }
     ],
     "ejercicios_base": [
+      "G1",
       "G5",
       "G6",
       "P07"
@@ -470,13 +474,13 @@
     "semana": 2,
     "titulo": "LEFT JOIN · JOIN que duplica · fechas · variables · depuración",
     "tipo": "normal",
-    "base_min": 308,
+    "base_min": 302,
     "techo_min": 270,
-    "exceso_min": 38,
+    "exceso_min": 32,
     "sesiones": [
       {
         "sesion": "D11-S1",
-        "min": 160
+        "min": 154
       },
       {
         "sesion": "D11-S2",
@@ -496,7 +500,7 @@
       },
       {
         "id": "2.4",
-        "parte": "completa"
+        "parte": "resto"
       },
       {
         "id": "11.2",

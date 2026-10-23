@@ -1,6 +1,6 @@
 # Diseño pedagógico v6 · especificación (Fase 2)
 
-> **Enmiendas de la Fase 3:** ver [ENMIENDAS_FASE3.md](ENMIENDAS_FASE3.md) (RS04 y RS05 pasan a BASE: total 9.452 min = 157 h 32 min; excepción autorizada en la evaluación final; correctores SQ13/SQ09). Donde difieran, prevalecen esas enmiendas y `plan_v6.json`.
+> **Enmiendas de la Fase 3:** ver [ENMIENDAS_FASE3.md](ENMIENDAS_FASE3.md) (RS04 y RS05 pasan a BASE; G1 pasa a D05 y ROUND se enseña en D04: total 9.457 min = 157 h 37 min; excepción autorizada en la evaluación final; correctores SQ13/SQ09). Donde difieran, prevalecen esas enmiendas y `plan_v6.json`.
 
 Estado: **especificación y protección. No se ha modificado ninguna guía, el generador, los enunciados, correctores, contratos de examen ni archivos personales.** Rama `correccion-pedagogica-definitiva`, referencia estable `8168909`. Respaldo externo verificado: `D:\Course Python\Claude\GPT\Respaldos_Plan_Data_BI_v5\8168909_arbol_codex_sin_commit_20261017_2101` (2.409 archivos, 0 discrepancias SHA-256).
 

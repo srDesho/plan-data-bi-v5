@@ -76,7 +76,7 @@
   "integrado_en": {
    "1": "G3",
    "2": "G3",
-   "4": "G1"
+   "4": "autocomprobación"
   },
   "minutos_obligatorios": 10
  },
@@ -105,16 +105,15 @@
  },
  "2.4": {
   "obligatorios": [
+   1,
    2,
    3,
    4
   ],
   "apartados_totales": 4,
   "micro_min_leccion": 30,
-  "integrado_en": {
-   "1": "SQ04"
-  },
-  "minutos_obligatorios": 20
+  "integrado_en": {},
+  "minutos_obligatorios": 25
  },
  "2.5": {
   "obligatorios": [
