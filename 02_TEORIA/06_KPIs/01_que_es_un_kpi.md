@@ -1,6 +1,6 @@
 # 6.1 Qué es un KPI: la ficha de definición y las ventas entregadas
 
-> Tiempo estimado: 56 min (lectura 31 + práctica 25). Prerrequisitos: [2.3 Granularidad y denominadores](../02_SQL_agregados/03_granularidad_denominadores.md) y [3.2 INNER JOIN](../03_SQL_joins/02_inner_join.md).
+> Tiempo estimado: 76 min (lectura 41 + práctica 35). Prerrequisitos: [2.3 Granularidad y denominadores](../02_SQL_agregados/03_granularidad_denominadores.md) y [3.2 INNER JOIN](../03_SQL_joins/02_inner_join.md).
 
 <!-- TEORIA:PREPARACION:INICIO -->
 <a id="preparacion-an07"></a>
@@ -21,7 +21,7 @@ Un pedido tomado no demuestra que la venta se haya entregado; declara qué estad
 
 **Predice antes de pasar a AN07.** Si esa agenda cambia a 8 visitas planificadas, pero siguen realizándose 3 y tomando pedido en 2, ¿cuál de los dos indicadores de visitas cambia y cuál permanece igual? Escribe qué denominador justifica tu predicción; no necesitas calcular otro porcentaje.
 
-El encabezado de esta lección incluye esta sección de 6 min. Si ya la estudiaste en D12, quedan 25 min de lectura del desarrollo; no vuelvas a sumar esta sección. La práctica de 25 min se contabiliza por separado según la guía.
+El encabezado de esta lección incluye esta sección de 6 min. Si ya la estudiaste en D12, quedan 35 min de lectura del desarrollo; no vuelvas a sumar esta sección. La práctica de 35 min se contabiliza por separado según la guía.
 <!-- TEORIA:PREPARACION:FIN -->
 
 <a id="desarrollo"></a>
@@ -44,7 +44,43 @@ El encabezado de esta lección incluye esta sección de 6 min. Si ya la estudias
 
 ## Ejemplo paso a paso
 
-**1. Un mismo dato, tres «ventas».** Con la mini-base inventada, el importe de todas las líneas, el de las líneas de ventas entregadas y el de las anuladas:
+<a id="recorrido-sin-pandas"></a>
+
+**1. Un mismo dato, tres «ventas», con Python básico.** En D12 usa `csv`, diccionarios, bucles y acumuladores, ya estudiados, para comprobar un KPI sin depender de Pandas. Lee la cabecera, construye una búsqueda por clave y suma las líneas según su estado. Antes de ejecutar, explica por qué cada clave de cabecera debe aparecer una sola vez y qué harías con una línea sin cabecera:
+
+```python
+import csv
+
+estados = {}
+with open("04_DATASETS/mini_base/ventas.csv", encoding="utf-8-sig", newline="") as archivo:
+    for fila in csv.DictReader(archivo):
+        clave = fila["venta_id"]
+        if clave in estados:
+            raise ValueError("cabecera duplicada")
+        estados[clave] = fila["estado"]
+
+total = entregadas = anuladas = 0.0
+with open("04_DATASETS/mini_base/venta_lineas.csv", encoding="utf-8-sig", newline="") as archivo:
+    for fila in csv.DictReader(archivo):
+        clave = fila["venta_id"]
+        if clave not in estados:
+            raise ValueError("línea sin cabecera")
+        importe = float(fila["cantidad"]) * float(fila["precio_unitario"])
+        total += importe
+        if estados[clave] == "entregado":
+            entregadas += importe
+        elif estados[clave] == "anulado":
+            anuladas += importe
+print(total, entregadas, anuladas)
+```
+
+```salida
+2721.5 2332.5 389.0
+```
+
+Comprueba a mano algunas líneas y luego contrasta con el JOIN SQL del apartado 4. La búsqueda por diccionario hace explícita la relación cabecera/detalle sin introducir `merge`. La mini-base tiene importes simples; para contratos de dinero exacto conserva lo aprendido sobre `Decimal`.
+
+**1b. Reproducción posterior con Pandas, después de 10.3.** Este bloque conserva la demostración original. En D12 no se exige ejecutarlo ni se presume que se conoce `merge`; la ruta obligatoria actual usa el ejemplo básico anterior y SQL. Después de aprender 10.3 puedes reproducir el mismo resultado así:
 
 ```python
 import pandas as pd
@@ -173,10 +209,12 @@ Ejemplo comercial: el gerente dice «las ventas de septiembre cayeron». Antes d
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe la ficha completa del KPI «Unidades entregadas» para la mini-base.
-2. Calcúlalo en Python y en SQL y comprueba que coinciden.
+2. Calcúlalo en Python y en SQL y comprueba que coinciden. En D12 usa el recorrido básico del apartado 1 (`csv`, claves y acumulador), sin `merge`. Conserva el mismo KPI y todos los criterios. La reproducción adicional con Pandas espera a 10.3 y no acredita conocimientos de Pandas antes de estudiarlos.
 3. Redacta la frase que explicaría al gerente la diferencia entre «unidades pedidas» y «unidades entregadas».
 
 Cómo saber que está bien: tus dos cálculos coinciden y tu ficha tiene criterio de acción.

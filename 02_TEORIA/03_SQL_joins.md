@@ -10,10 +10,10 @@ Aquí aprendes a combinar tablas (tiendas con ventas, ventas con su detalle) y, 
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 3.1 | [Claves, relaciones y cardinalidad](03_SQL_joins/01_claves_relaciones.md) | clave primaria y foránea, 1:N, N:M, tabla puente, comprobar unicidad | refuerzo | 45 min |
-| 3.2 | [INNER JOIN](03_SQL_joins/02_inner_join.md) | ON, alias, unir tres tablas, producto cartesiano, controles de filas y totales | núcleo · D09 | 60 min |
-| 3.3 | [LEFT JOIN y los que no aparecen](03_SQL_joins/03_left_join_ausentes.md) | conservar todo lo de la izquierda, anti-join, `COUNT(columna)`, filtro en ON o WHERE | núcleo · D11 | 55 min |
-| 3.4 | [Cuando el JOIN duplica](03_SQL_joins/04_duplicacion_por_join.md) | duplicación, doble conteo, agregar antes de unir, tres controles | núcleo · D11 | 55 min |
+| 3.1 | [Claves, relaciones y cardinalidad](03_SQL_joins/01_claves_relaciones.md) | clave primaria y foránea, 1:N, N:M, tabla puente, comprobar unicidad | NÚCLEO · D09 | 45 min |
+| 3.2 | [INNER JOIN](03_SQL_joins/02_inner_join.md) | ON, alias, unir tres tablas, producto cartesiano, controles de filas y totales | NÚCLEO · D09 | 60 min |
+| 3.3 | [LEFT JOIN y los que no aparecen](03_SQL_joins/03_left_join_ausentes.md) | conservar todo lo de la izquierda, anti-join, `COUNT(columna)`, filtro en ON o WHERE | NÚCLEO · D11 | 55 min |
+| 3.4 | [Cuando el JOIN duplica](03_SQL_joins/04_duplicacion_por_join.md) | duplicación, doble conteo, agregar antes de unir, tres controles | NÚCLEO · D11 | 55 min |
 
 ## Idea central del capítulo
 

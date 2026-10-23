@@ -166,6 +166,8 @@ Ejemplo comercial: el vendedor dice "búscame las farmacias". Sabes que los nomb
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Lista las categorías distintas de `articulos`.

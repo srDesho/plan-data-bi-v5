@@ -1,0 +1,9 @@
+{
+  "comando": [
+    "herramientas/verificar_teoria.py"
+  ],
+  "codigo": 0,
+  "salida": "OK    ejemplos ejecutados (629 bloques)\nOK    formato de lecciones\nOK    enlaces internos\nOK    tiempos y lecciones de cada capítulo\nOK    términos definidos antes de usarlos\nOK    glosario enlazado a su definición\nOK    fugas de ejercicios\nTiempo estimado por capítulo (min): {'01_SQL_basico': 321, '02_SQL_agregados': 260, '03_SQL_joins': 215, '04_SQL_CTE_ventanas': 215, '05_calidad_ETL': 275, '06_KPIs': 366, '07_Python_basico': 752, '08_Python_funciones_archivos': 400, '09_Pandas_basico': 340, '10_Pandas_transformaciones': 365, '11_Estadistica_descriptiva': 515, '12_Estadistica_inferencia': 485, '13_Modelado': 165, '14_PowerBI_DAX': 289, '15_Excel_cuadres': 170, '16_Git_comunicacion': 140, '17_Transferencia_debug': 175, '18_Entrevistas': 155}\nArchivos: 122 · palabras: 157885\n",
+  "error": "",
+  "entorno": "copia temporal tras últimos cambios"
+}

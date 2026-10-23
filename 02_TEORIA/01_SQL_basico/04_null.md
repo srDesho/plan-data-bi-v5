@@ -133,6 +133,8 @@ Ejemplo comercial: el reporte de ventas por zona deja fuera dos tiendas sin zona
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Lista las tiendas con zona conocida (`IS NOT NULL`) de la ruta R03.

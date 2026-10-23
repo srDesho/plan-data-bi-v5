@@ -1,0 +1,74 @@
+{
+  "fallos": 2,
+  "pruebas": [
+    {
+      "prueba": "extractor de actividades accionables",
+      "estado": "OK",
+      "detalle": "Detecta copias pendientes/completadas, distingue referencias, código, fases y namespaces."
+    },
+    {
+      "prueba": "primera generación desde guías base con progreso y nota personal",
+      "estado": "ERROR",
+      "detalle": "[{'prueba': 'archivos personales, contratos, empleo, exámenes y jornadas fuera de muestra intactos', 'estado': 'ERROR', 'detalle': ['08_SOLUCIONES/__pycache__/etl_nuevo_referencia.cpython-312.pyc', '08_SOLUCIONES/__pycache__/mini_etl_referencia.cpython-312.pyc', 'mi_trabajo/python/__pycache__/mis_funciones.cpython-312.pyc', 'mi_trabajo/python/__pycache__/mis_funciones.cpython-314.pyc']}, {'prueba': 'obligaciones históricas restituidas o acreditadas previamente', 'estado': 'ERROR', 'detalle': ['K3', 'ME04', 'N01', 'N02', 'N03', 'P19', 'P20', 'ST02', 'V2']}]"
+    },
+    {
+      "prueba": "dos regeneraciones consecutivas estables y verificadas",
+      "estado": "ERROR",
+      "detalle": "[{'prueba': 'archivos personales, contratos, empleo, exámenes y jornadas fuera de muestra intactos', 'estado': 'ERROR', 'detalle': ['08_SOLUCIONES/__pycache__/etl_nuevo_referencia.cpython-312.pyc', '08_SOLUCIONES/__pycache__/mini_etl_referencia.cpython-312.pyc', 'mi_trabajo/python/__pycache__/mis_funciones.cpython-312.pyc', 'mi_trabajo/python/__pycache__/mis_funciones.cpython-314.pyc']}, {'prueba': 'obligaciones históricas restituidas o acreditadas previamente', 'estado': 'ERROR', 'detalle': ['K3', 'ME04', 'N01', 'N02', 'N03', 'P19', 'P20', 'ST02', 'V2']}]"
+    },
+    {
+      "prueba": "mutación: duplicación entre categorías",
+      "estado": "OK",
+      "detalle": {
+        "rechazada": true,
+        "motivo": "cero IDs accionables duplicados"
+      }
+    },
+    {
+      "prueba": "mutación: realización G2 desmarcada",
+      "estado": "OK",
+      "detalle": {
+        "rechazada": true,
+        "motivo": "realizaciones identificables conservadas"
+      }
+    },
+    {
+      "prueba": "mutación: D03 alterado",
+      "estado": "OK",
+      "detalle": {
+        "rechazada": true,
+        "motivo": "jornadas fuera de muestra intactos"
+      }
+    },
+    {
+      "prueba": "mutación: tiempo de guía falseado",
+      "estado": "OK",
+      "detalle": {
+        "rechazada": true,
+        "motivo": "minutos BASE calculados"
+      }
+    },
+    {
+      "prueba": "mutación: obligación histórica G1 degradada",
+      "estado": "OK",
+      "detalle": {
+        "rechazada": true,
+        "motivo": "obligaciones históricas restituidas"
+      }
+    },
+    {
+      "prueba": "mutación: micropráctica esencial omitida",
+      "estado": "OK",
+      "detalle": {
+        "rechazada": true,
+        "motivo": "micropráctica esencial posterior"
+      }
+    },
+    {
+      "prueba": "regeneración global sin aprobación rechazada",
+      "estado": "OK",
+      "detalle": "Se requiere selección explícita; no se genera fuera de muestra."
+    }
+  ],
+  "alcance": "muestra D04,D05,D08-D13; todas las mutaciones y regeneraciones en copia temporal"
+}

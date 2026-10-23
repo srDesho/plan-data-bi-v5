@@ -158,6 +158,8 @@ Ejemplo comercial: un script que imprime «Archivo leído» y «Archivo validado
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe un script que imprima tu nombre, luego la suma 15 + 27 calculada por Python y luego el texto «Fin». Ejecútalo desde la terminal.

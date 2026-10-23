@@ -223,6 +223,8 @@ Ejemplo comercial: tienes dos columnas, `cantidad` y `precio`, de 100 000 línea
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con `precios = [6.0, 9.0, 11.5, 7.5]` y `unidades = [10, 8, 4, 6]`:

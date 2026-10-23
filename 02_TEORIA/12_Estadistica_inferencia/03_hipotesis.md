@@ -110,6 +110,8 @@ Ejemplo comercial: «el nuevo horario reduce el tiempo de entrega» tiene `H0`: 
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Plantea `H0`, `H1` y `α` para esta pregunta: «¿el tiempo medio de entrega de la ruta R02 es distinto al de R03?».

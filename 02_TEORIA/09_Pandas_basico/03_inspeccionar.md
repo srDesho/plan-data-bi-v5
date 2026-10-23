@@ -252,6 +252,8 @@ Ejemplo comercial: te entregan el archivo mensual de ventas. Antes de sumar, res
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Perfila `tiendas.csv`: forma, tipos, vacíos por columna, valores distintos y lista de tipos de tienda.

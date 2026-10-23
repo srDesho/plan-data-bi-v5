@@ -202,6 +202,8 @@ Ejemplo comercial: el gerente quiere abrir el resumen en Excel y vincularlo a Po
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Construye una tabla de resumen: unidades e importe por categoría de artículo (ventas entregadas).

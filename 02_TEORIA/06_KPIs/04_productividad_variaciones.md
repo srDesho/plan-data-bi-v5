@@ -172,6 +172,8 @@ Ejemplo comercial: un vendedor «creció 200 %» porque el mes anterior estuvo d
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Calcula la productividad por **vendedor** medida como entregas por día con ventas.

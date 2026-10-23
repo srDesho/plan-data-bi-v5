@@ -298,6 +298,8 @@ Ejemplo comercial: el jefe de datos pregunta «¿por qué V3 no está en el repo
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con un CSV de pedidos que inventes (columnas `pedido`, `cliente`, `fecha`, `monto`, `estado`):

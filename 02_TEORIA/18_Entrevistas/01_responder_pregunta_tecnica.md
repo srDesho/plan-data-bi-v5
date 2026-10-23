@@ -119,6 +119,8 @@ Ejemplo comercial: te piden «las ventas por ruta del último mes». Respondes c
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Elige una consulta que ya hayas escrito en los ejercicios y explícala en voz alta con los cuatro pasos (grábate o escríbelo).

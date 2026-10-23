@@ -156,6 +156,8 @@ Si alguno no cuadra, revisa primero los filtros y la granularidad; luego la sint
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Calcula en una sola consulta el cumplimiento de visitas (`realizada` sobre `planificada`) **por fecha** y comprueba a mano el de la fecha `2026-09-02`.

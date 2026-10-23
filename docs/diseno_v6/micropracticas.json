@@ -1,0 +1,1049 @@
+{
+ "1.1": {
+  "obligatorios": [],
+  "apartados_totales": 3,
+  "micro_min_leccion": 25,
+  "integrado_en": {
+   "1": "S1",
+   "2": "SQ01",
+   "3": "SQ01"
+  },
+  "minutos_obligatorios": 0
+ },
+ "1.2": {
+  "obligatorios": [],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "1": "S1",
+   "2": "SQ01",
+   "3": "SQ01"
+  },
+  "minutos_obligatorios": 0
+ },
+ "1.3": {
+  "obligatorios": [],
+  "apartados_totales": 4,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "1": "S4",
+   "2": "S4",
+   "3": "SQ01",
+   "4": "SQ01"
+  },
+  "minutos_obligatorios": 0
+ },
+ "1.4": {
+  "obligatorios": [],
+  "apartados_totales": 3,
+  "micro_min_leccion": 25,
+  "integrado_en": {
+   "1": "S7",
+   "2": "SQ02",
+   "3": "SQ02"
+  },
+  "minutos_obligatorios": 0
+ },
+ "1.5": {
+  "obligatorios": [],
+  "apartados_totales": 3,
+  "micro_min_leccion": 25,
+  "integrado_en": {
+   "1": "S1",
+   "2": "SQ01",
+   "3": "S1"
+  },
+  "minutos_obligatorios": 0
+ },
+ "1.6": {
+  "obligatorios": [],
+  "apartados_totales": 4,
+  "micro_min_leccion": 25,
+  "integrado_en": {
+   "1": "S2",
+   "2": "SQ02",
+   "3": "S6",
+   "4": "SQ02"
+  },
+  "minutos_obligatorios": 0
+ },
+ "2.1": {
+  "obligatorios": [
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "1": "G3",
+   "2": "G3",
+   "4": "G1"
+  },
+  "minutos_obligatorios": 10
+ },
+ "2.2": {
+  "obligatorios": [
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "1": "G5",
+   "2": "G6"
+  },
+  "minutos_obligatorios": 10
+ },
+ "2.3": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {},
+  "minutos_obligatorios": 30
+ },
+ "2.4": {
+  "obligatorios": [
+   2,
+   3,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "1": "SQ04"
+  },
+  "minutos_obligatorios": 20
+ },
+ "2.5": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "2": "V4"
+  },
+  "minutos_obligatorios": 20
+ },
+ "3.1": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 25,
+  "integrado_en": {
+   "2": "J1"
+  },
+  "minutos_obligatorios": 15
+ },
+ "3.2": {
+  "obligatorios": [
+   2,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "1": "J1"
+  },
+  "minutos_obligatorios": 25
+ },
+ "3.3": {
+  "obligatorios": [
+   2
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "1": "J5",
+   "3": "J5"
+  },
+  "minutos_obligatorios": 10
+ },
+ "3.4": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {},
+  "minutos_obligatorios": 30
+ },
+ "4.1": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "2": "SQ10"
+  },
+  "minutos_obligatorios": 20
+ },
+ "4.2": {
+  "obligatorios": [
+   2
+  ],
+  "apartados_totales": 2,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "1": "V3"
+  },
+  "minutos_obligatorios": 15
+ },
+ "4.3": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 40,
+  "integrado_en": {
+   "2": "SQ12"
+  },
+  "minutos_obligatorios": 25
+ },
+ "5.1": {
+  "obligatorios": [
+   1,
+   2
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 20,
+  "integrado_en": {
+   "3": "AN12"
+  },
+  "minutos_obligatorios": 15
+ },
+ "5.2": {
+  "obligatorios": [
+   1,
+   3,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 25,
+  "integrado_en": {
+   "2": "ME02"
+  },
+  "minutos_obligatorios": 20
+ },
+ "5.3": {
+  "obligatorios": [
+   1,
+   3,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "2": "ME02"
+  },
+  "minutos_obligatorios": 20
+ },
+ "5.4": {
+  "obligatorios": [
+   1,
+   2
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 30,
+  "integrado_en": {},
+  "minutos_obligatorios": 15
+ },
+ "5.5": {
+  "obligatorios": [
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 40,
+  "integrado_en": {
+   "1": "ME01",
+   "2": "ME02",
+   "4": "ETL-6"
+  },
+  "minutos_obligatorios": 10
+ },
+ "6.1": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 25,
+  "integrado_en": {
+   "2": "P02"
+  },
+  "minutos_obligatorios": 15
+ },
+ "6.2": {
+  "obligatorios": [
+   1,
+   2
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "3": "N2"
+  },
+  "minutos_obligatorios": 25
+ },
+ "6.3": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "2": "(ampliación 4.4)"
+  },
+  "minutos_obligatorios": 25
+ },
+ "6.4": {
+  "obligatorios": [
+   2,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "1": "KP01"
+  },
+  "minutos_obligatorios": 25
+ },
+ "6.5": {
+  "obligatorios": [
+   2,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "1": "V4"
+  },
+  "minutos_obligatorios": 25
+ },
+ "6.6": {
+  "obligatorios": [
+   2,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "1": "AN18"
+  },
+  "minutos_obligatorios": 20
+ },
+ "7.1": {
+  "obligatorios": [
+   1
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "2": "autocomprobación",
+   "3": "autocomprobación"
+  },
+  "minutos_obligatorios": 10
+ },
+ "7.2": {
+  "obligatorios": [
+   2
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "1": "P01",
+   "3": "autocomprobación"
+  },
+  "minutos_obligatorios": 10
+ },
+ "7.3": {
+  "obligatorios": [
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "1": "P01",
+   "4": "autocomprobación"
+  },
+  "minutos_obligatorios": 15
+ },
+ "7.4": {
+  "obligatorios": [
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "1": "P01",
+   "2": "P01"
+  },
+  "minutos_obligatorios": 10
+ },
+ "7.5": {
+  "obligatorios": [
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 38,
+  "integrado_en": {
+   "1": "P03",
+   "4": "autocomprobación"
+  },
+  "minutos_obligatorios": 20
+ },
+ "7.6": {
+  "obligatorios": [
+   1
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "2": "P03",
+   "3": "P02",
+   "4": "P02"
+  },
+  "minutos_obligatorios": 10
+ },
+ "7.7": {
+  "obligatorios": [
+   1,
+   2,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "3": "P09"
+  },
+  "minutos_obligatorios": 25
+ },
+ "7.8": {
+  "obligatorios": [
+   1,
+   2,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {},
+  "minutos_obligatorios": 25
+ },
+ "7.9": {
+  "obligatorios": [
+   2,
+   3,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "1": "P04"
+  },
+  "minutos_obligatorios": 25
+ },
+ "7.10": {
+  "obligatorios": [
+   1,
+   2
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {},
+  "minutos_obligatorios": 20
+ },
+ "7.11": {
+  "obligatorios": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {},
+  "minutos_obligatorios": 35
+ },
+ "7.12": {
+  "obligatorios": [
+   2,
+   3,
+   5
+  ],
+  "apartados_totales": 5,
+  "micro_min_leccion": 42,
+  "integrado_en": {
+   "1": "P07",
+   "4": "P07"
+  },
+  "minutos_obligatorios": 25
+ },
+ "7.13": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 40,
+  "integrado_en": {
+   "4": "P07"
+  },
+  "minutos_obligatorios": 30
+ },
+ "8.1": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "2": "P08"
+  },
+  "minutos_obligatorios": 25
+ },
+ "8.3": {
+  "obligatorios": [
+   3,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 40,
+  "integrado_en": {
+   "1": "P13",
+   "2": "P13"
+  },
+  "minutos_obligatorios": 20
+ },
+ "8.4": {
+  "obligatorios": [
+   2,
+   3,
+   5
+  ],
+  "apartados_totales": 5,
+  "micro_min_leccion": 33,
+  "integrado_en": {},
+  "minutos_obligatorios": 20
+ },
+ "8.5": {
+  "obligatorios": [
+   1,
+   2,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "3": "P09"
+  },
+  "minutos_obligatorios": 25
+ },
+ "8.6": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 25,
+  "integrado_en": {
+   "2": "autocomprobación"
+  },
+  "minutos_obligatorios": 15
+ },
+ "8.7": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "2": "PT01"
+  },
+  "minutos_obligatorios": 25
+ },
+ "9.2": {
+  "obligatorios": [
+   1,
+   2,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "3": "P17"
+  },
+  "minutos_obligatorios": 25
+ },
+ "9.3": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "2": "P23"
+  },
+  "minutos_obligatorios": 25
+ },
+ "9.4": {
+  "obligatorios": [
+   1,
+   2
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {},
+  "minutos_obligatorios": 20
+ },
+ "9.5": {
+  "obligatorios": [
+   3,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 38,
+  "integrado_en": {
+   "1": "P22",
+   "2": "P22"
+  },
+  "minutos_obligatorios": 20
+ },
+ "9.6": {
+  "obligatorios": [
+   1,
+   2
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "3": "autocomprobación"
+  },
+  "minutos_obligatorios": 25
+ },
+ "10.1": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {},
+  "minutos_obligatorios": 25
+ },
+ "10.2": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 40,
+  "integrado_en": {
+   "4": "autocomprobación"
+  },
+  "minutos_obligatorios": 30
+ },
+ "10.3": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 40,
+  "integrado_en": {},
+  "minutos_obligatorios": 30
+ },
+ "10.4": {
+  "obligatorios": [
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "1": "ME03"
+  },
+  "minutos_obligatorios": 20
+ },
+ "10.5": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 40,
+  "integrado_en": {
+   "4": "ME03"
+  },
+  "minutos_obligatorios": 30
+ },
+ "10.6": {
+  "obligatorios": [
+   1,
+   2,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "3": "PE01"
+  },
+  "minutos_obligatorios": 25
+ },
+ "11.1": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 25,
+  "integrado_en": {
+   "2": "autocomprobación"
+  },
+  "minutos_obligatorios": 15
+ },
+ "11.2": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 25,
+  "integrado_en": {},
+  "minutos_obligatorios": 15
+ },
+ "11.3": {
+  "obligatorios": [
+   2,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "1": "ST01"
+  },
+  "minutos_obligatorios": 20
+ },
+ "11.4": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "2": "ST01"
+  },
+  "minutos_obligatorios": 25
+ },
+ "11.5": {
+  "obligatorios": [
+   1,
+   2,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "3": "ST02"
+  },
+  "minutos_obligatorios": 25
+ },
+ "11.8": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {},
+  "minutos_obligatorios": 30
+ },
+ "12.1": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {},
+  "minutos_obligatorios": 30
+ },
+ "12.2": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "2": "RS04"
+  },
+  "minutos_obligatorios": 25
+ },
+ "12.3": {
+  "obligatorios": [
+   1,
+   2
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "3": "ST07"
+  },
+  "minutos_obligatorios": 20
+ },
+ "12.4": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {},
+  "minutos_obligatorios": 35
+ },
+ "12.5": {
+  "obligatorios": [
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 40,
+  "integrado_en": {
+   "1": "ST05",
+   "4": "ST05"
+  },
+  "minutos_obligatorios": 20
+ },
+ "12.8": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 25,
+  "integrado_en": {
+   "2": "autocomprobación"
+  },
+  "minutos_obligatorios": 15
+ },
+ "13.1": {
+  "obligatorios": [
+   1,
+   2
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "3": "MD01"
+  },
+  "minutos_obligatorios": 20
+ },
+ "13.2": {
+  "obligatorios": [
+   2,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "1": "MD01"
+  },
+  "minutos_obligatorios": 25
+ },
+ "13.3": {
+  "obligatorios": [
+   1,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 25,
+  "integrado_en": {
+   "2": "autocomprobación"
+  },
+  "minutos_obligatorios": 15
+ },
+ "14.1": {
+  "obligatorios": [
+   2,
+   3
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 20,
+  "integrado_en": {
+   "1": "autocomprobación"
+  },
+  "minutos_obligatorios": 15
+ },
+ "14.2": {
+  "obligatorios": [
+   1,
+   2
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "3": "PQ01"
+  },
+  "minutos_obligatorios": 20
+ },
+ "14.3": {
+  "obligatorios": [
+   2,
+   3,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "1": "PB03"
+  },
+  "minutos_obligatorios": 25
+ },
+ "14.4": {
+  "obligatorios": [
+   1,
+   2,
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "3": "PB07"
+  },
+  "minutos_obligatorios": 25
+ },
+ "14.5": {
+  "obligatorios": [
+   1
+  ],
+  "apartados_totales": 3,
+  "micro_min_leccion": 20,
+  "integrado_en": {},
+  "minutos_obligatorios": 5,
+  "nota": "solo la sección inicial"
+ },
+ "15.1": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 20,
+  "integrado_en": {},
+  "minutos_obligatorios": 15
+ },
+ "15.2": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "4": "EX04"
+  },
+  "minutos_obligatorios": 25
+ },
+ "15.3": {
+  "obligatorios": [
+   4
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "1": "EX01",
+   "2": "EX03(REFUERZO)",
+   "3": "EX01"
+  },
+  "minutos_obligatorios": 10
+ },
+ "16.1": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 30,
+  "integrado_en": {
+   "4": "GIT01"
+  },
+  "minutos_obligatorios": 20
+ },
+ "16.2": {
+  "obligatorios": [
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 20,
+  "integrado_en": {
+   "1": "C06-4",
+   "4": "C06-4"
+  },
+  "minutos_obligatorios": 10
+ },
+ "18.1": {
+  "obligatorios": [
+   1,
+   2,
+   3
+  ],
+  "apartados_totales": 4,
+  "micro_min_leccion": 25,
+  "integrado_en": {
+   "4": "H08"
+  },
+  "minutos_obligatorios": 20
+ },
+ "17.1": {
+  "obligatorios": [],
+  "apartados_totales": 4,
+  "micro_min_leccion": 40,
+  "integrado_en": {
+   "1": "C06-0",
+   "2": "C06-0",
+   "3": "C06-0",
+   "4": "C06-0"
+  },
+  "minutos_obligatorios": 0
+ },
+ "17.2": {
+  "obligatorios": [],
+  "apartados_totales": 3,
+  "micro_min_leccion": 35,
+  "integrado_en": {
+   "1": "C06-2",
+   "2": "C06-2",
+   "3": "C06-2"
+  },
+  "minutos_obligatorios": 0
+ }
+}

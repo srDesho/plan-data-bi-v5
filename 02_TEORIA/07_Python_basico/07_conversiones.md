@@ -1,6 +1,6 @@
 # 7.7 Conversiones de tipo y los primeros errores de valor
 
-> Tiempo estimado: 60 min (lectura 25 + práctica 35). Prerrequisitos: [7.3 Tipos](03_tipos_aritmetica.md), [7.5 Texto](05_texto.md) y [7.6 Booleanos y None](06_booleanos_comparaciones_none.md).
+> Tiempo estimado: 70 min (lectura 30 + práctica 40). Prerrequisitos: [7.3 Tipos](03_tipos_aritmetica.md), [7.5 Texto](05_texto.md) y [7.6 Booleanos y None](06_booleanos_comparaciones_none.md).
 
 ## Para qué sirve
 
@@ -187,6 +187,29 @@ True
 
 Ejemplo comercial: la columna `monto` de un CSV trae `"1500.50"`, `""`, `"abc"` y `"2,000"`. Convertirlas a `float` de golpe detiene el programa en el primer valor inválido. La estrategia profesional es separar: los que se pueden convertir siguen, los que no se envían a una lista de **rechazados** con el motivo (así lo harás en el ETL).
 
+<a id="numeros-finitos"></a>
+
+## Antes de operar: números finitos y valores especiales
+
+Que una conversión termine sin error no garantiza un dato válido. **Finito** significa que el valor representa una cantidad limitada. `NaN` significa «no es un número» e `Infinity` representa infinito; ambos pueden convertirse con `float` o `Decimal`. No son cantidades comerciales válidas. **`is_finite()`** es el método de `Decimal` que comprueba esa condición antes de comparar, redondear o convertir a entero.
+
+```python
+from decimal import Decimal
+
+for texto in ["6.25", "NaN", "Infinity", "-Infinity"]:
+    numero = Decimal(texto)
+    print(texto, numero.is_finite())
+```
+
+```salida
+6.25 True
+NaN False
+Infinity False
+-Infinity False
+```
+
+Primero comprueba finitud; después aplica las reglas de signo, fracción o rango. Comparar `NaN` con cero no es una validación segura. Por ejemplo, `Decimal("3.0")` es finito y entero; `Decimal("3.5")` es finito pero fraccionario. El constructor `Decimal("ayer")` falla con **`InvalidOperation`**, una excepción del módulo `decimal`, en lugar de `ValueError`. En 8.5 aprenderás a traducirla al error que exige el contrato público de tu función.
+
 ## Errores comunes
 
 - **No convertir y calcular con texto**: `"250" * 4` no da 1000.
@@ -213,11 +236,14 @@ Ejemplo comercial: la columna `monto` de un CSV trae `"1500.50"`, `""`, `"abc"` 
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Convierte `"1.250,75"` (formato con punto de miles y coma decimal) a un número decimal y muéstralo. Pista: dos reemplazos.
 2. Escribe `def a_entero(texto)` que limpie espacios, devuelva `None` si el texto está vacío y, si no, el entero. Pruébala con `" 15 "`, `""` y `"7"`.
 3. Provoca (y lee) un `ValueError` con `int("tres")` y anota las dos partes de la última línea.
+4. Antes de ejecutar, predice si `Decimal("4.0")`, `Decimal("4.5")`, `Decimal("nan")` y `Decimal("inf")` son finitos. Ejecuta una comprobación por valor y separa finitud de condición entera. No conviertas los no finitos a `int`. Anota qué comprobación debe hacerse primero y por qué. Este apartado amplía la micropráctica existente; no sustituye los tres anteriores.
 
 Cómo saber que está bien: en la 1 el resultado es `1250.75`; en la 2 las tres pruebas dan `15`, `None` y `7`.
 

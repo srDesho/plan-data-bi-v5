@@ -137,6 +137,8 @@ Ejemplo comercial: la mejor preparación es enseñar cada respuesta a otra perso
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Graba (o escribe) la respuesta a cinco preguntas de este banco con un ejemplo de la mini-base cada una.

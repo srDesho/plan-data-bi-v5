@@ -274,6 +274,8 @@ Ejemplo comercial: el reporte necesita `importe`, `mes`, `segmento_cliente` y `e
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Los 35 minutos de práctica se reparten entre el checkpoint BASE anterior (10 min) y esta ampliación REFUERZO (25 min); no se suman dos veces. La ampliación no sustituye el checkpoint con datos nuevos.

@@ -155,6 +155,8 @@ Ejemplo comercial: antes de pedir más visitadores, pregunta si la relación se 
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con las temperaturas máximas diarias (°C) y las unidades vendidas de bebidas en un puesto durante 6 días: `x = [24, 27, 29, 31, 33, 35]` e `y = [40, 52, 55, 70, 74, 90]`:

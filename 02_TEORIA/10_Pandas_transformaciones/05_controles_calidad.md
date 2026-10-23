@@ -295,6 +295,8 @@ Ejemplo comercial: «Faltaron 120 ventas en el reporte» se resuelve en minutos 
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con un CSV en memoria de 8 líneas de pedidos que tú inventes (con una columna faltante opcional, un duplicado, un valor negativo, un texto en un número y un estado desconocido):

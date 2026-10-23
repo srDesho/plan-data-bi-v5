@@ -1,0 +1,2640 @@
+{
+ "KP01": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "vendedor_id",
+     "ventas_bs",
+     "dias_con_ventas",
+     "productividad_bs_dia"
+    ],
+    "filas": [
+     [
+      1,
+      211141.5,
+      152,
+      1389.09
+     ],
+     [
+      2,
+      396680.5,
+      157,
+      2526.63
+     ],
+     [
+      3,
+      138326.0,
+      136,
+      1017.1
+     ],
+     [
+      4,
+      221148.0,
+      151,
+      1464.56
+     ],
+     [
+      5,
+      341538.5,
+      151,
+      2261.84
+     ],
+     [
+      6,
+      160090.0,
+      143,
+      1119.51
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "ruta",
+     "ventas_agosto",
+     "ventas_septiembre",
+     "variacion_abs",
+     "variacion_pct"
+    ],
+    "filas": [
+     [
+      "R01",
+      27580.5,
+      35316.5,
+      7736.0,
+      28.0
+     ],
+     [
+      "R02",
+      55429.0,
+      80707.5,
+      25278.5,
+      45.6
+     ],
+     [
+      "R03",
+      22342.5,
+      36196.0,
+      13853.5,
+      62.0
+     ],
+     [
+      "R04",
+      27482.0,
+      48260.0,
+      20778.0,
+      75.6
+     ],
+     [
+      "R05",
+      45730.0,
+      68298.0,
+      22568.0,
+      49.4
+     ],
+     [
+      "R06",
+      20464.0,
+      32144.0,
+      11680.0,
+      57.1
+     ]
+    ]
+   },
+   {
+    "id": "c",
+    "columnas": [
+     "ruta",
+     "ventas_marzo",
+     "ventas_abril",
+     "variacion_abs",
+     "variacion_pct"
+    ],
+    "filas": [
+     [
+      "R01",
+      0.0,
+      43915.5,
+      43915.5,
+      "n/c"
+     ],
+     [
+      "R02",
+      0.0,
+      66366.0,
+      66366.0,
+      "n/c"
+     ],
+     [
+      "R03",
+      0.0,
+      15757.0,
+      15757.0,
+      "n/c"
+     ],
+     [
+      "R04",
+      0.0,
+      40869.5,
+      40869.5,
+      "n/c"
+     ],
+     [
+      "R05",
+      0.0,
+      53036.0,
+      53036.0,
+      "n/c"
+     ],
+     [
+      "R06",
+      0.0,
+      26436.0,
+      26436.0,
+      "n/c"
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ01": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "nombre",
+     "precio_unitario",
+     "precio_con_iva"
+    ],
+    "filas": [
+     [
+      "Barra de cereal",
+      3.5,
+      3.95
+     ],
+     [
+      "Maní salado 80g",
+      4.0,
+      4.52
+     ],
+     [
+      "Alfajor",
+      4.5,
+      5.08
+     ],
+     [
+      "Galletas de vainilla",
+      5.0,
+      5.65
+     ],
+     [
+      "Chizitos 120g",
+      6.0,
+      6.78
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "cliente_id",
+     "nombre_negocio",
+     "tipo"
+    ],
+    "filas": [
+     [
+      6,
+      "  KIOSCO MI BARRIO 006 ",
+      "Kiosco"
+     ],
+     [
+      33,
+      "  KIOSCO LA BENDICIÓN 033 ",
+      "Kiosco"
+     ],
+     [
+      43,
+      "Kiosco Santa Rita 043",
+      "Kiosco"
+     ],
+     [
+      60,
+      "Farmacia La Bendición 060",
+      "Farmacia"
+     ],
+     [
+      64,
+      "Farmacia Don Lucho 064",
+      "Farmacia"
+     ],
+     [
+      92,
+      "Kiosco El Sol 092",
+      "Kiosco"
+     ]
+    ]
+   },
+   {
+    "id": "c",
+    "columnas": [
+     "producto_id",
+     "salidas_unidades",
+     "stock_final",
+     "diferencia"
+    ],
+    "filas": [
+     [
+      40,
+      310,
+      220,
+      90
+     ],
+     [
+      39,
+      306,
+      217,
+      89
+     ],
+     [
+      38,
+      302,
+      214,
+      88
+     ],
+     [
+      37,
+      298,
+      211,
+      87
+     ],
+     [
+      36,
+      294,
+      208,
+      86
+     ]
+    ]
+   },
+   {
+    "id": "d",
+    "rubrica": true
+   }
+  ]
+ },
+ "SQ02": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "cliente_id",
+     "nombre_negocio",
+     "zona"
+    ],
+    "filas": [
+     [
+      12,
+      "Tienda Don Lucho 012",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      15,
+      "Restaurante El Ahorro 015",
+      "Plan 3000"
+     ],
+     [
+      34,
+      "Tienda Doña Rosa 034",
+      "Urbarí"
+     ],
+     [
+      47,
+      "Restaurante Los Amigos 047",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      51,
+      "Tienda Don Lucho 051",
+      "Los Lotes"
+     ],
+     [
+      53,
+      "Tienda El Cruceño 053",
+      "Los Lotes"
+     ],
+     [
+      54,
+      "Tienda Mi Barrio 054",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      59,
+      "Tienda Don Lucho 059",
+      "Plan 3000"
+     ],
+     [
+      73,
+      "Tienda La Económica 073",
+      "Centro"
+     ],
+     [
+      85,
+      "Tienda San José 085",
+      "Los Lotes"
+     ],
+     [
+      87,
+      "Tienda Don Lucho 087",
+      "Centro"
+     ],
+     [
+      105,
+      "Minimarket La Económica 105",
+      "Norte"
+     ],
+     [
+      115,
+      "Tienda El Trébol 115",
+      "Norte"
+     ],
+     [
+      120,
+      "Restaurante La Económica 120",
+      "Urbarí"
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "cliente_id",
+     "nombre_negocio",
+     "zona"
+    ],
+    "filas": [
+     [
+      2,
+      "Kiosco San José 002",
+      null
+     ],
+     [
+      4,
+      "Tienda Doña Rosa 004",
+      "Equipetrol"
+     ],
+     [
+      5,
+      "Kiosco Doña Rosa 005",
+      "Urbarí"
+     ],
+     [
+      6,
+      "  KIOSCO MI BARRIO 006 ",
+      "Equipetrol"
+     ],
+     [
+      7,
+      "Tienda San José 007",
+      "Equipetrol"
+     ],
+     [
+      8,
+      "Tienda El Trébol 008",
+      "Equipetrol"
+     ],
+     [
+      9,
+      "Restaurante Doña Rosa 009",
+      "Norte"
+     ],
+     [
+      11,
+      "Tienda El Trébol 011",
+      "Urbarí"
+     ],
+     [
+      12,
+      "Tienda Don Lucho 012",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      13,
+      "  RESTAURANTE DOÑA ROSA 013 ",
+      "Equipetrol"
+     ],
+     [
+      14,
+      "Restaurante Don Pepe 014",
+      "Plan 3000"
+     ],
+     [
+      15,
+      "Restaurante El Ahorro 015",
+      "Plan 3000"
+     ],
+     [
+      16,
+      "Restaurante El Ahorro 016",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      17,
+      "Minimarket El Sol 017",
+      "Urbarí"
+     ],
+     [
+      19,
+      "Tienda La Económica 019",
+      "Urbarí"
+     ],
+     [
+      20,
+      "Tienda La Esquina 020",
+      "Plan 3000"
+     ],
+     [
+      21,
+      "Restaurante Las Palmas 021",
+      "Plan 3000"
+     ],
+     [
+      22,
+      "Minimarket El Sol 022",
+      "Los Lotes"
+     ],
+     [
+      23,
+      "Minimarket El Cruceño 023",
+      "Plan 3000"
+     ],
+     [
+      24,
+      "Restaurante La Bendición 024",
+      "Plan 3000"
+     ],
+     [
+      25,
+      "Minimarket Don Pepe 025",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      26,
+      "Minimarket El Trébol 026",
+      "Urbarí"
+     ],
+     [
+      27,
+      "Minimarket El Sol 027",
+      "Norte"
+     ],
+     [
+      28,
+      "Tienda El Ahorro 028",
+      "Plan 3000"
+     ],
+     [
+      29,
+      "Tienda El Sol 029",
+      "Los Lotes"
+     ],
+     [
+      30,
+      "Tienda Don Lucho 030",
+      "Los Lotes"
+     ],
+     [
+      31,
+      "Tienda El Cruceño 031",
+      "Los Lotes"
+     ],
+     [
+      32,
+      "Tienda La Económica 032",
+      "Urbarí"
+     ],
+     [
+      33,
+      "  KIOSCO LA BENDICIÓN 033 ",
+      "Equipetrol"
+     ],
+     [
+      34,
+      "Tienda Doña Rosa 034",
+      "Urbarí"
+     ],
+     [
+      35,
+      "Tienda Mi Barrio 035",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      36,
+      "Tienda El Cruceño 036",
+      null
+     ],
+     [
+      37,
+      "Tienda La Económica 037",
+      "Norte"
+     ],
+     [
+      38,
+      "Restaurante Don Pepe 038",
+      "Los Lotes"
+     ],
+     [
+      39,
+      "Minimarket Mi Barrio 039",
+      "Norte"
+     ],
+     [
+      40,
+      "Restaurante La Esquina 040",
+      "Norte"
+     ],
+     [
+      41,
+      "Restaurante San José 041",
+      "Norte"
+     ],
+     [
+      42,
+      "Tienda La Económica 042",
+      "Los Lotes"
+     ],
+     [
+      43,
+      "Kiosco Santa Rita 043",
+      "Los Lotes"
+     ],
+     [
+      44,
+      "Tienda El Cruceño 044",
+      "Plan 3000"
+     ],
+     [
+      45,
+      "Tienda La Bendición 045",
+      "Los Lotes"
+     ],
+     [
+      47,
+      "Restaurante Los Amigos 047",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      49,
+      "Tienda El Cruceño 049",
+      "Urbarí"
+     ],
+     [
+      50,
+      "Minimarket Mi Barrio 050",
+      "Urbarí"
+     ],
+     [
+      51,
+      "Tienda Don Lucho 051",
+      "Los Lotes"
+     ],
+     [
+      53,
+      "Tienda El Cruceño 053",
+      "Los Lotes"
+     ],
+     [
+      54,
+      "Tienda Mi Barrio 054",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      55,
+      "Tienda San José 055",
+      "Norte"
+     ],
+     [
+      56,
+      "Minimarket La Bendición 056",
+      "Norte"
+     ],
+     [
+      57,
+      "Tienda La Esquina 057",
+      "Equipetrol"
+     ],
+     [
+      58,
+      "Tienda Los Amigos 058",
+      "Equipetrol"
+     ],
+     [
+      59,
+      "Tienda Don Lucho 059",
+      "Plan 3000"
+     ],
+     [
+      60,
+      "Farmacia La Bendición 060",
+      "Plan 3000"
+     ],
+     [
+      61,
+      "Kiosco La Esquina 061",
+      null
+     ],
+     [
+      63,
+      "Tienda El Trébol 063",
+      "Equipetrol"
+     ],
+     [
+      64,
+      "Farmacia Don Lucho 064",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      65,
+      "Restaurante San José 065",
+      "Norte"
+     ],
+     [
+      66,
+      "Restaurante La Bendición 066",
+      "Equipetrol"
+     ],
+     [
+      67,
+      "Tienda Doña Rosa 067",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      68,
+      "Tienda Santa Rita 068",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      70,
+      "Kiosco Santa Rita 070",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      71,
+      "Minimarket El Trébol 071",
+      "Los Lotes"
+     ],
+     [
+      72,
+      "Tienda El Cruceño 072",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      74,
+      "Minimarket La Económica 074",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      75,
+      "Tienda El Trébol 075",
+      "Equipetrol"
+     ],
+     [
+      76,
+      "Kiosco La Esquina 076",
+      "Norte"
+     ],
+     [
+      77,
+      "Restaurante Don Lucho 077",
+      "Equipetrol"
+     ],
+     [
+      78,
+      "Restaurante Don Pepe 078",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      79,
+      "  TIENDA DOÑA ROSA 079 ",
+      "Los Lotes"
+     ],
+     [
+      80,
+      "  MINIMARKET EL AHORRO 080 ",
+      "Urbarí"
+     ],
+     [
+      81,
+      "Minimarket Los Amigos 081",
+      "Norte"
+     ],
+     [
+      82,
+      "Minimarket El Sol 082",
+      "Urbarí"
+     ],
+     [
+      83,
+      "Tienda El Sol 083",
+      "Los Lotes"
+     ],
+     [
+      85,
+      "Tienda San José 085",
+      "Los Lotes"
+     ],
+     [
+      86,
+      "Minimarket San José 086",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      88,
+      "Tienda El Sol 088",
+      null
+     ],
+     [
+      89,
+      "Tienda Don Lucho 089",
+      "Urbarí"
+     ],
+     [
+      90,
+      "Minimarket Don Lucho 090",
+      "Los Lotes"
+     ],
+     [
+      92,
+      "Kiosco El Sol 092",
+      "Norte"
+     ],
+     [
+      93,
+      "Minimarket El Sol 093",
+      "Equipetrol"
+     ],
+     [
+      94,
+      "Tienda San José 094",
+      null
+     ],
+     [
+      97,
+      "Farmacia La Bendición 097",
+      "Los Lotes"
+     ],
+     [
+      98,
+      "  MINIMARKET LA ESQUINA 098 ",
+      "Norte"
+     ],
+     [
+      99,
+      "Restaurante El Ahorro 099",
+      "Plan 3000"
+     ],
+     [
+      100,
+      "  TIENDA DON PEPE 100 ",
+      "Villa 1ro de Mayo"
+     ],
+     [
+      101,
+      "Minimarket Las Palmas 101",
+      "Equipetrol"
+     ],
+     [
+      102,
+      "Minimarket Don Pepe 102",
+      "Los Lotes"
+     ],
+     [
+      103,
+      "Kiosco El Sol 103",
+      "Plan 3000"
+     ],
+     [
+      104,
+      "Minimarket El Sol 104",
+      "Equipetrol"
+     ],
+     [
+      105,
+      "Minimarket La Económica 105",
+      "Norte"
+     ],
+     [
+      106,
+      "Tienda Don Pepe 106",
+      "Norte"
+     ],
+     [
+      108,
+      "Minimarket El Ahorro 108",
+      "Urbarí"
+     ],
+     [
+      109,
+      "Tienda Doña Rosa 109",
+      null
+     ],
+     [
+      110,
+      "Tienda Las Palmas 110",
+      "Plan 3000"
+     ],
+     [
+      111,
+      "Kiosco La Económica 111",
+      "Urbarí"
+     ],
+     [
+      112,
+      "Kiosco Los Amigos 112",
+      "Norte"
+     ],
+     [
+      113,
+      "Tienda La Económica 113",
+      "Norte"
+     ],
+     [
+      114,
+      "Minimarket San José 114",
+      "Plan 3000"
+     ],
+     [
+      115,
+      "Tienda El Trébol 115",
+      "Norte"
+     ],
+     [
+      116,
+      "Restaurante Doña Rosa 116",
+      "Los Lotes"
+     ],
+     [
+      117,
+      "Tienda El Cruceño 117",
+      "Norte"
+     ],
+     [
+      118,
+      "Restaurante Don Lucho 118",
+      "Plan 3000"
+     ],
+     [
+      120,
+      "Restaurante La Económica 120",
+      "Urbarí"
+     ]
+    ]
+   },
+   {
+    "id": "c",
+    "columnas": [
+     "cliente_id",
+     "nombre_negocio"
+    ],
+    "filas": [
+     [
+      4,
+      "Tienda Doña Rosa 004"
+     ],
+     [
+      5,
+      "Kiosco Doña Rosa 005"
+     ],
+     [
+      9,
+      "Restaurante Doña Rosa 009"
+     ],
+     [
+      13,
+      "  RESTAURANTE DOÑA ROSA 013 "
+     ],
+     [
+      34,
+      "Tienda Doña Rosa 034"
+     ],
+     [
+      48,
+      "Minimarket Doña Rosa 048"
+     ],
+     [
+      67,
+      "Tienda Doña Rosa 067"
+     ],
+     [
+      79,
+      "  TIENDA DOÑA ROSA 079 "
+     ],
+     [
+      109,
+      "Tienda Doña Rosa 109"
+     ],
+     [
+      116,
+      "Restaurante Doña Rosa 116"
+     ]
+    ]
+   },
+   {
+    "id": "d",
+    "columnas": [
+     "tipo",
+     "ruta"
+    ],
+    "filas": [
+     [
+      "Farmacia",
+      "R02"
+     ],
+     [
+      "Farmacia",
+      "R06"
+     ],
+     [
+      "Kiosco",
+      "R01"
+     ],
+     [
+      "Kiosco",
+      "R02"
+     ],
+     [
+      "Kiosco",
+      "R05"
+     ],
+     [
+      "Kiosco",
+      "R06"
+     ],
+     [
+      "Minimarket",
+      "R01"
+     ],
+     [
+      "Minimarket",
+      "R02"
+     ],
+     [
+      "Minimarket",
+      "R03"
+     ],
+     [
+      "Minimarket",
+      "R04"
+     ],
+     [
+      "Minimarket",
+      "R05"
+     ],
+     [
+      "Minimarket",
+      "R06"
+     ],
+     [
+      "Restaurante",
+      "R01"
+     ],
+     [
+      "Restaurante",
+      "R02"
+     ],
+     [
+      "Restaurante",
+      "R03"
+     ],
+     [
+      "Restaurante",
+      "R04"
+     ],
+     [
+      "Restaurante",
+      "R05"
+     ],
+     [
+      "Restaurante",
+      "R06"
+     ],
+     [
+      "Tienda de barrio",
+      "R01"
+     ],
+     [
+      "Tienda de barrio",
+      "R02"
+     ],
+     [
+      "Tienda de barrio",
+      "R03"
+     ],
+     [
+      "Tienda de barrio",
+      "R04"
+     ],
+     [
+      "Tienda de barrio",
+      "R05"
+     ],
+     [
+      "Tienda de barrio",
+      "R06"
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ03": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "estado",
+     "pedidos"
+    ],
+    "filas": [
+     [
+      "anulado",
+      158
+     ],
+     [
+      "entregado",
+      3442
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "producto_id",
+     "unidades"
+    ],
+    "filas": [
+     [
+      5,
+      4700
+     ],
+     [
+      10,
+      4684
+     ],
+     [
+      38,
+      4530
+     ]
+    ]
+   },
+   {
+    "id": "c",
+    "columnas": [
+     "fecha",
+     "plan",
+     "real"
+    ],
+    "filas": [
+     [
+      "2026-09-01",
+      120,
+      96
+     ],
+     [
+      "2026-09-08",
+      120,
+      96
+     ],
+     [
+      "2026-09-15",
+      120,
+      96
+     ],
+     [
+      "2026-09-22",
+      120,
+      96
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ04": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "ruta",
+     "ventas_bs"
+    ],
+    "filas": [
+     [
+      "R01",
+      35316.5
+     ],
+     [
+      "R02",
+      80707.5
+     ],
+     [
+      "R03",
+      36196.0
+     ],
+     [
+      "R04",
+      48260.0
+     ],
+     [
+      "R05",
+      68298.0
+     ],
+     [
+      "R06",
+      32144.0
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "total_bs"
+    ],
+    "filas": [
+     [
+      300922.0
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ05": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "vendedor_id",
+     "estado",
+     "pedidos"
+    ],
+    "filas": [
+     [
+      1,
+      "anulado",
+      15
+     ],
+     [
+      1,
+      "entregado",
+      577
+     ],
+     [
+      2,
+      "anulado",
+      38
+     ],
+     [
+      2,
+      "entregado",
+      860
+     ],
+     [
+      3,
+      "anulado",
+      13
+     ],
+     [
+      3,
+      "entregado",
+      342
+     ],
+     [
+      4,
+      "anulado",
+      23
+     ],
+     [
+      4,
+      "entregado",
+      535
+     ],
+     [
+      5,
+      "anulado",
+      37
+     ],
+     [
+      5,
+      "entregado",
+      672
+     ],
+     [
+      6,
+      "anulado",
+      32
+     ],
+     [
+      6,
+      "entregado",
+      456
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "vendedor_id",
+     "pct_anulados"
+    ],
+    "filas": [
+     [
+      1,
+      2.5
+     ],
+     [
+      2,
+      4.2
+     ],
+     [
+      3,
+      3.7
+     ],
+     [
+      4,
+      4.1
+     ],
+     [
+      5,
+      5.2
+     ],
+     [
+      6,
+      6.6
+     ]
+    ]
+   },
+   {
+    "id": "c",
+    "columnas": [
+     "vendedor_id",
+     "pedidos"
+    ],
+    "filas": [
+     [
+      5,
+      709
+     ],
+     [
+      6,
+      488
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ06": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "categoria",
+     "ruta",
+     "unidades"
+    ],
+    "filas": [
+     [
+      "Lácteos",
+      "R02",
+      8819
+     ],
+     [
+      "Bebidas",
+      "R02",
+      8742
+     ],
+     [
+      "Snacks",
+      "R02",
+      8724
+     ],
+     [
+      "Limpieza",
+      "R02",
+      8267
+     ],
+     [
+      "Abarrotes",
+      "R02",
+      7866
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "tipo",
+     "pedidos"
+    ],
+    "filas": [
+     [
+      "Tienda de barrio",
+      1046
+     ],
+     [
+      "Minimarket",
+      526
+     ],
+     [
+      "Restaurante",
+      331
+     ],
+     [
+      "Kiosco",
+      143
+     ],
+     [
+      "Farmacia",
+      67
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ07": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "cliente_id",
+     "nombre_negocio"
+    ],
+    "filas": [
+     [
+      5,
+      "Kiosco Doña Rosa 005"
+     ],
+     [
+      10,
+      "Tienda San José 010"
+     ],
+     [
+      15,
+      "Restaurante El Ahorro 015"
+     ],
+     [
+      20,
+      "Tienda La Esquina 020"
+     ],
+     [
+      25,
+      "Minimarket Don Pepe 025"
+     ],
+     [
+      30,
+      "Tienda Don Lucho 030"
+     ],
+     [
+      35,
+      "Tienda Mi Barrio 035"
+     ],
+     [
+      40,
+      "Restaurante La Esquina 040"
+     ],
+     [
+      45,
+      "Tienda La Bendición 045"
+     ],
+     [
+      50,
+      "Minimarket Mi Barrio 050"
+     ],
+     [
+      55,
+      "Tienda San José 055"
+     ],
+     [
+      60,
+      "Farmacia La Bendición 060"
+     ],
+     [
+      65,
+      "Restaurante San José 065"
+     ],
+     [
+      70,
+      "Kiosco Santa Rita 070"
+     ],
+     [
+      75,
+      "Tienda El Trébol 075"
+     ],
+     [
+      80,
+      "  MINIMARKET EL AHORRO 080 "
+     ],
+     [
+      85,
+      "Tienda San José 085"
+     ],
+     [
+      90,
+      "Minimarket Don Lucho 090"
+     ],
+     [
+      95,
+      "Minimarket El Ahorro 095"
+     ],
+     [
+      100,
+      "  TIENDA DON PEPE 100 "
+     ],
+     [
+      105,
+      "Minimarket La Económica 105"
+     ],
+     [
+      110,
+      "Tienda Las Palmas 110"
+     ],
+     [
+      115,
+      "Tienda El Trébol 115"
+     ],
+     [
+      120,
+      "Restaurante La Económica 120"
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "ruta",
+     "clientes_sin_pedido_tomado"
+    ],
+    "filas": [
+     [
+      "R01",
+      11
+     ],
+     [
+      "R02",
+      6
+     ],
+     [
+      "R03",
+      6
+     ],
+     [
+      "R04",
+      5
+     ],
+     [
+      "R05",
+      9
+     ],
+     [
+      "R06",
+      11
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ08": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "total_bs"
+    ],
+    "filas": [
+     [
+      1468924.5
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "total_bs"
+    ],
+    "filas": [
+     [
+      5875698.0
+     ]
+    ]
+   },
+   {
+    "id": "c",
+    "columnas": [
+     "filas_unidas"
+    ],
+    "filas": [
+     [
+      14400
+     ]
+    ]
+   },
+   {
+    "id": "d",
+    "columnas": [
+     "total_bs"
+    ],
+    "filas": [
+     [
+      1468924.5
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ09": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "clase",
+     "clientes"
+    ],
+    "filas": [
+     [
+      "antigua",
+      98
+     ],
+     [
+      "reciente",
+      22
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "zona",
+     "clientes"
+    ],
+    "filas": [
+     [
+      "Norte",
+      19
+     ],
+     [
+      "Los Lotes",
+      18
+     ],
+     [
+      "Centro",
+      17
+     ],
+     [
+      "Equipetrol",
+      15
+     ],
+     [
+      "Plan 3000",
+      15
+     ],
+     [
+      "Urbarí",
+      15
+     ],
+     [
+      "Villa 1ro de Mayo",
+      15
+     ],
+     [
+      "Sin zona",
+      6
+     ]
+    ]
+   },
+   {
+    "id": "c",
+    "columnas": [
+     "ruta",
+     "efectividad"
+    ],
+    "filas": [
+     [
+      "R01",
+      75.0
+     ],
+     [
+      "R02",
+      81.8
+     ],
+     [
+      "R03",
+      88.9
+     ],
+     [
+      "R04",
+      75.0
+     ],
+     [
+      "R05",
+      61.5
+     ],
+     [
+      "R06",
+      70.0
+     ]
+    ],
+    "requiere_texto": [
+     "NULLIF"
+    ]
+   }
+  ]
+ },
+ "SQ10": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "producto_id",
+     "nombre",
+     "precio_unitario"
+    ],
+    "filas": [
+     [
+      19,
+      "Queso fresco 500g",
+      28.0
+     ],
+     [
+      38,
+      "Shampoo 400ml",
+      22.0
+     ],
+     [
+      33,
+      "Detergente 1kg",
+      19.0
+     ],
+     [
+      27,
+      "Aceite 1L",
+      16.0
+     ],
+     [
+      20,
+      "Mantequilla 200g",
+      15.0
+     ],
+     [
+      18,
+      "Yogurt frutilla 1L",
+      14.0
+     ],
+     [
+      22,
+      "Yogurt natural 1L",
+      13.0
+     ],
+     [
+      31,
+      "Atún lata 170g",
+      13.0
+     ],
+     [
+      6,
+      "Energizante 250ml",
+      12.0
+     ],
+     [
+      36,
+      "Papel higiénico x4",
+      12.0
+     ],
+     [
+      1,
+      "Gaseosa cola 2L",
+      11.5
+     ],
+     [
+      34,
+      "Lavavajilla 500ml",
+      11.0
+     ],
+     [
+      2,
+      "Gaseosa naranja 2L",
+      10.5
+     ],
+     [
+      21,
+      "Leche deslactosada 1L",
+      10.5
+     ],
+     [
+      23,
+      "Crema de leche 200g",
+      9.5
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "cliente_id",
+     "pedidos"
+    ],
+    "filas": [
+     [
+      83,
+      229
+     ],
+     [
+      110,
+      202
+     ],
+     [
+      57,
+      148
+     ],
+     [
+      71,
+      135
+     ],
+     [
+      56,
+      131
+     ],
+     [
+      31,
+      106
+     ],
+     [
+      104,
+      78
+     ],
+     [
+      85,
+      72
+     ],
+     [
+      23,
+      71
+     ],
+     [
+      60,
+      64
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ11": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "ruta",
+     "mes",
+     "ventas",
+     "presupuesto_bs",
+     "cumplimiento"
+    ],
+    "filas": [
+     [
+      "R01",
+      "2026-09",
+      35316.5,
+      52500,
+      67.3
+     ],
+     [
+      "R02",
+      "2026-09",
+      80707.5,
+      55000,
+      146.7
+     ],
+     [
+      "R03",
+      "2026-09",
+      36196.0,
+      57500,
+      62.9
+     ],
+     [
+      "R04",
+      "2026-09",
+      48260.0,
+      60000,
+      80.4
+     ],
+     [
+      "R05",
+      "2026-09",
+      68298.0,
+      62500,
+      109.3
+     ],
+     [
+      "R06",
+      "2026-09",
+      32144.0,
+      65000,
+      49.5
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "cliente_id",
+     "ventas"
+    ],
+    "filas": [
+     [
+      83,
+      156083.5
+     ],
+     [
+      110,
+      127593.0
+     ],
+     [
+      57,
+      79538.0
+     ],
+     [
+      71,
+      70905.5
+     ],
+     [
+      56,
+      64920.0
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ12": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "categoria",
+     "nombre",
+     "unidades",
+     "pos"
+    ],
+    "filas": [
+     [
+      "Abarrotes",
+      "Harina 1kg",
+      4078,
+      1
+     ],
+     [
+      "Abarrotes",
+      "Azúcar 1kg",
+      4052,
+      2
+     ],
+     [
+      "Bebidas",
+      "Cerveza lata 354ml",
+      4514,
+      1
+     ],
+     [
+      "Bebidas",
+      "Agua sin gas 2L",
+      4201,
+      2
+     ],
+     [
+      "Limpieza",
+      "Shampoo 400ml",
+      4304,
+      1
+     ],
+     [
+      "Limpieza",
+      "Esponja x3",
+      4005,
+      2
+     ],
+     [
+      "Lácteos",
+      "Yogurt natural 1L",
+      4216,
+      1
+     ],
+     [
+      "Lácteos",
+      "Flan listo",
+      4138,
+      2
+     ],
+     [
+      "Snacks",
+      "Galletas de vainilla",
+      4531,
+      1
+     ],
+     [
+      "Snacks",
+      "Alfajor",
+      4194,
+      2
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ13": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "nombres_con_espacios"
+    ],
+    "filas": [
+     [
+      8
+     ]
+    ],
+    "aumentado": {
+     "preparacion": "INSERT INTO clientes (cliente_id, nombre_negocio, tipo, zona, ruta, fecha_alta) VALUES (9001, 'Tienda Final con espacio ', 'Kiosco', NULL, 'R01', '2026-01-01'), (9002, ' Tienda Inicio con espacio', 'Kiosco', 'Norte', 'R01', '2026-01-01');",
+     "columnas": [
+      "nombres_con_espacios"
+     ],
+     "filas": [
+      [
+       10
+      ]
+     ]
+    }
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "ruta",
+     "sin_zona"
+    ],
+    "filas": [
+     [
+      "R01",
+      5
+     ],
+     [
+      "R06",
+      1
+     ]
+    ]
+   },
+   {
+    "id": "c",
+    "columnas": [
+     "items_sin_pedido"
+    ],
+    "filas": [
+     [
+      0
+     ]
+    ]
+   },
+   {
+    "id": "d",
+    "columnas": [
+     "pedidos_sin_cliente"
+    ],
+    "filas": [
+     [
+      0
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ14": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "pedidos",
+     "entregados",
+     "anulados"
+    ],
+    "filas": [
+     [
+      3600,
+      3442,
+      158
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "suma_meses",
+     "total_directo"
+    ],
+    "filas": [
+     [
+      1468924.5,
+      1468924.5
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ15": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "mes",
+     "ventas",
+     "acumulado",
+     "pct_acumulado"
+    ],
+    "filas": [
+     [
+      "2026-04",
+      246380.0,
+      246380.0,
+      16.8
+     ],
+     [
+      "2026-05",
+      246941.5,
+      493321.5,
+      33.6
+     ],
+     [
+      "2026-06",
+      244671.0,
+      737992.5,
+      50.2
+     ],
+     [
+      "2026-07",
+      230982.0,
+      968974.5,
+      66.0
+     ],
+     [
+      "2026-08",
+      199028.0,
+      1168002.5,
+      79.5
+     ],
+     [
+      "2026-09",
+      300922.0,
+      1468924.5,
+      100.0
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ16": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "producto_id",
+     "nombre",
+     "unidades",
+     "acum_antes",
+     "clase"
+    ],
+    "filas": [
+     [
+      10,
+      "Galletas de vainilla",
+      4531,
+      0.0,
+      "A"
+     ],
+     [
+      5,
+      "Cerveza lata 354ml",
+      4514,
+      2.9,
+      "A"
+     ],
+     [
+      38,
+      "Shampoo 400ml",
+      4304,
+      5.7,
+      "A"
+     ],
+     [
+      22,
+      "Yogurt natural 1L",
+      4216,
+      8.5,
+      "A"
+     ],
+     [
+      3,
+      "Agua sin gas 2L",
+      4201,
+      11.2,
+      "A"
+     ],
+     [
+      16,
+      "Alfajor",
+      4194,
+      13.8,
+      "A"
+     ],
+     [
+      2,
+      "Gaseosa naranja 2L",
+      4190,
+      16.5,
+      "A"
+     ],
+     [
+      9,
+      "Papas fritas 100g",
+      4144,
+      19.2,
+      "A"
+     ],
+     [
+      24,
+      "Flan listo",
+      4138,
+      21.8,
+      "A"
+     ],
+     [
+      18,
+      "Yogurt frutilla 1L",
+      4109,
+      24.4,
+      "A"
+     ],
+     [
+      13,
+      "Chizitos 120g",
+      4083,
+      27.0,
+      "A"
+     ],
+     [
+      29,
+      "Harina 1kg",
+      4078,
+      29.6,
+      "A"
+     ],
+     [
+      26,
+      "Azúcar 1kg",
+      4052,
+      32.2,
+      "A"
+     ],
+     [
+      32,
+      "Salsa de tomate 400g",
+      4036,
+      34.8,
+      "A"
+     ],
+     [
+      12,
+      "Chocolate barra 40g",
+      4035,
+      37.3,
+      "A"
+     ],
+     [
+      19,
+      "Queso fresco 500g",
+      4012,
+      39.9,
+      "A"
+     ],
+     [
+      40,
+      "Esponja x3",
+      4005,
+      42.5,
+      "A"
+     ],
+     [
+      33,
+      "Detergente 1kg",
+      3990,
+      45.0,
+      "A"
+     ],
+     [
+      7,
+      "Agua con gas 600ml",
+      3955,
+      47.5,
+      "A"
+     ],
+     [
+      27,
+      "Aceite 1L",
+      3923,
+      50.1,
+      "A"
+     ],
+     [
+      34,
+      "Lavavajilla 500ml",
+      3920,
+      52.5,
+      "A"
+     ],
+     [
+      21,
+      "Leche deslactosada 1L",
+      3907,
+      55.0,
+      "A"
+     ],
+     [
+      35,
+      "Lejía 1L",
+      3891,
+      57.5,
+      "A"
+     ],
+     [
+      28,
+      "Fideo 400g",
+      3862,
+      60.0,
+      "A"
+     ],
+     [
+      8,
+      "Té helado 500ml",
+      3851,
+      62.4,
+      "A"
+     ],
+     [
+      4,
+      "Jugo de durazno 1L",
+      3832,
+      64.9,
+      "A"
+     ],
+     [
+      25,
+      "Arroz 1kg",
+      3820,
+      67.3,
+      "A"
+     ],
+     [
+      37,
+      "Jabón de tocador",
+      3818,
+      69.7,
+      "A"
+     ],
+     [
+      6,
+      "Energizante 250ml",
+      3810,
+      72.2,
+      "A"
+     ],
+     [
+      1,
+      "Gaseosa cola 2L",
+      3796,
+      74.6,
+      "A"
+     ],
+     [
+      36,
+      "Papel higiénico x4",
+      3758,
+      77.0,
+      "A"
+     ],
+     [
+      14,
+      "Barra de cereal",
+      3756,
+      79.4,
+      "A"
+     ],
+     [
+      20,
+      "Mantequilla 200g",
+      3741,
+      81.8,
+      "B"
+     ],
+     [
+      11,
+      "Maní salado 80g",
+      3705,
+      84.2,
+      "B"
+     ],
+     [
+      39,
+      "Servilletas x100",
+      3663,
+      86.5,
+      "B"
+     ],
+     [
+      15,
+      "Caramelos bolsa",
+      3633,
+      88.8,
+      "B"
+     ],
+     [
+      30,
+      "Sal 1kg",
+      3597,
+      91.1,
+      "B"
+     ],
+     [
+      23,
+      "Crema de leche 200g",
+      3553,
+      93.4,
+      "B"
+     ],
+     [
+      17,
+      "Leche entera 1L",
+      3491,
+      95.7,
+      "C"
+     ],
+     [
+      31,
+      "Atún lata 170g",
+      3296,
+      97.9,
+      "C"
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "productos_a"
+    ],
+    "filas": [
+     [
+      32
+     ]
+    ]
+   }
+  ]
+ },
+ "SQ17": {
+  "apartados": [
+   {
+    "id": "a",
+    "columnas": [
+     "mes",
+     "categoria",
+     "pedidos",
+     "unidades",
+     "ventas_bs"
+    ],
+    "filas": [
+     [
+      "2026-04",
+      "Abarrotes",
+      370,
+      5252,
+      44252.5
+     ],
+     [
+      "2026-04",
+      "Bebidas",
+      345,
+      5162,
+      44133.0
+     ],
+     [
+      "2026-04",
+      "Limpieza",
+      362,
+      5746,
+      65473.5
+     ],
+     [
+      "2026-04",
+      "Lácteos",
+      362,
+      4868,
+      63551.0
+     ],
+     [
+      "2026-04",
+      "Snacks",
+      357,
+      5141,
+      28970.0
+     ],
+     [
+      "2026-05",
+      "Abarrotes",
+      363,
+      5403,
+      44688.0
+     ],
+     [
+      "2026-05",
+      "Bebidas",
+      365,
+      5853,
+      50406.0
+     ],
+     [
+      "2026-05",
+      "Limpieza",
+      355,
+      5155,
+      54566.0
+     ],
+     [
+      "2026-05",
+      "Lácteos",
+      357,
+      5054,
+      64673.0
+     ],
+     [
+      "2026-05",
+      "Snacks",
+      379,
+      5754,
+      32608.5
+     ],
+     [
+      "2026-06",
+      "Abarrotes",
+      343,
+      4662,
+      40217.0
+     ],
+     [
+      "2026-06",
+      "Bebidas",
+      365,
+      5585,
+      47039.5
+     ],
+     [
+      "2026-06",
+      "Limpieza",
+      332,
+      4870,
+      55688.5
+     ],
+     [
+      "2026-06",
+      "Lácteos",
+      364,
+      5188,
+      70240.5
+     ],
+     [
+      "2026-06",
+      "Snacks",
+      350,
+      5491,
+      31485.5
+     ],
+     [
+      "2026-07",
+      "Abarrotes",
+      317,
+      4682,
+      37954.0
+     ],
+     [
+      "2026-07",
+      "Bebidas",
+      321,
+      4872,
+      43196.0
+     ],
+     [
+      "2026-07",
+      "Limpieza",
+      319,
+      4883,
+      56229.0
+     ],
+     [
+      "2026-07",
+      "Lácteos",
+      333,
+      5156,
+      66495.0
+     ],
+     [
+      "2026-07",
+      "Snacks",
+      321,
+      4921,
+      27108.0
+     ],
+     [
+      "2026-08",
+      "Abarrotes",
+      293,
+      4297,
+      35494.0
+     ],
+     [
+      "2026-08",
+      "Bebidas",
+      284,
+      4134,
+      35088.0
+     ],
+     [
+      "2026-08",
+      "Limpieza",
+      274,
+      4119,
+      43719.0
+     ],
+     [
+      "2026-08",
+      "Lácteos",
+      298,
+      4637,
+      60136.5
+     ],
+     [
+      "2026-08",
+      "Snacks",
+      304,
+      4348,
+      24590.5
+     ],
+     [
+      "2026-09",
+      "Abarrotes",
+      432,
+      6368,
+      54571.5
+     ],
+     [
+      "2026-09",
+      "Bebidas",
+      433,
+      6543,
+      56324.0
+     ],
+     [
+      "2026-09",
+      "Limpieza",
+      443,
+      6576,
+      73272.5
+     ],
+     [
+      "2026-09",
+      "Lácteos",
+      429,
+      6264,
+      81153.0
+     ],
+     [
+      "2026-09",
+      "Snacks",
+      459,
+      6426,
+      35601.0
+     ]
+    ]
+   },
+   {
+    "id": "b",
+    "columnas": [
+     "control"
+    ],
+    "filas": [
+     [
+      1468924.5
+     ]
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,187 @@
+{
+  "base_head": "816890969e3963ffa8c1bb10b2a444c09eb3e748",
+  "rama": "correccion-pedagogica-definitiva",
+  "estado": "MUESTRA_IMPLEMENTADA_VALIDADA_ESPERANDO_APROBACION",
+  "alcance": [
+    4,
+    5,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "curso_completo_corregido": false,
+  "resultados": {
+    "integridad": {
+      "comprobaciones": 496,
+      "fallos": 0
+    },
+    "regeneracion_mutaciones": {
+      "grupos": 13,
+      "fallos": 0
+    },
+    "teoria": {
+      "codigo": 0,
+      "bloques_ejecutados": 629
+    },
+    "contratos": {
+      "fallos": 0,
+      "entorno": "copia temporal; referencias públicas; sin ejecución Desktop ni custodia privada",
+      "pruebas": [
+        {
+          "prueba": "81 contratos SQL y resultado incorrecto",
+          "estado": "OK",
+          "detalle": {
+            "contratos": 81,
+            "control_negativo": "rechazado"
+          }
+        },
+        {
+          "prueba": "30 contratos Python/Pandas y función incorrecta",
+          "estado": "OK",
+          "detalle": {
+            "ejercicios": 30,
+            "casos": 69,
+            "control_negativo": "rechazado"
+          }
+        },
+        {
+          "prueba": "Estadística con controles originales",
+          "estado": "OK",
+          "detalle": {
+            "controles": [
+              "ST01",
+              "ST02",
+              "ST03",
+              "ST05",
+              "ST06"
+            ],
+            "acreditacion_estudiante": false
+          }
+        }
+      ]
+    },
+    "idempotencia": {
+      "regeneraciones_consecutivas_workspace": 2,
+      "archivos_modificados": 0
+    },
+    "inventario": {
+      "recursos": 352,
+      "por_familia": {
+        "Caso": 6,
+        "Criterio analítico": 18,
+        "Depuración": 3,
+        "Estadística": 7,
+        "Evaluación final privada": 1,
+        "Examen": 6,
+        "Excel": 3,
+        "Fase ETL": 6,
+        "Hito": 8,
+        "Lección": 100,
+        "Micropráctica/sección": 30,
+        "Mini-ETL": 4,
+        "Notebook guiado": 7,
+        "Power BI": 6,
+        "Proyecto integrador": 3,
+        "Puente teórico": 4,
+        "Puerta/checkpoint": 8,
+        "Python/Pandas": 30,
+        "SQL": 81,
+        "Sección preparatoria": 8,
+        "Simulacro laboral": 6,
+        "Subrecurso/checkpoint": 7
+      },
+      "historicos_obligatorios_distintos": 77,
+      "obligaciones_pendientes_de_restauracion": [],
+      "jornadas_muestra_pendientes_de_regeneracion": [],
+      "recursos_originales_ausentes": []
+    },
+    "casillas_completadas": 34,
+    "casillas_completadas_D04": 5,
+    "dias_historicos_bytes_identicos": [
+      1,
+      2,
+      3
+    ]
+  },
+  "muestra": [
+    {
+      "dia": 4,
+      "archivo": "01_PLAN_DIARIO/dias/D04_2026-10-15.md",
+      "minutos": 522,
+      "sha256": "5b94d80d1f013057625c2f53b85fac73d810ca4a9c17330e4e2bc38681d8a4be"
+    },
+    {
+      "dia": 5,
+      "archivo": "01_PLAN_DIARIO/dias/D05_2026-10-16.md",
+      "minutos": 554,
+      "sha256": "6210e332ae4a8558b706dbcc395405f1e7e7da2bba8583ae696be53cef123702"
+    },
+    {
+      "dia": 8,
+      "archivo": "01_PLAN_DIARIO/dias/D08_2026-10-19.md",
+      "minutos": 310,
+      "sha256": "904e2ba6d0c638d5109757117200f5ead9e0ff85890029adc03f1018f1a554ba"
+    },
+    {
+      "dia": 9,
+      "archivo": "01_PLAN_DIARIO/dias/D09_2026-10-20.md",
+      "minutos": 404,
+      "sha256": "2db639fcdf6c5fc1d4d03bdd564bca45c481aa7400137fef4e6e32ec36688e2d"
+    },
+    {
+      "dia": 10,
+      "archivo": "01_PLAN_DIARIO/dias/D10_2026-10-21.md",
+      "minutos": 302,
+      "sha256": "8adaeae08a7d2359ac8d15401dfa1e747dcdaca39522a7d22709ae0b27dcf8e6"
+    },
+    {
+      "dia": 11,
+      "archivo": "01_PLAN_DIARIO/dias/D11_2026-10-22.md",
+      "minutos": 268,
+      "sha256": "fd341260c94c7e6523c56a56a8071c2949c293dcea3e292f5debe0ccba9c6e06"
+    },
+    {
+      "dia": 12,
+      "archivo": "01_PLAN_DIARIO/dias/D12_2026-10-23.md",
+      "minutos": 274,
+      "sha256": "7f2a41e066553c4a94ef7a0e8b933be2e366101781ead98dacc34986ca731336"
+    },
+    {
+      "dia": 13,
+      "archivo": "01_PLAN_DIARIO/dias/D13_2026-10-24.md",
+      "minutos": 175,
+      "sha256": "3f5f302ac8bcc623b0d6744d506f0251768447e4a753b5e24ae9574434bec97c"
+    }
+  ],
+  "minutos_muestra": 2809,
+  "nuevos_propuestos": {
+    "cantidad": 6,
+    "checkpoints": 3,
+    "minutos_min": 360,
+    "minutos_max": 525,
+    "creados": 0,
+    "requieren_aprobacion": true,
+    "practicas_aplicadas_propuestas": 3
+  },
+  "pendiente_global": {
+    "jornadas_con_duplicados_heredados": 25,
+    "pares_recurso_jornada": 57,
+    "regeneracion_autorizada": false
+  },
+  "privacidad_y_herramientas": {
+    "custodia_final": "no disponible; 2 pruebas privadas omitidas",
+    "Excel_Power_BI_Desktop": "no ejecutados; evidencia manual futura pendiente"
+  },
+  "evidencia": [
+    "VALIDACION_INTEGRIDAD_MUESTRA.json",
+    "PRUEBAS_REGENERACION_MUESTRA.json",
+    "IDEMPOTENCIA_MUESTRA_APLICADA.json",
+    "REGRESION_TEORIA_FINAL.json",
+    "REGRESION_CONTRATOS_FINAL.json",
+    "REGRESION_TECNICA_MUESTRA.json",
+    "DUPLICADOS_FUERA_MUESTRA_PENDIENTES.json"
+  ]
+}

@@ -193,6 +193,8 @@ Ejemplo comercial: `ticket_promedio(ventas, pedidos)` devuelve `None` si `pedido
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe `def variacion_pct(actual, anterior)` que devuelva el porcentaje de variación respecto al período anterior, o `None` si `anterior` es 0. Escribe tres `assert` (normal, límite, inválido) con resultados calculados a mano antes de ejecutar.

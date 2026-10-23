@@ -292,6 +292,8 @@ Ejemplo comercial: «ventas, ventas distintas y ticket por ruta» es el `agg` de
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Los 40 minutos de práctica incluyen el checkpoint BASE anterior (10 min) y esta ampliación REFUERZO (30 min); no se suman dos veces. Esta ampliación integra agrupación y uniones, por lo que se hace después de 10.3.

@@ -185,6 +185,8 @@ Ejemplo comercial: la regla «un cliente es de alto valor si su ticket supera Bs
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe `def precio_con_iva(precio, tasa)` que devuelva el precio más el impuesto (tasa en porcentaje, por ejemplo 13). Prueba con `assert` que `precio_con_iva(100, 13)` es 113.

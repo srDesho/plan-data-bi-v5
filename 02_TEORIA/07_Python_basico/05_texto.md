@@ -247,6 +247,8 @@ Ejemplo comercial: tres códigos de ruta llegaron como `" r01"`, `"R01 "` y `"R0
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Limpia el texto `"  zona CENTRO "` para que quede en mayúsculas y sin espacios en los extremos. Muestra el resultado entre corchetes.

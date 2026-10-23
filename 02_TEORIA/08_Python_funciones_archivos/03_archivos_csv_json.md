@@ -242,6 +242,8 @@ Ejemplo comercial: el ERP exporta `ventas.csv` con coma decimal y fechas `DD/MM/
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Lee `04_DATASETS/mini_base/articulos.csv` y muestra cuántas filas tiene y el nombre del artículo más caro (convierte el precio a `float`).

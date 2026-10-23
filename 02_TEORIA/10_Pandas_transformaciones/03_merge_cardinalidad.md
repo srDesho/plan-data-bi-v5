@@ -230,6 +230,8 @@ Ejemplo comercial: «ventas contra presupuesto por ruta» exige agregar las vent
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Une `ventas` con `tiendas` (para traer `zona`) con `validate="m:1"` y comprueba que el número de filas no cambia (16).

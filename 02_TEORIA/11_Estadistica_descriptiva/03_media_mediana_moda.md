@@ -4,6 +4,10 @@
 
 Antes de calcular, declara qué representa cada observación: AN01 prepara esa pregunta. AN08 describe los pedidos de K1, sin inferir resultados para otra población. [11.1](01_poblacion_muestra_variables.md) amplía población, muestra y tipos de variable; no sustituye los cálculos que se enseñan aquí.
 
+## Primera comprobación sin Pandas
+
+Resuelve primero las cuentas manuales. Para comprobarlas, `statistics` es un módulo incluido en Python: `import statistics` lo hace disponible y `statistics.mean(datos)` llama a su función `mean` con la lista `datos`. No tienes que instalar Pandas ni conocer DataFrame para esa comprobación. `sum(datos)` suma la lista, `len(datos)` cuenta sus elementos y `sorted(datos)` devuelve una copia ordenada; no cambia la lista original. Conserva tu cálculo antes de ejecutar. El apartado «Con Pandas» se retoma después de D15 (9.2) y no sustituye esa cuenta.
+
 ## Para qué sirve
 
 Cuando alguien pregunta «¿cuánto vende una tienda normalmente?» o «¿cuántas entregas hace un repartidor al día?», quiere **un solo número que represente a todos**. Hay tres formas de elegirlo (media, mediana y moda) y dan respuestas distintas cuando los datos no son simétricos. Elegir la medida equivocada es una de las formas más comunes de contar una historia falsa con números verdaderos.
@@ -131,6 +135,8 @@ Ejemplo comercial: si «la venta mediana por tienda es de Bs 220» pero «la ven
 4. Porque los grupos tienen distinto tamaño; hay que ponderar.
 
 </details>
+
+<a id="micropractica"></a>
 
 ## Micropráctica
 

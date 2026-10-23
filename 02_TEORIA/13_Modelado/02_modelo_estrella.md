@@ -172,6 +172,8 @@ Ejemplo comercial: el gerente filtra «ruta R03, septiembre» y ve en la misma p
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Dibuja el modelo estrella para la mini-base con tres hechos (ventas, metas, visitas) y marca las dimensiones conformadas.

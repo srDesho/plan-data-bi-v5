@@ -156,6 +156,8 @@ Ejemplo comercial: para evaluar la satisfacción de 1 200 clientes con una encue
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Sortea (semilla 11) una muestra aleatoria simple de 4 tiendas de la población de esta lección y compara su media con 320.

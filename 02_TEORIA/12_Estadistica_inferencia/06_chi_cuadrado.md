@@ -156,6 +156,8 @@ Ejemplo comercial: «¿el tipo de tienda (kiosco, farmacia...) está relacionado
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Se compararon dos formas de entrega y si el cliente quedó conforme: reparto A: 40 conformes y 10 no conformes; reparto B: 30 conformes y 20 no conformes.

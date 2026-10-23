@@ -133,6 +133,8 @@ Ejemplo comercial: el cálculo «ventas contra presupuesto por ruta» se plantea
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Reescribe con una CTE: «unidades totales por tienda de ventas entregadas, y la tienda con más unidades» (primero la CTE de unidades por tienda; luego el `SELECT` que ordena y toma 1).

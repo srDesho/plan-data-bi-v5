@@ -1,0 +1,37 @@
+{
+  "fallos": 0,
+  "entorno": "copia temporal; referencias públicas; sin ejecución Desktop ni custodia privada",
+  "pruebas": [
+    {
+      "prueba": "81 contratos SQL y resultado incorrecto",
+      "estado": "OK",
+      "detalle": {
+        "contratos": 81,
+        "control_negativo": "rechazado"
+      }
+    },
+    {
+      "prueba": "30 contratos Python/Pandas y función incorrecta",
+      "estado": "OK",
+      "detalle": {
+        "ejercicios": 30,
+        "casos": 69,
+        "control_negativo": "rechazado"
+      }
+    },
+    {
+      "prueba": "Estadística con controles originales",
+      "estado": "OK",
+      "detalle": {
+        "controles": [
+          "ST01",
+          "ST02",
+          "ST03",
+          "ST05",
+          "ST06"
+        ],
+        "acreditacion_estudiante": false
+      }
+    }
+  ]
+}

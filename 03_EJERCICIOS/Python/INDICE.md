@@ -33,3 +33,15 @@ Copia `plantilla.py` como punto de partida. Cada enunciado trae tres pistas prog
 - [P28 · validar_claves](P28.md)
 - [P29 · escribir_resumen](P29.md)
 - [P30 · auditoria_conteos](P30.md)
+
+## Ejercicios del plan v6 (REFUERZO nuevos; corrector `corregir_nuevos.py`)
+
+- [RP01 · con_descuento](RP01.md)
+- [RP02 · clasificar_stock](RP02.md)
+- [RP03 · unidades_por_categoria](RP03.md)
+- [RP04 · mejor_tienda](RP04.md)
+- [RP05 · leer_inventario](RP05.md)
+- [PD01 · filtrar_entregas](PD01.md)
+- [RD01 · productos_a_reponer](RD01.md)
+- [PT01 · Pruebas que detectan errores](PT01.md)
+- [RD02 · limpiar_ventas](RD02.md)

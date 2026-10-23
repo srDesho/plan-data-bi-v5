@@ -10,12 +10,12 @@ Con las tablas ya leídas y perfiladas (capítulo 9), aquí las **transformas**:
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 10.1 | [Columnas nuevas y transformaciones](10_Pandas_transformaciones/01_columnas_nuevas.md) | vectorizar, `np.where`/`np.select`, `map`, `.str`, `.dt`, `assign`, alineación por índice | núcleo · D16 | 60 min |
-| 10.2 | [groupby y agregaciones](10_Pandas_transformaciones/02_groupby_agg.md) | `size`/`count`/`nunique`, agregación con nombre, `transform`, `pivot_table`, `dropna` | núcleo · D17 | 60 min |
-| 10.3 | [merge y cardinalidad](10_Pandas_transformaciones/03_merge_cardinalidad.md) | `validate`, `indicator`, huérfanas, agregar antes de unir | núcleo · D17 | 65 min |
-| 10.4 | [Tablas de resumen y exportación](10_Pandas_transformaciones/04_resumen_y_exportacion.md) | `to_csv`, `to_sql`, idempotencia, orden determinista | refuerzo | 55 min |
-| 10.5 | [Controles de calidad y reconciliación](10_Pandas_transformaciones/05_controles_calidad.md) | estructura frente a fila, Bronze/Silver/Gold, cuadre de filas y de valor | refuerzo | 65 min |
-| 10.6 | [Errores silenciosos](10_Pandas_transformaciones/06_errores_silenciosos.md) | catálogo de 10 errores que no avisan y su control | refuerzo | 60 min |
+| 10.1 | [Columnas nuevas y transformaciones](10_Pandas_transformaciones/01_columnas_nuevas.md) | vectorizar, `np.where`/`np.select`, `map`, `.str`, `.dt`, `assign`, alineación por índice | NÚCLEO · D16 | 60 min |
+| 10.2 | [groupby y agregaciones](10_Pandas_transformaciones/02_groupby_agg.md) | `size`/`count`/`nunique`, agregación con nombre, `transform`, `pivot_table`, `dropna` | NÚCLEO · D17 | 60 min |
+| 10.3 | [merge y cardinalidad](10_Pandas_transformaciones/03_merge_cardinalidad.md) | `validate`, `indicator`, huérfanas, agregar antes de unir | NÚCLEO · D17 | 65 min |
+| 10.4 | [Tablas de resumen y exportación](10_Pandas_transformaciones/04_resumen_y_exportacion.md) | `to_csv`, `to_sql`, idempotencia, orden determinista | NÚCLEO · D24 | 55 min |
+| 10.5 | [Controles de calidad y reconciliación](10_Pandas_transformaciones/05_controles_calidad.md) | estructura frente a fila, Bronze/Silver/Gold, cuadre de filas y de valor | NÚCLEO · D19 | 65 min |
+| 10.6 | [Errores silenciosos](10_Pandas_transformaciones/06_errores_silenciosos.md) | catálogo de 10 errores que no avisan y su control | NÚCLEO · D26 | 60 min |
 
 ## Ideas centrales
 

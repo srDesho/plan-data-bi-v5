@@ -159,6 +159,8 @@ Ejemplo comercial: "las 3 ventas más recientes de la tienda 3" es `WHERE tienda
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Los 2 artículos más baratos de la categoría Bebidas (nombre y precio).

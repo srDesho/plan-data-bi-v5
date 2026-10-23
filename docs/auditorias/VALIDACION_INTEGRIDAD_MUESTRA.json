@@ -1,0 +1,3570 @@
+{
+  "base": "816890969e3963ffa8c1bb10b2a444c09eb3e748",
+  "dias_duplicados_revisados": [
+    4,
+    5,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "exclusion_explicita": [
+    1,
+    2,
+    3
+  ],
+  "fallos": 0,
+  "pruebas": [
+    {
+      "prueba": "manifiesto externo existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "hash manifiesto externo",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "archivos personales, contratos, empleo, exámenes y jornadas fuera de muestra intactos",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "realizaciones identificables conservadas",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "ninguna actividad nueva acreditada",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "34 casillas completadas originales, sin duplicar ni acreditar",
+      "estado": "OK",
+      "detalle": {
+        "esperadas": 34,
+        "actuales": 34
+      }
+    },
+    {
+      "prueba": "cinco casillas vigentes completadas D04",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04: cero IDs accionables duplicados",
+      "estado": "OK",
+      "detalle": {}
+    },
+    {
+      "prueba": "D05: cero IDs accionables duplicados",
+      "estado": "OK",
+      "detalle": {}
+    },
+    {
+      "prueba": "D08: cero IDs accionables duplicados",
+      "estado": "OK",
+      "detalle": {}
+    },
+    {
+      "prueba": "D09: cero IDs accionables duplicados",
+      "estado": "OK",
+      "detalle": {}
+    },
+    {
+      "prueba": "D10: cero IDs accionables duplicados",
+      "estado": "OK",
+      "detalle": {}
+    },
+    {
+      "prueba": "D11: cero IDs accionables duplicados",
+      "estado": "OK",
+      "detalle": {}
+    },
+    {
+      "prueba": "D12: cero IDs accionables duplicados",
+      "estado": "OK",
+      "detalle": {}
+    },
+    {
+      "prueba": "D13: cero IDs accionables duplicados",
+      "estado": "OK",
+      "detalle": {}
+    },
+    {
+      "prueba": "D04: bloque de empleabilidad íntegro",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04: filas y minutos de empleo íntegros",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "D05: bloque de empleabilidad íntegro",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05: filas y minutos de empleo íntegros",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "D08: bloque de empleabilidad íntegro",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08: filas y minutos de empleo íntegros",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "D09: bloque de empleabilidad íntegro",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09: filas y minutos de empleo íntegros",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "D10: bloque de empleabilidad íntegro",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10: filas y minutos de empleo íntegros",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "D11: bloque de empleabilidad íntegro",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11: filas y minutos de empleo íntegros",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "D12: bloque de empleabilidad íntegro",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12: filas y minutos de empleo íntegros",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "D13: bloque de empleabilidad íntegro",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D13: filas y minutos de empleo íntegros",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "obligaciones BASE 8168909 conservadas en fuentes",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "obligaciones históricas restituidas o acreditadas previamente",
+      "estado": "OK",
+      "detalle": []
+    },
+    {
+      "prueba": "D04: fuente con secuencia de actividades",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04: IDs únicos en fuente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04: sesiones cubren BASE una vez y en orden",
+      "estado": "OK",
+      "detalle": {
+        "sesiones": [
+          "L:1.1",
+          "MP-D04-1_1",
+          "L:1.2",
+          "MP-D04-1_2",
+          "L:1.3",
+          "MP-D04-1_3",
+          "L:1.5",
+          "MP-D04-1_5",
+          "MP-D04-2_1",
+          "L:7.2",
+          "MP-D04-7_2",
+          "L:7.3",
+          "MP-D04-7_3",
+          "L:7.4",
+          "MP-D04-7_4",
+          "MP-D04-7_10",
+          "L:7.11",
+          "MP-D04-7_11",
+          "AN02"
+        ],
+        "base": [
+          "L:1.1",
+          "MP-D04-1_1",
+          "L:1.2",
+          "MP-D04-1_2",
+          "L:1.3",
+          "MP-D04-1_3",
+          "L:1.5",
+          "MP-D04-1_5",
+          "MP-D04-2_1",
+          "L:7.2",
+          "MP-D04-7_2",
+          "L:7.3",
+          "MP-D04-7_3",
+          "L:7.4",
+          "MP-D04-7_4",
+          "MP-D04-7_10",
+          "L:7.11",
+          "MP-D04-7_11",
+          "AN02"
+        ]
+      }
+    },
+    {
+      "prueba": "D04: cada actividad fuente aparece una vez y en orden en guía",
+      "estado": "OK",
+      "detalle": {
+        "fuente": [
+          "L:1.1",
+          "MP-D04-1_1",
+          "L:1.2",
+          "MP-D04-1_2",
+          "L:1.3",
+          "MP-D04-1_3",
+          "L:1.5",
+          "MP-D04-1_5",
+          "L:2.1",
+          "MP-D04-2_1",
+          "G3",
+          "G2",
+          "L:7.2",
+          "MP-D04-7_2",
+          "L:7.3",
+          "MP-D04-7_3",
+          "L:7.4",
+          "MP-D04-7_4",
+          "L:7.10",
+          "MP-D04-7_10",
+          "L:7.11",
+          "MP-D04-7_11",
+          "P06",
+          "AN02"
+        ],
+        "guia": [
+          "L:1.1",
+          "MP-D04-1_1",
+          "L:1.2",
+          "MP-D04-1_2",
+          "L:1.3",
+          "MP-D04-1_3",
+          "L:1.5",
+          "MP-D04-1_5",
+          "L:2.1",
+          "MP-D04-2_1",
+          "G3",
+          "G2",
+          "L:7.2",
+          "MP-D04-7_2",
+          "L:7.3",
+          "MP-D04-7_3",
+          "L:7.4",
+          "MP-D04-7_4",
+          "L:7.10",
+          "MP-D04-7_10",
+          "L:7.11",
+          "MP-D04-7_11",
+          "P06",
+          "AN02"
+        ]
+      }
+    },
+    {
+      "prueba": "D04/L:1.1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:1.1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:1.1: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          1
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-1_1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-1_1: L:1.1 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-1_1: L:1.1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 0,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-1_1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-1_1: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D04/L:1.2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:1.2: MP-D04-1_1 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:1.2: MP-D04-1_1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D04/L:1.2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:1.2: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          3
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-1_2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-1_2: L:1.2 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-1_2: L:1.2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 2,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-1_2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-1_2: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D04/L:1.3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:1.3: MP-D04-1_2 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:1.3: MP-D04-1_2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 3,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D04/L:1.3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:1.3: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          5
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-1_3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-1_3: L:1.3 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-1_3: L:1.3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 4,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-1_3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-1_3: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D04/L:1.5: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:1.5: MP-D04-1_3 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:1.5: MP-D04-1_3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 5,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D04/L:1.5: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:1.5: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          7
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-1_5: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-1_5: L:1.5 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-1_5: L:1.5 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 6,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-1_5: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-1_5: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D04/L:2.1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:2.1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:2.1: evidencia conservada visible en guía",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-2_1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-2_1: L:2.1 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-2_1: L:2.1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 8,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-2_1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-2_1: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D04/G3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/G3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/G3: evidencia conservada visible en guía",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/G2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/G2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/G2: evidencia conservada visible en guía",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.2: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          13
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-7_2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_2: L:7.2 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_2: L:7.2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 12,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-7_2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_2: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D04/L:7.3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.3: MP-D04-7_2 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.3: MP-D04-7_2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 13,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D04/L:7.3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.3: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          15
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-7_3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_3: L:7.3 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_3: L:7.3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 14,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-7_3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_3: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D04/L:7.4: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.4: MP-D04-7_3 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.4: MP-D04-7_3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 15,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D04/L:7.4: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.4: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          17
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-7_4: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_4: L:7.4 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_4: L:7.4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 16,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-7_4: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_4: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D04/L:7.10: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.10: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.10: evidencia conservada visible en guía",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_10: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_10: L:7.10 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_10: L:7.10 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 18,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-7_10: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_10: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D04/L:7.11: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.11: MP-D04-7_10 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.11: MP-D04-7_10 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 19,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D04/L:7.11: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/L:7.11: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          21
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-7_11: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_11: L:7.11 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_11: L:7.11 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 20,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D04/MP-D04-7_11: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/MP-D04-7_11: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D04/P06: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/P06: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/P06: evidencia conservada visible en guía",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/AN02: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04/AN02: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04: minutos BASE calculados desde actividades",
+      "estado": "OK",
+      "detalle": {
+        "fuente_min": 522,
+        "marca_min": 522
+      }
+    },
+    {
+      "prueba": "D04: encabezado visible suma BASE",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D04: distribución por categorías suma BASE",
+      "estado": "OK",
+      "detalle": 522
+    },
+    {
+      "prueba": "D04: sesiones retomables suman BASE y tramos hasta 75 min",
+      "estado": "OK",
+      "detalle": [
+        75,
+        23,
+        75,
+        21,
+        75,
+        20,
+        75,
+        18,
+        75,
+        25,
+        30,
+        10
+      ]
+    },
+    {
+      "prueba": "D05: fuente con secuencia de actividades",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05: IDs únicos en fuente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05: sesiones cubren BASE una vez y en orden",
+      "estado": "OK",
+      "detalle": {
+        "sesiones": [
+          "L:2.2",
+          "MP-D05-2_2",
+          "G1",
+          "G5",
+          "G6",
+          "G7",
+          "L:2.3",
+          "MP-D05-2_3",
+          "L:7.12",
+          "MP-D05-7_12",
+          "L:7.13",
+          "MP-D05-7_13",
+          "P07",
+          "AN03",
+          "L:11.1",
+          "MP-D05-11_1",
+          "L:11.2",
+          "MP-D05-11_2",
+          "L:11.3",
+          "MP-D05-11_3"
+        ],
+        "base": [
+          "L:2.2",
+          "MP-D05-2_2",
+          "G1",
+          "G5",
+          "G6",
+          "G7",
+          "L:2.3",
+          "MP-D05-2_3",
+          "L:7.12",
+          "MP-D05-7_12",
+          "L:7.13",
+          "MP-D05-7_13",
+          "P07",
+          "AN03",
+          "L:11.1",
+          "MP-D05-11_1",
+          "L:11.2",
+          "MP-D05-11_2",
+          "L:11.3",
+          "MP-D05-11_3"
+        ]
+      }
+    },
+    {
+      "prueba": "D05: cada actividad fuente aparece una vez y en orden en guía",
+      "estado": "OK",
+      "detalle": {
+        "fuente": [
+          "L:2.2",
+          "MP-D05-2_2",
+          "G1",
+          "G5",
+          "G6",
+          "G7",
+          "L:2.3",
+          "MP-D05-2_3",
+          "L:7.12",
+          "MP-D05-7_12",
+          "L:7.13",
+          "MP-D05-7_13",
+          "P07",
+          "AN03",
+          "L:11.1",
+          "MP-D05-11_1",
+          "L:11.2",
+          "MP-D05-11_2",
+          "L:11.3",
+          "MP-D05-11_3"
+        ],
+        "guia": [
+          "L:2.2",
+          "MP-D05-2_2",
+          "G1",
+          "G5",
+          "G6",
+          "G7",
+          "L:2.3",
+          "MP-D05-2_3",
+          "L:7.12",
+          "MP-D05-7_12",
+          "L:7.13",
+          "MP-D05-7_13",
+          "P07",
+          "AN03",
+          "L:11.1",
+          "MP-D05-11_1",
+          "L:11.2",
+          "MP-D05-11_2",
+          "L:11.3",
+          "MP-D05-11_3"
+        ]
+      }
+    },
+    {
+      "prueba": "D05/L:2.2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:2.2: MP-D04-2_1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 9,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D05/L:2.2: MP-D04-1_5 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 7,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D05/L:2.2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:2.2: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          1
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-2_2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-2_2: L:2.2 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-2_2: L:2.2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 0,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-2_2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-2_2: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D05/G1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/G1: MP-D05-2_2 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/G1: MP-D05-2_2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D05/G1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/G5: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/G5: G1 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/G5: G1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 2,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D05/G5: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/G6: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/G6: G5 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/G6: G5 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 3,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D05/G6: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/G7: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/G7: G6 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/G7: G6 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 4,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D05/G7: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:2.3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:2.3: G6 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:2.3: G6 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 4,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D05/L:2.3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:2.3: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          7
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-2_3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-2_3: L:2.3 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-2_3: L:2.3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 6,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-2_3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-2_3: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D05/L:7.12: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:7.12: MP-D04-7_11 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 21,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D05/L:7.12: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:7.12: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          9
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-7_12: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-7_12: L:7.12 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-7_12: L:7.12 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 8,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-7_12: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-7_12: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D05/L:7.13: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:7.13: MP-D05-7_12 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:7.13: MP-D05-7_12 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 9,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D05/L:7.13: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:7.13: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          11
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-7_13: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-7_13: L:7.13 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-7_13: L:7.13 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 10,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-7_13: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-7_13: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D05/P07: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/P07: MP-D05-7_12 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/P07: MP-D05-7_12 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 9,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D05/P07: MP-D05-7_13 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/P07: MP-D05-7_13 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 11,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D05/P07: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/AN03: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/AN03: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:11.1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:11.1: MP-D04-1_1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D05/L:11.1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:11.1: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          15
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-11_1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-11_1: L:11.1 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-11_1: L:11.1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 14,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-11_1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-11_1: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D05/L:11.2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:11.2: MP-D05-11_1 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:11.2: MP-D05-11_1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 15,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D05/L:11.2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:11.2: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          17
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-11_2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-11_2: L:11.2 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-11_2: L:11.2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 16,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-11_2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-11_2: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D05/L:11.3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:11.3: MP-D05-11_2 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:11.3: MP-D05-11_2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 17,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D05/L:11.3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/L:11.3: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          19
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-11_3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-11_3: L:11.3 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-11_3: L:11.3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 18,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D05/MP-D05-11_3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05/MP-D05-11_3: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D05: minutos BASE calculados desde actividades",
+      "estado": "OK",
+      "detalle": {
+        "fuente_min": 554,
+        "marca_min": 554
+      }
+    },
+    {
+      "prueba": "D05: encabezado visible suma BASE",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D05: distribución por categorías suma BASE",
+      "estado": "OK",
+      "detalle": 554
+    },
+    {
+      "prueba": "D05: sesiones retomables suman BASE y tramos hasta 75 min",
+      "estado": "OK",
+      "detalle": [
+        75,
+        20,
+        75,
+        6,
+        75,
+        25,
+        75,
+        18,
+        75,
+        10,
+        75,
+        5,
+        10,
+        10
+      ]
+    },
+    {
+      "prueba": "D08: fuente con secuencia de actividades",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08: IDs únicos en fuente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08: sesiones cubren BASE una vez y en orden",
+      "estado": "OK",
+      "detalle": {
+        "sesiones": [
+          "L:7.5",
+          "MP-D08-7_5",
+          "L:7.7",
+          "MP-D08-7_7",
+          "L:8.1",
+          "MP-D08-8_1",
+          "P08",
+          "L:11.4",
+          "MP-D08-11_4"
+        ],
+        "base": [
+          "L:7.5",
+          "MP-D08-7_5",
+          "L:7.7",
+          "MP-D08-7_7",
+          "L:8.1",
+          "MP-D08-8_1",
+          "P08",
+          "L:11.4",
+          "MP-D08-11_4"
+        ]
+      }
+    },
+    {
+      "prueba": "D08: cada actividad fuente aparece una vez y en orden en guía",
+      "estado": "OK",
+      "detalle": {
+        "fuente": [
+          "L:7.5",
+          "MP-D08-7_5",
+          "L:7.7",
+          "MP-D08-7_7",
+          "L:8.1",
+          "MP-D08-8_1",
+          "P08",
+          "L:11.4",
+          "MP-D08-11_4"
+        ],
+        "guia": [
+          "L:7.5",
+          "MP-D08-7_5",
+          "L:7.7",
+          "MP-D08-7_7",
+          "L:8.1",
+          "MP-D08-8_1",
+          "P08",
+          "L:11.4",
+          "MP-D08-11_4"
+        ]
+      }
+    },
+    {
+      "prueba": "D08/L:7.5: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/L:7.5: MP-D04-7_3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 15,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D08/L:7.5: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/L:7.5: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          1
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D08/MP-D08-7_5: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/MP-D08-7_5: L:7.5 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/MP-D08-7_5: L:7.5 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 0,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D08/MP-D08-7_5: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/MP-D08-7_5: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D08/L:7.7: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/L:7.7: MP-D08-7_5 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/L:7.7: MP-D08-7_5 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D08/L:7.7: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/L:7.7: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          3
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D08/MP-D08-7_7: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/MP-D08-7_7: L:7.7 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/MP-D08-7_7: L:7.7 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 2,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D08/MP-D08-7_7: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/MP-D08-7_7: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D08/L:8.1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/L:8.1: MP-D04-7_4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 17,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D08/L:8.1: MP-D04-7_10 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 19,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D08/L:8.1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/L:8.1: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          5
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D08/MP-D08-8_1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/MP-D08-8_1: L:8.1 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/MP-D08-8_1: L:8.1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 4,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D08/MP-D08-8_1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/MP-D08-8_1: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D08/P08: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/P08: MP-D08-7_7 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/P08: MP-D08-7_7 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 3,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D08/P08: MP-D08-8_1 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/P08: MP-D08-8_1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 5,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D08/P08: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/L:11.4: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/L:11.4: MP-D05-11_3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 19,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D08/L:11.4: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/L:11.4: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          8
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D08/MP-D08-11_4: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/MP-D08-11_4: L:11.4 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/MP-D08-11_4: L:11.4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 7,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D08/MP-D08-11_4: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08/MP-D08-11_4: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D08: minutos BASE calculados desde actividades",
+      "estado": "OK",
+      "detalle": {
+        "fuente_min": 310,
+        "marca_min": 310
+      }
+    },
+    {
+      "prueba": "D08: encabezado visible suma BASE",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D08: distribución por categorías suma BASE",
+      "estado": "OK",
+      "detalle": 310
+    },
+    {
+      "prueba": "D08: sesiones retomables suman BASE y tramos hasta 75 min",
+      "estado": "OK",
+      "detalle": [
+        72,
+        75,
+        15,
+        75,
+        18,
+        35,
+        10,
+        10
+      ]
+    },
+    {
+      "prueba": "D09: fuente con secuencia de actividades",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09: IDs únicos en fuente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09: sesiones cubren BASE una vez y en orden",
+      "estado": "OK",
+      "detalle": {
+        "sesiones": [
+          "L:2.4",
+          "MP-D09-2_4",
+          "L:3.2",
+          "MP-D09-3_2",
+          "G8",
+          "J1",
+          "J2",
+          "J3",
+          "L:8.5",
+          "MP-D09-8_5",
+          "L:19.1",
+          "DB01",
+          "AN04"
+        ],
+        "base": [
+          "L:2.4",
+          "MP-D09-2_4",
+          "L:3.2",
+          "MP-D09-3_2",
+          "G8",
+          "J1",
+          "J2",
+          "J3",
+          "L:8.5",
+          "MP-D09-8_5",
+          "L:19.1",
+          "DB01",
+          "AN04"
+        ]
+      }
+    },
+    {
+      "prueba": "D09: cada actividad fuente aparece una vez y en orden en guía",
+      "estado": "OK",
+      "detalle": {
+        "fuente": [
+          "L:2.4",
+          "MP-D09-2_4",
+          "L:3.2",
+          "MP-D09-3_2",
+          "G8",
+          "J1",
+          "J2",
+          "J3",
+          "L:8.5",
+          "MP-D09-8_5",
+          "L:19.1",
+          "DB01",
+          "AN04"
+        ],
+        "guia": [
+          "L:2.4",
+          "MP-D09-2_4",
+          "L:3.2",
+          "MP-D09-3_2",
+          "G8",
+          "J1",
+          "J2",
+          "J3",
+          "L:8.5",
+          "MP-D09-8_5",
+          "L:19.1",
+          "DB01",
+          "AN04"
+        ]
+      }
+    },
+    {
+      "prueba": "D09/L:2.4: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/L:2.4: G6 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 4,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D09/L:2.4: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/L:2.4: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          1
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D09/MP-D09-2_4: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/MP-D09-2_4: L:2.4 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/MP-D09-2_4: L:2.4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 0,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D09/MP-D09-2_4: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/MP-D09-2_4: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D09/L:3.2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/L:3.2: MP-D09-2_4 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/L:3.2: MP-D09-2_4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D09/L:3.2: MP-D04-1_2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 3,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D09/L:3.2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/L:3.2: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          3
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D09/MP-D09-3_2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/MP-D09-3_2: L:3.2 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/MP-D09-3_2: L:3.2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 2,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D09/MP-D09-3_2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/MP-D09-3_2: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D09/G8: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/G8: MP-D09-2_4 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/G8: MP-D09-2_4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D09/G8: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/J1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/J1: MP-D09-3_2 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/J1: MP-D09-3_2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 3,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D09/J1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/J2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/J2: J1 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/J2: J1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 5,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D09/J2: MP-D09-2_4 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/J2: MP-D09-2_4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D09/J2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/J3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/J3: J2 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/J3: J2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 6,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D09/J3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/L:8.5: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/L:8.5: MP-D08-7_7 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 3,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D09/L:8.5: MP-D08-8_1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 5,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D09/L:8.5: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/L:8.5: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          9
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D09/MP-D09-8_5: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/MP-D09-8_5: L:8.5 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/MP-D09-8_5: L:8.5 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 8,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D09/MP-D09-8_5: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/MP-D09-8_5: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D09/L:19.1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/L:19.1: L:8.5 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/L:19.1: L:8.5 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 8,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D09/L:19.1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/L:19.1: ancla interna existente",
+      "estado": "OK",
+      "detalle": "1-leer-un-error-en-lugar-de-temerle"
+    },
+    {
+      "prueba": "D09/L:19.1: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [],
+        "equivalente_explicitado": [
+          11
+        ]
+      }
+    },
+    {
+      "prueba": "D09/DB01: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/DB01: MP-D09-8_5 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/DB01: MP-D09-8_5 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 9,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D09/DB01: L:19.1 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/DB01: L:19.1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 10,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D09/DB01: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/AN04: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09/AN04: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09: minutos BASE calculados desde actividades",
+      "estado": "OK",
+      "detalle": {
+        "fuente_min": 404,
+        "marca_min": 404
+      }
+    },
+    {
+      "prueba": "D09: encabezado visible suma BASE",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D09: distribución por categorías suma BASE",
+      "estado": "OK",
+      "detalle": 404
+    },
+    {
+      "prueba": "D09: sesiones retomables suman BASE y tramos hasta 75 min",
+      "estado": "OK",
+      "detalle": [
+        75,
+        75,
+        24,
+        75,
+        25,
+        75,
+        20,
+        25,
+        10
+      ]
+    },
+    {
+      "prueba": "D10: fuente con secuencia de actividades",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10: IDs únicos en fuente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10: sesiones cubren BASE una vez y en orden",
+      "estado": "OK",
+      "detalle": {
+        "sesiones": [
+          "L:8.3",
+          "MP-D10-8_3",
+          "L:8.4",
+          "MP-D10-8_4",
+          "P09",
+          "P13",
+          "J4",
+          "AN05"
+        ],
+        "base": [
+          "L:8.3",
+          "MP-D10-8_3",
+          "L:8.4",
+          "MP-D10-8_4",
+          "P09",
+          "P13",
+          "J4",
+          "AN05"
+        ]
+      }
+    },
+    {
+      "prueba": "D10: cada actividad fuente aparece una vez y en orden en guía",
+      "estado": "OK",
+      "detalle": {
+        "fuente": [
+          "L:8.3",
+          "MP-D10-8_3",
+          "L:8.4",
+          "MP-D10-8_4",
+          "P09",
+          "P13",
+          "J4",
+          "AN05"
+        ],
+        "guia": [
+          "L:8.3",
+          "MP-D10-8_3",
+          "L:8.4",
+          "MP-D10-8_4",
+          "P09",
+          "P13",
+          "J4",
+          "AN05"
+        ]
+      }
+    },
+    {
+      "prueba": "D10/L:8.3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/L:8.3: MP-D08-7_5 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D10/L:8.3: MP-D04-7_11 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 4,
+        "orden": 21,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D10/L:8.3: MP-D08-8_1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 5,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D10/L:8.3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/L:8.3: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          1
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D10/MP-D10-8_3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/MP-D10-8_3: L:8.3 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/MP-D10-8_3: L:8.3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 10,
+        "orden": 0,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D10/MP-D10-8_3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/MP-D10-8_3: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D10/L:8.4: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/L:8.4: MP-D10-8_3 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/L:8.4: MP-D10-8_3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 10,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D10/L:8.4: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/L:8.4: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          3
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D10/MP-D10-8_4: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/MP-D10-8_4: L:8.4 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/MP-D10-8_4: L:8.4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 10,
+        "orden": 2,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D10/MP-D10-8_4: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/MP-D10-8_4: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D10/P09: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/P09: MP-D08-7_5 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D10/P09: MP-D08-7_7 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 3,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D10/P09: MP-D09-8_5 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 9,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D10/P09: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/P13: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/P13: MP-D10-8_3 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/P13: MP-D10-8_3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 10,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D10/P13: MP-D10-8_4 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/P13: MP-D10-8_4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 10,
+        "orden": 3,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D10/P13: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/J4: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/J4: J3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 7,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D10/J4: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/AN05: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10/AN05: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10: minutos BASE calculados desde actividades",
+      "estado": "OK",
+      "detalle": {
+        "fuente_min": 302,
+        "marca_min": 302
+      }
+    },
+    {
+      "prueba": "D10: encabezado visible suma BASE",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D10: distribución por categorías suma BASE",
+      "estado": "OK",
+      "detalle": 302
+    },
+    {
+      "prueba": "D10: sesiones retomables suman BASE y tramos hasta 75 min",
+      "estado": "OK",
+      "detalle": [
+        75,
+        20,
+        75,
+        20,
+        75,
+        17,
+        10,
+        10
+      ]
+    },
+    {
+      "prueba": "D11: fuente con secuencia de actividades",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11: IDs únicos en fuente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11: sesiones cubren BASE una vez y en orden",
+      "estado": "OK",
+      "detalle": {
+        "sesiones": [
+          "L:3.3",
+          "MP-D11-3_3",
+          "L:3.4",
+          "MP-D11-3_4",
+          "J5",
+          "ST01",
+          "AN06"
+        ],
+        "base": [
+          "L:3.3",
+          "MP-D11-3_3",
+          "L:3.4",
+          "MP-D11-3_4",
+          "J5",
+          "ST01",
+          "AN06"
+        ]
+      }
+    },
+    {
+      "prueba": "D11: cada actividad fuente aparece una vez y en orden en guía",
+      "estado": "OK",
+      "detalle": {
+        "fuente": [
+          "L:3.3",
+          "MP-D11-3_3",
+          "L:3.4",
+          "MP-D11-3_4",
+          "J5",
+          "ST01",
+          "AN06"
+        ],
+        "guia": [
+          "L:3.3",
+          "MP-D11-3_3",
+          "L:3.4",
+          "MP-D11-3_4",
+          "J5",
+          "ST01",
+          "AN06"
+        ]
+      }
+    },
+    {
+      "prueba": "D11/L:3.3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/L:3.3: J1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 5,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D11/L:3.3: J2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 6,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D11/L:3.3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/L:3.3: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          1
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D11/MP-D11-3_3: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/MP-D11-3_3: L:3.3 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/MP-D11-3_3: L:3.3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 11,
+        "orden": 0,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D11/MP-D11-3_3: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/MP-D11-3_3: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D11/L:3.4: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/L:3.4: MP-D11-3_3 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/L:3.4: MP-D11-3_3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 11,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D11/L:3.4: J3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 7,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D11/L:3.4: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/L:3.4: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          3
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D11/MP-D11-3_4: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/MP-D11-3_4: L:3.4 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/MP-D11-3_4: L:3.4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 11,
+        "orden": 2,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D11/MP-D11-3_4: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/MP-D11-3_4: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D11/J5: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/J5: MP-D11-3_3 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/J5: MP-D11-3_3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 11,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D11/J5: MP-D11-3_4 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/J5: MP-D11-3_4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 11,
+        "orden": 3,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D11/J5: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/ST01: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/ST01: MP-D05-11_1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 15,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D11/ST01: MP-D05-11_2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 17,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D11/ST01: MP-D05-11_3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 19,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D11/ST01: MP-D08-11_4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 8,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D11/ST01: MP-D10-8_4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 10,
+        "orden": 3,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D11/ST01: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/AN06: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11/AN06: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11: minutos BASE calculados desde actividades",
+      "estado": "OK",
+      "detalle": {
+        "fuente_min": 268,
+        "marca_min": 268
+      }
+    },
+    {
+      "prueba": "D11: encabezado visible suma BASE",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D11: distribución por categorías suma BASE",
+      "estado": "OK",
+      "detalle": 268
+    },
+    {
+      "prueba": "D11: sesiones retomables suman BASE y tramos hasta 75 min",
+      "estado": "OK",
+      "detalle": [
+        75,
+        5,
+        75,
+        3,
+        70,
+        30,
+        10
+      ]
+    },
+    {
+      "prueba": "D12: fuente con secuencia de actividades",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12: IDs únicos en fuente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12: sesiones cubren BASE una vez y en orden",
+      "estado": "OK",
+      "detalle": {
+        "sesiones": [
+          "L:6.1",
+          "MP-D12-6_1",
+          "L:9.2",
+          "MP-D12-9_2",
+          "P10",
+          "P11",
+          "AN07"
+        ],
+        "base": [
+          "L:6.1",
+          "MP-D12-6_1",
+          "L:9.2",
+          "MP-D12-9_2",
+          "P10",
+          "P11",
+          "AN07"
+        ]
+      }
+    },
+    {
+      "prueba": "D12: cada actividad fuente aparece una vez y en orden en guía",
+      "estado": "OK",
+      "detalle": {
+        "fuente": [
+          "L:6.1",
+          "MP-D12-6_1",
+          "L:9.2",
+          "MP-D12-9_2",
+          "P10",
+          "P11",
+          "AN07"
+        ],
+        "guia": [
+          "L:6.1",
+          "MP-D12-6_1",
+          "L:9.2",
+          "MP-D12-9_2",
+          "P10",
+          "P11",
+          "AN07"
+        ]
+      }
+    },
+    {
+      "prueba": "D12/L:6.1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/L:6.1: MP-D05-2_3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 5,
+        "orden": 7,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D12/L:6.1: J2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 9,
+        "orden": 6,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D12/L:6.1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/L:6.1: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          1
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D12/MP-D12-6_1: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/MP-D12-6_1: L:6.1 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/MP-D12-6_1: L:6.1 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 12,
+        "orden": 0,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D12/MP-D12-6_1: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/MP-D12-6_1: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D12/L:9.2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/L:9.2: MP-D10-8_3 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 10,
+        "orden": 1,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D12/L:9.2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/L:9.2: micropráctica esencial posterior",
+      "estado": "OK",
+      "detalle": {
+        "micro": [
+          3
+        ],
+        "equivalente_explicitado": []
+      }
+    },
+    {
+      "prueba": "D12/MP-D12-9_2: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/MP-D12-9_2: L:9.2 anterior",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/MP-D12-9_2: L:9.2 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 12,
+        "orden": 2,
+        "tipo": "nucleo"
+      }
+    },
+    {
+      "prueba": "D12/MP-D12-9_2: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/MP-D12-9_2: ancla interna existente",
+      "estado": "OK",
+      "detalle": "micropractica"
+    },
+    {
+      "prueba": "D12/P10: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/P10: MP-D08-7_7 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 3,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D12/P10: MP-D10-8_4 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 10,
+        "orden": 3,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D12/P10: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/P11: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/P11: P09 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 10,
+        "orden": 4,
+        "tipo": "obligatorio"
+      }
+    },
+    {
+      "prueba": "D12/P11: MP-D08-7_7 preparación obligatoria anterior",
+      "estado": "OK",
+      "detalle": {
+        "dia": 8,
+        "orden": 3,
+        "tipo": "micropractica"
+      }
+    },
+    {
+      "prueba": "D12/P11: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/AN07: minutos no negativos",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12/AN07: enlace interno existente",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12: minutos BASE calculados desde actividades",
+      "estado": "OK",
+      "detalle": {
+        "fuente_min": 274,
+        "marca_min": 274
+      }
+    },
+    {
+      "prueba": "D12: encabezado visible suma BASE",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D12: distribución por categorías suma BASE",
+      "estado": "OK",
+      "detalle": 274
+    },
+    {
+      "prueba": "D12: sesiones retomables suman BASE y tramos hasta 75 min",
+      "estado": "OK",
+      "detalle": [
+        75,
+        26,
+        75,
+        15,
+        63,
+        10,
+        10
+      ]
+    },
+    {
+      "prueba": "D13: modo editorial sin ruta obligatoria nueva",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D13: ejercicios vigentes coinciden con fuente editorial",
+      "estado": "OK",
+      "detalle": {
+        "fuente": [
+          "E5",
+          "E6",
+          "E7",
+          "E8",
+          "EXAMEN:S02",
+          "H02",
+          "P14"
+        ],
+        "guia": [
+          "E5",
+          "E6",
+          "E7",
+          "E8",
+          "EXAMEN:S02",
+          "H02",
+          "P14"
+        ]
+      }
+    },
+    {
+      "prueba": "D13: encabezado y tabla iguales sin recortar examen",
+      "estado": "OK",
+      "detalle": null
+    },
+    {
+      "prueba": "D13: sesiones del examen original y empleo suman 175",
+      "estado": "OK",
+      "detalle": 175
+    }
+  ],
+  "limites": [
+    "Revisión semántica y suficiencia documentadas aparte; estas aserciones no certifican dominio.",
+    "Fuera de muestra sigue pendiente regeneración aprobada.",
+    "No acredita ejecución manual de Excel o Power BI."
+  ]
+}

@@ -201,6 +201,8 @@ Ejemplo comercial: el área comercial pregunta por qué el reporte tiene 120 ven
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Con un CSV en memoria de 8 filas que incluya un exacto, un conflicto y un faltante recuperable, aplica el orden correcto y documenta los conteos.

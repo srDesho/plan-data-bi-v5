@@ -241,6 +241,8 @@ Ejemplo comercial: «las ventas entregadas de la ruta R02 en septiembre» es una
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con `ventas.csv`:

@@ -208,6 +208,8 @@ Ejemplo comercial: después de terminar la consulta de ventas por ruta y verific
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. En una carpeta de práctica fuera de tu repo del curso, crea un repositorio, un archivo `.py` y un `.gitignore` que excluya `.venv/` y `*.db`.

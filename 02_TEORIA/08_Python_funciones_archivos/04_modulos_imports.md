@@ -1,6 +1,6 @@
 # 8.4 Módulos e importaciones
 
-> Tiempo estimado: 55 min (lectura 22 + práctica 33). Prerrequisitos: [8.1 Funciones con contrato](01_funciones_con_contrato.md) y [8.3 Archivos](03_archivos_csv_json.md).
+> Tiempo estimado: 70 min (lectura 30 + práctica 40). Prerrequisitos: [8.1 Funciones con contrato](01_funciones_con_contrato.md) y [8.3 Archivos](03_archivos_csv_json.md).
 
 ## Para qué sirve
 
@@ -104,6 +104,26 @@ print(d.strftime("%Y-%m"))
 ```
 
 `strptime` (*parse*) convierte texto en fecha según el formato; `strftime` (*format*) convierte una fecha en texto. Los códigos son los mismos que viste en SQL (`%Y`, `%m`, `%d`).
+
+<a id="siglo-explicito"></a>
+
+**3a. Un año de dos cifras necesita una regla de siglo.** `%y` aplica una convención de biblioteca: 00–68 se interpretan como 2000–2068 y 69–99 como 1969–1999. Esa convención no sustituye una regla del contrato como «20AA». Debes construir el año de cuatro cifras antes de validar el calendario. Aquí la entrada usa barras, con día/mes/año:
+
+```python
+from datetime import datetime, date
+
+texto = "15/08/74"
+print(datetime.strptime(texto, "%d/%m/%y").year)
+dia, mes, anio = texto.split("/")
+print(date(2000 + int(anio), int(mes), int(dia)).isoformat())
+```
+
+```salida
+1974
+2074-08-15
+```
+
+La construcción `date(año, mes, día)` rechaza fechas imposibles mediante `ValueError`. Distingue «pude interpretar el texto» de «cumplí la regla de negocio». Usa solo los formatos permitidos; probar formatos arbitrarios puede aceptar una fecha con día y mes invertidos. Esta explicación prepara el criterio del año de P10 sin entregar su función completa.
 
 **3b. Fechas ISO como texto: se comparan bien.** Una fecha escrita `AAAA-MM-DD` ordena igual como texto que como calendario, así que puedes comparar o filtrar sin convertir (siempre que **todas** estén en ese formato):
 
@@ -210,12 +230,15 @@ Ejemplo comercial: un proyecto con `leer.py` (extracción), `limpiar.py` (transf
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Calcula cuántos días hay entre `2026-08-03` y `2026-09-30` con `datetime`.
 2. Convierte el texto `"05/09/2026"` (día/mes/año) en una fecha ISO `2026-09-05`.
 3. Crea un módulo `mis_utilidades.py` con una función `limpiar_codigo` y úsalo desde otro archivo (hazlo en `mi_trabajo`).
 4. Calcula con `math.ceil` cuántas cajas de 24 unidades se necesitan para 130 unidades.
+5. Antes de P10, predice y comprueba la diferencia entre `%y` y la regla 20AA para `"09/04/69"` y `"09/04/05"`. Registra el año de cuatro cifras y prueba una fecha imposible. El primer caso distingue 1969 de 2069; el segundo debe conservar 2005. Explica cuál regla aplicarías si el contrato exigiera 20AA. Es una ampliación de esta micropráctica; conserva los cuatro apartados anteriores.
 
 Cómo saber que está bien: 1 → 58; 2 → `2026-09-05`; 4 → 6.
 

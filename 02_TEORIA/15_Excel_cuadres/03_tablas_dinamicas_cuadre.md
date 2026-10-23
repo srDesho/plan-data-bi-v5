@@ -165,6 +165,8 @@ Ejemplo comercial: el jefe pregunta si el reporte de Power BI «está bien». La
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Construye una tabla dinámica de unidades entregadas por categoría de artículo (necesitas traer la categoría) y compárala con SQL.

@@ -158,6 +158,8 @@ Ejemplo comercial: el jefe de ventas pide "cuántas ventas entregó el vendedor 
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Sobre la mini-base escribe:

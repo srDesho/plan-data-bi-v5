@@ -268,6 +268,8 @@ Ejemplo comercial: leer las visitas del día como lista de registros, contar cu�
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con la lista de seis líneas del ejemplo inicial:

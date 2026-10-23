@@ -133,6 +133,8 @@ Ejemplo comercial: el README del proyecto SQL abre con el problema, lista las co
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe el README de tu proyecto SQL con las seis secciones.

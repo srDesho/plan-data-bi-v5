@@ -1,6 +1,6 @@
 # 9.2 Series, DataFrame y leer un CSV
 
-> Tiempo estimado: 55 min (lectura 20 + práctica 35). Prerrequisito: [8.3 Archivos CSV](../08_Python_funciones_archivos/03_archivos_csv_json.md).
+> Tiempo estimado: 60 min (lectura 25 + práctica 35). Prerrequisito: [8.3 Archivos CSV](../08_Python_funciones_archivos/03_archivos_csv_json.md).
 
 ## Para qué sirve
 
@@ -126,6 +126,25 @@ Name: precio, dtype: float64
 
 `articulos["precio"]` es una Series. `precios * 12` multiplica **toda la columna** de una vez (vectorización, como en NumPy), sin bucles, y devuelve otra Series con el mismo índice.
 
+**4b. Guardar el resultado como columna nueva.** Operar sobre una Series devuelve un resultado; para conservarlo en el DataFrame debes asignarlo a una columna por su nombre. Si el nombre no existe, Pandas lo crea; si existe, lo reemplaza. Trabaja sobre una copia cuando debas conservar el origen:
+
+```python
+import pandas as pd
+
+original = pd.read_csv("04_DATASETS/mini_base/articulos.csv")
+trabajo = original.copy()
+trabajo["valor_docena"] = trabajo["precio"] * 12
+print(trabajo["valor_docena"].head(3).tolist())
+print("valor_docena" in original.columns)
+```
+
+```salida
+[72.0, 108.0, 138.0]
+False
+```
+
+La asignación calcula una cifra para cada fila y la guarda alineada por índice. El archivo y el DataFrame `original` siguen intactos. Este patrón prepara el apartado 2 de la micropráctica; las transformaciones más extensas se desarrollan en 10.1.
+
 **5. Cuidado: Pandas decide los tipos por ti.** Un identificador con ceros a la izquierda se destruye si se interpreta como número. Lo simulamos con un CSV en memoria:
 
 ```python
@@ -205,6 +224,8 @@ Ejemplo comercial: el ERP exporta `ventas.csv` con `;` y decimales con coma. Una
 4. `(12, 6)`.
 
 </details>
+
+<a id="micropractica"></a>
 
 ## Micropráctica
 

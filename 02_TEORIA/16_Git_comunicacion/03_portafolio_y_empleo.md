@@ -111,6 +111,8 @@ Ejemplo comercial: un reclutador pregunta «¿qué hiciste en tu pasantía y qu�
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe tu presentación personal con las cuatro partes y solo hechos verdaderos.

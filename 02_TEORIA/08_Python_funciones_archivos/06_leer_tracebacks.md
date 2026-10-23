@@ -150,6 +150,8 @@ Ejemplo comercial: «Mi ETL falló en la fila 8 421» es información valiosa si
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe un programa de dos funciones que falle con `ZeroDivisionError`. Léelo con el procedimiento de cinco pasos y anota: la última línea, la línea de tu archivo y la causa raíz.

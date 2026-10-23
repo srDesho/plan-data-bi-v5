@@ -145,6 +145,8 @@ Ejemplo comercial: la regla «una cantidad de 1.5 es inválida cuando el contrat
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Recibes un archivo de pedidos con las columnas `pedido`, `cliente`, `fecha`, `monto`.

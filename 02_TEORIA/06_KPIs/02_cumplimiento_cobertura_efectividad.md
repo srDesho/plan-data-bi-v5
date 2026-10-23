@@ -164,6 +164,8 @@ Ejemplo comercial: la ruta R03 cumplió el 53,3 % de su meta de septiembre. Ante
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Calcula el cumplimiento de las metas de **agosto** por ruta con Python o SQL.

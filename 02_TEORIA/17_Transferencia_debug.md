@@ -10,9 +10,9 @@ Aprender un ETL de memoria no demuestra que puedas construir otro. La práctica 
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 17.1 | [Los ocho pasos frente a un caso nuevo](17_Transferencia_debug/01_ocho_pasos_caso_nuevo.md) | Bronze, perfilado, clasificación, funciones con pruebas, catálogo, cuadre con SQL independiente, cambios adversos | núcleo · D36 | 70 min |
-| 17.2 | [Cuando no cuadra](17_Transferencia_debug/02_cuando_no_cuadra.md) | primer desvío, comparación por documento, hipótesis, corregir la causa | núcleo · D38 | 60 min |
-| 17.3 | [Resolver sin ayuda externa](17_Transferencia_debug/03_resolver_sin_ia.md) | método intento-comprobar-depurar-pista, registro de consultas, evidencia de autonomía | profundización | 45 min |
+| 17.1 | [Los ocho pasos frente a un caso nuevo](17_Transferencia_debug/01_ocho_pasos_caso_nuevo.md) | Bronze, perfilado, clasificación, funciones con pruebas, catálogo, cuadre con SQL independiente, cambios adversos | NÚCLEO · D36 | 70 min |
+| 17.2 | [Cuando no cuadra](17_Transferencia_debug/02_cuando_no_cuadra.md) | primer desvío, comparación por documento, hipótesis, corregir la causa | NÚCLEO · D38 | 60 min |
+| 17.3 | [Resolver sin ayuda externa](17_Transferencia_debug/03_resolver_sin_ia.md) | método intento-comprobar-depurar-pista, registro de consultas, evidencia de autonomía | COMPLEMENTARIA | 45 min |
 
 ## El proceso de ocho pasos (resumen)
 

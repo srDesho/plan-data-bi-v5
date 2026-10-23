@@ -1,6 +1,6 @@
 # 12.8 Interpretar, comunicar y no equivocarse
 
-> Tiempo estimado: 55 min (lectura 30 + práctica 25). Prerrequisitos: lecciones 12.1 a 12.7.
+> Tiempo estimado: 55 min (lectura 30 + práctica 25). Prerrequisitos: lecciones 12.1 a 12.5. Las lecciones 12.6 (chi-cuadrado) y 12.7 (tamaño del efecto) son complementarias: aquí solo se mencionan como referencia y no hace falta haberlas estudiado.
 
 ## Para qué sirve
 
@@ -68,7 +68,7 @@ Con ese umbral, p = 0,044 ya no es significativo. Es una corrección sencilla y 
 | ¿Cuántos datos hay? | `n` por grupo; potencia |
 | ¿Cumple los supuestos? | independencia, forma, atípicos, esperados ≥ 5 |
 | ¿Cuántas pruebas se hicieron? | comparaciones múltiples |
-| ¿Cuál es la magnitud? | diferencia, intervalo, tamaño del efecto |
+| ¿Cuál es la magnitud? | diferencia, intervalo (y, si ya estudiaste 12.7, tamaño del efecto) |
 | ¿Qué dice en negocio? | traducción, costo-beneficio |
 | ¿Qué NO puede afirmarse? | causalidad, generalización, período |
 
@@ -87,7 +87,7 @@ Con ese umbral, p = 0,044 ya no es significativo. Es una corrección sencilla y 
 > **Datos:** 4 tiendas con visita extra y 4 sin ella, en septiembre. Asignación: [aleatoria/no aleatoria].
 > **Resultado descriptivo:** medias 30,5 y 25,0 pedidos (diferencia 5,5).
 > **Prueba:** `t` de Welch, bilateral, `α = 0,05`: `t = 2,57`, `gl = 5,6`, p = 0,045. IC 95 % de la diferencia: 0,2 a 10,8.
-> **Tamaño del efecto:** `d = 1,8` (grande, pero estimado con muy pocos datos).
+> **Tamaño del efecto** (opcional; se estudia en la lección complementaria 12.7): `d = 1,8` (grande, pero estimado con muy pocos datos). Si no la estudiaste, omite esta línea y describe la magnitud con la diferencia y su intervalo.
 > **Conclusión:** hay indicios de que la visita extra aumenta los pedidos, pero la evidencia es frágil.
 > **Limitaciones:** muestra de 8 tiendas, un solo mes, intervalo muy ancho, [la asignación no fue aleatoria].
 > **Recomendación:** repetir con al menos 20 tiendas por grupo, asignadas al azar, antes de extender a todas las rutas.
@@ -97,10 +97,10 @@ Con ese umbral, p = 0,044 ya no es significativo. Es una corrección sencilla y 
 **7. Resumen del capítulo en una ruta de decisión.**
 
 1. ¿Qué pregunta de negocio y qué población?
-2. ¿Qué tipo de variable? (numérica → medias; categórica → proporciones/chi-cuadrado)
+2. ¿Qué tipo de variable? (numérica → medias; categórica → proporciones, con la prueba chi-cuadrado de la lección complementaria 12.6)
 3. Plantear `H0`, `H1`, `α` (y cuántas pruebas harás).
 4. Verificar muestreo y supuestos.
-5. Calcular: estadístico, p-valor, intervalo, tamaño del efecto.
+5. Calcular: estadístico, p-valor, intervalo (y tamaño del efecto si ya estudiaste 12.7).
 6. Traducir a negocio con costos.
 7. Declarar limitaciones y recomendar el siguiente paso (más datos, experimento).
 
@@ -131,6 +131,8 @@ Ejemplo comercial: el gerente quiere saber si «las rutas del Norte rinden mejor
 4. Un experimento con asignación aleatoria (o un diseño que controle los confusores) y supuestos razonables.
 
 </details>
+
+<a id="micropractica"></a>
 
 ## Micropráctica
 

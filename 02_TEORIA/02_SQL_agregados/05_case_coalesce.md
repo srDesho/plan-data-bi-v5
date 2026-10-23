@@ -170,6 +170,8 @@ Ejemplo comercial: el jefe de ventas quiere ver, por ruta, cuántas visitas hubo
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Clasifica las tiendas por el año de su `fecha_alta`: antes de 2026 → «antigua», 2026 en adelante → «reciente» (puedes usar `fecha_alta < '2026-01-01'`). Muestra nombre, fecha y clase.

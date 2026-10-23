@@ -148,6 +148,8 @@ Ejemplo comercial: «clientes inactivos» es una lista de acción para el vended
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Con corte `2026-09-05`, calcula cuántas tiendas distintas tuvieron al menos una visita **realizada** entre el 3 y el 5 de septiembre (usa `visitas_ej`) y escribe la definición en una línea.

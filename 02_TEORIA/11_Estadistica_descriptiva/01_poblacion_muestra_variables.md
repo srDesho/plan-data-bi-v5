@@ -1,6 +1,14 @@
 # 11.1 Población, muestra y tipos de variables
 
-> Tiempo estimado: 50 min (lectura 25 + práctica 25). Prerrequisitos: capítulos 9 y 10 (leer un CSV con Pandas) o, como mínimo, [7.13 Registros](../07_Python_basico/13_registros_listas_de_diccionarios.md).
+> Tiempo estimado: 50 min (lectura 25 + práctica 25). Para el recorrido manual inicial basta distinguir fila y columna y leer un CSV como texto. Los ejemplos automatizados requieren después los capítulos 9 y 10; no son un requisito para empezar estadística.
+
+## Recorrido inicial sin Pandas
+
+Mientras aún no conozcas Pandas, estudia los términos y las tablas impresas como datos: todavía no ejecutes los bloques Pandas. Abre `04_DATASETS/mini_base/tiendas.csv` como texto. La primera línea contiene nombres de columnas y no es una tienda; cada línea siguiente representa una tienda. Cuenta esas líneas, identifica su clave y explica a qué conjunto quieres referirte antes de calcular.
+
+Ejemplo guiado: si la pregunta habla de las doce tiendas de esa mini-base y están todas registradas, la tabla es un censo de esa población. Las tres filas impresas en el ejemplo siguiente son una muestra de esas doce; no se convierten en toda la población por ser las únicas que ves en pantalla. Si la pregunta habla de todas las tiendas de Bolivia, esas doce tampoco forman un censo de esa población. La población depende de la pregunta y la muestra de qué unidades observaste.
+
+Para la micropráctica existente puedes clasificar las variables y contar las filas a mano. En su punto 3 numera las 39 líneas de venta y sortea cinco números distintos; registra los números seleccionados para poder reconstruir el intento. Usa la columna `cantidad` de esas filas, suma sus valores y divide entre cinco; compara con la media de las 39. Una selección con otra semilla o procedimiento no tiene por qué dar las mismas cifras. La reproducción automática con `random_state=11` se retoma después de aprender Pandas; no la marques ejecutada por haber hecho la cuenta manual. Elegir siempre las cinco primeras filas sería una muestra de conveniencia y no permite justificar representatividad.
 
 ## Para qué sirve
 
@@ -147,6 +155,8 @@ Ejemplo comercial: «el ticket promedio de nuestros clientes es de Bs 170» ¿ha
 4. Porque es una categoría (código), no una cantidad.
 
 </details>
+
+<a id="micropractica"></a>
 
 ## Micropráctica
 

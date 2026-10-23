@@ -110,6 +110,8 @@ Ejemplo comercial: el ERP entrega `drop_por_pedido.csv`. Al importarlo con el pu
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Importa `ventas.csv` de la mini-base en Excel con el procedimiento de texto/CSV y verifica 16 filas y que `fecha` quedó como fecha.

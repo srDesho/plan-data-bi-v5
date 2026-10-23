@@ -215,6 +215,8 @@ Ejemplo comercial: el ranking de rutas por ventas con `DENSE_RANK`, el acumulado
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Para cada línea de `venta_lineas` de las ventas 1 a 3, muestra el subtotal y qué porcentaje es del importe de **su** venta (`PARTITION BY venta_id`).

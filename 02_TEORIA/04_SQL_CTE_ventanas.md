@@ -10,10 +10,10 @@ Con los capítulos 1–3 ya puedes filtrar, agrupar y unir. Este capítulo te da
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 4.1 | [Subconsultas](04_SQL_CTE_ventanas/01_subconsultas.md) | escalar, de lista, en FROM, EXISTS, la trampa de NOT IN con NULL | refuerzo | 50 min |
-| 4.2 | [CTE con WITH](04_SQL_CTE_ventanas/02_cte.md) | dividir en pasos con nombre, depurar paso a paso | núcleo · D18 | 45 min |
-| 4.3 | [Funciones de ventana](04_SQL_CTE_ventanas/03_ventanas.md) | OVER, PARTITION BY, ROW_NUMBER/RANK/DENSE_RANK, acumulados, LAG | núcleo · D18 | 65 min |
-| 4.4 | [SQL para indicadores, fechas y rendimiento](04_SQL_CTE_ventanas/04_sql_kpis_fechas_rendimiento.md) | fecha de corte, activos/inactivos, crecimiento, EXPLAIN QUERY PLAN, notas de SQL Server | refuerzo | 55 min |
+| 4.1 | [Subconsultas](04_SQL_CTE_ventanas/01_subconsultas.md) | escalar, de lista, en FROM, EXISTS, la trampa de NOT IN con NULL | NÚCLEO · D18 | 50 min |
+| 4.2 | [CTE con WITH](04_SQL_CTE_ventanas/02_cte.md) | dividir en pasos con nombre, depurar paso a paso | NÚCLEO · D18 | 45 min |
+| 4.3 | [Funciones de ventana](04_SQL_CTE_ventanas/03_ventanas.md) | OVER, PARTITION BY, ROW_NUMBER/RANK/DENSE_RANK, acumulados, LAG | NÚCLEO · D18 | 65 min |
+| 4.4 | [SQL para indicadores, fechas y rendimiento](04_SQL_CTE_ventanas/04_sql_kpis_fechas_rendimiento.md) | fecha de corte, activos/inactivos, crecimiento, EXPLAIN QUERY PLAN, notas de SQL Server | COMPLEMENTARIA | 55 min |
 
 ## Idea central del capítulo
 

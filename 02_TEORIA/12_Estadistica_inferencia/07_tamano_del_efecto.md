@@ -136,6 +136,8 @@ Ejemplo comercial: una promoción sube el ticket promedio Bs 1,20 con un p-valor
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con las rutas de 12.5 (R_A y R_B de tiempos de entrega):

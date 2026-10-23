@@ -104,6 +104,8 @@ Jabón | Limpieza | 3.5
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Aplica las cinco preguntas, por escrito, a este requerimiento y luego escribe y ejecuta la consulta:

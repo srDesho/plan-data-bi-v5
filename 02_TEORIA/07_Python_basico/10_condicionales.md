@@ -211,6 +211,8 @@ Ejemplo comercial: la regla «descuento del 5 % si la compra supera Bs 500, 10 %
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe una función `etiqueta_cumplimiento(pct)` que devuelva `"cumple"` si `pct >= 90`, `"parcial"` si `pct >= 70` y `"no cumple"` en otro caso. Prueba con 95, 90, 89.9, 70 y 10 y anota el resultado de cada uno antes de ejecutar.

@@ -201,6 +201,8 @@ Ejemplo comercial: «clientes que compraron y no fueron visitados» es `compraro
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Crea un diccionario con los datos de un artículo (`nombre`, `categoria`, `precio`), cambia el precio y agrega una clave `stock`. Muéstralo.

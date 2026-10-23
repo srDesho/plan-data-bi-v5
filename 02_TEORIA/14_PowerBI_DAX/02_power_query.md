@@ -162,6 +162,8 @@ Ejemplo comercial: la consulta de ventas se actualiza cada mañana con el CSV nu
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe en papel la lista de pasos de Power Query que aplicarías a `venta_lineas.csv` (tipos, columna `importe_centavos`, quitar duplicados por `linea_id`).

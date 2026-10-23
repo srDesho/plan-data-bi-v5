@@ -160,6 +160,8 @@ Ejemplo comercial: «¿cuánto vendimos en la zona Centro, en la categoría Bebi
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Define la granularidad, las medidas, las dimensiones y las claves para un hecho de **visitas** (`visitas.csv`).

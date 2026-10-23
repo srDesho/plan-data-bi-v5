@@ -1,0 +1,38 @@
+{
+  "entorno": "copia temporal, sin modificar material protegido",
+  "resultados": [
+    {
+      "comando": [
+        "herramientas/verificar_paquete.py",
+        "--fase1"
+      ],
+      "codigo": 0,
+      "salida": "OK ETL distribuidora dos ejecuciones \nOK ETL de C06 y validador fila por fila \nOK Validadores: las referencias aprueban y las alteraciones conocidas se rechazan \nOMITIDA Evaluación final: referencia privada, segunda ejecución y validador \nOK Pruebas adversas y publicación segura \nOMITIDA Pruebas adversas del final (referencia privada) \nOK Privacidad: regresiones con datos ficticios \nOK Privacidad: artefactos públicos del final \n{\"pruebas\": 8, \"fallos\": 0}\n",
+      "error": "2026-10-17 15:22:03,757 INFO extraídas 16378 filas y 10 columnas\n2026-10-17 15:22:04,981 INFO vendedores recuperados por ruta: 301\n2026-10-17 15:22:04,988 INFO duplicados eliminados: 200\n2026-10-17 15:22:04,999 INFO validaciones OK · ventas entregadas = 1468924.50 Bs\n2026-10-17 15:22:05,170 INFO cargado en etl_original.db (bronze 16378 · silver 16178 · gold 581 filas)\n2026-10-17 15:22:05,738 INFO extraídas 16378 filas y 10 columnas\n2026-10-17 15:22:07,004 INFO vendedores recuperados por ruta: 301\n2026-10-17 15:22:07,011 INFO duplicados eliminados: 200\n2026-10-17 15:22:07,020 INFO validaciones OK · ventas entregadas = 1468924.50 Bs\n2026-10-17 15:22:07,199 INFO cargado en etl_original.db (bronze 16378 · silver 16178 · gold 581 filas)\n2026-10-17 15:22:07,852 INFO Carga completa: {'bronze': 4048, 'duplicados_exactos': 40, 'rechazados': 8, 'silver': 4000, 'documentos': 1000, 'clientes': 400, 'ventas_centavos': 74019775, 'ventas_bs': 740197.75, 'gold_filas': 724}\n2026-10-17 15:22:07,989 INFO Carga completa: {'bronze': 4048, 'duplicados_exactos': 40, 'rechazados': 8, 'silver': 4000, 'documentos': 1000, 'clientes': 400, 'ventas_centavos': 74019775, 'ventas_bs': 740197.75, 'gold_filas': 724}\n2026-10-17 15:22:26,054 INFO Carga completa: {'bronze': 4048, 'duplicados_exactos': 40, 'rechazados': 8, 'silver': 4000, 'documentos': 1000, 'clientes': 400, 'ventas_centavos': 74019775, 'ventas_bs': 740197.75, 'gold_filas': 724}\n"
+    },
+    {
+      "comando": [
+        "herramientas/pruebas_privacidad_final.py"
+      ],
+      "codigo": 0,
+      "salida": "OK: 13 regresiones de privacidad con referencias ficticias\n",
+      "error": ""
+    },
+    {
+      "comando": [
+        "herramientas/prueba_sqlite_cierre.py"
+      ],
+      "codigo": 0,
+      "salida": "OK    demostración · patrón `with sqlite3.connect()`: PermissionError reproducido (esperado en Windows)\nOK    demostración · patrón `closing(...)` + os.replace: correcto\nOK    corregir_sql · corregir_sql.consulta libera el archivo (copia borrada sin error)\nOK    ETL transferencia · etl_nuevo_referencia + validar_final: sin archivos abiertos (renombrar y borrar sin error)\nOK    ETL distribuidora · etl_distribuidora + validar_etl_distribuidora: sin archivos abiertos\nOK    revisión estática · 24 usos de sqlite3.connect revisados (análisis del código); todos dentro de closing()\nResumen: 5/5 grupos correctos · sistema: nt (win32)\n",
+      "error": ""
+    },
+    {
+      "comando": [
+        "herramientas/verificar_teoria.py"
+      ],
+      "codigo": 1,
+      "salida": "OK    ejemplos ejecutados (626 bloques)\nOK    formato de lecciones\nOK    enlaces internos\nERROR tiempos y lecciones de cada capítulo\n      - 07_Python_basico.md: 07_conversiones.md declara 70 min y la tabla 60 min\n      - 08_Python_funciones_archivos.md: 05_excepciones.md declara 70 min y la tabla 55 min\nOK    términos definidos antes de usarlos\nOK    glosario enlazado a su definición\nOK    fugas de ejercicios\nTiempo estimado por capítulo (min): {'01_SQL_basico': 321, '02_SQL_agregados': 260, '03_SQL_joins': 215, '04_SQL_CTE_ventanas': 215, '05_calidad_ETL': 275, '06_KPIs': 346, '07_Python_basico': 752, '08_Python_funciones_archivos': 385, '09_Pandas_basico': 335, '10_Pandas_transformaciones': 365, '11_Estadistica_descriptiva': 515, '12_Estadistica_inferencia': 485, '13_Modelado': 165, '14_PowerBI_DAX': 289, '15_Excel_cuadres': 170, '16_Git_comunicacion': 140, '17_Transferencia_debug': 175, '18_Entrevistas': 155}\nArchivos: 122 · palabras: 157234\n",
+      "error": ""
+    }
+  ]
+}

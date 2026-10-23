@@ -178,6 +178,8 @@ Ejemplo comercial: el reporte mensual de ventas por ruta necesita el mes como co
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Calcula el importe promedio por línea de `venta_lineas` redondeado a 2 decimales.

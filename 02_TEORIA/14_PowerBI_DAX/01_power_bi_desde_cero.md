@@ -18,7 +18,7 @@ Lee esta base antes de realizar PB02 en Desktop. Sus 4 minutos forman parte de l
 
 Esta preparación explica el procedimiento; la evidencia se obtiene al ejecutarlo en Desktop dentro de la práctica.
 
-El encabezado de esta lección incluye esta sección de 4 min. Si ya la estudiaste en D32, quedan 30 min de lectura del desarrollo; no vuelvas a sumar esta sección. La práctica de 20 min se contabiliza por separado según la guía.
+El encabezado de esta lección incluye esta sección de 4 min. Si ya la estudiaste antes, quedan 30 min de lectura del desarrollo; no vuelvas a sumar esta sección. La práctica de 20 min se contabiliza por separado según la guía.
 <!-- TEORIA:PREPARACION:FIN -->
 
 <a id="desarrollo"></a>
@@ -156,6 +156,8 @@ Ejemplo comercial: el tablero muestra Bs 2 332,5 de ventas entregadas, igual que
 4. El número de filas y la suma de importes del hecho.
 
 </details>
+
+<a id="micropractica"></a>
 
 ## Micropráctica
 

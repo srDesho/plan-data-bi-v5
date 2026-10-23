@@ -196,6 +196,8 @@ Ejemplo comercial: una línea de 3 unidades a Bs 0,10 de comisión da `3 * 0.1 =
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Calcula con Python cuántas cajas completas y cuántas unidades sueltas salen de 137 unidades con 24 unidades por caja.

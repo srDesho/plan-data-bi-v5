@@ -1,0 +1,46 @@
+{
+  "comparacion": "bytes completos de las ocho guías, dos regeneraciones consecutivas en workspace",
+  "fallos": 0,
+  "resultados": [
+    {
+      "regeneracion": 1,
+      "codigo": 0,
+      "archivos_modificados": [],
+      "sha256": {
+        "01_PLAN_DIARIO/dias/D04_2026-10-15.md": "5b94d80d1f013057625c2f53b85fac73d810ca4a9c17330e4e2bc38681d8a4be",
+        "01_PLAN_DIARIO/dias/D05_2026-10-16.md": "6210e332ae4a8558b706dbcc395405f1e7e7da2bba8583ae696be53cef123702",
+        "01_PLAN_DIARIO/dias/D08_2026-10-19.md": "904e2ba6d0c638d5109757117200f5ead9e0ff85890029adc03f1018f1a554ba",
+        "01_PLAN_DIARIO/dias/D09_2026-10-20.md": "2db639fcdf6c5fc1d4d03bdd564bca45c481aa7400137fef4e6e32ec36688e2d",
+        "01_PLAN_DIARIO/dias/D10_2026-10-21.md": "8adaeae08a7d2359ac8d15401dfa1e747dcdaca39522a7d22709ae0b27dcf8e6",
+        "01_PLAN_DIARIO/dias/D11_2026-10-22.md": "fd341260c94c7e6523c56a56a8071c2949c293dcea3e292f5debe0ccba9c6e06",
+        "01_PLAN_DIARIO/dias/D12_2026-10-23.md": "7f2a41e066553c4a94ef7a0e8b933be2e366101781ead98dacc34986ca731336",
+        "01_PLAN_DIARIO/dias/D13_2026-10-24.md": "3f5f302ac8bcc623b0d6744d506f0251768447e4a753b5e24ae9574434bec97c"
+      },
+      "verificacion_integridad": {
+        "fallos": 0,
+        "pruebas": 496,
+        "errores": []
+      }
+    },
+    {
+      "regeneracion": 2,
+      "codigo": 0,
+      "archivos_modificados": [],
+      "sha256": {
+        "01_PLAN_DIARIO/dias/D04_2026-10-15.md": "5b94d80d1f013057625c2f53b85fac73d810ca4a9c17330e4e2bc38681d8a4be",
+        "01_PLAN_DIARIO/dias/D05_2026-10-16.md": "6210e332ae4a8558b706dbcc395405f1e7e7da2bba8583ae696be53cef123702",
+        "01_PLAN_DIARIO/dias/D08_2026-10-19.md": "904e2ba6d0c638d5109757117200f5ead9e0ff85890029adc03f1018f1a554ba",
+        "01_PLAN_DIARIO/dias/D09_2026-10-20.md": "2db639fcdf6c5fc1d4d03bdd564bca45c481aa7400137fef4e6e32ec36688e2d",
+        "01_PLAN_DIARIO/dias/D10_2026-10-21.md": "8adaeae08a7d2359ac8d15401dfa1e747dcdaca39522a7d22709ae0b27dcf8e6",
+        "01_PLAN_DIARIO/dias/D11_2026-10-22.md": "fd341260c94c7e6523c56a56a8071c2949c293dcea3e292f5debe0ccba9c6e06",
+        "01_PLAN_DIARIO/dias/D12_2026-10-23.md": "7f2a41e066553c4a94ef7a0e8b933be2e366101781ead98dacc34986ca731336",
+        "01_PLAN_DIARIO/dias/D13_2026-10-24.md": "3f5f302ac8bcc623b0d6744d506f0251768447e4a753b5e24ae9574434bec97c"
+      },
+      "verificacion_integridad": {
+        "fallos": 0,
+        "pruebas": 496,
+        "errores": []
+      }
+    }
+  ]
+}

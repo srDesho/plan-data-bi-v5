@@ -152,6 +152,8 @@ Ejemplo comercial: «el tiempo de entrega medio es de 38 minutos, con un interva
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con los tiempos de entrega (en minutos) `[34, 28, 31, 29, 33, 30, 28, 36, 32, 27]` (n = 10; valor crítico `t*` = 2,262 para 9 grados de libertad):

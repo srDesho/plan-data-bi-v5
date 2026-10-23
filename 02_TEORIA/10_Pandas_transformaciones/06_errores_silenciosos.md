@@ -233,6 +233,8 @@ Ejemplo comercial: el reporte de ventas por zona sumaba Bs 61 000 y el total del
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Construye una tabla de 6 filas con una clave repetida en el catálogo y demuestra que un merge sin `validate` infla el importe.

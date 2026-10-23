@@ -1,761 +1,2889 @@
 {
-  "version": "5.2-fase2-etapa2",
-  "nota": "Clasificación individual de las 100 lecciones. NÚCLEO: indispensable para los fundamentos y avanzar; tiene día asignado en la ruta BASE. REFUERZO: se lee cuando una competencia no está dominada (cuándo) y sirve de material EXTENDIDA. PROFUNDIZACIÓN: EXTENDIDA u otros periodos. Todas las lecciones permanecen disponibles como material de consulta. cobertura: cómo se cubre, en la ruta BASE, un prerrequisito que no es NÚCLEO anterior (ejercicio previo, sección del capítulo 19 o lectura recomendada). secciones_previas identifica apartados teóricos ya contabilizados en preparaciones de nucleo.json; la lectura programada restante descuenta esos minutos del encabezado completo sin doble conteo.",
-  "lecciones": {
-    "1.1": {
-      "archivo": "01_SQL_basico/01_tablas_filas_columnas.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 3,
-      "cuando": "Si dudas qué representa una fila, una columna o un tipo (D01–D03); S1 ya lo practicó.",
-      "cobertura": {
-        "por": [
-          "S1"
-        ],
-        "nota": "Preparación explícita anterior al intento de S1; el ejercicio demuestra la aplicación, no sustituye la explicación. S1 (D01) ya obliga a nombrar tabla, fila y columna."
-      },
-      "preparacion_obligatoria": "S1"
-    },
-    "1.2": {
-      "archivo": "01_SQL_basico/02_select_from_alias.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 3,
-      "cuando": "Si un alias o una columna calculada no te sale en S3–S6.",
-      "preparacion_obligatoria": "S1",
-      "secciones_previas": [
-        "S1"
-      ]
-    },
-    "1.3": {
-      "archivo": "01_SQL_basico/03_where_operadores.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 4,
-      "cuando": "Si WHERE con AND/OR/IN/BETWEEN te da filas que no esperas (S4 lo practica en D03; S5 y S9 son refuerzo).",
-      "cobertura": {
-        "por": [
-          "S7"
-        ],
-        "nota": "Preparación explícita anterior al intento de S4; el ejercicio demuestra la aplicación, no sustituye la explicación. S7 (D02) usa WHERE; S4 (D03) añade AND con una comparación, que es lo que usa el examen S01."
-      },
-      "preparacion_obligatoria": "S4",
-      "secciones_previas": [
-        "S4"
-      ]
-    },
-    "1.4": {
-      "archivo": "01_SQL_basico/04_null.md",
-      "tipo": "NÚCLEO",
-      "dia": 2
-    },
-    "1.5": {
-      "archivo": "01_SQL_basico/05_order_limit.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 4,
-      "cuando": "Si ORDER BY o LIMIT te cortan un resultado distinto del que querías.",
-      "preparacion_obligatoria": "S1"
-    },
-    "1.6": {
-      "archivo": "01_SQL_basico/06_distinct_like.md",
-      "tipo": "NÚCLEO",
-      "dia": 3,
-      "secciones_previas": [
-        "S2"
-      ]
-    },
-    "1.7": {
-      "archivo": "01_SQL_basico/07_del_requerimiento_a_la_consulta.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 5,
-      "cuando": "Cuando una consulta nueva no sabes por dónde empezar: método de las cinco preguntas."
-    },
-    "2.1": {
-      "archivo": "02_SQL_agregados/01_funciones_agregadas.md",
-      "tipo": "NÚCLEO",
-      "dia": 4
-    },
-    "2.2": {
-      "archivo": "02_SQL_agregados/02_group_by_having.md",
-      "tipo": "NÚCLEO",
-      "dia": 5
-    },
-    "2.3": {
-      "archivo": "02_SQL_agregados/03_granularidad_denominadores.md",
-      "tipo": "NÚCLEO",
-      "dia": 6
-    },
-    "2.4": {
-      "archivo": "02_SQL_agregados/04_redondeo_texto_fechas.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 6,
-      "cuando": "Antes de G7, G8 y CL1–CL4 (redondeo, texto y fechas en SQL).",
-      "cobertura": {
-        "recomendada": true,
-        "nota": "Redondeo/texto/fechas SQL: 2.5 y 14.3 lo usan poco; léela antes de G8 y CL."
-      }
-    },
-    "2.5": {
-      "archivo": "02_SQL_agregados/05_case_coalesce.md",
-      "tipo": "NÚCLEO",
-      "dia": 17
-    },
-    "3.1": {
-      "archivo": "03_SQL_joins/01_claves_relaciones.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 9,
-      "cuando": "Si no puedes decir cuál es la clave de cada tabla y cómo se relacionan (J1).",
-      "cobertura": {
-        "por": [
-          "J2"
-        ],
-        "nota": "3.2 enseña claves primaria/foránea y ambos sentidos de cardinalidad antes de J2 (D09). J2 practica la unión de detalle con cabecera; J1 es REFUERZO, no preparación obligatoria."
-      }
-    },
-    "3.2": {
-      "archivo": "03_SQL_joins/02_inner_join.md",
-      "tipo": "NÚCLEO",
-      "dia": 9
-    },
-    "3.3": {
-      "archivo": "03_SQL_joins/03_left_join_ausentes.md",
-      "tipo": "NÚCLEO",
-      "dia": 11
-    },
-    "3.4": {
-      "archivo": "03_SQL_joins/04_duplicacion_por_join.md",
-      "tipo": "NÚCLEO",
-      "dia": 11
-    },
-    "4.1": {
-      "archivo": "04_SQL_CTE_ventanas/01_subconsultas.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 17,
-      "cuando": "Antes de la lección 4.2 si una subconsulta dentro de otra consulta te confunde (K3).",
-      "cobertura": {
-        "recomendada": true,
-        "nota": "4.2 enseña WITH y resultados intermedios con nombre antes de V3 (D18). Las subconsultas anidadas de 4.1 son consulta adicional, no requisito para el CTE de BASE."
-      }
-    },
-    "4.2": {
-      "archivo": "04_SQL_CTE_ventanas/02_cte.md",
-      "tipo": "NÚCLEO",
-      "dia": 18
-    },
-    "4.3": {
-      "archivo": "04_SQL_CTE_ventanas/03_ventanas.md",
-      "tipo": "NÚCLEO",
-      "dia": 18
-    },
-    "4.4": {
-      "archivo": "04_SQL_CTE_ventanas/04_sql_kpis_fechas_rendimiento.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 19,
-      "cuando": "Antes de V2, N5 y N7 (fechas de corte, activos y crecimiento)."
-    },
-    "5.1": {
-      "archivo": "05_calidad_ETL/01_etl_elt_medallon.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 20,
-      "cuando": "Si Bronze, Silver y Gold no te quedaron claros con el capítulo 19 §3.",
-      "cobertura": {
-        "por": [
-          "19.3"
-        ],
-        "nota": "El capítulo 19 §3 presenta Bronze, Silver y Gold con el mini-ETL."
-      }
-    },
-    "5.2": {
-      "archivo": "05_calidad_ETL/02_contrato_de_datos.md",
-      "tipo": "NÚCLEO",
-      "dia": 23
-    },
-    "5.3": {
-      "archivo": "05_calidad_ETL/03_rechazos_y_reconciliacion.md",
-      "tipo": "NÚCLEO",
-      "dia": 24
-    },
-    "5.4": {
-      "archivo": "05_calidad_ETL/04_cargas_registro_reproducibilidad.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 24,
-      "cuando": "Si la segunda ejecución de tu ETL duplica filas (ME03, ETL-6).",
-      "cobertura": {
-        "por": [
-          "ME03"
-        ],
-        "nota": "ME03 y ETL-6 practican la carga repetible y el cierre de la conexión."
-      }
-    },
-    "5.5": {
-      "archivo": "05_calidad_ETL/05_estructura_etl_funciones.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 26,
-      "cuando": "Si tus funciones del ETL no se separan en extraer, transformar, validar y cargar.",
-      "cobertura": {
-        "por": [
-          "ME03"
-        ],
-        "nota": "ME01–ME03 y ETL-1 a ETL-6 practican la estructura extraer-transformar-validar-cargar."
-      }
-    },
-    "6.1": {
-      "archivo": "06_KPIs/01_que_es_un_kpi.md",
-      "tipo": "NÚCLEO",
-      "dia": 12,
-      "secciones_previas": [
-        "AN07"
-      ]
-    },
-    "6.2": {
-      "archivo": "06_KPIs/02_cumplimiento_cobertura_efectividad.md",
-      "tipo": "NÚCLEO",
-      "dia": 25
-    },
-    "6.3": {
-      "archivo": "06_KPIs/03_ticket_frecuencia_activos.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 16,
-      "cuando": "Para entender el ticket, el drop size, la frecuencia y los clientes activos más allá de K1.",
-      "cobertura": {
-        "recomendada": true,
-        "nota": "K1 y AN08 (D16) practican importe por pedido y su interpretación; PB03 (D33) practica ticket. 6.6 enseña hechos, límites y recomendaciones. 6.3 amplía otros indicadores, sin ser lectura indispensable para AN18."
-      }
-    },
-    "6.4": {
-      "archivo": "06_KPIs/04_productividad_variaciones.md",
-      "tipo": "NÚCLEO",
-      "dia": 31
-    },
-    "6.5": {
-      "archivo": "06_KPIs/05_abc_pareto_rotacion.md",
-      "tipo": "NÚCLEO",
-      "dia": 19
-    },
-    "6.6": {
-      "archivo": "06_KPIs/06_interpretar_y_recomendar.md",
-      "tipo": "NÚCLEO",
-      "dia": 39
-    },
-    "7.1": {
-      "archivo": "07_Python_basico/01_que_es_un_programa.md",
-      "tipo": "REFUERZO",
-      "dia_ext": null,
-      "cuando": "Solo si D01 no quedó claro; P01 ya lo practicó.",
-      "preparacion_obligatoria": "P01"
-    },
-    "7.2": {
-      "archivo": "07_Python_basico/02_variables_asignacion.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 6,
-      "cuando": "Si una variable cambia de valor y no entiendes por qué (P01–P03).",
-      "cobertura": {
-        "por": [
-          "P01"
-        ],
-        "nota": "Preparación explícita anterior al intento de P01; el ejercicio demuestra la aplicación, no sustituye la explicación. P01 (D01) usa variables y parámetros."
-      },
-      "preparacion_obligatoria": "P01"
-    },
-    "7.3": {
-      "archivo": "07_Python_basico/03_tipos_aritmetica.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 5,
-      "cuando": "Si P02 o P07 dan decimales inesperados o divisiones raras.",
-      "cobertura": {
-        "por": [
-          "P02"
-        ],
-        "nota": "Preparación explícita anterior al intento de P01/P02; el ejercicio demuestra la aplicación, no sustituye la explicación. P02 (D02) hace una división y la protege."
-      },
-      "preparacion_obligatoria": "P01/P02"
-    },
-    "7.4": {
-      "archivo": "07_Python_basico/04_primera_funcion.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 4,
-      "cuando": "Si no puedes escribir una función con `def` y `return` sin copiar (P01).",
-      "cobertura": {
-        "por": [
-          "P01"
-        ],
-        "nota": "Preparación explícita anterior al intento de P01; el ejercicio demuestra la aplicación, no sustituye la explicación. P01 (D01) es una función con return."
-      },
-      "preparacion_obligatoria": "P01",
-      "secciones_previas": [
-        "P01"
-      ]
-    },
-    "7.5": {
-      "archivo": "07_Python_basico/05_texto.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 8,
-      "cuando": "Antes de P09 y de normalizar texto en el ETL (strip, split, replace, f-strings).",
-      "cobertura": {
-        "por": [
-          "P03"
-        ],
-        "nota": "Preparación explícita anterior al intento de P03; el ejercicio demuestra la aplicación, no sustituye la explicación. P03 (D02) usa strip, split, title y join."
-      },
-      "preparacion_obligatoria": "P03",
-      "secciones_previas": [
-        "P03"
-      ]
-    },
-    "7.6": {
-      "archivo": "07_Python_basico/06_booleanos_comparaciones_none.md",
-      "tipo": "NÚCLEO",
-      "dia": 2
-    },
-    "7.7": {
-      "archivo": "07_Python_basico/07_conversiones.md",
-      "tipo": "NÚCLEO",
-      "dia": 8
-    },
-    "7.8": {
-      "archivo": "07_Python_basico/08_listas_tuplas.md",
-      "tipo": "NÚCLEO",
-      "dia": 3
-    },
-    "7.9": {
-      "archivo": "07_Python_basico/09_diccionarios_sets.md",
-      "tipo": "NÚCLEO",
-      "dia": 3
-    },
-    "7.10": {
-      "archivo": "07_Python_basico/10_condicionales.md",
-      "tipo": "NÚCLEO",
-      "dia": 4,
-      "secciones_previas": [
-        "P02"
-      ]
-    },
-    "7.11": {
-      "archivo": "07_Python_basico/11_for_while.md",
-      "tipo": "NÚCLEO",
-      "dia": 4
-    },
-    "7.12": {
-      "archivo": "07_Python_basico/12_acumuladores.md",
-      "tipo": "NÚCLEO",
-      "dia": 5
-    },
-    "7.13": {
-      "archivo": "07_Python_basico/13_registros_listas_de_diccionarios.md",
-      "tipo": "NÚCLEO",
-      "dia": 5
-    },
-    "8.1": {
-      "archivo": "08_Python_funciones_archivos/01_funciones_con_contrato.md",
-      "tipo": "NÚCLEO",
-      "dia": 8
-    },
-    "8.2": {
-      "archivo": "08_Python_funciones_archivos/02_ambito_efectos.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 11,
-      "cuando": "Si una función cambia una lista o variable de afuera y no sabes por qué."
-    },
-    "8.3": {
-      "archivo": "08_Python_funciones_archivos/03_archivos_csv_json.md",
-      "tipo": "NÚCLEO",
-      "dia": 10
-    },
-    "8.4": {
-      "archivo": "08_Python_funciones_archivos/04_modulos_imports.md",
-      "tipo": "NÚCLEO",
-      "dia": 10
-    },
-    "8.5": {
-      "archivo": "08_Python_funciones_archivos/05_excepciones.md",
-      "tipo": "NÚCLEO",
-      "dia": 9
-    },
-    "8.6": {
-      "archivo": "08_Python_funciones_archivos/06_leer_tracebacks.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 12,
-      "cuando": "Si un traceback largo no te dice dónde mirar (se refuerza con el capítulo 19 §1 y DB01).",
-      "cobertura": {
-        "por": [
-          "DB01",
-          "19.1"
-        ],
-        "nota": "DB01 y el capítulo 19 §1 enseñan a leer un traceback."
-      }
-    },
-    "8.7": {
-      "archivo": "08_Python_funciones_archivos/07_pruebas_y_depuracion.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 13,
-      "cuando": "Antes de C06: probar tus funciones con `assert` y depurar paso a paso.",
-      "cobertura": {
-        "por": [
-          "P09",
-          "DB01",
-          "ME02"
-        ],
-        "nota": "8.1 (D08) enseña casos normal/límite/inválido y assert; P09 (D10), DB01 (D09) y ME02 (D23) exigen casos propios, reducción del error y pruebas. DB02/DB03 son REFUERZO."
-      }
-    },
-    "9.1": {
-      "archivo": "09_Pandas_basico/01_numpy_arrays.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 15,
-      "cuando": "Si no sabes qué es un arreglo (array) de NumPy antes de leer 9.2.",
-      "cobertura": {
-        "recomendada": true,
-        "nota": "9.2 (D12) define Series, DataFrame y operaciones por columna; P17 (D15) los practica. 10.1 explica sus usos de NumPy. No se exige dominar arreglos NumPy para BASE."
-      }
-    },
-    "9.2": {
-      "archivo": "09_Pandas_basico/02_series_dataframe_csv.md",
-      "tipo": "NÚCLEO",
-      "dia": 12
-    },
-    "9.3": {
-      "archivo": "09_Pandas_basico/03_inspeccionar.md",
-      "tipo": "NÚCLEO",
-      "dia": 15
-    },
-    "9.4": {
-      "archivo": "09_Pandas_basico/04_seleccion_filtros.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 16,
-      "cuando": "Si filtrar un DataFrame con condiciones te da el resultado equivocado.",
-      "cobertura": {
-        "por": [
-          "PD-BASE"
-        ],
-        "nota": "El puente inicial de 10.1 enseña selección, máscaras y copias; PD-BASE (D16) obliga a predecir y ejecutarlas antes de P22/P21. 9.4 sigue disponible para ampliar filtros y ordenación."
-      }
-    },
-    "9.5": {
-      "archivo": "09_Pandas_basico/05_nulos_duplicados.md",
-      "tipo": "NÚCLEO",
-      "dia": 16
-    },
-    "9.6": {
-      "archivo": "09_Pandas_basico/06_tipos_textos_fechas.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 17,
-      "cuando": "Antes de convertir fechas y textos con Pandas (P24, ETL-2).",
-      "cobertura": {
-        "por": [
-          "PD-BASE"
-        ],
-        "nota": "P09–P11 preparan conversiones escalares; el puente de 10.1 enseña conversión por columna y detección de NaN/NaT. PD-BASE (D16) exige practicarlas y preservar el origen; P24 es REFUERZO, no preparación."
-      }
-    },
-    "10.1": {
-      "archivo": "10_Pandas_transformaciones/01_columnas_nuevas.md",
-      "tipo": "NÚCLEO",
-      "dia": 16,
-      "practica_base": 10
-    },
-    "10.2": {
-      "archivo": "10_Pandas_transformaciones/02_groupby_agg.md",
-      "tipo": "NÚCLEO",
-      "dia": 17,
-      "practica_base": 10
-    },
-    "10.3": {
-      "archivo": "10_Pandas_transformaciones/03_merge_cardinalidad.md",
-      "tipo": "NÚCLEO",
-      "dia": 17
-    },
-    "10.4": {
-      "archivo": "10_Pandas_transformaciones/04_resumen_y_exportacion.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 23,
-      "cuando": "Para exportar tablas a CSV y SQLite fuera de ME03."
-    },
-    "10.5": {
-      "archivo": "10_Pandas_transformaciones/05_controles_calidad.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 24,
-      "cuando": "Antes de ME03 si no sabes comparar el total antes y después de una transformación.",
-      "cobertura": {
-        "por": [
-          "19.3",
-          "ME02"
-        ],
-        "nota": "19.3 (D20) enseña validar y la ecuación de conteos; ME02 (D23) practica reglas, rechazos y pruebas sobre filas calculadas a mano. 5.3 los desarrolla antes de ME03 (D24); el mini-ETL y ETL-6 preparan C06."
-      }
-    },
-    "10.6": {
-      "archivo": "10_Pandas_transformaciones/06_errores_silenciosos.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 37,
-      "cuando": "Antes de C06 o si un resultado de Pandas parece bien y no cuadra (errores silenciosos).",
-      "cobertura": {
-        "por": [
-          "P21",
-          "P22",
-          "ME03",
-          "ETL-6"
-        ],
-        "nota": "10.3/P21 controlan cardinalidad; 9.5/P22 distinguen exactos/conflictos; H03, ME03 y ETL-6 demuestran cuadres y repetición antes de C06. DB02/DB03/C05 son REFUERZO, no se usan como evidencia obligatoria."
-      }
-    },
-    "11.1": {
-      "archivo": "11_Estadistica_descriptiva/01_poblacion_muestra_variables.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 13,
-      "cuando": "Si no distingues población de muestra ni los tipos de variable.",
-      "cobertura": {
-        "recomendada": true,
-        "nota": "AN01 (D03) enseña unidad de análisis, no población/muestra. 11.3 (D13) enseña las medidas que AN08 (D16) calcula sobre pedidos; 11.1 amplía alcance poblacional e inferencia que AN08 no exige."
-      }
-    },
-    "11.2": {
-      "archivo": "11_Estadistica_descriptiva/02_frecuencias.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 15,
-      "cuando": "Si no sabes expresar una frecuencia como conteo y como porcentaje.",
-      "cobertura": {
-        "por": [
-          "G6"
-        ],
-        "nota": "G6 (D05) cuenta clientes por ruta con GROUP BY: es una tabla de frecuencias."
-      }
-    },
-    "11.3": {
-      "archivo": "11_Estadistica_descriptiva/03_media_mediana_moda.md",
-      "tipo": "NÚCLEO",
-      "dia": 13
-    },
-    "11.4": {
-      "archivo": "11_Estadistica_descriptiva/04_dispersion.md",
-      "tipo": "NÚCLEO",
-      "dia": 25
-    },
-    "11.5": {
-      "archivo": "11_Estadistica_descriptiva/05_percentiles_atipicos.md",
-      "tipo": "NÚCLEO",
-      "dia": 27
-    },
-    "11.6": {
-      "archivo": "11_Estadistica_descriptiva/06_distribuciones_histograma_z.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": 21,
-      "cuando": "EXTENDIDA: distribuciones, histogramas y puntaje z."
-    },
-    "11.7": {
-      "archivo": "11_Estadistica_descriptiva/07_correlacion_causalidad.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": 28,
-      "cuando": "EXTENDIDA: correlación y causalidad."
-    },
-    "11.8": {
-      "archivo": "11_Estadistica_descriptiva/08_muestreo.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": 35,
-      "cuando": "EXTENDIDA: cómo escoger una muestra que sirva."
-    },
-    "11.9": {
-      "archivo": "11_Estadistica_descriptiva/09_descriptiva_con_pandas.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": 27,
-      "cuando": "EXTENDIDA: un informe descriptivo completo con Pandas."
-    },
-    "12.1": {
-      "archivo": "12_Estadistica_inferencia/01_por_que_inferencia.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": null,
-      "cuando": "Otros periodos: inferencia estadística (tras la evaluación final)."
-    },
-    "12.2": {
-      "archivo": "12_Estadistica_inferencia/02_estimacion_intervalo_confianza.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": null,
-      "cuando": "Otros periodos: intervalos de confianza."
-    },
-    "12.3": {
-      "archivo": "12_Estadistica_inferencia/03_hipotesis.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": null,
-      "cuando": "Otros periodos: hipótesis y errores."
-    },
-    "12.4": {
-      "archivo": "12_Estadistica_inferencia/04_pvalor.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": null,
-      "cuando": "Otros periodos: el p-valor."
-    },
-    "12.5": {
-      "archivo": "12_Estadistica_inferencia/05_prueba_t_welch.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": null,
-      "cuando": "Otros periodos: comparar dos promedios."
-    },
-    "12.6": {
-      "archivo": "12_Estadistica_inferencia/06_chi_cuadrado.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": null,
-      "cuando": "Otros periodos: chi-cuadrado."
-    },
-    "12.7": {
-      "archivo": "12_Estadistica_inferencia/07_tamano_del_efecto.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": null,
-      "cuando": "Otros periodos: tamaño del efecto."
-    },
-    "12.8": {
-      "archivo": "12_Estadistica_inferencia/08_interpretacion_limitaciones.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": null,
-      "cuando": "Otros periodos: interpretar y comunicar sin equivocarse."
-    },
-    "13.1": {
-      "archivo": "13_Modelado/01_hechos_dimensiones.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 30,
-      "cuando": "Antes de 13.2 si no distingues hecho de dimensión.",
-      "cobertura": {
-        "recomendada": true,
-        "nota": "13.2 (D30) incorpora hechos, dimensiones y grano antes de modelar; PB01/PB02 (D32) los practican con claves y relaciones. 13.1 es ampliación, no lectura adicional obligatoria."
-      }
-    },
-    "13.2": {
-      "archivo": "13_Modelado/02_modelo_estrella.md",
-      "tipo": "NÚCLEO",
-      "dia": 30
-    },
-    "13.3": {
-      "archivo": "13_Modelado/03_tabla_de_fechas.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": 34,
-      "cuando": "EXTENDIDA: la tabla de fechas del modelo."
-    },
-    "14.1": {
-      "archivo": "14_PowerBI_DAX/01_power_bi_desde_cero.md",
-      "tipo": "NÚCLEO",
-      "dia": 32,
-      "secciones_previas": [
-        "PB02"
-      ]
-    },
-    "14.2": {
-      "archivo": "14_PowerBI_DAX/02_power_query.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": 32,
-      "cuando": "EXTENDIDA: Power Query y el lenguaje M."
-    },
-    "14.3": {
-      "archivo": "14_PowerBI_DAX/03_dax_contexto.md",
-      "tipo": "NÚCLEO",
-      "dia": 33
-    },
-    "14.4": {
-      "archivo": "14_PowerBI_DAX/04_medidas_utiles.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": 33,
-      "cuando": "EXTENDIDA: medidas útiles de un tablero comercial."
-    },
-    "14.5": {
-      "archivo": "14_PowerBI_DAX/05_diseno_y_comprobacion.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": 34,
-      "cuando": "EXTENDIDA: diseño del tablero y lista de comprobación."
-    },
-    "15.1": {
-      "archivo": "15_Excel_cuadres/01_excel_desde_cero.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 30,
-      "cuando": "Si Excel te cambia coma y punto o los tipos al importar."
-    },
-    "15.2": {
-      "archivo": "15_Excel_cuadres/02_funciones_para_cuadrar.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 30,
-      "cuando": "Si no manejas SUMAR.SI, CONTAR.SI y BUSCARV/BUSCARX para cuadrar.",
-      "cobertura": {
-        "recomendada": true,
-        "nota": "15.3 (D29) enseña tabla dinámica y cuadre antes de EX01/E4 (D31). EX01 BASE no exige SUMAR.SI ni BUSCARX; 15.2 amplía fórmulas si se necesitan."
-      }
-    },
-    "15.3": {
-      "archivo": "15_Excel_cuadres/03_tablas_dinamicas_cuadre.md",
-      "tipo": "NÚCLEO",
-      "dia": 29
-    },
-    "16.1": {
-      "archivo": "16_Git_comunicacion/01_git_desde_cero.md",
-      "tipo": "REFUERZO",
-      "dia_ext": 39,
-      "cuando": "Si tus commits no registran el trabajo terminado o no sabes ver la diferencia entre versiones.",
-      "cobertura": {
-        "recomendada": true,
-        "nota": "ETL-6 (D30) ya exige README; 16.2 lo explica de forma autosuficiente para C06-4 (D40). Git es consulta para versionar/publicar: una casilla de commit no demuestra enseñanza ni es requisito funcional del README."
-      }
-    },
-    "16.2": {
-      "archivo": "16_Git_comunicacion/02_documentar_y_explicar.md",
-      "tipo": "NÚCLEO",
-      "dia": 40
-    },
-    "16.3": {
-      "archivo": "16_Git_comunicacion/03_portafolio_y_empleo.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": 38,
-      "cuando": "EXTENDIDA: portafolio y búsqueda de empleo honesta."
-    },
-    "17.1": {
-      "archivo": "17_Transferencia_debug/01_ocho_pasos_caso_nuevo.md",
-      "tipo": "NÚCLEO",
-      "dia": 36
-    },
-    "17.2": {
-      "archivo": "17_Transferencia_debug/02_cuando_no_cuadra.md",
-      "tipo": "NÚCLEO",
-      "dia": 38
-    },
-    "17.3": {
-      "archivo": "17_Transferencia_debug/03_resolver_sin_ia.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": 40,
-      "cuando": "EXTENDIDA: resolver sin ayuda externa, con evidencia y honestidad."
-    },
-    "18.1": {
-      "archivo": "18_Entrevistas/01_responder_pregunta_tecnica.md",
-      "tipo": "NÚCLEO",
-      "dia": 41
-    },
-    "18.2": {
-      "archivo": "18_Entrevistas/02_banco_de_preguntas.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": 40,
-      "cuando": "EXTENDIDA: banco de preguntas frecuentes y respuestas modelo."
-    },
-    "18.3": {
-      "archivo": "18_Entrevistas/03_conductuales_y_honestidad.md",
-      "tipo": "PROFUNDIZACIÓN",
-      "dia_ext": 41,
-      "cuando": "EXTENDIDA: preguntas de comportamiento y apoyo de IA."
+ "version": "v2",
+ "nota": "Clase de cada lección: NUCLEO (programada en BASE), COMPLEMENTARIA (recurso fuera de BASE) o EMPLEO (se lee dentro del tiempo de empleo). Sin REFUERZO ni PROFUNDIZACIÓN: REFUERZO es una categoría de ejercicios.",
+ "lecciones": {
+  "1.1": {
+   "archivo": "01_SQL_basico/01_tablas_filas_columnas.md",
+   "titulo": "1.1 Tablas, filas, columnas y tipos de datos",
+   "clase": "NUCLEO",
+   "total_min": 45,
+   "lectura_min": 20,
+   "practica_min": 25,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 1,
+     "lectura_min": 20,
+     "micro_min": 0
     }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [],
+    "integrado_en": {
+     "1": "S1",
+     "2": "SQ01",
+     "3": "SQ01"
+    },
+    "minutos_obligatorios": 0
+   }
   },
-  "puente": {
-    "19.1": {
-      "seccion": "§1",
-      "titulo": "Leer un error en lugar de temerle",
-      "min": 15,
-      "dia": 9
+  "1.2": {
+   "archivo": "01_SQL_basico/02_select_from_alias.md",
+   "titulo": "1.2 SELECT, FROM, alias y columnas calculadas",
+   "clase": "NUCLEO",
+   "total_min": 53,
+   "lectura_min": 23,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "sec.",
+     "dia": 1,
+     "lectura_min": 8,
+     "micro_min": 0
     },
-    "19.2": {
-      "seccion": "§2",
-      "titulo": "Rechazar con ValueError y dejar rastro",
-      "min": 15,
-      "dia": 23
-    },
-    "19.3": {
-      "seccion": "§3",
-      "titulo": "De funciones a un programa: extraer, transformar, validar, cargar",
-      "min": 25,
-      "dia": 20
-    },
-    "19.4": {
-      "seccion": "§4",
-      "titulo": "Cargar a SQLite en Windows: cierra la conexión",
-      "min": 15,
-      "dia": 24
+    {
+     "parte": "resto",
+     "dia": 2,
+     "lectura_min": 15,
+     "micro_min": 0
     }
+   ],
+   "anclas": [
+    "preparacion-s1",
+    "desarrollo",
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [],
+    "integrado_en": {
+     "1": "S1",
+     "2": "SQ01",
+     "3": "SQ01"
+    },
+    "minutos_obligatorios": 0
+   }
+  },
+  "1.3": {
+   "archivo": "01_SQL_basico/03_where_operadores.md",
+   "titulo": "1.3 WHERE: filtrar filas con operadores",
+   "clase": "NUCLEO",
+   "total_min": 56,
+   "lectura_min": 26,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 2,
+     "lectura_min": 26,
+     "micro_min": 0
+    }
+   ],
+   "anclas": [
+    "desarrollo",
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [],
+    "integrado_en": {
+     "1": "S4",
+     "2": "S4",
+     "3": "SQ01",
+     "4": "SQ01"
+    },
+    "minutos_obligatorios": 0
+   }
+  },
+  "1.4": {
+   "archivo": "01_SQL_basico/04_null.md",
+   "titulo": "1.4 NULL: cuando falta el dato",
+   "clase": "NUCLEO",
+   "total_min": 40,
+   "lectura_min": 15,
+   "practica_min": 25,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 2,
+     "lectura_min": 15,
+     "micro_min": 0
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [],
+    "integrado_en": {
+     "1": "S7",
+     "2": "SQ02",
+     "3": "SQ02"
+    },
+    "minutos_obligatorios": 0
+   }
+  },
+  "1.5": {
+   "archivo": "01_SQL_basico/05_order_limit.md",
+   "titulo": "1.5 ORDER BY y LIMIT: ordenar y recortar",
+   "clase": "NUCLEO",
+   "total_min": 40,
+   "lectura_min": 15,
+   "practica_min": 25,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 3,
+     "lectura_min": 15,
+     "micro_min": 0
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [],
+    "integrado_en": {
+     "1": "S1",
+     "2": "SQ01",
+     "3": "S1"
+    },
+    "minutos_obligatorios": 0
+   }
+  },
+  "1.6": {
+   "archivo": "01_SQL_basico/06_distinct_like.md",
+   "titulo": "1.6 DISTINCT y LIKE: valores únicos y búsquedas por patrón",
+   "clase": "NUCLEO",
+   "total_min": 47,
+   "lectura_min": 22,
+   "practica_min": 25,
+   "partes": [
+    {
+     "parte": "sec.",
+     "dia": 2,
+     "lectura_min": 7,
+     "micro_min": 0
+    },
+    {
+     "parte": "resto",
+     "dia": 3,
+     "lectura_min": 15,
+     "micro_min": 0
+    }
+   ],
+   "anclas": [
+    "preparacion-s2",
+    "desarrollo",
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [],
+    "integrado_en": {
+     "1": "S2",
+     "2": "SQ02",
+     "3": "S6",
+     "4": "SQ02"
+    },
+    "minutos_obligatorios": 0
+   }
+  },
+  "1.7": {
+   "archivo": "01_SQL_basico/07_del_requerimiento_a_la_consulta.md",
+   "titulo": "1.7 Del requerimiento a la consulta: un método de cinco preguntas",
+   "clase": "COMPLEMENTARIA",
+   "total_min": 40,
+   "lectura_min": 15,
+   "practica_min": 25,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
+  },
+  "2.1": {
+   "archivo": "02_SQL_agregados/01_funciones_agregadas.md",
+   "titulo": "2.1 Funciones de agregación: contar, sumar, promediar",
+   "clase": "NUCLEO",
+   "total_min": 50,
+   "lectura_min": 20,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 4,
+     "lectura_min": 20,
+     "micro_min": 10
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     3
+    ],
+    "integrado_en": {
+     "1": "G3",
+     "2": "G3",
+     "4": "G1"
+    },
+    "minutos_obligatorios": 10
+   }
+  },
+  "2.2": {
+   "archivo": "02_SQL_agregados/02_group_by_having.md",
+   "titulo": "2.2 GROUP BY y HAVING: una cifra por grupo",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 20,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 5,
+     "lectura_min": 20,
+     "micro_min": 10
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     3
+    ],
+    "integrado_en": {
+     "1": "G5",
+     "2": "G6"
+    },
+    "minutos_obligatorios": 10
+   }
+  },
+  "2.3": {
+   "archivo": "02_SQL_agregados/03_granularidad_denominadores.md",
+   "titulo": "2.3 Granularidad y denominadores: el número correcto para la pregunta correcta",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 5,
+     "lectura_min": 25,
+     "micro_min": 30
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 30
+   }
+  },
+  "2.4": {
+   "archivo": "02_SQL_agregados/04_redondeo_texto_fechas.md",
+   "titulo": "2.4 Redondeo, texto y fechas: preparar los datos para el reporte",
+   "clase": "NUCLEO",
+   "total_min": 50,
+   "lectura_min": 20,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 11,
+     "lectura_min": 20,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     2,
+     3,
+     4
+    ],
+    "integrado_en": {
+     "1": "SQ04"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "2.5": {
+   "archivo": "02_SQL_agregados/05_case_coalesce.md",
+   "titulo": "2.5 CASE y COALESCE: condiciones dentro de la consulta y valores faltantes",
+   "clase": "NUCLEO",
+   "total_min": 50,
+   "lectura_min": 20,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 17,
+     "lectura_min": 20,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "V4"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "3.1": {
+   "archivo": "03_SQL_joins/01_claves_relaciones.md",
+   "titulo": "3.1 Claves, relaciones y cardinalidad",
+   "clase": "NUCLEO",
+   "total_min": 45,
+   "lectura_min": 20,
+   "practica_min": 25,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 9,
+     "lectura_min": 20,
+     "micro_min": 15
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "J1"
+    },
+    "minutos_obligatorios": 15
+   }
+  },
+  "3.2": {
+   "archivo": "03_SQL_joins/02_inner_join.md",
+   "titulo": "3.2 INNER JOIN: combinar tablas por coincidencia",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 25,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 9,
+     "lectura_min": 25,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     2,
+     3
+    ],
+    "integrado_en": {
+     "1": "J1"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "3.3": {
+   "archivo": "03_SQL_joins/03_left_join_ausentes.md",
+   "titulo": "3.3 LEFT JOIN: conservar todo lo de la izquierda y encontrar a los que no aparecen",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 20,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 11,
+     "lectura_min": 20,
+     "micro_min": 10
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     2
+    ],
+    "integrado_en": {
+     "1": "J5",
+     "3": "J5"
+    },
+    "minutos_obligatorios": 10
+   }
+  },
+  "3.4": {
+   "archivo": "03_SQL_joins/04_duplicacion_por_join.md",
+   "titulo": "3.4 Cuando el JOIN duplica: el error silencioso más caro",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 11,
+     "lectura_min": 25,
+     "micro_min": 30
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 30
+   }
+  },
+  "4.1": {
+   "archivo": "04_SQL_CTE_ventanas/01_subconsultas.md",
+   "titulo": "4.1 Subconsultas: una consulta dentro de otra",
+   "clase": "NUCLEO",
+   "total_min": 50,
+   "lectura_min": 20,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 18,
+     "lectura_min": 20,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "SQ10"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "4.2": {
+   "archivo": "04_SQL_CTE_ventanas/02_cte.md",
+   "titulo": "4.2 CTE: dividir una consulta larga en pasos con nombre",
+   "clase": "NUCLEO",
+   "total_min": 45,
+   "lectura_min": 15,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 18,
+     "lectura_min": 15,
+     "micro_min": 15
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 2,
+    "obligatorios": [
+     2
+    ],
+    "integrado_en": {
+     "1": "V3"
+    },
+    "minutos_obligatorios": 15
+   }
+  },
+  "4.3": {
+   "archivo": "04_SQL_CTE_ventanas/03_ventanas.md",
+   "titulo": "4.3 Funciones de ventana: calcular sin colapsar las filas",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 25,
+   "practica_min": 40,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 18,
+     "lectura_min": 25,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "SQ12"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "4.4": {
+   "archivo": "04_SQL_CTE_ventanas/04_sql_kpis_fechas_rendimiento.md",
+   "titulo": "4.4 SQL para indicadores: fechas de corte, activos, crecimiento y rendimiento",
+   "clase": "COMPLEMENTARIA",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
+  },
+  "5.1": {
+   "archivo": "05_calidad_ETL/01_etl_elt_medallon.md",
+   "titulo": "5.1 ETL, ELT y capas Bronze, Silver y Gold",
+   "clase": "NUCLEO",
+   "total_min": 50,
+   "lectura_min": 30,
+   "practica_min": 20,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 22,
+     "lectura_min": 30,
+     "micro_min": 15
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     2
+    ],
+    "integrado_en": {
+     "3": "AN12"
+    },
+    "minutos_obligatorios": 15
+   }
+  },
+  "5.2": {
+   "archivo": "05_calidad_ETL/02_contrato_de_datos.md",
+   "titulo": "5.2 El contrato de datos: escribirlo antes de programar",
+   "clase": "NUCLEO",
+   "total_min": 50,
+   "lectura_min": 25,
+   "practica_min": 25,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 23,
+     "lectura_min": 25,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     3,
+     4
+    ],
+    "integrado_en": {
+     "2": "ME02"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "5.3": {
+   "archivo": "05_calidad_ETL/03_rechazos_y_reconciliacion.md",
+   "titulo": "5.3 Rechazos, duplicados y reconciliación",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 24,
+     "lectura_min": 25,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     3,
+     4
+    ],
+    "integrado_en": {
+     "2": "ME02"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "5.4": {
+   "archivo": "05_calidad_ETL/04_cargas_registro_reproducibilidad.md",
+   "titulo": "5.4 Cargas repetibles, registro (logging) y reproducibilidad",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 24,
+     "lectura_min": 25,
+     "micro_min": 15
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 15
+   }
+  },
+  "5.5": {
+   "archivo": "05_calidad_ETL/05_estructura_etl_funciones.md",
+   "titulo": "5.5 Estructura de un ETL: cuatro funciones y un `main` pequeño",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 25,
+   "practica_min": 40,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 23,
+     "lectura_min": 25,
+     "micro_min": 10
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     3
+    ],
+    "integrado_en": {
+     "1": "ME01",
+     "2": "ME02",
+     "4": "ETL-6"
+    },
+    "minutos_obligatorios": 10
+   }
+  },
+  "6.1": {
+   "archivo": "06_KPIs/01_que_es_un_kpi.md",
+   "titulo": "6.1 Qué es un KPI: la ficha de definición y las ventas entregadas",
+   "clase": "NUCLEO",
+   "total_min": 76,
+   "lectura_min": 41,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 12,
+     "lectura_min": 41,
+     "micro_min": 15
+    }
+   ],
+   "anclas": [
+    "desarrollo",
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "P02"
+    },
+    "minutos_obligatorios": 15
+   }
+  },
+  "6.2": {
+   "archivo": "06_KPIs/02_cumplimiento_cobertura_efectividad.md",
+   "titulo": "6.2 Cumplimiento, cobertura y efectividad",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 25,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 25,
+     "lectura_min": 25,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     2
+    ],
+    "integrado_en": {
+     "3": "N2"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "6.3": {
+   "archivo": "06_KPIs/03_ticket_frecuencia_activos.md",
+   "titulo": "6.3 Ticket medio, drop size, frecuencia y clientes activos",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 25,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 16,
+     "lectura_min": 25,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "(ampliación 4.4)"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "6.4": {
+   "archivo": "06_KPIs/04_productividad_variaciones.md",
+   "titulo": "6.4 Productividad, crecimiento y variaciones",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 20,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 25,
+     "lectura_min": 20,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     2,
+     3
+    ],
+    "integrado_en": {
+     "1": "KP01"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "6.5": {
+   "archivo": "06_KPIs/05_abc_pareto_rotacion.md",
+   "titulo": "6.5 ABC, Pareto y rotación de inventario",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 25,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 19,
+     "lectura_min": 25,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     2,
+     3
+    ],
+    "integrado_en": {
+     "1": "V4"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "6.6": {
+   "archivo": "06_KPIs/06_interpretar_y_recomendar.md",
+   "titulo": "6.6 Interpretar, recomendar y qué hacer cuando faltan datos",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 38,
+     "lectura_min": 25,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     2,
+     3
+    ],
+    "integrado_en": {
+     "1": "AN18"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "7.1": {
+   "archivo": "07_Python_basico/01_que_es_un_programa.md",
+   "titulo": "7.1 Qué es un programa y cómo se ejecuta",
+   "clase": "NUCLEO",
+   "total_min": 45,
+   "lectura_min": 15,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 1,
+     "lectura_min": 15,
+     "micro_min": 0
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1
+    ],
+    "integrado_en": {
+     "2": "autocomprobación",
+     "3": "autocomprobación"
+    },
+    "minutos_obligatorios": 10
+   }
+  },
+  "7.2": {
+   "archivo": "07_Python_basico/02_variables_asignacion.md",
+   "titulo": "7.2 Variables y asignación",
+   "clase": "NUCLEO",
+   "total_min": 45,
+   "lectura_min": 15,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 1,
+     "lectura_min": 15,
+     "micro_min": 0
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     2
+    ],
+    "integrado_en": {
+     "1": "P01",
+     "3": "autocomprobación"
+    },
+    "minutos_obligatorios": 10
+   }
+  },
+  "7.3": {
+   "archivo": "07_Python_basico/03_tipos_aritmetica.md",
+   "titulo": "7.3 Tipos de datos y aritmética",
+   "clase": "NUCLEO",
+   "total_min": 50,
+   "lectura_min": 20,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 2,
+     "lectura_min": 20,
+     "micro_min": 0
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     2,
+     3
+    ],
+    "integrado_en": {
+     "1": "P01",
+     "4": "autocomprobación"
+    },
+    "minutos_obligatorios": 15
+   }
+  },
+  "7.4": {
+   "archivo": "07_Python_basico/04_primera_funcion.md",
+   "titulo": "7.4 Tu primera función corta",
+   "clase": "NUCLEO",
+   "total_min": 63,
+   "lectura_min": 28,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "sec.",
+     "dia": 1,
+     "lectura_min": 8,
+     "micro_min": 0
+    },
+    {
+     "parte": "resto",
+     "dia": 2,
+     "lectura_min": 20,
+     "micro_min": 0
+    }
+   ],
+   "anclas": [
+    "preparacion-p01",
+    "desarrollo",
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     3
+    ],
+    "integrado_en": {
+     "1": "P01",
+     "2": "P01"
+    },
+    "minutos_obligatorios": 10
+   }
+  },
+  "7.5": {
+   "archivo": "07_Python_basico/05_texto.md",
+   "titulo": "7.5 Texto: cadenas, métodos y f-strings",
+   "clase": "NUCLEO",
+   "total_min": 72,
+   "lectura_min": 34,
+   "practica_min": 38,
+   "partes": [
+    {
+     "parte": "sec.",
+     "dia": 2,
+     "lectura_min": 12,
+     "micro_min": 0
+    },
+    {
+     "parte": "resto",
+     "dia": 2,
+     "lectura_min": 22,
+     "micro_min": 0
+    }
+   ],
+   "anclas": [
+    "preparacion-p03",
+    "desarrollo",
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     2,
+     3
+    ],
+    "integrado_en": {
+     "1": "P03",
+     "4": "autocomprobación"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "7.6": {
+   "archivo": "07_Python_basico/06_booleanos_comparaciones_none.md",
+   "titulo": "7.6 Booleanos, comparaciones y None",
+   "clase": "NUCLEO",
+   "total_min": 50,
+   "lectura_min": 20,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 2,
+     "lectura_min": 20,
+     "micro_min": 0
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1
+    ],
+    "integrado_en": {
+     "2": "P03",
+     "3": "P02",
+     "4": "P02"
+    },
+    "minutos_obligatorios": 10
+   }
+  },
+  "7.7": {
+   "archivo": "07_Python_basico/07_conversiones.md",
+   "titulo": "7.7 Conversiones de tipo y los primeros errores de valor",
+   "clase": "NUCLEO",
+   "total_min": 70,
+   "lectura_min": 30,
+   "practica_min": 40,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 8,
+     "lectura_min": 30,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     4
+    ],
+    "integrado_en": {
+     "3": "P09"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "7.8": {
+   "archivo": "07_Python_basico/08_listas_tuplas.md",
+   "titulo": "7.8 Listas y tuplas: guardar varios valores",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 20,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 3,
+     "lectura_min": 20,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     4
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 25
+   }
+  },
+  "7.9": {
+   "archivo": "07_Python_basico/09_diccionarios_sets.md",
+   "titulo": "7.9 Diccionarios y conjuntos",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 20,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 3,
+     "lectura_min": 20,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     2,
+     3,
+     4
+    ],
+    "integrado_en": {
+     "1": "P04"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "7.10": {
+   "archivo": "07_Python_basico/10_condicionales.md",
+   "titulo": "7.10 Condicionales: if, elif y else",
+   "clase": "NUCLEO",
+   "total_min": 57,
+   "lectura_min": 27,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "sec.",
+     "dia": 2,
+     "lectura_min": 7,
+     "micro_min": 0
+    },
+    {
+     "parte": "resto",
+     "dia": 4,
+     "lectura_min": 20,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "preparacion-p02",
+    "desarrollo",
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     2
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 20
+   }
+  },
+  "7.11": {
+   "archivo": "07_Python_basico/11_for_while.md",
+   "titulo": "7.11 Repetir: for y while",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 20,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 4,
+     "lectura_min": 20,
+     "micro_min": 35
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 35
+   }
+  },
+  "7.12": {
+   "archivo": "07_Python_basico/12_acumuladores.md",
+   "titulo": "7.12 Acumuladores y patrones de recorrido",
+   "clase": "NUCLEO",
+   "total_min": 70,
+   "lectura_min": 28,
+   "practica_min": 42,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 4,
+     "lectura_min": 28,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 5,
+    "obligatorios": [
+     2,
+     3,
+     5
+    ],
+    "integrado_en": {
+     "1": "P07",
+     "4": "P07"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "7.13": {
+   "archivo": "07_Python_basico/13_registros_listas_de_diccionarios.md",
+   "titulo": "7.13 Recorrer registros: listas de diccionarios",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 25,
+   "practica_min": 40,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 5,
+     "lectura_min": 25,
+     "micro_min": 30
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {
+     "4": "P07"
+    },
+    "minutos_obligatorios": 30
+   }
+  },
+  "8.1": {
+   "archivo": "08_Python_funciones_archivos/01_funciones_con_contrato.md",
+   "titulo": "8.1 Funciones con contrato",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 20,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 8,
+     "lectura_min": 20,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "P08"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "8.2": {
+   "archivo": "08_Python_funciones_archivos/02_ambito_efectos.md",
+   "titulo": "8.2 Ámbito de las variables y efectos secundarios",
+   "clase": "COMPLEMENTARIA",
+   "total_min": 40,
+   "lectura_min": 15,
+   "practica_min": 25,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
+  },
+  "8.3": {
+   "archivo": "08_Python_funciones_archivos/03_archivos_csv_json.md",
+   "titulo": "8.3 Archivos: rutas, CSV y JSON",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 25,
+   "practica_min": 40,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 10,
+     "lectura_min": 25,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     3,
+     4
+    ],
+    "integrado_en": {
+     "1": "P13",
+     "2": "P13"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "8.4": {
+   "archivo": "08_Python_funciones_archivos/04_modulos_imports.md",
+   "titulo": "8.4 Módulos e importaciones",
+   "clase": "NUCLEO",
+   "total_min": 70,
+   "lectura_min": 30,
+   "practica_min": 40,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 10,
+     "lectura_min": 30,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 5,
+    "obligatorios": [
+     2,
+     3,
+     5
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 20
+   }
+  },
+  "8.5": {
+   "archivo": "08_Python_funciones_archivos/05_excepciones.md",
+   "titulo": "8.5 Excepciones: try, except y raise",
+   "clase": "NUCLEO",
+   "total_min": 70,
+   "lectura_min": 25,
+   "practica_min": 45,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 9,
+     "lectura_min": 25,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     4
+    ],
+    "integrado_en": {
+     "3": "P09"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "8.6": {
+   "archivo": "08_Python_funciones_archivos/06_leer_tracebacks.md",
+   "titulo": "8.6 Leer un traceback",
+   "clase": "NUCLEO",
+   "total_min": 45,
+   "lectura_min": 20,
+   "practica_min": 25,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 12,
+     "lectura_min": 20,
+     "micro_min": 15
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "autocomprobación"
+    },
+    "minutos_obligatorios": 15
+   }
+  },
+  "8.7": {
+   "archivo": "08_Python_funciones_archivos/07_pruebas_y_depuracion.md",
+   "titulo": "8.7 Pruebas con assert y depuración paso a paso",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 20,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 12,
+     "lectura_min": 20,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "PT01"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "9.1": {
+   "archivo": "09_Pandas_basico/01_numpy_arrays.md",
+   "titulo": "9.1 NumPy: de listas a arreglos",
+   "clase": "COMPLEMENTARIA",
+   "total_min": 50,
+   "lectura_min": 20,
+   "practica_min": 30,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
+  },
+  "9.2": {
+   "archivo": "09_Pandas_basico/02_series_dataframe_csv.md",
+   "titulo": "9.2 Series, DataFrame y leer un CSV",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 25,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 15,
+     "lectura_min": 25,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     4
+    ],
+    "integrado_en": {
+     "3": "P17"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "9.3": {
+   "archivo": "09_Pandas_basico/03_inspeccionar.md",
+   "titulo": "9.3 Inspeccionar los datos antes de usarlos (perfilado)",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 20,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 15,
+     "lectura_min": 20,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "P23"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "9.4": {
+   "archivo": "09_Pandas_basico/04_seleccion_filtros.md",
+   "titulo": "9.4 Seleccionar, filtrar y ordenar",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 20,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 17,
+     "lectura_min": 20,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 20
+   }
+  },
+  "9.5": {
+   "archivo": "09_Pandas_basico/05_nulos_duplicados.md",
+   "titulo": "9.5 Valores vacíos y filas duplicadas",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 22,
+   "practica_min": 38,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 16,
+     "lectura_min": 22,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     3,
+     4
+    ],
+    "integrado_en": {
+     "1": "P22",
+     "2": "P22"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "9.6": {
+   "archivo": "09_Pandas_basico/06_tipos_textos_fechas.md",
+   "titulo": "9.6 Convertir tipos, limpiar texto y trabajar con fechas",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 25,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 23,
+     "lectura_min": 25,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     2
+    ],
+    "integrado_en": {
+     "3": "autocomprobación"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "10.1": {
+   "archivo": "10_Pandas_transformaciones/01_columnas_nuevas.md",
+   "titulo": "10.1 Columnas nuevas y transformaciones",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 25,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 16,
+     "lectura_min": 25,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 25
+   }
+  },
+  "10.2": {
+   "archivo": "10_Pandas_transformaciones/02_groupby_agg.md",
+   "titulo": "10.2 groupby y agregaciones",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 20,
+   "practica_min": 40,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 17,
+     "lectura_min": 20,
+     "micro_min": 30
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {
+     "4": "autocomprobación"
+    },
+    "minutos_obligatorios": 30
+   }
+  },
+  "10.3": {
+   "archivo": "10_Pandas_transformaciones/03_merge_cardinalidad.md",
+   "titulo": "10.3 merge: unir tablas y controlar la cardinalidad",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 25,
+   "practica_min": 40,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 17,
+     "lectura_min": 25,
+     "micro_min": 30
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 30
+   }
+  },
+  "10.4": {
+   "archivo": "10_Pandas_transformaciones/04_resumen_y_exportacion.md",
+   "titulo": "10.4 Tablas de resumen y exportación (CSV y SQLite)",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 20,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 24,
+     "lectura_min": 20,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     2,
+     3
+    ],
+    "integrado_en": {
+     "1": "ME03"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "10.5": {
+   "archivo": "10_Pandas_transformaciones/05_controles_calidad.md",
+   "titulo": "10.5 Controles de calidad y reconciliación en Pandas",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 25,
+   "practica_min": 40,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 19,
+     "lectura_min": 25,
+     "micro_min": 30
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {
+     "4": "ME03"
+    },
+    "minutos_obligatorios": 30
+   }
+  },
+  "10.6": {
+   "archivo": "10_Pandas_transformaciones/06_errores_silenciosos.md",
+   "titulo": "10.6 Errores silenciosos: los que no avisan",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 25,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 26,
+     "lectura_min": 25,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     4
+    ],
+    "integrado_en": {
+     "3": "PE01"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "11.1": {
+   "archivo": "11_Estadistica_descriptiva/01_poblacion_muestra_variables.md",
+   "titulo": "11.1 Población, muestra y tipos de variables",
+   "clase": "NUCLEO",
+   "total_min": 50,
+   "lectura_min": 25,
+   "practica_min": 25,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 9,
+     "lectura_min": 25,
+     "micro_min": 15
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "autocomprobación"
+    },
+    "minutos_obligatorios": 15
+   }
+  },
+  "11.2": {
+   "archivo": "11_Estadistica_descriptiva/02_frecuencias.md",
+   "titulo": "11.2 Frecuencias: contar y expresar en porcentaje",
+   "clase": "NUCLEO",
+   "total_min": 45,
+   "lectura_min": 20,
+   "practica_min": 25,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 11,
+     "lectura_min": 20,
+     "micro_min": 15
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 15
+   }
+  },
+  "11.3": {
+   "archivo": "11_Estadistica_descriptiva/03_media_mediana_moda.md",
+   "titulo": "11.3 Media, mediana y moda",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 11,
+     "lectura_min": 25,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     2,
+     3
+    ],
+    "integrado_en": {
+     "1": "ST01"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "11.4": {
+   "archivo": "11_Estadistica_descriptiva/04_dispersion.md",
+   "titulo": "11.4 Dispersión: rango, varianza y desviación estándar",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 30,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 18,
+     "lectura_min": 30,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "ST01"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "11.5": {
+   "archivo": "11_Estadistica_descriptiva/05_percentiles_atipicos.md",
+   "titulo": "11.5 Percentiles, cuartiles y valores atípicos",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 30,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 25,
+     "lectura_min": 30,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     4
+    ],
+    "integrado_en": {
+     "3": "ST02"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "11.6": {
+   "archivo": "11_Estadistica_descriptiva/06_distribuciones_histograma_z.md",
+   "titulo": "11.6 Distribuciones, histogramas, normalidad y puntaje z",
+   "clase": "COMPLEMENTARIA",
+   "total_min": 65,
+   "lectura_min": 30,
+   "practica_min": 35,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
+  },
+  "11.7": {
+   "archivo": "11_Estadistica_descriptiva/07_correlacion_causalidad.md",
+   "titulo": "11.7 Correlación y causalidad",
+   "clase": "COMPLEMENTARIA",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
+  },
+  "11.8": {
+   "archivo": "11_Estadistica_descriptiva/08_muestreo.md",
+   "titulo": "11.8 Muestreo: cómo escoger una muestra que sirva",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 32,
+     "lectura_min": 25,
+     "micro_min": 30
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 30
+   }
+  },
+  "11.9": {
+   "archivo": "11_Estadistica_descriptiva/09_descriptiva_con_pandas.md",
+   "titulo": "11.9 Estadística descriptiva con Pandas: un informe completo",
+   "clase": "COMPLEMENTARIA",
+   "total_min": 60,
+   "lectura_min": 20,
+   "practica_min": 40,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
+  },
+  "12.1": {
+   "archivo": "12_Estadistica_inferencia/01_por_que_inferencia.md",
+   "titulo": "12.1 Por qué hace falta la inferencia: la variabilidad entre muestras",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 36,
+     "lectura_min": 25,
+     "micro_min": 30
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 30
+   }
+  },
+  "12.2": {
+   "archivo": "12_Estadistica_inferencia/02_estimacion_intervalo_confianza.md",
+   "titulo": "12.2 Estimación e intervalos de confianza",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 30,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 37,
+     "lectura_min": 30,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "RS04"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "12.3": {
+   "archivo": "12_Estadistica_inferencia/03_hipotesis.md",
+   "titulo": "12.3 Hipótesis nula, hipótesis alternativa y errores",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 30,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 37,
+     "lectura_min": 30,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     2
+    ],
+    "integrado_en": {
+     "3": "ST07"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "12.4": {
+   "archivo": "12_Estadistica_inferencia/04_pvalor.md",
+   "titulo": "12.4 El p-valor, calculado de verdad",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 30,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 38,
+     "lectura_min": 30,
+     "micro_min": 35
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 35
+   }
+  },
+  "12.5": {
+   "archivo": "12_Estadistica_inferencia/05_prueba_t_welch.md",
+   "titulo": "12.5 Comparar dos promedios: la prueba t (Student y Welch)",
+   "clase": "NUCLEO",
+   "total_min": 70,
+   "lectura_min": 30,
+   "practica_min": 40,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 39,
+     "lectura_min": 30,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     2,
+     3
+    ],
+    "integrado_en": {
+     "1": "ST05",
+     "4": "ST05"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "12.6": {
+   "archivo": "12_Estadistica_inferencia/06_chi_cuadrado.md",
+   "titulo": "12.6 Relación entre dos categorías: la prueba chi-cuadrado",
+   "clase": "COMPLEMENTARIA",
+   "total_min": 60,
+   "lectura_min": 25,
+   "practica_min": 35,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
+  },
+  "12.7": {
+   "archivo": "12_Estadistica_inferencia/07_tamano_del_efecto.md",
+   "titulo": "12.7 Tamaño del efecto: significativo no es lo mismo que importante",
+   "clase": "COMPLEMENTARIA",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
+  },
+  "12.8": {
+   "archivo": "12_Estadistica_inferencia/08_interpretacion_limitaciones.md",
+   "titulo": "12.8 Interpretar, comunicar y no equivocarse",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 30,
+   "practica_min": 25,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 39,
+     "lectura_min": 30,
+     "micro_min": 15
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "autocomprobación"
+    },
+    "minutos_obligatorios": 15
+   }
+  },
+  "13.1": {
+   "archivo": "13_Modelado/01_hechos_dimensiones.md",
+   "titulo": "13.1 Hechos, dimensiones y granularidad",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 26,
+     "lectura_min": 25,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     2
+    ],
+    "integrado_en": {
+     "3": "MD01"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "13.2": {
+   "archivo": "13_Modelado/02_modelo_estrella.md",
+   "titulo": "13.2 El modelo estrella: relaciones y varios hechos",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 30,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 29,
+     "lectura_min": 30,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     2,
+     3
+    ],
+    "integrado_en": {
+     "1": "MD01"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "13.3": {
+   "archivo": "13_Modelado/03_tabla_de_fechas.md",
+   "titulo": "13.3 La tabla de fechas (calendario)",
+   "clase": "NUCLEO",
+   "total_min": 45,
+   "lectura_min": 20,
+   "practica_min": 25,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 32,
+     "lectura_min": 20,
+     "micro_min": 15
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     3
+    ],
+    "integrado_en": {
+     "2": "autocomprobación"
+    },
+    "minutos_obligatorios": 15
+   }
+  },
+  "14.1": {
+   "archivo": "14_PowerBI_DAX/01_power_bi_desde_cero.md",
+   "titulo": "14.1 Power BI desde cero: qué es, el flujo de trabajo y la configuración regional",
+   "clase": "NUCLEO",
+   "total_min": 54,
+   "lectura_min": 34,
+   "practica_min": 20,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 30,
+     "lectura_min": 34,
+     "micro_min": 15
+    }
+   ],
+   "anclas": [
+    "desarrollo",
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     2,
+     3
+    ],
+    "integrado_en": {
+     "1": "autocomprobación"
+    },
+    "minutos_obligatorios": 15
+   }
+  },
+  "14.2": {
+   "archivo": "14_PowerBI_DAX/02_power_query.md",
+   "titulo": "14.2 Power Query y el lenguaje M",
+   "clase": "NUCLEO",
+   "total_min": 55,
+   "lectura_min": 25,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 31,
+     "lectura_min": 25,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1,
+     2
+    ],
+    "integrado_en": {
+     "3": "PQ01"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "14.3": {
+   "archivo": "14_PowerBI_DAX/03_dax_contexto.md",
+   "titulo": "14.3 DAX: medidas y contexto de filtro",
+   "clase": "NUCLEO",
+   "total_min": 70,
+   "lectura_min": 35,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 33,
+     "lectura_min": 35,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     2,
+     3,
+     4
+    ],
+    "integrado_en": {
+     "1": "PB03"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "14.4": {
+   "archivo": "14_PowerBI_DAX/04_medidas_utiles.md",
+   "titulo": "14.4 Medidas útiles de un tablero comercial y cómo controlarlas",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 30,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 33,
+     "lectura_min": 30,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     4
+    ],
+    "integrado_en": {
+     "3": "PB07"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "14.5": {
+   "archivo": "14_PowerBI_DAX/05_diseno_y_comprobacion.md",
+   "titulo": "14.5 Diseño del tablero y lista de comprobación manual",
+   "clase": "NUCLEO",
+   "total_min": 45,
+   "lectura_min": 25,
+   "practica_min": 20,
+   "partes": [
+    {
+     "parte": "sec.",
+     "dia": 33,
+     "lectura_min": 12,
+     "micro_min": 5
+    }
+   ],
+   "anclas": [
+    "micropractica",
+    "seccion-inicial"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [
+     1
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 5
+   }
+  },
+  "15.1": {
+   "archivo": "15_Excel_cuadres/01_excel_desde_cero.md",
+   "titulo": "15.1 Excel desde cero: datos limpios, tablas y la configuración regional",
+   "clase": "NUCLEO",
+   "total_min": 45,
+   "lectura_min": 25,
+   "practica_min": 20,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 30,
+     "lectura_min": 25,
+     "micro_min": 15
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {},
+    "minutos_obligatorios": 15
+   }
+  },
+  "15.2": {
+   "archivo": "15_Excel_cuadres/02_funciones_para_cuadrar.md",
+   "titulo": "15.2 Funciones de Excel para cuadrar: condiciones, sumas y búsquedas",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 25,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 31,
+     "lectura_min": 25,
+     "micro_min": 25
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {
+     "4": "EX04"
+    },
+    "minutos_obligatorios": 25
+   }
+  },
+  "15.3": {
+   "archivo": "15_Excel_cuadres/03_tablas_dinamicas_cuadre.md",
+   "titulo": "15.3 Tablas dinámicas, estadística en Excel y el cuadre entre herramientas",
+   "clase": "NUCLEO",
+   "total_min": 65,
+   "lectura_min": 30,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 31,
+     "lectura_min": 30,
+     "micro_min": 10
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     4
+    ],
+    "integrado_en": {
+     "1": "EX01",
+     "2": "EX03(REFUERZO)",
+     "3": "EX01"
+    },
+    "minutos_obligatorios": 10
+   }
+  },
+  "16.1": {
+   "archivo": "16_Git_comunicacion/01_git_desde_cero.md",
+   "titulo": "16.1 Git desde cero: guardar versiones de tu trabajo",
+   "clase": "NUCLEO",
+   "total_min": 50,
+   "lectura_min": 20,
+   "practica_min": 30,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 5,
+     "lectura_min": 20,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {
+     "4": "GIT01"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "16.2": {
+   "archivo": "16_Git_comunicacion/02_documentar_y_explicar.md",
+   "titulo": "16.2 Documentar y explicar tu trabajo: README, errores y decisiones",
+   "clase": "NUCLEO",
+   "total_min": 45,
+   "lectura_min": 25,
+   "practica_min": 20,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 40,
+     "lectura_min": 25,
+     "micro_min": 10
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     2,
+     3
+    ],
+    "integrado_en": {
+     "1": "C06-4",
+     "4": "C06-4"
+    },
+    "minutos_obligatorios": 10
+   }
+  },
+  "16.3": {
+   "archivo": "16_Git_comunicacion/03_portafolio_y_empleo.md",
+   "titulo": "16.3 Portafolio y búsqueda de empleo honesta desde la primera semana",
+   "clase": "EMPLEO",
+   "total_min": 45,
+   "lectura_min": 25,
+   "practica_min": 20,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
+  },
+  "17.1": {
+   "archivo": "17_Transferencia_debug/01_ocho_pasos_caso_nuevo.md",
+   "titulo": "17.1 Los ocho pasos frente a un caso nuevo",
+   "clase": "NUCLEO",
+   "total_min": 70,
+   "lectura_min": 30,
+   "practica_min": 40,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 36,
+     "lectura_min": 30,
+     "micro_min": 0
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [],
+    "integrado_en": {
+     "1": "C06-0",
+     "2": "C06-0",
+     "3": "C06-0",
+     "4": "C06-0"
+    },
+    "minutos_obligatorios": 0
+   }
+  },
+  "17.2": {
+   "archivo": "17_Transferencia_debug/02_cuando_no_cuadra.md",
+   "titulo": "17.2 Cuando no cuadra: reducir el problema hasta encontrar el primer desvío",
+   "clase": "NUCLEO",
+   "total_min": 60,
+   "lectura_min": 25,
+   "practica_min": 35,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 38,
+     "lectura_min": 25,
+     "micro_min": 0
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 3,
+    "obligatorios": [],
+    "integrado_en": {
+     "1": "C06-2",
+     "2": "C06-2",
+     "3": "C06-2"
+    },
+    "minutos_obligatorios": 0
+   }
+  },
+  "17.3": {
+   "archivo": "17_Transferencia_debug/03_resolver_sin_ia.md",
+   "titulo": "17.3 Resolver sin ayuda externa: método, evidencia y honestidad",
+   "clase": "COMPLEMENTARIA",
+   "total_min": 45,
+   "lectura_min": 30,
+   "practica_min": 15,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
+  },
+  "18.1": {
+   "archivo": "18_Entrevistas/01_responder_pregunta_tecnica.md",
+   "titulo": "18.1 Cómo responder una pregunta técnica en cuatro pasos",
+   "clase": "NUCLEO",
+   "total_min": 50,
+   "lectura_min": 25,
+   "practica_min": 25,
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 40,
+     "lectura_min": 25,
+     "micro_min": 20
+    }
+   ],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": {
+    "apartados": 4,
+    "obligatorios": [
+     1,
+     2,
+     3
+    ],
+    "integrado_en": {
+     "4": "H08"
+    },
+    "minutos_obligatorios": 20
+   }
+  },
+  "18.2": {
+   "archivo": "18_Entrevistas/02_banco_de_preguntas.md",
+   "titulo": "18.2 Banco de preguntas frecuentes y respuestas modelo",
+   "clase": "EMPLEO",
+   "total_min": 60,
+   "lectura_min": 30,
+   "practica_min": 30,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
+  },
+  "18.3": {
+   "archivo": "18_Entrevistas/03_conductuales_y_honestidad.md",
+   "titulo": "18.3 Preguntas de comportamiento, apoyo de IA y honestidad",
+   "clase": "EMPLEO",
+   "total_min": 45,
+   "lectura_min": 25,
+   "practica_min": 20,
+   "partes": [],
+   "anclas": [
+    "micropractica"
+   ],
+   "micropractica": null
   }
+ },
+ "puente": {
+  "19.1": {
+   "titulo": "Leer un error en lugar de temerle",
+   "archivo": "19_Puente_Python_a_ETL.md",
+   "seccion": "§1",
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 9,
+     "lectura_min": 15,
+     "micro_min": 0
+    }
+   ],
+   "clase": "NUCLEO"
+  },
+  "19.2": {
+   "titulo": "Rechazar con ValueError y dejar rastro",
+   "archivo": "19_Puente_Python_a_ETL.md",
+   "seccion": "§2",
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 23,
+     "lectura_min": 15,
+     "micro_min": 0
+    }
+   ],
+   "clase": "NUCLEO"
+  },
+  "19.3": {
+   "titulo": "De funciones a un programa: extraer, transformar, validar, cargar",
+   "archivo": "19_Puente_Python_a_ETL.md",
+   "seccion": "§3",
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 22,
+     "lectura_min": 25,
+     "micro_min": 0
+    }
+   ],
+   "clase": "NUCLEO"
+  },
+  "19.4": {
+   "titulo": "Cargar a SQLite en Windows: cierra la conexión",
+   "archivo": "19_Puente_Python_a_ETL.md",
+   "seccion": "§4",
+   "partes": [
+    {
+     "parte": "completa",
+     "dia": 24,
+     "lectura_min": 15,
+     "micro_min": 0
+    }
+   ],
+   "clase": "NUCLEO"
+  }
+ }
 }

@@ -2,7 +2,7 @@
 
 Aquí conviertes lo que aprendiste en el capítulo 7 en programas confiables: funciones con contrato, lectura y escritura de archivos reales, módulos reutilizables, manejo de errores esperados, lectura de tracebacks y un método de depuración. Es el puente directo hacia el mini-ETL y el ETL final. Los ejemplos se ejecutan con Python 3.12 y su salida está comprobada.
 
-**Tiempo total estimado de primera vez:** unas 6 h 10 min (7 lecciones). Se reparte con los ejercicios P09–P16 y P29–P30.
+**Tiempo total estimado de primera vez:** unas 6 h 40 min (7 lecciones). Se reparte con los ejercicios P09–P16 y P29–P30.
 
 **Antes de empezar:** el [capítulo 7](07_Python_basico.md) completo, sobre todo funciones (7.4), conversiones (7.7), diccionarios (7.9) y registros (7.13).
 
@@ -10,13 +10,13 @@ Aquí conviertes lo que aprendiste en el capítulo 7 en programas confiables: fu
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 8.1 | [Funciones con contrato](08_Python_funciones_archivos/01_funciones_con_contrato.md) | docstring, valores por defecto, `None` como señal, devolver varios valores, funciones puras | núcleo · D08 | 55 min |
-| 8.2 | [Ámbito y efectos secundarios](08_Python_funciones_archivos/02_ambito_efectos.md) | variables locales, alias de listas, por qué no usar `global` | refuerzo | 40 min |
-| 8.3 | [Archivos: rutas, CSV y JSON](08_Python_funciones_archivos/03_archivos_csv_json.md) | `Path`, `with`, `csv`, `json`, codificación, BOM | núcleo · D10 | 65 min |
-| 8.4 | [Módulos e importaciones](08_Python_funciones_archivos/04_modulos_imports.md) | `import`, `datetime`, tu propio módulo, `__main__`, versiones | núcleo · D10 | 55 min |
-| 8.5 | [Excepciones](08_Python_funciones_archivos/05_excepciones.md) | `try/except/else/finally`, `raise`, errores de fila y de estructura | núcleo · D09 | 55 min |
-| 8.6 | [Leer un traceback](08_Python_funciones_archivos/06_leer_tracebacks.md) | pila de llamadas, causa raíz, reducir el problema | refuerzo | 45 min |
-| 8.7 | [Pruebas con assert y depuración](08_Python_funciones_archivos/07_pruebas_y_depuracion.md) | casos normal/límite/inválido, método de depuración, rutina de trabajo | refuerzo | 55 min |
+| 8.1 | [Funciones con contrato](08_Python_funciones_archivos/01_funciones_con_contrato.md) | docstring, valores por defecto, `None` como señal, devolver varios valores, funciones puras | NÚCLEO · D08 | 55 min |
+| 8.2 | [Ámbito y efectos secundarios](08_Python_funciones_archivos/02_ambito_efectos.md) | variables locales, alias de listas, por qué no usar `global` | COMPLEMENTARIA | 40 min |
+| 8.3 | [Archivos: rutas, CSV y JSON](08_Python_funciones_archivos/03_archivos_csv_json.md) | `Path`, `with`, `csv`, `json`, codificación, BOM | NÚCLEO · D10 | 65 min |
+| 8.4 | [Módulos e importaciones](08_Python_funciones_archivos/04_modulos_imports.md) | `import`, `datetime`, tu propio módulo, `__main__`, versiones | NÚCLEO · D10 | 70 min |
+| 8.5 | [Excepciones](08_Python_funciones_archivos/05_excepciones.md) | `try/except/else/finally`, `raise`, errores de fila y de estructura | NÚCLEO · D09 | 70 min |
+| 8.6 | [Leer un traceback](08_Python_funciones_archivos/06_leer_tracebacks.md) | pila de llamadas, causa raíz, reducir el problema | NÚCLEO · D12 | 45 min |
+| 8.7 | [Pruebas con assert y depuración](08_Python_funciones_archivos/07_pruebas_y_depuracion.md) | casos normal/límite/inválido, método de depuración, rutina de trabajo | NÚCLEO · D12 | 55 min |
 
 ## Ideas centrales
 

@@ -2,6 +2,8 @@
 
 > Tiempo estimado: 65 min (lectura 30 + práctica 35). Prerrequisito: [11.3 Media, mediana y moda](03_media_mediana_moda.md).
 
+En la primera sesión, calcula con la tabla de desviaciones y una calculadora. La raíz cuadrada es el número que multiplicado por sí mismo devuelve la varianza; en Python se escribe `varianza ** 0.5`. Comprueba después con el módulo estándar `statistics`, cuyo uso inicial se explica en 11.3. Los ejemplos de Pandas y NumPy comparan herramientas para una fase posterior; no son prerrequisitos del cálculo manual ni de ST01.
+
 ## Para qué sirve
 
 Dos repartidores pueden tener el mismo promedio de entregas (20 al día) y ser totalmente distintos: uno entrega siempre entre 19 y 21, el otro oscila entre 5 y 35. Si solo miras el promedio no ves la diferencia. La **dispersión** mide cuánto se separan los datos de su centro. Es indispensable para decidir cuánta confianza tener en un promedio, y la usarás en todo el capítulo 12.
@@ -147,6 +149,8 @@ Ejemplo comercial: dos vendedores con un promedio de ventas semanal igual (Bs 1 
 4. Porque está en las mismas unidades que los datos (Bs, entregas).
 
 </details>
+
+<a id="micropractica"></a>
 
 ## Micropráctica
 

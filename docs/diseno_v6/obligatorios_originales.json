@@ -1,0 +1,650 @@
+[
+ {
+  "id": "S1",
+  "dia": 1,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 1,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P01",
+  "dia": 1,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 1,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "S2",
+  "dia": 2,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 2,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "S7",
+  "dia": 2,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 2,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P02",
+  "dia": 2,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 2,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P03",
+  "dia": 2,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 2,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "S4",
+  "dia": 3,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 3,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "S6",
+  "dia": 3,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 3,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P04",
+  "dia": 3,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 3,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P05",
+  "dia": 3,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 3,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN01",
+  "dia": 3,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 3,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "G3",
+  "dia": 4,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 4,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P06",
+  "dia": 4,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 4,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN02",
+  "dia": 4,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 4,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "G6",
+  "dia": 5,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 5,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P07",
+  "dia": 5,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 5,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN03",
+  "dia": 5,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 5,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "H01",
+  "dia": 6,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 6,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P08",
+  "dia": 8,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 8,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "J2",
+  "dia": 9,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 9,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "DB01",
+  "dia": 9,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 9,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN04",
+  "dia": 9,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 9,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P09",
+  "dia": 10,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 10,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P13",
+  "dia": 10,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 10,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN05",
+  "dia": 10,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 10,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "J5",
+  "dia": 11,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 11,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN06",
+  "dia": 11,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 11,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P10",
+  "dia": 12,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 12,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P11",
+  "dia": 12,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 12,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN07",
+  "dia": 12,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 12,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "H02",
+  "dia": 13,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 13,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P17",
+  "dia": 15,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 15,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "J2",
+  "dia": 15,
+  "condicion": "REPASO",
+  "nota": null,
+  "dia_v6": 15,
+  "estado_v6": "sustituido por variante nueva SQ04 (D15): misma habilidad, sin repetir el ID"
+ },
+ {
+  "id": "PD-BASE",
+  "dia": 16,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 16,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P22",
+  "dia": 16,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 16,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "K1",
+  "dia": 16,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 16,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN08",
+  "dia": 16,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 19,
+  "estado_v6": "reubicado D16→D19"
+ },
+ {
+  "id": "PD-AGR",
+  "dia": 17,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 17,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P21",
+  "dia": 17,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 17,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN09",
+  "dia": 17,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 17,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "V3",
+  "dia": 18,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 18,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN10",
+  "dia": 18,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 18,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "V4",
+  "dia": 19,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 19,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "P23",
+  "dia": 19,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 19,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN11",
+  "dia": 19,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 19,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "H03",
+  "dia": 20,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 20,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "ME01",
+  "dia": 22,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 22,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "ME02",
+  "dia": 23,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 23,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN12",
+  "dia": 23,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 23,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "ME03",
+  "dia": 24,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 24,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "H04",
+  "dia": 24,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 24,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "ETL-1",
+  "dia": 25,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 25,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "ETL-2",
+  "dia": 26,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 26,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "ETL-3",
+  "dia": 26,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 26,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "H05",
+  "dia": 26,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 26,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "N2",
+  "dia": 27,
+  "condicion": "OBLIGATORIO",
+  "nota": "tarea 1 del examen S04; su tiempo está dentro de los 60 min de evaluación",
+  "dia_v6": null,
+  "estado_v6": "tarea de examen (sin tiempo propio)"
+ },
+ {
+  "id": "ETL-4",
+  "dia": 29,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 29,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "ETL-5",
+  "dia": 30,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 30,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "ETL-6",
+  "dia": 30,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 30,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "H06",
+  "dia": 30,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 30,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "E4",
+  "dia": 31,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 31,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "EX01",
+  "dia": 31,
+  "condicion": "OBLIGATORIO",
+  "nota": "alcance reducido: importa, crea una tabla dinámica de ventas por ruta y cuádrala contra E4",
+  "dia_v6": 31,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN14",
+  "dia": 31,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 32,
+  "estado_v6": "reubicado D31→D32"
+ },
+ {
+  "id": "PB01",
+  "dia": 32,
+  "condicion": "OBLIGATORIO",
+  "nota": "alcance reducido: importa las 9 tablas y verifica tipos y conteos; no corrijas formatos regionales",
+  "dia_v6": 32,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "PB02",
+  "dia": 32,
+  "condicion": "OBLIGATORIO",
+  "nota": "alcance reducido: solo las relaciones del modelo y marcar `dim_fecha` como tabla de fechas",
+  "dia_v6": 32,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN15",
+  "dia": 32,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 32,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "PB03",
+  "dia": 33,
+  "condicion": "OBLIGATORIO",
+  "nota": "núcleo de la jornada reducida: `Ventas Bs`, `Pedidos Entregados` y `Ticket Bs` comprobadas contra J2, la cantidad de filas de K1 y el promedio de su `drop_bs`; `Clientes Compradores` y `Frecuencia` son REFUERZO",
+  "dia_v6": 33,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "H07",
+  "dia": 33,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 33,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "N3",
+  "dia": 34,
+  "condicion": "OBLIGATORIO",
+  "nota": "tarea 1 del examen S05; su tiempo está dentro de los 60 min de evaluación",
+  "dia_v6": null,
+  "estado_v6": "tarea de examen (sin tiempo propio)"
+ },
+ {
+  "id": "AN13",
+  "dia": 34,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 34,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "C06-0",
+  "dia": 36,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 36,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "C06-1",
+  "dia": 37,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 37,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN16",
+  "dia": 37,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 37,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "C06-2",
+  "dia": 38,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 38,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN17",
+  "dia": 38,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 38,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "C06-3",
+  "dia": 39,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 39,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "AN18",
+  "dia": 39,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 39,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "C06-4",
+  "dia": 40,
+  "condicion": "OBLIGATORIO",
+  "nota": null,
+  "dia_v6": 40,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "H08",
+  "dia": 40,
+  "condicion": "CRITERIO/HITO",
+  "nota": null,
+  "dia_v6": 40,
+  "estado_v6": "conservado en el mismo día"
+ },
+ {
+  "id": "N3",
+  "dia": 41,
+  "condicion": "OBLIGATORIO",
+  "nota": "tarea 1 del examen S06; su tiempo está dentro de los 60 min de evaluación",
+  "dia_v6": null,
+  "estado_v6": "tarea de examen (sin tiempo propio)"
+ },
+ {
+  "id": "V4",
+  "dia": 41,
+  "condicion": "OBLIGATORIO",
+  "nota": "tarea 1 del examen S06; su tiempo está dentro de los 60 min de evaluación",
+  "dia_v6": 19,
+  "estado_v6": "reubicado D41→D19"
+ }
+]

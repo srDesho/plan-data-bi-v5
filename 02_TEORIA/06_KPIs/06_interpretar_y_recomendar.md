@@ -173,6 +173,8 @@ Ejemplo comercial: «R03 está en rojo» se convierte en una buena decisión cua
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe un mini-informe de cinco párrafos sobre la **efectividad comercial** de la mini-base (63,6 %), usando las cifras de la lección 6.2.

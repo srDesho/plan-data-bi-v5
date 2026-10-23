@@ -1,6 +1,6 @@
 # 8.5 Excepciones: try, except y raise
 
-> Tiempo estimado: 55 min (lectura 20 + práctica 35). Prerrequisitos: [7.7 Conversiones](../07_Python_basico/07_conversiones.md) y [8.1 Funciones con contrato](01_funciones_con_contrato.md).
+> Tiempo estimado: 70 min (lectura 25 + práctica 45). Prerrequisitos: [7.7 Conversiones](../07_Python_basico/07_conversiones.md) y [8.1 Funciones con contrato](01_funciones_con_contrato.md).
 
 ## Para qué sirve
 
@@ -189,6 +189,42 @@ El `finally` se ejecutó aunque el archivo no existía. Lo usarás para cerrar c
 
 Ejemplo comercial: un ETL lee 10 000 filas. 9 940 pasan, 60 se rechazan con motivo («monto no numérico», «fecha futura»). El log final dice `leídas=10000 válidas=9940 rechazadas=60` y la suma cuadra. Si faltara la columna `fecha`, el proceso se detiene inmediatamente con un mensaje claro.
 
+<a id="contrato-decimal"></a>
+
+## Traducir errores internos al contrato de la función
+
+Una función puede prometer `ValueError` para cualquier texto inválido aunque internamente utilice `Decimal`. Su constructor lanza **`InvalidOperation`** ante texto no convertible. Capturar únicamente `ValueError` no lo intercepta. La traducción mantiene estable el contrato para quien llama; `raise ... from error` conserva además la causa original en el traceback.
+
+El ejemplo usa temperaturas, un dominio distinto del ejercicio de precios. Predice las salidas antes de ejecutarlo:
+
+```python
+from decimal import Decimal, InvalidOperation
+
+def temperatura_finita(texto):
+    try:
+        valor = Decimal(texto.strip())
+    except InvalidOperation as error:
+        raise ValueError("temperatura no convertible") from error
+    if not valor.is_finite():
+        raise ValueError("temperatura no finita")
+    return valor
+
+for entrada in ["18.5", "ayer", "NaN", "Infinity"]:
+    try:
+        print(temperatura_finita(entrada))
+    except ValueError as error:
+        print(type(error).__name__, str(error))
+```
+
+```salida
+18.5
+ValueError temperatura no convertible
+ValueError temperatura no finita
+ValueError temperatura no finita
+```
+
+Orden: convertir capturando el error específico → comprobar finitud → aplicar la regla de negocio → devolver. Si el contrato exige un entero, comprueba que no haya fracción antes de convertir. No captures excepciones ajenas al contrato para ocultar errores de programación.
+
 ## Errores comunes
 
 - **`except:` sin tipo, o `except Exception: pass`.**
@@ -215,11 +251,20 @@ Ejemplo comercial: un ETL lee 10 000 filas. 9 940 pasan, 60 se rechazan con moti
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Dada la lista `["15", "", "7", "dos", "30"]`, suma los valores válidos, guarda los inválidos junto a su motivo y comprueba que aceptados + rechazados = 5.
 2. Escribe `def porcentaje_seguro(parte, total)` que lance `ValueError` si `total` es 0 o negativo, y pruébala atrapando el error.
 3. Explica con tus palabras por qué un `try` debe envolver solo la línea que puede fallar.
+4. Amplía tu registro de errores del apartado 1 con una comprobación separada de conversión `Decimal`: predice y registra tipo y causa para `"7.25"`, `"vacío"`, `"nan"` y `"-Infinity"`. Haz que la interfaz traduzca el error de conversión a `ValueError` y rechace los valores no finitos. Comprueba que el dato válido conserva sus decimales; justifica por qué no has sustituido los inválidos por cero. Cierra este apartado antes de intentar P09/P11. Conserva los tres apartados originales.
+
+<details><summary>Control del apartado 4, después del intento</summary>
+
+Solo la primera entrada es válida. La segunda debe llegar al llamador como `ValueError` con una causa `InvalidOperation`; las dos últimas deben rechazarse por no finitas. No se exige la función de precios del ejercicio ni se proporciona su solución.
+
+</details>
 
 Cómo saber que está bien: en la 1 el total es 52.0 con 3 aceptados y 2 rechazados.
 

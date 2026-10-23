@@ -10,14 +10,14 @@ Aquí das el salto de **describir** los datos a **concluir** algo sobre una pobl
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 12.1 | [Por qué hace falta la inferencia](12_Estadistica_inferencia/01_por_que_inferencia.md) | variabilidad entre muestras, error estándar, simulación | profundización | 55 min |
-| 12.2 | [Estimación e intervalos de confianza](12_Estadistica_inferencia/02_estimacion_intervalo_confianza.md) | `x̄ ± t*·s/√n`, qué significa el 95 %, cobertura | profundización | 65 min |
-| 12.3 | [Hipótesis nula y alternativa](12_Estadistica_inferencia/03_hipotesis.md) | `H0`, `H1`, `α`, errores tipo I y II, potencia | profundización | 60 min |
-| 12.4 | [El p-valor, calculado de verdad](12_Estadistica_inferencia/04_pvalor.md) | permutación a mano, qué es y qué no es | profundización | 65 min |
-| 12.5 | [Prueba t: Student y Welch](12_Estadistica_inferencia/05_prueba_t_welch.md) | estadístico, grados de libertad, supuestos | profundización | 70 min |
-| 12.6 | [Chi-cuadrado](12_Estadistica_inferencia/06_chi_cuadrado.md) | tablas de contingencia, esperados, Yates | profundización | 60 min |
-| 12.7 | [Tamaño del efecto](12_Estadistica_inferencia/07_tamano_del_efecto.md) | d de Cohen, puntos porcentuales, V de Cramér, significancia práctica | profundización | 55 min |
-| 12.8 | [Interpretar, comunicar y no equivocarse](12_Estadistica_inferencia/08_interpretacion_limitaciones.md) | comparaciones múltiples, lenguaje correcto, plantilla de informe | profundización | 55 min |
+| 12.1 | [Por qué hace falta la inferencia](12_Estadistica_inferencia/01_por_que_inferencia.md) | variabilidad entre muestras, error estándar, simulación | NÚCLEO · D36 | 55 min |
+| 12.2 | [Estimación e intervalos de confianza](12_Estadistica_inferencia/02_estimacion_intervalo_confianza.md) | `x̄ ± t*·s/√n`, qué significa el 95 %, cobertura | NÚCLEO · D37 | 65 min |
+| 12.3 | [Hipótesis nula y alternativa](12_Estadistica_inferencia/03_hipotesis.md) | `H0`, `H1`, `α`, errores tipo I y II, potencia | NÚCLEO · D37 | 60 min |
+| 12.4 | [El p-valor, calculado de verdad](12_Estadistica_inferencia/04_pvalor.md) | permutación a mano, qué es y qué no es | NÚCLEO · D38 | 65 min |
+| 12.5 | [Prueba t: Student y Welch](12_Estadistica_inferencia/05_prueba_t_welch.md) | estadístico, grados de libertad, supuestos | NÚCLEO · D39 | 70 min |
+| 12.6 | [Chi-cuadrado](12_Estadistica_inferencia/06_chi_cuadrado.md) | tablas de contingencia, esperados, Yates | COMPLEMENTARIA | 60 min |
+| 12.7 | [Tamaño del efecto](12_Estadistica_inferencia/07_tamano_del_efecto.md) | d de Cohen, puntos porcentuales, V de Cramér, significancia práctica | COMPLEMENTARIA | 55 min |
+| 12.8 | [Interpretar, comunicar y no equivocarse](12_Estadistica_inferencia/08_interpretacion_limitaciones.md) | comparaciones múltiples, lenguaje correcto, plantilla de informe | NÚCLEO · D39 | 55 min |
 
 ## Ideas centrales
 

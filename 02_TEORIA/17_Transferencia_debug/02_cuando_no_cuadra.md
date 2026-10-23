@@ -210,6 +210,8 @@ Ejemplo comercial: «el reporte de Power BI da 3 % más que el de SQL». Reprodu
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Construye un caso con un total que no cuadra por una causa que tú inventes (por ejemplo, una cantidad truncada) y aplica los cinco pasos.

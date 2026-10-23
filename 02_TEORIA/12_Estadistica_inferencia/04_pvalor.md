@@ -146,6 +146,8 @@ Ejemplo comercial: el piloto de la visita extra da p = 0,057 con 4 tiendas por g
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con A = `18, 22, 25` y B = `14, 15, 19` (3 datos por grupo; hay `C(6, 3) = 20` repartos):

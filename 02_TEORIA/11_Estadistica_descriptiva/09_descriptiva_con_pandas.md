@@ -167,6 +167,8 @@ Ejemplo comercial: un gerente pide «un resumen de las ventas por cliente». Ent
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con el precio de `articulos.csv`:

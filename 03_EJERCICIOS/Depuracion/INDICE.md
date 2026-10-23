@@ -6,5 +6,6 @@ Cada uno tiene su corrector en `herramientas/corregir_depuracion.py`.
 - [DB01 · Leer un traceback](DB01.md)
 - [DB02 · Un error que no avisa: el total no cuadra](DB02.md)
 - [DB03 · Un JOIN que multiplica ventas](DB03.md)
+- [PE01 · Dos totales que cambian sin avisar](PE01.md) (plan v6; corrector `corregir_nuevos.py PE01`)
 
 Copia el script roto a `mi_trabajo/depuracion/`, no edites el original. Referencia: `08_SOLUCIONES/depuracion_referencia.py`.

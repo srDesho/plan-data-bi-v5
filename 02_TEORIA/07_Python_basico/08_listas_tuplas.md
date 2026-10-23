@@ -215,6 +215,8 @@ Ejemplo comercial: las ventas diarias de una semana en una lista permiten calcul
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con `ventas_semana = [310, 0, 275, 410, 360, 295, 0]`:

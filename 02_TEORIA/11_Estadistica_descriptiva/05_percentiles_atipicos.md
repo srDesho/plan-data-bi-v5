@@ -147,6 +147,8 @@ Ejemplo comercial: en una lista de ventas por tienda, las que superan la cerca s
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con las ventas por tienda (en Bs) `[180, 210, 225, 240, 260, 275, 300, 320, 350, 900]` (n = 10):

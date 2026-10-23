@@ -12,9 +12,9 @@ Excel sirve para **reconciliar** un resultado y comunicarlo, siempre que control
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 15.1 | [Excel desde cero](15_Excel_cuadres/01_excel_desde_cero.md) | importar CSV, valor frente a formato, tablas, separadores | refuerzo | 45 min |
-| 15.2 | [Funciones para cuadrar](15_Excel_cuadres/02_funciones_para_cuadrar.md) | `SI`, `SUMAR.SI.CONJUNTO`, `BUSCARX`/`INDICE+COINCIDIR`, `SI.ERROR` | refuerzo | 60 min |
-| 15.3 | [Tablas dinámicas, estadística y cuadre](15_Excel_cuadres/03_tablas_dinamicas_cuadre.md) | tabla dinámica, `PERCENTIL.INC/EXC`, `DESVEST.M/P`, diagnóstico de discrepancias | núcleo · D29 | 65 min |
+| 15.1 | [Excel desde cero](15_Excel_cuadres/01_excel_desde_cero.md) | importar CSV, valor frente a formato, tablas, separadores | NÚCLEO · D30 | 45 min |
+| 15.2 | [Funciones para cuadrar](15_Excel_cuadres/02_funciones_para_cuadrar.md) | `SI`, `SUMAR.SI.CONJUNTO`, `BUSCARX`/`INDICE+COINCIDIR`, `SI.ERROR` | NÚCLEO · D31 | 60 min |
+| 15.3 | [Tablas dinámicas, estadística y cuadre](15_Excel_cuadres/03_tablas_dinamicas_cuadre.md) | tabla dinámica, `PERCENTIL.INC/EXC`, `DESVEST.M/P`, diagnóstico de discrepancias | NÚCLEO · D31 | 65 min |
 
 ## Ideas centrales
 

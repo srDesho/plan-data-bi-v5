@@ -165,6 +165,8 @@ Ejemplo comercial: la tarjeta «Cumplimiento» debe mostrar 99,2 % en septiembre
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe en DAX las medidas `Visitas Planificadas`, `Visitas Realizadas` y `Cobertura de Ejecución %` para `fact_visitas`.

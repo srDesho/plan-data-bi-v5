@@ -185,6 +185,8 @@ Ejemplo comercial: el gerente selecciona «R03» y la tarjeta de ventas baja a 5
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe en DAX la medida `Unidades Entregadas` (suma de `cantidad` de ventas entregadas).

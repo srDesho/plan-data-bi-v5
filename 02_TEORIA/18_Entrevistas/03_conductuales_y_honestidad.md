@@ -123,6 +123,8 @@ Ejemplo comercial: te preguntan por Power BI y solo lo has usado en un ejemplo g
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe tu historia STAR de un error con tus propios hechos (usa tu `errores.md`).

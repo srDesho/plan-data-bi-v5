@@ -199,6 +199,8 @@ Ejemplo comercial: una función `limpiar_filas(filas)` que modifica la lista de 
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Predice y comprueba qué imprime: `x = 5`, `def f(): x = 10; return x`, `print(f(), x)`.

@@ -10,11 +10,11 @@ ETL significa extraer, transformar y cargar. Este capítulo te enseña a diseña
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 5.1 | [ETL, ELT y capas Bronze, Silver y Gold](05_calidad_ETL/01_etl_elt_medallon.md) | el mapa de un proyecto de datos; la ecuación de auditoría | refuerzo | 50 min |
-| 5.2 | [El contrato de datos](05_calidad_ETL/02_contrato_de_datos.md) | escribir las reglas antes de programar; detener frente a rechazar | núcleo · D23 | 50 min |
-| 5.3 | [Rechazos, duplicados y reconciliación](05_calidad_ETL/03_rechazos_y_reconciliacion.md) | exactos frente a conflictos, imputación con condición, centavos, cuadre de valor | núcleo · D24 | 55 min |
-| 5.4 | [Cargas repetibles, registro y reproducibilidad](05_calidad_ETL/04_cargas_registro_reproducibilidad.md) | idempotencia, carga atómica, `logging`, parámetros | refuerzo | 55 min |
-| 5.5 | [Estructura de un ETL en funciones](05_calidad_ETL/05_estructura_etl_funciones.md) | extraer, transformar, validar, cargar y un `main` corto | refuerzo | 65 min |
+| 5.1 | [ETL, ELT y capas Bronze, Silver y Gold](05_calidad_ETL/01_etl_elt_medallon.md) | el mapa de un proyecto de datos; la ecuación de auditoría | NÚCLEO · D22 | 50 min |
+| 5.2 | [El contrato de datos](05_calidad_ETL/02_contrato_de_datos.md) | escribir las reglas antes de programar; detener frente a rechazar | NÚCLEO · D23 | 50 min |
+| 5.3 | [Rechazos, duplicados y reconciliación](05_calidad_ETL/03_rechazos_y_reconciliacion.md) | exactos frente a conflictos, imputación con condición, centavos, cuadre de valor | NÚCLEO · D24 | 55 min |
+| 5.4 | [Cargas repetibles, registro y reproducibilidad](05_calidad_ETL/04_cargas_registro_reproducibilidad.md) | idempotencia, carga atómica, `logging`, parámetros | NÚCLEO · D24 | 55 min |
+| 5.5 | [Estructura de un ETL en funciones](05_calidad_ETL/05_estructura_etl_funciones.md) | extraer, transformar, validar, cargar y un `main` corto | NÚCLEO · D23 | 65 min |
 
 ## Ideas centrales
 

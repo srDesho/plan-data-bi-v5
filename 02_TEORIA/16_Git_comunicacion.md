@@ -10,9 +10,9 @@ Un repositorio reproduce un proyecto: problema, fuente de datos, reglas, instala
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 16.1 | [Git desde cero](16_Git_comunicacion/01_git_desde_cero.md) | `init`, `status`, `add`, `commit`, `diff`, `log`, `.gitignore` | refuerzo | 50 min |
-| 16.2 | [Documentar y explicar tu trabajo](16_Git_comunicacion/02_documentar_y_explicar.md) | README, `errores.md`, decisiones, informe de cuatro frases | núcleo · D40 | 45 min |
-| 16.3 | [Portafolio y empleo honesto](16_Git_comunicacion/03_portafolio_y_empleo.md) | tres niveles de experiencia, presentación veraz, postulaciones, publicación | profundización | 45 min |
+| 16.1 | [Git desde cero](16_Git_comunicacion/01_git_desde_cero.md) | `init`, `status`, `add`, `commit`, `diff`, `log`, `.gitignore` | NÚCLEO · D05 | 50 min |
+| 16.2 | [Documentar y explicar tu trabajo](16_Git_comunicacion/02_documentar_y_explicar.md) | README, `errores.md`, decisiones, informe de cuatro frases | NÚCLEO · D40 | 45 min |
+| 16.3 | [Portafolio y empleo honesto](16_Git_comunicacion/03_portafolio_y_empleo.md) | tres niveles de experiencia, presentación veraz, postulaciones, publicación | EMPLEO | 45 min |
 
 ## Ideas centrales
 

@@ -188,6 +188,8 @@ Ejemplo comercial: «clientes que no compraron en septiembre» es un anti-join c
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Lista los vendedores (`vendedores_ej`) que no tienen ninguna venta en `ventas`.

@@ -10,15 +10,15 @@ Este capítulo te enseña a **describir datos** con honestidad: de quién son (p
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 11.1 | [Población, muestra y tipos de variables](11_Estadistica_descriptiva/01_poblacion_muestra_variables.md) | unidad de análisis, parámetro y estadístico, tipos de variable | refuerzo | 50 min |
-| 11.2 | [Frecuencias](11_Estadistica_descriptiva/02_frecuencias.md) | absolutas, relativas, porcentajes, acumuladas, intervalos | refuerzo | 45 min |
-| 11.3 | [Media, mediana y moda](11_Estadistica_descriptiva/03_media_mediana_moda.md) | cuándo usar cada una, efecto de los extremos | núcleo · D13 | 55 min |
-| 11.4 | [Dispersión](11_Estadistica_descriptiva/04_dispersion.md) | rango, varianza poblacional y muestral, desviación estándar, `n − 1` | núcleo · D25 | 65 min |
-| 11.5 | [Percentiles, cuartiles y atípicos](11_Estadistica_descriptiva/05_percentiles_atipicos.md) | IQR, regla de Tukey, métodos de percentil | núcleo · D27 | 65 min |
-| 11.6 | [Distribuciones, histogramas y puntaje z](11_Estadistica_descriptiva/06_distribuciones_histograma_z.md) | forma, asimetría, regla 68-95-99,7, z | profundización | 65 min |
-| 11.7 | [Correlación y causalidad](11_Estadistica_descriptiva/07_correlacion_causalidad.md) | Pearson a mano, confusores, límites | profundización | 55 min |
-| 11.8 | [Muestreo](11_Estadistica_descriptiva/08_muestreo.md) | aleatorio simple, estratificado, sesgo, tamaño | profundización | 55 min |
-| 11.9 | [Descriptiva con Pandas y un informe completo](11_Estadistica_descriptiva/09_descriptiva_con_pandas.md) | `describe`, resumen por grupo, trampas, plantilla de informe | profundización | 60 min |
+| 11.1 | [Población, muestra y tipos de variables](11_Estadistica_descriptiva/01_poblacion_muestra_variables.md) | unidad de análisis, parámetro y estadístico, tipos de variable | NÚCLEO · D09 | 50 min |
+| 11.2 | [Frecuencias](11_Estadistica_descriptiva/02_frecuencias.md) | absolutas, relativas, porcentajes, acumuladas, intervalos | NÚCLEO · D11 | 45 min |
+| 11.3 | [Media, mediana y moda](11_Estadistica_descriptiva/03_media_mediana_moda.md) | cuándo usar cada una, efecto de los extremos | NÚCLEO · D11 | 55 min |
+| 11.4 | [Dispersión](11_Estadistica_descriptiva/04_dispersion.md) | rango, varianza poblacional y muestral, desviación estándar, `n − 1` | NÚCLEO · D18 | 65 min |
+| 11.5 | [Percentiles, cuartiles y atípicos](11_Estadistica_descriptiva/05_percentiles_atipicos.md) | IQR, regla de Tukey, métodos de percentil | NÚCLEO · D25 | 65 min |
+| 11.6 | [Distribuciones, histogramas y puntaje z](11_Estadistica_descriptiva/06_distribuciones_histograma_z.md) | forma, asimetría, regla 68-95-99,7, z | COMPLEMENTARIA | 65 min |
+| 11.7 | [Correlación y causalidad](11_Estadistica_descriptiva/07_correlacion_causalidad.md) | Pearson a mano, confusores, límites | COMPLEMENTARIA | 55 min |
+| 11.8 | [Muestreo](11_Estadistica_descriptiva/08_muestreo.md) | aleatorio simple, estratificado, sesgo, tamaño | NÚCLEO · D32 | 55 min |
+| 11.9 | [Descriptiva con Pandas y un informe completo](11_Estadistica_descriptiva/09_descriptiva_con_pandas.md) | `describe`, resumen por grupo, trampas, plantilla de informe | COMPLEMENTARIA | 60 min |
 
 ## Ideas centrales
 

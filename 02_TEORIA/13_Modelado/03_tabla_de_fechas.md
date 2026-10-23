@@ -177,6 +177,8 @@ Ejemplo comercial: el gráfico «ventas por día de septiembre» debe mostrar 30
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Construye un calendario del 1 de julio al 31 de octubre de 2026 con año, mes, día de la semana y fin de semana. Comprueba que no tiene huecos.

@@ -246,6 +246,8 @@ Ejemplo comercial: el ERP exporta el mismo pedido dos veces por una caída de re
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Crea (con `io.StringIO`) un CSV de 8 filas de ventas con: una fila con `monto` vacío, una con cliente vacío, un duplicado exacto y dos filas con la misma clave y montos distintos.

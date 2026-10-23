@@ -2,6 +2,12 @@
 
 > Tiempo estimado: 45 min (lectura 20 + práctica 25). Prerrequisito: [11.1 Población, muestra y variables](01_poblacion_muestra_variables.md).
 
+## Recorrido inicial sin Pandas
+
+La tabla manual del primer ejemplo y las microprácticas existentes se pueden resolver antes de aprender DataFrame. Abre los CSV como texto, conserva una marca por observación y cuenta por categoría. Frecuencia relativa = conteo de la categoría dividido entre el número total de observaciones; porcentaje = esa fracción por 100. Comprueba que los conteos sumen el total y las proporciones sumen 1, admitiendo el redondeo al presentar porcentajes.
+
+Para los intervalos de precios de la micropráctica conserva los límites indicados: `(0, 5]` incluye 5 y excluye 0; `(5, 10]` incluye 10 y excluye 5. Acumula solamente cuando existe un orden. Mientras aún no conozcas Pandas, las tablas impresas permiten comprobar el método; `value_counts`, `pd.cut` y la reproducción con Pandas se retoman después de D15 (9.2) y no se acreditan por haber leído el código.
+
 ## Para qué sirve
 
 La forma más simple y más usada de describir datos es **contar**: cuántas tiendas hay de cada tipo, cuántas ventas cayeron en cada estado, cuántos días estuvieron en cada rango de ventas. Una tabla de frecuencias convierte una columna de miles de filas en pocas líneas que se pueden leer, comparar y graficar.
@@ -163,6 +169,8 @@ Ejemplo comercial: la distribución de ventas por estado (entregado/anulado) es 
 4. Al tramo (5, 10], porque el límite derecho se incluye.
 
 </details>
+
+<a id="micropractica"></a>
 
 ## Micropráctica
 

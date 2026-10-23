@@ -200,6 +200,8 @@ Ejemplo comercial: el ETL corre cada madrugada. Una noche el catálogo llega inc
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe `publicar(df, destino)` con archivo temporal, validación de filas y `os.replace`, y pruébalo dos veces.

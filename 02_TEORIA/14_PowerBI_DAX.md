@@ -12,11 +12,11 @@ Este capítulo te lleva de cero a un tablero comercial **comprobable**: cargar t
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 14.1 | [Power BI desde cero](14_PowerBI_DAX/01_power_bi_desde_cero.md) | flujo de cuatro etapas, configuración regional, cifras de control | núcleo · D32 | 54 min |
-| 14.2 | [Power Query y M](14_PowerBI_DAX/02_power_query.md) | pasos aplicados, equivalencias con Pandas, combinar, actualización | profundización | 55 min |
-| 14.3 | [DAX: medidas y contexto de filtro](14_PowerBI_DAX/03_dax_contexto.md) | medida frente a columna, contexto, `CALCULATE`, `DIVIDE`, `BLANK` | núcleo · D33 | 70 min |
-| 14.4 | [Medidas útiles y su control](14_PowerBI_DAX/04_medidas_utiles.md) | ventas, pedidos, ticket, meta, cumplimiento, % del total, mes anterior | profundización | 65 min |
-| 14.5 | [Diseño y comprobación manual](14_PowerBI_DAX/05_diseno_y_comprobacion.md) | páginas, títulos, lista de comprobación | profundización | 45 min |
+| 14.1 | [Power BI desde cero](14_PowerBI_DAX/01_power_bi_desde_cero.md) | flujo de cuatro etapas, configuración regional, cifras de control | NÚCLEO · D30 | 54 min |
+| 14.2 | [Power Query y M](14_PowerBI_DAX/02_power_query.md) | pasos aplicados, equivalencias con Pandas, combinar, actualización | NÚCLEO · D31 | 55 min |
+| 14.3 | [DAX: medidas y contexto de filtro](14_PowerBI_DAX/03_dax_contexto.md) | medida frente a columna, contexto, `CALCULATE`, `DIVIDE`, `BLANK` | NÚCLEO · D33 | 70 min |
+| 14.4 | [Medidas útiles y su control](14_PowerBI_DAX/04_medidas_utiles.md) | ventas, pedidos, ticket, meta, cumplimiento, % del total, mes anterior | NÚCLEO · D33 | 65 min |
+| 14.5 | [Diseño y comprobación manual](14_PowerBI_DAX/05_diseno_y_comprobacion.md) | páginas, títulos, lista de comprobación | NÚCLEO · D33 | 45 min |
 
 ## Ideas centrales
 

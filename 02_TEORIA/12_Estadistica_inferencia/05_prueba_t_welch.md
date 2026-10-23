@@ -165,6 +165,8 @@ Ejemplo comercial: «las tiendas con exhibidor vendieron en promedio Bs 38 más�
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Dos rutas miden el tiempo de entrega (en minutos): R_A = `42, 38, 45, 50, 41, 47, 44, 39` y R_B = `35, 40, 33, 38, 36, 41, 34, 37`.

@@ -187,6 +187,8 @@ Ejemplo comercial: la lista de «clientes inactivos» (hasta 60 días sin compra
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Calcula el ticket medio y el drop size en unidades de **septiembre** solamente.

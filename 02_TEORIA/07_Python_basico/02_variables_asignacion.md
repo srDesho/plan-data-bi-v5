@@ -176,6 +176,8 @@ Ejemplo comercial: un script de cierre guarda `ventas_entregadas`, `ventas_anula
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Crea las variables `unidades = 24` y `precio_unitario = 7.5`, calcula `importe` y muéstralo. Después cambia `unidades` a 30 y muestra `importe`: ¿cambió? Explica por qué.

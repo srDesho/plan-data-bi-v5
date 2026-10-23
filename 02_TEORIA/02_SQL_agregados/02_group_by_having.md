@@ -174,6 +174,8 @@ Ejemplo comercial: "ventas por ruta y por mes" es `GROUP BY ruta, mes`; "solo la
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Cuenta las ventas por estado (`ventas`).

@@ -206,6 +206,9 @@ def auditar_fuga_sql_python_etc():
 def auditar_dependencias():
     """Cada OBLIGATORIO exige solo teoría que ya se asignó (hasta ese día) y los exámenes solo evalúan lo preparado."""
     problemas = []
+    if json.loads(leer(ROOT / '01_PLAN_DIARIO/nucleo.json')).get('version') == 'v2':
+        # En el esquema v2 las dependencias y los contratos de examen los comprueba herramientas/verificar_diseno_v6.py (diseno y guias).
+        return problemas, 0
     nuc = json.loads(leer(ROOT / '01_PLAN_DIARIO/nucleo.json'))['dias']
     cal = {d['dia']: d for d in json.loads(leer(ROOT / '01_PLAN_DIARIO/calendario.json'))}
     acumulada, aprendido = set(), {}
@@ -292,9 +295,15 @@ def auditar_final():
             problemas.append(f'el paquete contiene {p.relative_to(ROOT).as_posix()}, que debe estar en la custodia')
     carpeta = ROOT / '09_EVALUACION_FINAL'
     enun = leer(carpeta / 'ENUNCIADO.md')
-    for frase in ('no es una prueba ciega', 'custodia', 'no está incluido en las 90 horas', 'Defensa con observador'):
+    # Duración vigente de las 42 jornadas (nucleo.json v2): el enunciado debe citarla y declarar que el bloque queda fuera de ellas.
+    total = json.loads(leer(ROOT / '01_PLAN_DIARIO/nucleo.json'))['resumen']['total_min']
+    duracion = f'{total // 60} h {total % 60:02d} min'
+    frases = ['no es una prueba ciega', 'custodia', f'no está incluido en las {duracion} de las 42 jornadas', f'Las 42 jornadas suman {duracion} de trabajo BASE', 'Defensa con observador']
+    for frase in frases:
         if frase.lower() not in enun.lower():
             problemas.append(f'ENUNCIADO.md no declara «{frase}»')
+    if re.search(r'\b90\s+horas\b', enun):
+        problemas.append('ENUNCIADO.md conserva la duración antigua de 90 horas')
     h = json.loads(leer(carpeta / 'verificacion/huellas_final.json'))
     if 'valor' in json.dumps(h['escalares']).lower() or not all(len(v) == 16 for v in h['escalares'].values()):
         problemas.append('huellas_final.json publica valores en lugar de huellas')

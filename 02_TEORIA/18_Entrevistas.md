@@ -10,9 +10,9 @@ Una entrevista evalúa razonamiento, comunicación y límites además de sintaxi
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 18.1 | [Cómo responder una pregunta técnica](18_Entrevistas/01_responder_pregunta_tecnica.md) | reformular, definir, ejemplo a mano, verificar; preguntas aclaratorias | núcleo · D41 | 50 min |
-| 18.2 | [Banco de preguntas y respuestas modelo](18_Entrevistas/02_banco_de_preguntas.md) | SQL, Python, estadística, ETL, DAX/Excel, con sus trampas | profundización | 60 min |
-| 18.3 | [Preguntas de comportamiento y honestidad](18_Entrevistas/03_conductuales_y_honestidad.md) | STAR, acción propia, apoyo de IA, límites, rúbrica de simulacros | profundización | 45 min |
+| 18.1 | [Cómo responder una pregunta técnica](18_Entrevistas/01_responder_pregunta_tecnica.md) | reformular, definir, ejemplo a mano, verificar; preguntas aclaratorias | NÚCLEO · D40 | 50 min |
+| 18.2 | [Banco de preguntas y respuestas modelo](18_Entrevistas/02_banco_de_preguntas.md) | SQL, Python, estadística, ETL, DAX/Excel, con sus trampas | EMPLEO | 60 min |
+| 18.3 | [Preguntas de comportamiento y honestidad](18_Entrevistas/03_conductuales_y_honestidad.md) | STAR, acción propia, apoyo de IA, límites, rúbrica de simulacros | EMPLEO | 45 min |
 
 ## Ideas centrales
 

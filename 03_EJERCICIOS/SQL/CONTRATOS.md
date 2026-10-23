@@ -87,3 +87,48 @@ El corrector compara el contenido completo; no revisa el orden de las filas salv
 | ES3A | ruta, ticket | 6 |
 | ES3B | cliente_id, ultima | 11 |
 | ES3C | ruta, ventas, pct_total | 6 |
+| SQ01a | nombre, precio_unitario, precio_con_iva | 5 |
+| SQ01b | cliente_id, nombre_negocio, tipo | 6 |
+| SQ01c | producto_id, salidas_unidades, stock_final, diferencia | 5 |
+| SQ02a | cliente_id, nombre_negocio, zona | 14 |
+| SQ02b | cliente_id, nombre_negocio, zona | 103 |
+| SQ02c | cliente_id, nombre_negocio | 10 |
+| SQ02d | tipo, ruta | 24 |
+| SQ03a | estado, pedidos | 2 |
+| SQ03b | producto_id, unidades | 3 |
+| SQ03c | fecha, plan, real | 4 |
+| SQ04a | ruta, ventas_bs | 6 |
+| SQ04b | total_bs | 1 |
+| SQ05a | vendedor_id, estado, pedidos | 12 |
+| SQ05b | vendedor_id, pct_anulados | 6 |
+| SQ05c | vendedor_id, pedidos | 2 |
+| SQ06a | categoria, ruta, unidades | 5 |
+| SQ06b | tipo, pedidos | 5 |
+| SQ07a | cliente_id, nombre_negocio | 24 |
+| SQ07b | ruta, clientes_sin_pedido_tomado | 6 |
+| SQ08a | total_bs | 1 |
+| SQ08b | total_bs | 1 |
+| SQ08c | filas_unidas | 1 |
+| SQ08d | total_bs | 1 |
+| SQ09a | clase, clientes | 2 |
+| SQ09b | zona, clientes | 8 |
+| SQ09c | ruta, efectividad | 6 |
+| SQ10a | producto_id, nombre, precio_unitario | 15 |
+| SQ10b | cliente_id, pedidos | 10 |
+| SQ11a | ruta, mes, ventas, presupuesto_bs, cumplimiento | 6 |
+| SQ11b | cliente_id, ventas | 5 |
+| SQ12a | categoria, nombre, unidades, pos | 10 |
+| SQ13a | nombres_con_espacios | 1 |
+| SQ13b | ruta, sin_zona | 2 |
+| SQ13c | items_sin_pedido | 1 |
+| SQ13d | pedidos_sin_cliente | 1 |
+| KP01a | vendedor_id, ventas_bs, dias_con_ventas, productividad_bs_dia | 6 |
+| KP01b | ruta, ventas_agosto, ventas_septiembre, variacion_abs, variacion_pct | 6 |
+| KP01c | ruta, ventas_marzo, ventas_abril, variacion_abs, variacion_pct | 6 |
+| SQ14a | pedidos, entregados, anulados | 1 |
+| SQ14b | suma_meses, total_directo | 1 |
+| SQ15a | mes, ventas, acumulado, pct_acumulado | 6 |
+| SQ16a | producto_id, nombre, unidades, acum_antes, clase | 40 |
+| SQ16b | productos_a | 1 |
+| SQ17a | mes, categoria, pedidos, unidades, ventas_bs | 30 |
+| SQ17b | control | 1 |

@@ -10,9 +10,9 @@ Un modelo responde preguntas de negocio con una estructura explícita. Aquí apr
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 13.1 | [Hechos, dimensiones y granularidad](13_Modelado/01_hechos_dimensiones.md) | tabla de hechos, dimensión, medidas aditivas y no aditivas, claves | refuerzo | 55 min |
-| 13.2 | [El modelo estrella](13_Modelado/02_modelo_estrella.md) | relaciones uno a muchos, dimensiones conformadas, caminos ambiguos, pruebas previas | núcleo · D30 | 65 min |
-| 13.3 | [La tabla de fechas](13_Modelado/03_tabla_de_fechas.md) | calendario sin huecos, atributos, orden de meses, días sin ventas | profundización | 45 min |
+| 13.1 | [Hechos, dimensiones y granularidad](13_Modelado/01_hechos_dimensiones.md) | tabla de hechos, dimensión, medidas aditivas y no aditivas, claves | NÚCLEO · D26 | 55 min |
+| 13.2 | [El modelo estrella](13_Modelado/02_modelo_estrella.md) | relaciones uno a muchos, dimensiones conformadas, caminos ambiguos, pruebas previas | NÚCLEO · D29 | 65 min |
+| 13.3 | [La tabla de fechas](13_Modelado/03_tabla_de_fechas.md) | calendario sin huecos, atributos, orden de meses, días sin ventas | NÚCLEO · D32 | 45 min |
 
 ## Ideas centrales
 

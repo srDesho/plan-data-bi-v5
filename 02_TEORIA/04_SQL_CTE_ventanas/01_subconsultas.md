@@ -154,6 +154,8 @@ Ejemplo comercial: «ventas por encima del ticket promedio del mes» combina una
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Lista los artículos cuyo precio es menor que el precio promedio general de `articulos`.

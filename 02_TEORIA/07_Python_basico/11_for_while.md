@@ -214,6 +214,8 @@ Ejemplo comercial: «para cada archivo de ventas de la carpeta, leerlo y validar
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Imprime los números del 1 al 5 con `for` y `range`, luego del 5 al 1 con `while`.

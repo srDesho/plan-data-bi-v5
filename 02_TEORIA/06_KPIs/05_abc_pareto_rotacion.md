@@ -247,6 +247,8 @@ Ejemplo comercial: la clasificación ABC de artículos define la frecuencia de c
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Clasifica en ABC las **categorías** (Bebidas, Snacks, Limpieza, Lácteos) de las ventas entregadas, con la convención «acumulado antes < 80 → A; < 95 → B; resto C».

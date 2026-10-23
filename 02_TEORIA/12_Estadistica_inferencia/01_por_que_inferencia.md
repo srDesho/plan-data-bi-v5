@@ -168,6 +168,8 @@ Ejemplo comercial: dos semanas de prueba con un nuevo horario de reparto dan 5 %
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Con la misma población, saca 8 muestras de tamaño 10 (semilla 21) y anota sus promedios. ¿Varían más o menos que las de tamaño 30?

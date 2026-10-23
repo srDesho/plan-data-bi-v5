@@ -254,6 +254,8 @@ Ejemplo comercial: «cuántas ventas anuladas hubo» (contar), «cuánto vendí 
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con la lista `unidades = [12, 5, 0, 8, 20, 0, 3]`, escribe cada patrón por separado y comprueba a mano:

@@ -123,6 +123,8 @@ Ejemplo comercial: el gerente pregunta "¿cuántas ventas tuvimos?". Si responde
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Sin copiar de arriba, hazlo tú y anota lo que ves:

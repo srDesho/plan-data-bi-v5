@@ -323,6 +323,8 @@ Ejemplo comercial: el mes siguiente la bodega añade la columna `lote` y la reor
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Inventa un caso propio de transferencia (por ejemplo, pedidos de una panadería con `pedido`, `cliente`, `producto`, `precio`, `entregado`):

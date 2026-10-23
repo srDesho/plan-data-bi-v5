@@ -192,6 +192,8 @@ Ejemplo comercial: el gerente pide «ventas entregadas por ruta y vendedor». Un
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Lista cada línea de la venta 3 con el nombre del artículo, la cantidad y el subtotal (unir `venta_lineas` con `articulos`).

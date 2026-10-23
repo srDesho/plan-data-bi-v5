@@ -180,6 +180,8 @@ Ejemplo comercial: «el cliente es válido si tiene ruta y no está anulado» se
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Sin ejecutar, predice el resultado. Después ejecuta y compara.

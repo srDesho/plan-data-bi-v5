@@ -167,6 +167,8 @@ Ejemplo comercial: el jefe de ventas pide "tienda, ruta y el importe de cada lí
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Sobre `articulos` y `venta_lineas` escribe, sin copiar los ejemplos:

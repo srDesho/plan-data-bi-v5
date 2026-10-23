@@ -140,6 +140,8 @@ Ejemplo comercial: la distribuidora recibe cada día el archivo de ventas del ER
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Dibuja (en papel) el flujo de datos de un proceso que leería `ventas.csv`, produciría un reporte por ruta y guardaría los rechazos. Marca dónde viven Bronze, Silver, rechazos y Gold.

@@ -128,6 +128,8 @@ Ejemplo comercial: en la entrevista te piden resolver en vivo un ejercicio de SQ
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe tu propio acuerdo de uso de ayuda durante el estudio (qué usarás y qué no).

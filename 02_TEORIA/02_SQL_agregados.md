@@ -10,11 +10,11 @@ Aquí pasas de "listar filas" a "responder cuánto, cuántos y cuál": contar, s
 
 | # | Lección | Qué aprendes | Tipo | Tiempo |
 |---|---|---|---|---|
-| 2.1 | [Funciones de agregación](02_SQL_agregados/01_funciones_agregadas.md) | COUNT, SUM, AVG, MIN, MAX; cómo tratan los NULL | núcleo · D04 | 50 min |
-| 2.2 | [GROUP BY y HAVING](02_SQL_agregados/02_group_by_having.md) | una cifra por grupo, WHERE frente a HAVING, el grupo NULL | núcleo · D05 | 55 min |
-| 2.3 | [Granularidad y denominadores](02_SQL_agregados/03_granularidad_denominadores.md) | numerador/denominador, división entera, promedio de promedios, NULLIF, controles | núcleo · D06 | 55 min |
-| 2.4 | [Redondeo, texto y fechas](02_SQL_agregados/04_redondeo_texto_fechas.md) | ROUND, TRIM, `\|\|`, SUBSTR, strftime, julianday | refuerzo | 50 min |
-| 2.5 | [CASE y COALESCE](02_SQL_agregados/05_case_coalesce.md) | clasificar, conteo condicional, etiquetar faltantes | núcleo · D17 | 50 min |
+| 2.1 | [Funciones de agregación](02_SQL_agregados/01_funciones_agregadas.md) | COUNT, SUM, AVG, MIN, MAX; cómo tratan los NULL | NÚCLEO · D04 | 50 min |
+| 2.2 | [GROUP BY y HAVING](02_SQL_agregados/02_group_by_having.md) | una cifra por grupo, WHERE frente a HAVING, el grupo NULL | NÚCLEO · D05 | 55 min |
+| 2.3 | [Granularidad y denominadores](02_SQL_agregados/03_granularidad_denominadores.md) | numerador/denominador, división entera, promedio de promedios, NULLIF, controles | NÚCLEO · D05 | 55 min |
+| 2.4 | [Redondeo, texto y fechas](02_SQL_agregados/04_redondeo_texto_fechas.md) | ROUND, TRIM, `\|\|`, SUBSTR, strftime, julianday | NÚCLEO · D11 | 50 min |
+| 2.5 | [CASE y COALESCE](02_SQL_agregados/05_case_coalesce.md) | clasificar, conteo condicional, etiquetar faltantes | NÚCLEO · D17 | 50 min |
 
 ## Idea central del capítulo
 

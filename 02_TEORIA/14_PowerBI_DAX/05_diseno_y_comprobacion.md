@@ -4,6 +4,9 @@
 >
 > **Estado de verificación:** esta lección es de criterio de diseño y de comprobación manual. El paquete **no contiene un `.pbix` construido ni medidas declaradas como ejecutadas**: construir el tablero en Power BI Desktop y probarlo es tu trabajo.
 
+<a id="seccion-inicial"></a>
+> **Sección inicial (plan v6, D33):** lee primero los pasos 1, 2 y 6 de «Ejemplo paso a paso» (estructura de la página, reglas de diseño y cómo comunicar el tablero): son 12 de los 25 min de lectura y lo único que necesita PB07. El resto de la lección es complementario.
+
 ## Para qué sirve
 
 Un tablero útil responde decisiones, no muestra todo lo que se pueda graficar. Esta lección te da la estructura de un tablero comercial laboral, las reglas de diseño que lo hacen legible y la **lista de comprobación manual** que debes pasar antes de entregarlo, porque ninguna parte de la interfaz de Power BI se prueba automáticamente en este paquete.
@@ -127,6 +130,8 @@ Ejemplo comercial: el gerente abre el tablero el lunes. En treinta segundos debe
 4. Porque la interfaz de Power BI no se prueba automáticamente en este paquete.
 
 </details>
+
+<a id="micropractica"></a>
 
 ## Micropráctica
 

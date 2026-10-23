@@ -180,6 +180,8 @@ Ejemplo comercial: un total de ventas que no cuadra con el de SQL. Reduces a una
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. La función siguiente debería devolver la suma de los números pares de una lista, pero devuelve un valor equivocado. Sin ver la solución, aplica el método: calcula a mano el esperado para `[1, 2, 3, 4]` (es 6), añade `print` de depuración, encuentra la causa y corrígela.

@@ -160,6 +160,8 @@ Ejemplo comercial: «ventas contra presupuesto por ruta y mes» es el caso 3-4. 
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Une `ventas` con `venta_lineas` y calcula cuántas ventas entregadas tienen más de 2 líneas (usa `GROUP BY` y `HAVING`).

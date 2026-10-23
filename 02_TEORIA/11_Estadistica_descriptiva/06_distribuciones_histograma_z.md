@@ -175,6 +175,8 @@ Ejemplo comercial: la distribución de los tickets de venta casi siempre tiene c
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con los tiempos de entrega `[34, 28, 31, 29, 33, 30, 28, 95]` de la lección 11.3:

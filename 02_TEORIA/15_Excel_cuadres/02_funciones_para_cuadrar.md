@@ -180,6 +180,8 @@ Ejemplo comercial: para cuadrar el reporte de una ruta, una hoja suma con `SUMAR
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe la fórmula de Excel que sume las **unidades** (`cantidad`) de ventas entregadas de la tienda 3 y calcula con Python su valor esperado.

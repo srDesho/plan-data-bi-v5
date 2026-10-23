@@ -198,6 +198,8 @@ Ejemplo comercial: el ERP entrega `fecha` como `DD/MM/YYYY`, `monto` con coma de
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Convierte `["15,5", "8", "abc", "1.200,75"]` a números (decide el formato y documenta tu supuesto) y separa los inválidos.

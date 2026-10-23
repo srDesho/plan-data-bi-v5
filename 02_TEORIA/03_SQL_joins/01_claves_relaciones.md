@@ -145,6 +145,8 @@ Ejemplo comercial: «ventas por zona de la tienda» necesita `ventas` (monto y f
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 1. Escribe la consulta de control que demuestra que `venta_id` es única en `ventas`.

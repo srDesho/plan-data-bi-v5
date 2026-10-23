@@ -183,6 +183,8 @@ Ejemplo comercial: "entregas de las rutas R01 y R03 en septiembre" es `ruta IN (
 
 </details>
 
+<a id="micropractica"></a>
+
 ## Micropráctica
 
 Con la mini-base, escribe y ejecuta:
