@@ -185,7 +185,7 @@ Ejemplo comercial: el gráfico «ventas por día de septiembre» debe mostrar 30
 2. Cuenta cuántos sábados y domingos tiene.
 3. Calcula las ventas entregadas por semana ISO (`dt.isocalendar().week`) incluyendo semanas sin ventas.
 
-Cómo saber que está bien: el calendario tiene 123 días (31 + 31 + 30 + 31).
+Cómo saber que está bien: el calendario tiene 123 días (31 + 31 + 30 + 31); en la 3, las ventas entregadas suman 2 332,5 Bs en total y la semana ISO 33, sin ventas entregadas, aparece con 0.
 
 <details><summary>Comprobación de las partes 1 y 2</summary>
 

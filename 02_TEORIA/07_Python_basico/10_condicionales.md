@@ -219,7 +219,7 @@ Ejemplo comercial: la regla «descuento del 5 % si la compra supera Bs 500, 10 %
 2. Escribe un programa que, dado `estado`, imprima `"suma"`, `"no suma"` o `"revisar"`. Pruébalo con `"entregado"`, `"anulado"`, `"ENTREGADO "` y `""`. ¿Qué resultado dan los dos últimos? ¿Es lo que querías? Mejora el programa para que `"ENTREGADO "` sí cuente como entregado limpiando antes de comparar.
 3. Predice: `x = 12`; `if x > 10: print("A")`, `elif x > 5: print("B")`, `else: print("C")`.
 
-Cómo saber que está bien: en la 1 los resultados son cumple, cumple, parcial, parcial, no cumple; en la 3 solo se imprime `A`.
+Cómo saber que está bien: en la 1 los resultados son cumple, cumple, parcial, parcial, no cumple; en la 2, con una rama para `"entregado"`, otra para `"anulado"` y `revisar` para todo lo demás, las cuatro pruebas dan suma, no suma, revisar y revisar, y tras limpiar antes de comparar `"ENTREGADO "` pasa a suma mientras `""` sigue en revisar; en la 3 solo se imprime `A`.
 
 <details><summary>Comprobación de la parte 1</summary>
 

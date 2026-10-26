@@ -180,7 +180,7 @@ Ejemplo comercial: un vendedor «creció 200 %» porque el mes anterior estuvo d
 2. Calcula la variación absoluta y relativa de las **entregas** (número de ventas entregadas) entre agosto y septiembre.
 3. Calcula la variación de cada ruta entre agosto y septiembre (importe entregado), usando tu función `variacion_pct` y mostrando «n/c» cuando corresponda.
 
-Cómo saber que está bien: de 6 a 8 entregas hay +33,3 %.
+Cómo saber que está bien: de 6 a 8 entregas hay +33,3 %; en la 3, R01 pasa de 465 a 800 Bs (+72,0 %), R02 de 131 a 379 (+189,3 %) y R03 de 397,5 a 160 (−59,7 %).
 
 <details><summary>Comprobación de la parte 2</summary>
 

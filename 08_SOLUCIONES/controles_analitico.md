@@ -17,12 +17,15 @@ Cada cifra se vuelve a calcular con `python herramientas/verificar_etapa2.py`, a
 
 **Qué debería aparecer en una buena respuesta**
 
-- Los hechos válidos salen de tus conteos de `pedidos` y de G3: pedidos entregados, pedidos anulados y su porcentaje sobre los registrados. «Los vendedores nuevos» es una **hipótesis**: la tabla no tiene motivo de anulación ni antigüedad del vendedor.
+- Los hechos válidos salen de tus conteos de `pedidos` y de G3, cada uno con su unidad y su periodo: pedidos entregados, pedidos anulados y pedidos registrados. El porcentaje sobre los registrados es una comprobación adicional, no un requisito. Cuidado con G3: suma las líneas de **todos** los pedidos, anulados incluidos, así que no equivale a lo vendido en los pedidos entregados; si lo citas como hecho, di que incluye anuladas. «Los vendedores nuevos» es una **hipótesis**: la tabla no tiene motivo de anulación ni antigüedad del vendedor.
 
 **Cifras de control**
 
 - Columnas de la tabla pedidos: no hay motivo de anulación. → `pedido_id; cliente_id; vendedor_id; fecha; estado`
-- Pedidos anulados sobre pedidos registrados (porcentaje con 2 decimales). → `158, 3600, 4.39`
+- Tu G3 (Bs): suma de todas las líneas de pedido, anuladas incluidas. → `1534625.0`
+- Pedidos entregados, anulados y registrados. → `3442, 158, 3600`
+- Periodo que cubren los pedidos (primera y última fecha). → `2026-04-01, 2026-09-30`
+- Comprobación adicional (el enunciado no la exige): pedidos anulados sobre pedidos registrados, porcentaje con 2 decimales. → `158, 3600, 4.39`
 
 ## AN03 · ¿Qué es una ruta «grande»?
 
@@ -128,7 +131,7 @@ Cada cifra se vuelve a calcular con `python herramientas/verificar_etapa2.py`, a
 
 **Cifras de control**
 
-- Desviación muestral, Q1, Q3, IQR, P10, P90, valla superior y cantidad de atípicos. → `307.74 214.125 555.75 341.625 128.0 819.0 | 1068.1875 141 4.1`
+- Desviación muestral, Q1, Q3, IQR, P10, P90, valla superior y cantidad de atípicos. Cuartiles y percentiles por el método lineal de la lección 11.5 (`serie.quantile` de Pandas o `np.percentile`); otros métodos, como el `statistics.quantiles` por defecto, dan Q1 y Q3 algo distintos. → `307.74 214.125 555.75 341.625 128.0 819.0 | 1068.1875 141 4.1`
 
 ## AN14 · Cobertura frente a efectividad: ¿a quién ayudas?
 

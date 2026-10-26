@@ -189,7 +189,7 @@ Ejemplo comercial: para cuadrar el reporte de una ruta, una hoja suma con `SUMAR
 3. Escribe la fórmula `SI` que clasifique cada venta en «septiembre» o «agosto» según su fecha (pista: `TEXTO` o comparar con `FECHA`).
 4. Indica qué cifras de control compararías.
 
-Cómo saber que está bien: las unidades entregadas de la tienda 3 son 50.
+Cómo saber que está bien: las unidades entregadas de la tienda 3 son 50; en la 2 la venta 1 trae la ruta R01 y la venta 3 trae R02; en la 3 salen 7 ventas de agosto y 9 de septiembre.
 
 <details><summary>Cifra de control de la parte 1</summary>
 

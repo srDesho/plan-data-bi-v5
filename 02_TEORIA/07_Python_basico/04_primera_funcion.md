@@ -193,7 +193,7 @@ Ejemplo comercial: la regla «un cliente es de alto valor si su ticket supera Bs
 2. Escribe `def unidades_por_caja_completa(unidades, por_caja)` que devuelva cuántas cajas completas se pueden armar (usa `//`). Calcula a mano un caso y pruébalo con `assert`.
 3. Escribe una función que **imprima** en lugar de devolver y comprueba, guardando su resultado en una variable, que vale `None`.
 
-Cómo saber que está bien: tus `assert` no producen error; si cambias a propósito el 113 por 114, deben fallar con `AssertionError`.
+Cómo saber que está bien: tus `assert` no producen error; si cambias a propósito el 113 por 114, deben fallar con `AssertionError`. En la 2, el `assert` compara con el número que calculaste a mano antes de ejecutar (por ejemplo, 130 unidades en cajas de 24 son 5 cajas completas). En la 3, la variable guarda `None` y `assert resultado is None` no da error.
 
 <details><summary>Comprobación de la parte 1</summary>
 

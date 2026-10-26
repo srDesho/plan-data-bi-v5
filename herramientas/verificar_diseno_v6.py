@@ -548,6 +548,31 @@ EXCEPCIONES_AUTORIZADAS = {
         "sha256_autorizado": "847dda8e939e96277f4f88b4e4f59c33603234a1a12850130d0ce3da36ed1a7f",
         "alcance": "solo las líneas 5 y 7: la duración informativa «90 horas» pasa a «157 h 37 min» (duración BASE definitiva de las 42 jornadas, tras las enmiendas 1 y 3); sin tocar preguntas, puntuaciones, rúbricas ni custodia",
     },
+    # Corrección pedagógica focalizada (enmienda 5), autorizada por el usuario el 2026-10-24; solo estos cinco archivos y este contenido exacto.
+    "03_EJERCICIOS/Analitico/AN02.md": {
+        "sha256_autorizado": "a1f64c2ca29c58efb4ece665c97443c34970013789dd9f1d795d28a2cc558178",
+        "alcance": "solo redacción para el principiante: cálculos mínimos antes de los hechos, cómo hallar el periodo, porcentaje opcional y aviso sobre qué suma G3 (Datos, inicio de «Qué debes entregar», unidad en la tarea 1 y Pista 2); sin cambiar datos, objetivo, criterios de aceptación ni dificultad",
+    },
+    "03_EJERCICIOS/Analitico/AN05.md": {
+        "sha256_autorizado": "2a7b270c0748c5b218b410e3fbdda3322fc48f29a98bf313e664800865c05a5c",
+        "alcance": "solo la tarea 1 (estrategia de conteos en lugar de NOT IN con subconsulta, que se enseña en D18) y el primer criterio de aceptación",
+    },
+    "03_EJERCICIOS/Analitico/AN08.md": {
+        "sha256_autorizado": "847d39d9d5d65bc126d46cd6e5cc403508ad5f8d606df22cecd79c3f4afa3154",
+        "alcance": "solo la referencia de jornada de la línea 3: D16 pasa a D19",
+    },
+    "03_EJERCICIOS/Analitico/AN14.md": {
+        "sha256_autorizado": "c7181439a9310a225e0cddab58f105635643e4a68117dcbb550fc6bb577d1b08",
+        "alcance": "solo la referencia de jornada de la línea 3: D31 pasa a D32",
+    },
+    "08_SOLUCIONES/controles_analitico.md": {
+        "sha256_autorizado": "9f4be9659c701ebbf6b89ba5a735a86415d95f4f0bec0dd642045b0b3bf37e19",
+        "alcance": "solo el control de AN02 (G3, conteos, periodo, porcentaje como comprobación adicional) y la nota del método de cuartiles en AN13; cifras existentes sin cambios",
+    },
+    "08_SOLUCIONES/controles_analitico.json": {
+        "sha256_autorizado": "539a85bac50498280203aeda91fea093318298c8ddfd3f68dc4b190f6f83a038",
+        "alcance": "AN02: tres comprobaciones nuevas (g3, conteos, periodo) y texto de «extra»; AN13: nota del método de cuartiles en la descripción; cifras existentes sin cambios",
+    },
 }
 
 

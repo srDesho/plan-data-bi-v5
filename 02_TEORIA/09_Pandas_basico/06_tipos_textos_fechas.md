@@ -206,7 +206,7 @@ Ejemplo comercial: el ERP entrega `fecha` como `DD/MM/YYYY`, `monto` con coma de
 2. Convierte `["2026-08-31", "31/08/2026", "08/31/2026", "x"]` a fechas siguiendo las reglas: ISO o DD/MM/AAAA; cualquier otra cosa es inválida.
 3. Calcula los días entre cada fecha de `ventas.csv` y el corte `2026-09-30` y muestra los 3 más antiguos de ventas entregadas (compara con SQL 2.4).
 
-Cómo saber que está bien: en la 3 la venta 1 tiene 58 días.
+Cómo saber que está bien: en la 1, con el supuesto «punto de miles y coma decimal», salen 15,5, 8 y 1 200,75, y `abc` es inválido; en la 2 las dos primeras fechas dan 2026-08-31 y las otras dos son inválidas (`08/31/2026` no tiene mes 31); en la 3 la venta 1 tiene 58 días.
 
 <details><summary>Comprobación de la parte 3</summary>
 

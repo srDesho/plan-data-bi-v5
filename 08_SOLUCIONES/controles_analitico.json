@@ -22,7 +22,7 @@
    "titulo": "Hechos e hipótesis: los pedidos anulados",
    "dia": 4,
    "extra": [
-    "Los hechos válidos salen de tus conteos de `pedidos` y de G3: pedidos entregados, pedidos anulados y su porcentaje sobre los registrados. «Los vendedores nuevos» es una **hipótesis**: la tabla no tiene motivo de anulación ni antigüedad del vendedor."
+    "Los hechos válidos salen de tus conteos de `pedidos` y de G3, cada uno con su unidad y su periodo: pedidos entregados, pedidos anulados y pedidos registrados. El porcentaje sobre los registrados es una comprobación adicional, no un requisito. Cuidado con G3: suma las líneas de **todos** los pedidos, anulados incluidos, así que no equivale a lo vendido en los pedidos entregados; si lo citas como hecho, di que incluye anuladas. «Los vendedores nuevos» es una **hipótesis**: la tabla no tiene motivo de anulación ni antigüedad del vendedor."
    ],
    "checks": [
     {
@@ -50,8 +50,47 @@
      ]
     },
     {
+     "id": "AN02-g3",
+     "descripcion": "Tu G3 (Bs): suma de todas las líneas de pedido, anuladas incluidas.",
+     "tipo": "sql",
+     "db": "04_DATASETS/comercial.db",
+     "sql": "SELECT SUM(cantidad*precio_unitario) FROM pedido_items;",
+     "esperado": [
+      [
+       1534625.0
+      ]
+     ]
+    },
+    {
+     "id": "AN02-conteos",
+     "descripcion": "Pedidos entregados, anulados y registrados.",
+     "tipo": "sql",
+     "db": "04_DATASETS/comercial.db",
+     "sql": "SELECT SUM(estado='entregado'), SUM(estado='anulado'), COUNT(*) FROM pedidos;",
+     "esperado": [
+      [
+       3442,
+       158,
+       3600
+      ]
+     ]
+    },
+    {
+     "id": "AN02-periodo",
+     "descripcion": "Periodo que cubren los pedidos (primera y última fecha).",
+     "tipo": "sql",
+     "db": "04_DATASETS/comercial.db",
+     "sql": "SELECT MIN(fecha), MAX(fecha) FROM pedidos;",
+     "esperado": [
+      [
+       "2026-04-01",
+       "2026-09-30"
+      ]
+     ]
+    },
+    {
      "id": "AN02-anulados",
-     "descripcion": "Pedidos anulados sobre pedidos registrados (porcentaje con 2 decimales).",
+     "descripcion": "Comprobación adicional (el enunciado no la exige): pedidos anulados sobre pedidos registrados, porcentaje con 2 decimales.",
      "tipo": "sql",
      "db": "04_DATASETS/comercial.db",
      "sql": "SELECT SUM(estado='anulado'), COUNT(*), ROUND(100.0*SUM(estado='anulado')/COUNT(*),2) FROM pedidos;",
@@ -354,7 +393,7 @@
    "checks": [
     {
      "id": "AN13-dispersion",
-     "descripcion": "Desviación muestral, Q1, Q3, IQR, P10, P90, valla superior y cantidad de atípicos.",
+     "descripcion": "Desviación muestral, Q1, Q3, IQR, P10, P90, valla superior y cantidad de atípicos. Cuartiles y percentiles por el método lineal de la lección 11.5 (`serie.quantile` de Pandas o `np.percentile`); otros métodos, como el `statistics.quantiles` por defecto, dan Q1 y Q3 algo distintos.",
      "tipo": "python",
      "codigo": "import sqlite3\nimport pandas as pd\nfrom contextlib import closing\nwith closing(sqlite3.connect(\"04_DATASETS/comercial.db\")) as c:\n    d = pd.Series([r[0] for r in c.execute(\"SELECT SUM(i.cantidad*i.precio_unitario) FROM pedidos p JOIN pedido_items i ON i.pedido_id=p.pedido_id WHERE p.estado='entregado' GROUP BY p.pedido_id\")])\nq1, q3 = d.quantile(.25), d.quantile(.75)\niqr = q3 - q1\nvalla = q3 + 1.5 * iqr\nprint(round(d.std(), 2), q1, q3, iqr, d.quantile(.1), d.quantile(.9))\nprint(valla, int((d > valla).sum()), round(100 * (d > valla).mean(), 1))",
      "esperado": "307.74 214.125 555.75 341.625 128.0 819.0\n1068.1875 141 4.1"

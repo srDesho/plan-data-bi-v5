@@ -119,7 +119,7 @@ Ejemplo comercial: el ERP entrega `drop_por_pedido.csv`. Al importarlo con el pu
 3. Calcula en una hoja el cumplimiento de una meta con `SI` para evitar la división entre cero.
 4. Anota en una hoja de notas las decisiones que tomaste.
 
-Cómo saber que está bien: 16 filas y 14 entregadas.
+Cómo saber que está bien: 16 filas y 14 entregadas; en la 3, 465 de ventas sobre una meta de 450 da 103,3 % y, si pruebas con meta 0, la celda queda vacía en lugar de dar error.
 
 <details><summary>Cifra de control de la parte 2</summary>
 
